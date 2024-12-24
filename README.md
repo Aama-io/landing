@@ -36,3 +36,7 @@ This template comes with the following features:
 - `storybook` – starts storybook dev server
 - `storybook:build` – build production storybook bundle to `storybook-static`
 - `prettier:write` – formats all files with Prettier
+
+### DEMO
+
+https://mantine-landing-925939727869.us-central1.run.app/
