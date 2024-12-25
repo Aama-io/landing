@@ -2,7 +2,7 @@
   position: relative;
   padding-top: 180px;
   padding-bottom: 130px;
-  
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
 
   @media (max-width: $mantine-breakpoint-xs) {
     padding-top: 80px;

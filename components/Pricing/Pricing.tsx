@@ -44,7 +44,8 @@ const pricingData = [
 
 export default function PricingTable() {
   return (
-    <Container size="lg" py="xl" my="xl">
+    <div className={classes.wrapper}>
+    <Container size="lg" py="xl" id="pricing">
       <Group justify="center">
         <Badge variant="filled" size="lg">
           Pricing plans
@@ -95,5 +96,6 @@ export default function PricingTable() {
         ))}
       </Grid>
     </Container>
+    </div>
   );
 }

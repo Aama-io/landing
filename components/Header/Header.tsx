@@ -1,87 +1,122 @@
-import { IconChevronDown } from '@tabler/icons-react';
-import { Burger, Center, Container, Group, Menu } from '@mantine/core';
+import Link from 'next/link';
+import {
+  IconBook,
+  IconChartPie3,
+  IconChevronDown,
+  IconCode,
+  IconCoin,
+  IconFingerprint,
+  IconNotification,
+} from '@tabler/icons-react';
+import {
+  Anchor,
+  Box,
+  Burger,
+  Button,
+  Center,
+  Collapse,
+  Divider,
+  Drawer,
+  Group,
+  HoverCard,
+  ScrollArea,
+  SimpleGrid,
+  Text,
+  ThemeIcon,
+  UnstyledButton,
+  useMantineTheme,
+} from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { MantineLogo } from '@mantinex/mantine-logo';
 import { ActionToggle } from '../ActionToggle/ActionToggle';
 import classes from './Header.module.css';
 
-const links = [
-  { link: '/about', label: 'Features' },
-  {
-    link: '#1',
-    label: 'Learn',
-    links: [
-      { link: '/docs', label: 'Documentation' },
-      { link: '/resources', label: 'Resources' },
-      { link: '/community', label: 'Community' },
-      { link: '/blog', label: 'Blog' },
-    ],
-  },
-  { link: '/about', label: 'About' },
-  { link: '/pricing', label: 'Pricing' },
-  {
-    link: '#2',
-    label: 'Support',
-    links: [
-      { link: '/faq', label: 'FAQ' },
-      { link: '/demo', label: 'Book a demo' },
-      { link: '/forums', label: 'Forums' },
-    ],
-  },
-];
-
 export function Header() {
-  const [opened, { toggle }] = useDisclosure(false);
-
-  const items = links.map((link) => {
-    const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
-    ));
-
-    if (menuItems) {
-      return (
-        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
-          <Menu.Target>
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => event.preventDefault()}
-            >
-              <Center>
-                <span className={classes.linkLabel}>{link.label}</span>
-                <IconChevronDown size={14} stroke={1.5} />
-              </Center>
-            </a>
-          </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
-        </Menu>
-      );
-    }
-
-    return (
-      <a
-        key={link.label}
-        href={link.link}
-        className={classes.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </a>
-    );
-  });
+  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
+  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
+  const theme = useMantineTheme();
 
   return (
-    <header className={classes.header}>
-      <Container size="md">
-        <div className={classes.inner}>
-          <MantineLogo size={28} />
-          <Group gap={5} visibleFrom="sm">
-            {items}
-            <ActionToggle />
+    <Box>
+      <header className={classes.header}>
+        <Group justify="space-between" h="100%">
+          <Anchor component={Link} href="/" className={classes.link}>
+            <MantineLogo size={30} />
+          </Anchor>
+
+          <Group h="100%" gap={0} visibleFrom="sm">
+            <a href="/" className={classes.link}>
+              Home
+            </a>
+
+            <a href="#features" className={classes.link}>
+              Features
+            </a>
+            <a href="#pricing" className={classes.link}>
+              Pricing
+            </a>
+            <a href="#faq" className={classes.link}>
+              FAQ
+            </a>
+            <a href="#contact" className={classes.link}>
+              Contact
+            </a>
           </Group>
-          <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-        </div>
-      </Container>
-    </header>
+
+          <Group visibleFrom="sm">
+            <ActionToggle />
+            <Button variant="default" component={Link} href="/auth/login">
+              Log in
+            </Button>
+            <Button component={Link} href="/auth/register">
+              Sign up
+            </Button>
+          </Group>
+
+          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+        </Group>
+      </header>
+
+      <Drawer
+        opened={drawerOpened}
+        onClose={closeDrawer}
+        size="100%"
+        padding="md"
+        hiddenFrom="sm"
+        zIndex={1000000}
+      >
+        <ScrollArea h="calc(100vh - 80px" mx="-md">
+          <Divider my="sm" />
+
+          <a href="/" className={classes.link}>
+            Home
+          </a>
+          <a href="#features" className={classes.link}>
+            Features
+          </a>
+          <a href="#pricing" className={classes.link}>
+            Pricing
+          </a>
+          <a href="#faq" className={classes.link}>
+            FAQ
+          </a>
+          <a href="#contact" className={classes.link}>
+            Contact
+          </a>
+
+          <Divider my="sm" />
+
+          <Group justify="center" grow pb="xl" px="md">
+            <ActionToggle />
+            <Button variant="default" component={Link} href="/auth/login">
+              Log in
+            </Button>
+            <Button component={Link} href="/auth/register">
+              Sign up
+            </Button>
+          </Group>
+        </ScrollArea>
+      </Drawer>
+    </Box>
   );
 }

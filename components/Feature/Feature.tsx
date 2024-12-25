@@ -1,10 +1,10 @@
 import {
-  IconBrain,
-  IconChartBar,
-  IconCloudUpload,
+  IconLayoutDashboard,
+  IconLock,
+  IconSettings,
   IconCode,
-  IconDeviceAnalytics,
-  IconSearch,
+  IconDevices,
+  IconUserPlus,
 } from '@tabler/icons-react';
 import {
   Badge,
@@ -20,40 +20,40 @@ import classes from './Feature.module.css';
 
 const mockdata = [
   {
-    title: 'AI-Powered Predictions',
+    title: 'Prebuilt Landing Pages',
     description:
-      'Leverage our cutting-edge AI solutions for business forecasting, helping you make data-driven decisions with accuracy and confidence.',
-    icon: IconChartBar,
+      'Get started quickly with beautiful, fully customizable landing pages designed to make your product stand out.',
+    icon: IconLayoutDashboard,
   },
   {
-    title: 'Job Matching Algorithms',
+    title: 'Authentication System',
     description:
-      'Our intelligent job matching technology connects candidates with opportunities that align with their skills and career aspirations.',
-    icon: IconSearch,
+      'Built-in authentication pages with secure login, registration, and password recovery workflows.',
+    icon: IconLock,
   },
   {
-    title: 'Research & Development',
+    title: 'Responsive Design',
     description:
-      'Dedicated to innovating in AI and machine learning, exploring solutions that transform industries and drive efficiency.',
-    icon: IconBrain,
+      'Seamlessly responsive across devices, ensuring your application looks stunning on desktops, tablets, and mobile phones.',
+    icon: IconDevices,
   },
   {
-    title: 'Advanced Analytics',
+    title: 'Developer-Friendly Codebase',
     description:
-      'Gain actionable insights with our advanced data analytics services, empowering you to understand trends and improve decision-making.',
-    icon: IconDeviceAnalytics,
-  },
-  {
-    title: 'Custom Software Development',
-    description:
-      'Build tailor-made applications that meet your specific needs and help you achieve your business objectives with precision.',
+      'Clean, modular code that follows best practices, making it easy for developers to customize and extend.',
     icon: IconCode,
   },
   {
-    title: 'Cloud Integration Services',
+    title: 'User Management',
     description:
-      'Seamlessly migrate to the cloud with our integration services, ensuring security, scalability, and efficiency for your operations.',
-    icon: IconCloudUpload,
+      'Includes ready-to-use user management features, such as profile pages and role-based access control.',
+    icon: IconUserPlus,
+  },
+  {
+    title: 'Extensible Components',
+    description:
+      'Comprehensive set of reusable components and utilities to accelerate development and maintain consistency.',
+    icon: IconSettings,
   },
 ];
 
@@ -75,17 +75,17 @@ export function Feature() {
     <Container size="lg" py="xl" id="features" my="xl">
       <Group justify="center">
         <Badge variant="filled" size="lg">
-          Innovating the Future
+          Accelerate Your Development
         </Badge>
       </Group>
 
       <Title order={2} className={classes.title} ta="center" mt="sm">
-        Pioneering AI Solutions for Tomorrow's Challenges
+        Build Fast, Beautiful, and Secure Applications
       </Title>
 
       <Text c="dimmed" className={classes.description} ta="center" mt="md">
-        At UXQode, we are at the forefront of technology, developing AI products that redefine the
-        way businesses operate and people connect.
+        Our Mantine UI + Next.js boilerplate is crafted to give developers a head start, combining
+        aesthetics, performance, and functionality.
       </Text>
 
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
