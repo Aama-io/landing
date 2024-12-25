@@ -15,7 +15,7 @@ import classes from './ForgotPassword.module.css';
 
 export function ForgotPassword() {
   return (
-    <Container size={460} my={30}>
+    <Container size={420} my={120}>
       <Title className={classes.title} ta="center">
         Forgot your password?
       </Title>

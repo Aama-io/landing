@@ -13,7 +13,7 @@ import {
 
 export function LoginForm() {
   return (
-    <Container size={420} my={40}>
+    <Container size={420} my={120}>
       <Title ta="center">
         Welcome back!
       </Title>

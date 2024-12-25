@@ -39,9 +39,6 @@ export function AuthHeader() {
           <Anchor component={Link} href="/" className={classes.link}>
             <MantineLogo size={30} />
           </Anchor>
-
-          <Group h="100%" gap={0} visibleFrom="sm"></Group>
-
           <Group>
             <ActionToggle />
           </Group>

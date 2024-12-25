@@ -13,7 +13,7 @@ import {
   
   export function RegisterForm() {
     return (
-      <Container size={420} my={40}>
+      <Container size={420} my={120}>
         <Title ta="center" >
             Register
         </Title>
