@@ -1,6 +1,6 @@
 import { Container, Title } from '@mantine/core';
 import { Faq } from '@/components/FAQ/FAQ';
-import InnerLayout from '@/components/Layout';
+import InnerLayout from '@/components/InnerLayout';
 
 export default function FAQPage() {
   return (
