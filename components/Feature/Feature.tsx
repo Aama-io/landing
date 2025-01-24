@@ -61,7 +61,7 @@ export function Feature() {
   const theme = useMantineTheme();
   const features = mockdata.map((feature) => (
     <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
-      <feature.icon size={50} stroke={2} color={theme.colors.blue[6]} />
+      <feature.icon size={50} stroke={2} color={theme.colors.pink[6]} />
       <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
         {feature.title}
       </Text>

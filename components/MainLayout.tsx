@@ -3,10 +3,14 @@ import { readItems } from '@directus/sdk';
 import { Center, Loader } from '@mantine/core';
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
-import { useGlobalSettings } from '@/context/GlobalSettingsContext';
 import { getDirectusClient, getImageUrl } from '@/lib/directus';
+import { useGlobalSettings } from '@/context/GlobalSettingsContext';
 
-export default function InnerLayout({ children }: { children: React.ReactNode }) {
+interface MainLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function MainLayout({ children }: MainLayoutProps) {
   const [headerLinks, setHeaderLinks] = useState<Record<string, any>[]>([]);
   const [footerLinks, setFooterLinks] = useState<Record<string, any>[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -18,7 +22,7 @@ export default function InnerLayout({ children }: { children: React.ReactNode })
         const client = await getDirectusClient();
         const navigationData = await client.request(
           readItems('navigation', {
-            fields: ['*.*.*.*.*.*.*'], // Adjust fields as needed
+            fields: ['*.*.*.*.*'], // Adjust fields as needed
           })
         );
         if (navigationData) {
@@ -35,9 +39,9 @@ export default function InnerLayout({ children }: { children: React.ReactNode })
     fetchNavigation();
   }, []);
 
-  if (loading || globalSettings.loading) {
-    return <Center h={'100vh'}><Loader size={'md'} /></Center>;
-  }
+   if (loading || globalSettings.loading) {
+      return <Center h={'100vh'}><Loader size={'md'} /></Center>;
+    }
 
   return (
     <>

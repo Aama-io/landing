@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    padding: calc(var(--mantine-spacing-xl) * 2);
+    border-radius: var(--mantine-radius-md);
+    background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+    border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-8));
+  
+    @media (max-width: $mantine-breakpoint-sm) {
+      flex-direction: column-reverse;
+      padding: var(--mantine-spacing-xl);
+    }
+  }
+  
+  .title {
+    font-size: 34px;
+    font-weight: 900;
+
+    @media (max-width: $mantine-breakpoint-sm) {
+        font-size: 24px;
+    }
+}
+
+.description {
+    max-width: 600px;
+    margin: auto;
+
+    &::after {
+        content: '';
+        display: block;
+        background-color: var(--mantine-color-blue-filled);
+        width: 45px;
+        height: 2px;
+        margin-top: var(--mantine-spacing-sm);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

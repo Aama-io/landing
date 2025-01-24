@@ -2,8 +2,8 @@
     min-height: 400px;
     background-image: linear-gradient(
       -60deg,
-      var(--mantine-color-blue-4) 0%,
-      var(--mantine-color-blue-7) 100%
+      var(--mantine-color-pink-4) 0%,
+      var(--mantine-color-pink-7) 100%
     );
     border-radius: var(--mantine-radius-md);
     padding: calc(var(--mantine-spacing-xl) * 2.5);
@@ -22,7 +22,7 @@
   }
   
   .description {
-    color: var(--mantine-color-blue-0);
+    color: var(--mantine-color-pink-0);
     max-width: 300px;
   
     @media (max-width: $mantine-breakpoint-sm) {
@@ -41,7 +41,7 @@
     color: var(--mantine-color-white);
   
     @mixin hover {
-      color: var(--mantine-color-blue-1);
+      color: var(--mantine-color-pink-1);
     }
   }
   
@@ -60,5 +60,5 @@
   }
   
   .control {
-    background-color: var(--mantine-color-blue-6);
+    background-color: var(--mantine-color-pink-6);
   }

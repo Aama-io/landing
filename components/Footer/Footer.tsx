@@ -1,77 +1,103 @@
-import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
-import { ActionIcon, Container, Group, Text } from '@mantine/core';
-import { MantineLogo } from '@mantinex/mantine-logo';
+import Image from 'next/image';
+import Link from 'next/link';
+import {
+  IconBrandDiscord,
+  IconBrandDocker,
+  IconBrandFacebook,
+  IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+  IconBrandVimeo,
+  IconBrandYoutube,
+  IconLink,
+} from '@tabler/icons-react';
+import { ActionIcon, Anchor, Container, Flex, Group, Text } from '@mantine/core';
+import { getImageUrl } from '@/lib/directus';
 import classes from './Footer.module.css';
 
-const data = [
-  {
-    title: 'About',
-    links: [
-      { label: 'Features', link: '#' },
-      { label: 'Pricing', link: '#' },
-      { label: 'Support', link: '#' },
-      { label: 'Forums', link: '#' },
-    ],
-  },
-  {
-    title: 'Community',
-    links: [
-      { label: 'Join Discord', link: '#' },
-      { label: 'Follow on Twitter', link: '#' },
-      { label: 'Email newsletter', link: '#' },
-      { label: 'GitHub discussions', link: '#' },
-    ],
-  },
-];
+type SocialIconProps = {
+  platform: 'twitter' | 'facebook' | 'instagram' | 'youtube' | string; // Add more platforms as needed
+  size?: number;
+  stroke?: number;
+};
 
-export function Footer() {
-  const groups = data.map((group) => {
-    const links = group.links.map((link, index) => (
-      <Text<'a'>
-        key={index}
-        className={classes.link}
-        component="a"
-        href={link.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </Text>
-    ));
+const SocialIcon: React.FC<SocialIconProps> = ({ platform, size = 18, stroke = 1.5 }) => {
+  const icons: Record<SocialIconProps['platform'], React.ElementType> = {
+    twitter: IconBrandTwitter,
+    facebook: IconBrandFacebook,
+    instagram: IconBrandInstagram,
+    youtube: IconBrandYoutube,
+    discord: IconBrandDiscord,
+    linkined: IconBrandLinkedin,
+    github: IconBrandGithub,
+    vimeo: IconBrandVimeo,
+    docker: IconBrandDocker,
+  };
 
-    return (
-      <div className={classes.wrapper} key={group.title}>
-        <Text className={classes.title}>{group.title}</Text>
-        {links}
-      </div>
-    );
-  });
+  const IconComponent = icons[platform] || IconLink;
+
+  return IconComponent ? <IconComponent size={size} stroke={stroke} /> : null;
+};
+
+type FooterProps = {
+  links?: any;
+  globalSettings: any;
+};
+
+export function Footer({ links, globalSettings }: FooterProps) {
+  const renderLink = (link: any) => {
+    if (link.type === 'url') {
+      return (
+        <a href={link.url} className={classes.link}>
+          {link.title}
+        </a>
+      );
+    }
+
+    if (link.type === 'page') {
+      return (
+        <Link href={link.page?.permalink || '/'} className={classes.link}>
+          {link.title}
+        </Link>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-          <MantineLogo size={24} />
+          <Anchor component={Link} href="/" className={classes.link}>
+            <Image
+              src={getImageUrl(globalSettings.logo.filename_disk)}
+              alt="Logo"
+              width={150}
+              height={50}
+            />
+          </Anchor>
           <Text size="xs" c="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            {globalSettings.description}
           </Text>
         </div>
-        <div className={classes.groups}>{groups}</div>
+
+        <Flex className={classes.groups}>{links.map((link: any) => renderLink(link))}</Flex>
       </Container>
       <Container className={classes.afterFooter}>
         <Text c="dimmed" size="sm">
-          © 2024, All rights reserved.
+        © {new Date().getFullYear()}, All rights reserved.
         </Text>
 
         <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandYoutube size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram size={18} stroke={1.5} />
-          </ActionIcon>
+          {globalSettings.social_links.map((link: any) => (
+            <Anchor key={link.service} href={link.url} target="_blank" rel="noopener noreferrer">
+              <ActionIcon size="lg" color="gray" variant="subtle">
+                <SocialIcon platform={link.service} size={18} stroke={1.5} />
+              </ActionIcon>
+            </Anchor>
+          ))}
         </Group>
       </Container>
     </footer>

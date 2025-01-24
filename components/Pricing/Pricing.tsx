@@ -14,54 +14,115 @@ import {
   Title,
 } from '@mantine/core';
 import classes from './Pricing.module.css';
+import Link from 'next/link';
 
-const pricingData = [
-  {
-    title: 'Free',
-    price: '$0/month',
-    description: 'For small teams getting started',
-    features: ['1 Project', 'Basic Support', '10GB Storage'],
-    buttonText: 'Get Started',
-    buttonColor: 'gray',
-  },
-  {
-    title: 'Pro',
-    price: '$29/month',
-    description: 'For growing businesses',
-    features: ['Unlimited Projects', 'Priority Support', '100GB Storage'],
-    buttonText: 'Upgrade Now',
-    buttonColor: 'blue',
-  },
-  {
-    title: 'Enterprise',
-    price: 'Custom Pricing',
-    description: 'For large organizations',
-    features: ['Advanced Features', 'Dedicated Support', 'Custom Storage'],
-    buttonText: 'Contact Sales',
-    buttonColor: 'gray',
-  },
-];
+/*
+[
+    {
+        "id": "388404db-1703-4b10-b12b-e5d4385f1530",
+        "title": "Starter Plan",
+        "description": "Perfect for your small busines",
+        "price": "$199 /month",
+        "badge": "Most Popular",
+        "features": [
+            "One seat",
+            "Unlimited",
+            "Lifetime access"
+        ],
+        "is_highlighted": false,
+        "sort": null,
+        "button": {
+            "id": "dda7d91c-b449-4ab3-9d9d-84d4e8c09caf",
+            "sort": null,
+            "type": "url",
+            "page": null,
+            "post": null,
+            "label": "Get Started",
+            "variant": "solid",
+            "button_group": null,
+            "url": "/your-stripe-checkout-link"
+        },
+        "pricing": {
+            "id": "48cf2543-15e0-454f-9b31-cbf3c2406712",
+            "headline": "Plans to fit every budget",
+            "tagline": "Pricing",
+            "pricing_cards": [
+                "388404db-1703-4b10-b12b-e5d4385f1530",
+                "83972d2a-742e-4a6c-8698-563d01dde54d"
+            ]
+        }
+    },
+    {
+        "id": "83972d2a-742e-4a6c-8698-563d01dde54d",
+        "title": "Enterprise Plan",
+        "description": "The best plan with all the best features",
+        "price": "$599 /month",
+        "badge": null,
+        "features": [
+            "All of them",
+            "Yes all of them"
+        ],
+        "is_highlighted": true,
+        "sort": null,
+        "button": {
+            "id": "efb97ae9-d95e-4f9d-bf00-9df9966c65ec",
+            "sort": null,
+            "type": "url",
+            "page": null,
+            "post": null,
+            "label": "Talk to Sales",
+            "variant": "solid",
+            "button_group": null,
+            "url": "/get-a-demo"
+        },
+        "pricing": {
+            "id": "48cf2543-15e0-454f-9b31-cbf3c2406712",
+            "headline": "Plans to fit every budget",
+            "tagline": "Pricing",
+            "pricing_cards": [
+                "388404db-1703-4b10-b12b-e5d4385f1530",
+                "83972d2a-742e-4a6c-8698-563d01dde54d"
+            ]
+        }
+    }
+]
+*/
 
-export default function PricingTable() {
+type PricingTableProps = {
+  data: {
+    headline: string;
+    tagline: string;
+    pricing_cards: {
+      title: string;
+      description: string;
+      price: string;
+      features: string[];
+      buttonText: string;
+      buttonColor: string;
+    }[];
+  };
+};
+
+export default function PricingTable({data}: PricingTableProps) {
   return (
     <div className={classes.wrapper}>
     <Container size="lg" py="xl" id="pricing">
       <Group justify="center">
         <Badge variant="filled" size="lg">
-          Pricing plans
+          {data.tagline}
         </Badge>
       </Group>
 
       <Title order={2} ta="center" className={classes.title} mt="sm">
-        We have you covered with plans for every budget
+      {data.headline}
       </Title>
 
       <Text c="dimmed" className={classes.description} ta="center" mt="md"></Text>
 
       <Grid mt={50}>
-        {pricingData.map((plan) => (
-          <Grid.Col span={{ base: 12, sm: 6, md: 4 }} key={plan.title}>
-            <Card shadow="md" radius="md" padding="lg" withBorder>
+        {data.pricing_cards.map((plan:any) => (
+          <Grid.Col span={{ base: 12, sm: 6, md: 12/plan.length }} key={plan.title}>
+            <Card shadow="md" radius="md" padding="lg" className={plan.is_highlighted ? classes.highlighted : ''}>
               <Group mb="md">
                 <Title order={3}>{plan.title}</Title>
                 <Badge size="lg" color={plan.buttonColor}>
@@ -82,14 +143,14 @@ export default function PricingTable() {
                 }
                 mb="lg"
               >
-                {plan.features.map((feature) => (
+                {plan.features.map((feature: any) => (
                   <List.Item key={feature}>
                     <Text size="sm">{feature}</Text>
                   </List.Item>
                 ))}
               </List>
-              <Button color={plan.buttonColor} mb="xs" variant="">
-                {plan.buttonText}
+              <Button mb="xs" variant={plan.button.variant} component={Link} href={plan.button.url}>
+                {plan.button.label}
               </Button>
             </Card>
           </Grid.Col>
