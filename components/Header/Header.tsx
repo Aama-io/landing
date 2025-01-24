@@ -1,66 +1,76 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import {
+  IconBook,
+  IconChartPie3,
+  IconChevronDown,
+  IconCode,
+  IconCoin,
+  IconFingerprint,
+  IconNotification,
+} from '@tabler/icons-react';
 import {
   Anchor,
   Box,
   Burger,
+  Button,
+  Center,
+  Collapse,
   Divider,
   Drawer,
   Group,
+  HoverCard,
   ScrollArea,
+  SimpleGrid,
+  Text,
+  ThemeIcon,
+  UnstyledButton,
+  useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { MantineLogo } from '@mantinex/mantine-logo';
 import { ActionToggle } from '../ActionToggle/ActionToggle';
 import classes from './Header.module.css';
 
-type HeaderProps = {
-  links: any;
-  logo: string;
-};
-
-const renderLink = (link: any) => {
-  return link.type === 'url' ? (
-    <a href={link.url} className={classes.link}>
-      {link.title}
-    </a>
-  ) : link.type === 'page' ? (
-    <Link href={link.page.permalink} className={classes.link}>
-      {link.title}
-    </Link>
-  ) : (
-    <a href={link.url} className={classes.link}>
-      {link.title}
-    </a>
-  );
-};
-
-export function Header({ links, logo }: HeaderProps) {
+export function Header() {
   const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
+  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
+  const theme = useMantineTheme();
+
   return (
     <Box>
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <Anchor component={Link} href="/" className={classes.link}>
-            <Image src={logo} alt="Logo" width={150} height={50} />
+            <MantineLogo size={30} />
           </Anchor>
 
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="/" className={classes.link}>
               Home
             </a>
-            {links?.map((link: any) => renderLink(link))}
+
+            <a href="#features" className={classes.link}>
+              Features
+            </a>
+            <a href="#pricing" className={classes.link}>
+              Pricing
+            </a>
+            <a href="#faq" className={classes.link}>
+              FAQ
+            </a>
+            <a href="#contact" className={classes.link}>
+              Contact
+            </a>
           </Group>
 
           <Group visibleFrom="sm">
             <ActionToggle />
-            <>
-              {/* <Button variant="default" component={Link} href="/auth/signin">
-                Log in
-              </Button>
-              <Button component={Link} href="/auth/register">
-                Sign up
-              </Button> */}
-            </>
+            <Button variant="default" component={Link} href="/auth/login">
+              Log in
+            </Button>
+            <Button component={Link} href="/auth/register">
+              Sign up
+            </Button>
           </Group>
 
           <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -81,23 +91,29 @@ export function Header({ links, logo }: HeaderProps) {
           <a href="/" className={classes.link}>
             Home
           </a>
-
-          {links?.map((link: any) => (
-            <a href={link} className={classes.link}>
-              {link.title}
-            </a>
-          ))}
+          <a href="#features" className={classes.link}>
+            Features
+          </a>
+          <a href="#pricing" className={classes.link}>
+            Pricing
+          </a>
+          <a href="#faq" className={classes.link}>
+            FAQ
+          </a>
+          <a href="#contact" className={classes.link}>
+            Contact
+          </a>
 
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
             <ActionToggle />
-            {/* <Button variant="default" component={Link} href="/auth/signin">
+            <Button variant="default" component={Link} href="/auth/login">
               Log in
             </Button>
             <Button component={Link} href="/auth/register">
               Sign up
-            </Button> */}
+            </Button>
           </Group>
         </ScrollArea>
       </Drawer>

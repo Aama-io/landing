@@ -4,15 +4,6 @@
   background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
 }
 
-.highlighted {
-  position: relative;
-  border-radius: var(--mantine-radius-sm);
-  border-width: 2px;
-  border-color: var(--mantine-color-pink-4);
-  background-color: light-dark(var(--mantine-color-pink-0), var(--mantine-color-pink-7));
-  
-}
-
 .title {
   font-size: 34px;
   font-weight: 900;
@@ -29,7 +20,7 @@
   &::after {
     content: '';
     display: block;
-    background-color: var(--mantine-color-pink-filled);
+    background-color: var(--mantine-color-blue-filled);
     width: 45px;
     height: 2px;
     margin-top: var(--mantine-spacing-sm);

@@ -9,8 +9,4 @@ export default withBundleAnalyzer({
   eslint: {
     ignoreDuringBuilds: true,
   },
-  publicRuntimeConfig: {
-    // Will be available on both server and client
-    url: process.env.DIRECTUS_URL,
-  },
 });

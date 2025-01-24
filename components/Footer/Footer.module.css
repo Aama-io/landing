@@ -38,7 +38,6 @@
   .groups {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
   
     @media (max-width: $mantine-breakpoint-sm) {
       display: none;
@@ -55,8 +54,6 @@
     font-size: var(--mantine-font-size-sm);
     padding-top: 3px;
     padding-bottom: 3px;
-    text-decoration: none;
-    margin-right: 15px;
   
     &:hover {
       text-decoration: underline;
