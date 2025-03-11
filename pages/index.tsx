@@ -5,6 +5,7 @@ import { ProblemSolution } from '../components/ProblemSolution/ProblemSolution';
 import { Features } from '../components/Features/Features';
 import { Footer } from '../components/Footer/Footer';
 import { Tokenomics } from '@/components/Tokenomics/Tokenomics';
+import { CTA } from '@/components/CTA/CTA';
 
 export default function HomePage() {
   return (
@@ -16,7 +17,7 @@ export default function HomePage() {
       <AppShell.Main>
         <Hero />
         <ProblemSolution />
-        <Tokenomics />
+        <CTA />
         <Footer />
       </AppShell.Main>
     </AppShell>

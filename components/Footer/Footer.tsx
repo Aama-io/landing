@@ -26,9 +26,6 @@ export function Footer() {
               <Link href="/docs" className={classes.link}>
                 Documentation
               </Link>
-              <Link href="/contact" className={classes.link}>
-                Support
-              </Link>
             </div>
 
             <div className={classes.group}>
@@ -38,9 +35,6 @@ export function Footer() {
               </Link>
               <Link href="/contact" className={classes.link}>
                 Contact
-              </Link>
-              <Link href="/careers" className={classes.link}>
-                Careers
               </Link>
               <Link href="/blog" className={classes.link}>
                 Blog
@@ -55,9 +49,6 @@ export function Footer() {
               <Link href="/terms" className={classes.link}>
                 Terms of Use
               </Link>
-              <Link href="/security" className={classes.link}>
-                Security
-              </Link>
               <Link href="/compliance" className={classes.link}>
                 Compliance
               </Link>
@@ -71,15 +62,9 @@ export function Footer() {
           </Text>
 
           <Group gap={20} className={classes.social}>
-            <Link href="https://twitter.com/aamaio" className={classes.socialLink}>
-              Twitter
-            </Link>
-            <Link href="https://linkedin.com/company/aamaio" className={classes.socialLink}>
-              LinkedIn
-            </Link>
-            <Link href="https://github.com/aamaio" className={classes.socialLink}>
-              GitHub
-            </Link>
+            <Text size="sm" c="dimmed">
+              Made with ❤️ by Uxqode
+            </Text>
           </Group>
         </div>
       </Container>
