@@ -72,9 +72,9 @@ export function Product() {
                       <IconTrendingUp size={24} />
                     </ThemeIcon>
                     <div>
-                      <Text fz="lg" fw={700} className={classes.impactTitle}>Market Leadership in Nepal</Text>
-                      <Text fz="sm" c="dimmed">Powering 80% of Nepal's mutual fund industry</Text>
-                      <Text fz="sm" c="dimmed" mt={5}>$500M+ Assets Under Management</Text>
+                      <Text fz="lg" fw={700} className={classes.impactTitle}>Live and Indudstry tested platforms</Text>
+                      <Text fz="sm" c="dimmed">Powering top fund managers in mutual fund industry</Text>
+                      <Text fz="sm" c="dimmed" mt={5}>$50M+ Assets Under Management</Text>
                     </div>
                   </Group>
                 </Card>
@@ -97,28 +97,6 @@ export function Product() {
                       <Text fz="lg" fw={700} className={classes.impactTitle}>Operational Excellence</Text>
                       <Text fz="sm" c="dimmed">NAV calculation reduced to 30 minutes</Text>
                       <Text fz="sm" c="dimmed" mt={5}>99.9% reconciliation accuracy</Text>
-                    </div>
-                  </Group>
-                </Card>
-              </motion.div>
-            </Grid.Col>
-
-            <Grid.Col span={{ base: 12, md: 6 }}>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Card className={classes.impactCard}>
-                  <Group>
-                    <ThemeIcon size={48} radius="md" className={classes.impactIcon}>
-                      <IconUsers size={24} />
-                    </ThemeIcon>
-                    <div>
-                      <Text fz="lg" fw={700} className={classes.impactTitle}>Growing Partner Network</Text>
-                      <Text fz="sm" c="dimmed">5 active fund managers + 4 in pipeline</Text>
-                      <Text fz="sm" c="dimmed" mt={5}>15+ mutual fund schemes managed</Text>
                     </div>
                   </Group>
                 </Card>
@@ -176,18 +154,6 @@ export function Product() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Card className={classes.impactCard}>
-                  <Group>
-                    <ThemeIcon size={48} radius="md" className={classes.impactIcon}>
-                      <IconCertificate size={24} />
-                    </ThemeIcon>
-                    <div>
-                      <Text fz="lg" fw={700} className={classes.impactTitle}>Regulatory Recognition</Text>
-                      <Text fz="sm" c="dimmed">SEBON approved in Nepal</Text>
-                      <Text fz="sm" c="dimmed" mt={5}>Singapore MAS compliance ready</Text>
-                    </div>
-                  </Group>
-                </Card>
               </motion.div>
             </Grid.Col>
           </Grid>

@@ -12,38 +12,41 @@ import classes from './ProblemSolution.module.css';
 export function ProblemSolution() {
   const platforms = [
     {
-      title: 'Fund Management Platform',
+      title: 'Aama Fund Management Platform',
       description: 'Complete suite of tools for both on-chain and off-chain fund operations',
       features: [
-        'Traditional fund management tools',
-        'Blockchain-based asset tracking',
-        'Automated compliance systems',
-        'Real-time portfolio analytics',
-        'Multi-currency support'
+       'Modern fund management tools',
+       'Back office automation',
+       'Automated compliance systems',
+       'Real-time portfolio analytics',
+       'IFRS compliant accounting and reporting'
       ],
       icon: IconChartBar,
     },
     {
-      title: 'Investor Platform',
-      description: 'Seamless investment experience for your clients',
+      title: 'Aama Investor Management Platform',
+      description: 'Investor platform for retail and institutional investors',
       features: [
+        'SIP and lump sum investments',
         'Digital onboarding process',
         'Real-time portfolio tracking',
         'Automated reporting',
-        'Secure communication channel',
-        'Mobile-first interface'
+        'Payment methods of choice',
+        'Mobile app for investors'
       ],
       icon: IconUsers,
     },
     {
-      title: 'Tokenization Platform',
-      description: 'Convert traditional assets into digital tokens',
+      title: 'On-chain Fund Management (Coming Soon)',
+      description: 'Tokenize your fund and manage it on the blockchain',
       features: [
-        'Asset tokenization',
-        'Smart contract deployment',
+        'Tokenization of fund assets',
+        'Smart contract-based fund management',
+        'On-chain NAV calculation and distribution',
         'Regulatory compliance',
-        'Secondary market support',
-        'Fractional ownership'
+        'On-chain trading and secondary market',
+        'Fractional ownership',
+       
       ],
       icon: IconCoin,
     },
