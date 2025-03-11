@@ -1,51 +1,79 @@
-.wrapper {
+.root {
   position: relative;
-  padding-top: 180px;
-  padding-bottom: 130px;
-  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  padding-top: rem(120px);
+  padding-bottom: rem(80px);
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  overflow: hidden;
+}
 
-  @media (max-width: $mantine-breakpoint-xs) {
-    padding-top: 80px;
-    padding-bottom: 50px;
-  }
+.wrapper {
+  max-width: rem(800px);
+  margin: 0 auto;
 }
 
 .inner {
   position: relative;
   z-index: 1;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem(40px);
 
-.title {
-  font-weight: 800;
-  font-size: 40px;
-  letter-spacing: -1px;
-  padding-left: var(--mantine-spacing-md);
-  padding-right: var(--mantine-spacing-md);
-  margin-bottom: var(--mantine-spacing-xs);
-  text-align: center;
-  
-  @media (max-width: $mantine-breakpoint-xs) {
-    font-size: 28px;
-    text-align: left;
+  @media (max-width: $mantine-breakpoint-md) {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
+.content {
+  max-width: rem(600px);
+  margin-right: rem(40px);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+
+.title {
+  font-size: rem(56px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(40px);
+  }
+}
+
+.highlight {
+  background: linear-gradient(45deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .description {
-  text-align: center;
+  font-size: rem(20px);
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
+  margin-top: rem(24px);
+  max-width: rem(500px);
 
-  @media (max-width: $mantine-breakpoint-xs) {
-    font-size: var(--mantine-font-size-md);
-    text-align: left;
+  @media (max-width: $mantine-breakpoint-md) {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 .controls {
-  margin-top: calc(var(--mantine-spacing-xl) * 1.5);
+  margin-top: rem(36px);
   display: flex;
-  justify-content: center;
-  padding-left: var(--mantine-spacing-md);
-  padding-right: var(--mantine-spacing-md);
+  gap: rem(20px);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    justify-content: center;
+  }
 
   @media (max-width: $mantine-breakpoint-xs) {
     flex-direction: column;
@@ -53,18 +81,142 @@
 }
 
 .control {
-  height: 42px;
-  font-size: var(--mantine-font-size-md);
+  min-width: rem(200px);
+  height: rem(54px);
+  font-size: rem(16px);
+}
 
-  &:not(:first-of-type) {
-    margin-left: var(--mantine-spacing-md);
+.stats {
+  margin-top: rem(60px);
+  padding-top: rem(40px);
+  border-top: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
+}
+
+.statsInner {
+  display: flex;
+  gap: rem(80px);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    justify-content: center;
+    gap: rem(40px);
   }
 
   @media (max-width: $mantine-breakpoint-xs) {
-    &:not(:first-of-type) {
-      margin-top: var(--mantine-spacing-md);
-      margin-left: 0;
-    }
+    flex-direction: column;
+    gap: rem(20px);
   }
 }
+
+.statsTitle {
+  font-size: rem(14px);
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-3));
+  font-weight: 500;
+}
+
+.statsValue {
+  font-size: rem(32px);
+  font-weight: 800;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: rem(500px);
+  position: relative;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    display: none;
+  }
+}
+
+.illustrationContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gridBackground {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(var(--mantine-color-gray-3) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.3;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.floatingElements {
+  position: absolute;
+  inset: 0;
+}
+
+.floatingChart {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: rem(200px);
+  height: rem(120px);
+  background: linear-gradient(45deg, var(--mantine-color-blue-5), var(--mantine-color-cyan-5));
+  border-radius: var(--mantine-radius-md);
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floatingToken {
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  width: rem(100px);
+  height: rem(100px);
+  background: linear-gradient(135deg, var(--mantine-color-violet-5), var(--mantine-color-blue-5));
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: float 8s ease-in-out infinite;
+}
+
+.floatingGraph {
+  position: absolute;
+  bottom: 20%;
+  left: 30%;
+  width: rem(150px);
+  height: rem(80px);
+  background: linear-gradient(225deg, var(--mantine-color-cyan-5), var(--mantine-color-blue-5));
+  border-radius: var(--mantine-radius-md);
+  opacity: 0.8;
+  animation: float 7s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+[data-mantine-color-scheme="dark"] {
+  .gridBackground {
+    background-image: radial-gradient(var(--mantine-color-dark-4) 1px, transparent 1px);
+  }
+}
+
+/* Add to your public folder these SVG files:
+/public/ethereum-eth-logo.svg
+/public/polygon-matic-logo.svg
+/public/solana-sol-logo.svg
+/public/bnb-chain-logo.svg
+/public/avalanche-avax-logo.svg
+*/
 

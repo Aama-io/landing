@@ -1,0 +1,19 @@
+.wrapper {
+  padding: rem(80px) 0;
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+}
+
+.title {
+  margin-bottom: rem(50px);
+  font-size: rem(34px);
+  font-weight: 900;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(28px);
+  }
+}
+
+.accordion {
+  max-width: rem(800px);
+  margin: 0 auto;
+} 

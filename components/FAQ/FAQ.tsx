@@ -1,49 +1,56 @@
-import { Accordion, Container, Grid, Image, Title } from '@mantine/core';
+import { Container, Title, SimpleGrid, Text } from '@mantine/core';
 import classes from './FAQ.module.css';
 
-const faqs = [
+const faqData = [
   {
-    question: 'What is included in the boilerplate?',
-    answer: 'The boilerplate includes landing pages, authentication pages, reusable components, and a responsive design optimized for performance.',
+    question: 'What is AAMAs fund management platform?',
+    answer: 'AAMA is a comprehensive fund management platform that automates NAV calculations, compliance reporting, and investor management using blockchain technology. It streamlines operations for fund managers while providing transparency and efficiency.',
   },
   {
-    question: 'How can I customize the landing page?',
-    answer: 'You can easily customize the landing page by editing the prebuilt components and styles provided in the boilerplate.',
+    question: 'How does the automated NAV calculation work?',
+    answer: 'Our platform uses smart contracts and real-time data feeds to automatically calculate NAV, eliminating manual processes and reducing errors. The system updates continuously and provides instant reconciliation.',
   },
   {
-    question: 'Is the authentication system secure?',
-    answer: 'Yes, the authentication system is built using secure practices, including hashed passwords and session management.',
+    question: 'What types of funds can use the platform?',
+    answer: 'Our platform supports various fund types including mutual funds, hedge funds, and investment trusts. Its designed to be flexible and can accommodate different investment strategies and asset classes.',
   },
   {
-    question: 'Can I integrate third-party APIs?',
-    answer: 'Absolutely! The codebase is modular and designed to make it easy to integrate third-party APIs and services.',
+    question: 'How does the tokenization feature work?',
+    answer: 'Fund shares can be tokenized on multiple blockchains, enabling fractional ownership and improved liquidity. The process is compliant with regulatory requirements and includes built-in transfer restrictions.',
+  },
+  {
+    question: 'What security measures are in place?',
+    answer: 'We implement bank-grade security with multi-signature controls, regular audits, and encrypted data storage. Our platform undergoes continuous security testing and monitoring.',
+  },
+  {
+    question: 'How do you handle compliance requirements?',
+    answer: 'Our platform includes built-in compliance checks and automated reporting tools that adapt to various regulatory frameworks. We regularly update our compliance features to meet evolving requirements.',
   },
 ];
 
-export function Faq() {
+export function FAQ() {
   return (
-    <div className={classes.wrapper}>
-      <Container size="lg" id='faq'>
-        <Grid id="faq-grid" gutter={50}>
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Image src={'/image-faq.svg'} alt="Frequently Asked Questions" />
-          </Grid.Col>
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Title order={2} ta="left" className={classes.title}>
-              Frequently Asked Questions
-            </Title>
+    <Container size="lg" py="xl">
+      <Title ta="center" className={classes.title}>
+        Frequently Asked Questions
+      </Title>
+      
+      <Text c="dimmed" ta="center" mb="xl">
+        Everything you need to know about the platform
+      </Text>
 
-            <Accordion chevronPosition="right" variant="separated">
-              {faqs.map((faq, index) => (
-                <Accordion.Item className={classes.item} value={`faq-${index}`} key={index}>
-                  <Accordion.Control>{faq.question}</Accordion.Control>
-                  <Accordion.Panel>{faq.answer}</Accordion.Panel>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          </Grid.Col>
-        </Grid>
-      </Container>
-    </div>
+      <SimpleGrid cols={{ base: 1, md: 2 }} spacing="xl">
+        {faqData.map((item, index) => (
+          <div key={index} className={classes.item}>
+            <Text fw={500} size="lg" mb="xs">
+              {item.question}
+            </Text>
+            <Text size="sm" c="dimmed">
+              {item.answer}
+            </Text>
+          </div>
+        ))}
+      </SimpleGrid>
+    </Container>
   );
 }

@@ -1,0 +1,30 @@
+.wrapper {
+  padding: calc(var(--mantine-spacing-xl) * 2);
+  background-image: linear-gradient(
+    250deg,
+    var(--mantine-color-blue-7) 0%,
+    var(--mantine-color-blue-5) 100%
+  );
+}
+
+.inner {
+  max-width: rem(800px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  font-family: Greycliff CF, var(--mantine-font-family);
+  font-size: rem(36px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: var(--mantine-spacing-md);
+  color: var(--mantine-color-white);
+}
+
+.description {
+  color: var(--mantine-color-blue-0);
+  max-width: rem(600px);
+  margin: 0 auto;
+  font-size: rem(18px);
+} 

@@ -1,0 +1,25 @@
+.title {
+  font-family: 'Greycliff CF', var(--mantine-font-family);
+  font-size: rem(36px);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--mantine-color-dark-7);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(28px);
+  }
+}
+
+.card {
+  border: rem(1px) solid var(--mantine-color-gray-2);
+  background-color: var(--mantine-color-white);
+  transition: transform 200ms ease;
+
+  @mixin hover {
+    transform: translateY(-5px);
+  }
+}
+
+.icon {
+  color: var(--mantine-color-blue-filled);
+} 

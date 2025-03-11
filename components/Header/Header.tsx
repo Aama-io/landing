@@ -1,122 +1,89 @@
-import Link from 'next/link';
+import { useState } from 'react';
 import {
-  IconBook,
-  IconChartPie3,
-  IconChevronDown,
-  IconCode,
-  IconCoin,
-  IconFingerprint,
-  IconNotification,
-} from '@tabler/icons-react';
-import {
-  Anchor,
-  Box,
-  Burger,
-  Button,
-  Center,
-  Collapse,
-  Divider,
-  Drawer,
+  Container,
   Group,
-  HoverCard,
-  ScrollArea,
-  SimpleGrid,
+  Burger,
+  Drawer,
+  Stack,
+  Button,
   Text,
-  ThemeIcon,
-  UnstyledButton,
-  useMantineTheme,
+  useMantineColorScheme,
+  useComputedColorScheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { MantineLogo } from '@mantinex/mantine-logo';
+import { IconSun, IconMoon } from '@tabler/icons-react';
+import Link from 'next/link';
 import { ActionToggle } from '../ActionToggle/ActionToggle';
 import classes from './Header.module.css';
 
+const links = [
+  { link: '/', label: 'Home' },
+  { link: '/about', label: 'About' },
+  { link: '/pricing', label: 'Pricing' },
+  { link: '/contact', label: 'Contact' },
+];
+
 export function Header() {
-  const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
-  const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
-  const theme = useMantineTheme();
+  const [opened, { toggle, close }] = useDisclosure(false);
+  const { setColorScheme } = useMantineColorScheme();
+  const computedColorScheme = useComputedColorScheme('light');
 
   return (
-    <Box>
-      <header className={classes.header}>
-        <Group justify="space-between" h="100%">
-          <Anchor component={Link} href="/" className={classes.link}>
-            <MantineLogo size={30} />
-          </Anchor>
+    <header className={classes.header}>
+      <Container size="lg">
+        <div className={classes.inner}>
+          <Link href="/" className={classes.logo}>
+            <Text fw={700} size="xl">AAMA</Text>
+          </Link>
 
-          <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="/" className={classes.link}>
-              Home
-            </a>
-
-            <a href="#features" className={classes.link}>
-              Features
-            </a>
-            <a href="#pricing" className={classes.link}>
-              Pricing
-            </a>
-            <a href="#faq" className={classes.link}>
-              FAQ
-            </a>
-            <a href="#contact" className={classes.link}>
-              Contact
-            </a>
+          <Group gap={40} visibleFrom="xs">
+            {links.map((link) => (
+              <Link
+                key={link.label}
+                href={link.link}
+                className={classes.link}
+              >
+                {link.label}
+              </Link>
+            ))}
           </Group>
 
-          <Group visibleFrom="sm">
+          <Group visibleFrom="xs">
             <ActionToggle />
-            <Button variant="default" component={Link} href="/auth/login">
-              Log in
-            </Button>
-            <Button component={Link} href="/auth/register">
-              Sign up
-            </Button>
+            <Button>Launch App</Button>
           </Group>
 
-          <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
-        </Group>
-      </header>
+          <Burger opened={opened} onClick={toggle} hiddenFrom="xs" />
+        </div>
+      </Container>
 
       <Drawer
-        opened={drawerOpened}
-        onClose={closeDrawer}
+        opened={opened}
+        onClose={close}
         size="100%"
         padding="md"
-        hiddenFrom="sm"
+        hiddenFrom="xs"
         zIndex={1000000}
       >
-        <ScrollArea h="calc(100vh - 80px" mx="-md">
-          <Divider my="sm" />
-
-          <a href="/" className={classes.link}>
-            Home
-          </a>
-          <a href="#features" className={classes.link}>
-            Features
-          </a>
-          <a href="#pricing" className={classes.link}>
-            Pricing
-          </a>
-          <a href="#faq" className={classes.link}>
-            FAQ
-          </a>
-          <a href="#contact" className={classes.link}>
-            Contact
-          </a>
-
-          <Divider my="sm" />
-
-          <Group justify="center" grow pb="xl" px="md">
+        <Stack gap="lg">
+          {links.map((link) => (
+            <Link
+              key={link.label}
+              href={link.link}
+              className={classes.drawerLink}
+              onClick={close}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Group justify="space-between" align="center">
             <ActionToggle />
-            <Button variant="default" component={Link} href="/auth/login">
-              Log in
-            </Button>
-            <Button component={Link} href="/auth/register">
-              Sign up
+            <Button fullWidth onClick={close}>
+              Launch App
             </Button>
           </Group>
-        </ScrollArea>
+        </Stack>
       </Drawer>
-    </Box>
+    </header>
   );
 }

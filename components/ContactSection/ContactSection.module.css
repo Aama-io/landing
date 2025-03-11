@@ -1,0 +1,40 @@
+.wrapper {
+  padding: rem(80px) 0;
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.title {
+  font-size: rem(34px);
+  font-weight: 900;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(28px);
+  }
+}
+
+.description {
+  max-width: rem(300px);
+  color: var(--mantine-color-dimmed);
+}
+
+.formCard {
+  padding: var(--mantine-spacing-xl);
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+}
+
+.input {
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+}
+
+.inputLabel {
+  font-size: rem(14px);
+  font-weight: 500;
+}
+
+.cardTitle {
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.cardDescription {
+  color: var(--mantine-color-dimmed);
+} 

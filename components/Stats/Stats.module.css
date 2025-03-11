@@ -1,0 +1,31 @@
+.wrapper {
+  padding: var(--mantine-spacing-xl) 0;
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-8));
+}
+
+.stat {
+  text-align: center;
+  padding: var(--mantine-spacing-xl);
+  border-radius: var(--mantine-radius-md);
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  transition: transform 200ms ease;
+
+  @mixin hover {
+    transform: translateY(-5px);
+  }
+}
+
+.value {
+  font-size: rem(36px);
+  font-weight: 700;
+  font-family: Greycliff CF, var(--mantine-font-family);
+  line-height: 1;
+  color: var(--mantine-color-blue-6);
+}
+
+.label {
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-1));
+  margin-top: rem(8px);
+} 

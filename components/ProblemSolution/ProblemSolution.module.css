@@ -1,0 +1,76 @@
+.wrapper {
+  padding: rem(80px) 0;
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.header {
+  text-align: center;
+  max-width: rem(800px);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: rem(34px);
+  font-weight: 900;
+  line-height: 1.1;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(28px);
+  }
+}
+
+.description {
+  margin-top: var(--mantine-spacing-md);
+  font-size: rem(18px);
+  color: var(--mantine-color-dimmed);
+}
+
+.platformCard {
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  height: 100%;
+  padding: var(--mantine-spacing-xl);
+  transition: transform 200ms ease;
+  display: flex;
+  flex-direction: column;
+
+  @mixin hover {
+    transform: translateY(-5px);
+  }
+}
+
+.benefitCard {
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  height: 100%;
+  padding: var(--mantine-spacing-xl);
+  transition: transform 200ms ease;
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+
+  @mixin hover {
+    transform: translateY(-5px);
+  }
+}
+
+.icon {
+  margin-bottom: var(--mantine-spacing-md);
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: var(--mantine-spacing-md) 0;
+  
+  li {
+    padding: rem(4px) 0;
+    font-size: rem(14px);
+    color: var(--mantine-color-dimmed);
+    
+    &::before {
+      content: "•";
+      color: var(--mantine-color-blue-6);
+      font-weight: bold;
+      display: inline-block;
+      width: rem(15px);
+      margin-left: rem(-15px);
+    }
+  }
+} 

@@ -1,101 +1,163 @@
-import React from 'react';
-import { IconCheck } from '@tabler/icons-react';
 import {
+  Container,
+  Title,
+  Text,
+  Card,
+  Group,
   Badge,
   Button,
-  Card,
-  Container,
-  Grid,
-  Group,
   List,
-  rem,
-  Text,
   ThemeIcon,
-  Title,
+  SegmentedControl,
+  Stack,
+  Grid,
+  Paper,
 } from '@mantine/core';
+import { IconCheck, IconCircleCheck } from '@tabler/icons-react';
+import { useState } from 'react';
 import classes from './Pricing.module.css';
 
 const pricingData = [
   {
-    title: 'Free',
-    price: '$0/month',
-    description: 'For small teams getting started',
-    features: ['1 Project', 'Basic Support', '10GB Storage'],
-    buttonText: 'Get Started',
-    buttonColor: 'gray',
+    title: 'Starter',
+    price: '0.5%',
+    unit: 'of AUM p.a.',
+    description: 'For smaller fund managers',
+    subtitle: 'Commission on the sum of your management, performance, entry and exit fee.',
+    features: [
+      'On-chain paying agent',
+      'Tokenized shares',
+      'Fee calculation',
+      'Basic SIP automation',
+      '99 USDC setup fee'
+    ],
+    buttonText: 'Start now',
+    variant: 'light',
   },
   {
-    title: 'Pro',
-    price: '$29/month',
-    description: 'For growing businesses',
-    features: ['Unlimited Projects', 'Priority Support', '100GB Storage'],
-    buttonText: 'Upgrade Now',
-    buttonColor: 'blue',
+    title: 'Plus',
+    price: '0.3%',
+    unit: 'of AUM + $299/month',
+    description: 'For growing fund managers',
+    subtitle: 'Commission on the sum of your management, performance, entry and exit fee.',
+    features: [
+      'All Starter features',
+      'Discounted protocol fee (-40%)',
+      'Technical support',
+      'Custom branding',
+      'Advanced analytics'
+    ],
+    buttonText: 'Start now',
+    variant: 'filled',
+    highlight: true,
   },
   {
     title: 'Enterprise',
-    price: 'Custom Pricing',
-    description: 'For large organizations',
-    features: ['Advanced Features', 'Dedicated Support', 'Custom Storage'],
-    buttonText: 'Contact Sales',
-    buttonColor: 'gray',
-  },
+    price: 'Custom',
+    description: 'For larger fund managers',
+    subtitle: 'Full-service solution with custom requirements',
+    features: [
+      'All Plus features',
+      'NAV calculation agent',
+      'Custom domain',
+      'Custom chain support',
+      'Dedicated support'
+    ],
+    buttonText: 'Contact us',
+    variant: 'light',
+  }
 ];
 
-export default function PricingTable() {
+export function Pricing() {
+  const [billingPeriod, setBillingPeriod] = useState('monthly');
+
   return (
-    <div className={classes.wrapper}>
-    <Container size="lg" py="xl" id="pricing">
-      <Group justify="center">
-        <Badge variant="filled" size="lg">
-          Pricing plans
-        </Badge>
-      </Group>
+    <Container size="lg" py="xl">
+      <Stack align="center" mb={50}>
+        <Title order={2}>Choose your plan</Title>
+        <Text c="dimmed" ta="center" maw={600}>
+          Start managing your fund on-chain with our flexible pricing options
+        </Text>
+        
+        <SegmentedControl
+          value={billingPeriod}
+          onChange={setBillingPeriod}
+          data={[
+            { label: 'Monthly', value: 'monthly' },
+            { label: 'Yearly', value: 'yearly' }
+          ]}
+        />
+      </Stack>
 
-      <Title order={2} ta="center" className={classes.title} mt="sm">
-        We have you covered with plans for every budget
-      </Title>
-
-      <Text c="dimmed" className={classes.description} ta="center" mt="md"></Text>
-
-      <Grid mt={50}>
+      <Grid gutter="xl">
         {pricingData.map((plan) => (
-          <Grid.Col span={{ base: 12, sm: 6, md: 4 }} key={plan.title}>
-            <Card shadow="md" radius="md" padding="lg" withBorder>
-              <Group mb="md">
-                <Title order={3}>{plan.title}</Title>
-                <Badge size="lg" color={plan.buttonColor}>
-                  {plan.price}
+          <Grid.Col key={plan.title} span={{ base: 12, md: 4 }}>
+            <Card
+              shadow="sm"
+              padding="xl"
+              radius="md"
+              withBorder={plan.highlight}
+              className={plan.highlight ? classes.highlighted : ''}
+            >
+              {plan.highlight && (
+                <Badge
+                  variant="filled"
+                  size="lg"
+                  className={classes.badge}
+                  styles={{ root: { position: 'absolute', top: 15, right: 15 } }}
+                >
+                  Most Popular
                 </Badge>
-              </Group>
-              <Text c="dimmed" mb="md">
-                {plan.description}
-              </Text>
-              <List
-                spacing="xs"
-                size="sm"
-                center
-                icon={
-                  <ThemeIcon size={24} radius="xl" variant="light">
-                    <IconCheck style={{ width: rem(16), height: rem(16) }} />
-                  </ThemeIcon>
-                }
-                mb="lg"
-              >
-                {plan.features.map((feature) => (
-                  <List.Item key={feature}>
-                    <Text size="sm">{feature}</Text>
-                  </List.Item>
-                ))}
-              </List>
-              <Button color={plan.buttonColor} mb="xs" variant="">
-                {plan.buttonText}
-              </Button>
+              )}
+
+              <Stack gap="md">
+                <div>
+                  <Text fz="xl" fw={700}>
+                    {plan.title}
+                  </Text>
+                  <Group gap={5}>
+                    <Text fz={42} fw={900}>
+                      {plan.price}
+                    </Text>
+                    {plan.unit && (
+                      <Text fz="sm" c="dimmed">
+                        {plan.unit}
+                      </Text>
+                    )}
+                  </Group>
+                  <Text size="sm" c="dimmed">
+                    {plan.subtitle}
+                  </Text>
+                </div>
+
+                <List
+                  spacing="sm"
+                  size="sm"
+                  center
+                  icon={
+                    <ThemeIcon color="blue" size={24} radius="xl">
+                      <IconCheck size={16} />
+                    </ThemeIcon>
+                  }
+                >
+                  {plan.features.map((feature) => (
+                    <List.Item key={feature}>{feature}</List.Item>
+                  ))}
+                </List>
+
+                <Button
+                  fullWidth
+                  size="md"
+                  variant={plan.variant}
+                  mt="auto"
+                >
+                  {plan.buttonText}
+                </Button>
+              </Stack>
             </Card>
           </Grid.Col>
         ))}
       </Grid>
     </Container>
-    </div>
   );
 }

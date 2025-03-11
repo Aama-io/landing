@@ -1,29 +1,75 @@
-import cx from 'clsx';
-import { Box, Button, Container, Overlay, Text, Title } from '@mantine/core';
+import { Container, Title, Text, Button, Group, Stack } from '@mantine/core';
+import { IconArrowRight } from '@tabler/icons-react';
 import classes from './Hero.module.css';
 
 export function Hero() {
   return (
-    <Box>
-      <div className={classes.wrapper}>
+    <div className={classes.root}>
+      <Container size="lg">
         <div className={classes.inner}>
-          <Title className={classes.title}>NextJs + Mantine UI Boilerplate</Title>
+          <div className={classes.content}>
+            <Title className={classes.title}>
+              Modern{' '}
+              <Text component="span" className={classes.highlight} inherit>
+                Fund Management
+              </Text>{' '}
+              Platform
+            </Title>
 
-          <Container size={640}>
-            <Text size="lg" className={classes.description}>
-              Build fully functional landing page faster than ever with this boilerplate. Use your
-              favourite NextJS and Mantine UI to create a beautiful website.
+            <Text className={classes.description}>
+              Seamlessly manage both traditional and blockchain-based funds with our comprehensive platform. 
+              Built for modern fund managers who demand efficiency, security, and compliance.
             </Text>
-          </Container>
 
-          <div className={classes.controls}>
-            <Button className={cx(classes.control)}>Get started</Button>
-            <Button className={classes.control} variant="outline">
-              Live demo
-            </Button>
+            <Group className={classes.controls}>
+              <Button
+                size="xl"
+                className={classes.control}
+                rightSection={<IconArrowRight size={20} />}
+              >
+                Get Started
+              </Button>
+              
+              <Button
+                size="xl"
+                variant="outline"
+                className={classes.control}
+              >
+                Schedule Demo
+              </Button>
+            </Group>
+
+            <div className={classes.stats}>
+              <Group className={classes.statsInner}>
+                <div>
+                  <Text className={classes.statsValue}>$50M+</Text>
+                  <Text className={classes.statsTitle}>Assets Managed</Text>
+                </div>
+                <div>
+                  <Text className={classes.statsValue}>50+</Text>
+                  <Text className={classes.statsTitle}>Active Funds</Text>
+                </div>
+                <div>
+                  <Text className={classes.statsValue}>99.9%</Text>
+                  <Text className={classes.statsTitle}>Uptime</Text>
+                </div>
+              </Group>
+            </div>
+          </div>
+
+          <div className={classes.illustration}>
+            <div className={classes.illustrationContent}>
+              <div className={classes.gridBackground} />
+              <div className={classes.floatingElements}>
+                {/* Add floating elements like charts, tokens, etc. */}
+                <div className={classes.floatingChart} />
+                <div className={classes.floatingToken} />
+                <div className={classes.floatingGraph} />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </Box>
+      </Container>
+    </div>
   );
 }

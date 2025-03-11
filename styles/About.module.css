@@ -1,0 +1,39 @@
+.wrapper {
+  padding: rem(80px) 0;
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.title {
+  font-size: rem(44px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: rem(20px);
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(32px);
+  }
+}
+
+.description {
+  font-size: rem(20px);
+  color: var(--mantine-color-dimmed);
+  margin-bottom: rem(50px);
+}
+
+.content {
+  margin-top: rem(50px);
+}
+
+.textContent {
+  flex: 1;
+}
+
+.image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    display: none;
+  }
+} 

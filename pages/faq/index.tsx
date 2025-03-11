@@ -1,5 +1,5 @@
 import { Container, Title } from '@mantine/core';
-import { Faq } from '@/components/FAQ/FAQ';
+import { FAQ } from '@/components/FAQ/FAQ';
 import InnerLayout from '@/components/InnerLayout';
 
 export default function FAQPage() {
@@ -7,7 +7,7 @@ export default function FAQPage() {
     <InnerLayout>
       <Container style={{ marginTop: '50px' }}>
         <Title ta="center">Frequently Asked Questions</Title>
-        <Faq />
+        <FAQ />
       </Container>
     </InnerLayout>
   );

@@ -1,83 +1,101 @@
-import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
 import {
-  ActionIcon,
-  Button,
-  Container,
-  Group,
-  SimpleGrid,
   Text,
-  Textarea,
-  TextInput,
   Title,
+  SimpleGrid,
+  TextInput,
+  Textarea,
+  Button,
+  Group,
+  Container,
+  Paper,
 } from '@mantine/core';
-import { ContactIconsList } from './ContactIcons';
+import { IconMail, IconMessageCircle, IconBrandTwitter } from '@tabler/icons-react';
 import classes from './Contact.module.css';
 
 const social = [
-  { icon: IconBrandTwitter, label: 'Twitter' },
-  { icon: IconBrandYoutube, label: 'YouTube' },
-  { icon: IconBrandInstagram, label: 'Instagram' },
+  {
+    title: 'Email',
+    description: 'contact@aama.io',
+    icon: IconMail,
+  },
+  {
+    title: 'Twitter',
+    description: '@aama_io',
+    icon: IconBrandTwitter,
+  },
+  {
+    title: 'Telegram',
+    description: 't.me/aama_community',
+    icon: IconMessageCircle,
+  },
 ];
 
 export function Contact() {
-  const icons = social.map(({ icon: Icon, label }, index) => (
-    <ActionIcon
-      key={index}
-      size={28}
-      className={classes.social}
-      variant="transparent"
-      aria-label={label}
-    >
-      <Icon size={22} stroke={1.5} />
-    </ActionIcon>
-  ));
-
   return (
-    <Container size="lg" py="xl" id="contact">
-      <div className={classes.wrapper}>
+    <Container size="lg" py="xl">
+      <Paper withBorder radius="md" className={classes.wrapper}>
         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
-          {/* Left Section */}
           <div>
-            <Title className={classes.title}>Get in Touch</Title>
-            <Text className={classes.description} mt="sm" mb={30}>
-              Have questions about our boilerplate? Drop us a message and we’ll respond within 24
-              hours.
+            <Title className={classes.title}>Get in touch</Title>
+            <Text c="dimmed" className={classes.description}>
+              Leave your email and we'll get back to you within 24 hours
             </Text>
 
-            <ContactIconsList />
-
-            <Group mt="xl">{icons}</Group>
+            <SimpleGrid cols={{ base: 1, sm: 2 }} mt={30}>
+              {social.map((item) => (
+                <div key={item.title}>
+                  <Group wrap="nowrap">
+                    <item.icon
+                      size={24}
+                      className={classes.icon}
+                      stroke={1.5}
+                    />
+                    <div>
+                      <Text size="xs" c="dimmed">
+                        {item.title}
+                      </Text>
+                      <Text className={classes.socialLink}>
+                        {item.description}
+                      </Text>
+                    </div>
+                  </Group>
+                </div>
+              ))}
+            </SimpleGrid>
           </div>
 
-          {/* Right Section */}
           <div className={classes.form}>
             <TextInput
-              label="Your Email"
-              placeholder="you@example.com"
+              label="Your name"
+              placeholder="Your name"
               required
-              classNames={{ input: classes.input, label: classes.inputLabel }}
             />
             <TextInput
-              label="Full Name"
-              placeholder="Jane Doe"
+              label="Email"
+              placeholder="your@email.com"
+              required
               mt="md"
-              classNames={{ input: classes.input, label: classes.inputLabel }}
             />
             <Textarea
               required
-              label="Message"
-              placeholder="I’m interested in your boilerplate. Please tell me more."
+              label="Your message"
+              placeholder="I want to know more about..."
               minRows={4}
               mt="md"
-              classNames={{ input: classes.input, label: classes.inputLabel }}
             />
 
-            <Group p="right" mt="md">
-              <Button className={classes.control}>Submit</Button>
+            <Group justify="flex-end" mt="md">
+              <Button 
+                variant="gradient" 
+                gradient={{ from: 'blue', to: 'cyan' }}
+                size="md"
+              >
+                Send message
+              </Button>
             </Group>
           </div>
         </SimpleGrid>
-      </div>
+      </Paper>
     </Container>
   );
 }

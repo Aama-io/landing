@@ -1,0 +1,163 @@
+.wrapper {
+  padding: rem(80px) 0;
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.header {
+  text-align: center;
+  max-width: rem(800px);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: rem(44px);
+  font-weight: 800;
+  line-height: 1.1;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(32px);
+  }
+}
+
+.description {
+  font-size: rem(20px);
+  color: var(--mantine-color-dimmed);
+  margin-top: var(--mantine-spacing-md);
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(320px), 1fr));
+  gap: rem(30px);
+  align-items: stretch;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.planCard {
+  padding: var(--mantine-spacing-xl);
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+
+  &[data-highlighted] {
+    background: linear-gradient(
+      to bottom right,
+      var(--mantine-color-blue-1),
+      var(--mantine-color-blue-0)
+    );
+    border-color: var(--mantine-color-blue-5);
+    transform: scale(1.02);
+    box-shadow: var(--mantine-shadow-md);
+
+    @media (max-width: $mantine-breakpoint-sm) {
+      transform: none;
+    }
+  }
+
+  @mixin hover {
+    transform: translateY(-5px);
+    box-shadow: var(--mantine-shadow-md);
+
+    &[data-highlighted] {
+      transform: translateY(-5px) scale(1.02);
+    }
+
+    @media (max-width: $mantine-breakpoint-sm) {
+      transform: none;
+      &[data-highlighted] {
+        transform: none;
+      }
+    }
+  }
+}
+
+.planHeader {
+  margin-bottom: var(--mantine-spacing-xl);
+}
+
+.planTitle {
+  font-size: rem(24px);
+  font-weight: 700;
+}
+
+.planDescription {
+  font-size: rem(14px);
+  color: var(--mantine-color-dimmed);
+  margin-top: rem(5px);
+}
+
+.pricing {
+  margin-bottom: var(--mantine-spacing-xl);
+}
+
+.price {
+  font-size: rem(48px);
+  line-height: 1;
+  font-weight: 800;
+  color: light-dark(var(--mantine-color-gray-9), var(--mantine-color-white));
+}
+
+.planButton {
+  margin-top: auto;
+  margin-bottom: var(--mantine-spacing-xl);
+}
+
+.checkIcon {
+  color: var(--mantine-color-blue-6);
+}
+
+.enterpriseCard {
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  border: none;
+  padding: var(--mantine-spacing-xl);
+  margin-top: var(--mantine-spacing-xl);
+}
+
+.card {
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  height: 100%;
+
+  &[data-highlighted] {
+    border-color: var(--mantine-color-blue-6);
+    background-color: light-dark(var(--mantine-color-blue-0), var(--mantine-color-dark-6));
+  }
+}
+
+.cardHeader {
+  padding: var(--mantine-spacing-md) var(--mantine-spacing-md) 0;
+}
+
+.additionalCard {
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  border: none;
+}
+
+.link {
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 200ms ease;
+
+  @mixin hover {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  }
+}
+
+.drawerLink {
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-lg);
+  font-weight: 500;
+  text-decoration: none;
+  padding: var(--mantine-spacing-xs);
+
+  @mixin hover {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  }
+} 

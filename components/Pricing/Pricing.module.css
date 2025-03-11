@@ -28,3 +28,12 @@
     margin-right: auto;
   }
 }
+
+.highlighted {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+.highlighted:hover {
+  transform: scale(1.03);
+}

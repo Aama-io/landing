@@ -1,0 +1,41 @@
+.wrapper {
+  padding: calc(var(--mantine-spacing-xl) * 2) 0;
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.title {
+  font-family: Greycliff CF, var(--mantine-font-family);
+  font-size: rem(36px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: var(--mantine-spacing-md);
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.card {
+  height: 100%;
+  padding: var(--mantine-spacing-xl);
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  transition: transform 200ms ease;
+
+  @mixin hover {
+    transform: translateY(-5px);
+  }
+}
+
+.comparisonCard {
+  height: 100%;
+  padding: var(--mantine-spacing-xl);
+  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+}
+
+.list {
+  padding-left: var(--mantine-spacing-md);
+  margin-top: var(--mantine-spacing-md);
+  
+  li {
+    margin-bottom: var(--mantine-spacing-xs);
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-3));
+  }
+} 

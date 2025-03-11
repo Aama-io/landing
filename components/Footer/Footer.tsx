@@ -1,78 +1,87 @@
-import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from '@tabler/icons-react';
-import { ActionIcon, Container, Group, Text } from '@mantine/core';
-import { MantineLogo } from '@mantinex/mantine-logo';
+import { Container, Text, Group } from '@mantine/core';
+import Link from 'next/link';
 import classes from './Footer.module.css';
 
-const data = [
-  {
-    title: 'About',
-    links: [
-      { label: 'Features', link: '#' },
-      { label: 'Pricing', link: '#' },
-      { label: 'Support', link: '#' },
-      { label: 'Forums', link: '#' },
-    ],
-  },
-  {
-    title: 'Community',
-    links: [
-      { label: 'Join Discord', link: '#' },
-      { label: 'Follow on Twitter', link: '#' },
-      { label: 'Email newsletter', link: '#' },
-      { label: 'GitHub discussions', link: '#' },
-    ],
-  },
-];
-
 export function Footer() {
-  const groups = data.map((group) => {
-    const links = group.links.map((link, index) => (
-      <Text<'a'>
-        key={index}
-        className={classes.link}
-        component="a"
-        href={link.link}
-        onClick={(event) => event.preventDefault()}
-      >
-        {link.label}
-      </Text>
-    ));
-
-    return (
-      <div className={classes.wrapper} key={group.title}>
-        <Text className={classes.title}>{group.title}</Text>
-        {links}
-      </div>
-    );
-  });
-
   return (
     <footer className={classes.footer}>
-      <Container className={classes.inner}>
-        <div className={classes.logo}>
-          <MantineLogo size={24} />
-          <Text size="xs" c="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
-          </Text>
-        </div>
-        <div className={classes.groups}>{groups}</div>
-      </Container>
-      <Container className={classes.afterFooter}>
-        <Text c="dimmed" size="sm">
-          © 2024, All rights reserved.
-        </Text>
+      <Container size="lg">
+        <div className={classes.inner}>
+          <div className={classes.logoSection}>
+            <Text className={classes.logo}>AAMA.io</Text>
+            <Text size="sm" c="dimmed" mt="xs" maw={300}>
+              Modern fund management platform combining traditional finance with blockchain technology
+            </Text>
+          </div>
 
-        <Group gap={0} className={classes.social} justify="flex-end" wrap="nowrap">
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandTwitter size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandYoutube size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" color="gray" variant="subtle">
-            <IconBrandInstagram size={18} stroke={1.5} />
-          </ActionIcon>
-        </Group>
+          <div className={classes.groups}>
+            <div className={classes.group}>
+              <Text className={classes.groupTitle}>Product</Text>
+              <Link href="/pricing" className={classes.link}>
+                Pricing
+              </Link>
+              <Link href="/#features" className={classes.link}>
+                Features
+              </Link>
+              <Link href="/docs" className={classes.link}>
+                Documentation
+              </Link>
+              <Link href="/contact" className={classes.link}>
+                Support
+              </Link>
+            </div>
+
+            <div className={classes.group}>
+              <Text className={classes.groupTitle}>Company</Text>
+              <Link href="/about" className={classes.link}>
+                About
+              </Link>
+              <Link href="/contact" className={classes.link}>
+                Contact
+              </Link>
+              <Link href="/careers" className={classes.link}>
+                Careers
+              </Link>
+              <Link href="/blog" className={classes.link}>
+                Blog
+              </Link>
+            </div>
+
+            <div className={classes.group}>
+              <Text className={classes.groupTitle}>Legal</Text>
+              <Link href="/privacy" className={classes.link}>
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className={classes.link}>
+                Terms of Use
+              </Link>
+              <Link href="/security" className={classes.link}>
+                Security
+              </Link>
+              <Link href="/compliance" className={classes.link}>
+                Compliance
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className={classes.bottom}>
+          <Text size="sm" c="dimmed">
+            © 2024 AAMA.io. All rights reserved.
+          </Text>
+
+          <Group gap={20} className={classes.social}>
+            <Link href="https://twitter.com/aamaio" className={classes.socialLink}>
+              Twitter
+            </Link>
+            <Link href="https://linkedin.com/company/aamaio" className={classes.socialLink}>
+              LinkedIn
+            </Link>
+            <Link href="https://github.com/aamaio" className={classes.socialLink}>
+              GitHub
+            </Link>
+          </Group>
+        </div>
       </Container>
     </footer>
   );

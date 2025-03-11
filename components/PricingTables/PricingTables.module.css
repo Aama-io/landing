@@ -1,0 +1,40 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(300px), 1fr));
+  gap: rem(30px);
+}
+
+.card {
+  padding: var(--mantine-spacing-xl);
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  height: 100%;
+
+  &[data-highlighted] {
+    border-color: var(--mantine-color-blue-6);
+    background-color: light-dark(var(--mantine-color-blue-0), var(--mantine-color-dark-6));
+  }
+}
+
+.cardTitle {
+  font-family: 'Greycliff CF', var(--mantine-font-family);
+  line-height: 1;
+}
+
+.price {
+  font-size: rem(38px);
+  font-weight: 700;
+  font-family: 'Greycliff CF', var(--mantine-font-family);
+  line-height: 1;
+}
+
+.description {
+  font-size: var(--mantine-font-size-sm);
+  color: var(--mantine-color-dimmed);
+  margin-bottom: var(--mantine-spacing-xl);
+}
+
+.additionalCard {
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+  border: none;
+} 
