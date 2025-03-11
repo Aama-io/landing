@@ -1,10 +1,12 @@
 import { Container, Text, Title, Button, Group } from '@mantine/core';
 import classes from './CTA.module.css';
+import Link from 'next/link';
 
 export function CTA() {
   return (
     <div className={classes.wrapper}>
-      <Container size="lg">
+      <div className={classes.backgroundEffect} />
+      <Container size="lg" pos="relative">
         <div className={classes.inner}>
           <Title className={classes.title}>
             Ready to revolutionize your fund management?
@@ -16,10 +18,22 @@ export function CTA() {
           </Text>
 
           <Group justify="center" mt={40}>
-            <Button size="xl" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }}>
+            <Button 
+              component={Link} 
+              href="/contact" 
+              size="lg" 
+              variant="white"
+              className={classes.primaryButton}
+            >
               Get Started Now
             </Button>
-            <Button size="xl" variant="white">
+            <Button 
+              component={Link} 
+              href="/contact" 
+              size="lg" 
+              variant="outline"
+              className={classes.secondaryButton}
+            >
               Schedule Demo
             </Button>
           </Group>

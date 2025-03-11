@@ -1,0 +1,78 @@
+.wrapper {
+  min-height: 100vh;
+  padding: rem(120px) 0;
+  background: light-dark(
+    linear-gradient(135deg, var(--mantine-color-gray-0) 0%, var(--mantine-color-blue-0) 100%),
+    var(--mantine-color-dark-8)
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add subtle animated background pattern */
+.wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, var(--mantine-color-blue-1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--mantine-color-blue-1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--mantine-color-blue-1) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--mantine-color-blue-1) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  opacity: 0.1;
+  animation: patternMove 20s linear infinite;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: rem(60px) rem(40px);
+  background: light-dark(
+    rgba(255, 255, 255, 0.8),
+    rgba(0, 0, 0, 0.3)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: var(--mantine-radius-lg);
+  border: 1px solid light-dark(
+    var(--mantine-color-gray-2),
+    var(--mantine-color-dark-4)
+  );
+  max-width: rem(600px);
+  margin: 0 auto;
+}
+
+.title {
+  font-size: rem(48px);
+  font-weight: 900;
+  text-align: center;
+  background: linear-gradient(45deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(36px);
+  }
+}
+
+.description {
+  font-size: rem(20px);
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
+  text-align: center;
+  max-width: rem(500px);
+  margin: 0 auto;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: rem(16px);
+  }
+}
+
+@keyframes patternMove {
+  0% {
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+  100% {
+    background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px;
+  }
+} 

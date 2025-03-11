@@ -13,7 +13,7 @@ export function SEO({
   description = 'AAMA is a cutting-edge fund management platform for mutual funds, hedge funds, and SIPs. The platform helps fund managers to create, manage, and track their funds with ease.',
   keywords = 'fund management, investment platform, mutual funds, hedge funds, SIP platform, automated trading',
   ogImage = '/og-image.jpg', // Make sure to add this image to your public folder
-  ogUrl = 'https://aama.finance', // Replace with your actual domain
+  ogUrl = 'https://aama.io', // Replace with your actual domain
 }: SEOProps) {
   const fullTitle = `${title} | AAMA`;
 
@@ -23,6 +23,7 @@ export function SEO({
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
+      <meta name="author" content="UXQode Pte Ltd" />
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
@@ -30,6 +31,7 @@ export function SEO({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:site_name" content="AAMA" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -37,11 +39,13 @@ export function SEO({
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
+      <meta name="twitter:creator" content="@uxqode" />
 
       {/* Additional SEO Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={ogUrl} />
+      <meta name="generator" content="UXQode Pte Ltd" />
 
       {/* Favicon */}
       <link rel="icon" href="/favicon.ico" />

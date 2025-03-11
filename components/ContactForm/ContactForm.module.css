@@ -1,0 +1,38 @@
+.form {
+  background: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
+  box-shadow: var(--mantine-shadow-md);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, var(--mantine-color-blue-6), var(--mantine-color-blue-4));
+  }
+}
+
+.formTitle {
+  font-size: rem(32px);
+  font-weight: 900;
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+}
+
+.submitButton {
+  min-width: rem(200px);
+  transition: transform 200ms ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.title {
+  margin-bottom: var(--mantine-spacing-md);
+  font-weight: 700;
+  font-size: rem(24px);
+} 
