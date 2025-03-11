@@ -8,13 +8,13 @@ const executives = [
     name: 'Sunil Chaulagain',
     role: 'Chief Executive Officer',
     image: '/team/sunil.png',
-    linkedin: 'https://linkedin.com/in/sunilchaulagain',
+    linkedin: 'https://www.linkedin.com/in/schaulagain',
   },
   {
     name: 'Prashant Chaulagain',
     role: 'Chief Technology Officer',
     image: '/team/prashant.png',
-    linkedin: 'https://linkedin.com/in/prashantchaulagain',
+    linkedin: 'https://linkedin.com/in/erprashant2018',
   },
 ];
 
@@ -23,7 +23,6 @@ const team = [
     name: 'Pragati Adhikari',
     role: 'Chief Marketing Officer',
     image: 'https://ui-avatars.com/api/?name=Pragati+Adhikari&size=400&background=e9ecef&color=000',
-    linkedin: '#',
   },
   {
     name: 'Chetana Adhikari',
@@ -62,7 +61,7 @@ const team = [
   }
 ];
 
-const TeamMember = ({ name, role, image, linkedin, index }: any) => (
+const TeamMember = ({ name, role, image, linkedin, index, isExecutive }: any) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     viewport={{ once: true }}
@@ -101,18 +100,20 @@ const TeamMember = ({ name, role, image, linkedin, index }: any) => (
       <Text fz="lg" c="dimmed">
         {role}
       </Text>
-      <Group gap={0} mt="xs">
-        <ActionIcon
-          className={classes.actionIcon}
-          variant="subtle"
-          component="a"
-          href={linkedin}
-          target="_blank"
-          size="xl"
-        >
-          <IconBrandLinkedin />
-        </ActionIcon>
-      </Group>
+      {linkedin && isExecutive && (
+        <Group gap={0} mt="xs">
+          <ActionIcon
+            className={classes.actionIcon}
+            variant="subtle"
+            component="a"
+            href={linkedin}
+            target="_blank"
+            size="xl"
+          >
+            <IconBrandLinkedin />
+          </ActionIcon>
+        </Group>
+      )}
     </Box>
   </motion.div>
 );
@@ -163,7 +164,7 @@ export function Team() {
           <Grid gutter="xl">
             {executives.map((member, index) => (
               <Grid.Col span={{ base: 12, xs: 6, md: 6 }} key={member.name}>
-                <TeamMember {...member} index={index} />
+                <TeamMember {...member} index={index} isExecutive={true} />
               </Grid.Col>
             ))}
           </Grid>
@@ -171,7 +172,7 @@ export function Team() {
           <Grid gutter="xl" mt={50}>
             {team.map((member, index) => (
               <Grid.Col span={{ base: 12, xs: 6, md: 3 }} key={member.name}>
-                <TeamMember {...member} index={index + 2} />
+                <TeamMember {...member} index={index + 2} isExecutive={false} />
               </Grid.Col>
             ))}
           </Grid>

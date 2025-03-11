@@ -3,7 +3,6 @@ import { Header } from '../components/Header/Header';
 import { AboutHero } from '../components/AboutHero/AboutHero';
 import { Team } from '../components/Team/Team';
 import { Footer } from '../components/Footer/Footer';
-import classes from '../styles/About.module.css';
 
 export default function AboutPage() {
   return (
