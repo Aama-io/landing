@@ -6,6 +6,7 @@ import { Features } from '../components/Features/Features';
 import { Footer } from '../components/Footer/Footer';
 import { Tokenomics } from '@/components/Tokenomics/Tokenomics';
 import { CTA } from '@/components/CTA/CTA';
+import { SEO } from '@/components/SEO/SEO';
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       </AppShell.Header>
 
       <AppShell.Main>
+        <SEO />
         <Hero />
         <ProblemSolution />
         <CTA />
