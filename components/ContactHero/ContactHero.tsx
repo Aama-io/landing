@@ -6,7 +6,7 @@ export function ContactHero() {
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" py="xl">
-        <Stack align="center" spacing="xl">
+        <Stack align="center" gap="xl">
           <Title className={classes.title}>Get in Touch</Title>
           <Text size="lg" c="dimmed" ta="center" maw={600}>
             Have questions about our fund management solutions? Our team is ready to assist you 24/7.

@@ -1,10 +1,11 @@
 import { AppShell } from '@mantine/core';
 import { Header } from '../components/Header/Header';
-import { AboutHero } from '../components/AboutHero/AboutHero';
-import { Team } from '../components/Team/Team';
+import { ProductHero } from '../components/ProductHero/ProductHero';
+import { Problems } from '../components/Problems/Problems';
+import { Product } from '../components/Product/Product';
 import { Footer } from '../components/Footer/Footer';
 
-export default function AboutPage() {
+export default function ProductPage() {
   return (
     <AppShell header={{ height: 60 }} padding={0}>
       <AppShell.Header>
@@ -12,10 +13,11 @@ export default function AboutPage() {
       </AppShell.Header>
 
       <AppShell.Main>
-        <AboutHero />
-        <Team />
+        <ProductHero />
+        <Problems />
+        <Product />
         <Footer />
       </AppShell.Main>
     </AppShell>
   );
-}
+} 

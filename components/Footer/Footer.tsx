@@ -23,8 +23,8 @@ export function Footer() {
               <Link href="/#features" className={classes.link}>
                 Features
               </Link>
-              <Link href="/docs" className={classes.link}>
-                Documentation
+              <Link href="/product" className={classes.link}>
+                Product
               </Link>
             </div>
 

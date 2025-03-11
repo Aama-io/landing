@@ -19,6 +19,7 @@ import classes from './Header.module.css';
 const links = [
   { link: '/', label: 'Home' },
   { link: '/about', label: 'About' },
+  { link: '/product', label: 'Product' },
   { link: '/pricing', label: 'Pricing' },
   { link: '/contact', label: 'Contact' },
 ];
@@ -36,7 +37,7 @@ export function Header() {
             <Text fw={700} size="xl">AAMA</Text>
           </Link>
 
-          <Group gap={40} visibleFrom="xs">
+          <Group gap={30} visibleFrom="xs">
             {links.map((link) => (
               <Link
                 key={link.label}
@@ -50,7 +51,7 @@ export function Header() {
 
           <Group visibleFrom="xs">
             <ActionToggle />
-            <Button>Launch App</Button>
+            <Button component={Link} href="/product">Launch App</Button>
           </Group>
 
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" />

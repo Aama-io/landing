@@ -45,11 +45,11 @@ export function ContactForm() {
       investmentStrategy: '',
     },
     validate: {
-      name: (value) => (value.trim().length < 2 ? 'Name must be at least 2 characters' : null),
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      phone: (value) => (value && !/^\+?[\d\s-]{8,}$/.test(value) ? 'Invalid phone number' : null),
-      message: (value) => (value.trim().length < 10 ? 'Message must be at least 10 characters' : null),
-      inquiryType: (value) => (!value ? 'Please select an inquiry type' : null),
+      name: (value: any) => (value.trim().length < 2 ? 'Name must be at least 2 characters' : null),
+      email: (value: any) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      phone: (value: any) => (value && !/^\+?[\d\s-]{8,}$/.test(value) ? 'Invalid phone number' : null),
+      message: (value: any) => (value.trim().length < 10 ? 'Message must be at least 10 characters' : null),
+      inquiryType: (value: any) => (!value ? 'Please select an inquiry type' : null),
     },
   });
 
@@ -89,7 +89,7 @@ export function ContactForm() {
         </Text>
 
         <form onSubmit={form.onSubmit(handleSubmit)}>
-          <Stack spacing="md">
+          <Stack>
             {status === 'success' && (
               <Notification icon={<IconCheck size={20} />} color="blue" title="Success!" onClose={() => setStatus(null)}>
                 Thank you for your message. We'll get back to you shortly.
