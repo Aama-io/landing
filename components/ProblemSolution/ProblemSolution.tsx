@@ -8,6 +8,7 @@ import {
   IconWorld 
 } from '@tabler/icons-react';
 import classes from './ProblemSolution.module.css';
+import Link from 'next/link';
 
 export function ProblemSolution() {
   const platforms = [
@@ -110,7 +111,7 @@ export function ProblemSolution() {
                 ))}
               </ul>
 
-              <Button variant="light" fullWidth mt="xl">
+              <Button component={Link} href="/product" variant="light" fullWidth mt="xl">
                 Learn More
               </Button>
             </Card>

@@ -1,6 +1,7 @@
 import { Container, Title, Text, Button, Group, Stack } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
 import classes from './Hero.module.css';
+import Link from 'next/link';
 
 export function Hero() {
   return (
@@ -23,6 +24,8 @@ export function Hero() {
 
             <Group className={classes.controls}>
               <Button
+                component={Link}
+                href="/contact"
                 size="xl"
                 className={classes.control}
                 rightSection={<IconArrowRight size={20} />}
@@ -31,6 +34,8 @@ export function Hero() {
               </Button>
               
               <Button
+               component={Link}
+                href="/contact"
                 size="xl"
                 variant="outline"
                 className={classes.control}
@@ -42,11 +47,11 @@ export function Hero() {
             <div className={classes.stats}>
               <Group className={classes.statsInner}>
                 <div>
-                  <Text className={classes.statsValue}>$50M+</Text>
+                  <Text className={classes.statsValue}>$30M+</Text>
                   <Text className={classes.statsTitle}>Assets Managed</Text>
                 </div>
                 <div>
-                  <Text className={classes.statsValue}>50+</Text>
+                  <Text className={classes.statsValue}>3+</Text>
                   <Text className={classes.statsTitle}>Active Funds</Text>
                 </div>
                 <div>
