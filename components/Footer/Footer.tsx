@@ -1,14 +1,23 @@
-import { Container, Text, Group, Anchor } from '@mantine/core';
+import { Container, Text, Group, Anchor, useComputedColorScheme } from '@mantine/core';
 import Link from 'next/link';
+import Image from 'next/image';
 import classes from './Footer.module.css';
 
 export function Footer() {
+  const computedColorScheme = useComputedColorScheme('light');
+  
   return (
     <footer className={classes.footer}>
       <Container size="lg">
         <div className={classes.inner}>
           <div className={classes.logoSection}>
-            <Text className={classes.logo}>AAMA.io</Text>
+            <div className={classes.logoImage}>
+              {computedColorScheme === 'dark' ? (
+                <Image src="/aama-logo-dark.svg" alt="AAMA.io" width={160} height={48} />
+              ) : (
+                <Image src="/aama-logo.svg" alt="AAMA.io" width={160} height={48} />
+              )}
+            </div>
             <Text size="sm" c="dimmed" mt="xs" maw={300}>
               Modern fund management platform combining traditional finance with blockchain technology
             </Text>

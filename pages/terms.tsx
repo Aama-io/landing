@@ -1,11 +1,17 @@
 import { AppShell, Container, Title, Text, List } from '@mantine/core';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { SEO } from '@/components/SEO/SEO';
 import classes from '../styles/Legal.module.css';
 
 export default function TermsOfUse() {
   return (
     <AppShell header={{ height: 60 }} padding={0}>
+      <SEO 
+        title="Terms of Use | AAMA"
+        description="AAMA.io's Terms of Use. Read our terms and conditions for using the AAMA fund management platform."
+        keywords="terms of use, terms and conditions, legal terms, AAMA terms, fund management terms"
+      />
       <AppShell.Header>
         <Header />
       </AppShell.Header>

@@ -1,0 +1,21 @@
+<svg width="240" height="70" viewBox="0 0 240 70" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark version of the simple text logo for AAMA.io -->
+  <style>
+    .logo-text { 
+      font-family: Arial, sans-serif; 
+      font-weight: 700;
+      fill: #66AAFF;
+    }
+    .domain {
+      font-family: Arial, sans-serif;
+      font-weight: 500;
+      fill: #FFFFFF;
+    }
+  </style>
+  
+  <!-- Main text -->
+  <text x="12" y="48" class="logo-text" font-size="48">AAMA</text>
+  
+  <!-- Domain extension -->
+  <text x="160" y="48" class="domain" font-size="34">.io</text>
+</svg> 

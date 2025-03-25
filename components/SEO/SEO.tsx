@@ -12,7 +12,7 @@ export function SEO({
   title = 'AAMA - Fund management platform',
   description = 'AAMA is a cutting-edge fund management platform for mutual funds, hedge funds, and SIPs. The platform helps fund managers to create, manage, and track their funds with ease.',
   keywords = 'fund management, investment platform, mutual funds, hedge funds, SIP platform, automated trading',
-  ogImage = '/og-image.jpg', // Make sure to add this image to your public folder
+  ogImage = '/product-investment-portal.png', // Using existing product image for OG
   ogUrl = 'https://aama.io', // Replace with your actual domain
 }: SEOProps) {
   const fullTitle = `${title} | AAMA`;
@@ -48,10 +48,9 @@ export function SEO({
       <meta name="generator" content="UXQode Pte Ltd" />
 
       {/* Favicon */}
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+      <link rel="alternate icon" href="/favicon.ico.svg" type="image/svg+xml" />
+      <link rel="apple-touch-icon" href="/favicon.svg" />
       <link rel="manifest" href="/site.webmanifest" />
     </Head>
   );

@@ -22,7 +22,11 @@ export default function HomePage() {
         </AppShell.Header>
 
         <AppShell.Main>
-          <SEO />
+          <SEO 
+            title="Fund Management Platform | AAMA"
+            description="AAMA.io is a comprehensive fund management platform that combines traditional finance with blockchain technology. Launch and manage mutual funds, VC/PE funds, REITs, and tokenized funds with ease."
+            keywords="fund management platform, mutual funds, private capital, REITs, tokenized funds, blockchain finance, fund-as-a-service"
+          />
           <Hero />
           <ProblemSolution />
           <Features />

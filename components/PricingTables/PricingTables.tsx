@@ -1,6 +1,7 @@
 import { Container, Card, Text, Group, Button, List, ThemeIcon, SegmentedControl, Stack, Badge, Tooltip, Box } from '@mantine/core';
 import { IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconClock } from '@tabler/icons-react';
 import { useState } from 'react';
+import Link from 'next/link';
 import classes from './PricingTables.module.css';
 
 const plans = [
@@ -153,15 +154,31 @@ export function PricingTables() {
                 </Group>
               </Box>
 
-              <Button
-                fullWidth
-                size="lg"
-                variant={plan.highlighted ? 'filled' : 'outline'}
-                rightSection={<IconArrowRight size={18} />}
-                className={classes.button}
-              >
-                {plan.buttonText}
-              </Button>
+              {plan.title === 'Enterprise' ? (
+                <Button
+                  component={Link}
+                  href="/contact"
+                  fullWidth
+                  size="lg"
+                  variant={plan.highlighted ? 'filled' : 'outline'}
+                  rightSection={<IconArrowRight size={18} />}
+                  className={classes.button}
+                >
+                  {plan.buttonText}
+                </Button>
+              ) : (
+                <Button
+                  component={Link}
+                  href="/contact"
+                  fullWidth
+                  size="lg"
+                  variant={plan.highlighted ? 'filled' : 'outline'}
+                  rightSection={<IconArrowRight size={18} />}
+                  className={classes.button}
+                >
+                  {plan.buttonText}
+                </Button>
+              )}
 
               <Text fw={500} mt={30} mb="xs" size="sm" className={classes.featuresTitle}>
                 What's included:
@@ -213,6 +230,8 @@ export function PricingTables() {
               </Group>
             </div>
             <Button 
+              component={Link}
+              href="/contact"
               variant="outline" 
               size="lg" 
               className={classes.additionalButton}

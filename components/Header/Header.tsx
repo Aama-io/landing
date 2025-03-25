@@ -13,6 +13,7 @@ import {
 import { useDisclosure } from '@mantine/hooks';
 import { IconSun, IconMoon } from '@tabler/icons-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ActionToggle } from '../ActionToggle/ActionToggle';
 import classes from './Header.module.css';
 
@@ -34,7 +35,11 @@ export function Header() {
       <Container size="lg">
         <div className={classes.inner}>
           <Link href="/" className={classes.logo}>
-            <Text fw={700} size="xl">AAMA</Text>
+            {computedColorScheme === 'dark' ? (
+              <Image src="/aama-logo-dark.svg" alt="AAMA.io" width={160} height={48} />
+            ) : (
+              <Image src="/aama-logo.svg" alt="AAMA.io" width={160} height={48} />
+            )}
           </Link>
 
           <Group gap={30} visibleFrom="xs">

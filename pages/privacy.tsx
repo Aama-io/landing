@@ -1,11 +1,17 @@
 import { AppShell, Container, Title, Text, List } from '@mantine/core';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { SEO } from '@/components/SEO/SEO';
 import classes from '../styles/Legal.module.css';
 
 export default function PrivacyPolicy() {
   return (
     <AppShell header={{ height: 60 }} padding={0}>
+      <SEO 
+        title="Privacy Policy | AAMA"
+        description="AAMA.io's Privacy Policy. Learn how we collect, use, and protect your personal information on our fund management platform."
+        keywords="privacy policy, data protection, personal information, AAMA privacy, data security, fund management privacy"
+      />
       <AppShell.Header>
         <Header />
       </AppShell.Header>
