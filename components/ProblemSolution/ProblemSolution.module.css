@@ -1,57 +1,159 @@
 .wrapper {
-  padding: rem(80px) 0;
-  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  padding: rem(120px) 0;
+  position: relative;
+  background-color: white;
+  overflow: hidden;
+  
+  /* Add subtle grid pattern */
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+  }
 }
 
 .header {
   text-align: center;
   max-width: rem(800px);
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .title {
-  font-size: rem(34px);
+  font-size: rem(42px);
   font-weight: 900;
   line-height: 1.1;
+  background: linear-gradient(135deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-indigo-9) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 
   @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(28px);
+    font-size: rem(32px);
   }
 }
 
 .description {
   margin-top: var(--mantine-spacing-md);
   font-size: rem(18px);
-  color: var(--mantine-color-dimmed);
+  color: var(--mantine-color-gray-7);
 }
 
 .platformCard {
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  background-color: white;
   height: 100%;
-  padding: var(--mantine-spacing-xl);
-  transition: transform 200ms ease;
+  padding: 0;
+  border-radius: rem(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 400ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid var(--mantine-color-gray-1);
+  position: relative;
   display: flex;
   flex-direction: column;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  overflow: hidden;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
 
-  @mixin hover {
-    transform: translateY(-5px);
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+.cardContent {
+  padding: var(--mantine-spacing-xl);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.learnMoreButton {
+  color: var(--mantine-color-blue-6);
+  align-self: flex-start;
+  margin-top: auto;
+  transition: transform 200ms ease;
+  
+  &:hover {
+    background-color: var(--mantine-color-blue-0);
+    transform: translateX(5px);
   }
 }
 
 .benefitCard {
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
+  background-color: white;
   height: 100%;
   padding: var(--mantine-spacing-xl);
-  transition: transform 200ms ease;
-  border: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
-
-  @mixin hover {
-    transform: translateY(-5px);
+  border-radius: rem(16px);
+  transition: all 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--mantine-color-gray-1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--mantine-color-blue-5) 0%, var(--mantine-color-indigo-7) 100%);
+    opacity: 0;
+    transition: opacity 200ms ease;
+  }
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    
+    &::before {
+      opacity: 1;
+    }
   }
 }
 
 .icon {
+  background: linear-gradient(135deg, var(--mantine-color-blue-5) 0%, var(--mantine-color-indigo-7) 100%);
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   margin-bottom: var(--mantine-spacing-md);
+  transition: transform 200ms ease;
+  
+  .platformCard:hover & {
+    transform: scale(1.1);
+  }
 }
 
 .featuresList {
@@ -60,17 +162,32 @@
   margin: var(--mantine-spacing-md) 0;
   
   li {
-    padding: rem(4px) 0;
+    position: relative;
+    padding: rem(8px) 0 rem(8px) rem(25px);
     font-size: rem(14px);
-    color: var(--mantine-color-dimmed);
+    color: var(--mantine-color-gray-7);
+    transition: transform 200ms ease, color 200ms ease;
+    
+    &:hover {
+      transform: translateX(5px);
+      color: var(--mantine-color-blue-6);
+    }
     
     &::before {
-      content: "•";
-      color: var(--mantine-color-blue-6);
-      font-weight: bold;
-      display: inline-block;
-      width: rem(15px);
-      margin-left: rem(-15px);
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 14px;
+      height: 14px;
+      background-color: var(--mantine-color-blue-0);
+      border-radius: 50%;
+      border: 2px solid var(--mantine-color-blue-5);
+      transition: background-color 200ms ease;
+    }
+    
+    &:hover::before {
+      background-color: var(--mantine-color-blue-5);
     }
   }
 } 

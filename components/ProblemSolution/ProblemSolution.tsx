@@ -1,12 +1,15 @@
-import { Container, Title, Text, SimpleGrid, Card, ThemeIcon, Button } from '@mantine/core';
+import { Container, Title, Text, SimpleGrid, Card, ThemeIcon, Button, Group, Paper } from '@mantine/core';
 import { 
   IconServer, 
   IconUsers, 
   IconCoin, 
   IconChartBar, 
   IconShield, 
-  IconWorld 
+  IconWorld,
+  IconCheck,
+  IconArrowRight
 } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
 import classes from './ProblemSolution.module.css';
 import Link from 'next/link';
 
@@ -74,7 +77,13 @@ export function ProblemSolution() {
   return (
     <div className={classes.wrapper}>
       <Container size="lg">
-        <div className={classes.header}>
+        <motion.div 
+          className={classes.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <Title className={classes.title}>
             Comprehensive Fund Management Solutions
           </Title>
@@ -82,70 +91,121 @@ export function ProblemSolution() {
             AAMA.io provides integrated platforms for modern fund management,
             combining traditional finance with blockchain technology
           </Text>
-        </div>
+        </motion.div>
 
-        <SimpleGrid cols={{ base: 1, md: 3 }} spacing={30} mt={50}>
+        <SimpleGrid cols={{ base: 1, md: 3 }} spacing={40} mt={60}>
           {platforms.map((platform, index) => (
-            <Card key={index} className={classes.platformCard}>
-              <ThemeIcon
-                size={40}
-                radius="md"
-                variant="light"
-                color="blue"
-                className={classes.icon}
-              >
-                <platform.icon size={24} />
-              </ThemeIcon>
-              
-              <Text size="lg" fw={700} mt="md">
-                {platform.title}
-              </Text>
-              
-              <Text size="sm" c="dimmed" mt="sm">
-                {platform.description}
-              </Text>
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.15,
+                ease: [0.25, 0.1, 0.25, 1.0]
+              }}
+              viewport={{ once: true }}
+            >
+              <Card className={classes.platformCard} withBorder={false} padding={0}>
+                <motion.div 
+                  className={classes.cardContent}
+                  whileHover={{ scale: 1.02, y: -10 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                >
+                  <ThemeIcon
+                    size={60}
+                    radius="xl"
+                    className={classes.icon}
+                  >
+                    <platform.icon size={30} />
+                  </ThemeIcon>
+                  
+                  <Title order={3} mt="md">
+                    {platform.title}
+                  </Title>
+                  
+                  <Text size="md" c="dimmed" mt="sm" mb="md">
+                    {platform.description}
+                  </Text>
 
-              <ul className={classes.featuresList}>
-                {platform.features.map((feature, idx) => (
-                  <li key={idx}>{feature}</li>
-                ))}
-              </ul>
+                  <div className={classes.featuresList}>
+                    {platform.features.map((feature, idx) => (
+                      <motion.li
+                        key={idx}
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ 
+                          duration: 0.3, 
+                          delay: 0.3 + (index * 0.1) + (idx * 0.05)
+                        }}
+                        viewport={{ once: true }}
+                      >
+                        {feature}
+                      </motion.li>
+                    ))}
+                  </div>
 
-              <Button component={Link} href="/product" variant="light" fullWidth mt="xl">
-                Learn More
-              </Button>
-            </Card>
+                  <Button 
+                    component={Link} 
+                    href="/product" 
+                    variant="light" 
+                    rightSection={<IconArrowRight size={16} />}
+                    className={classes.learnMoreButton} 
+                    mt="xl"
+                  >
+                    Learn More
+                  </Button>
+                </motion.div>
+              </Card>
+            </motion.div>
           ))}
         </SimpleGrid>
 
-        <div className={classes.header} style={{ marginTop: 80 }}>
+        <motion.div 
+          className={classes.header}
+          style={{ marginTop: 100 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <Title className={classes.title} order={2}>
             Why Choose AAMA.io
           </Title>
           <Text className={classes.description}>
             Future-proof your fund management with our comprehensive solution
           </Text>
-        </div>
+        </motion.div>
 
-        <SimpleGrid cols={{ base: 1, md: 3 }} spacing={30} mt={50}>
+        <SimpleGrid cols={{ base: 1, md: 3 }} spacing={40} mt={60}>
           {benefits.map((benefit, index) => (
-            <Card key={index} className={classes.benefitCard}>
-              <ThemeIcon
-                size={40}
-                radius="md"
-                variant="light"
-                color="blue"
-                className={classes.icon}
-              >
-                <benefit.icon size={24} />
-              </ThemeIcon>
-              <Text size="lg" fw={500} mt="md">
-                {benefit.title}
-              </Text>
-              <Text size="sm" c="dimmed" mt="sm">
-                {benefit.description}
-              </Text>
-            </Card>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: index * 0.1,
+                ease: "easeOut"
+              }}
+              viewport={{ once: true }}
+            >
+              <Card key={index} className={classes.benefitCard}>
+                <ThemeIcon
+                  size={60}
+                  radius="xl"
+                  className={classes.icon}
+                >
+                  <benefit.icon size={30} />
+                </ThemeIcon>
+                <Title order={4} mt="md">
+                  {benefit.title}
+                </Title>
+                <Text mt="sm">
+                  {benefit.description}
+                </Text>
+              </Card>
+            </motion.div>
           ))}
         </SimpleGrid>
       </Container>

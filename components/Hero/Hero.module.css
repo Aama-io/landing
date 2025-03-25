@@ -1,75 +1,40 @@
 .root {
   position: relative;
-  padding-top: rem(120px);
-  padding-bottom: rem(80px);
-  background: light-dark(
-    linear-gradient(135deg, var(--mantine-color-gray-0) 0%, var(--mantine-color-blue-0) 100%),
-    linear-gradient(135deg, var(--mantine-color-dark-8) 0%, var(--mantine-color-dark-7) 100%)
-  );
+  background: linear-gradient(135deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-indigo-9) 100%);
+  padding: 120px 0;
   overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
-/* Add a subtle animated pattern */
-.root::before {
-  content: '';
+.heroGrid {
   position: absolute;
-  inset: 0;
-  background: light-dark(
-    linear-gradient(90deg, var(--mantine-color-blue-1) 1px, transparent 1px),
-    linear-gradient(90deg, var(--mantine-color-dark-4) 1px, transparent 1px)
-  ),
-  light-dark(
-    linear-gradient(var(--mantine-color-blue-1) 1px, transparent 1px),
-    linear-gradient(var(--mantine-color-dark-4) 1px, transparent 1px)
-  );
-  background-size: 40px 40px;
-  mask-image: radial-gradient(circle at 50% 50%, black, transparent 70%);
-  opacity: light-dark(0.4, 0.2);
-  animation: patternMove 20s linear infinite;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  opacity: 0.15;
+  z-index: 0;
 }
 
-/* Add subtle floating shapes */
-.root::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: light-dark(
-    radial-gradient(circle at 20% 20%, var(--mantine-color-blue-1) 0%, transparent 25%),
-    radial-gradient(circle at 20% 20%, var(--mantine-color-blue-8) 0%, transparent 25%)
-  ),
-  light-dark(
-    radial-gradient(circle at 80% 80%, var(--mantine-color-cyan-1) 0%, transparent 25%),
-    radial-gradient(circle at 80% 80%, var(--mantine-color-cyan-8) 0%, transparent 25%)
-  ),
-  light-dark(
-    radial-gradient(circle at 50% 50%, var(--mantine-color-indigo-1) 0%, transparent 30%),
-    radial-gradient(circle at 50% 50%, var(--mantine-color-indigo-8) 0%, transparent 30%)
-  );
-  opacity: light-dark(0.6, 0.15);
-  animation: shapeFloat 15s ease-in-out infinite alternate;
+.heroGridItem1 {
+  grid-column: 1 / span 4;
+  grid-row: 1 / span 12;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
 }
 
-@keyframes patternMove {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(-40px) rotate(1deg);
-  }
+.heroGridItem2 {
+  grid-column: 5 / span 4;
+  grid-row: 1 / span 12;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
-@keyframes shapeFloat {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-10px, -10px);
-  }
-}
-
-.wrapper {
-  max-width: rem(800px);
-  margin: 0 auto;
+.heroGridItem3 {
+  grid-column: 9 / span 4;
+  grid-row: 1 / span 12;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
 }
 
 .inner {
@@ -78,7 +43,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: rem(40px);
 
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
@@ -88,42 +52,56 @@
 
 .content {
   max-width: rem(600px);
-  margin-right: rem(40px);
+  color: white;
+  z-index: 2;
 
   @media (max-width: $mantine-breakpoint-md) {
     margin-right: 0;
     max-width: 100%;
+    margin-bottom: 40px;
   }
 }
 
+.badge {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--mantine-spacing-md);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .title {
-  font-size: rem(56px);
-  font-weight: 900;
+  font-size: 54px;
   line-height: 1.1;
-  margin: 0;
-  padding: 0;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  font-weight: 900;
+  margin-bottom: var(--mantine-spacing-md);
+  color: white;
 
   @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(40px);
+    font-size: 36px;
   }
 }
 
 .highlight {
-  background: linear-gradient(45deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  background: linear-gradient(to right, #fff, #4d9fff);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800;
+  text-shadow: 0 0 20px rgba(77, 159, 255, 0.3);
 }
 
 .description {
-  font-size: rem(20px);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
-  margin-top: rem(24px);
-  max-width: rem(500px);
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 520px;
+  margin-bottom: 10px;
 
-  @media (max-width: $mantine-breakpoint-md) {
-    margin-left: auto;
-    margin-right: auto;
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 16px;
   }
 }
 
@@ -142,15 +120,38 @@
 }
 
 .control {
-  min-width: rem(200px);
-  height: rem(54px);
-  font-size: rem(16px);
+  &:first-child {
+    background: linear-gradient(135deg, var(--mantine-color-blue-5) 0%, var(--mantine-color-indigo-7) 100%);
+    border: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-indigo-8) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+  }
+  
+  &:last-child {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-2px);
+      border-color: white;
+    }
+  }
 }
 
 .stats {
   margin-top: rem(60px);
-  padding-top: rem(40px);
-  border-top: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
+  padding-top: rem(30px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .statsInner {
@@ -170,107 +171,83 @@
 
 .statsTitle {
   font-size: rem(14px);
-  color: light-dark(var(--mantine-color-gray-6), var(--mantine-color-dark-3));
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 500;
 }
 
 .statsValue {
   font-size: rem(32px);
   font-weight: 800;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  color: white;
 }
 
 .illustration {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: rem(500px);
   position: relative;
-
-  @media (max-width: $mantine-breakpoint-md) {
+  width: 400px;
+  height: 400px;
+  
+  @media (max-width: 62em) {
     display: none;
   }
 }
 
-.illustrationContent {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.gridBackground {
+.floatingChart, .floatingToken, .floatingGraph {
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(var(--mantine-color-gray-3) 1px, transparent 1px);
-  background-size: 20px 20px;
-  opacity: 0.3;
-  animation: pulse 4s ease-in-out infinite;
-}
-
-.floatingElements {
-  position: absolute;
-  inset: 0;
+  border-radius: 50%;
+  animation-duration: 6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
 }
 
 .floatingChart {
-  position: absolute;
-  top: 20%;
-  left: 10%;
-  width: rem(200px);
-  height: rem(120px);
-  background: linear-gradient(45deg, var(--mantine-color-blue-5), var(--mantine-color-cyan-5));
-  border-radius: var(--mantine-radius-md);
-  opacity: 0.8;
-  animation: float 6s ease-in-out infinite;
+  width: 180px;
+  height: 180px;
+  top: 60px;
+  left: 60px;
+  animation-name: float1;
+  background: linear-gradient(135deg, rgba(77, 171, 247, 0.5) 0%, rgba(0, 82, 204, 0) 70%);
 }
 
 .floatingToken {
-  position: absolute;
-  top: 50%;
-  right: 20%;
-  width: rem(100px);
-  height: rem(100px);
-  background: linear-gradient(135deg, var(--mantine-color-violet-5), var(--mantine-color-blue-5));
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: float 8s ease-in-out infinite;
+  width: 120px;
+  height: 120px;
+  top: 200px;
+  left: 180px;
+  animation-name: float2;
+  animation-delay: 1s;
+  background: linear-gradient(135deg, rgba(158, 119, 237, 0.5) 0%, rgba(86, 48, 158, 0) 70%);
 }
 
 .floatingGraph {
-  position: absolute;
-  bottom: 20%;
-  left: 30%;
-  width: rem(150px);
-  height: rem(80px);
-  background: linear-gradient(225deg, var(--mantine-color-cyan-5), var(--mantine-color-blue-5));
-  border-radius: var(--mantine-radius-md);
-  opacity: 0.8;
-  animation: float 7s ease-in-out infinite;
+  width: 100px;
+  height: 100px;
+  top: 100px;
+  left: 240px;
+  animation-name: float3;
+  animation-delay: 2s;
+  background: linear-gradient(135deg, rgba(247, 148, 77, 0.5) 0%, rgba(204, 82, 0, 0) 70%);
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+@keyframes float1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, 20px) rotate(5deg); }
+  50% { transform: translate(0, 40px) rotate(0deg); }
+  75% { transform: translate(-20px, 20px) rotate(-5deg); }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.1;
-  }
+@keyframes float2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-15px, 15px) rotate(-5deg); }
+  50% { transform: translate(0, 30px) rotate(0deg); }
+  75% { transform: translate(15px, 15px) rotate(5deg); }
 }
 
-[data-mantine-color-scheme="dark"] {
-  .gridBackground {
-    background-image: radial-gradient(var(--mantine-color-dark-4) 1px, transparent 1px);
-  }
+@keyframes float3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -15px) rotate(5deg); }
+  50% { transform: translate(0, -30px) rotate(0deg); }
+  75% { transform: translate(-10px, -15px) rotate(-5deg); }
 }
 
 /* Add to your public folder these SVG files:

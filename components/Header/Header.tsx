@@ -50,8 +50,7 @@ export function Header() {
           </Group>
 
           <Group visibleFrom="xs">
-            <ActionToggle />
-            <Button component={Link} href="/product">Launch App</Button>
+            <Button component={Link} href="/product">Launch Fund</Button>
           </Group>
 
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" />
@@ -78,9 +77,8 @@ export function Header() {
             </Link>
           ))}
           <Group justify="space-between" align="center">
-            <ActionToggle />
             <Button fullWidth onClick={close}>
-              Launch App
+              Launch Fund
             </Button>
           </Group>
         </Stack>

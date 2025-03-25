@@ -5,47 +5,47 @@ import classes from './Problems.module.css';
 
 const problems = [
   {
-    title: "Slow NAV Reconciliation",
-    description: "Fund managers struggle with time-consuming NAV reconciliation and compliance reporting processes."
+    title: "High Fund Launch Costs",
+    description: "Traditional fund setup requires significant upfront investment in infrastructure, compliance, and operations, making it difficult for new fund managers to enter the market."
   },
   {
-    title: "Limited Investor Access",
-    description: "High barriers to entry prevent retail and global investors from participating in mutual funds."
+    title: "Manual Operations Burden",
+    description: "Fund managers spend excessive time on manual NAV calculations, compliance reporting, and investor onboarding, reducing focus on investment strategy."
   },
   {
-    title: "No Cross-Chain Support",
-    description: "Existing platforms lack tokenization and cross-chain fund management capabilities."
+    title: "Limited Market Access",
+    description: "Traditional fund structures make it difficult to reach global investors and offer innovative products like tokenized funds or fractional ownership."
   },
   {
-    title: "Generic Solutions",
-    description: "Competitors focus on generic asset tokenization, missing mutual fund-specific requirements."
+    title: "Regulatory Complexity",
+    description: "Different regulatory requirements across regions (Nepal, Singapore, etc.) create significant overhead and compliance risks for fund managers."
   },
   {
-    title: "Disconnected Operations",
-    description: "Lack of seamless integration between on-chain and off-chain fund operations."
+    title: "Technology Gap",
+    description: "Existing platforms lack modern features like blockchain integration, real-time reporting, and automated compliance checks."
   }
 ];
 
 const solutions = [
   {
-    title: "Automated Fund Management",
-    description: "Simplifies operations by automating NAV reconciliation, compliance, and reporting processes."
+    title: "Fund-as-a-Service Infrastructure",
+    description: "Launch funds with minimal upfront costs using our modular, compliant infrastructure. Pay-as-you-go model for operational services."
   },
   {
-    title: "Enhanced Accessibility",
-    description: "Seamless investment portal for both SIP and lump sum investments, making fund access easier."
+    title: "Automated Fund Operations",
+    description: "Reduce manual work with automated NAV calculations, compliance reporting, and investor onboarding. Focus on what matters - investment strategy."
   },
   {
-    title: "Blockchain Integration",
-    description: "Improves liquidity and efficiency through blockchain-based fractional ownership and cross-chain transactions."
+    title: "Global Fund Distribution",
+    description: "Reach investors worldwide through our hybrid platform, offering both traditional and tokenized fund structures with fractional ownership."
   },
   {
-    title: "Unified Platform",
-    description: "Bridges traditional and tokenized finance, enabling smooth transition between off-chain & on-chain operations."
+    title: "Built-in Compliance",
+    description: "Pre-configured compliance modules for Nepal and Singapore markets, with automated regulatory reporting and risk monitoring."
   },
   {
-    title: "Regulatory Compliant",
-    description: "Platform adapted to Singapore's MAS regulations for scalability and wider adoption."
+    title: "Modern Tech Stack",
+    description: "Leverage blockchain technology for tokenization, real-time reporting, and smart contract automation while maintaining traditional fund capabilities."
   }
 ];
 
@@ -64,10 +64,15 @@ export function Problems() {
             >
               <Title className={classes.title} ta="left" mt="sm">
                 <Text component="span" className={classes.highlight} inherit>
-                  Mutual Fund
+                  Current Fund Management
                 </Text>{' '}
-                Management is Complex
+                Challenges
               </Title>
+
+              <Text c="dimmed" mt="md" mb="xl">
+                Fund managers face significant barriers in launching and managing funds efficiently. 
+                Our platform addresses these challenges head-on with modern solutions.
+              </Text>
 
               {problems.map((problem, index) => (
                 <Card key={index} className={classes.card} mt="md">
@@ -100,11 +105,16 @@ export function Problems() {
               viewport={{ once: true }}
             >
               <Title className={classes.title} ta="left" mt="sm">
-                Our{' '}
+                AAMA's{' '}
                 <Text component="span" className={classes.highlight} inherit>
                   Solution
                 </Text>
               </Title>
+
+              <Text c="dimmed" mt="md" mb="xl">
+                Our platform combines traditional fund management with modern technology to solve 
+                these challenges and enable efficient fund operations.
+              </Text>
 
               {solutions.map((solution, index) => (
                 <Card key={index} className={classes.card} mt="md">

@@ -1,4 +1,4 @@
-import { Container, Text, Group } from '@mantine/core';
+import { Container, Text, Group, Anchor } from '@mantine/core';
 import Link from 'next/link';
 import classes from './Footer.module.css';
 
@@ -63,7 +63,7 @@ export function Footer() {
 
           <Group gap={20} className={classes.social}>
             <Text size="sm" c="dimmed">
-              Made with ❤️ by Uxqode
+              Made with ❤️ by <Anchor href="https://ux-qode.com" target="_blank" rel="noopener noreferrer" className={classes.creditLink}>Uxqode Pte Ltd</Anchor>
             </Text>
           </Group>
         </div>

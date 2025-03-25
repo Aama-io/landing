@@ -7,21 +7,29 @@ import { Footer } from '../components/Footer/Footer';
 import { Tokenomics } from '@/components/Tokenomics/Tokenomics';
 import { CTA } from '@/components/CTA/CTA';
 import { SEO } from '@/components/SEO/SEO';
+import { MotionConfig } from 'framer-motion';
 
 export default function HomePage() {
   return (
-    <AppShell header={{ height: 60 }} padding={0}>
-      <AppShell.Header>
-        <Header />
-      </AppShell.Header>
+    <MotionConfig reducedMotion="user" transition={{ 
+      type: "spring", 
+      bounce: 0.25,
+      duration: 0.5 
+    }}>
+      <AppShell header={{ height: 60 }} padding={0}>
+        <AppShell.Header>
+          <Header />
+        </AppShell.Header>
 
-      <AppShell.Main>
-        <SEO />
-        <Hero />
-        <ProblemSolution />
-        <CTA />
-        <Footer />
-      </AppShell.Main>
-    </AppShell>
+        <AppShell.Main>
+          <SEO />
+          <Hero />
+          <ProblemSolution />
+          <Features />
+          <CTA />
+          <Footer />
+        </AppShell.Main>
+      </AppShell>
+    </MotionConfig>
   );
 }

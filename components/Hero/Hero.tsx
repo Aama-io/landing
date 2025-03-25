@@ -1,22 +1,30 @@
-import { Container, Title, Text, Button, Group, Stack } from '@mantine/core';
+import { Container, Title, Text, Button, Group, Badge } from '@mantine/core';
 import { IconArrowRight } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
 import classes from './Hero.module.css';
 import Link from 'next/link';
 
 export function Hero() {
   return (
     <div className={classes.root}>
+      <div className={classes.heroGrid}>
+        <div className={classes.heroGridItem1}></div>
+        <div className={classes.heroGridItem2}></div>
+        <div className={classes.heroGridItem3}></div>
+      </div>
       <Container size="lg">
         <div className={classes.inner}>
-          <div className={classes.content}>
+          <motion.div 
+            className={classes.content}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Badge size="lg" radius="sm" className={classes.badge}>Fund-as-a-Service Platform</Badge>
             <Title className={classes.title}>
               Modern{' '}
-              <Text component="span" className={classes.highlight} inherit>
-                Fund Management
-              </Text>{' '}
-              Platform
+              <span className={classes.highlight}>Fund Management</span>{' '} Platform
             </Title>
-
             <Text className={classes.description}>
               Seamlessly manage both traditional and blockchain-based funds with our comprehensive platform. 
               Built for modern fund managers who demand efficiency, security, and compliance.
@@ -26,17 +34,17 @@ export function Hero() {
               <Button
                 component={Link}
                 href="/contact"
-                size="xl"
+                size="lg" 
                 className={classes.control}
-                rightSection={<IconArrowRight size={20} />}
+                rightSection={<IconArrowRight size={18} />}
               >
                 Get Started
               </Button>
               
               <Button
-               component={Link}
+                component={Link}
                 href="/contact"
-                size="xl"
+                size="lg"
                 variant="outline"
                 className={classes.control}
               >
@@ -60,19 +68,18 @@ export function Hero() {
                 </div>
               </Group>
             </div>
-          </div>
-
-          <div className={classes.illustration}>
-            <div className={classes.illustrationContent}>
-              <div className={classes.gridBackground} />
-              <div className={classes.floatingElements}>
-                {/* Add floating elements like charts, tokens, etc. */}
-                <div className={classes.floatingChart} />
-                <div className={classes.floatingToken} />
-                <div className={classes.floatingGraph} />
-              </div>
-            </div>
-          </div>
+          </motion.div>
+          
+          <motion.div 
+            className={classes.illustration}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <div className={classes.floatingChart}></div>
+            <div className={classes.floatingToken}></div>
+            <div className={classes.floatingGraph}></div>
+          </motion.div>
         </div>
       </Container>
     </div>
