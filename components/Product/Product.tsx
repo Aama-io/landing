@@ -6,30 +6,21 @@ import classes from './Product.module.css';
 
 const fundTypes = [
   {
-    value: 'mutual', label: 'Mutual Funds', icon: <IconBuildingBank size={16} />, description: "Comprehensive management solutions for traditional mutual funds", features: [
-      "Advanced NAV automation and reporting",
-      "Streamlined investor communication",
-      "Regulatory compliance dashboards",
-      "Performance analytics and benchmarking",
-      "Fee calculation and distribution automation"
+    value: 'mutual', label: 'Mutual Funds', icon: <IconBuildingBank size={16} />, description: "Our core expertise in Singapore-regulated mutual funds with MAS-compliant operations", features: [
+      "Daily NAV calculation and unit pricing",
+      "MAS-compliant fund operations",
+      "Automated subscription and redemption",
+      "Dividend distribution and reinvestment",
+      "Regulatory reporting and compliance"
     ]
   },
   {
-    value: 'venture', label: 'Venture Capital', icon: <IconRocket size={16} />, description: "Specialized tools for venture capital portfolio management", features: [
+    value: 'private', label: 'Private Capital', icon: <IconChartBar size={16} />, description: "Comprehensive solutions for VC and PE fund operations", features: [
       "Portfolio company performance tracking",
       "Capital call and distribution management",
       "LP reporting and communication portal",
       "Investment deal flow pipeline",
       "Carry and waterfall calculations"
-    ]
-  },
-  {
-    value: 'private', label: 'Private Equity', icon: <IconChartBar size={16} />, description: "End-to-end solutions for private equity fund operations", features: [
-      "Complex fee structure management",
-      "Portfolio company valuation tools",
-      "Capital deployment tracking",
-      "Investor commitment management",
-      "Customizable reporting templates"
     ]
   },
   {
@@ -41,6 +32,15 @@ const fundTypes = [
       "Occupancy and valuation analytics"
     ]
   },
+  {
+    value: 'tokenized', label: 'Tokenized Funds', icon: <IconCoin size={16} />, description: "Coming Soon: Next-generation tokenized fund platform", features: [
+      "Digital fund unit tokenization",
+      "Smart contract automation",
+      "On-chain NAV calculation",
+      "Automated compliance monitoring",
+      "Direct investor governance"
+    ]
+  }
 ];
 
 const platformFeatures = [
@@ -48,9 +48,9 @@ const platformFeatures = [
     icon: IconDeviceDesktop,
     title: "Fund Management Platform",
     features: [
-      "Centralized fund operations dashboard",
-      "Real-time NAV calculations and reconciliation",
-      "Comprehensive compliance monitoring",
+      "MAS-compliant fund operations",
+      "Automated NAV calculations",
+      "Regulatory compliance monitoring",
       "Customizable reporting templates"
     ]
   },
@@ -58,9 +58,9 @@ const platformFeatures = [
     icon: IconDeviceMobile,
     title: "Investor Portal",
     features: [
-      "Secure investor onboarding with KYC/AML",
-      "Real-time portfolio performance tracking",
-      "Document repository and e-signatures",
+      "Secure investor onboarding",
+      "Real-time portfolio tracking",
+      "Document repository",
       "Direct communication channels"
     ]
   },
@@ -68,10 +68,10 @@ const platformFeatures = [
     icon: IconDeviceAirpods,
     title: "Future-Ready Infrastructure",
     features: [
-      "API integration with banking systems",
-      "Cloud-based secure architecture",
-      "Data analytics and reporting engine",
-      "Blockchain readiness for future deployment"
+      "Banking system integration",
+      "Cloud-based architecture",
+      "Data analytics engine",
+      "Regulatory reporting automation"
     ]
   }
 ];
@@ -79,11 +79,11 @@ const platformFeatures = [
 const targetIndustries = [
   {
     icon: IconBuildingBank,
-    title: "Asset Managers",
-    description: "Streamline operations and reduce administrative overhead with automated NAV calculations, compliance monitoring, and investor reporting."
+    title: "Mutual Fund Managers",
+    description: "Our proven expertise in mutual fund operations with automated NAV calculations, compliance monitoring, and investor reporting."
   },
   {
-    icon: IconRocket,
+    icon: IconChartBar,
     title: "VC/PE Firms",
     description: "Gain comprehensive visibility into portfolio performance with specialized tools for capital calls, distributions, and LP communications."
   },
@@ -109,12 +109,12 @@ const faqItems = [
   {
     value: 'how-it-works',
     title: 'How does the Fund-as-a-Service platform work?',
-    content: 'Our platform provides comprehensive infrastructure for fund managers to launch and operate funds efficiently. You configure your fund parameters through our intuitive interface, and our system automates operations from investor onboarding to NAV calculations, reporting, and compliance monitoring.'
+    content: 'Our platform provides comprehensive infrastructure for fund managers, with particular expertise in mutual funds. You configure your fund parameters through our intuitive interface, and our system automates operations from investor onboarding to NAV calculations, reporting, and compliance monitoring.'
   },
   {
     value: 'compliance',
     title: 'How do you handle regulatory compliance?',
-    content: 'We\'ve built compliance monitoring and reporting into the core of our platform, with specific modules for Singapore and regional markets. The system automatically tracks regulatory requirements, generates necessary reports, manages investor KYC/AML, and ensures your fund operations meet local regulatory standards.'
+    content: 'We\'ve built compliance monitoring and reporting into the core of our platform, with specific modules for MAS requirements and other regulatory frameworks. The system automatically tracks regulatory requirements, generates necessary reports, manages investor KYC/AML, and ensures your fund operations meet all applicable standards.'
   },
   {
     value: 'integration',
@@ -124,7 +124,7 @@ const faqItems = [
   {
     value: 'future-plans',
     title: 'What future developments are planned for the platform?',
-    content: 'We are continuously enhancing our platform with advanced analytics, AI-powered insights, and additional integrations. Our roadmap includes blockchain capabilities for fund tokenization, which will enable fractional ownership, programmable distributions, and enhanced liquidity options while maintaining robust security and compliance.'
+    content: 'We are continuously enhancing our platform with advanced analytics, automated compliance monitoring, and improved investor reporting. Our roadmap includes enhanced mutual fund features that will streamline operations while maintaining strict regulatory compliance.'
   },
 ];
 
@@ -155,7 +155,7 @@ export function Product() {
                 Launch your fund in days, <br /><span className={classes.accentText}>not months</span>
               </Title>
               <Text className={classes.heroDescription}>
-                Our comprehensive platform enables fund managers to launch and operate any fund type with minimal setup time and resources.
+                Our comprehensive platform enables fund managers to launch and operate funds efficiently, with proven expertise in mutual funds and full compliance with MAS regulations. We support all fund types with minimal setup time and resources.
               </Text>
               <Group mt="xl">
                 <Button
@@ -270,7 +270,7 @@ export function Product() {
                 One platform for <span className={classes.accentText}>all fund types</span>
               </Title>
               <Text ta="center" c="dimmed" className={classes.sectionDescription}>
-                Designed for mutual funds, venture capital, private equity, REITs and more
+                From traditional mutual funds to next-generation tokenized funds
               </Text>
             </motion.div>
 
@@ -326,6 +326,11 @@ export function Product() {
                                   <List.Item key={feature}>{feature}</List.Item>
                                 ))}
                               </List>
+                              {type.value === 'tokenized' && (
+                                <Badge size="lg" radius="sm" className={classes.comingSoonBadge}>
+                                  Coming Soon
+                                </Badge>
+                              )}
                               <Button
                                 variant="subtle"
                                 rightSection={<IconArrowRight size={16} />}
@@ -482,7 +487,7 @@ export function Product() {
             <Box py={40} className={classes.simplifiedCta}>
               <Title ta="center" className={classes.ctaTitle}>Ready to launch your fund?</Title>
               <Text ta="center" className={classes.ctaText} maw={700} mx="auto" mb={40}>
-                Our platform helps fund managers launch and operate efficiently with minimal setup time. Get started today.
+                Our platform helps fund managers launch and operate efficiently with minimal setup time in Singapore. Get started today.
               </Text>
               <Group justify="center">
                 <Button

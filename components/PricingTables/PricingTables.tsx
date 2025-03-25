@@ -6,7 +6,7 @@ import classes from './PricingTables.module.css';
 const plans = [
   {
     title: 'Professional',
-    price: { monthly: 'SGD 0.5%', yearly: 'SGD 0.4%' },
+    price: { monthly: '0.5%', yearly: '0.4%' },
     subtitle: 'of AUM per year',
     description: 'For smaller asset managers',
     perks: [
@@ -30,7 +30,7 @@ const plans = [
   },
   {
     title: 'Professional Plus',
-    price: { monthly: 'SGD 0.3%', yearly: 'SGD 0.25%' },
+    price: { monthly: '0.3%', yearly: '0.25%' },
     subtitle: 'of AUM per year + SGD 299/month',
     description: 'For growing asset managers',
     perks: [
