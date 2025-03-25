@@ -211,13 +211,11 @@ export function Features() {
                   radius="sm" 
                   className={classes.futureBadge}
                 >
-                  Coming Soon: Enhanced Mutual Fund Features
+                  Onchain fund management (Coming Soon)
                 </Badge>
                 <Text ta="center" mt="xl" size="md" c="dimmed" maw={700} mx="auto">
-                  Our upcoming enhancements will bring advanced analytics, automated compliance monitoring,
-                  and improved investor reporting to mutual fund operations. These innovations will streamline
-                  fund management processes while maintaining strict regulatory compliance. Join us in shaping
-                  the future of mutual fund management.
+                  We are working on new platform features to enable onchain fund management. The platform will enable fund managers to tokenize their funds and list them on EVM-compatible blockchains.
+                  Contat us for early access.
                 </Text>
                 
                 <Group justify="center" mt="xl">
