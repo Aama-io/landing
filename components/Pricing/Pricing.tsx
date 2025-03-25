@@ -15,6 +15,7 @@ import {
 } from '@mantine/core';
 import { IconCheck, IconCircleCheck } from '@tabler/icons-react';
 import { useState } from 'react';
+import Link from 'next/link';
 import classes from './Pricing.module.css';
 
 const pricingData = [
@@ -150,6 +151,8 @@ export function Pricing() {
                   size="md"
                   variant={plan.variant}
                   mt="auto"
+                  component={Link}
+                  href="/contact"
                 >
                   {plan.buttonText}
                 </Button>

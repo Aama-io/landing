@@ -247,7 +247,7 @@ export function Product() {
                     </ThemeIcon>
                     <Title order={4} mt="md" mb="xs">{industry.title}</Title>
                     <Text size="sm" c="dimmed">{industry.description}</Text>
-                    <Button variant="subtle" mt="md" rightSection={<IconArrowRight size={14} />} size="sm">
+                    <Button variant="subtle" mt="md" rightSection={<IconArrowRight size={14} />} size="sm" component={Link} href="/contact">
                       Learn more
                     </Button>
                   </Paper>
@@ -335,6 +335,8 @@ export function Product() {
                                 variant="subtle"
                                 rightSection={<IconArrowRight size={16} />}
                                 mt="xl"
+                                component={Link}
+                                href="/contact"
                               >
                                 Learn more
                               </Button>
@@ -344,6 +346,24 @@ export function Product() {
                             <div className={classes.tabImage} data-type={type.value}>
                               <div className={classes.imageOverlay} />
                               <div className={classes.imageContent}>
+                                <Image
+                                  src={`/fund-types/${type.value === 'mutual' ? 'mutual-fund' : 
+                                        type.value === 'private' ? 'vc' : 
+                                        type.value === 'reits' ? 'reit' : 
+                                        'tokenization'}.jpg`}
+                                  alt={type.label}
+                                  width={800}
+                                  height={400}
+                                  style={{ 
+                                    objectFit: 'cover',
+                                    objectPosition: 'center',
+                                    width: '100%',
+                                    height: '100%',
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0
+                                  }}
+                                />
                                 <Badge size="xl" radius="md" className={classes.imageBadge}>
                                   {type.label}
                                 </Badge>
@@ -440,6 +460,8 @@ export function Product() {
                         className={classes.learnMoreButton}
                         rightSection={<IconArrowRight size={14} />}
                         mt="xl"
+                        component={Link}
+                        href="/contact"
                       >
                         Explore
                       </Button>

@@ -1,4 +1,4 @@
-import { Container, Text, Title, ThemeIcon, Group, rem, Badge, Paper, SimpleGrid, List, Divider, Box, Stack } from '@mantine/core';
+import { Container, Text, Title, ThemeIcon, Group, rem, Badge, Paper, SimpleGrid, List, Divider, Box, Stack, Button } from '@mantine/core';
 import {
   IconStar,
   IconShield,
@@ -18,6 +18,7 @@ import {
   IconReceipt2,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import classes from './Features.module.css';
 
 export function Features() {
@@ -218,6 +219,19 @@ export function Features() {
                   fund management processes while maintaining strict regulatory compliance. Join us in shaping
                   the future of mutual fund management.
                 </Text>
+                
+                <Group justify="center" mt="xl">
+                  <Button
+                    size="lg"
+                    variant="gradient"
+                    gradient={{ from: 'blue', to: 'cyan' }}
+                    rightSection={<IconArrowRight size={18} />}
+                    component={Link}
+                    href="/contact"
+                  >
+                    Get Started Today
+                  </Button>
+                </Group>
                 
                 <div className={classes.glowOrb} />
               </Box>
