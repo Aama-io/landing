@@ -1,0 +1,39 @@
+<svg width="1200" height="500" viewBox="0 0 1200 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- AAMA.io banner with hero-like background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0033CC" />
+      <stop offset="50%" stop-color="#1144FF" />
+      <stop offset="100%" stop-color="#0066FF" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bgGradient)" />
+  
+  <!-- Decorative elements -->
+  <circle cx="200" cy="80" r="60" fill="#4488FF" opacity="0.3" />
+  <circle cx="1000" cy="280" r="80" fill="#66AAFF" opacity="0.2" />
+  <rect x="600" y="50" width="200" height="200" rx="30" fill="#5599FF" opacity="0.15" transform="rotate(45 700 150)" />
+  
+  <!-- Container for all content with consistent alignment -->
+  <g transform="translate(200, 0)">
+    <!-- Logo text (simple, no effects) -->
+    <text x="0" y="160" font-family="Arial, sans-serif" font-weight="700" font-size="130" fill="#FFFFFF">AAMA</text>
+    <text x="400" y="160" font-family="Arial, sans-serif" font-weight="500" font-size="95" fill="#FFFFFF">.io</text>
+    
+    <!-- Main title -->
+    <foreignObject x="0" y="200" width="800" height="100">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="color: white; font-family: Arial, sans-serif; font-size: 38px; font-weight: 700; opacity: 0.95; text-align: left; width: 100%;">
+        <p style="margin: 20px 0;">Modern Fund Management Platform</p>
+      </div>
+    </foreignObject>
+    
+    <!-- Description text (justified) -->
+    <foreignObject x="0" y="275" width="800" height="200">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="color: white; font-family: Arial, sans-serif; font-size: 20px; opacity: 0.9; text-align: justify; line-height: 1.5; letter-spacing: 0.5px; width: 100%; height: 100%;">
+        <p style="margin: 20px 0;">Seamlessly manage both traditional and blockchain-based funds with our comprehensive platform. Built for modern fund managers who demand efficiency, security, and compliance.</p>
+      </div>
+    </foreignObject>
+  </g>
+</svg> 

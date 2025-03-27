@@ -1,0 +1,26 @@
+<svg width="1200" height="350" viewBox="0 0 1200 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Extra-extra-large version of the text logo for AAMA.io -->
+  <style>
+    .logo-text { 
+      font-family: Arial, sans-serif; 
+      font-weight: 700;
+      fill: #0055FF;
+    }
+    .domain {
+      font-family: Arial, sans-serif;
+      font-weight: 500;
+      fill: #333333;
+    }
+    .glow {
+      filter: drop-shadow(0 0 30px rgba(0, 85, 255, 0.35));
+    }
+  </style>
+  
+  <g class="glow">
+    <!-- Main text -->
+    <text x="60" y="240" class="logo-text" font-size="240">AAMA</text>
+    
+    <!-- Domain extension -->
+    <text x="800" y="240" class="domain" font-size="170">.io</text>
+  </g>
+</svg> 
