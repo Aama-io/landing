@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import InnerLayout from '@/components/InnerLayout';
+import { SEO } from '@/components/SEO/SEO';
+import Head from 'next/head';
 import classes from './Blog.module.css';
 
 interface BlogPost {
@@ -61,9 +63,45 @@ export default function BlogPostPage() {
     }
   }, [slug]);
 
+  // Build structured data for the blog post
+  const getStructuredData = (post: BlogPost) => {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": post.coverImage,
+      "datePublished": post.publishedDate,
+      "dateModified": post.publishedDate,
+      "author": {
+        "@type": "Person",
+        "name": post.author,
+        "jobTitle": post.authorRole
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "AAMA",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://aama.io/aama-logo.svg"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://aama.io/blog/${post.slug}`
+      },
+      "keywords": post.categories.join(", ")
+    };
+  };
+
   if (loading) {
     return (
       <InnerLayout>
+        <SEO 
+          title="Loading Blog Post | AAMA"
+          description="Please wait while we load the blog post content."
+          ogUrl="https://aama.io/blog"
+        />
         <div className={classes.wrapper}>
           <Container size="lg">
             <Stack align="center" justify="center" gap="md" py={50}>
@@ -78,6 +116,11 @@ export default function BlogPostPage() {
   if (error || !post) {
     return (
       <InnerLayout>
+        <SEO 
+          title="Blog Post Not Found | AAMA"
+          description="The blog post you're looking for could not be found. Please check our blog index for the latest articles."
+          ogUrl="https://aama.io/blog"
+        />
         <div className={classes.wrapper}>
           <Container size="lg">
             <Stack align="center" justify="center" gap="xl" className={classes.content} py={50}>
@@ -105,6 +148,24 @@ export default function BlogPostPage() {
 
   return (
     <InnerLayout>
+      <SEO 
+        title={post.title}
+        description={post.excerpt}
+        keywords={post.categories.join(", ")}
+        ogImage={post.coverImage}
+        ogUrl={`https://aama.io/blog/${post.slug}`}
+      />
+      <Head>
+        <meta name="author" content={post.author} />
+        <meta property="article:published_time" content={post.publishedDate} />
+        {post.categories.map((category, index) => (
+          <meta key={index} property="article:tag" content={category} />
+        ))}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(getStructuredData(post)) }}
+        />
+      </Head>
       <div className={classes.wrapper}>
         <Container size="lg">
           <Group mb="lg">

@@ -3,6 +3,8 @@ import { IconCalendar, IconClock, IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import InnerLayout from '@/components/InnerLayout';
+import { SEO } from '@/components/SEO/SEO';
+import Head from 'next/head';
 import classes from './Blog.module.css';
 
 // Define the blog post type
@@ -42,8 +44,58 @@ export default function BlogPage() {
     fetchPosts();
   }, []);
 
+  // Define SEO metadata
+  const seoTitle = "Fund Management Insights & News";
+  const seoDescription = "Expert insights on fund management platforms, IFRS accounting, investor portals, data integration, and blockchain technology in financial services.";
+  const seoKeywords = "fund management, IFRS accounting, investor portal, financial technology, blockchain, investment platform";
+  const seoUrl = "https://aama.io/blog";
+  const seoImage = posts.length > 0 ? posts[0].coverImage : '/fund-types/mutual-fund.jpg';
+
+  // JSON-LD structured data for blog listing
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "headline": "AAMA Fund Management Blog",
+    "description": seoDescription,
+    "url": seoUrl,
+    "publisher": {
+      "@type": "Organization",
+      "name": "AAMA",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://aama.io/aama-logo.svg"
+      }
+    },
+    "blogPost": posts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "author": {
+        "@type": "Person",
+        "name": post.author,
+        "jobTitle": post.authorRole
+      },
+      "datePublished": post.publishedDate,
+      "image": post.coverImage,
+      "url": `https://aama.io/blog/${post.slug}`
+    }))
+  };
+
   return (
     <InnerLayout>
+      <SEO 
+        title={seoTitle}
+        description={seoDescription}
+        keywords={seoKeywords}
+        ogImage={seoImage}
+        ogUrl={seoUrl}
+      />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </Head>
       <div className={classes.wrapper}>
         <Container size="lg">
           <Stack align="center" justify="center" gap="xl" className={classes.header}>
