@@ -16,6 +16,7 @@ import {
 import { useForm } from '@mantine/form';
 import { IconCheck, IconX, IconMail } from '@tabler/icons-react';
 import emailjs from '@emailjs/browser';
+import { useAnalytics } from '../Analytics';
 import classes from './ContactForm.module.css';
 
 // Initialize EmailJS with public key
@@ -32,6 +33,7 @@ const INQUIRY_TYPES = [
 
 export function ContactForm() {
   const [status, setStatus] = useState<'success' | 'error' | null>(null);
+  const { trackEvent } = useAnalytics();
 
   const form = useForm({
     initialValues: {
@@ -70,9 +72,23 @@ export function ContactForm() {
         }
       );
       
+      // Track successful form submission
+      trackEvent({
+        action: 'form_submission',
+        category: 'Contact',
+        label: values.inquiryType,
+      });
+
       setStatus('success');
       form.reset();
     } catch (error) {
+      // Track failed form submission
+      trackEvent({
+        action: 'form_submission_error',
+        category: 'Contact',
+        label: 'Form submission failed',
+      });
+
       setStatus('error');
       console.error('Failed to send email:', error);
     }
@@ -173,6 +189,13 @@ export function ContactForm() {
                 size="md" 
                 className={classes.submitButton}
                 leftSection={<IconMail size={20} />}
+                onClick={() => {
+                  // Track button click
+                  trackEvent({
+                    action: 'contact_form_submit_click',
+                    category: 'Contact',
+                  });
+                }}
               >
                 Send Message
               </Button>

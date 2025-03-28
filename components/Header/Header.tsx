@@ -15,6 +15,7 @@ import { IconSun, IconMoon } from '@tabler/icons-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ActionToggle } from '../ActionToggle/ActionToggle';
+import { useAnalytics } from '../Analytics';
 import classes from './Header.module.css';
 
 const links = [
@@ -30,12 +31,26 @@ export function Header() {
   const [opened, { toggle, close }] = useDisclosure(false);
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light');
+  const { trackEvent } = useAnalytics();
+
+  // Track navigation event
+  const handleNavClick = (linkLabel: string) => {
+    trackEvent({
+      action: 'navigation',
+      category: 'Header',
+      label: linkLabel,
+    });
+  };
 
   return (
     <header className={classes.header}>
       <Container size="lg">
         <div className={classes.inner}>
-          <Link href="/" className={classes.logo}>
+          <Link 
+            href="/" 
+            className={classes.logo}
+            onClick={() => handleNavClick('Home Logo')}
+          >
             {computedColorScheme === 'dark' ? (
               <Image src="/aama-logo-dark.svg" alt="AAMA.io" width={160} height={48} />
             ) : (
@@ -49,6 +64,7 @@ export function Header() {
                 key={link.label}
                 href={link.link}
                 className={classes.link}
+                onClick={() => handleNavClick(link.label)}
               >
                 {link.label}
               </Link>
@@ -56,7 +72,13 @@ export function Header() {
           </Group>
 
           <Group visibleFrom="xs">
-            <Button component={Link} href="/product">Launch Fund</Button>
+            <Button 
+              component={Link} 
+              href="/product"
+              onClick={() => handleNavClick('Launch Fund CTA')}
+            >
+              Launch Fund
+            </Button>
           </Group>
 
           <Burger opened={opened} onClick={toggle} hiddenFrom="xs" />
@@ -77,13 +99,24 @@ export function Header() {
               key={link.label}
               href={link.link}
               className={classes.drawerLink}
-              onClick={close}
+              onClick={() => {
+                handleNavClick(`Mobile - ${link.label}`);
+                close();
+              }}
             >
               {link.label}
             </Link>
           ))}
           <Group justify="space-between" align="center">
-            <Button fullWidth onClick={close}>
+            <Button 
+              fullWidth 
+              onClick={() => {
+                handleNavClick('Mobile - Launch Fund CTA');
+                close();
+              }}
+              component={Link}
+              href="/product"
+            >
               Launch Fund
             </Button>
           </Group>
