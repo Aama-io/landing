@@ -1,78 +1,78 @@
 import { Container, Card, Text, Group, Button, List, ThemeIcon, SegmentedControl, Stack, Badge, Tooltip, Box } from '@mantine/core';
-import { IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconClock } from '@tabler/icons-react';
+import { IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconDiscount2 } from '@tabler/icons-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import classes from './PricingTables.module.css';
 
 const plans = [
   {
-    title: 'Professional',
-    price: { monthly: '0.5%', yearly: '0.4%' },
-    subtitle: 'of AUM per year',
-    description: 'For smaller asset managers',
+    title: 'Starter',
+    price: { monthly: 'SGD 1,250', yearly: 'SGD 15,000' },
+    setupFee: 'SGD 3,000 – 5,000',
+    subtitle: 'per month',
+    description: 'Small & boutique fund managers (AUM < $50M)',
     perks: [
-      { feature: 'Up to $1M AUM', included: true },
-      { feature: 'Fund management dashboard', included: true },
+      { feature: 'Complete fund management platform', included: true },
+      { feature: 'Investor onboarding & KYC', included: true },
+      { feature: 'Fund discovery portal', included: true },
+      { feature: 'Subscription processing', included: true },
       { feature: 'Basic accounting tools', included: true },
-      { feature: 'Investor portal access', included: true },
-      { feature: 'Fee calculation engine', included: true },
-      { feature: 'Standard KYC/AML integration', included: true },
-      { feature: 'Email support (24h response)', included: true },
-      { feature: 'Transaction reporting', included: true },
-      { feature: 'White-labeled portal', included: true },
-      { feature: 'Custom branding', included: true },
+      { feature: 'Portfolio monitoring', included: true },
+      { feature: 'Redemption processing', included: true },
+      { feature: 'Compliance reporting', included: true },
+      { feature: 'Standard support', included: true },
+      { feature: 'Maintenance included', included: true },
+      { feature: 'Custom branding', included: false },
       { feature: 'API access', included: false },
-      { feature: <span>On-chain fund deployment <Badge size="xs" color="gray" variant="light">Coming soon</Badge></span>, included: false },
     ],
-    setupFee: 'SGD 99',
     buttonText: 'Get Started',
     highlighted: false,
     mostPopular: false,
   },
   {
-    title: 'Professional Plus',
-    price: { monthly: '0.3%', yearly: '0.25%' },
-    subtitle: 'of AUM per year + SGD 299/month',
-    description: 'For growing asset managers',
+    title: 'Growth',
+    price: { monthly: 'SGD 2,500', yearly: 'SGD 30,000' },
+    setupFee: 'SGD 5,000 – 10,000',
+    subtitle: 'per month',
+    description: 'Mid-size funds (AUM $50M – $150M)',
     perks: [
-      { feature: 'Up to $10M AUM', included: true },
-      { feature: 'All Professional features', included: true },
-      { feature: 'Advanced accounting suite', included: true },
-      { feature: 'White-labeled portal', included: true },
+      { feature: 'All Starter features', included: true },
+      { feature: 'Enhanced risk profiling', included: true },
+      { feature: 'Advanced fund planning tools', included: true },
+      { feature: 'Investment management portal', included: true },
+      { feature: 'Advanced accounting features', included: true },
+      { feature: 'Enhanced portfolio analytics', included: true },
+      { feature: 'Automated redemption workflow', included: true },
+      { feature: 'Comprehensive audit trail', included: true },
+      { feature: 'Priority support', included: true },
       { feature: 'Custom branding', included: true },
-      { feature: 'Advanced analytics', included: true },
-      { feature: 'Priority support (4h response)', included: true },
       { feature: 'API access', included: true },
-      { feature: 'Custom reporting', included: true },
-      { feature: 'Investor relations tools', included: true },
-      { feature: 'Enhanced security features', included: true },
-      { feature: <span>On-chain fund deployment <Badge size="xs" color="gray" variant="light">Coming soon</Badge></span>, included: false },
+      { feature: 'Custom integrations', included: false },
     ],
-    setupFee: 'SGD 299',
-    buttonText: 'Start Free Trial',
+    buttonText: 'Start 30-Day Trial',
     highlighted: true,
     mostPopular: true,
   },
   {
-    title: 'Enterprise',
-    price: { monthly: 'Custom', yearly: 'Custom' },
-    subtitle: 'tailored to your needs',
-    description: 'For institutions & large funds',
+    title: 'Pro',
+    price: { monthly: 'SGD 4,000', yearly: 'SGD 48,000' },
+    setupFee: 'SGD 10,000 – 15,000',
+    subtitle: 'per month',
+    description: 'Larger firms (AUM $150M – $500M)',
     perks: [
-      { feature: 'Unlimited AUM', included: true },
-      { feature: 'All Professional Plus features', included: true },
-      { feature: 'Custom fee structure', included: true },
-      { feature: 'Full white-label solution', included: true },
-      { feature: 'Advanced security protocols', included: true },
-      { feature: 'Custom domain', included: true },
+      { feature: 'All Growth features', included: true },
+      { feature: 'VIP onboarding & migration', included: true },
+      { feature: 'Advanced investor segmentation', included: true },
+      { feature: 'Premium investment management suite', included: true },
+      { feature: 'Advanced fund administration', included: true },
+      { feature: 'Custom portfolio monitoring dashboards', included: true },
+      { feature: 'Enhanced automation capabilities', included: true },
+      { feature: 'Regulatory compliance automation', included: true },
       { feature: 'Dedicated account manager', included: true },
-      { feature: '24/7 premium support', included: true },
       { feature: 'Custom integrations', included: true },
-      { feature: 'Custom compliance solutions', included: true },
-      { feature: 'SLA guarantees', included: true },
-      { feature: <span>On-chain fund deployment <Badge size="xs" color="blue" variant="light">Early access</Badge></span>, included: true },
+      { feature: 'White-label solution', included: true },
+      { feature: 'Advanced security features', included: true },
     ],
-    setupFee: 'Custom',
     buttonText: 'Contact Sales',
     highlighted: false,
     mostPopular: false,
@@ -86,8 +86,8 @@ export function PricingTables() {
     <div className={classes.wrapper}>
       <Container size="lg" py="xl">
         <Stack align="center" gap="lg" className={classes.header}>
-          <Text className={classes.subtitle}>Choose Your Plan</Text>
-          <Text className={classes.sectionTitle}>Simple, transparent pricing</Text>
+          <Text className={classes.subtitle}>SaaS Subscription Model</Text>
+          <Text className={classes.sectionTitle}>Choose the plan that fits your fund</Text>
           
           <Group justify="center" mt="md">
             <SegmentedControl
@@ -95,7 +95,7 @@ export function PricingTables() {
               onChange={setBillingPeriod}
               data={[
                 { label: 'Monthly Billing', value: 'monthly' },
-                { label: 'Annual Billing • Save 20%', value: 'yearly' },
+                { label: 'Annual Billing • Save', value: 'yearly' },
               ]}
               size="md"
               className={classes.segmentedControl}
@@ -103,11 +103,11 @@ export function PricingTables() {
           </Group>
           
           <Group className={classes.comingSoonBanner} mt="sm">
-            <ThemeIcon size="md" radius="xl" color="blue" variant="light">
-              <IconClock size={16} />
+            <ThemeIcon size="md" radius="xl" color="green" variant="light">
+              <IconDiscount2 size={16} />
             </ThemeIcon>
             <Text size="sm" c="dimmed">
-              On-chain fund deployment coming soon. All plans currently provide comprehensive off-chain fund management solutions.
+              First 3 clients receive a 30% lifetime discount or first-year discount. Contact us to learn more.
             </Text>
           </Group>
         </Stack>
@@ -140,13 +140,13 @@ export function PricingTables() {
                 </Text>
                 
                 <Text size="sm" c="dimmed" className={classes.subtitle}>
-                  {plan.subtitle}
+                  {billingPeriod === 'monthly' ? 'per month' : 'per year'}
                 </Text>
                 
                 <Group gap="xs" className={classes.setupFee}>
                   <Text size="sm" fw={500}>Setup fee:</Text>
                   <Text size="sm">{plan.setupFee}</Text>
-                  <Tooltip label="One-time fee for platform setup and deployment">
+                  <Tooltip label="One-time fee for platform setup and implementation">
                     <ThemeIcon radius="xl" size="xs" variant="light">
                       <IconInfoCircle size={12} />
                     </ThemeIcon>
@@ -154,31 +154,17 @@ export function PricingTables() {
                 </Group>
               </Box>
 
-              {plan.title === 'Enterprise' ? (
-                <Button
-                  component={Link}
-                  href="/contact"
-                  fullWidth
-                  size="lg"
-                  variant={plan.highlighted ? 'filled' : 'outline'}
-                  rightSection={<IconArrowRight size={18} />}
-                  className={classes.button}
-                >
-                  {plan.buttonText}
-                </Button>
-              ) : (
-                <Button
-                  component={Link}
-                  href="/contact"
-                  fullWidth
-                  size="lg"
-                  variant={plan.highlighted ? 'filled' : 'outline'}
-                  rightSection={<IconArrowRight size={18} />}
-                  className={classes.button}
-                >
-                  {plan.buttonText}
-                </Button>
-              )}
+              <Button
+                component={Link}
+                href="/contact"
+                fullWidth
+                size="lg"
+                variant={plan.highlighted ? 'filled' : 'outline'}
+                rightSection={<IconArrowRight size={18} />}
+                className={classes.button}
+              >
+                {plan.buttonText}
+              </Button>
 
               <Text fw={500} mt={30} mb="xs" size="sm" className={classes.featuresTitle}>
                 What's included:
@@ -222,22 +208,23 @@ export function PricingTables() {
                   <IconHeadset size={30} stroke={1.5} />
                 </ThemeIcon>
                 <div>
-                  <Text fw={700} fz="xl" className={classes.additionalTitle}>Need a customized solution?</Text>
+                  <Text fw={700} fz="xl" className={classes.additionalTitle}>Need custom features or integrations?</Text>
                   <Text className={classes.additionalDescription}>
-                    Our experts can help you implement the right fund management platform for your specific requirements
+                    We can provide additional custom features or integrations to meet your specific requirements
                   </Text>
                 </div>
               </Group>
             </div>
             <Button 
               component={Link}
-              href="/contact"
+              href="https://cal.com/aamaio/30min"
+              target="_blank"
               variant="outline" 
               size="lg" 
               className={classes.additionalButton}
               rightSection={<IconArrowRight size={18} />}
             >
-              Schedule Consultation
+              Schedule 30-Min Meeting
             </Button>
           </Group>
         </Card>

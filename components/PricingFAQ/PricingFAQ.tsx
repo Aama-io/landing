@@ -1,51 +1,46 @@
 import { Container, Title, Accordion, Grid, Text, ThemeIcon, Stack, Box } from '@mantine/core';
 import { IconQuestionMark } from '@tabler/icons-react';
 import classes from './PricingFAQ.module.css';
-
 const faqData = [
   {
     question: "How are the fees calculated?",
-    answer: "Our fees are calculated as a percentage of your Assets Under Management (AUM) and charged monthly. The percentage varies based on your plan tier and total assets. For example, if you're on our Professional plan with a 0.5% annual fee and $1M AUM, your monthly fee would be approximately SGD 417."
+    answer: "Our fees are based on your chosen plan tier - Starter, Growth, or Pro. Each plan has a fixed monthly fee and includes a set of features designed for different fund sizes and needs. The Starter plan is ideal for new funds, Growth for expanding funds, and Pro for established funds requiring advanced features."
   },
   {
     question: "What are the payment terms?",
-    answer: "For Professional and Professional Plus plans, fees are charged automatically on a monthly basis. Enterprise plans have flexible payment terms with options for quarterly or annual billing. We accept payments via bank transfer, credit card, and various electronic payment methods."
+    answer: "All plans are billed monthly with options for annual billing at a discount. We accept major credit cards, bank transfers, and electronic payment methods. Enterprise clients can arrange custom billing cycles and payment terms."
   },
   {
-    question: "Can I switch between pricing plans?",
-    answer: "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle. When upgrading from Professional to Professional Plus, you'll get immediate access to advanced features. There's no penalty for switching plans, and our team is available to help with the transition."
+    question: "Can I switch between plans?",
+    answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect on your next billing cycle. When upgrading, you get immediate access to new features. There's no penalty for switching plans, and our team will help ensure a smooth transition."
   },
   {
     question: "What's included in the setup fee?",
-    answer: "The setup fee covers initial platform configuration, account setup, data migration, and KYC/AML integration. This includes configuring your fund management dashboard, deploying your investor portal, and establishing necessary compliance protocols based on your jurisdiction's requirements."
-  },
-  {
-    question: "Do you offer a free trial?",
-    answer: "Yes, we offer a 14-day free trial on our Professional plan with access to core features. This gives you the opportunity to test our platform thoroughly and ensure it meets your fund's needs before committing. No credit card is required to start your trial."
-  },
-  {
-    question: "How is AUM calculated for fee purposes?",
-    answer: "AUM is calculated as the total value of assets managed through our platform, measured in SGD equivalent. The calculation is performed daily based on your fund's reported asset values, and the monthly average is used for billing purposes. This ensures fair pricing even with market fluctuations."
+    answer: "The one-time setup fee covers platform configuration, account setup, basic data migration, and compliance integration. This includes setting up your fund dashboard, investor portal, and essential reporting templates. Enterprise plans may include additional customization during setup."
   },
   {
     question: "What kind of support do you provide?",
-    answer: "Professional plans include email support with 24-hour response time. Professional Plus plans include priority support with 4-hour response time during business hours and scheduled video consultations. Enterprise plans get 24/7 dedicated support with a personal account manager. All clients have access to our comprehensive knowledge base and training resources."
+    answer: "Starter plans include email support with 24-hour response time. Growth plans add priority email support and scheduled consultations. Pro plans include 24/7 support, dedicated account manager, and regular strategy sessions. All clients have access to our documentation and training resources."
   },
   {
     question: "Are there any hidden fees?",
-    answer: "No, we are fully transparent about our pricing. The percentage fee and any fixed monthly fee (for Professional Plus) are the only recurring charges. The only additional costs would be for optional add-on services like custom development work, specialized compliance solutions, or premium integrations that are clearly outlined before any commitment."
+    answer: "No, our pricing is completely transparent. You pay only the monthly fee for your chosen plan. The only additional costs would be for optional services like custom development, specialized integrations, or premium features, which are clearly outlined before any commitment."
   },
   {
-    question: "What happens if I exceed my AUM tier?",
-    answer: "If your fund grows beyond your current AUM tier, we'll automatically adjust your rate to the appropriate tier in the next billing cycle. We provide notifications when you approach tier thresholds to avoid surprises. In many cases, moving to a higher AUM tier actually results in a lower percentage fee."
+    question: "What features are included in each plan?",
+    answer: "Starter plans include essential fund management tools, basic reporting, and investor portal. Growth adds advanced analytics, customizable reports, and API access. Pro includes everything plus white-labeling, unlimited users, custom workflows, and premium integrations. Full feature comparisons are available on our pricing page."
   },
   {
-    question: "What advanced features are included in Professional Plus?",
-    answer: "Professional Plus includes advanced analytics, customizable reporting templates, API access for system integration, priority support, and additional user seats. You'll also receive regular strategy consultations with our fund management experts to optimize your operations and improve efficiency."
+    question: "Do you offer discounts?",
+    answer: "Yes, we offer a 20% discount for annual billing on all plans. Enterprise clients with multi-year commitments may qualify for additional discounts. Contact our sales team to discuss custom pricing options."
   },
   {
-    question: "Do you offer discounts for long-term commitments?",
-    answer: "Yes, we offer discounts for annual payment commitments. You can save up to 20% by choosing annual billing instead of monthly. Enterprise clients with multi-year commitments can receive additional custom pricing. Please contact our sales team to discuss your specific requirements."
+    question: "How does the Enterprise plan differ?",
+    answer: "Enterprise plans are customized for large funds with complex needs. They include custom feature development, unlimited everything, dedicated support team, compliance consulting, and bespoke integrations. Pricing is tailored to your specific requirements."
+  },
+  {
+    question: "What happens if my fund grows?",
+    answer: "Our tiered plans are designed to scale with your fund. As you grow, you can easily upgrade to access more features and capacity. Our team will help recommend the right plan based on your evolving needs and ensure a seamless transition."
   }
 ];
 

@@ -1,0 +1,60 @@
+.wrapper {
+  padding: rem(80px) 0;
+  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+}
+
+.title {
+  font-size: rem(34px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: rem(20px);
+
+  @media (max-width: var(--mantine-breakpoint-sm)) {
+    font-size: rem(28px);
+  }
+}
+
+.tableContainer {
+  margin-top: rem(30px);
+  overflow: hidden;
+  border-radius: var(--mantine-radius-md);
+}
+
+.comparisonTable {
+  min-width: 900px;
+}
+
+.featureColumn {
+  min-width: 180px;
+}
+
+.aamaColumn {
+  background-color: rgba(34, 139, 230, 0.05);
+  font-weight: 600;
+}
+
+.providerBadge {
+  padding: rem(5px) rem(10px);
+  font-size: rem(14px);
+}
+
+.categoryRow {
+  background-color: var(--mantine-color-blue-0);
+}
+
+.categoryCell {
+  color: var(--mantine-color-blue-8);
+  font-size: rem(16px);
+  padding: rem(10px) rem(16px);
+}
+
+.headerRow {
+  background-color: var(--mantine-color-gray-1);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: rem(8px);
+  margin: 0 rem(15px);
+} 

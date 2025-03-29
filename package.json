@@ -31,6 +31,7 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.2",
     "@emailjs/browser": "^4.4.1",
     "@mantine/core": "7.15.0",
     "@mantine/form": "^7.15.2",
@@ -38,7 +39,7 @@
     "@mantinex/mantine-logo": "^1.1.0",
     "@next/bundle-analyzer": "^14.2.4",
     "@tabler/icons-react": "^3.6.0",
-    "framer-motion": "^12.4.11",
+    "framer-motion": "^12.6.2",
     "next": "15.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1"

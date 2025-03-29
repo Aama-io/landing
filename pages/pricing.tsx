@@ -12,8 +12,8 @@ export default function PricingPage() {
     <AppShell header={{ height: 60 }} padding={0}>
       <SEO 
         title="Pricing | AAMA"
-        description="Transparent pricing plans for AAMA's fund management platform. Choose from Professional, Professional Plus, or Enterprise plans to suit your asset management needs."
-        keywords="fund management pricing, asset management cost, mutual fund platform, fund administration fees, pricing plans, AUM pricing"
+        description="AAMA.io offers institutional-grade fund management software at startup-friendly pricing with plans for funds of all sizes. Choose from Starter, Growth, or Pro plans with no hidden fees."
+        keywords="fund management pricing, SaaS pricing, fund platform costs, startup-friendly pricing, Singapore fund management, AUM-based pricing"
       />
       <AppShell.Header>
         <Header />
@@ -22,6 +22,7 @@ export default function PricingPage() {
       <AppShell.Main>
         <PricingHero />
         <PricingTables />
+        <PricingSection />
         <PricingFAQ />
         <Footer />
       </AppShell.Main>

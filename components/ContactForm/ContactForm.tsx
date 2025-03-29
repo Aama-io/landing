@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Container,
   Paper,
@@ -12,12 +12,16 @@ import {
   Stack,
   Notification,
   Title,
+  Divider,
+  Box,
+  Center,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { IconCheck, IconX, IconMail } from '@tabler/icons-react';
+import { IconCheck, IconX, IconMail, IconCalendar } from '@tabler/icons-react';
 import emailjs from '@emailjs/browser';
 import { useAnalytics } from '../Analytics';
 import classes from './ContactForm.module.css';
+import Cal, { getCalApi } from "@calcom/embed-react";
 
 // Initialize EmailJS with public key
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
@@ -34,6 +38,17 @@ const INQUIRY_TYPES = [
 export function ContactForm() {
   const [status, setStatus] = useState<'success' | 'error' | null>(null);
   const { trackEvent } = useAnalytics();
+
+  useEffect(() => {
+    (async function() {
+      const cal = await getCalApi();
+      cal("ui", {
+        styles: {
+          branding: { brandColor: "#0070f3" }
+        }
+      });
+    })();
+  }, []);
 
   const form = useForm({
     initialValues: {
@@ -214,6 +229,20 @@ export function ContactForm() {
             </Text>
           </Stack>
         </form>
+        
+        <Divider my="xl" label="OR" labelPosition="center" />
+        
+        <Box my="md">
+          <Center>
+              <Title size="sm" c="dimmed" mb="xs">
+                Prefer to schedule a live conversation?
+              </Title>
+              </Center>
+                <Cal
+                  calLink="aamaio/30min"
+                  style={{ width: "100%", height: "100%" }}
+                />
+        </Box>
       </Paper>
     </Container>
   );

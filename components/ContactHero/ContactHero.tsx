@@ -1,9 +1,22 @@
 import { Container, Text, Title, Group, Button, Stack, Box, Badge, Grid, Center } from '@mantine/core';
-import { IconPhone, IconMail, IconMapPin, IconClock, IconArrowRight } from '@tabler/icons-react';
+import { IconPhone, IconMail, IconMapPin, IconClock, IconArrowRight, IconCalendar } from '@tabler/icons-react';
 import classes from './ContactHero.module.css';
 import Link from 'next/link';
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from 'react';
 
 export function ContactHero() {
+  useEffect(() => {
+    (async function() {
+      const cal = await getCalApi();
+      cal("ui", {
+        styles: {
+          branding: { brandColor: "#0070f3" }
+        }
+      });
+    })();
+  }, []);
+
   return (
     <Box className={classes.wrapper}>
       <Container size="lg" py="xl" className={classes.container}>
@@ -42,12 +55,20 @@ export function ContactHero() {
                 </div>
 
                 <div className={classes.contactItem}>
-                  <IconMapPin size={32} stroke={1.5} className={classes.icon} />
-                  <Text fw={700} mt="md">Visit Us</Text>
-                  <Text className={classes.contactText} ta="center">
-                    Robinson Road, #14-04<br />
-                    Singapore (068914)
-                  </Text>
+                  <IconCalendar size={32} stroke={1.5} className={classes.icon} />
+                  <Text fw={700} mt="md">Schedule a Meeting</Text>
+                    <Text
+                      component="a"
+                      href="https://cal.com/aamaio/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="outline"
+                      color="blue"
+                      size="sm"
+                      className={classes.contactLink}
+                    >
+                      Book a time
+                    </Text>
                 </div>
               </Group>
             </Center>

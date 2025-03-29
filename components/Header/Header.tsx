@@ -11,20 +11,17 @@ import {
   useComputedColorScheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconSun, IconMoon } from '@tabler/icons-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ActionToggle } from '../ActionToggle/ActionToggle';
 import { useAnalytics } from '../Analytics';
 import classes from './Header.module.css';
 
 const links = [
   { link: '/', label: 'Home' },
-  { link: '/about', label: 'About' },
   { link: '/product', label: 'Product' },
+  { link: '/solutions', label: 'Solutions' },
   { link: '/pricing', label: 'Pricing' },
-  { link: '/blog', label: 'Blog' },
-  { link: '/contact', label: 'Contact' },
+  { link: '/about', label: 'About' },
 ];
 
 export function Header() {

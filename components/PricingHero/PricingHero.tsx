@@ -12,36 +12,36 @@ export function PricingHero() {
               <Badge size="lg" radius="sm" className={classes.badge}>Pricing</Badge>
               
               <Title className={classes.title}>
-                Transparent Pricing for <span className={classes.highlight}>Fund Management</span>
+                Institutional-Grade at <span className={classes.highlight}>Startup-Friendly Pricing</span>
               </Title>
               
               <Text className={classes.description}>
-                AAMA offers flexible and transparent pricing options designed for funds of all sizes. 
-                Our fee structure is based on assets under management, ensuring alignment with your fund's success.
+                We offer institutional-grade fund management software at startup-friendly pricing — designed to help 
+                Singaporean fund managers scale, stay compliant, and delight investors.
               </Text>
               
               <Group mt="xl" className={classes.features}>
                 <div className={classes.feature}>
                   <div className={classes.featureIcon}>✓</div>
                   <div className={classes.featureText}>
-                    <Text fw={700}>No Hidden Fees</Text>
-                    <Text size="sm" c="dimmed">Clear, asset-based pricing</Text>
+                    <Text fw={700}>SaaS Subscription</Text>
+                    <Text size="sm" c="dimmed">Transparent monthly or yearly billing</Text>
                   </div>
                 </div>
                 
                 <div className={classes.feature}>
                   <div className={classes.featureIcon}>✓</div>
                   <div className={classes.featureText}>
-                    <Text fw={700}>Volume Discounts</Text>
-                    <Text size="sm" c="dimmed">Rates decrease with AUM</Text>
+                    <Text fw={700}>All-Inclusive</Text>
+                    <Text size="sm" c="dimmed">Maintenance & support included</Text>
                   </div>
                 </div>
                 
                 <div className={classes.feature}>
                   <div className={classes.featureIcon}>✓</div>
                   <div className={classes.featureText}>
-                    <Text fw={700}>Free Trial Available</Text>
-                    <Text size="sm" c="dimmed">Test before committing</Text>
+                    <Text fw={700}>Early Adopter Discount</Text>
+                    <Text size="sm" c="dimmed">30% off for first 3 clients</Text>
                   </div>
                 </div>
               </Group>
