@@ -152,7 +152,7 @@ export function Product() {
             >
               <Badge size="lg" radius="sm" className={classes.badge}>Fund-as-a-Service Platform</Badge>
               <Title className={classes.heroTitle}>
-                Launch your fund in days, <br /><span className={classes.accentText}>not months</span>
+                Modern Fund <br /><span className={classes.accentText}>Management Platform</span>
               </Title>
               <Text className={classes.heroDescription}>
                 Our comprehensive platform enables fund managers to launch and operate funds efficiently, with proven expertise in mutual funds and full compliance with MAS regulations. We support all fund types with minimal setup time and resources.

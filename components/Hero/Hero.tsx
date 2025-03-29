@@ -22,12 +22,11 @@ export function Hero() {
           >
             <Badge size="lg" radius="sm" className={classes.badge}>Fund-as-a-Service Platform</Badge>
             <Title className={classes.title}>
-              Modern{' '}
-              <span className={classes.highlight}>Fund Management</span>{' '} Platform
+              Launch your fund in days, <span className={classes.highlight}>not months</span>
             </Title>
             <Text className={classes.description}>
-              Seamlessly manage both traditional and blockchain-based funds with our comprehensive platform. 
-              Built for modern fund managers who demand efficiency, security, and compliance.
+              A fund-as-a-service platform that allows you to create, manage, and distribute funds with ease.
+              Built for modern fund managers who demand efficiency, security, and compliance. 
             </Text>
 
             <Group className={classes.controls}>
