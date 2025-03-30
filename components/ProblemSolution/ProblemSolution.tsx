@@ -150,17 +150,6 @@ export function ProblemSolution() {
                       </motion.li>
                     ))}
                   </div>
-
-                  <Button 
-                    component={Link} 
-                    href="/product" 
-                    variant="light" 
-                    rightSection={<IconArrowRight size={16} />}
-                    className={classes.learnMoreButton} 
-                    mt="xl"
-                  >
-                    Learn More
-                  </Button>
                 </motion.div>
               </Card>
             </motion.div>
