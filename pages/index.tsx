@@ -7,6 +7,7 @@ import { Footer } from '../components/Footer/Footer';
 import { Tokenomics } from '@/components/Tokenomics/Tokenomics';
 import { CTA } from '@/components/CTA/CTA';
 import { SEO } from '@/components/SEO/SEO';
+import { PainPoints } from '@/components/PainPoints/PainPoints';
 import { MotionConfig } from 'framer-motion';
 
 export default function HomePage() {
@@ -29,6 +30,7 @@ export default function HomePage() {
           />
           <Hero />
           <ProblemSolution />
+          <PainPoints />
           <Features />
           <CTA />
           <Footer />

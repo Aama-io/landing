@@ -391,4 +391,33 @@
     align-items: center;
     text-align: center;
   }
+}
+
+.ctaButton {
+  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-indigo-6) 100%);
+  box-shadow: 0 8px 20px rgba(0, 82, 204, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+  font-weight: 600;
+}
+
+.ctaButton:hover {
+  box-shadow: 0 12px 30px rgba(0, 82, 204, 0.25);
+  background: linear-gradient(135deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-indigo-7) 100%);
+}
+
+.featureItem {
+  background-color: rgba(77, 160, 255, 0.08);
+  padding: 12px 20px;
+  border-radius: var(--mantine-radius-md);
+  transition: all 0.2s ease;
+}
+
+.featureItem:hover {
+  background-color: rgba(77, 160, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.checkIcon {
+  color: var(--mantine-color-blue-6);
 } 

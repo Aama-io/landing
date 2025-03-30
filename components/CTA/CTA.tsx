@@ -1,10 +1,17 @@
-import { Container, Text, Title, Button, Group } from '@mantine/core';
+import { Container, Text, Title, Button, Group, Box, Divider } from '@mantine/core';
 import { motion } from 'framer-motion';
 import classes from './CTA.module.css';
 import Link from 'next/link';
-import { IconArrowRight } from '@tabler/icons-react';
+import { IconArrowRight, IconCheck } from '@tabler/icons-react';
 
 export function CTA() {
+  const pricingFeatures = [
+    "No setup fees",
+    "Monthly subscription",
+    "Free investor portal",
+    "Scale as you grow"
+  ];
+
   return (
     <div className={classes.wrapper}>
       <div className={classes.backgroundGrid}>
@@ -34,7 +41,7 @@ export function CTA() {
             viewport={{ once: true }}
           >
             <Title className={classes.title}>
-              Ready to revolutionize your fund management?
+              Transform Your Fund Operations Today
             </Title>
           </motion.div>
           
@@ -45,9 +52,34 @@ export function CTA() {
             viewport={{ once: true }}
           >
             <Text className={classes.description}>
-              Join the future of fund management with AAMA's blockchain-powered platform.
-              Start your journey towards efficient, transparent, and automated fund operations.
+              Replace outdated contact forms with a modern platform where investors can apply, 
+              track and manage investments in real-time. Built specifically for boutique and 
+              mid-sized fund managers in Singapore.
             </Text>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <Group className={classes.pricingFeatures} mt={30}>
+              {pricingFeatures.map((feature, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.5 + (index * 0.1) }}
+                  viewport={{ once: true }}
+                >
+                  <Group gap="xs" className={classes.featureItem}>
+                    <IconCheck size={16} className={classes.checkIcon} />
+                    <Text>{feature}</Text>
+                  </Group>
+                </motion.div>
+              ))}
+            </Group>
           </motion.div>
 
           <Group justify="center" mt={50}>

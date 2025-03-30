@@ -664,15 +664,17 @@
 }
 
 .statCard {
-  background-color: white;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--mantine-color-gray-1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
   }
 }
 
@@ -682,6 +684,22 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+.ringProgressWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--mantine-color-blue-0);
+  border-radius: 50%;
+  border: 3px solid var(--mantine-color-blue-5);
+}
+
+.statValue {
+  color: var(--mantine-color-blue-7);
+  text-align: center;
 }
 
 /* Testimonials */

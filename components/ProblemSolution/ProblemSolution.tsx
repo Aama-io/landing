@@ -16,60 +16,66 @@ import Link from 'next/link';
 export function ProblemSolution() {
   const platforms = [
     {
-      title: 'Aama Fund Management Platform',
-      description: 'Complete suite of tools for both on-chain and off-chain fund operations',
+      title: 'Investor Onboarding Portal',
+      description: 'Investor onboarding portal for retail and institutional investors',
       features: [
-       'Modern fund management tools',
-       'Back office automation',
-       'Automated compliance systems',
-       'Real-time portfolio analytics',
-       'IFRS compliant accounting and reporting'
-      ],
-      icon: IconChartBar,
-    },
-    {
-      title: 'Aama Investor Management Platform',
-      description: 'Investor platform for retail and institutional investors',
-      features: [
-        'SIP and lump sum investments',
         'Digital onboarding process',
         'Real-time portfolio tracking',
         'Automated reporting',
         'Payment methods of choice',
-        'Mobile app for investors'
+        'Mobile app for investors',
+        'KYC and AML compliance',
+        'SIP and lump sum investments',
+        'Real-time portfolio tracking',
       ],
       icon: IconUsers,
     },
     {
-      title: 'On-chain Fund Management (Coming Soon)',
-      description: 'Tokenize your fund and manage it on the blockchain',
+      title: 'Investor Management Platform',
+      description: 'Investor platform for retail and institutional investors',
       features: [
-        'Tokenization of fund assets',
-        'Smart contract-based fund management',
-        'On-chain NAV calculation and distribution',
-        'Regulatory compliance',
-        'On-chain trading and secondary market',
-        'Fractional ownership',
+        'Investor management',
+        'Investor reporting',
+        'Back office automation',
+        'Dividend and interest payments',
+        'Distribution center',
+        'Tax reporting',
+        'Works with mutiple funds',
+        'Permissions and role based access',
+      ],
+      icon: IconUsers,
+    },
+    {
+      title: 'Fund Management & Accounting Platform',
+      description: 'Complete suite of tools for both on-chain and off-chain fund operations',
+      features: [
+        'IFRS compliant accounting and reporting',
+        'Investment planning',
+       'Modern fund management tools',
+       'Back office automation',
+       'Automated compliance systems',
+       'Real-time portfolio analytics',
+       'Works with mutiple funds'
        
       ],
-      icon: IconCoin,
-    },
+      icon: IconChartBar,
+    }
   ];
 
   const benefits = [
-    {
-      title: 'Hybrid Infrastructure',
-      description: 'Seamlessly integrate traditional and blockchain-based fund management systems',
-      icon: IconServer,
-    },
     {
       title: 'Fund-as-a-Service',
       description: 'Launch and manage funds with minimal setup time and technical overhead',
       icon: IconWorld,
     },
     {
-      title: 'Enterprise Security',
-      description: 'Bank-grade security for both traditional and digital assets',
+      title: 'Cloud Infrastructure',
+      description: 'We use the best cloud infrastructure to ensure your data is secure and your systems are reliable',
+      icon: IconServer,
+    },
+    {
+      title: 'End to End Solution',
+      description: 'We provide a complete suite of tools for fund management, from onboarding to accounting and reporting',
       icon: IconShield,
     },
   ];

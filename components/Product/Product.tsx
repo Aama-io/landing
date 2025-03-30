@@ -130,11 +130,7 @@ const faqItems = [
 
 export function Product() {
   return (
-    <MotionConfig reducedMotion="user" transition={{
-      type: "spring",
-      bounce: 0.25,
-      duration: 0.5
-    }}>
+    <MotionConfig reducedMotion="user">
       <div className={classes.wrapper}>
         {/* Hero Section with 3D Elements */}
         <div className={classes.heroWrapper}>
@@ -178,16 +174,11 @@ export function Product() {
                 </Button>
               </Group>
             </motion.div>
-            <motion.div
-              className={classes.heroAnimation}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
+            <div className={classes.heroAnimation}>
               <div className={classes.floatingObject1}></div>
               <div className={classes.floatingObject2}></div>
               <div className={classes.floatingObject3}></div>
-            </motion.div>
+            </div>
           </Container>
         </div>
 
@@ -204,19 +195,10 @@ export function Product() {
               >
                 <Paper p="md" radius="md" className={classes.statCard}>
                   <Group>
-                    <RingProgress
-                      size={80}
-                      thickness={8}
-                      roundCaps
-                      sections={[{ value: (index + 1) * 25, color: 'blue' }]}
-                      label={
-                        <Center>
-                          <IconArrowUp size="1.4rem" stroke={1.5} color="var(--mantine-color-blue-7)" />
-                        </Center>
-                      }
-                    />
+                    <div className={classes.ringProgressWrapper}>
+                      <Text fw={700} fz="xl" className={classes.statValue}>{stat.value}</Text>
+                    </div>
                     <div>
-                      <Text fw={700} fz="xl" className={classes.statCardValue}>{stat.value}</Text>
                       <Text fw={700} fz="sm" tt="uppercase">{stat.label}</Text>
                       <Text fz="xs" c="dimmed">{stat.description}</Text>
                     </div>
@@ -294,88 +276,85 @@ export function Product() {
                 ))}
               </Tabs.List>
 
-              <AnimatePresence mode="wait">
-                {fundTypes.map((type) => (
-                  <Tabs.Panel key={type.value} value={type.value} pt="xl">
-                    <motion.div
-                      key={type.value}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Paper shadow="md" p={0} radius="lg" className={classes.tabContent}>
-                        <Grid gutter={0}>
-                          <Grid.Col span={{ base: 12, md: 6 }} className={classes.tabTextCol}>
-                            <div className={classes.tabTextContent}>
-                              <Title order={3} className={classes.tabTitle}>{type.label} Management</Title>
-                              <Text my="md">
-                                {type.description}
-                              </Text>
-                              <List
-                                spacing="sm"
-                                size="sm"
-                                center
-                                icon={
-                                  <ThemeIcon color="blue" size={24} radius="xl">
-                                    <IconCheck size={14} />
-                                  </ThemeIcon>
-                                }
-                              >
-                                {type.features.map((feature) => (
-                                  <List.Item key={feature}>{feature}</List.Item>
-                                ))}
-                              </List>
-                              {type.value === 'tokenized' && (
-                                <Badge size="lg" radius="sm" className={classes.comingSoonBadge}>
-                                  Coming Soon
-                                </Badge>
-                              )}
-                              <Button
-                                variant="subtle"
-                                rightSection={<IconArrowRight size={16} />}
-                                mt="xl"
-                                component={Link}
-                                href="/contact"
-                              >
-                                Learn more
-                              </Button>
+              {fundTypes.map((type) => (
+                <Tabs.Panel key={type.value} value={type.value} pt="xl">
+                  <motion.div
+                    key={type.value}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Paper shadow="md" p={0} radius="lg" className={classes.tabContent}>
+                      <Grid gutter={0}>
+                        <Grid.Col span={{ base: 12, md: 6 }} className={classes.tabTextCol}>
+                          <div className={classes.tabTextContent}>
+                            <Title order={3} className={classes.tabTitle}>{type.label} Management</Title>
+                            <Text my="md">
+                              {type.description}
+                            </Text>
+                            <List
+                              spacing="sm"
+                              size="sm"
+                              center
+                              icon={
+                                <ThemeIcon color="blue" size={24} radius="xl">
+                                  <IconCheck size={14} />
+                                </ThemeIcon>
+                              }
+                            >
+                              {type.features.map((feature) => (
+                                <List.Item key={feature}>{feature}</List.Item>
+                              ))}
+                            </List>
+                            {type.value === 'tokenized' && (
+                              <Badge size="lg" radius="sm" className={classes.comingSoonBadge}>
+                                Coming Soon
+                              </Badge>
+                            )}
+                            <Button
+                              variant="subtle"
+                              rightSection={<IconArrowRight size={16} />}
+                              mt="xl"
+                              component={Link}
+                              href="/contact"
+                            >
+                              Learn more
+                            </Button>
+                          </div>
+                        </Grid.Col>
+                        <Grid.Col span={{ base: 12, md: 6 }} className={classes.tabImageCol}>
+                          <div className={classes.tabImage} data-type={type.value}>
+                            <div className={classes.imageOverlay} />
+                            <div className={classes.imageContent}>
+                              <Image
+                                src={`/fund-types/${type.value === 'mutual' ? 'mutual-fund' : 
+                                      type.value === 'private' ? 'vc' : 
+                                      type.value === 'reits' ? 'reit' : 
+                                      'tokenization'}.jpg`}
+                                alt={type.label}
+                                width={800}
+                                height={400}
+                                style={{ 
+                                  objectFit: 'cover',
+                                  objectPosition: 'center',
+                                  width: '100%',
+                                  height: '100%',
+                                  position: 'absolute',
+                                  top: 0,
+                                  left: 0
+                                }}
+                              />
+                              <Badge size="xl" radius="md" className={classes.imageBadge}>
+                                {type.label}
+                              </Badge>
                             </div>
-                          </Grid.Col>
-                          <Grid.Col span={{ base: 12, md: 6 }} className={classes.tabImageCol}>
-                            <div className={classes.tabImage} data-type={type.value}>
-                              <div className={classes.imageOverlay} />
-                              <div className={classes.imageContent}>
-                                <Image
-                                  src={`/fund-types/${type.value === 'mutual' ? 'mutual-fund' : 
-                                        type.value === 'private' ? 'vc' : 
-                                        type.value === 'reits' ? 'reit' : 
-                                        'tokenization'}.jpg`}
-                                  alt={type.label}
-                                  width={800}
-                                  height={400}
-                                  style={{ 
-                                    objectFit: 'cover',
-                                    objectPosition: 'center',
-                                    width: '100%',
-                                    height: '100%',
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0
-                                  }}
-                                />
-                                <Badge size="xl" radius="md" className={classes.imageBadge}>
-                                  {type.label}
-                                </Badge>
-                              </div>
-                            </div>
-                          </Grid.Col>
-                        </Grid>
-                      </Paper>
-                    </motion.div>
-                  </Tabs.Panel>
-                ))}
-              </AnimatePresence>
+                          </div>
+                        </Grid.Col>
+                      </Grid>
+                    </Paper>
+                  </motion.div>
+                </Tabs.Panel>
+              ))}
             </Tabs>
           </Container>
         </div>
@@ -403,25 +382,12 @@ export function Product() {
                   transition={{
                     duration: 0.6,
                     delay: index * 0.1,
-                    ease: [0.25, 0.1, 0.25, 1.0]
                   }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   <Paper className={classes.platformCard} p={0} withBorder={false} shadow="none">
-                    <motion.div
+                    <div 
                       className={classes.platformCardInner}
-                      whileHover={{
-                        y: -12,
-                        rotateX: "2deg",
-                        rotateY: "2deg",
-                        z: 20,
-                        boxShadow: "0 30px 60px rgba(0, 0, 0, 0.1)"
-                      }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 25
-                      }}
                     >
                       <ThemeIcon
                         size={60}
@@ -433,26 +399,13 @@ export function Product() {
                       <Title order={3} mt="md" mb="sm">{feature.title}</Title>
                       <div className={classes.featuresGrid}>
                         {feature.features.map((item, idx) => (
-                          <motion.div
+                          <div
                             key={idx}
                             className={classes.featureItem}
-                            initial={{ opacity: 0, x: -10 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{
-                              duration: 0.3,
-                              delay: 0.3 + (idx * 0.07)
-                            }}
-                            viewport={{ once: true }}
-                            whileHover={{
-                              backgroundColor: "var(--mantine-color-blue-0)",
-                              x: 2,
-                              z: 5,
-                              transition: { duration: 0.2 }
-                            }}
                           >
                             <IconCheck size={16} className={classes.checkIcon} />
                             <Text size="sm">{item}</Text>
-                          </motion.div>
+                          </div>
                         ))}
                       </div>
                       <Button
@@ -465,7 +418,7 @@ export function Product() {
                       >
                         Explore
                       </Button>
-                    </motion.div>
+                    </div>
                   </Paper>
                 </motion.div>
               ))}

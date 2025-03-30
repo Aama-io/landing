@@ -50,24 +50,57 @@
 }
 
 .title {
-  font-size: rem(48px);
+  font-size: 48px;
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: var(--mantine-spacing-xl);
   color: var(--mantine-color-white);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
 
-  @media (max-width: $mantine-breakpoint-sm) {
-    font-size: rem(32px);
+@media (max-width: 576px) {
+  .title {
+    font-size: 32px;
   }
 }
 
 .description {
-  max-width: rem(600px);
+  max-width: 600px;
   margin: 0 auto;
-  font-size: rem(18px);
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--mantine-spacing-xl);
+}
+
+.pricingFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--mantine-spacing-md);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featureItem {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+}
+
+.featureItem:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.checkIcon {
+  color: var(--mantine-color-blue-1);
 }
 
 .primaryButton {
@@ -76,16 +109,16 @@
   border: none;
   transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, color 200ms ease;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  min-width: rem(200px);
-  height: rem(54px);
-  font-size: rem(16px);
-  
-  &:hover {
-    background: var(--mantine-color-blue-7);
-    color: white;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
+  min-width: 200px;
+  height: 54px;
+  font-size: 16px;
+}
+
+.primaryButton:hover {
+  background: var(--mantine-color-blue-7);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .secondaryButton {
@@ -94,15 +127,15 @@
   background-color: transparent;
   backdrop-filter: blur(5px);
   transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
-  min-width: rem(200px);
-  height: rem(54px);
-  font-size: rem(16px);
-  
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: translateY(-5px);
-    border-color: white;
-  }
+  min-width: 200px;
+  height: 54px;
+  font-size: 16px;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-5px);
+  border-color: white;
 }
 
 @keyframes pulse {
@@ -125,8 +158,8 @@
 .wrapper::after {
   content: '';
   position: absolute;
-  width: rem(300px);
-  height: rem(300px);
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.03);
   z-index: 0;

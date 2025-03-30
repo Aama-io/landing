@@ -1,0 +1,253 @@
+.wrapper {
+  padding: 80px 0;
+  background-color: var(--mantine-color-gray-0);
+  position: relative;
+  overflow: hidden;
+  background-image: 
+    radial-gradient(circle at 20% 25%, rgba(0, 114, 245, 0.03) 0%, transparent 80%),
+    radial-gradient(circle at 80% 85%, rgba(0, 198, 255, 0.03) 0%, transparent 80%);
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.headerBadge {
+  transform: translateY(-5px);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  box-shadow: 0 4px 10px -4px rgba(0, 114, 245, 0.3);
+}
+
+.title {
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, var(--mantine-color-dark-7), var(--mantine-color-blue-6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+
+.description {
+  line-height: 1.6;
+  color: var(--mantine-color-dark-4);
+}
+
+/* Pain Point Cards */
+.painPointCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease-in-out;
+  border: 1px solid var(--mantine-color-gray-2);
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.painPointCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+  border-color: var(--mantine-color-gray-3);
+}
+
+.painPointCard::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--mantine-color-blue-4), var(--mantine-color-cyan-4));
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.painPointCard:hover::after {
+  opacity: 1;
+}
+
+.painPointIcon {
+  box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.08);
+}
+
+.painPointTitle {
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.painPointDescription {
+  flex-grow: 1;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.solutionBox {
+  background-color: var(--mantine-color-green-0);
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.checkIcon {
+  color: var(--mantine-color-green-6);
+  margin-top: 2px;
+}
+
+.solutionText {
+  color: var(--mantine-color-dark-6);
+  line-height: 1.4;
+}
+
+/* CTA Section */
+.ctaWrapper {
+  position: relative;
+}
+
+.ctaContainer {
+  overflow: hidden;
+  position: relative;
+  background: white;
+  border: 1px solid var(--mantine-color-gray-2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ctaContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+}
+
+.ctaBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 10%, rgba(0, 114, 245, 0.05) 0%, transparent 70%),
+    radial-gradient(circle at 90% 90%, rgba(0, 198, 255, 0.05) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.ctaContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  z-index: 3;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+}
+
+.ctaTitle {
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--mantine-color-dark-9);
+  background: linear-gradient(135deg, var(--mantine-color-dark-8), var(--mantine-color-blue-6));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ctaDescription {
+  color: var(--mantine-color-dark-5);
+  line-height: 1.6;
+}
+
+.ctaDivider {
+  opacity: 0.7;
+  margin: 15px 0;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  box-shadow: 0 5px 15px -5px rgba(56, 128, 255, 0.4);
+  border: none;
+  padding: 0 28px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -5px rgba(56, 128, 255, 0.5);
+}
+
+.secondaryButton {
+  border-color: var(--mantine-color-blue-6);
+  color: var(--mantine-color-blue-6);
+  padding: 0 28px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  background-color: rgba(56, 128, 255, 0.05);
+}
+
+.pricingFeatures {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pricingFeature {
+  background-color: white;
+  color: var(--mantine-color-gray-7);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--mantine-color-gray-2);
+  margin: 5px;
+  transition: all 0.2s ease;
+}
+
+.pricingFeature:hover {
+  border-color: var(--mantine-color-blue-3);
+  color: var(--mantine-color-blue-7);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  
+  .ctaTitle {
+    font-size: 1.8rem;
+  }
+} 
