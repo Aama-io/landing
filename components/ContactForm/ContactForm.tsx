@@ -23,6 +23,7 @@ import { useAnalytics } from '../Analytics';
 import classes from './ContactForm.module.css';
 import Cal, { getCalApi } from "@calcom/embed-react";
 
+console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
 // Initialize EmailJS with public key
 emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 
