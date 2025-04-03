@@ -33,6 +33,7 @@
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
     "@emailjs/browser": "^4.4.1",
+    "@getbrevo/brevo": "^2.2.0",
     "@mantine/core": "7.15.0",
     "@mantine/form": "^7.15.2",
     "@mantine/hooks": "7.15.0",

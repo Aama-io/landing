@@ -18,14 +18,9 @@ import {
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
 import { IconCheck, IconX, IconMail, IconCalendar } from '@tabler/icons-react';
-import emailjs from '@emailjs/browser';
 import { useAnalytics } from '../Analytics';
 import classes from './ContactForm.module.css';
 import Cal, { getCalApi } from "@calcom/embed-react";
-
-console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY)
-// Initialize EmailJS with public key
-emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
 
 const INQUIRY_TYPES = [
   'Fund Management Solutions',
@@ -38,6 +33,7 @@ const INQUIRY_TYPES = [
 
 export function ContactForm() {
   const [status, setStatus] = useState<'success' | 'error' | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { trackEvent } = useAnalytics();
 
   useEffect(() => {
@@ -73,20 +69,22 @@ export function ContactForm() {
 
   const handleSubmit = async (values: typeof form.values) => {
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: values.name,
-          from_email: values.email,
-          company: values.company,
-          phone: values.phone,
-          inquiry_type: values.inquiryType,
-          message: values.message,
-          fund_size: values.fundSize,
-          investment_strategy: values.investmentStrategy,
-        }
-      );
+      setStatus(null);
+      setErrorMessage(null);
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.details || data.error || 'Failed to send email');
+      }
       
       // Track successful form submission
       trackEvent({
@@ -97,7 +95,7 @@ export function ContactForm() {
 
       setStatus('success');
       form.reset();
-    } catch (error) {
+    } catch (error: any) {
       // Track failed form submission
       trackEvent({
         action: 'form_submission_error',
@@ -106,6 +104,7 @@ export function ContactForm() {
       });
 
       setStatus('error');
+      setErrorMessage(error.message || 'Failed to send email. Please try again later.');
       console.error('Failed to send email:', error);
     }
   };
@@ -129,8 +128,16 @@ export function ContactForm() {
             )}
             
             {status === 'error' && (
-              <Notification icon={<IconX size={20} />} color="red" title="Error!" onClose={() => setStatus(null)}>
-                Failed to send message. Please try again or contact us directly.
+              <Notification 
+                icon={<IconX size={20} />} 
+                color="red" 
+                title="Error!" 
+                onClose={() => {
+                  setStatus(null);
+                  setErrorMessage(null);
+                }}
+              >
+                {errorMessage || 'Failed to send message. Please try again or contact us directly.'}
               </Notification>
             )}
 
