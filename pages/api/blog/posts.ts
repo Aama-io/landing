@@ -474,6 +474,108 @@ const blogPosts = [
     publishedDate: '2024-03-10',
     readTime: '6 min',
     categories: ['ESG', 'Sustainable Investing', 'Blockchain']
+  },
+  {
+    id: '11',
+    title: 'Fund Management vs Fund Administration: What’s the Difference and Why It Matters',
+    slug: 'fund-management-vs-fund-administration',
+    excerpt: 'Understand the key differences between fund management and fund administration — two pillars of any investment vehicle — and how modern platforms like aama.io are streamlining both.',
+    content: `
+      <p>In the world of investment funds, the terms <strong>fund management</strong> and <strong>fund administration</strong> are often used interchangeably. But these two functions serve very different — yet equally critical — roles in the lifecycle of a fund.</p>
+      
+      <p>As modern funds become more global, digital, and complex, it’s essential for fund managers, GPs, LPs, and even investors to understand the distinction. At <strong>aama.io</strong>, we’ve built infrastructure that empowers both sides of the fund equation.</p>
+  
+      <h3>What is Fund Management?</h3>
+      
+      <p><strong>Fund management</strong> refers to the strategic oversight of an investment fund. Fund managers are responsible for:</p>
+      
+      <ul>
+        <li>Defining the fund’s investment thesis and asset allocation strategy</li>
+        <li>Making buy, sell, or hold decisions</li>
+        <li>Monitoring portfolio performance and adjusting strategy as needed</li>
+        <li>Engaging with investors and raising capital</li>
+      </ul>
+      
+      <p>In short, fund management is about <strong>growing investor capital</strong> through smart, risk-adjusted decisions.</p>
+  
+      <h3>What is Fund Administration?</h3>
+      
+      <p><strong>Fund administration</strong> focuses on the operational, accounting, and compliance functions that keep a fund running smoothly. Administrators handle:</p>
+      
+      <ul>
+        <li>Capital call processing and investor allocation tracking</li>
+        <li>Fund accounting, NAV (Net Asset Value) calculation, and reporting</li>
+        <li>Maintaining books and records</li>
+        <li>Investor onboarding with KYC/AML checks</li>
+        <li>Regulatory filings and compliance documentation</li>
+      </ul>
+  
+      <p>While they don’t make investment decisions, administrators ensure <strong>accuracy, transparency, and compliance</strong> — building trust among LPs and regulators.</p>
+  
+      <h3>Why the Distinction Matters</h3>
+      
+      <p>As funds grow more sophisticated — spanning PE, VC, REITs, SPVs, and tokenized vehicles — the need for clear separation of duties becomes more important. Operational errors or regulatory missteps in administration can undermine even the best investment strategies.</p>
+  
+      <p>That’s why at <strong>aama.io</strong>, we’ve built a unified platform where fund managers can focus on performance, while our built-in fund administration modules handle compliance, accounting, and reporting at scale.</p>
+  
+      <h3>Comparison Snapshot</h3>
+  
+      <table>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Fund Management</th>
+            <th>Fund Administration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary Role</td>
+            <td>Investment strategy and portfolio growth</td>
+            <td>Operational execution and compliance</td>
+          </tr>
+          <tr>
+            <td>Responsibilities</td>
+            <td>Asset allocation, trading, investor relations</td>
+            <td>NAV, accounting, reporting, KYC/AML</td>
+          </tr>
+          <tr>
+            <td>Key Stakeholders</td>
+            <td>Fund managers, CIOs, GPs</td>
+            <td>Administrators, accountants, auditors</td>
+          </tr>
+          <tr>
+            <td>Tools</td>
+            <td>Portfolio management systems (PMS)</td>
+            <td>Fund admin software, compliance engines</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <h3>Bringing It All Together with aama.io</h3>
+      
+      <p>Whether you're launching a venture fund, managing a mutual fund, or tokenizing a family office vehicle — both fund management and fund administration must work in harmony.</p>
+  
+      <p><strong>aama.io</strong> offers a comprehensive infrastructure where:</p>
+  
+      <ul>
+        <li>Fund managers can plan investments, issue capital calls, and visualize portfolio performance</li>
+        <li>Fund administrators can manage ledgers, automate NAV, run compliance checks, and distribute reports</li>
+      </ul>
+  
+      <p>All in one place. All in real time.</p>
+  
+      <p>Understanding the difference between these functions is the first step. Adopting a unified digital platform like aama.io is the next.</p>
+  
+      <p><strong>Explore how aama.io powers the future of fund lifecycle management.</strong></p>
+    `,
+    author: 'Prashant Chaulagain',
+    authorRole: 'Chief Technology Officer',
+    authorImage: '/team/prashant-chaulagain.jpg',
+    publishedDate: '2025-04-06',
+    readTime: '6 min',
+    coverImage: '/fund-types/mutual-fund.jpg',
+    categories: ['Fund Management', 'Fund Administration', 'Investment Infrastructure']
   }
 ];
 
@@ -484,23 +586,23 @@ export default function handler(
   // Get all blog posts
   if (req.method === 'GET') {
     const { slug } = req.query;
-    
+
     // If slug is provided, return the specific post
     if (slug) {
       const post = blogPosts.find(post => post.slug === slug);
-      
+
       if (!post) {
         return res.status(404).json({ message: 'Blog post not found' });
       }
-      
+
       return res.status(200).json(post);
     }
-    
+
     // Return all posts (without the full content to keep the response size smaller)
     const postsWithoutContent = blogPosts.map(({ content, ...postWithoutContent }) => postWithoutContent);
     return res.status(200).json(postsWithoutContent);
   }
-  
+
   // Method not allowed
   return res.status(405).json({ message: 'Method not allowed' });
 } 

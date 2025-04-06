@@ -33,7 +33,10 @@ export default function BlogPage() {
         const response = await fetch('/api/blog/posts');
         if (!response.ok) throw new Error('Failed to fetch posts');
         const data = await response.json();
-        setPosts(data);
+
+        //reverse the posts
+        const reversedPosts = data.sort((a: BlogPost, b: BlogPost) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime());
+        setPosts(reversedPosts);
       } catch (error) {
         console.error('Error fetching blog posts:', error);
       } finally {
