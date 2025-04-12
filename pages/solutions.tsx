@@ -264,7 +264,7 @@ export default function SolutionsPage() {
     <MotionConfig reducedMotion="user" transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}>
       <AppShell header={{ height: 60 }} padding={0}>
         <SEO 
-          title="Investment Fund Solutions | AAMA"
+          title="Aama.io | Fund Management and Administration Platform"
           description="AAMA.io's comprehensive platform solutions for fund managers, covering the entire investment lifecycle from onboarding to reporting and compliance."
           keywords="fund management platform, investment lifecycle, investor onboarding, fund reporting, portfolio monitoring, investment platform, Singapore fund management"
         />
