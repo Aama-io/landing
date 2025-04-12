@@ -20,7 +20,7 @@ export default function AboutPage() {
 
       <AppShell.Main>
         <AboutHero />
-        <Milestones />
+        {/* <Milestones /> */}
         <Team />
         <Footer />
       </AppShell.Main>

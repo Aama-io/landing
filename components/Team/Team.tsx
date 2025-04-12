@@ -7,21 +7,30 @@ const executives = [
   {
     name: 'Sunil Chaulagain',
     role: 'Chief Executive Officer',
-    bio: 'Experienced leader with a background in traditional finance and blockchain technology. Driving AAMA\'s vision to revolutionize fund management.',
+    bio: 'Software engineer and systems architect with 10+ years of experience building scalable, cloud-native platforms across Australia and Southeast Asia. Experienced leader with a background in traditional finance and blockchain technology. Driving AAMA\'s vision to revolutionize fund management.',
     experience: '10+ years',
     image: '/team/sunil.png',
     linkedin: 'https://www.linkedin.com/in/schaulagain',
-    email: 'sunil@ux-qode.com',
+    email: 'sunil@aama.io',
   },
   {
     name: 'Prashant Chaulagain',
     role: 'Chief Technology Officer',
-    bio: 'Full-stack developer and blockchain expert leading AAMA\'s technical innovation and product development strategy.',
+    bio: 'Experienced software engineer and blockchain expert with 8+ years of experience building scalable, cloud-native platforms across Australia and Southeast Asia. Leading AAMA\'s technical innovation and product development strategy. Experienced in building scalable, cloud-native platforms and blockchain solutions.',
     experience: '8+ years',
     image: '/team/prashant.png',
     linkedin: 'https://linkedin.com/in/erprashant2018',
-    email: '@ux-qode.com',
+    email: 'prashant@aama.io',
   },
+  {
+    name: 'Luis Lim',
+    role: 'Chief Operations Officer',
+    bio: 'Fund management and compliance expert with extensive experience in operational excellence in Singapore. Ensuring AAMA\'s processes meet industry standards while driving efficiency. Fund manager with 5+ years of experience in the financial industry working with MAS licensees.',
+    experience: '5+ years',
+    image: '/team/luis.jpeg',
+    linkedin: 'https://www.linkedin.com/in/luislim/',
+    email: 'luis@aama.io',
+  }
 ];
 
 const departments = [
@@ -62,16 +71,6 @@ const departments = [
         name: 'Nirjal Wagle',
         role: 'Sr. Laravel Developer',
         image: 'https://ui-avatars.com/api/?name=Nirjal+Wagle&size=280&background=e9ecef&color=000',
-      },
-    ]
-  },
-  {
-    name: 'Operations',
-    members: [
-      {
-        name: 'Sharmila KC',
-        role: 'Legal Advisor',
-        image: 'https://ui-avatars.com/api/?name=Sharmila+KC&size=280&background=e9ecef&color=000',
       },
       {
         name: 'Sujata Adhikari',
@@ -132,7 +131,7 @@ const ExecutiveCard = ({ member, index }: any) => (
   >
     <Paper shadow="sm" radius="md" className={classes.executiveCard}>
       <Grid gutter={20}>
-        <Grid.Col span={{ base: 12, sm: 4, md: 3 }}>
+        <Grid.Col span={{ base: 12, sm: 12, md: 3 }}>
           <motion.div
             whileHover={{ scale: 1.03 }}
             transition={{ type: 'spring', stiffness: 300 }}
@@ -348,7 +347,7 @@ export function Team() {
           </motion.div>
 
           <Box mt={30}>
-            <SimpleGrid cols={{ base: 1, md: 2 }} spacing={20}>
+            <SimpleGrid cols={{ base: 1, md: 1 }} spacing={20}>
               {executives.map((member, index) => (
                 <ExecutiveCard key={member.name} member={member} index={index} />
               ))}
@@ -369,7 +368,7 @@ export function Team() {
               </motion.div>
               
               <SimpleGrid
-                cols={{ base: 1, xs: 2, md: 4 }}
+                cols={{ base: 1, xs: 2, md: 5 }}
                 spacing={{ base: 'md', md: 'lg' }}
                 mt={30}
               >
