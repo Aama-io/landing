@@ -68,7 +68,7 @@ export function AboutHero() {
                 variants={statsVariant}
               >
                 <div className={classes.statItem}>
-                  <Text className={classes.statCount}>2023</Text>
+                  <Text className={classes.statCount}>2022</Text>
                   <Text className={classes.statTitle}>Founded</Text>
                 </div>
               </motion.div>
@@ -80,7 +80,7 @@ export function AboutHero() {
                 variants={statsVariant}
               >
                 <div className={classes.statItem}>
-                  <Text className={classes.statCount}>50+</Text>
+                  <Text className={classes.statCount}>10+</Text>
                   <Text className={classes.statTitle}>Team Members</Text>
                 </div>
               </motion.div>
@@ -92,8 +92,8 @@ export function AboutHero() {
                 variants={statsVariant}
               >
                 <div className={classes.statItem}>
-                  <Text className={classes.statCount}>24/7</Text>
-                  <Text className={classes.statTitle}>Support</Text>
+                  <Text className={classes.statCount}>10+</Text>
+                  <Text className={classes.statTitle}>Years of Experience</Text>
                 </div>
               </motion.div>
             </Group>
