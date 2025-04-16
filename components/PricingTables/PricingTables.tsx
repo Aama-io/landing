@@ -8,7 +8,7 @@ const hedgeFundPlans = [
   {
     title: 'Boutique',
     price: { monthly: 'USD 1,250', yearly: 'USD 15,000' },
-    setupFee: 'USD 5,000 – 7,000',
+    setupFee: 'USD 2,500 – 3,500',
     subtitle: 'per month',
     description: 'Small & boutique fund managers (AUM < $50M)',
     perks: [
@@ -32,7 +32,7 @@ const hedgeFundPlans = [
   {
     title: 'Growth',
     price: { monthly: 'USD 2,500', yearly: 'USD 30,000' },
-    setupFee: 'USD 8,000 – 12,000',
+    setupFee: 'USD 4,000 – 6,000',
     subtitle: 'per month',
     description: 'Mid-size funds (AUM $50M – $200M)',
     perks: [
@@ -56,7 +56,7 @@ const hedgeFundPlans = [
   {
     title: 'Pro',
     price: { monthly: 'USD 4,500', yearly: 'USD 54,000' },
-    setupFee: 'USD 15,000 – 25,000',
+    setupFee: 'USD 7,500 – 12,500',
     subtitle: 'per month',
     description: 'Larger firms (AUM > $200M)',
     perks: [
@@ -83,7 +83,7 @@ const privateEquityPlans = [
   {
     title: 'Boutique',
     price: { monthly: 'USD 1,350', yearly: 'USD 16,200' },
-    setupFee: 'USD 5,000 – 7,000',
+    setupFee: 'USD 2,500 – 3,500',
     subtitle: 'per month',
     description: 'Emerging PE firms (< 5 funds)',
     perks: [
@@ -107,7 +107,7 @@ const privateEquityPlans = [
   {
     title: 'Growth',
     price: { monthly: 'USD 2,750', yearly: 'USD 33,000' },
-    setupFee: 'USD 10,000 – 15,000',
+    setupFee: 'USD 5,000 – 7,500',
     subtitle: 'per month',
     description: 'Established PE firms (5-15 funds)',
     perks: [
@@ -131,7 +131,7 @@ const privateEquityPlans = [
   {
     title: 'Pro',
     price: { monthly: 'USD 5,000', yearly: 'USD 60,000' },
-    setupFee: 'USD 20,000+',
+    setupFee: 'USD 10,000+',
     subtitle: 'per month',
     description: 'Large PE firms (> 15 funds)',
     perks: [
@@ -158,7 +158,7 @@ const familyOfficePlans = [
   {
     title: 'Boutique',
     price: { monthly: 'USD 625', yearly: 'USD 7,500' },
-    setupFee: 'USD 3,000 – 5,000',
+    setupFee: 'USD 1,500 – 2,500',
     subtitle: 'per month',
     description: 'Single family office (AUM ≤ $50M)',
     perks: [
@@ -182,7 +182,7 @@ const familyOfficePlans = [
   {
     title: 'Growth',
     price: { monthly: 'USD 1,250', yearly: 'USD 15,000' },
-    setupFee: 'USD 6,000 – 8,000',
+    setupFee: 'USD 3,000 – 4,000',
     subtitle: 'per month',
     description: 'Single family office (AUM $50M – $200M)',
     perks: [
@@ -206,7 +206,7 @@ const familyOfficePlans = [
   {
     title: 'Pro',
     price: { monthly: 'USD 3,350', yearly: 'USD 40,200' },
-    setupFee: 'USD 10,000+',
+    setupFee: 'USD 5,000+',
     subtitle: 'per month',
     description: 'Multi-family office or Large SFO (AUM > $200M)',
     perks: [
@@ -233,7 +233,7 @@ const mutualFundPlans = [
   {
     title: 'Boutique',
     price: { monthly: 'USD 1,500', yearly: 'USD 18,000' },
-    setupFee: 'USD 8,000 – 12,000',
+    setupFee: 'USD 4,000 – 6,000',
     subtitle: 'per month',
     description: 'Small AMCs (3-6 schemes, <$100M AUM)',
     perks: [
@@ -257,7 +257,7 @@ const mutualFundPlans = [
   {
     title: 'Growth',
     price: { monthly: 'USD 2,900', yearly: 'USD 34,800' },
-    setupFee: 'USD 12,000 – 18,000',
+    setupFee: 'USD 6,000 – 9,000',
     subtitle: 'per month',
     description: 'Mid AMCs (6-10 schemes)',
     perks: [
@@ -281,7 +281,7 @@ const mutualFundPlans = [
   {
     title: 'Pro',
     price: { monthly: 'USD 5,000', yearly: 'USD 60,000' },
-    setupFee: 'USD 20,000+',
+    setupFee: 'USD 10,000+',
     subtitle: 'per month',
     description: 'Large AMCs (>10 schemes, >$500M AUM)',
     perks: [
