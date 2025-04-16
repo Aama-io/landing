@@ -36,14 +36,6 @@ export function PricingHero() {
                     <Text size="sm" c="dimmed">Maintenance & support included</Text>
                   </div>
                 </div>
-                
-                <div className={classes.feature}>
-                  <div className={classes.featureIcon}>✓</div>
-                  <div className={classes.featureText}>
-                    <Text fw={700}>Early Adopter Discount</Text>
-                    <Text size="sm" c="dimmed">30% off for first 3 clients</Text>
-                  </div>
-                </div>
               </Group>
             </div>
           </Grid.Col>
