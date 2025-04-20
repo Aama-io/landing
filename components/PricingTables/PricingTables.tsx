@@ -368,15 +368,6 @@ export function PricingTables() {
               className={classes.segmentedControl}
             />
           </Group>
-
-          <Group className={classes.comingSoonBanner} mt="sm">
-            <ThemeIcon size="md" radius="xl" color="green" variant="light">
-              <IconDiscount2 size={16} />
-            </ThemeIcon>
-            <Text size="sm" c="dimmed">
-              First 3 clients receive a 30% lifetime discount or first-year discount. Contact us to learn more.
-            </Text>
-          </Group>
         </Stack>
 
         <div className={classes.grid}>
