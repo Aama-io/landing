@@ -576,7 +576,7 @@ const blogPosts = [
     readTime: '6 min',
     coverImage: '/fund-types/mutual-fund.jpg',
     categories: ['Fund Management', 'Fund Administration', 'Investment Infrastructure']
-  }
+  },
   {
     id: '12',
     title: 'How AAMA.io Simplifies Fund Operations for Singapore-Based Family Offices',
@@ -641,7 +641,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
 
       <h4>3.  Built-In MAS Compliance Tools.</h4>
      
-      <p>Singapore’s family office ecosystem is governed by strict guidelines, especially around Section 13O and 13U tax exemptions. AAMA.io provides integrated compliance tracking tools to:</p>
+      <p> Singapore’s family office ecosystem is governed by strict guidelines, especially around Section 13O and 13U tax exemptions. AAMA.io provides integrated compliance tracking tools to:</p>
       <p>With this, stakeholders can:</p>
       <ul>
         <li>Monitor spending thresholds.</li>
@@ -666,7 +666,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
       <p>Reporting is more than just data—it’s communication. AAMA.io empowers family offices to:</p>
   
       <ul>
-        <li>MCreate branded investor reports</li>
+        <li>Create branded investor reports.</li>
         <li>Automate quarterly updates.</li>
         <li>Offer mobile-friendly dashboards for family principals and external advisors.</li>
       </ul>
@@ -684,6 +684,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
       <p>This functionality is particularly useful for Singapore-based family offices that participate in direct or club investments.</p>
       
       <h3> Why Singapore Family Offices Choose AAMA.io</h3>
+      
       <p>As wealth continues to grow in Asia, Singapore family offices must embrace a digital-first, compliance-led approach to fund operations. Platforms like AAMA.io will become essential infrastructure not a luxury.</p>
       <p>The move toward full-stack solutions reflects a broader shift:</p>
       <ul>
@@ -703,7 +704,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
     authorRole: 'Chief Marketing Officer',
     authorImage: '/team/prashant-chaulagain.jpg',
     coverImage: '/fund-types/mutual-fund.jpg',
-    publishedDate: '2024-07-15',
+    publishedDate: '2025-07-22',
     readTime: '5 min',
     categories: ['Fund Management', 'Operations', 'Family Offices']
   },
