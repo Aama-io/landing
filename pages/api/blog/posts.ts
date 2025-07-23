@@ -703,7 +703,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
     author: 'Pragati Adhikari',
     authorRole: 'Chief Marketing Officer',
     authorImage: '/team/prashant-chaulagain.jpg',
-    coverImage: '/fund-types/mutual-fund.jpg',
+    coverImage: '/images/family-office-blog.png',
     publishedDate: '2025-07-22',
     readTime: '5 min',
     categories: ['Fund Management', 'Operations', 'Family Offices']
