@@ -1,87 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aama.finance/</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/pricing</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/about</loc>
-    <lastmod>2024-03-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog</loc>
-    <lastmod>2024-03-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/ifrs-compliant-fund-management</loc>
-    <lastmod>2024-03-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/24-7-investment-access</loc>
-    <lastmod>2024-03-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/streamlining-fund-operations</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/data-integration-modern-fund-management</loc>
-    <lastmod>2024-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/enhancing-investor-relations-digital-portals</loc>
-    <lastmod>2024-03-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/understanding-blockchain-fund-management</loc>
-    <lastmod>2023-12-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/role-of-smart-contracts-in-fund-administration</loc>
-    <lastmod>2024-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/regulatory-considerations-blockchain-funds</loc>
-    <lastmod>2024-02-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/tokenization-real-world-assets</loc>
-    <lastmod>2024-02-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://aama.finance/blog/esg-investing-blockchain-era</loc>
-    <lastmod>2024-03-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset> 
+<<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+<url>
+<loc>https://aama.io/</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://aama.io/product</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/solutions</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/pricing</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/about</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/contact</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/blog</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/privacy</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/terms</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/blog</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://aama.io/compliance</loc>
+<lastmod>2025-07-30T08:54:04+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+</urlset>
