@@ -734,12 +734,12 @@ Modern private equity platforms address these challenges by providing integrated
       <p>Characteristics of Legacy Systems:</p>
       <ol>
         <li>Manual data entry and reconciliation processes.</li>
-        <li> Limited integration with third-party systems.</li>
+        <li>Limited integration with third-party systems.</li>
         <li>Batch processing that delays reporting.</li>
-        <li> Inflexible reporting formats. </li>
+        <li>Inflexible reporting formats.</li>
         <li><High maintenance costs.</li>    
-        <li> Limited scalability.</li>
-         <li><Security vulnerabilities due to outdated infrastructure.</li>   
+        <li>Limited scalability.</li>
+        <li><Security vulnerabilities due to outdated infrastructure.</li>   
         </ol>
       
       <h3>Modern Fund Platform Advantages:</h3>
