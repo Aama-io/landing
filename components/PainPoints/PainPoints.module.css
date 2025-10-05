@@ -86,7 +86,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--mantine-color-blue-4), var(--mantine-color-cyan-4));
+  background: linear-gradient(90deg, var(--mantine-color-blue-7), var(--mantine-color-cyan-4));
   opacity: 0;
   transition: opacity 0.25s ease-in-out;
 }

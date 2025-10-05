@@ -33,7 +33,7 @@ const fundTypes = [
     ]
   },
   {
-    value: 'tokenized', label: 'Tokenized Funds', icon: <IconCoin size={16} />, description: "Coming Soon: Next-generation tokenized fund platform", features: [
+    value: 'tokenized', label: 'Tokenized Funds', icon: <IconCoin size={16} />, description: "Coming Soon: Next-generation tokenized fund software", features: [
       "Digital fund unit tokenization",
       "Smart contract automation",
       "On-chain NAV calculation",
@@ -43,7 +43,7 @@ const fundTypes = [
   }
 ];
 
-const platformFeatures = [
+const softwareFeatures = [
   {
     icon: IconDeviceDesktop,
     title: "Fund Management Platform",
@@ -108,23 +108,23 @@ const stats = [
 const faqItems = [
   {
     value: 'how-it-works',
-    title: 'How does the Fund-as-a-Service platform work?',
-    content: 'Our platform provides comprehensive infrastructure for fund managers, with particular expertise in mutual funds. You configure your fund parameters through our intuitive interface, and our system automates operations from investor onboarding to NAV calculations, reporting, and compliance monitoring.'
+    title: 'How does the Fund-as-a-Service software work?',
+    content: 'Our software provides comprehensive infrastructure for fund managers, with particular expertise in mutual funds. You configure your fund parameters through our intuitive interface, and our system automates operations from investor onboarding to NAV calculations, reporting, and compliance monitoring.'
   },
   {
     value: 'compliance',
     title: 'How do you handle regulatory compliance?',
-    content: 'We\'ve built compliance monitoring and reporting into the core of our platform, with specific modules for MAS requirements and other regulatory frameworks. The system automatically tracks regulatory requirements, generates necessary reports, manages investor KYC/AML, and ensures your fund operations meet all applicable standards.'
+    content: 'We\'ve built compliance monitoring and reporting into the core of Our software, with specific modules for MAS requirements and other regulatory frameworks. The system automatically tracks regulatory requirements, generates necessary reports, manages investor KYC/AML, and ensures your fund operations meet all applicable standards.'
   },
   {
     value: 'integration',
-    title: 'Does your platform integrate with existing systems?',
-    content: 'Yes, our platform offers comprehensive APIs for seamless integration with banking systems, CRM tools, and accounting software. We support data import/export in various formats to ensure smooth transition and continuous operation with your existing infrastructure.'
+    title: 'Does yOur software integrate with existing systems?',
+    content: 'Yes, Our software offers comprehensive APIs for seamless integration with banking systems, CRM tools, and accounting software. We support data import/export in various formats to ensure smooth transition and continuous operation with your existing infrastructure.'
   },
   {
     value: 'future-plans',
-    title: 'What future developments are planned for the platform?',
-    content: 'We are continuously enhancing our platform with advanced analytics, automated compliance monitoring, and improved investor reporting. Our roadmap includes enhanced mutual fund features that will streamline operations while maintaining strict regulatory compliance.'
+    title: 'What future developments are planned for the software?',
+    content: 'We are continuously enhancing Our software with advanced analytics, automated compliance monitoring, and improved investor reporting. Our roadmap includes enhanced mutual fund features that will streamline operations while maintaining strict regulatory compliance.'
   },
 ];
 
@@ -146,12 +146,14 @@ export function Product() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Badge size="lg" radius="sm" className={classes.badge}>Fund-as-a-Service Platform</Badge>
+              <Badge size="lg" radius="sm" className={classes.badge}>AI-Powered End-to-End Fund Management Software</Badge>
               <Title className={classes.heroTitle}>
-                Modern Fund <br /><span className={classes.accentText}>Management Platform</span>
+                Complete fund management <span className={classes.accentText}>from start to finish</span>
               </Title>
               <Text className={classes.heroDescription}>
-                Our comprehensive platform enables fund managers to launch and operate funds efficiently, with proven expertise in mutual funds and full compliance with MAS regulations. We support all fund types with minimal setup time and resources.
+                The software that handles your entire fund lifecycle powered by AI. From fund setup and 
+                investor onboarding to daily operations, accounting, compliance, and reporting - everything 
+                you need to run your fund successfully, all in one place.
               </Text>
               <Group mt="xl">
                 <Button
@@ -249,7 +251,7 @@ export function Product() {
               viewport={{ once: true }}
             >
               <Title order={2} className={classes.sectionTitle} ta="center">
-                One platform for <span className={classes.accentText}>all fund types</span>
+                One software for <span className={classes.accentText}>all fund types</span>
               </Title>
               <Text ta="center" c="dimmed" className={classes.sectionDescription}>
                 From traditional mutual funds to next-generation tokenized funds
@@ -360,7 +362,7 @@ export function Product() {
         </div>
 
         {/* Platform Features with 3D Cards */}
-        <div className={classes.platformSection}>
+        <div className={classes.softwareSection}>
           <Container size="lg">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -368,13 +370,13 @@ export function Product() {
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Title order={2} className={classes.platformTitle}>
-                Three integrated platforms, <br /><span className={classes.accentText}>one unified experience</span>
+              <Title order={2} className={classes.softwareTitle}>
+                Three integrated softwares, <br /><span className={classes.accentText}>one unified experience</span>
               </Title>
             </motion.div>
 
             <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
-              {platformFeatures.map((feature, index) => (
+              {softwareFeatures.map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 40 }}
@@ -385,14 +387,14 @@ export function Product() {
                   }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <Paper className={classes.platformCard} p={0} withBorder={false} shadow="none">
+                  <Paper className={classes.softwareCard} p={0} withBorder={false} shadow="none">
                     <div 
-                      className={classes.platformCardInner}
+                      className={classes.softwareCardInner}
                     >
                       <ThemeIcon
                         size={60}
                         radius="xl"
-                        className={classes.platformIcon}
+                        className={classes.softwareIcon}
                       >
                         <feature.icon size={30} />
                       </ThemeIcon>
@@ -433,7 +435,7 @@ export function Product() {
               Frequently Asked <span className={classes.accentText}>Questions</span>
             </Title>
             <Text ta="center" c="dimmed" className={classes.sectionDescription} mb="xl">
-              Everything you need to know about our platform
+              Everything you need to know about Our software
             </Text>
 
             <Accordion
@@ -462,7 +464,7 @@ export function Product() {
             <Box py={40} className={classes.simplifiedCta}>
               <Title ta="center" className={classes.ctaTitle}>Ready to launch your fund?</Title>
               <Text ta="center" className={classes.ctaText} maw={700} mx="auto" mb={40}>
-                Our platform helps fund managers launch and operate efficiently with minimal setup time in Singapore. Get started today.
+                Our software helps fund managers launch and operate efficiently with minimal setup time in Singapore. Get started today.
               </Text>
               <Group justify="center">
                 <Button

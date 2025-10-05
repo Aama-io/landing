@@ -4,7 +4,7 @@ import { ActionIcon, Group, useComputedColorScheme, useMantineColorScheme } from
 import classes from './ActionToggle.module.css';
 
 export function ActionToggle() {
-  const { setColorScheme } = useMantineColorScheme();
+  const { setColorScheme} = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light', { getInitialValueInEffect: true });
 
   return (

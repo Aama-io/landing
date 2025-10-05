@@ -11,7 +11,7 @@ export default function AboutPage() {
     <AppShell header={{ height: 60 }} padding={0}>
       <SEO 
         title="About Us | AAMA"
-        description="Learn about AAMA's mission to revolutionize fund management through our blockchain-enabled platform, our expert team, and our journey."
+        description="Learn about AAMA's mission to revolutionize fund management through our blockchain-enabled software, our expert team, and our journey."
         keywords="AAMA team, fund management team, fintech experts, blockchain finance, fund innovation, financial technology"
       />
       <AppShell.Header>

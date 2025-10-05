@@ -65,7 +65,7 @@ export function Screenshots() {
         </Title>
 
         <Text c="dimmed" className={classes.description} ta="center" mt="md">
-          Experience our comprehensive fund management solution through these platform previews
+          Experience our comprehensive fund management solution through these software previews
         </Text>
 
         <div className={classes.grid}>

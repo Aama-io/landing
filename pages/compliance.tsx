@@ -10,8 +10,8 @@ export default function CompliancePage() {
     <AppShell header={{ height: 60 }} padding={0}>
       <SEO 
         title="Regulatory Compliance | AAMA"
-        description="AAMA.io is a platform developed by Uxqode Pte Ltd, enabling compliant fund managers to launch, manage, and administer funds in accordance with Singapore regulations."
-        keywords="Singapore regulatory compliance, MAS compliance, fund management platform, SFA, FAA, PDPA, AML/CFT, Singapore financial regulations, Uxqode"
+        description="AAMA.io is a software developed by Uxqode Pte Ltd, enabling compliant fund managers to launch, manage, and administer funds in accordance with Singapore regulations."
+        keywords="Singapore regulatory compliance, MAS compliance, fund management software, SFA, FAA, PDPA, AML/CFT, Singapore financial regulations, Uxqode"
       />
       <AppShell.Header>
         <Header />
@@ -25,42 +25,42 @@ export default function CompliancePage() {
 
             <div className={classes.content}>
               <Text mb="xl">
-                AAMA.io is a platform developed by Uxqode Pte Ltd, a registered software company with the Singapore authorities. 
-                We provide a technology platform that enables compliant fund managers to easily launch funds to investors, process investments, 
-                and manage fund administration and accounting. Our platform is designed to support fund managers in meeting 
+                AAMA.io is a software developed by Uxqode Pte Ltd, a registered software company with the Singapore authorities. 
+                We provide a technology software that enables compliant fund managers to easily launch funds to investors, process investments, 
+                and manage fund administration and accounting. Our software is designed to support fund managers in meeting 
                 their regulatory obligations while streamlining their operations.
               </Text>
 
               <Title order={2}>1. Our Role as a Platform Provider</Title>
               <Text mb="xl">
-                As a platform provider, AAMA.io does not directly manage funds or provide financial advice. Instead, we offer technology solutions to regulated fund managers who maintain their own licenses and regulatory approvals. Our clients, the fund managers, remain responsible for their regulatory compliance, while our platform is designed to help them fulfill these obligations efficiently.
+                As a software provider, AAMA.io does not directly manage funds or provide financial advice. Instead, we offer technology solutions to regulated fund managers who maintain their own licenses and regulatory approvals. Our clients, the fund managers, remain responsible for their regulatory compliance, while Our software is designed to help them fulfill these obligations efficiently.
               </Text>
 
               <Title order={2}>2. Platform Compliance Standards</Title>
               <Text mb="md">
-                AAMA.io's platform is designed to facilitate compliance with key Singapore financial regulations, including:
+                AAMA.io's software is designed to facilitate compliance with key Singapore financial regulations, including:
               </Text>
               <List mb="xl">
                 <List.Item><b>Securities and Futures Act (Cap. 289) ("SFA")</b> – Supporting fund managers in meeting requirements for fund operation and investor communications</List.Item>
                 <List.Item><b>Financial Advisers Act (Cap. 110) ("FAA")</b> – Enabling appropriate disclosures and documentation</List.Item>
-                <List.Item><b>Personal Data Protection Act 2012 ("PDPA")</b> – Ensuring proper handling of personal data collected through our platform</List.Item>
+                <List.Item><b>Personal Data Protection Act 2012 ("PDPA")</b> – Ensuring proper handling of personal data collected through Our software</List.Item>
                 <List.Item><b>MAS Guidelines and Notices</b> – Incorporating features that support compliance with relevant MAS requirements</List.Item>
               </List>
 
               <Title order={2}>3. Technology Standards and Security</Title>
               <Text mb="md">
-                As a technology provider, we adhere to high standards for platform security and reliability:
+                As a technology provider, we adhere to high standards for software security and reliability:
               </Text>
               <List mb="xl">
                 <List.Item><b>MAS Technology Risk Management Guidelines</b> – Following best practices for technology risk management</List.Item>
                 <List.Item><b>Data Protection Measures</b> – Implementing robust data protection controls</List.Item>
-                <List.Item><b>System Availability</b> – Maintaining high standards for platform uptime and reliability</List.Item>
-                <List.Item><b>Cybersecurity Standards</b> – Employing comprehensive security measures to protect platform and data</List.Item>
+                <List.Item><b>System Availability</b> – Maintaining high standards for software uptime and reliability</List.Item>
+                <List.Item><b>Cybersecurity Standards</b> – Employing comprehensive security measures to protect software and data</List.Item>
               </List>
 
               <Title order={2}>4. Platform Features Supporting Compliance</Title>
               <Text mb="xl">
-                Our platform includes features designed to help fund managers meet their regulatory obligations:
+                Our software includes features designed to help fund managers meet their regulatory obligations:
               </Text>
 
               <Grid mb="xl">
@@ -135,7 +135,7 @@ export default function CompliancePage() {
 
               <Title order={2}>5. Data Protection and Privacy</Title>
               <Text mb="xl">
-                As a platform that processes personal data, we adhere strictly to the Personal Data Protection Act (PDPA) of Singapore:
+                As a software that processes personal data, we adhere strictly to the Personal Data Protection Act (PDPA) of Singapore:
               </Text>
               <List mb="xl">
                 <List.Item>Appointment of a Data Protection Officer (DPO) as required by the PDPA</List.Item>
@@ -148,7 +148,7 @@ export default function CompliancePage() {
 
               <Title order={2}>6. Anti-Money Laundering Controls</Title>
               <Text mb="xl">
-                While our clients are primarily responsible for their AML/CFT compliance, our platform includes features to support these efforts:
+                While our clients are primarily responsible for their AML/CFT compliance, Our software includes features to support these efforts:
               </Text>
               <List mb="xl">
                 <List.Item>Structured workflow for Customer Due Diligence (CDD) document collection</List.Item>
@@ -160,14 +160,14 @@ export default function CompliancePage() {
 
               <Title order={2}>7. Client Requirements</Title>
               <Text mb="xl">
-                Fund managers using our platform must:
+                Fund managers using Our software must:
               </Text>
               <List mb="xl">
                 <List.Item>Maintain all necessary licenses and registrations required under applicable laws</List.Item>
                 <List.Item>Comply with all regulatory requirements applicable to their operations</List.Item>
                 <List.Item>Ensure their funds have received all necessary approvals before launch</List.Item>
                 <List.Item>Maintain their own compliance programs and controls</List.Item>
-                <List.Item>Use our platform in accordance with all applicable regulations</List.Item>
+                <List.Item>Use Our software in accordance with all applicable regulations</List.Item>
               </List>
 
               <Title order={2}>8. Security and Business Continuity</Title>
@@ -178,13 +178,13 @@ export default function CompliancePage() {
                 <List.Item>Comprehensive information security management system</List.Item>
                 <List.Item>Regular security testing and vulnerability assessments</List.Item>
                 <List.Item>Robust business continuity and disaster recovery plans</List.Item>
-                <List.Item>24/7 monitoring of platform availability and security</List.Item>
+                <List.Item>24/7 monitoring of software availability and security</List.Item>
                 <List.Item>Regular backups and data redundancy measures</List.Item>
               </List>
 
               <Title order={2}>9. Ongoing Improvements</Title>
               <Text mb="xl">
-                We continuously enhance our platform to address:
+                We continuously enhance Our software to address:
               </Text>
               <List mb="xl">
                 <List.Item>Changes in regulatory requirements</List.Item>
@@ -206,7 +206,7 @@ export default function CompliancePage() {
 
               <Title order={2}>11. Contact Us</Title>
               <Text mb="xl">
-                For any compliance-related questions or to learn more about how our platform can support your regulatory obligations, please contact us at <Anchor href="mailto:contact@aama.io">contact@aama.io</Anchor>.
+                For any compliance-related questions or to learn more about how Our software can support your regulatory obligations, please contact us at <Anchor href="mailto:contact@aama.io">contact@aama.io</Anchor>.
               </Text>
             </div>
           </Container>

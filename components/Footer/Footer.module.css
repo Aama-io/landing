@@ -99,7 +99,7 @@
   }
   
   .creditLink {
-    color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-4));
+    color: light-dark(var(--mantine-color-blue-6), var(--mantine-color-blue-7));
     text-decoration: none;
     transition: color 200ms ease, text-decoration 200ms ease;
   

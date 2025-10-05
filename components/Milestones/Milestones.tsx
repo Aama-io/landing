@@ -8,10 +8,10 @@ const milestones = [
   { 
     date: "Q1 2024", 
     title: "Launch in Nepal",
-    description: "Successfully deployed our platform with licensed fund managers in Nepal, establishing AAMA as a pioneer in fund administration technology in the region.",
+    description: "Successfully deployed Our software with licensed fund managers in Nepal, establishing AAMA as a pioneer in fund administration technology in the region.",
     details: [
       "Onboarded first institutional clients",
-      "Deployed core fund management platform",
+      "Deployed core fund management software",
       "Established local support team",
       "Received regulatory approval"
     ],
@@ -22,7 +22,7 @@ const milestones = [
   { 
     date: "Q3 2024", 
     title: "Platform Enhancement", 
-    description: "Major platform upgrade with advanced analytics, expanded reporting capabilities and enhanced investor portal features.",
+    description: "Major software upgrade with advanced analytics, expanded reporting capabilities and enhanced investor portal features.",
     details: [
       "Improved NAV calculation engine",
       "Enhanced reporting dashboard",
@@ -54,7 +54,7 @@ const milestones = [
     title: "On-Chain Services Launch", 
     description: "Introducing our blockchain capabilities, enabling tokenization, fractional ownership and enhanced liquidity options.",
     details: [
-      "Smart contract deployment platform",
+      "Smart contract deployment software",
       "Tokenization of traditional assets",
       "Automated distributions and reconciliations",
       "Enhanced transparency and reporting"

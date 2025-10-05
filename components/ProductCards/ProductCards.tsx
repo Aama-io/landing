@@ -5,12 +5,12 @@ import classes from './ProductCards.module.css';
 const products = [
   {
     title: 'Matrix Mutual Platform',
-    description: 'Complete fund management & accounting platform with automated NAV calculation.',
+    description: 'Complete fund management & accounting software with automated NAV calculation.',
     link: 'Learn more',
   },
   {
     title: 'Capital Engine',
-    description: 'Investment platform for SIP & lump sum investments in open-ended mutual funds.',
+    description: 'Investment software for SIP & lump sum investments in open-ended mutual funds.',
     link: 'Learn more',
   },
   {

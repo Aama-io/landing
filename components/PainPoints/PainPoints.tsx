@@ -35,7 +35,7 @@ export function PainPoints() {
       description: 'Enterprise systems are overpriced and out of reach for boutique firms.',
       icon: IconCloud,
       color: 'yellow',
-      solution: 'Modern cloud platform at 90% lower cost than enterprise solutions.'
+      solution: 'Modern cloud software at 90% lower cost than enterprise solutions.'
     },
     {
       id: 'investor',
@@ -135,7 +135,6 @@ export function PainPoints() {
                   
                   <Box className={classes.solutionBox}>
                     <Group gap="xs">
-                      <IconCheck size={16} className={classes.checkIcon} />
                       <Text fw={500} size="sm" className={classes.solutionText}>
                         {challenge.solution}
                       </Text>

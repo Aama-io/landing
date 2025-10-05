@@ -1,83 +1,115 @@
 import { Container, Title, Text, Button, Group, Badge } from '@mantine/core';
-import { IconArrowRight } from '@tabler/icons-react';
+import { IconArrowRight, IconPlayerPlay, IconStar } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import classes from './Hero.module.css';
 import Link from 'next/link';
 
 export function Hero() {
   return (
     <div className={classes.root}>
+      {/* Simple Background */}
       <div className={classes.heroGrid}>
         <div className={classes.heroGridItem1}></div>
         <div className={classes.heroGridItem2}></div>
         <div className={classes.heroGridItem3}></div>
       </div>
-      <Container size="lg">
-        <div className={classes.inner}>
-          <motion.div 
-            className={classes.content}
+
+      {/* Simple Floating Elements */}
+      <div className={classes.floatingElements}>
+        <div className={classes.floatingElement}>
+          <IconStar size={24} />
+        </div>
+        <div className={classes.floatingElement2}>
+          <div className={classes.floatingDot}></div>
+        </div>
+      </div>
+
+      <Container size="xl">
+        <div className={classes.centeredLayout}>
+          <motion.div
+            className={classes.contentCenter}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Badge size="lg" radius="sm" className={classes.badge}>Fund-as-a-Service Platform</Badge>
-            <Title className={classes.title}>
-              Launch your fund in days, <span className={classes.highlight}>not months</span>
+            <Badge size="xl" radius="md" className={classes.modernBadge}>
+              End-to-End Fund Management Software
+            </Badge>
+
+            <Title className={classes.modernTitle}>
+              The <span className={classes.gradientHighlight}>AI-powered platform</span>
+              <br />
+              transforming fund operations
             </Title>
-            <Text className={classes.description}>
-              A fund-as-a-service platform that allows you to create, manage, and distribute funds with ease.
-              Built for modern fund managers who demand efficiency, security, and compliance. 
+
+            <Text className={classes.modernDescription}>
+              Streamline your entire fund lifecycle with enterprise-grade automation. From KYC-compliant
+              investor onboarding to real-time NAV calculations, regulatory reporting, and investor servicing -
+              <span className={classes.highlightText}> reduce operational overhead by 80%</span> while ensuring full regulatory compliance.
             </Text>
 
-            <Group className={classes.controls}>
+            <Group className={classes.modernControls} justify="center">
               <Button
                 component={Link}
                 href="/contact"
-                size="lg" 
-                className={classes.control}
-                rightSection={<IconArrowRight size={18} />}
+                size="xl"
+                className={classes.primaryButton}
+                rightSection={<IconArrowRight size={20} />}
               >
                 Get Started
               </Button>
-              
+
               <Button
                 component={Link}
                 href="/contact"
-                size="lg"
+                size="xl"
                 variant="outline"
-                className={classes.control}
+                className={classes.secondaryButton}
+                leftSection={<IconPlayerPlay size={18} />}
               >
-                Schedule Demo
+                Book a Demo
               </Button>
             </Group>
-
-            <div className={classes.stats}>
-              <Group className={classes.statsInner}>
-                <div>
-                  <Text className={classes.statsValue}>$30M+</Text>
-                  <Text className={classes.statsTitle}>Assets Managed</Text>
-                </div>
-                <div>
-                  <Text className={classes.statsValue}>3+</Text>
-                  <Text className={classes.statsTitle}>Active Funds</Text>
-                </div>
-                <div>
-                  <Text className={classes.statsValue}>99.9%</Text>
-                  <Text className={classes.statsTitle}>Uptime</Text>
-                </div>
-              </Group>
-            </div>
           </motion.div>
-          
-          <motion.div 
-            className={classes.illustration}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+
+          <motion.div
+            className={classes.imageContainer}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className={classes.floatingChart}></div>
-            <div className={classes.floatingToken}></div>
-            <div className={classes.floatingGraph}></div>
+            <div className={classes.imageWrapper}>
+              <Image
+                src="/images/client-fund.png"
+                alt="Fund Platform Dashboard"
+                width={900}
+                height={600}
+                className={classes.modernHeroImage}
+                priority
+              />
+              <div className={classes.imageGlow}></div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className={classes.modernStats}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <Group className={classes.statsGrid} justify="center">
+              {[
+                { value: "$30M+", label: "Assets Managed" },
+                { value: "3+", label: "Active Funds" },
+                { value: "99.9%", label: "Uptime" }
+              ].map((stat, index) => (
+                <div key={index} className={classes.statCard}>
+                  <Text className={classes.statValue}>{stat.value}</Text>
+                  <Text className={classes.statLabel}>{stat.label}</Text>
+                </div>
+              ))}
+            </Group>
           </motion.div>
         </div>
       </Container>

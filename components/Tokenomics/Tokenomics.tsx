@@ -35,7 +35,7 @@ const tokenDistribution = [
 const tokenBenefits = [
   {
     title: 'Transaction Fee Discount',
-    description: 'Get 30% off on platform fees',
+    description: 'Get 30% off on software fees',
     icon: IconPercentage,
     highlight: '30% OFF',
   },
@@ -53,7 +53,7 @@ const tokenBenefits = [
   },
   {
     title: 'Governance Rights',
-    description: 'Vote on platform upgrades and proposals',
+    description: 'Vote on software upgrades and proposals',
     icon: IconUsers,
     highlight: 'DAO',
   },
@@ -69,7 +69,7 @@ export function Tokenomics() {
         <Container size={600} p={0}>
           <Text c="dimmed" ta="center" className={classes.description}>
             $TOKEN powers the entire ecosystem with a total supply of 1 billion tokens,
-            providing utility, governance, and rewards for platform participants
+            providing utility, governance, and rewards for software participants
           </Text>
         </Container>
 

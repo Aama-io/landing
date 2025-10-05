@@ -11,7 +11,7 @@
   background: linear-gradient(135deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-indigo-9) 100%);
   padding: 120px 0;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+ 
 }
 
 .heroGrid {
@@ -413,7 +413,7 @@
 }
 
 /* Platform Section */
-.platformSection {
+.softwareSection {
   padding: 120px 0;
   background-color: white;
   position: relative;
@@ -433,7 +433,7 @@
   }
 }
 
-.platformTitle {
+.softwareTitle {
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
@@ -448,14 +448,14 @@
   }
 }
 
-.platformCard {
+.softwareCard {
   height: 100%;
   perspective: 1500px;
   will-change: transform;
   background: transparent;
 }
 
-.platformCardInner {
+.softwareCardInner {
   position: relative;
   padding: 40px;
   border-radius: 20px;
@@ -471,7 +471,7 @@
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-.platformIcon {
+.softwareIcon {
   background: linear-gradient(135deg, var(--mantine-color-blue-5) 0%, var(--mantine-color-indigo-7) 100%);
   color: white;
   box-shadow: 0 10px 20px rgba(0, 82, 204, 0.15);
@@ -479,7 +479,7 @@
   transition: transform 0.2s ease;
 }
 
-.platformCardInner:hover .platformIcon {
+.softwareCardInner:hover .softwareIcon {
   transform: scale(1.05);
 }
 

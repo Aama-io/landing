@@ -3,7 +3,6 @@
   background: linear-gradient(135deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-indigo-9) 100%);
   padding: 120px 0;
   overflow: hidden;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 .heroGrid {
@@ -44,7 +43,7 @@
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: $mantine-breakpoint-md) {
+  @media (max-width: 62em) {
     flex-direction: column;
     text-align: center;
   }
@@ -144,6 +143,7 @@
       background-color: rgba(255, 255, 255, 0.1);
       transform: translateY(-2px);
       border-color: white;
+      color: white;
     }
   }
 }
@@ -248,6 +248,258 @@
   25% { transform: translate(10px, -15px) rotate(5deg); }
   50% { transform: translate(0, -30px) rotate(0deg); }
   75% { transform: translate(-10px, -15px) rotate(-5deg); }
+}
+
+/* Centered Layout Styles */
+.centeredLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.contentCenter {
+  max-width: 900px;
+  margin: 0 auto;
+  color: white;
+  z-index: 2;
+}
+
+.modernBadge {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: var(--mantine-spacing-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modernTitle {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.1;
+  font-weight: 900;
+  margin-bottom: var(--mantine-spacing-lg);
+  color: white;
+  text-align: center;
+}
+
+.gradientHighlight {
+  background: linear-gradient(to right, #fff, #4d9fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 800;
+  text-shadow: 0 0 20px rgba(77, 159, 255, 0.3);
+}
+
+.modernDescription {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto var(--mantine-spacing-xl);
+  line-height: 1.6;
+  text-align: center;
+}
+
+.highlightText {
+  color: #4d9fff;
+  font-weight: 600;
+}
+
+.modernControls {
+  margin: var(--mantine-spacing-xl) auto;
+  justify-content: center;
+  gap: rem(20px);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--mantine-color-blue-5) 0%, var(--mantine-color-indigo-7) 100%);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-indigo-8) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: white;
+    color: white;
+  }
+}
+
+.imageContainer {
+  margin-top: rem(60px);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+}
+
+.modernHeroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.imageGlow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(135deg, rgba(77, 159, 255, 0.3) 0%, rgba(158, 119, 237, 0.3) 100%);
+  border-radius: 24px;
+  z-index: -1;
+  filter: blur(20px);
+}
+
+.floatingElements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floatingElement {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  color: rgba(255, 255, 255, 0.3);
+  animation: float1 6s ease-in-out infinite;
+}
+
+.floatingElement2 {
+  position: absolute;
+  top: 60%;
+  right: 15%;
+  animation: float2 8s ease-in-out infinite;
+}
+
+.floatingDot {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.floatingUI {
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  animation: float1 4s ease-in-out infinite;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    display: none;
+  }
+}
+
+.floatingUI2 {
+  position: absolute;
+  top: 60%;
+  right: -10%;
+  animation: float2 5s ease-in-out infinite;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    display: none;
+  }
+}
+
+.uiCard {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.uiCardIcon {
+  font-size: 20px;
+}
+
+.modernStats {
+  margin-top: rem(80px);
+  width: 100%;
+}
+
+.statsGrid {
+  display: flex;
+  gap: rem(60px);
+  justify-content: center;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    gap: rem(40px);
+  }
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    flex-direction: column;
+    gap: rem(30px);
+  }
+}
+
+.statCard {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: rem(24px) rem(32px);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.statValue {
+  font-size: rem(32px);
+  font-weight: 800;
+  color: white;
+  margin-bottom: rem(8px);
+}
+
+.statLabel {
+  font-size: rem(14px);
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
 }
 
 /* Add to your public folder these SVG files:

@@ -52,7 +52,7 @@ export function CTA() {
             viewport={{ once: true }}
           >
             <Text className={classes.description}>
-              Replace outdated contact forms with a modern platform where investors can apply, 
+              Replace outdated contact forms with a modern software where investors can apply, 
               track and manage investments in real-time. Built specifically for boutique and 
               mid-sized fund managers in Singapore.
             </Text>

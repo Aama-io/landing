@@ -10,8 +10,8 @@ export default function ProductPage() {
     <AppShell header={{ height: 60 }} padding={0}>
       <SEO 
         title="Aama.io | Fund Management and Administration Platform"
-        description="AAMA.io is a comprehensive fund management and administration platform that provides a complete suite of services for investors, fund managers, and fund administrators. Launch and manage mutual funds, VC/PE funds, REITs, and tokenized funds with ease."
-        keywords="fund management platform, fund administration, investment management, investor portal, mutual funds, private capital, REITs, tokenized funds, blockchain finance, fund-as-a-service"
+        description="AAMA.io is a comprehensive fund management and administration software that provides a complete suite of services for investors, fund managers, and fund administrators. Launch and manage mutual funds, VC/PE funds, REITs, and tokenized funds with ease."
+        keywords="fund management software, fund administration, investment management, investor portal, mutual funds, private capital, REITs, tokenized funds, blockchain finance, fund-as-a-service"
       />
       <AppShell.Header>
         <Header />

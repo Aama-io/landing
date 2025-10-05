@@ -9,8 +9,8 @@ export default function TermsOfUse() {
     <AppShell header={{ height: 60 }} padding={0}>
       <SEO 
         title="Terms of Use | AAMA"
-        description="AAMA.io's Terms of Use - The platform is developed by Uxqode Pte Ltd to enable compliant fund managers to launch and manage funds while meeting regulatory requirements."
-        keywords="platform terms, fund management platform, Singapore laws, AAMA terms, Uxqode, software terms, user agreement"
+        description="AAMA.io's Terms of Use - The software is developed by Uxqode Pte Ltd to enable compliant fund managers to launch and manage funds while meeting regulatory requirements."
+        keywords="software terms, fund management software, Singapore laws, AAMA terms, Uxqode, software terms, user agreement"
       />
       <AppShell.Header>
         <Header />
@@ -26,7 +26,7 @@ export default function TermsOfUse() {
               <Text mb="xl">
                 These Terms of Use ("Terms") constitute a legally binding agreement between you and Uxqode Pte Ltd, 
                 the owner and operator of AAMA.io ("Company," "we," "us," or "our") 
-                governing your access to and use of the AAMA.io platform, website, and services (collectively, the "Services"). 
+                governing your access to and use of the AAMA.io software, website, and services (collectively, the "Services"). 
                 By accessing or using our Services, you agree to be bound by these Terms and our Privacy Policy.
               </Text>
 
@@ -37,12 +37,12 @@ export default function TermsOfUse() {
 
               <Title order={2}>2. Platform Description and Role</Title>
               <Text mb="xl">
-                AAMA.io is a technology platform developed by Uxqode Pte Ltd, a registered software company in Singapore. Our platform enables compliant fund managers to launch funds to investors, process investments, and manage fund administration and accounting. We do not directly manage funds, provide financial advice, or make investment decisions. We provide software tools to licensed fund managers who maintain their own regulatory approvals and compliance obligations. All investment activities conducted through our platform are the responsibility of the respective fund managers and investors.
+                AAMA.io is a technology software developed by Uxqode Pte Ltd, a registered software company in Singapore. Our software enables compliant fund managers to launch funds to investors, process investments, and manage fund administration and accounting. We do not directly manage funds, provide financial advice, or make investment decisions. We provide software tools to licensed fund managers who maintain their own regulatory approvals and compliance obligations. All investment activities conducted through Our software are the responsibility of the respective fund managers and investors.
               </Text>
 
               <Title order={2}>3. Singapore Law Compliance</Title>
               <Text mb="xl">
-                Our Services are designed to support compliance with applicable Singapore laws and regulations, including but not limited to the Securities and Futures Act (SFA), Financial Advisers Act (FAA), Personal Data Protection Act (PDPA), and other applicable laws. You acknowledge and agree that your use of our Services is subject to compliance with these laws and regulations. As a platform user, you remain responsible for ensuring your own compliance with all applicable laws and regulations.
+                Our Services are designed to support compliance with applicable Singapore laws and regulations, including but not limited to the Securities and Futures Act (SFA), Financial Advisers Act (FAA), Personal Data Protection Act (PDPA), and other applicable laws. You acknowledge and agree that your use of our Services is subject to compliance with these laws and regulations. As a software user, you remain responsible for ensuring your own compliance with all applicable laws and regulations.
               </Text>
 
               <Title order={2}>4. Account Registration and Security</Title>
@@ -51,21 +51,21 @@ export default function TermsOfUse() {
               </Text>
 
               <Title order={2}>5. User Types and Responsibilities</Title>
-              <Text mb="md">Our platform serves different types of users with specific responsibilities:</Text>
+              <Text mb="md">Our software serves different types of users with specific responsibilities:</Text>
               <List mb="xl">
                 <List.Item><b>Fund Managers:</b> Licensed entities responsible for fund operations, investment decisions, and regulatory compliance. Fund managers must maintain all necessary licenses and approvals.</List.Item>
-                <List.Item><b>Investors:</b> Individuals or entities investing in funds through the platform. Investors are responsible for their investment decisions and ensuring they meet applicable investor qualification requirements.</List.Item>
+                <List.Item><b>Investors:</b> Individuals or entities investing in funds through the software. Investors are responsible for their investment decisions and ensuring they meet applicable investor qualification requirements.</List.Item>
                 <List.Item><b>Administrators:</b> Users who perform administrative and operational functions related to fund management.</List.Item>
               </List>
 
               <Title order={2}>6. Accredited Investor Status</Title>
               <Text mb="xl">
-                Certain aspects of our Services may be available only to individuals or entities who qualify as "accredited investors" under Section 4A of the Securities and Futures Act (Cap. 289) of Singapore. If you are accessing features restricted to accredited investors, you represent and warrant that you meet the requirements for accredited investor status as defined under Singapore law. The fund managers utilizing our platform are responsible for verifying your accredited investor status, and you agree to provide all necessary documentation to facilitate this verification.
+                Certain aspects of our Services may be available only to individuals or entities who qualify as "accredited investors" under Section 4A of the Securities and Futures Act (Cap. 289) of Singapore. If you are accessing features restricted to accredited investors, you represent and warrant that you meet the requirements for accredited investor status as defined under Singapore law. The fund managers utilizing Our software are responsible for verifying your accredited investor status, and you agree to provide all necessary documentation to facilitate this verification.
               </Text>
 
               <Title order={2}>7. Investment Risks and Disclaimer</Title>
               <Text mb="xl">
-                All investments involve risk, including the possible loss of principal. The value of investments and the income derived from them may fluctuate over time. Past performance is not a reliable indicator of future results. Any projections, forecasts, or estimates displayed on our platform are provided by the respective fund managers and should not be construed as indicative of actual events that will occur. You acknowledge that AAMA.io does not provide investment advice or recommendations, and the information provided through our Services should not be construed as such. Any investment decision you make through our platform is your sole responsibility, and you should consider your investment objectives, risk tolerance, and financial circumstances before making any investment decisions.
+                All investments involve risk, including the possible loss of principal. The value of investments and the income derived from them may fluctuate over time. Past performance is not a reliable indicator of future results. Any projections, forecasts, or estimates displayed on Our software are provided by the respective fund managers and should not be construed as indicative of actual events that will occur. You acknowledge that AAMA.io does not provide investment advice or recommendations, and the information provided through our Services should not be construed as such. Any investment decision you make through Our software is your sole responsibility, and you should consider your investment objectives, risk tolerance, and financial circumstances before making any investment decisions.
               </Text>
 
               <Title order={2}>8. Permitted Use and Restrictions</Title>
@@ -100,12 +100,12 @@ export default function TermsOfUse() {
 
               <Title order={2}>12. Platform Fees and Payment Terms</Title>
               <Text mb="xl">
-                Access to and use of certain features of our platform may be subject to fees and charges. All fees are stated in the applicable subscription or service agreement and are exclusive of all taxes, including Singapore Goods and Services Tax (GST), which will be added where applicable. You agree to provide accurate and complete payment information and authorize us to charge your designated payment method for all fees incurred. All payments are non-refundable except as expressly provided in these Terms or as required by applicable Singapore law. We reserve the right to modify our fees at any time upon notice to you. Please note that any fees related to investments in funds are determined by the respective fund managers and not by AAMA.io.
+                Access to and use of certain features of Our software may be subject to fees and charges. All fees are stated in the applicable subscription or service agreement and are exclusive of all taxes, including Singapore Goods and Services Tax (GST), which will be added where applicable. You agree to provide accurate and complete payment information and authorize us to charge your designated payment method for all fees incurred. All payments are non-refundable except as expressly provided in these Terms or as required by applicable Singapore law. We reserve the right to modify our fees at any time upon notice to you. Please note that any fees related to investments in funds are determined by the respective fund managers and not by AAMA.io.
               </Text>
 
               <Title order={2}>13. Data Processing</Title>
               <Text mb="xl">
-                As a platform provider, we process data on behalf of fund managers and investors. You acknowledge that any personal data you provide may be shared with the relevant fund managers or other parties necessary for the provision of our Services. We process all data in accordance with our Privacy Policy and applicable data protection laws, including the Personal Data Protection Act (PDPA) of Singapore. When you use our platform, you authorize us to process your data as necessary to provide the Services.
+                As a software provider, we process data on behalf of fund managers and investors. You acknowledge that any personal data you provide may be shared with the relevant fund managers or other parties necessary for the provision of our Services. We process all data in accordance with our Privacy Policy and applicable data protection laws, including the Personal Data Protection Act (PDPA) of Singapore. When you use Our software, you authorize us to process your data as necessary to provide the Services.
               </Text>
 
               <Title order={2}>14. Termination</Title>

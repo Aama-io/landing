@@ -83,7 +83,7 @@ const phaseComponents = [
   },
 ];
 
-const platformFeatures = [
+const softwareFeatures = [
   {
     title: 'Investor Experience',
     icon: IconUsers,
@@ -148,12 +148,12 @@ const integrationOptions = [
   {
     title: 'Analytics Platforms',
     icon: IconDeviceAnalytics,
-    description: 'Connect with popular analytics platforms for enhanced reporting and data visualization.'
+    description: 'Connect with popular analytics softwares for enhanced reporting and data visualization.'
   },
   {
     title: 'Cloud Infrastructure',
     icon: IconCloudComputing,
-    description: 'Leverage secure cloud infrastructure for scalable and reliable platform performance.'
+    description: 'Leverage secure cloud infrastructure for scalable and reliable software performance.'
   }
 ];
 
@@ -199,22 +199,22 @@ const clientBenefits = [
 const faqItems = [
   {
     value: 'how-it-works',
-    title: 'How does your fund management platform work?',
-    content: 'Our platform provides a comprehensive infrastructure for fund managers to launch, operate, and grow their funds. It handles everything from investor onboarding and KYC to NAV calculations, reporting, and compliance monitoring - all tailored to Singapore\'s regulatory environment.'
+    title: 'How does your fund management software work?',
+    content: 'Our software provides a comprehensive infrastructure for fund managers to launch, operate, and grow their funds. It handles everything from investor onboarding and KYC to NAV calculations, reporting, and compliance monitoring - all tailored to Singapore\'s regulatory environment.'
   },
   {
     value: 'compliance',
     title: 'How do you handle regulatory compliance?',
-    content: 'We\'ve built MAS compliance requirements directly into our platform core, with specialized modules for PDPA, SFA, and other Singapore regulations. The system automatically tracks regulatory changes, generates necessary reports, and ensures your fund operations meet all applicable standards.'
+    content: 'We\'ve built MAS compliance requirements directly into Our software core, with specialized modules for PDPA, SFA, and other Singapore regulations. The system automatically tracks regulatory changes, generates necessary reports, and ensures your fund operations meet all applicable standards.'
   },
   {
     value: 'integration',
     title: 'Can I integrate with my existing systems?',
-    content: 'Yes, our platform offers comprehensive APIs for seamless integration with banking systems, CRM tools, and accounting software. We support data import/export in various formats to ensure a smooth transition without disrupting your existing infrastructure.'
+    content: 'Yes, Our software offers comprehensive APIs for seamless integration with banking systems, CRM tools, and accounting software. We support data import/export in various formats to ensure a smooth transition without disrupting your existing infrastructure.'
   },
   {
     value: 'security',
-    title: 'How secure is your platform?',
+    title: 'How secure is yOur software?',
     content: 'Security is our top priority. We implement bank-grade encryption, multi-factor authentication, granular access controls, regular security audits, and ongoing monitoring. Our infrastructure complies with the highest data protection standards required for financial institutions in Singapore.'
   }
 ];
@@ -265,8 +265,8 @@ export default function SolutionsPage() {
       <AppShell header={{ height: 60 }} padding={0}>
         <SEO 
           title="Aama.io | Fund Management and Administration Platform"
-          description="AAMA.io's comprehensive platform solutions for fund managers, covering the entire investment lifecycle from onboarding to reporting and compliance."
-          keywords="fund management platform, investment lifecycle, investor onboarding, fund reporting, portfolio monitoring, investment platform, Singapore fund management"
+          description="AAMA.io's comprehensive software solutions for fund managers, covering the entire investment lifecycle from onboarding to reporting and compliance."
+          keywords="fund management software, investment lifecycle, investor onboarding, fund reporting, portfolio monitoring, investment software, Singapore fund management"
         />
         <AppShell.Header>
           <Header />
@@ -292,7 +292,7 @@ export default function SolutionsPage() {
                   Transforming Fund Management <br />for the <span className={classes.accentText}>Digital Age</span>
                 </Title>
                 <Text className={classes.heroDescription}>
-                  AAMA.io provides a comprehensive technology platform that enables fund managers to launch, 
+                  AAMA.io provides a comprehensive technology software that enables fund managers to launch, 
                   manage, and administer funds throughout the entire investment lifecycle with efficiency and compliance.
                 </Text>
                 <Group mt="xl">
@@ -325,58 +325,12 @@ export default function SolutionsPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <Image
-                  src="/images/fund-platform-illustration.svg"
-                  alt="AAMA Fund Management Platform"
-                  style={{ maxWidth: '100%' }}
-                  className={classes.heroImage}
-                />
                 <div className={classes.floatingObject1}></div>
                 <div className={classes.floatingObject2}></div>
                 <div className={classes.floatingObject3}></div>
               </motion.div>
             </Container>
           </div>
-
-          {/* Key Stats Section */}
-          <Container size="lg" className={classes.statsSection}>
-            <SimpleGrid cols={{ base: 1, sm: 3 }} spacing={30}>
-              {[
-                { value: '40%', label: 'Cost Reduction', description: 'Lower operational costs' },
-                { value: '2 weeks', label: 'Launch Time', description: 'From setup to go-live' },
-                { value: '24/7', label: 'Platform Access', description: 'Continuous availability' }
-              ].map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Paper className={classes.statCard} p="md" radius="md" withBorder>
-                    <Group>
-                      <RingProgress
-                        size={80}
-                        thickness={8}
-                        roundCaps
-                        sections={[{ value: (index + 1) * 25, color: 'blue' }]}
-                        label={
-                          <Center>
-                            <IconArrowUp size="1.4rem" stroke={1.5} color={theme.colors.blue[7]} />
-                          </Center>
-                        }
-                      />
-                      <div>
-                        <Text fw={700} fz="xl" className={classes.statValue}>{stat.value}</Text>
-                        <Text fw={700} fz="sm" tt="uppercase">{stat.label}</Text>
-                        <Text fz="xs" c="dimmed">{stat.description}</Text>
-                      </div>
-                    </Group>
-                  </Paper>
-                </motion.div>
-              ))}
-            </SimpleGrid>
-          </Container>
 
           {/* Main Content Tabs */}
           <Container size="lg" py={60}>
@@ -390,7 +344,7 @@ export default function SolutionsPage() {
                 Comprehensive <span className={classes.accentText}>Solutions</span> for Fund Managers
               </Title>
               <Text size="lg" ta="center" c="dimmed" mb={40} maw={800} mx="auto">
-                Our platform supports the entire investment journey, providing a seamless experience for both fund managers and investors.
+                Our software supports the entire investment journey, providing a seamless experience for both fund managers and investors.
               </Text>
             </motion.div>
 
@@ -464,7 +418,7 @@ export default function SolutionsPage() {
                       {solutionTabs.find(tab => tab.value === 'features')?.description}
                     </Text>
                     <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={30}>
-                      {platformFeatures.map((category, index) => (
+                      {softwareFeatures.map((category, index) => (
                         <motion.div
                           key={category.title}
                           initial={{ opacity: 0, y: 40 }}
@@ -621,7 +575,7 @@ export default function SolutionsPage() {
                 Frequently Asked <span className={classes.accentText}>Questions</span>
               </Title>
               <Text ta="center" c="dimmed" className={classes.sectionDescription} mb="xl">
-                Everything you need to know about our platform
+                Everything you need to know about Our software
               </Text>
 
               <Accordion
@@ -657,7 +611,7 @@ export default function SolutionsPage() {
                   Ready to Modernize Your <span className={classes.accentText}>Fund Operations?</span>
                 </Title>
                 <Text size="lg" c="dimmed" ta="center" mb="xl" maw={700} mx="auto" className={classes.ctaText}>
-                  Discover how AAMA.io's platform can help you launch and manage funds more efficiently
+                  Discover how AAMA.io's software can help you launch and manage funds more efficiently
                   while providing an exceptional experience for your investors.
                 </Text>
               </motion.div>

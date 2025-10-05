@@ -12,7 +12,7 @@ const hedgeFundPlans = [
     subtitle: 'per month',
     description: 'Small & boutique fund managers (AUM < $50M)',
     perks: [
-      { feature: 'Complete fund management platform', included: true },
+      { feature: 'Complete fund management software', included: true },
       { feature: 'Investor onboarding & KYC', included: true },
       { feature: 'Fund discovery portal', included: true },
       { feature: 'Subscription processing', included: true },
@@ -237,7 +237,7 @@ const mutualFundPlans = [
     subtitle: 'per month',
     description: 'Small AMCs (3-6 schemes, <$100M AUM)',
     perks: [
-      { feature: 'Fund management platform', included: true },
+      { feature: 'Fund management software', included: true },
       { feature: 'Investor onboarding & KYC', included: true },
       { feature: 'Daily NAV calculation tools', included: true },
       { feature: 'Subscription processing', included: true },
@@ -404,7 +404,7 @@ export function PricingTables() {
                 <Group gap="xs" className={classes.setupFee}>
                   <Text size="sm" fw={500}>Setup fee:</Text>
                   <Text size="sm">{plan.setupFee}</Text>
-                  <Tooltip label="One-time fee for platform setup and implementation">
+                  <Tooltip label="One-time fee for software setup and implementation">
                     <ThemeIcon radius="xl" size="xs" variant="light">
                       <IconInfoCircle size={12} />
                     </ThemeIcon>

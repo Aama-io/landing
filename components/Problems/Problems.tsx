@@ -22,7 +22,7 @@ const problems = [
   },
   {
     title: "Technology Gap",
-    description: "Existing platforms lack modern features like blockchain integration, real-time reporting, and automated compliance checks."
+    description: "Existing softwares lack modern features like blockchain integration, real-time reporting, and automated compliance checks."
   }
 ];
 
@@ -37,7 +37,7 @@ const solutions = [
   },
   {
     title: "Global Fund Distribution",
-    description: "Reach investors worldwide through our hybrid platform, offering both traditional and tokenized fund structures with fractional ownership."
+    description: "Reach investors worldwide through our hybrid software, offering both traditional and tokenized fund structures with fractional ownership."
   },
   {
     title: "Built-in Compliance",
@@ -71,7 +71,7 @@ export function Problems() {
 
               <Text c="dimmed" mt="md" mb="xl">
                 Fund managers face significant barriers in launching and managing funds efficiently. 
-                Our platform addresses these challenges head-on with modern solutions.
+                Our software addresses these challenges head-on with modern solutions.
               </Text>
 
               {problems.map((problem, index) => (
@@ -112,7 +112,7 @@ export function Problems() {
               </Title>
 
               <Text c="dimmed" mt="md" mb="xl">
-                Our platform combines traditional fund management with modern technology to solve 
+                Our software combines traditional fund management with modern technology to solve 
                 these challenges and enable efficient fund operations.
               </Text>
 

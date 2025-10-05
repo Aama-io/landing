@@ -7,7 +7,7 @@ const executives = [
   {
     name: 'Sunil Chaulagain',
     role: 'Chief Executive Officer',
-    bio: 'Software engineer and systems architect with 10+ years of experience building scalable, cloud-native platforms across Australia and Southeast Asia. Experienced leader with a background in traditional finance and blockchain technology. Driving AAMA\'s vision to revolutionize fund management.',
+    bio: 'Software engineer and systems architect with 10+ years of experience building scalable, cloud-native softwares across Australia and Southeast Asia. Experienced leader with a background in traditional finance and blockchain technology. Driving AAMA\'s vision to revolutionize fund management.',
     experience: '10+ years',
     image: '/team/sunil.png',
     linkedin: 'https://www.linkedin.com/in/schaulagain',
@@ -16,7 +16,7 @@ const executives = [
   {
     name: 'Prashant Chaulagain',
     role: 'Chief Technology Officer',
-    bio: 'Experienced software engineer and blockchain expert with 8+ years of experience building scalable, cloud-native platforms across Australia and Southeast Asia. Leading AAMA\'s technical innovation and product development strategy. Experienced in building scalable, cloud-native platforms and blockchain solutions.',
+    bio: 'Experienced software engineer and blockchain expert with 8+ years of experience building scalable, cloud-native softwares across Australia and Southeast Asia. Leading AAMA\'s technical innovation and product development strategy. Experienced in building scalable, cloud-native softwares and blockchain solutions.',
     experience: '8+ years',
     image: '/team/prashant.png',
     linkedin: 'https://linkedin.com/in/erprashant2018',

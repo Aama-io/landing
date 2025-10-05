@@ -16,7 +16,7 @@ const faqData = [
   },
   {
     question: "What's included in the setup fee?",
-    answer: "The one-time setup fee covers platform configuration, account setup, basic data migration, and compliance integration. This includes setting up your fund dashboard, investor portal, and essential reporting templates. Enterprise plans may include additional customization during setup."
+    answer: "The one-time setup fee covers software configuration, account setup, basic data migration, and compliance integration. This includes setting up your fund dashboard, investor portal, and essential reporting templates. Enterprise plans may include additional customization during setup."
   },
   {
     question: "What kind of support do you provide?",

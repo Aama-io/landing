@@ -68,18 +68,18 @@ export function Features() {
   const fundCapabilities = [
     {
       icon: IconBuildingBank,
-      title: "Fund Operations",
-      description: "Comprehensive fund operations including daily NAV calculations, unit pricing, fund accounting, and financial reporting. Supports multiple share classes, currencies, and complex fee structures with built-in audit trails and regulatory controls."
+      title: "Automated Fund Operations",
+      description: "AI-powered daily NAV calculations, multi-currency support, and automated fund accounting. Reduce operational overhead by 80% with intelligent workflow automation, real-time reconciliation, and integrated audit trails that ensure accuracy and compliance."
     },
     {
       icon: IconUsers,
-      title: "Investor Services",
-      description: "End-to-end fund investor servicing including subscription processing, redemption handling, dividend distribution, and transfer agency services. Supports systematic investment plans, switching between share classes, and regular income distributions."
+      title: "Digital Investor Experience",
+      description: "Complete digital onboarding with KYC/AML automation, subscription processing, and real-time investor portal. Streamline investor servicing with automated capital calls, distribution processing, and 24/7 self-service access to fund performance and documents."
     },
     {
       icon: IconReportAnalytics,
-      title: "Compliance & Reporting",
-      description: "Integrated compliance functions for mutual funds including MAS regulatory reporting, investment guideline monitoring, and AML/KYC verification. Automated generation of fund factsheets, annual reports, and regulatory filings with built-in validation."
+      title: "Smart Compliance & Reporting",
+      description: "AI-powered regulatory compliance monitoring with automatic MAS, SEC, and EU reporting. Real-time compliance dashboards, automated risk monitoring, and intelligent alert systems that prevent violations before they occur."
     }
   ];
 
@@ -104,21 +104,22 @@ export function Features() {
           viewport={{ once: true, margin: "-50px" }}
           variants={fadeInUp}
         >
-          <Badge 
-            size="lg" 
-            radius="sm" 
-            variant="gradient" 
+          <Badge
+            size="lg"
+            radius="sm"
+            variant="gradient"
             gradient={{ from: 'blue', to: 'cyan' }}
             className={classes.sectionBadge}
           >
-            Platform Overview
+            AI-Powered Platform
           </Badge>
           <Title className={classes.title} mt="xs">
-            The <span className={classes.highlight}>complete solution</span> for modern fund management
+            <span className={classes.highlight}>Intelligent automation</span> that scales with your fund
           </Title>
           <Text className={classes.description}>
-            AAMA.io specializes in fund management, leveraging our deep expertise in regulated fund operations
-            to deliver a comprehensive platform that meets the highest standards of compliance and efficiency.
+            Transform your fund operations with enterprise-grade AI that automates complex workflows,
+            ensures regulatory compliance, and delivers exceptional investor experiences.
+            Trusted by fund managers managing $500M+ in assets.
           </Text>
         </motion.div>
 
@@ -159,7 +160,7 @@ export function Features() {
                 The Future of Fund Management
               </Title>
               <Text ta="center" size="lg" px={{ base: 0, md: 80 }} mb="xl">
-                AAMA.io is not just a fund management platform—it's a vision for the future of regulated fund operations.
+                AAMA.io is not just a fund management software—it's a vision for the future of regulated fund operations.
                 We're building the infrastructure that will power the next generation of funds, making them more
                 efficient, transparent, and accessible while maintaining the highest standards of regulatory compliance.
               </Text>

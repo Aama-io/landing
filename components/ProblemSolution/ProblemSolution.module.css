@@ -48,7 +48,7 @@
   color: var(--mantine-color-gray-7);
 }
 
-.platformCard {
+.softwareCard {
   background-color: white;
   height: 100%;
   padding: 0;
@@ -151,7 +151,7 @@
   margin-bottom: var(--mantine-spacing-md);
   transition: transform 200ms ease;
   
-  .platformCard:hover & {
+  .softwareCard:hover & {
     transform: scale(1.1);
   }
 }

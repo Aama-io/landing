@@ -13,7 +13,7 @@ export default function PricingPage() {
       <SEO 
         title="Pricing | AAMA"
         description="AAMA.io offers institutional-grade fund management software at startup-friendly pricing with plans for funds of all sizes. Choose from Starter, Growth, or Pro plans with no hidden fees."
-        keywords="fund management pricing, SaaS pricing, fund platform costs, startup-friendly pricing, Singapore fund management, AUM-based pricing"
+        keywords="fund management pricing, SaaS pricing, fund software costs, startup-friendly pricing, Singapore fund management, AUM-based pricing"
       />
       <AppShell.Header>
         <Header />

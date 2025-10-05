@@ -12,7 +12,7 @@
     left: 0;
     right: 0;
     height: 6px;
-    background: linear-gradient(90deg, var(--mantine-color-blue-6), var(--mantine-color-blue-4));
+    background: linear-gradient(90deg, var(--mantine-color-blue-6), var(--mantine-color-blue-7));
   }
 }
 

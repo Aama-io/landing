@@ -9,9 +9,9 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = 'AAMA - Fund management platform',
-  description = 'AAMA is a cutting-edge fund management platform for mutual funds, hedge funds, and SIPs. The platform helps fund managers to create, manage, and track their funds with ease.',
-  keywords = 'fund management, investment platform, mutual funds, hedge funds, SIP platform, automated trading',
+  title = 'AAMA - Fund management software',
+  description = 'AAMA is a cutting-edge fund management software for mutual funds, hedge funds, and SIPs. The software helps fund managers to create, manage, and track their funds with ease.',
+  keywords = 'fund management, investment software, mutual funds, hedge funds, SIP software, automated trading',
   ogImage = '/product-investment-portal.png', // Using existing product image for OG
   ogUrl = 'https://aama.io', // Replace with your actual domain
 }: SEOProps) {

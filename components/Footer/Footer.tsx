@@ -19,7 +19,7 @@ export function Footer() {
               )}
             </div>
             <Text size="sm" c="dimmed" mt="xs" maw={300}>
-              Modern fund management platform combining traditional finance with blockchain technology
+              Modern fund management software combining traditional finance with blockchain technology
             </Text>
           </div>
 

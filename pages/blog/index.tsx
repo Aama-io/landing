@@ -49,8 +49,8 @@ export default function BlogPage() {
 
   // Define SEO metadata
   const seoTitle = "Fund Management Insights & News";
-  const seoDescription = "Expert insights on fund management platforms, IFRS accounting, investor portals, data integration, and blockchain technology in financial services.";
-  const seoKeywords = "fund management, IFRS accounting, investor portal, financial technology, blockchain, investment platform";
+  const seoDescription = "Expert insights on fund management softwares, IFRS accounting, investor portals, data integration, and blockchain technology in financial services.";
+  const seoKeywords = "fund management, IFRS accounting, investor portal, financial technology, blockchain, investment software";
   const seoUrl = "https://aama.io/blog";
   const seoImage = posts.length > 0 ? posts[0].coverImage : '/fund-types/mutual-fund.jpg';
 
