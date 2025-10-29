@@ -9,9 +9,6 @@ if (process.env.BREVO_API_KEY) {
   brevoApi.setApiKey(TransactionalEmailsApiApiKeys.apiKey, process.env.BREVO_API_KEY);
 }
 
-// Temporary debugging
-console.log('Brevo API Key:', process.env.BREVO_API_KEY ? 'Set' : 'Not set');
-
 export async function POST(request: Request) {
   try {
     // Validate environment variables
@@ -74,24 +71,14 @@ export async function POST(request: Request) {
       name: name
     };
 
-    // Add more detailed error logging
     try {
-      const result = await brevoApi.sendTransacEmail(sendSmtpEmail);
-      console.log('Brevo API Response:', result);
+      await brevoApi.sendTransacEmail(sendSmtpEmail);
     } catch (apiError: any) {
-      console.error('Brevo API Error:', {
-        message: apiError.message,
-        response: apiError.response?.body,
-        status: apiError.status,
-        headers: apiError.headers
-      });
       throw apiError;
     }
 
     return NextResponse.json({ success: true });
   } catch (error: any) {
-    console.error('Failed to send email:', error);
-    
     // Extract error message from Brevo API response if available
     const errorMessage = error.response?.body?.message || error.message || 'Unknown error occurred';
     
