@@ -12,6 +12,38 @@ This template comes with the following features:
 - [Storybook](https://storybook.js.org/)
 - [Jest](https://jestjs.io/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+- Google Analytics (GA4) integration with automatic page view tracking
+- Email integration with EmailJS and Brevo
+
+## Environment Variables
+
+This project uses environment variables for configuration. Copy `.env.example` to `.env.local` and update the values:
+
+```bash
+cp .env.example .env.local
+```
+
+### Required Environment Variables
+
+- `NEXT_PUBLIC_GA_MEASUREMENT_ID` - Google Analytics 4 measurement ID (e.g., G-XXXXXXXXXX)
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID` - EmailJS service ID
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` - EmailJS public key
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID` - EmailJS template ID
+- `BREVO_API_KEY` - Brevo API key for email services
+- `BREVO_SENDER_EMAIL` - Brevo sender email address
+- `BREVO_TO_EMAIL` - Recipient email address
+
+### Google Analytics Setup
+
+The project includes Google Analytics 4 (GA4) integration with automatic page view tracking. To enable:
+
+1. Set `NEXT_PUBLIC_GA_MEASUREMENT_ID` in your `.env.local` file with your GA4 measurement ID
+2. For production deployments, add the environment variable to your hosting platform (Vercel, Netlify, etc.)
+
+The Google Analytics implementation includes:
+- Automatic page view tracking on route changes
+- Custom event tracking support via the `useAnalytics` hook
+- Proper Next.js Script component integration for optimal performance
 
 ## npm scripts
 
