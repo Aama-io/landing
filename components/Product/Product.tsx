@@ -80,22 +80,26 @@ const targetIndustries = [
   {
     icon: IconBuildingBank,
     title: "Mutual Fund Managers",
-    description: "Our proven expertise in mutual fund operations with automated NAV calculations, compliance monitoring, and investor reporting."
+    description: "Our proven expertise in mutual fund operations with automated NAV calculations, compliance monitoring, and investor reporting.",
+    slug: "mutual-fund-managers"
   },
   {
     icon: IconChartBar,
     title: "VC/PE Firms",
-    description: "Gain comprehensive visibility into portfolio performance with specialized tools for capital calls, distributions, and LP communications."
+    description: "Gain comprehensive visibility into portfolio performance with specialized tools for capital calls, distributions, and LP communications.",
+    slug: "vc-pe-firms"
   },
   {
     icon: IconChartPie,
     title: "REITs",
-    description: "Simplify property portfolio management with integrated tools for tracking occupancy, rental income, expenses, and dividend distributions."
+    description: "Simplify property portfolio management with integrated tools for tracking occupancy, rental income, expenses, and dividend distributions.",
+    slug: "reits"
   },
   {
     icon: IconShield,
     title: "Financial Institutions",
-    description: "Enhance fund infrastructure with robust compliance controls, detailed audit trails, and secure investor management capabilities."
+    description: "Enhance fund infrastructure with robust compliance controls, detailed audit trails, and secure investor management capabilities.",
+    slug: "financial-institutions"
   },
 ];
 
@@ -231,7 +235,7 @@ export function Product() {
                     </ThemeIcon>
                     <Title order={4} mt="md" mb="xs">{industry.title}</Title>
                     <Text size="sm" c="dimmed">{industry.description}</Text>
-                    <Button variant="subtle" mt="md" rightSection={<IconArrowRight size={14} />} size="sm" component={Link} href="/contact">
+                    <Button variant="subtle" mt="md" rightSection={<IconArrowRight size={14} />} size="sm" component={Link} href={`/products/${industry.slug}`}>
                       Learn more
                     </Button>
                   </Paper>
