@@ -38,7 +38,7 @@ export function Hero() {
             </Badge>
 
             <Title className={classes.modernTitle}>
-              The <span className={classes.gradientHighlight}>AI-powered platform</span>
+              The <span className={classes.gradientHighlight}>fund management platform</span>
               <br />
               transforming fund operations
             </Title>

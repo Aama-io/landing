@@ -25,8 +25,8 @@ export default function HomePage() {
 
         <AppShell.Main>
           <SEO
-            title="aama.io | AI-powered end-to-end fund operating system"
-            description="Aama.io empowers fund administrators and fund managers with a comprehensive software for in-house fund administration, accounting, and investor servicing. The system supports KYC/AML-compliant onboarding, NAV calculations, capital calls, AI-powered compliance monitoring, automated regulatory reporting, and real-time compliance dashboards, while the white-labeled investor portal provides secure, real-time access to fund performance, documents, and transactions."
+            title="aama.io | End-to-End Fund Management Software"
+            description="Aama.io empowers fund administrators and fund managers with a comprehensive software for in-house fund administration, accounting, and investor servicing. The system supports KYC/AML-compliant onboarding, NAV calculations, capital calls, automated compliance monitoring, automated regulatory reporting, and real-time compliance dashboards, while the white-labeled investor portal provides secure, real-time access to fund performance, documents, and transactions."
           />
           <Hero />
           <ProblemSolution />

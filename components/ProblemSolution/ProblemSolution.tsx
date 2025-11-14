@@ -46,11 +46,11 @@ export function ProblemSolution() {
       icon: IconServer,
     },
     {
-      title: 'AI-Powered Fund Management',
+      title: 'Modern Fund Management',
       description: 'Enterprise accounting platform with intelligent automation and regulatory compliance',
       features: [
         'IFRS-compliant accounting',
-        'AI-powered NAV calculations',
+        'Automated NAV calculations',
         'Automated compliance monitoring',
         'Real-time portfolio analytics',
         'Regulatory reporting automation',

@@ -109,7 +109,7 @@ const floatingAnimation = {
   y: [0, -15, 0],
   transition: {
     duration: 3,
-    ease: "easeInOut",
+    ease: "easeInOut" as const,
     repeat: Infinity,
     repeatType: "mirror" as const
   }

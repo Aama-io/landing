@@ -11,7 +11,7 @@ export function AboutHero() {
       transition: {
         delay: 0.1 * i + 0.4,
         duration: 0.5,
-        ease: [0.25, 0.1, 0.25, 1.0]
+        ease: [0.25, 0.1, 0.25, 1.0] as const
       }
     }),
   };

@@ -1,5 +1,5 @@
 {
-  "name": "mantine-nextjs-boilerplate",
+  "name": "@aamaio/landing",
   "version": "1.0.0",
   "private": true,
   "license": "MIT",
@@ -8,9 +8,7 @@
     "react",
     "typescript",
     "nextjs",
-    "landing-page",
-    "saas-starter-kit",
-    "boilerplate"
+    "landing-page"
   ],
   "scripts": {
     "dev": "next dev",
