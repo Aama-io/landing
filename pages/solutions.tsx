@@ -2,13 +2,13 @@ import { AppShell, Container, Title, Text, Group, Badge, ThemeIcon, Stack, Box, 
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { SEO } from '@/components/SEO/SEO';
-import { 
-  IconUserCheck, 
-  IconSearch, 
-  IconCreditCard, 
-  IconBuildingBank, 
-  IconChartLine, 
-  IconArrowBackUp, 
+import {
+  IconUserCheck,
+  IconSearch,
+  IconCreditCard,
+  IconBuildingBank,
+  IconChartLine,
+  IconArrowBackUp,
   IconFileReport,
   IconArrowRight,
   IconCalendarEvent,
@@ -23,7 +23,9 @@ import {
   IconCloudComputing,
   IconCheck,
   IconStar,
-  IconArrowUp
+  IconArrowUp,
+  IconBuildingFactory2,
+  IconHandshake,
 } from '@tabler/icons-react';
 import classes from '../styles/Solutions.module.css';
 import Cal, { getCalApi } from "@calcom/embed-react";
@@ -32,6 +34,14 @@ import { motion, MotionConfig, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
 const phaseComponents = [
+  {
+    phase: 'Fund Formation',
+    icon: IconBuildingFactory2,
+    color: 'violet',
+    components: ['SPV Formation', 'VCC Structuring', 'Fund Registration'],
+    description: 'Launch your fund with confidence. In partnership with Astria Consulting, we handle SPV formation, VCC structuring for close-ended funds, and MAS registration — then transition seamlessly into aama.io\'s fund administration platform.',
+    isPartnership: true,
+  },
   {
     phase: 'Onboarding',
     icon: IconUserCheck,
@@ -135,6 +145,12 @@ const softwareFeatures = [
 ];
 
 const integrationOptions = [
+  {
+    title: 'Fund Formation Services',
+    icon: IconHandshake,
+    description: 'In partnership with Astria Consulting — SPV formation, VCC structuring, and full fund registration. Formation transitions directly to aama.io\'s platform.',
+    isPartnership: true,
+  },
   {
     title: 'Banking Integrations',
     icon: IconBuildingBank,
@@ -264,9 +280,9 @@ export default function SolutionsPage() {
     <MotionConfig reducedMotion="user" transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}>
       <AppShell header={{ height: 60 }} padding={0}>
         <SEO 
-          title="Aama.io | Fund Management and Administration Platform"
-          description="AAMA.io's comprehensive software solutions for fund managers, covering the entire investment lifecycle from onboarding to reporting and compliance."
-          keywords="fund management software, investment lifecycle, investor onboarding, fund reporting, portfolio monitoring, investment software, Singapore fund management"
+          title="Aama.io | Fund Formation to Administration — End-to-End"
+          description="aama.io covers the full fund lifecycle — from SPV and VCC formation (in partnership with Astria Consulting) through launch, ongoing administration, and compliance. Built for Singapore fund managers."
+          keywords="fund formation, SPV formation, VCC Singapore, fund management software, investment lifecycle, fund administration, MAS compliance, Singapore fund management"
         />
         <AppShell.Header>
           <Header />
@@ -292,8 +308,7 @@ export default function SolutionsPage() {
                   Transforming Fund Management <br />for the <span className={classes.accentText}>Digital Age</span>
                 </Title>
                 <Text className={classes.heroDescription}>
-                  AAMA.io provides a comprehensive technology software that enables fund managers to launch, 
-                  manage, and administer funds throughout the entire investment lifecycle with efficiency and compliance.
+                  AAMA.io provides a comprehensive technology platform that covers the entire fund lifecycle — from formation and structuring through launch, operations, and compliance. In partnership with Astria Consulting, we now offer fund formation services so your end-to-end journey starts here.
                 </Text>
                 <Group mt="xl">
                   <Button
@@ -383,9 +398,9 @@ export default function SolutionsPage() {
                     </Text>
                     <Timeline active={-1} bulletSize={30} lineWidth={2}>
                       {phaseComponents.map((item, index) => (
-                        <Timeline.Item 
-                          key={item.phase} 
-                          bullet={<item.icon size={16} />} 
+                        <Timeline.Item
+                          key={item.phase}
+                          bullet={<item.icon size={16} />}
                           title={<Text fw={700} size="lg">{item.phase}</Text>}
                           color={item.color}
                         >
@@ -396,8 +411,18 @@ export default function SolutionsPage() {
                                   {component}
                                 </Badge>
                               ))}
+                              {'isPartnership' in item && item.isPartnership && (
+                                <Badge color="violet" variant="filled" size="lg" leftSection={<IconHandshake size={12} />}>
+                                  Astria Consulting
+                                </Badge>
+                              )}
                             </Group>
                             <Text size="md">{item.description}</Text>
+                            {'isPartnership' in item && item.isPartnership && (
+                              <Text size="sm" c="violet" mt="xs" fw={500}>
+                                In partnership with <Anchor href="https://astriaconsulting.com" target="_blank" rel="noopener noreferrer" c="violet" fw={700}>Astria Consulting</Anchor> · Powered by aama.io
+                              </Text>
+                            )}
                           </Card>
                         </Timeline.Item>
                       ))}
@@ -509,6 +534,11 @@ export default function SolutionsPage() {
 
                             <Title order={4} ta="center" mt="md" mb="xs">{integration.title}</Title>
                             <Text size="sm" ta="center" c="dimmed">{integration.description}</Text>
+                            {'isPartnership' in integration && integration.isPartnership && (
+                              <Badge color="violet" variant="light" size="sm" mt="sm" fullWidth>
+                                Astria Consulting Partnership
+                              </Badge>
+                            )}
                           </Card>
                         </motion.div>
                       ))}

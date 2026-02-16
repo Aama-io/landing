@@ -35,6 +35,9 @@ export function Footer() {
               <Link href="/product" className={classes.link}>
                 Product
               </Link>
+              <Link href="/services" className={classes.link}>
+                Services
+              </Link>
             </div>
 
             <div className={classes.group}>

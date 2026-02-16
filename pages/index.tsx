@@ -9,6 +9,7 @@ import { SEO } from '@/components/SEO/SEO';
 import { PainPoints } from '@/components/PainPoints/PainPoints';
 import { Metrics } from '@/components/Metrics/Metrics';
 import { ProductShowcase } from '@/components/ProductShowcase/ProductShowcase';
+import { PartnershipServices } from '@/components/PartnershipServices/PartnershipServices';
 import { MotionConfig } from 'framer-motion';
 
 export default function HomePage() {
@@ -31,6 +32,7 @@ export default function HomePage() {
           <Hero />
           <ProblemSolution />
           <ProductShowcase />
+          <PartnershipServices />
           <PainPoints />
           <CTA />
           <Footer />

@@ -20,6 +20,7 @@ const links = [
   { link: '/', label: 'Home' },
   { link: '/product', label: 'Product' },
   { link: '/solutions', label: 'Solutions' },
+  { link: '/services', label: 'Services' },
   { link: '/pricing', label: 'Pricing' },
   { link: '/about', label: 'About' },
 ];

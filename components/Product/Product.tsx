@@ -1,10 +1,20 @@
-import { Container, Title, Text, Grid, ThemeIcon, Button, Group, Tabs, Badge, Paper, Divider, Box, BackgroundImage, Overlay, SimpleGrid, Progress, Center, RingProgress, Tooltip, Image, Accordion, List } from '@mantine/core';
-import { IconRocket, IconCheck, IconArrowRight, IconDeviceAirpods, IconDeviceDesktop, IconDeviceMobile, IconBuildingBank, IconActivity, IconLock, IconChartBar, IconUsers, IconWorld, IconGlobe, IconStar, IconFileAnalytics, IconShield, IconChartPie, IconArrowUp, IconCreditCard, IconAlertCircle, IconCoin, IconPlus, IconCurrencyDollar } from '@tabler/icons-react';
+import { Container, Title, Text, Grid, ThemeIcon, Button, Group, Tabs, Badge, Paper, Divider, Box, BackgroundImage, Overlay, SimpleGrid, Progress, Center, RingProgress, Tooltip, Image, Accordion, List, Anchor } from '@mantine/core';
+import { IconRocket, IconCheck, IconArrowRight, IconDeviceAirpods, IconDeviceDesktop, IconDeviceMobile, IconBuildingBank, IconActivity, IconLock, IconChartBar, IconUsers, IconWorld, IconGlobe, IconStar, IconFileAnalytics, IconShield, IconChartPie, IconArrowUp, IconCreditCard, IconAlertCircle, IconCoin, IconPlus, IconCurrencyDollar, IconBuildingFactory2, IconHandshake } from '@tabler/icons-react';
 import { motion, AnimatePresence, MotionConfig } from 'framer-motion';
 import Link from 'next/link';
 import classes from './Product.module.css';
 
 const fundTypes = [
+  {
+    value: 'formation', label: 'Fund Formation', icon: <IconBuildingFactory2 size={16} />, description: "New: End-to-end fund formation in partnership with Astria Consulting — SPVs, VCC structures, and full fund registration", features: [
+      "Single-asset SPV formation",
+      "VCC structuring for close-ended funds",
+      "MAS registration and compliance setup",
+      "Full fund formation services",
+      "Seamless handover to aama.io platform"
+    ],
+    isPartnership: true,
+  },
   {
     value: 'mutual', label: 'Mutual Funds', icon: <IconBuildingBank size={16} />, description: "Our core expertise in Singapore-regulated mutual funds with MAS-compliant operations", features: [
       "Daily NAV calculation and unit pricing",
@@ -150,14 +160,12 @@ export function Product() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <Badge size="lg" radius="sm" className={classes.badge}>AI-Powered End-to-End Fund Management Software</Badge>
+              <Badge size="lg" radius="sm" className={classes.badge}>Formation to Administration — End-to-End Fund Management</Badge>
               <Title className={classes.heroTitle}>
                 Complete fund management <span className={classes.accentText}>from start to finish</span>
               </Title>
               <Text className={classes.heroDescription}>
-                The software that handles your entire fund lifecycle powered by AI. From fund setup and 
-                investor onboarding to daily operations, accounting, compliance, and reporting - everything 
-                you need to run your fund successfully, all in one place.
+                The complete fund platform — from formation to administration. In partnership with Astria Consulting, we now offer SPV and VCC formation services. Once formed, your fund runs on aama.io for investor onboarding, NAV calculations, compliance, and reporting — everything in one place.
               </Text>
               <Group mt="xl">
                 <Button
@@ -255,10 +263,10 @@ export function Product() {
               viewport={{ once: true }}
             >
               <Title order={2} className={classes.sectionTitle} ta="center">
-                One software for <span className={classes.accentText}>all fund types</span>
+                Formation and administration for <span className={classes.accentText}>all fund types</span>
               </Title>
               <Text ta="center" c="dimmed" className={classes.sectionDescription}>
-                From traditional mutual funds to next-generation tokenized funds
+                From SPV formation to mutual funds, private capital, REITs, and tokenized funds
               </Text>
             </motion.div>
 
@@ -317,12 +325,32 @@ export function Product() {
                                 Coming Soon
                               </Badge>
                             )}
+                            {'isPartnership' in type && type.isPartnership && (
+                              <div style={{ marginTop: 16 }}>
+                                <Badge
+                                  size="md"
+                                  color="violet"
+                                  variant="light"
+                                  leftSection={<IconHandshake size={13} />}
+                                  mb={6}
+                                >
+                                  In partnership with Astria Consulting
+                                </Badge>
+                                <Text size="sm" c="dimmed" mt={4}>
+                                  Fund formation handled by{' '}
+                                  <Anchor href="https://astriaconsulting.com" target="_blank" rel="noopener noreferrer" c="violet" fw={600} size="sm">
+                                    Astria Consulting
+                                  </Anchor>
+                                  , then administered on aama.io&apos;s platform.
+                                </Text>
+                              </div>
+                            )}
                             <Button
                               variant="subtle"
                               rightSection={<IconArrowRight size={16} />}
                               mt="xl"
                               component={Link}
-                              href="/contact"
+                              href={'isPartnership' in type && type.isPartnership ? '/services' : '/contact'}
                             >
                               Learn more
                             </Button>
