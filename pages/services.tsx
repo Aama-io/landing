@@ -1,17 +1,10 @@
-import { AppShell, Container, Title, Text, Badge, SimpleGrid, Anchor, Group, Button, Box, Divider, ThemeIcon } from '@mantine/core';
+import { AppShell, Container, Title, Text, Badge, SimpleGrid, Anchor, Group, Button } from '@mantine/core';
 import {
   IconBuildingFactory2,
   IconBriefcase,
   IconFileReport,
   IconArrowRight,
   IconCheck,
-  IconArrowRight as IconArrow,
-  IconBuildingBank,
-  IconChartBar,
-  IconShield,
-  IconUsers,
-  IconFileText,
-  IconLayoutDashboard,
   IconChevronRight,
   IconExternalLink,
 } from '@tabler/icons-react';
