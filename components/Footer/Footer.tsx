@@ -52,7 +52,7 @@ export function Footer() {
             <Group gap={10} mt="lg">
               <ActionIcon
                 component="a"
-                href="https://www.linkedin.com/company/ux-qode"
+                href="https://www.linkedin.com/company/aama-io"
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="default"
@@ -62,19 +62,6 @@ export function Footer() {
                 className={classes.social}
               >
                 <IconBrandLinkedin size={18} />
-              </ActionIcon>
-              <ActionIcon
-                component="a"
-                href="https://x.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                variant="default"
-                size="lg"
-                radius="md"
-                aria-label="X"
-                className={classes.social}
-              >
-                <IconBrandX size={18} />
               </ActionIcon>
               <ActionIcon
                 component="a"
