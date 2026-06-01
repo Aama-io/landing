@@ -1,23 +1,18 @@
-import { AppShell, Container, Title, Text, List, Card, Grid, ThemeIcon, Group, Anchor } from '@mantine/core';
-import { Header } from '../components/Header/Header';
-import { Footer } from '../components/Footer/Footer';
+import { Container, Title, Text, List, Card, Grid, ThemeIcon, Group, Anchor } from '@mantine/core';
+import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
 import { IconCheck, IconShield, IconUserCheck, IconLock, IconReportMoney, IconScale, IconServer } from '@tabler/icons-react';
 import classes from '../styles/Legal.module.css';
 
 export default function CompliancePage() {
   return (
-    <AppShell header={{ height: 60 }} padding={0}>
-      <SEO 
-        title="Regulatory Compliance | AAMA"
-        description="AAMA.io is a software developed by Uxqode Pte Ltd, enabling compliant fund managers to launch, manage, and administer funds in accordance with Singapore regulations."
+    <>
+      <SEO
+        title="Regulatory Compliance | aama.io"
+        description="aama.io is a software platform developed by Uxqode Pte Ltd, enabling compliant fund managers to launch, manage, and administer funds in accordance with Singapore regulations."
         keywords="Singapore regulatory compliance, MAS compliance, fund management software, SFA, FAA, PDPA, AML/CFT, Singapore financial regulations, Uxqode"
       />
-      <AppShell.Header>
-        <Header />
-      </AppShell.Header>
-
-      <AppShell.Main>
+      <PageShell>
         <div className={classes.wrapper}>
           <Container size="lg">
             <Title className={classes.title}>Regulatory Compliance</Title>
@@ -211,8 +206,7 @@ export default function CompliancePage() {
             </div>
           </Container>
         </div>
-        <Footer />
-      </AppShell.Main>
-    </AppShell>
+      </PageShell>
+    </>
   );
 }

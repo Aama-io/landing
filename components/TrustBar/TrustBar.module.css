@@ -1,0 +1,41 @@
+.wrapper {
+  padding-block: 36px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.row {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 18px;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.icon {
+  color: var(--mantine-color-blue-6);
+}

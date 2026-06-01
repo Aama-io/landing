@@ -1,0 +1,51 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+
+/* Ledger-card tile mark */
+.mark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 10px rgba(27, 111, 232, 0.26));
+}
+
+/* Wordmark + tagline */
+.text {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.word {
+  font-size: 21px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+  color: var(--text-strong);
+}
+
+.dot {
+  color: #00c896;
+}
+
+.tagline {
+  margin-top: 4px;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* Light variant — for dark backgrounds */
+.logo[data-variant='light'] .word {
+  color: #ffffff;
+}
+.logo[data-variant='light'] .tagline {
+  color: rgba(255, 255, 255, 0.6);
+}

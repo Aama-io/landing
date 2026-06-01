@@ -1,6 +1,5 @@
-import { AppShell, Container, Title, Text, Group, Badge, ThemeIcon, Stack, Box, Card, SimpleGrid, useMantineTheme, Button, Anchor, Divider, Paper, Timeline, Grid, Image, List, BackgroundImage, Overlay, RingProgress, Center, Tabs, Accordion } from '@mantine/core';
-import { Header } from '../components/Header/Header';
-import { Footer } from '../components/Footer/Footer';
+import { Container, Title, Text, Group, Badge, ThemeIcon, Stack, Box, Card, SimpleGrid, useMantineTheme, Button, Anchor, Divider, Paper, Timeline, Grid, Image, List, BackgroundImage, Overlay, RingProgress, Center, Tabs, Accordion } from '@mantine/core';
+import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
 import { 
   IconUserCheck, 
@@ -28,7 +27,7 @@ import {
 import classes from '../styles/Solutions.module.css';
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from 'react';
-import { motion, MotionConfig, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 
 const phaseComponents = [
@@ -261,18 +260,13 @@ export default function SolutionsPage() {
   }, []);
 
   return (
-    <MotionConfig reducedMotion="user" transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}>
-      <AppShell header={{ height: 60 }} padding={0}>
-        <SEO 
-          title="Aama.io | Fund Management and Administration Platform"
-          description="AAMA.io's comprehensive software solutions for fund managers, covering the entire investment lifecycle from onboarding to reporting and compliance."
-          keywords="fund management software, investment lifecycle, investor onboarding, fund reporting, portfolio monitoring, investment software, Singapore fund management"
-        />
-        <AppShell.Header>
-          <Header />
-        </AppShell.Header>
-
-        <AppShell.Main>
+    <>
+      <SEO
+        title="aama.io | Fund Management and Administration Platform"
+        description="aama.io's comprehensive solutions for fund managers, covering the entire investment lifecycle from onboarding to reporting and compliance."
+        keywords="fund management software, investment lifecycle, investor onboarding, fund reporting, portfolio monitoring, investment software, Singapore fund management"
+      />
+      <PageShell>
           {/* Hero Section */}
           <div className={classes.heroWrapper}>
             <div className={classes.heroGrid}>
@@ -632,9 +626,7 @@ export default function SolutionsPage() {
               </div>
             </Container>
           </div>
-        </AppShell.Main>
-        <Footer />
-      </AppShell>
-    </MotionConfig>
+      </PageShell>
+    </>
   );
 } 

@@ -1,22 +1,17 @@
-import { Container, Title, Text, List, Anchor, AppShell } from '@mantine/core';
-import { Header } from '../components/Header/Header';
-import { Footer } from '../components/Footer/Footer';
+import { Container, Title, Text, List, Anchor } from '@mantine/core';
+import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
 import classes from '../styles/Legal.module.css';
 
 export default function PrivacyPolicy() {
   return (
-    <AppShell header={{ height: 60 }} padding={0}>
-      <SEO 
-        title="Privacy Policy | AAMA"
-        description="AAMA.io's Privacy Policy - developed by Uxqode Pte Ltd, Our software enables fund managers to launch and manage funds while protecting personal data in compliance with Singapore's PDPA."
-        keywords="privacy policy, PDPA, Singapore data protection, personal data, AAMA.io privacy, Uxqode, fund management software, data security"
+    <>
+      <SEO
+        title="Privacy Policy | aama.io"
+        description="aama.io's Privacy Policy — developed by Uxqode Pte Ltd, our platform enables fund managers to launch and manage funds while protecting personal data in compliance with Singapore's PDPA."
+        keywords="privacy policy, PDPA, Singapore data protection, personal data, aama.io privacy, Uxqode, fund management software, data security"
       />
-      <AppShell.Header>
-        <Header />
-      </AppShell.Header>
-
-      <AppShell.Main>
+      <PageShell>
         <div className={classes.wrapper}>
           <Container size="lg">
             <Title className={classes.title}>Privacy Policy</Title>
@@ -163,8 +158,7 @@ export default function PrivacyPolicy() {
             </div>
           </Container>
         </div>
-        <Footer />
-      </AppShell.Main>
-    </AppShell>
+      </PageShell>
+    </>
   );
 }

@@ -1,41 +1,29 @@
-import { AppShell } from '@mantine/core';
-import { Header } from '../components/Header/Header';
-import { Hero } from '../components/Hero/Hero';
-import { ProblemSolution } from '../components/ProblemSolution/ProblemSolution';
-import { Features } from '../components/Features/Features';
-import { Footer } from '../components/Footer/Footer';
-import { CTA } from '@/components/CTA/CTA';
+import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
+import { Hero } from '../components/Hero/Hero';
+import { TrustBar } from '../components/TrustBar/TrustBar';
+import { ProblemSolution } from '../components/ProblemSolution/ProblemSolution';
+import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
 import { PainPoints } from '@/components/PainPoints/PainPoints';
 import { Metrics } from '@/components/Metrics/Metrics';
-import { ProductShowcase } from '@/components/ProductShowcase/ProductShowcase';
-import { MotionConfig } from 'framer-motion';
+import { CTA } from '@/components/CTA/CTA';
 
 export default function HomePage() {
   return (
-    <MotionConfig reducedMotion="user" transition={{
-      type: "spring",
-      bounce: 0.25,
-      duration: 0.5
-    }}>
-      <AppShell header={{ height: 60 }} padding={0}>
-        <AppShell.Header>
-          <Header />
-        </AppShell.Header>
-
-        <AppShell.Main>
-          <SEO
-            title="aama.io | End-to-End Fund Management Software"
-            description="Aama.io empowers fund administrators and fund managers with a comprehensive software for in-house fund administration, accounting, and investor servicing. The system supports KYC/AML-compliant onboarding, NAV calculations, capital calls, automated compliance monitoring, automated regulatory reporting, and real-time compliance dashboards, while the white-labeled investor portal provides secure, real-time access to fund performance, documents, and transactions."
-          />
-          <Hero />
-          <ProblemSolution />
-          <ProductShowcase />
-          <PainPoints />
-          <CTA />
-          <Footer />
-        </AppShell.Main>
-      </AppShell>
-    </MotionConfig>
+    <>
+      <SEO
+        title="aama.io | End-to-End Fund Management Software"
+        description="aama.io empowers fund administrators and fund managers with comprehensive software for in-house fund administration, accounting, and investor servicing — KYC/AML onboarding, NAV calculations, capital calls, automated compliance and a white-labeled investor portal."
+      />
+      <PageShell>
+        <Hero />
+        <TrustBar />
+        <ProblemSolution />
+        <ProductShowcase />
+        <PainPoints />
+        <Metrics />
+        <CTA />
+      </PageShell>
+    </>
   );
 }

@@ -1,234 +1,146 @@
-import { Container, Title, Text, Image, Badge, Group, ActionIcon, Modal } from '@mantine/core';
-import { IconChevronLeft, IconChevronRight, IconX } from '@tabler/icons-react';
-import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Container, Text } from '@mantine/core';
+import {
+  IconReportMoney,
+  IconLayoutDashboard,
+  IconCoin,
+  IconUsersGroup,
+  IconStack2,
+  IconSettings,
+  IconArrowRight,
+} from '@tabler/icons-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import { SectionHeading } from '../ui/SectionHeading';
 import classes from './ProductShowcase.module.css';
 
+const products = [
+  {
+    title: 'Fund Accounting',
+    description:
+      'Multi-instrument fund accounting and administration for PE, VC, family offices, hedge funds and mutual funds — a complete general ledger, automated NAV and IFRS-ready reporting across every asset class.',
+    image: '/images/fund-detail.png',
+    icon: IconReportMoney,
+    features: ['All fund types & instruments', 'Automated NAV & ledger', 'IFRS-ready reporting'],
+  },
+  {
+    title: 'Investor / LP Portal',
+    description:
+      'A white-labeled investor and LP portal with full fund-admin capabilities — KYC/AML onboarding, real-time positions, capital calls, statements and a secure document vault.',
+    image: '/images/fund-investors.png',
+    icon: IconUsersGroup,
+    features: ['KYC/AML onboarding', 'Real-time LP positions', 'Document vault'],
+  },
+  {
+    title: 'Fund Dashboard',
+    description:
+      'A real-time overview of every fund — NAV, performance analytics, asset allocation and operational health in one view.',
+    image: '/images/client-fund.png',
+    icon: IconLayoutDashboard,
+    features: ['Real-time NAV', 'Performance analytics', 'Asset allocation'],
+  },
+  {
+    title: 'Capital Calls',
+    description:
+      'Streamlined capital call workflows with automated notifications, payment tracking and built-in compliance monitoring.',
+    image: '/images/capital-call.png',
+    icon: IconCoin,
+    features: ['Automated calls', 'Payment tracking', 'Compliance reports'],
+  },
+  {
+    title: 'Share Classes & Instruments',
+    description:
+      'Flexible share class and instrument setup with customizable fee structures, voting rights and distribution preferences.',
+    image: '/images/share-class.png',
+    icon: IconStack2,
+    features: ['Fee structures', 'Voting rights', 'Distribution rules'],
+  },
+  {
+    title: 'Configuration',
+    description:
+      'Comprehensive fund setup and configuration with regulatory compliance and complete audit trails.',
+    image: '/images/settings.png',
+    icon: IconSettings,
+    features: ['Compliance setup', 'Audit trails', 'Risk management'],
+  },
+];
+
 export function ProductShowcase() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState('');
-
-  const products = [
-    {
-      title: 'Fund Dashboard',
-      description: 'Comprehensive fund overview with real-time metrics, performance analytics, and operational insights',
-      image: '/images/fund-detail.png',
-      features: ['Real-time NAV', 'Performance Analytics', 'Asset Allocation']
-    },
-    {
-      title: 'Capital Call Management',
-      description: 'Streamlined capital call process with automated notifications, payment tracking, and compliance monitoring',
-      image: '/images/capital-call.png',
-      features: ['Automated Calls', 'Payment Tracking', 'Compliance Reports']
-    },
-    {
-      title: 'Investor Management',
-      description: 'Complete investor lifecycle management from onboarding to reporting with KYC/AML compliance',
-      image: '/images/fund-investors.png',
-      features: ['KYC/AML Compliance', 'Investor Portal', 'Document Management']
-    },
-    {
-      title: 'Share Class Configuration',
-      description: 'Flexible share class setup with customizable fee structures, voting rights, and distribution preferences',
-      image: '/images/share-class.png',
-      features: ['Fee Structures', 'Voting Rights', 'Distribution Rules']
-    },
-    {
-      title: 'Fund Settings & Configuration',
-      description: 'Comprehensive fund setup and configuration tools with regulatory compliance and audit trails',
-      image: '/images/settings.png',
-      features: ['Compliance Setup', 'Audit Trails', 'Risk Management']
-    }
-  ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % products.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + products.length) % products.length);
-  };
-
-  const openImageModal = (imageSrc: string) => {
-    setModalImage(imageSrc);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setModalImage('');
-  };
-
-  const currentProduct = products[currentSlide];
+  const [active, setActive] = useState(0);
+  const current = products[active];
 
   return (
-    <div className={classes.wrapper}>
-      <Container size="lg" py={60}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className={classes.header}
-        >
-          <Badge
-            size="lg"
-            radius="sm"
-            variant="light"
-            className={classes.badge}
-            mx="auto"
-            display="block"
-            w="fit-content"
-          >
-            Product Showcase
-          </Badge>
+    <section className={`${classes.wrapper} section sectionMuted`}>
+      <Container size="lg">
+        <SectionHeading
+          eyebrow="Product tour"
+          title="Two flagship products, one platform"
+          description="A multi-instrument Fund Accounting engine for fund administrators, and a white-labeled Investor/LP portal — together covering PE, VC, family offices, hedge funds and mutual funds, end to end."
+        />
 
-          <Title order={2} className={classes.title} ta="center" mt="md">
-            See AAMA in Action
-          </Title>
-
-          <Text className={classes.description} ta="center" mt="md" maw={700} mx="auto">
-            Experience the power of our integrated fund management platform through real product screenshots.
-            Every feature is designed to simplify complex fund operations while maintaining regulatory compliance.
-          </Text>
-        </motion.div>
-
-        {/* Custom Slider Layout */}
-        <div className={classes.sliderContainer}>
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className={classes.slideContent}
-          >
-            <div className={classes.productShowcase}>
-              <div className={classes.showcaseContent}>
-                <div className={classes.contentWrapper}>
-                  <Title order={3} className={classes.showcaseTitle}>
-                    {currentProduct.title}
-                  </Title>
-
-                  <Text className={classes.showcaseDescription}>
-                    {currentProduct.description}
-                  </Text>
-
-                  <Group gap={12} mt="lg">
-                    {currentProduct.features.map((feature, idx) => (
-                      <Badge
-                        key={idx}
-                        size="md"
-                        variant="light"
-                        radius="md"
-                        className={classes.showcaseFeatureBadge}
-                      >
-                        {feature}
-                      </Badge>
+        <div className={classes.layout}>
+          <div className={classes.tabs} role="tablist" aria-label="Product features">
+            {products.map((p, i) => (
+              <button
+                key={p.title}
+                type="button"
+                role="tab"
+                aria-selected={i === active}
+                className={classes.tab}
+                data-active={i === active || undefined}
+                onClick={() => setActive(i)}
+              >
+                <span className={classes.tabIcon}>
+                  <p.icon size={20} stroke={1.7} />
+                </span>
+                <span className={classes.tabText}>
+                  <span className={classes.tabTitle}>{p.title}</span>
+                  <span className={classes.tabDesc}>{p.description}</span>
+                  <span className={classes.tabChips}>
+                    {p.features.map((f) => (
+                      <span key={f} className={classes.chip}>
+                        {f}
+                      </span>
                     ))}
-                  </Group>
-                </div>
-              </div>
+                  </span>
+                </span>
+                <IconArrowRight size={18} className={classes.tabArrow} />
+              </button>
+            ))}
+          </div>
 
-              <div className={classes.showcaseImageContainer}>
-                <div
-                  className={classes.showcaseImageWrapper}
-                  onClick={() => openImageModal(currentProduct.image)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <Image
-                    src={currentProduct.image}
-                    alt={currentProduct.title}
-                    className={classes.showcaseImage}
-                  />
-                  <div className={classes.imageOverlay}></div>
-                </div>
+          <div className={classes.preview}>
+            <div className={classes.frame}>
+              <div className={classes.frameBar}>
+                <span className={classes.dot} data-c="r" />
+                <span className={classes.dot} data-c="y" />
+                <span className={classes.dot} data-c="g" />
+                <span className={classes.url}>app.aama.io</span>
+              </div>
+              <div className={classes.frameBody}>
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={current.image}
+                    initial={{ opacity: 0, scale: 1.01 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Image
+                      src={current.image}
+                      alt={current.title}
+                      width={1280}
+                      height={820}
+                      className={classes.shot}
+                    />
+                  </motion.div>
+                </AnimatePresence>
               </div>
             </div>
-          </motion.div>
-
-          {/* Navigation Controls */}
-          <div className={classes.sliderControls}>
-            <ActionIcon
-              variant="filled"
-              size="lg"
-              radius="xl"
-              onClick={prevSlide}
-              className={classes.navButton}
-            >
-              <IconChevronLeft size={20} />
-            </ActionIcon>
-
-            <div className={classes.indicators}>
-              {products.map((_, index) => (
-                <button
-                  key={index}
-                  className={`${classes.indicator} ${index === currentSlide ? classes.indicatorActive : ''}`}
-                  onClick={() => setCurrentSlide(index)}
-                />
-              ))}
-            </div>
-
-            <ActionIcon
-              variant="filled"
-              size="lg"
-              radius="xl"
-              onClick={nextSlide}
-              className={classes.navButton}
-            >
-              <IconChevronRight size={20} />
-            </ActionIcon>
+            <Text className={classes.caption}>{current.title}</Text>
           </div>
         </div>
       </Container>
-
-      {/* Image Modal */}
-      <Modal
-        opened={isModalOpen}
-        onClose={closeModal}
-        size="90%"
-        centered
-        withCloseButton={false}
-        overlayProps={{
-          backgroundOpacity: 0.9,
-          blur: 3,
-        }}
-        styles={{
-          content: {
-            background: 'transparent',
-            boxShadow: 'none',
-          },
-        }}
-      >
-        <div style={{ position: 'relative', textAlign: 'center' }}>
-          <ActionIcon
-            size="lg"
-            radius="xl"
-            variant="filled"
-            onClick={closeModal}
-            style={{
-              position: 'absolute',
-              top: -50,
-              right: -20,
-              backgroundColor: 'rgba(255, 255, 255, 0.9)',
-              color: '#000',
-              zIndex: 1000,
-            }}
-          >
-            <IconX size={20} />
-          </ActionIcon>
-          <Image
-            src={modalImage}
-            alt="Product showcase"
-            style={{
-              maxWidth: '100%',
-              maxHeight: '90vh',
-              borderRadius: '12px',
-              boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)',
-            }}
-          />
-        </div>
-      </Modal>
-    </div>
+    </section>
   );
 }

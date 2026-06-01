@@ -1,137 +1,177 @@
 .header {
-  height: rem(64px);
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-7));
-  border-bottom: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(10px);
+  height: rem(72px);
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid transparent;
+  transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, height 200ms ease;
+}
+
+.header[data-scrolled] {
+  height: rem(64px);
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02), 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.container {
+  width: 100%;
 }
 
 .inner {
-  height: rem(64px);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: rem(24px);
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-}
-
-.menuTarget {
-  padding: rem(8px) rem(12px);
-  border-radius: var(--mantine-radius-sm);
-  font-weight: 600;
-  font-size: rem(16px);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  transition: all 150ms ease;
-
-  @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-  }
+.nav {
+  flex: 1;
+  justify-content: center;
 }
 
 .link {
-  padding: rem(8px) rem(12px);
+  display: inline-flex;
+  align-items: center;
+  height: rem(36px);
+  padding: 0 rem(14px);
   border-radius: var(--mantine-radius-sm);
-  font-weight: 600;
-  font-size: rem(16px);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+  font-weight: 550;
+  font-size: rem(15px);
+  color: var(--text);
   text-decoration: none;
-  transition: all 150ms ease;
-
-  @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  }
+  transition: color 140ms ease, background-color 140ms ease;
 }
 
-.mobileLink {
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  font-size: var(--mantine-font-size-md);
-  padding: var(--mantine-spacing-xs) 0;
-  font-weight: 500;
-  display: block;
-  transition: color 150ms ease;
+.link:hover {
+  color: var(--text-strong);
+  background-color: var(--surface-sunken);
+}
 
-  @mixin hover {
-    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  }
+.link[data-active] {
+  color: var(--mantine-color-blue-7);
+}
+
+/* Dropdown trigger (button styled as a nav link) */
+.navTrigger {
+  gap: 4px;
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+.chevron {
+  color: var(--text-faint);
+  transition: transform 160ms ease;
+}
+
+.navTrigger[data-active] .chevron {
+  color: var(--mantine-color-blue-7);
+}
+
+.navTrigger[aria-expanded='true'] .chevron {
+  transform: rotate(180deg);
+}
+
+.menuDropdown {
+  border: 1px solid var(--border);
+  box-shadow: var(--mantine-shadow-lg);
+  padding: 8px;
+}
+
+.menuIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--brand-soft);
+  color: var(--mantine-color-blue-6);
+}
+
+.menuItemTitle {
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--text-strong);
+}
+
+.menuItemDesc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.ghostBtn {
+  color: var(--text);
+  font-weight: 550;
+}
+
+.cta {
+  box-shadow: 0 6px 16px rgba(31, 90, 255, 0.25);
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(31, 90, 255, 0.3);
+}
+
+.drawerContent {
+  background-color: var(--surface);
 }
 
 .drawerLink {
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  font-size: rem(26px);
+  display: flex;
+  align-items: center;
+  font-size: rem(20px);
   font-weight: 600;
+  color: var(--text-strong);
   text-decoration: none;
-  padding: var(--mantine-spacing-xs);
-
-  &:hover {
-    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
-  }
-}
-
-.control {
-  display: block;
-  padding: rem(8) rem(12);
-  border-radius: var(--mantine-radius-sm);
-  font-size: var(--mantine-font-size-sm);
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  cursor: pointer;
-  user-select: none;
-
-  @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-  }
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdownMenu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: rem(8px);
-  padding: var(--mantine-spacing-xs) 0;
-  min-width: rem(220px);
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-dark-6));
-  border: rem(1px) solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  padding: rem(12px) rem(8px);
   border-radius: var(--mantine-radius-md);
-  box-shadow: var(--mantine-shadow-md);
+  transition: background-color 140ms ease;
 }
 
-.dropdownItem {
-  display: block;
-  width: 100%;
-  padding: var(--mantine-spacing-md);
-  text-align: left;
-
-  @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
-  }
+.drawerLink:hover,
+.drawerLink[data-active] {
+  background-color: var(--surface-sunken);
+  color: var(--mantine-color-blue-7);
 }
 
-.subLink {
-  width: 100%;
-  padding: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+.drawerGroupLabel {
+  margin: rem(14px) rem(8px) rem(4px);
+  font-size: rem(12px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.drawerSubLink {
+  display: flex;
+  align-items: center;
+  gap: rem(10px);
+  font-size: rem(17px);
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+  padding: rem(12px) rem(8px);
   border-radius: var(--mantine-radius-md);
-
-  @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
-  }
+  transition: background-color 140ms ease, color 140ms ease;
 }
 
-.dropdownFooter {
-  background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-7));
-  margin: calc(var(--mantine-spacing-md) * -1);
-  margin-top: var(--mantine-spacing-sm);
-  padding: var(--mantine-spacing-md) calc(var(--mantine-spacing-md) * 2);
-  padding-bottom: var(--mantine-spacing-xl);
-  border-top: 1px solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+.drawerSubLink:hover,
+.drawerSubLink[data-active] {
+  background-color: var(--surface-sunken);
+  color: var(--mantine-color-blue-7);
+}
+
+.drawerSubLink svg {
+  color: var(--mantine-color-blue-6);
 }

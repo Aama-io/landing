@@ -34,6 +34,7 @@ const INQUIRY_TYPES = [
 export function ContactForm() {
   const [status, setStatus] = useState<'success' | 'error' | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
   const { trackEvent } = useAnalytics();
 
   useEffect(() => {
@@ -71,6 +72,7 @@ export function ContactForm() {
     try {
       setStatus(null);
       setErrorMessage(null);
+      setSubmitting(true);
 
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -83,7 +85,7 @@ export function ContactForm() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.details || data.error || 'Failed to send email');
+        throw new Error(data.details || data.error || 'Failed to submit your request');
       }
       
       // Track successful form submission
@@ -104,8 +106,10 @@ export function ContactForm() {
       });
 
       setStatus('error');
-      setErrorMessage(error.message || 'Failed to send email. Please try again later.');
-      console.error('Failed to send email:', error);
+      setErrorMessage(error.message || 'Failed to submit your request. Please try again later.');
+      console.error('Contact form submission failed:', error);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -207,11 +211,13 @@ export function ContactForm() {
             />
 
             <Group justify="center" mt="xl">
-              <Button 
-                type="submit" 
-                size="md" 
+              <Button
+                type="submit"
+                size="md"
                 className={classes.submitButton}
                 leftSection={<IconMail size={20} />}
+                loading={submitting}
+                loaderProps={{ type: 'dots' }}
                 onClick={() => {
                   // Track button click
                   trackEvent({
@@ -220,7 +226,7 @@ export function ContactForm() {
                   });
                 }}
               >
-                Send Message
+                {submitting ? 'Sending…' : 'Send Message'}
               </Button>
             </Group>
 

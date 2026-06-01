@@ -1,0 +1,181 @@
+/* ==========================================================================
+   aama.io — global design tokens & base styles
+   Light, clean & airy design system. Brand blue accent.
+   ========================================================================== */
+
+:root {
+  /* Surfaces */
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --surface-sunken: #f1f5f9;
+  --surface-ink: #0b1220; /* deep navy for dark bands / CTA */
+
+  /* Text */
+  --text-strong: #0f172a;
+  --text: #334155;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+
+  /* Lines */
+  --border: #e6eaf0;
+  --border-strong: #d6dce6;
+
+  /* Brand */
+  --brand: #1f5aff;
+  --brand-600: #1f5aff;
+  --brand-700: #1247db;
+  --brand-soft: #ecf2ff;
+
+  /* Accent gradient (used sparingly) */
+  --gradient-brand: linear-gradient(135deg, #1f5aff 0%, #3d72ff 100%);
+  --gradient-brand-soft: linear-gradient(135deg, #ecf2ff 0%, #f5f8ff 100%);
+
+  /* Layout */
+  --container: 1200px;
+  --section-pad: clamp(72px, 9vw, 128px);
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--surface);
+  color: var(--text);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  letter-spacing: -0.011em;
+}
+
+::selection {
+  background: rgba(31, 90, 255, 0.16);
+  color: var(--text-strong);
+}
+
+* {
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+/* --------------------------------------------------------------------------
+   Reusable composition utilities
+   -------------------------------------------------------------------------- */
+
+/* Section vertical rhythm */
+.section {
+  padding-block: var(--section-pad);
+  position: relative;
+}
+
+.sectionMuted {
+  background-color: var(--surface-muted);
+}
+
+.sectionSunken {
+  background: linear-gradient(180deg, #ffffff 0%, var(--surface-muted) 100%);
+}
+
+/* Eyebrow / kicker label above section headings */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+/* Pill badge (light) */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  border: 1px solid #dbe6ff;
+  color: var(--brand-700);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Gradient text */
+.gradientText {
+  background: linear-gradient(120deg, #1f5aff 0%, #5e8aff 60%, #1247db 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Soft radial backdrop glow — placed behind hero / CTA art */
+.glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Decorative dotted / grid backgrounds */
+.bgGrid {
+  background-image:
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bgDots {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Fade mask helper for decorative layers */
+.maskFade {
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 100%);
+}
+
+/* --------------------------------------------------------------------------
+   Animations
+   -------------------------------------------------------------------------- */
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes marqueeX {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}

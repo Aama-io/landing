@@ -1,26 +1,19 @@
-import { AppShell, Container } from '@mantine/core';
-import { Header } from '../components/Header/Header';
+import { PageShell } from '@/components/ui/PageShell';
 import { ContactHero } from '../components/ContactHero/ContactHero';
 import { ContactForm } from '../components/ContactForm/ContactForm';
-import { Footer } from '../components/Footer/Footer';
 import { SEO } from '@/components/SEO/SEO';
 
 export default function ContactPage() {
   return (
-    <AppShell header={{ height: 60 }} padding={0}>
-      <SEO 
-        title="Contact Us | AAMA"
-        description="Get in touch with AAMA for fund management solutions, technical support, or partnership inquiries. We're here to help you succeed."
+    <>
+      <SEO
+        title="Contact Us | aama.io"
+        description="Get in touch with aama.io for fund management solutions, technical support, or partnership inquiries. We're here to help you succeed."
       />
-      <AppShell.Header>
-        <Header />
-      </AppShell.Header>
-
-      <AppShell.Main>
+      <PageShell>
         <ContactHero />
         <ContactForm />
-        <Footer />
-      </AppShell.Main>
-    </AppShell>
+      </PageShell>
+    </>
   );
-} 
+}

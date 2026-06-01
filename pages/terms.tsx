@@ -1,22 +1,17 @@
-import { AppShell, Container, Title, Text, List, Anchor } from '@mantine/core';
-import { Header } from '../components/Header/Header';
-import { Footer } from '../components/Footer/Footer';
+import { Container, Title, Text, List, Anchor } from '@mantine/core';
+import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
 import classes from '../styles/Legal.module.css';
 
 export default function TermsOfUse() {
   return (
-    <AppShell header={{ height: 60 }} padding={0}>
-      <SEO 
-        title="Terms of Use | AAMA"
-        description="AAMA.io's Terms of Use - The software is developed by Uxqode Pte Ltd to enable compliant fund managers to launch and manage funds while meeting regulatory requirements."
-        keywords="software terms, fund management software, Singapore laws, AAMA terms, Uxqode, software terms, user agreement"
+    <>
+      <SEO
+        title="Terms of Use | aama.io"
+        description="aama.io's Terms of Use — the platform is developed by Uxqode Pte Ltd to enable compliant fund managers to launch and manage funds while meeting regulatory requirements."
+        keywords="software terms, fund management software, Singapore laws, aama terms, Uxqode, user agreement"
       />
-      <AppShell.Header>
-        <Header />
-      </AppShell.Header>
-
-      <AppShell.Main>
+      <PageShell>
         <div className={classes.wrapper}>
           <Container size="lg">
             <Title className={classes.title}>Terms of Use</Title>
@@ -155,8 +150,7 @@ export default function TermsOfUse() {
             </div>
           </Container>
         </div>
-        <Footer />
-      </AppShell.Main>
-    </AppShell>
+      </PageShell>
+    </>
   );
 }

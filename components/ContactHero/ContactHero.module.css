@@ -1,8 +1,9 @@
 .wrapper {
-  padding: 100px 0 80px;
-  background: linear-gradient(135deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-indigo-9) 100%);
+  position: relative;
+  padding: clamp(112px, 13vw, 156px) 0 clamp(56px, 7vw, 88px);
+  background: radial-gradient(120% 120% at 50% -10%, #f3f7ff 0%, #ffffff 50%);
   overflow: hidden;
-  color: white;
+  color: var(--text);
 }
 
 .container {
@@ -11,93 +12,94 @@
 }
 
 .sectionBadge {
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  background: var(--brand-soft);
+  color: var(--mantine-color-blue-7);
+  border: 1px solid #dbe6ff;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 700;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
+  letter-spacing: 0.04em;
+  font-weight: 600;
   width: fit-content;
 }
 
 .title {
-  font-size: 42px;
-  font-weight: 900;
-  line-height: 1.2;
-  color: white;
+  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-strong);
   margin-bottom: var(--mantine-spacing-md);
 }
 
 .description {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 18px;
-  line-height: 1.5;
+  color: var(--text-muted);
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
 }
 
 .contactItem {
   padding: var(--mantine-spacing-lg);
-  border-radius: var(--mantine-radius-md);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: var(--mantine-shadow-sm);
   width: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contactItem:hover {
   transform: translateY(-5px);
+  box-shadow: var(--mantine-shadow-lg);
 }
 
 .icon {
   color: white;
-  background: linear-gradient(135deg, var(--mantine-color-blue-5) 0%, var(--mantine-color-indigo-7) 100%);
+  background: var(--gradient-brand);
   padding: 10px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 14px rgba(31, 90, 255, 0.28);
 }
 
 .contactLink {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .contactLink:hover {
-  color: white;
+  color: var(--mantine-color-blue-7);
   text-decoration: underline;
 }
 
 .contactText {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-muted);
 }
 
 .actionButton {
-  background: white;
-  color: var(--mantine-color-blue-7);
+  background: var(--gradient-brand);
+  color: white;
   border: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 22px rgba(31, 90, 255, 0.26);
 }
 
 .actionButton:hover {
-  background: white;
   transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 28px rgba(31, 90, 255, 0.32);
 }
 
 .secondaryButton {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: white;
-  background-color: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--text-strong);
+  background-color: #ffffff;
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .secondaryButton:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--surface-muted);
   transform: translateY(-3px);
 }
 
@@ -108,17 +110,12 @@
 }
 
 @media (max-width: 576px) {
-  .wrapper {
-    padding: 80px 0 60px;
-  }
-  
   .title {
-    font-size: 32px;
     text-align: center;
   }
-  
+
   .description {
     text-align: center;
     margin: 0 auto;
   }
-} 
+}
