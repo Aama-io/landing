@@ -16,7 +16,10 @@ const groups = [
   },
   {
     title: 'Tools',
-    links: [{ label: 'Waterfall Calculator', href: '/tools/waterfall' }],
+    links: [
+      { label: 'Waterfall Calculator', href: '/tools/waterfall' },
+      { label: 'VCC Comparator', href: '/tools/vcc-comparator' },
+    ],
   },
   {
     title: 'Company',

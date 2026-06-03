@@ -514,3 +514,108 @@
   font-size: 12.5px;
   color: var(--text-faint);
 }
+
+/* Investor group editor */
+.groupRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.groupName {
+  flex: 1;
+  min-width: 0;
+}
+
+.groupCap {
+  width: 104px;
+  flex-shrink: 0;
+}
+
+.totalLine {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalLine strong {
+  color: var(--text-strong);
+}
+
+.dateGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.selectField,
+.dateField {
+  margin-bottom: 14px;
+}
+
+.yearsInfo {
+  margin-top: 12px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+.yearsInfo strong {
+  color: var(--mantine-color-blue-7);
+}
+
+/* Tier / summary table cells */
+.cellName {
+  text-align: left !important;
+  color: var(--text-strong) !important;
+  font-weight: 600;
+}
+
+.statusFull,
+.statusPartial,
+.statusNone {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.statusFull {
+  background: #e7f9ec;
+  color: #16a34a;
+}
+
+.statusPartial {
+  background: #fff7e6;
+  color: #b45309;
+}
+
+.statusNone {
+  background: var(--surface-sunken);
+  color: var(--text-faint);
+}
+
+/* Accrual info banner */
+.accrualBanner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 14px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-soft);
+  border: 1px solid #dbe6ff;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--mantine-color-blue-8);
+}
+
+.accrualBanner strong {
+  color: var(--mantine-color-blue-9);
+}

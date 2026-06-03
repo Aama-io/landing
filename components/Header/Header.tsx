@@ -3,7 +3,7 @@ import { Container, Group, Burger, Drawer, Stack, Button, Divider, Menu } from '
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { IconArrowRight, IconChevronDown, IconChartArrowsVertical } from '@tabler/icons-react';
+import { IconArrowRight, IconChevronDown, IconChartArrowsVertical, IconBuildingBank } from '@tabler/icons-react';
 import { useAnalytics } from '../Analytics';
 import { Logo } from '../ui/Logo';
 import classes from './Header.module.css';
@@ -22,6 +22,12 @@ const tools = [
     label: 'Waterfall Calculator',
     description: 'Model LP/GP distribution waterfalls',
     icon: IconChartArrowsVertical,
+  },
+  {
+    link: '/tools/vcc-comparator',
+    label: 'VCC Structure Comparator',
+    description: 'Umbrella vs standalone VCC',
+    icon: IconBuildingBank,
   },
 ];
 
