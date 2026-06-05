@@ -903,6 +903,109 @@ As we continue through 2025, the gap between firms using modern technology and t
     readTime: '5 min',
     categories: ['Fund Management', 'Private Equity', 'Family Offices']
   },
+  {
+    id: '14',
+    title: 'American vs European Waterfalls: How Carry Timing Changes What LPs Keep',
+    slug: 'american-vs-european-waterfall',
+    excerpt: 'Deal-by-deal or whole-fund? The two distribution waterfall structures pay the GP carried interest at very different times — and the gap is real money for LPs. Here is how they differ, with a worked example.',
+    content: `
+      <p>Few terms in a limited partnership agreement matter more to a limited partner's net return than the shape of the <strong>distribution waterfall</strong> — and specifically whether it is <strong>American (deal-by-deal)</strong> or <strong>European (whole-fund)</strong>. The two structures eventually split the same profit using the same carry percentage, but they pay the general partner at very different times. That timing difference creates clawback risk and can quietly cost LPs millions.</p>
+
+      <h3>What a distribution waterfall does</h3>
+
+      <p>A waterfall sets the order in which a fund's cash is paid out between LPs and the GP. The standard tiers are:</p>
+
+      <ol>
+        <li><strong>Return of capital</strong> — LPs get their invested capital back first.</li>
+        <li><strong>Preferred return (hurdle)</strong> — LPs receive a minimum annual return, often 8%.</li>
+        <li><strong>GP catch-up</strong> — the GP receives a larger share until it has earned its full carry on profits above capital.</li>
+        <li><strong>Carried interest split</strong> — the remaining profit is split, commonly 80% to LPs and 20% to the GP.</li>
+      </ol>
+
+      <p>The American and European structures agree on these tiers. Where they differ is the <em>scope</em> over which they are applied.</p>
+
+      <h3>European (whole-fund) waterfall</h3>
+
+      <p>In a European waterfall, carried interest is calculated across the <strong>entire fund</strong>. The GP earns no carry until <em>all</em> of the fund's drawn capital and preferred return have been returned to LPs. Because every deal — winners and losers — is netted together first, the GP can never be paid carry on an early winner that is later wiped out by a loss elsewhere. This is the LP-friendly structure and the market standard for most institutional private equity funds.</p>
+
+      <h3>American (deal-by-deal) waterfall</h3>
+
+      <p>In an American waterfall, carried interest is calculated <strong>deal by deal</strong>. As each profitable investment exits, the GP takes its carry on that deal's profit immediately — without waiting for the rest of the fund to return capital. This improves the GP's cash-flow timing and is more common in US real estate and some venture structures. The catch: if later deals lose money, the GP may have already been paid carry it did not ultimately earn.</p>
+
+      <h3>The clawback problem</h3>
+
+      <p>Because deal-by-deal carry is taken before losers are netted off, the GP can end up <strong>over-distributed</strong> at the end of a fund's life. The <strong>clawback provision</strong> exists to fix this — it obliges the GP to return excess carry. But clawbacks are hard to enforce in practice: the cash may already have been taxed and distributed to individuals who have since left. That enforcement risk is exactly why LPs prefer the European structure.</p>
+
+      <h3>A worked example</h3>
+
+      <p>Take a fund with four equal $25M deals exiting at 3.0x, 1.8x, 0.6x and 2.2x, an 8% preferred return over a 5-year hold and 20% carry. Run those same deals through both structures and the GP earns roughly <strong>$20M of carry under the American waterfall but only $18M under the European</strong> — a ~$2M gap that comes straight out of LP pockets, created entirely by the loss-making deal not being netted against the winners before carry was paid.</p>
+
+      <p>You can reproduce this exact comparison — and test your own deals, hurdle and carry — with our free <a href="/tools/waterfall-comparator">American vs European Waterfall Comparator</a>. To model a single fund's full four-tier waterfall with catch-up and clawback, use the <a href="/tools/waterfall">Distribution Waterfall Calculator</a>, and to see how fees and carry combine over a fund's life, the <a href="/tools/fee-carry-modeler">Management Fee &amp; Carry Modeler</a>.</p>
+
+      <h3>Which should you negotiate for?</h3>
+
+      <p>If you are an LP, a European whole-fund waterfall with a robust clawback (ideally backed by an escrow or a GP guarantee) protects you from paying carry on profits the fund never actually delivered. If you are a GP, deal-by-deal carry improves your team's economics and retention — but expect LPs to push back, and expect the clawback and escrow terms to be heavily negotiated.</p>
+
+      <p>Whatever side of the table you sit on, model the cash flows before you sign. The structure is not an academic detail — it is one of the largest single drivers of who keeps the upside.</p>
+
+      <p><strong>Try the <a href="/tools/waterfall-comparator">waterfall comparator</a> with your own numbers, or <a href="/contact">talk to our team</a> about modelling your fund's economics.</strong></p>
+    `,
+    author: 'Prashant Chaulagain',
+    authorRole: 'Chief Technology Officer',
+    authorImage: '/team/prashant-chaulagain.jpg',
+    coverImage: '/fund-types/vc.jpg',
+    publishedDate: '2026-06-01',
+    readTime: '7 min',
+    categories: ['Private Equity', 'Fund Waterfalls', 'Carried Interest']
+  },
+  {
+    id: '15',
+    title: 'TVPI, DPI, RVPI and IRR: The Four Numbers Every LP Uses to Judge a Fund',
+    slug: 'tvpi-dpi-rvpi-irr-explained',
+    excerpt: 'A fund’s performance comes down to four metrics — IRR plus the TVPI, DPI and RVPI multiples. Here is what each one means, how they relate, and what “good” looks like.',
+    content: `
+      <p>Ask any limited partner how a fund is doing and you will hear four acronyms: <strong>IRR, TVPI, DPI and RVPI</strong>. Together they answer two different questions — <em>how much value has the fund created?</em> and <em>how fast?</em> — and you need both to judge performance fairly. Here is what each metric means and how they fit together.</p>
+
+      <h3>The multiples: TVPI, DPI and RVPI</h3>
+
+      <p>All three multiples are measured against <strong>paid-in capital</strong> — the cash LPs have actually contributed via capital calls.</p>
+
+      <ul>
+        <li><strong>DPI (Distributions to Paid-In)</strong> — realised cash returned to LPs divided by paid-in capital. A DPI of 1.0x means the fund has returned everything LPs put in; above 1.0x is pure realised profit. DPI is the "money in the bank" number.</li>
+        <li><strong>RVPI (Residual Value to Paid-In)</strong> — the fund's remaining net asset value (unrealised holdings) divided by paid-in capital. This is value still on paper.</li>
+        <li><strong>TVPI (Total Value to Paid-In)</strong> — total value, realised plus unrealised, divided by paid-in. It is simply <strong>TVPI = DPI + RVPI</strong>.</li>
+      </ul>
+
+      <p>So a fund at 2.4x TVPI made up of 1.5x DPI and 0.9x RVPI has returned 1.5x in cash and is holding another 0.9x in unrealised NAV.</p>
+
+      <h3>The rate of return: IRR</h3>
+
+      <p>Multiples ignore time — a 2.0x in three years is far better than a 2.0x in ten. <strong>IRR (internal rate of return)</strong> fixes that. It is the money-weighted annual return that accounts for exactly <em>when</em> each capital call and distribution happened, with the current NAV treated as a final inflow. Because fund cash flows are irregular, it is calculated as an <strong>XIRR</strong> over dated flows.</p>
+
+      <h3>Why you need both</h3>
+
+      <p>IRR and TVPI can tell different stories. A fund can post a high IRR by returning capital quickly yet end with a modest TVPI; another can grind out a high TVPI over a decade with an unremarkable IRR. Sophisticated LPs read them together — and watch <strong>DPI</strong> especially closely, because unrealised RVPI is only an estimate until it is sold. In a slow exit environment, "TVPI is fine but where is the DPI?" becomes the question that matters.</p>
+
+      <h3>What does "good" look like?</h3>
+
+      <p>It depends on strategy and vintage, but as a rough guide, mature buyout funds often show median net IRRs in the mid-teens, with top-quartile funds well above 20% and TVPIs north of 2.0x. Venture has far wider dispersion. The only fair comparison is against funds of the same <strong>vintage year</strong> and strategy — which is why benchmarks report quartiles rather than a single average.</p>
+
+      <h3>Calculate and benchmark your own</h3>
+
+      <p>You can compute all four metrics from your fund's cash flows — with a full XIRR and a J-curve — using our free <a href="/tools/irr-tvpi-dpi-calculator">IRR, TVPI, DPI &amp; RVPI Calculator</a>. To see which quartile your net IRR lands in versus vintage peers, use the <a href="/tools/vintage-benchmarker">Fund Vintage Benchmarker</a>, and to understand how fees and carry erode the gross-to-net gap, the <a href="/tools/fee-carry-modeler">Management Fee &amp; Carry Modeler</a>.</p>
+
+      <p>Get comfortable with these four numbers and you can read any fund's performance in seconds — and spot the difference between a fund that has truly delivered and one that is still hoping its NAV holds up.</p>
+
+      <p><strong>Run your own cash flows through the <a href="/tools/irr-tvpi-dpi-calculator">IRR / TVPI / DPI calculator</a>, or <a href="/contact">book a demo</a> to see live fund performance reporting in aama.io.</strong></p>
+    `,
+    author: 'Prashant Chaulagain',
+    authorRole: 'Chief Technology Officer',
+    authorImage: '/team/prashant-chaulagain.jpg',
+    coverImage: '/fund-types/mutual-fund.jpg',
+    publishedDate: '2026-06-04',
+    readTime: '7 min',
+    categories: ['Fund Performance', 'LP Reporting', 'Private Equity']
+  },
 ];
 
 export default function handler(

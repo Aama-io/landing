@@ -19,6 +19,8 @@ const STATIC: { loc: string; priority: string }[] = [
 ];
 
 const BLOG = [
+  '/blog/american-vs-european-waterfall',
+  '/blog/tvpi-dpi-rvpi-irr-explained',
   '/blog/transforming-fund-operations-of-private-equity',
   '/blog/simplify-operation-for-family-offices-in-singapore',
   '/blog/fund-management-vs-fund-administration',
