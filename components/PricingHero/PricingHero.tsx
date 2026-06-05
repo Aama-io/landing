@@ -1,64 +1,32 @@
-import { Container, Title, Text, Badge, Grid, Group } from '@mantine/core';
+import type { CSSProperties } from 'react';
+import { Container, Title, Text, Group } from '@mantine/core';
+import { IconCircleCheck } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
-import classes from './PricingHero.module.css';
+import s from '@/components/ui/tool.module.css';
+
+const ease = [0.22, 1, 0.36, 1] as const;
+const item: CSSProperties = { display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 14.5, color: 'var(--text-muted)' };
 
 export function PricingHero() {
   return (
-    <div className={classes.root}>
-      <Container size="lg">
-        <Grid gutter={50}>
-          <Grid.Col span={{ base: 12, md: 7 }}>
-            <div className={classes.content}>
-              <Badge size="lg" radius="sm" className={classes.badge}>Pricing</Badge>
-              
-              <Title className={classes.title}>
-                Institutional-Grade at <span className={classes.highlight}>Startup-Friendly Pricing</span>
-              </Title>
-              
-              <Text className={classes.description}>
-                We offer institutional-grade fund management software at startup-friendly pricing — designed to help 
-                Singaporean fund managers scale, stay compliant, and delight investors.
-              </Text>
-              
-              <Group mt="xl" className={classes.features}>
-                <div className={classes.feature}>
-                  <div className={classes.featureIcon}>✓</div>
-                  <div className={classes.featureText}>
-                    <Text fw={700}>SaaS Subscription</Text>
-                    <Text size="sm" c="dimmed">Transparent monthly or yearly billing</Text>
-                  </div>
-                </div>
-                
-                <div className={classes.feature}>
-                  <div className={classes.featureIcon}>✓</div>
-                  <div className={classes.featureText}>
-                    <Text fw={700}>All-Inclusive</Text>
-                    <Text size="sm" c="dimmed">Maintenance & support included</Text>
-                  </div>
-                </div>
-              </Group>
-            </div>
-          </Grid.Col>
-          
-          <Grid.Col span={{ base: 12, md: 5 }} className={classes.imageColumn}>
-            <motion.div 
-              className={classes.imageWrapper}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <div className={classes.image}>
-                <div className={classes.imageOverlay}></div>
-                <div className={classes.shapes}>
-                  <div className={classes.shape1}></div>
-                  <div className={classes.shape2}></div>
-                  <div className={classes.shape3}></div>
-                </div>
-              </div>
-            </motion.div>
-          </Grid.Col>
-        </Grid>
+    <section className={s.hero}>
+      <div className={s.heroGlow} />
+      <Container size="lg" className={s.heroInner}>
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
+          <span className={s.pill}>Pricing</span>
+          <Title className={s.heroTitle}>
+            Institutional-grade at <span className={s.accent}>startup-friendly pricing</span>
+          </Title>
+          <Text className={s.heroDesc}>
+            Institutional-grade fund management software at startup-friendly pricing — designed to help Singaporean fund
+            managers scale, stay compliant and delight investors.
+          </Text>
+          <Group justify="center" gap={28} mt={28}>
+            <span style={item}><IconCircleCheck size={18} style={{ color: 'var(--mantine-color-blue-6)' }} /><span><strong style={{ color: 'var(--text-strong)' }}>SaaS subscription</strong> — monthly or yearly</span></span>
+            <span style={item}><IconCircleCheck size={18} style={{ color: 'var(--mantine-color-blue-6)' }} /><span><strong style={{ color: 'var(--text-strong)' }}>All-inclusive</strong> — support &amp; maintenance</span></span>
+          </Group>
+        </motion.div>
       </Container>
-    </div>
+    </section>
   );
-} 
+}

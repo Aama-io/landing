@@ -1,80 +1,58 @@
-import { Container, Text, Title, Group, Button, Stack, Box, Badge, Grid, Center } from '@mantine/core';
-import { IconPhone, IconMail, IconMapPin, IconClock, IconArrowRight, IconCalendar } from '@tabler/icons-react';
-import classes from './ContactHero.module.css';
-import Link from 'next/link';
-import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect } from 'react';
+import type { CSSProperties } from 'react';
+import { Container, Text, Title, Group } from '@mantine/core';
+import { IconMail, IconCalendar } from '@tabler/icons-react';
+import { motion } from 'framer-motion';
+import { getCalApi } from '@calcom/embed-react';
+import s from '@/components/ui/tool.module.css';
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const card: CSSProperties = {
+  display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+  width: 190, padding: '20px 18px', borderRadius: 16, background: 'var(--surface)',
+  border: '1px solid var(--border)', boxShadow: 'var(--mantine-shadow-xs)', textDecoration: 'none',
+};
+const iconChip: CSSProperties = {
+  display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 42, height: 42,
+  borderRadius: 11, background: 'var(--gradient-brand)', color: '#fff', boxShadow: '0 8px 18px rgba(31,90,255,0.26)',
+};
 
 export function ContactHero() {
   useEffect(() => {
-    (async function() {
+    (async function () {
       const cal = await getCalApi();
-      cal("ui", {
-        styles: {
-          branding: { brandColor: "#0070f3" }
-        }
-      });
+      cal('ui', { styles: { branding: { brandColor: '#1f5aff' } } });
     })();
   }, []);
 
   return (
-    <Box className={classes.wrapper}>
-      <Container size="lg" py="xl" className={classes.container}>
-        <Grid gutter={30} align="center">
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Stack gap="md">
-              <Badge 
-                size="lg" 
-                radius="sm" 
-                variant="gradient" 
-                gradient={{ from: 'blue', to: 'cyan' }}
-                className={classes.sectionBadge}
-              >
-                Contact Us
-              </Badge>
-              
-              <Title className={classes.title}>
-                Ready to Transform Your Fund Management?
-              </Title>
-              
-              <Text size="lg" className={classes.description} maw={600}>
-                Have questions about our fund management solutions? Our team is ready to assist you with personalized support.
-              </Text>
-            </Stack>
-          </Grid.Col>
-          
-          <Grid.Col span={{ base: 12, md: 6 }}>
-            <Center>
-              <Group gap="lg" align="flex-start">
-                <div className={classes.contactItem}>
-                  <IconMail size={32} stroke={1.5} className={classes.icon} />
-                  <Text fw={700} mt="md">Email Us</Text>
-                  <Text component="a" href="mailto:contact@aama.io" className={classes.contactLink}>
-                    contact@aama.io
-                  </Text>
-                </div>
+    <section className={s.hero}>
+      <div className={s.heroGlow} />
+      <Container size="lg" className={s.heroInner}>
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
+          <span className={s.pill}>Contact us</span>
+          <Title className={s.heroTitle}>
+            Ready to transform your <span className={s.accent}>fund management?</span>
+          </Title>
+          <Text className={s.heroDesc}>
+            Have questions about our fund management platform? Our team is ready to assist you with personalized support.
+          </Text>
 
-                <div className={classes.contactItem}>
-                  <IconCalendar size={32} stroke={1.5} className={classes.icon} />
-                  <Text fw={700} mt="md">Schedule a Meeting</Text>
-                    <Text
-                      component="a"
-                      href="https://cal.com/aamaio/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      variant="outline"
-                      color="blue"
-                      size="sm"
-                      className={classes.contactLink}
-                    >
-                      Book a time
-                    </Text>
-                </div>
-              </Group>
-            </Center>
-          </Grid.Col>
-        </Grid>
+          <Group justify="center" gap={16} mt={32}>
+            <a href="mailto:contact@aama.io" style={card}>
+              <span style={iconChip}><IconMail size={20} stroke={1.7} /></span>
+              <Text fw={700} mt="sm" size="sm">Email us</Text>
+              <Text size="sm" c="dimmed">contact@aama.io</Text>
+            </a>
+            <a href="https://cal.com/aamaio/30min" target="_blank" rel="noopener noreferrer" style={card}>
+              <span style={iconChip}><IconCalendar size={20} stroke={1.7} /></span>
+              <Text fw={700} mt="sm" size="sm">Schedule a meeting</Text>
+              <Text size="sm" c="dimmed">Book a time</Text>
+            </a>
+          </Group>
+        </motion.div>
       </Container>
-    </Box>
+    </section>
   );
-} 
+}

@@ -1,10 +1,11 @@
 import { Container, Title, Text, Stack, Grid, Card, Image, Group, Badge, Avatar, Button } from '@mantine/core';
-import { IconCalendar, IconClock, IconArrowRight } from '@tabler/icons-react';
+import { IconCalendar, IconClock, IconArrowRight, IconSparkles } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import InnerLayout from '@/components/InnerLayout';
 import { SEO } from '@/components/SEO/SEO';
 import Head from 'next/head';
+import s from '@/components/ui/tool.module.css';
 import classes from './Blog.module.css';
 
 // Define the blog post type
@@ -101,12 +102,21 @@ export default function BlogPage() {
       </Head>
       <div className={classes.wrapper}>
         <Container size="lg">
-          <Stack align="center" justify="center" gap="xl" className={classes.header}>
-            <Title className={classes.title}>AAMA Blog</Title>
+          <Stack align="center" justify="center" gap="md" className={classes.header}>
+            <span className={s.pill}>aama.io blog</span>
+            <Title className={classes.title}>Fund management <span className={s.accent}>insights</span></Title>
             <Text className={classes.subtitle}>
-              Insights on blockchain technology, fund management, and investment strategies.
+              Practical guides on distribution waterfalls, VCC structuring, fund economics and Singapore fund operations — plus deep dives behind our free tools.
             </Text>
           </Stack>
+
+          {!loading && posts.length > 0 && (
+            <div className={classes.topicRow}>
+              {Array.from(new Set(posts.flatMap((p) => p.categories))).slice(0, 7).map((t) => (
+                <span key={t} className={classes.topicChip}>{t}</span>
+              ))}
+            </div>
+          )}
 
           {loading ? (
             <Stack align="center" py={50}>
@@ -118,12 +128,15 @@ export default function BlogPage() {
               <Card className={classes.featuredPost} mb={50}>
                 <Grid gutter={30}>
                   <Grid.Col span={{ base: 12, md: 6 }}>
-                    <Image 
-                      src={posts[0].coverImage}
-                      alt={posts[0].title}
-                      fallbackSrc="https://placehold.co/600x400?text=Featured+Post"
-                      className={classes.featuredImage}
-                    />
+                    <div className={classes.featuredImageWrap}>
+                      <span className={classes.featuredTag}><IconSparkles size={13} /> Featured</span>
+                      <Image
+                        src={posts[0].coverImage}
+                        alt={posts[0].title}
+                        fallbackSrc="https://placehold.co/600x400?text=Featured+Post"
+                        className={classes.featuredImage}
+                      />
+                    </div>
                   </Grid.Col>
                   <Grid.Col span={{ base: 12, md: 6 }}>
                     <Stack gap="md" h="100%" justify="center">
@@ -181,6 +194,7 @@ export default function BlogPage() {
                           height={200}
                           alt={post.title}
                           fallbackSrc="https://placehold.co/600x400?text=Blog+Post"
+                          className={classes.cardImage}
                         />
                       </Card.Section>
                       <Stack gap="sm" mt="md">
@@ -214,6 +228,19 @@ export default function BlogPage() {
                   </Grid.Col>
                 ))}
               </Grid>
+
+              {/* Free tools CTA */}
+              <div className={classes.toolsCta}>
+                <div className={classes.toolsCtaGlow} />
+                <h2 className={classes.toolsCtaTitle}>Put the ideas to work</h2>
+                <p className={classes.toolsCtaText}>
+                  Every guide pairs with a free, no-signup tool — distribution waterfalls, IRR / TVPI, VCC structuring,
+                  capital calls and more.
+                </p>
+                <Button component={Link} href="/tools" size="md" radius="md" rightSection={<IconArrowRight size={18} />}>
+                  Explore the free tools
+                </Button>
+              </div>
             </>
           ) : (
             <Stack align="center" justify="center" gap="xl" className={classes.content} py={50}>

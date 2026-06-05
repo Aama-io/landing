@@ -1,34 +1,30 @@
 .wrapper {
   min-height: calc(100vh - 180px); /* Account for header and footer */
-  padding: rem(40px) 0 rem(60px);
-  background: light-dark(
-    linear-gradient(135deg, var(--mantine-color-gray-0) 0%, var(--mantine-color-blue-0) 100%),
-    var(--mantine-color-dark-8)
-  );
+  padding: rem(40px) 0 rem(80px);
+  background: radial-gradient(120% 80% at 50% 0%, #f3f7ff 0%, #ffffff 45%);
   position: relative;
   overflow: hidden;
 }
 
-/* Add subtle animated background pattern */
+/* Soft ambient glow + faint grid (matches the platform design system) */
 .wrapper::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background-image: 
-    linear-gradient(45deg, var(--mantine-color-blue-1) 25%, transparent 25%),
-    linear-gradient(-45deg, var(--mantine-color-blue-1) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, var(--mantine-color-blue-1) 75%),
-    linear-gradient(-45deg, transparent 75%, var(--mantine-color-blue-1) 75%);
-  background-size: 20px 20px;
-  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-  opacity: 0.1;
-  animation: patternMove 20s linear infinite;
+  top: rem(-260px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: rem(620px);
+  height: rem(620px);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(61, 114, 255, 0.16) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
 }
 
 .header {
   position: relative;
   z-index: 1;
-  padding: rem(30px) 0 rem(60px);
+  padding: rem(60px) 0 rem(56px);
 }
 
 .content {
@@ -101,31 +97,119 @@
 
 /* Featured post styles */
 .featuredPost {
-  background: light-dark(
-    rgba(255, 255, 255, 0.9),
-    rgba(26, 27, 30, 0.75)
-  );
-  backdrop-filter: blur(5px);
-  border: 1px solid light-dark(
-    var(--mantine-color-gray-3),
-    var(--mantine-color-dark-5)
-  );
+  position: relative;
+  background: var(--mantine-color-white);
+  border: 1px solid var(--mantine-color-gray-2);
+  border-radius: rem(24px);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: var(--mantine-shadow-md);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.10);
+  padding: rem(16px);
 }
 
 .featuredPost:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--mantine-shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.14);
+}
+
+.featuredImageWrap {
+  position: relative;
+  height: 100%;
+  min-height: rem(340px);
+  border-radius: rem(16px);
+  overflow: hidden;
 }
 
 .featuredImage {
   height: 100%;
-  min-height: 300px;
+  min-height: rem(340px);
   object-fit: cover;
-  border-radius: var(--mantine-radius-md);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.featuredPost:hover .featuredImage {
+  transform: scale(1.04);
+}
+
+.featuredTag {
+  position: absolute;
+  top: rem(16px);
+  left: rem(16px);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6px);
+  padding: rem(6px) rem(12px);
+  border-radius: 999px;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-size: rem(12px);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 18px rgba(31, 90, 255, 0.32);
+}
+
+/* Topic chips */
+.topicRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: rem(8px);
+  margin: rem(28px) auto rem(8px);
+  position: relative;
+  z-index: 1;
+}
+
+.topicChip {
+  padding: rem(7px) rem(14px);
+  border-radius: 999px;
+  background: var(--mantine-color-white);
+  border: 1px solid var(--mantine-color-gray-3);
+  font-size: rem(13px);
+  font-weight: 600;
+  color: var(--mantine-color-gray-7);
+}
+
+/* Tools CTA band */
+.toolsCta {
+  position: relative;
   overflow: hidden;
+  margin-top: rem(64px);
+  padding: rem(48px) rem(40px);
+  border-radius: rem(24px);
+  background: linear-gradient(135deg, #0a1430 0%, #15264f 55%, #0a1430 100%);
+  text-align: center;
+  isolation: isolate;
+}
+
+.toolsCtaGlow {
+  position: absolute;
+  width: rem(480px);
+  height: rem(480px);
+  top: rem(-220px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(61, 114, 255, 0.40) 0%, transparent 70%);
+  filter: blur(90px);
+  z-index: -1;
+}
+
+.toolsCtaTitle {
+  font-size: rem(30px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin: 0;
+}
+
+.toolsCtaText {
+  margin: rem(12px) auto rem(24px);
+  max-width: rem(560px);
+  font-size: rem(15px);
+  line-height: 1.6;
+  color: rgba(226, 232, 240, 0.78);
 }
 
 .postTitle {
@@ -154,27 +238,31 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: light-dark(
-    rgba(255, 255, 255, 0.9),
-    rgba(26, 27, 30, 0.75)
-  );
-  backdrop-filter: blur(5px);
-  border: 1px solid light-dark(
-    var(--mantine-color-gray-3),
-    var(--mantine-color-dark-5)
-  );
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  background: var(--mantine-color-white);
+  border: 1px solid var(--mantine-color-gray-2);
+  border-radius: var(--mantine-radius-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   text-decoration: none;
   color: inherit;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--mantine-shadow-md);
+  transform: translateY(-6px);
+  border-color: var(--mantine-color-blue-3);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12);
 }
 
 .card:hover .cardTitle {
-  color: var(--mantine-color-blue-5);
+  color: var(--mantine-color-blue-6);
+}
+
+.cardImage {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.06);
 }
 
 .cardTitle {
