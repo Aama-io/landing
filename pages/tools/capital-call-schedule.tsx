@@ -4,18 +4,18 @@ import { PageShell } from '@/components/ui/PageShell';
 import { ToolMeta } from '@/components/tools/ToolMeta';
 import { ToolContentSection } from '@/components/tools/ToolContentSection';
 
-const WaterfallCalculator = dynamic(
-  () => import('@/components/WaterfallCalculator/WaterfallCalculator'),
+const CapitalCallBuilder = dynamic(
+  () => import('@/components/CapitalCallBuilder/CapitalCallBuilder'),
   { ssr: false, loading: () => (<Center style={{ minHeight: '80vh' }}><Loader color="blue" /></Center>) }
 );
 
-export default function WaterfallCalculatorPage() {
+export default function CapitalCallSchedulePage() {
   return (
     <>
-      <ToolMeta slug="/tools/waterfall" />
+      <ToolMeta slug="/tools/capital-call-schedule" />
       <PageShell>
-        <WaterfallCalculator />
-        <ToolContentSection slug="/tools/waterfall" />
+        <CapitalCallBuilder />
+        <ToolContentSection slug="/tools/capital-call-schedule" />
       </PageShell>
     </>
   );

@@ -1,7 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Container, Title, Text, Slider, Switch, Progress, Button } from '@mantine/core';
 import { IconCheck, IconArrowRight, IconBuildingBank, IconBuildingSkyscraper } from '@tabler/icons-react';
 import Link from 'next/link';
+import { ShareLinkButton } from '@/components/ui/ShareLinkButton';
+import { applyParams, syncParams } from '@/lib/shareUrl';
 import classes from './VccComparator.module.css';
 
 type Structure = 'umbrella' | 'standalone';
@@ -60,40 +62,64 @@ export function VccComparator() {
   const [sharedProviders, setSharedProviders] = useState(true);
   const [spinOff, setSpinOff] = useState(false);
 
+  // Restore inputs from a shared link on mount, then keep the URL in sync.
+  useEffect(() => {
+    applyParams({
+      f: (v) => setNumFunds(Math.min(8, Math.max(1, parseInt(v, 10) || 2))),
+      pm: (v) => setPlanMore(v === '1'),
+      cs: (v) => setCostSensitive(v === '1'),
+      sp: (v) => setSharedProviders(v === '1'),
+      so: (v) => setSpinOff(v === '1'),
+    });
+  }, []);
+  useEffect(() => {
+    syncParams({ f: numFunds, pm: planMore ? 1 : 0, cs: costSensitive ? 1 : 0, sp: sharedProviders ? 1 : 0, so: spinOff ? 1 : 0 });
+  }, [numFunds, planMore, costSensitive, sharedProviders, spinOff]);
+
   const { rec, confidence, reasons } = useMemo(() => {
     let score = 0; // positive → umbrella, negative → standalone
-    const reasons: string[] = [];
+    // Each pro is tagged with the structure it supports so we only ever show
+    // reasons that agree with the final recommendation.
+    const pros: { dir: Structure; text: string }[] = [];
 
     if (numFunds >= 2) {
       score += (numFunds - 1) * 1.5;
-      reasons.push(`You're planning ${numFunds} strategies — an umbrella holds them as ring-fenced sub-funds under one structure.`);
+      pros.push({ dir: 'umbrella', text: `You're planning ${numFunds} strategies — an umbrella holds them as ring-fenced sub-funds under one structure.` });
     } else {
       score -= 3;
-      reasons.push('A single fund rarely justifies an umbrella — a standalone VCC keeps it simple.');
+      pros.push({ dir: 'standalone', text: 'A single fund rarely justifies an umbrella — a standalone VCC keeps it simple.' });
     }
     if (planMore) {
       score += 2.5;
-      reasons.push('Adding sub-funds later is fast and cheap under an umbrella.');
+      pros.push({ dir: 'umbrella', text: 'Adding sub-funds later is fast and cheap under an umbrella.' });
     }
     if (costSensitive) {
       score += 2;
-      reasons.push('Shared service providers and one board lower the cost per fund.');
+      pros.push({ dir: 'umbrella', text: 'Shared service providers and one board lower the cost per fund.' });
     }
     if (sharedProviders) {
       score += 1.5;
+      pros.push({ dir: 'umbrella', text: 'Sharing one administrator, auditor and board across funds suits an umbrella.' });
     } else {
       score -= 1.5;
-      reasons.push('Wanting fully dedicated providers per fund points toward standalone VCCs.');
+      pros.push({ dir: 'standalone', text: 'Wanting fully dedicated providers per fund points toward standalone VCCs.' });
     }
     if (spinOff) {
       score -= 3;
-      reasons.push('If you may spin off or sell a fund, a standalone entity transfers far more cleanly.');
+      pros.push({ dir: 'standalone', text: 'If you may spin off or sell a fund, a standalone entity transfers far more cleanly.' });
     }
 
     const rec: Structure = score >= 0 ? 'umbrella' : 'standalone';
     const confidence = Math.min(95, 55 + Math.round(Math.abs(score) * 6));
-    // Keep the 3 most relevant reasons that point the recommended way.
-    return { rec, confidence, reasons: reasons.slice(0, 3) };
+    // Only surface reasons that agree with the recommendation; fall back to a
+    // generic pro if every tagged reason happened to point the other way.
+    const matching = pros.filter((p) => p.dir === rec).map((p) => p.text);
+    const fallback =
+      rec === 'umbrella'
+        ? 'An umbrella centralises governance and administration across multiple funds.'
+        : 'A standalone VCC gives full legal and operational independence.';
+    const reasons = (matching.length ? matching : [fallback]).slice(0, 3);
+    return { rec, confidence, reasons };
   }, [numFunds, planMore, costSensitive, sharedProviders, spinOff]);
 
   const recLabel = rec === 'umbrella' ? 'Umbrella VCC' : 'Standalone VCC';
@@ -157,6 +183,7 @@ export function VccComparator() {
               <Button component={Link} href="/contact" fullWidth rightSection={<IconArrowRight size={16} />} className={classes.ctaBtn}>
                 Talk to our fund specialists
               </Button>
+              <ShareLinkButton fullWidth className={classes.shareBtn} />
             </aside>
 
             {/* Results */}

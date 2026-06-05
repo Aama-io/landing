@@ -1,11 +1,13 @@
 // @ts-nocheck
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Container, Title, Text, Tabs, Slider, NumberInput, TextInput, Select, Button, ActionIcon } from '@mantine/core';
 import { IconPlus, IconX, IconAlertTriangle, IconCircleCheck, IconArrowRight } from '@tabler/icons-react';
 import {
   LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine, Legend, BarChart, Bar, CartesianGrid,
 } from 'recharts';
 import Link from 'next/link';
+import { ShareLinkButton } from '@/components/ui/ShareLinkButton';
+import { applyParams, syncParams } from '@/lib/shareUrl';
 import classes from './WaterfallCalculator.module.css';
 
 // ══════════════════════════════════════════════════════════════════
@@ -183,6 +185,30 @@ export default function WaterfallCalculator() {
   const [terms, setTerms] = useState({ preferredReturn: 8, promote: 20, catchupRate: 100, compounding: 'compound' });
   const [dates, setDates] = useState({ invest: '2021-06-30', dist: '2024-12-31', dayCount: 'act365' });
 
+  // Restore the core economics from a shared link on mount, then keep the URL in sync.
+  useEffect(() => {
+    applyParams({
+      g: (v) => { const a = JSON.parse(v); if (Array.isArray(a) && a.length) setGroups(a.map((x) => ({ name: String(x.name ?? 'LP Group'), capital: Number(x.capital) || 0 }))); },
+      gp: (v) => setGpCapital(Number(v) || 0),
+      pr: (v) => setProceeds(Number(v) || 0),
+      pref: (v) => setTerms((t) => ({ ...t, preferredReturn: Number(v) || 0 })),
+      promo: (v) => setTerms((t) => ({ ...t, promote: Number(v) || 0 })),
+      cu: (v) => setTerms((t) => ({ ...t, catchupRate: Number(v) || 0 })),
+      comp: (v) => (['simple', 'compound'].includes(v) ? setTerms((t) => ({ ...t, compounding: v })) : null),
+      di: (v) => setDates((d) => ({ ...d, invest: v })),
+      dd: (v) => setDates((d) => ({ ...d, dist: v })),
+      dc: (v) => (['act365', 'act360', '30360'].includes(v) ? setDates((d) => ({ ...d, dayCount: v })) : null),
+      tab: (v) => setTab(v),
+    });
+  }, []);
+  useEffect(() => {
+    syncParams({
+      g: JSON.stringify(groups), gp: gpCapital, pr: proceeds,
+      pref: terms.preferredReturn, promo: terms.promote, cu: terms.catchupRate, comp: terms.compounding,
+      di: dates.invest, dd: dates.dist, dc: dates.dayCount, tab,
+    });
+  }, [groups, gpCapital, proceeds, terms, dates, tab]);
+
   const updateGroup = (i, k, v) => setGroups((p) => p.map((g, j) => (j === i ? { ...g, [k]: v } : g)));
   const removeGroup = (i) => setGroups((p) => (p.length > 1 ? p.filter((_, j) => j !== i) : p));
   const addGroup = () => setGroups((p) => [...p, { name: `LP Group ${String.fromCharCode(65 + p.length)}`, capital: 25 }]);
@@ -283,6 +309,7 @@ export default function WaterfallCalculator() {
 
       <div className={classes.divider} />
       <Button component={Link} href="/contact" fullWidth rightSection={<IconArrowRight size={16} />} className={classes.ctaBtn}>See it in the platform</Button>
+      <ShareLinkButton fullWidth className={classes.shareBtn} />
     </aside>
   );
 

@@ -3,9 +3,10 @@ import { Container, Group, Burger, Drawer, Stack, Button, Divider, Menu } from '
 import { useDisclosure, useWindowScroll } from '@mantine/hooks';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { IconArrowRight, IconChevronDown, IconChartArrowsVertical, IconBuildingBank } from '@tabler/icons-react';
+import { IconArrowRight, IconChevronDown, IconLayoutGrid } from '@tabler/icons-react';
 import { useAnalytics } from '../Analytics';
 import { Logo } from '../ui/Logo';
+import { FEATURED_TOOLS, ALL_TOOLS } from '@/lib/tools';
 import classes from './Header.module.css';
 
 const links = [
@@ -14,21 +15,6 @@ const links = [
   { link: '/pricing', label: 'Pricing' },
   { link: '/about', label: 'About' },
   { link: '/blog', label: 'Blog' },
-];
-
-const tools = [
-  {
-    link: '/tools/waterfall',
-    label: 'Waterfall Calculator',
-    description: 'Model LP/GP distribution waterfalls',
-    icon: IconChartArrowsVertical,
-  },
-  {
-    link: '/tools/vcc-comparator',
-    label: 'VCC Structure Comparator',
-    description: 'Umbrella vs standalone VCC',
-    icon: IconBuildingBank,
-  },
 ];
 
 export function Header() {
@@ -90,37 +76,34 @@ export function Header() {
                 </button>
               </Menu.Target>
               <Menu.Dropdown className={classes.menuDropdown}>
-                {tools.map((t) => (
+                <Menu.Label>Popular tools</Menu.Label>
+                {FEATURED_TOOLS.map((t) => (
                   <Menu.Item
-                    key={t.link}
+                    key={t.href}
                     component={Link}
-                    href={t.link}
+                    href={t.href}
                     onClick={() => handleNavClick(t.label)}
-                    leftSection={
-                      <span className={classes.menuIcon}>
-                        <t.icon size={18} stroke={1.7} />
-                      </span>
-                    }
+                    leftSection={<span className={classes.menuIcon}><t.icon size={18} stroke={1.7} /></span>}
                   >
                     <div className={classes.menuItemTitle}>{t.label}</div>
                     <div className={classes.menuItemDesc}>{t.description}</div>
                   </Menu.Item>
                 ))}
+                <Menu.Divider />
+                <Menu.Item
+                  component={Link}
+                  href="/tools"
+                  onClick={() => handleNavClick('All tools')}
+                  leftSection={<span className={classes.menuIcon}><IconLayoutGrid size={18} stroke={1.7} /></span>}
+                >
+                  <div className={classes.menuItemTitle}>Browse all {ALL_TOOLS.length} tools</div>
+                  <div className={classes.menuItemDesc}>The full free-tool directory</div>
+                </Menu.Item>
               </Menu.Dropdown>
             </Menu>
           </Group>
 
           <Group gap={8} visibleFrom="md">
-            <Button
-              component={Link}
-              href="/contact"
-              variant="subtle"
-              color="gray"
-              className={classes.ghostBtn}
-              onClick={() => handleNavClick('Sign in')}
-            >
-              Sign in
-            </Button>
             <Button
               component={Link}
               href="/contact"
@@ -162,13 +145,19 @@ export function Header() {
             </Link>
           ))}
 
-          <div className={classes.drawerGroupLabel}>Tools</div>
-          {tools.map((t) => (
+          <Link
+            href="/tools"
+            className={classes.drawerGroupLabel}
+            onClick={() => { handleNavClick('Mobile - All tools'); close(); }}
+          >
+            Tools
+          </Link>
+          {FEATURED_TOOLS.map((t) => (
             <Link
-              key={t.link}
-              href={t.link}
+              key={t.href}
+              href={t.href}
               className={classes.drawerSubLink}
-              data-active={isActive(t.link) || undefined}
+              data-active={isActive(t.href) || undefined}
               onClick={() => {
                 handleNavClick(`Mobile - ${t.label}`);
                 close();
@@ -178,6 +167,14 @@ export function Header() {
               {t.label}
             </Link>
           ))}
+          <Link
+            href="/tools"
+            className={classes.drawerSubLink}
+            onClick={() => { handleNavClick('Mobile - All tools'); close(); }}
+          >
+            <IconLayoutGrid size={18} stroke={1.7} />
+            Browse all {ALL_TOOLS.length} tools
+          </Link>
 
           <Divider my="md" />
           <Button

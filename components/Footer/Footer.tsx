@@ -17,8 +17,12 @@ const groups = [
   {
     title: 'Tools',
     links: [
+      { label: 'All free tools', href: '/tools' },
       { label: 'Waterfall Calculator', href: '/tools/waterfall' },
+      { label: 'American vs European', href: '/tools/waterfall-comparator' },
+      { label: 'IRR · TVPI · DPI', href: '/tools/irr-tvpi-dpi-calculator' },
       { label: 'VCC Comparator', href: '/tools/vcc-comparator' },
+      { label: 'MAS Licensing Estimator', href: '/tools/mas-licensing-estimator' },
     ],
   },
   {
