@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <title>aama.io — End-to-End Fund Management Software</title>
           <meta
             name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+            content="width=device-width, initial-scale=1"
           />
           <link rel="shortcut icon" href="/favicon.svg" />
         </Head>

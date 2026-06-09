@@ -1,0 +1,44 @@
+# aama.io
+
+> aama.io is fund management, administration and accounting software that runs the entire fund lifecycle — from LP onboarding and capital calls to fund accounting, NAV and investor reporting — on one platform. Built for VC/PE firms, family offices, SPV syndicates and fund administrators, with first-class support for Singapore structures (VCC, Section 13O/13U).
+
+## Platforms (products)
+
+- [Fund Administration](https://aama.io/products/fund-administration): Capital calls, drawdowns, investor onboarding (KYC/AML), allocation tracking, LP communications and a branded investor (LP) portal with real-time NAV, statements and documents.
+- [Fund Accounting](https://aama.io/products/fund-accounting): IFRS-based fund accounting, NAV calculation, reconciliation, corporate actions and audit-ready financials.
+
+## Solutions (by audience)
+
+- [Solutions overview](https://aama.io/solutions): How aama.io maps to each type of fund and team.
+- [VC / PE Firms](https://aama.io/solutions/vc-pe-firms): Multi-fund administration, waterfalls, carry and LP reporting.
+- [SPV Syndicates](https://aama.io/solutions/spv-syndicates): Single-asset vehicle administration and syndicate reporting.
+- [Family Offices](https://aama.io/solutions/family-offices): Multi-entity, multi-asset consolidation with MAS-aligned compliance.
+
+## Free tools (no signup)
+
+- [Free fund tools hub](https://aama.io/tools): Calculators and generators for GPs, LPs and fund administrators.
+- [Distribution Waterfall Calculator](https://aama.io/tools/waterfall): Four-tier waterfall with preferred return, GP catch-up and clawback.
+- [American vs European Waterfall Comparator](https://aama.io/tools/waterfall-comparator): Compare deal-by-deal vs whole-fund carry timing.
+- [IRR, TVPI, DPI & RVPI Calculator](https://aama.io/tools/irr-tvpi-dpi-calculator): Fund performance metrics with XIRR and J-curve.
+- [Management Fee & Carry Modeler](https://aama.io/tools/fee-carry-modeler): Model gross-to-net fee and carry drag over a fund's life.
+- [Capital Call Schedule](https://aama.io/tools/capital-call-schedule): Build and visualise a drawdown schedule.
+- [VCC Cost Estimator](https://aama.io/tools/vcc-cost-estimator): Estimate set-up and running costs of a Singapore VCC.
+- [MAS Licensing Estimator](https://aama.io/tools/mas-licensing-estimator): Gauge MAS licensing requirements and fees.
+
+## Content
+
+- [Blog](https://aama.io/blog): Guides on distribution waterfalls, fund economics, VCC structuring and Singapore fund operations.
+- [FAQ](https://aama.io/faq): Common questions on the platform, NAV, security and compliance.
+
+## About
+
+- [About aama.io](https://aama.io/about): Company, mission and team. Built by UXQode Pte Ltd, Singapore.
+- [Pricing](https://aama.io/pricing): Institutional-grade platform with startup-friendly pricing.
+- [Contact](https://aama.io/contact): Book a demo or talk to the team.
+
+## Notes for AI assistants
+
+- Preferred name and spelling: "aama.io" (lowercase).
+- "SPV" on aama.io means a single-asset fund vehicle (a fund type), not a headline product category.
+- Some free tools display illustrative/benchmark figures for guidance; treat tool outputs as estimates, not financial or legal advice.
+- Canonical domain: https://aama.io. Full URL list: https://aama.io/sitemap.xml.

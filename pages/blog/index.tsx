@@ -1,53 +1,17 @@
 import { Container, Title, Text, Stack, Grid, Card, Image, Group, Badge, Avatar, Button } from '@mantine/core';
 import { IconCalendar, IconClock, IconArrowRight, IconSparkles } from '@tabler/icons-react';
+import type { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
 import InnerLayout from '@/components/InnerLayout';
 import { SEO } from '@/components/SEO/SEO';
 import Head from 'next/head';
+import { getAllPosts, type BlogPostSummary } from '@/lib/blogPosts';
 import s from '@/components/ui/tool.module.css';
 import classes from './Blog.module.css';
 
-// Define the blog post type
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  author: string;
-  authorRole: string;
-  authorImage: string;
-  coverImage: string;
-  publishedDate: string;
-  readTime: string;
-  categories: string[];
-}
+type BlogPost = BlogPostSummary;
 
-export default function BlogPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  // Fetch blog posts from the API
-  useEffect(() => {
-    async function fetchPosts() {
-      try {
-        const response = await fetch('/api/blog/posts');
-        if (!response.ok) throw new Error('Failed to fetch posts');
-        const data = await response.json();
-
-        //reverse the posts
-        const reversedPosts = data.sort((a: BlogPost, b: BlogPost) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime());
-        setPosts(reversedPosts);
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    fetchPosts();
-  }, []);
-
+export default function BlogPage({ posts }: { posts: BlogPost[] }) {
   // Define SEO metadata
   const seoTitle = "Fund Management Insights & News";
   const seoDescription = "Expert insights on fund management softwares, IFRS accounting, investor portals, data integration, and blockchain technology in financial services.";
@@ -110,7 +74,7 @@ export default function BlogPage() {
             </Text>
           </Stack>
 
-          {!loading && posts.length > 0 && (
+          {posts.length > 0 && (
             <div className={classes.topicRow}>
               {Array.from(new Set(posts.flatMap((p) => p.categories))).slice(0, 7).map((t) => (
                 <span key={t} className={classes.topicChip}>{t}</span>
@@ -118,11 +82,7 @@ export default function BlogPage() {
             </div>
           )}
 
-          {loading ? (
-            <Stack align="center" py={50}>
-              <Text>Loading blog posts...</Text>
-            </Stack>
-          ) : posts.length > 0 ? (
+          {posts.length > 0 ? (
             <>
               {/* Featured Post */}
               <Card className={classes.featuredPost} mb={50}>
@@ -266,4 +226,12 @@ export default function BlogPage() {
       </div>
     </InnerLayout>
   );
-} 
+}
+
+export const getStaticProps: GetStaticProps<{ posts: BlogPost[] }> = async () => {
+  const posts = getAllPosts().sort(
+    (a, b) => new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+  );
+
+  return { props: { posts } };
+};

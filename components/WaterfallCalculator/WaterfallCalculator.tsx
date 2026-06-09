@@ -301,7 +301,7 @@ export default function WaterfallCalculator() {
       <div className={classes.divider} />
       <div className={classes.panelTitle}>Timing</div>
       <div className={classes.dateGrid}>
-        <TextInput className={classes.dateField} type="date" label="Investment" value={dates.invest} onChange={(e) => setDates((d) => ({ ...d, invest: e.currentTarget.value }))} />
+    <TextInput className={classes.dateField} type="date" label="Investment" value={dates.invest} onChange={(e) => setDates((d) => ({ ...d, invest: e.currentTarget.value }))} />
         <TextInput className={classes.dateField} type="date" label="Distribution" value={dates.dist} onChange={(e) => setDates((d) => ({ ...d, dist: e.currentTarget.value }))} />
       </div>
       <Select className={classes.selectField} label="Day-count convention" data={DAYCOUNTS} value={dates.dayCount} onChange={(v) => setDates((d) => ({ ...d, dayCount: v || 'act365' }))} allowDeselect={false} comboboxProps={{ withinPortal: true }} />

@@ -1,68 +1,14 @@
 import { Container, Title, Text, Image, Stack, Group, Badge, Avatar, Button, Divider, Box } from '@mantine/core';
 import { IconCalendar, IconClock, IconArrowLeft, IconChevronRight } from '@tabler/icons-react';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import InnerLayout from '@/components/InnerLayout';
 import { SEO } from '@/components/SEO/SEO';
 import Head from 'next/head';
+import { blogPosts, getPostBySlug, type BlogPost } from '@/lib/blogPosts';
 import classes from './Blog.module.css';
 
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string;
-  author: string;
-  authorRole: string;
-  authorImage: string;
-  coverImage: string;
-  publishedDate: string;
-  readTime: string;
-  categories: string[];
-}
-
-export default function BlogPostPage() {
-  const router = useRouter();
-  const { slug } = router.query;
-  
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function fetchPost() {
-      if (!slug) return;
-      
-      try {
-        setLoading(true);
-        const response = await fetch(`/api/blog/posts?slug=${slug}`);
-        
-        if (!response.ok) {
-          if (response.status === 404) {
-            setError('Blog post not found');
-          } else {
-            setError('Failed to fetch blog post');
-          }
-          return;
-        }
-        
-        const data = await response.json();
-        setPost(data);
-      } catch (err) {
-        console.error('Error fetching blog post:', err);
-        setError('An error occurred while fetching the blog post');
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    if (slug) {
-      fetchPost();
-    }
-  }, [slug]);
-
+export default function BlogPostPage({ post }: { post: BlogPost }) {
   // Build structured data for the blog post
   const getStructuredData = (post: BlogPost) => {
     return {
@@ -93,58 +39,6 @@ export default function BlogPostPage() {
       "keywords": post.categories.join(", ")
     };
   };
-
-  if (loading) {
-    return (
-      <InnerLayout>
-        <SEO 
-          title="Loading Blog Post | AAMA"
-          description="Please wait while we load the blog post content."
-          ogUrl="https://aama.io/blog"
-        />
-        <div className={classes.wrapper}>
-          <Container size="lg">
-            <Stack align="center" justify="center" gap="md" py={50}>
-              <Text>Loading blog post...</Text>
-            </Stack>
-          </Container>
-        </div>
-      </InnerLayout>
-    );
-  }
-
-  if (error || !post) {
-    return (
-      <InnerLayout>
-        <SEO 
-          title="Blog Post Not Found | AAMA"
-          description="The blog post you're looking for could not be found. Please check our blog index for the latest articles."
-          ogUrl="https://aama.io/blog"
-        />
-        <div className={classes.wrapper}>
-          <Container size="lg">
-            <Stack align="center" justify="center" gap="xl" className={classes.content} py={50}>
-              <Title className={classes.noPostsTitle}>{error || 'Blog Post Not Found'}</Title>
-              <Text className={classes.description}>
-                The blog post you are looking for might have been removed or is temporarily unavailable.
-              </Text>
-              <Group justify="center">
-                <Button
-                  component={Link}
-                  href="/blog"
-                  variant="light"
-                  leftSection={<IconArrowLeft size={20} />}
-                  size="lg"
-                >
-                  Back to Blog
-                </Button>
-              </Group>
-            </Stack>
-          </Container>
-        </div>
-      </InnerLayout>
-    );
-  }
 
   return (
     <InnerLayout>
@@ -253,4 +147,22 @@ export default function BlogPostPage() {
       </div>
     </InnerLayout>
   );
-} 
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: blogPosts.map((post) => ({ params: { slug: post.slug } })),
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps<{ post: BlogPost }> = async ({ params }) => {
+  const slug = params?.slug;
+  const post = typeof slug === 'string' ? getPostBySlug(slug) : null;
+
+  if (!post) {
+    return { notFound: true };
+  }
+
+  return { props: { post } };
+};
