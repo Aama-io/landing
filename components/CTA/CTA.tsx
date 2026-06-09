@@ -26,8 +26,8 @@ export function CTA() {
             <Title className={classes.title}>Transform your fund operations today</Title>
             <Text className={classes.description}>
               Replace spreadsheets and disconnected tools with a modern platform where investors
-              apply, track and manage investments in real time — built for boutique and mid-sized
-              fund managers in Singapore.
+              apply, track and manage investments in real time — built for fund managers and
+              administrators in Singapore, from multi-asset funds to single-asset SPVs.
             </Text>
 
             <div className={classes.points}>

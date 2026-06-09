@@ -45,7 +45,7 @@ export interface ProductData {
   relatedProducts: string[];
 }
 
-const products: ProductData[] = [
+export const products: ProductData[] = [
   {
     id: '1',
     slug: 'mutual-fund-managers',
@@ -346,7 +346,7 @@ const products: ProductData[] = [
         answer: 'Yes, we integrate with major data providers for market data, company information, and benchmark data. We also support API integrations with banking systems, accounting software, and portfolio company data sources.'
       }
     ],
-    relatedProducts: ['mutual-fund-managers', 'reits', 'financial-institutions']
+    relatedProducts: ['spv-syndicates', 'mutual-fund-managers', 'reits', 'financial-institutions']
   },
   {
     id: '3',
@@ -649,6 +649,284 @@ const products: ProductData[] = [
       }
     ],
     relatedProducts: ['mutual-fund-managers', 'vc-pe-firms', 'reits']
+  },
+  {
+    id: '5',
+    slug: 'spv-syndicates',
+    title: 'SPV & Syndicate Management Software',
+    shortTitle: 'SPVs & Syndicates',
+    description: 'End-to-end administration for single-deal SPVs and investor syndicates — member onboarding, cap table, lead carry, distributions and reporting in one place.',
+    heroDescription: 'Run single-deal vehicles and syndicates the same way you run a fund — without the overhead. Spin up an SPV in days, onboard members with built-in KYC/AML, automate lead carry and deal fees, and keep every investor updated through a white-labeled portal.',
+    icon: 'IconUsers',
+    image: '/fund-types/vc.jpg',
+    category: 'Private Capital',
+    features: [
+      {
+        title: 'Vehicle Setup & Cap Table',
+        description: 'Stand up a deal SPV or syndicate and manage ownership in minutes',
+        items: [
+          'Launch a single-deal SPV or syndicate in days',
+          'Automated cap table and ownership ledger',
+          'Multiple share classes and side-letter terms',
+          'Subscription documents and e-signatures',
+          'Deal-level document vault and data room',
+          'Multi-entity rollups for serial dealmakers'
+        ]
+      },
+      {
+        title: 'Member Onboarding & Compliance',
+        description: 'Onboard syndicate members with built-in KYC/AML',
+        items: [
+          'KYC/AML onboarding with e-signatures',
+          'Accreditation and eligibility checks',
+          'Per-member commitment and funding tracking',
+          'MAS-aligned compliance monitoring',
+          'Complete audit trail for every action',
+          'Secure investor messaging and notices'
+        ]
+      },
+      {
+        title: 'Economics, Distributions & Reporting',
+        description: 'Automate lead carry, deal fees and member payouts',
+        items: [
+          'Lead carry and deal-fee automation',
+          'Deal-by-deal distribution waterfalls',
+          'Member capital account statements',
+          'Realized and unrealized return tracking (IRR, MOIC)',
+          'Tax and year-end reporting packs',
+          'White-labeled member portal and updates'
+        ]
+      }
+    ],
+    benefits: [
+      {
+        title: 'Launch Deals Faster',
+        description: 'Spin up a new SPV or syndicate in days, not weeks — with templated setup, documents and onboarding flows.',
+        icon: 'IconActivity'
+      },
+      {
+        title: 'Keep Members Informed',
+        description: 'Give every syndicate member a white-labeled portal with real-time positions, statements and deal updates.',
+        icon: 'IconUsers'
+      },
+      {
+        title: 'Get the Economics Right',
+        description: 'Automate lead carry, deal fees and deal-by-deal waterfalls so every payout is accurate and transparent.',
+        icon: 'IconChartPie'
+      },
+      {
+        title: 'Stay Compliant',
+        description: 'Built-in KYC/AML, accreditation checks and a full audit trail keep each vehicle audit-ready.',
+        icon: 'IconShield'
+      }
+    ],
+    useCases: [
+      {
+        title: 'Angel & Operator Syndicates',
+        description: 'Pool angels into a single deal with a clean cap table, fast onboarding and automated carry for the lead.',
+        metrics: [
+          { label: 'Setup Time', value: 'Days, not weeks' },
+          { label: 'Members / Deal', value: '100+' },
+          { label: 'Carry Automated', value: '100%' }
+        ]
+      },
+      {
+        title: 'Co-Investment Sidecars',
+        description: 'Run fee-light co-invest vehicles alongside the main fund with separate accounting and reporting.',
+        metrics: [
+          { label: 'Reporting Time', value: '75% faster' },
+          { label: 'Fee Models', value: 'Flexible' }
+        ]
+      },
+      {
+        title: 'Single-Deal SPVs',
+        description: 'Hold a single asset or company in a dedicated vehicle with full administration and investor servicing.',
+        metrics: [
+          { label: 'Time Saved', value: '15 hrs/deal' },
+          { label: 'Data Accuracy', value: '99.9%' }
+        ]
+      }
+    ],
+    keyFeatures: [
+      {
+        title: 'Rapid SPV Setup',
+        description: 'Templated vehicle creation, subscription documents and e-signature flows get a deal closed in days.'
+      },
+      {
+        title: 'Lead Carry & Deal Fees',
+        description: 'Configure carry, management or deal fees and hurdles per vehicle — calculated and distributed automatically.'
+      },
+      {
+        title: 'Deal-by-Deal Waterfalls',
+        description: 'Single-deal distribution waterfalls with preferred return, catch-up and carry, calculated to the cent.'
+      },
+      {
+        title: 'Member Portal',
+        description: 'A white-labeled portal where syndicate members track positions, statements, documents and updates.'
+      },
+      {
+        title: 'KYC/AML & Audit',
+        description: 'Onboarding, accreditation checks and a complete audit trail built into every vehicle.'
+      },
+      {
+        title: 'Serial-Deal Rollups',
+        description: 'Manage dozens of SPVs and syndicates from one dashboard with consolidated reporting for the lead.'
+      }
+    ],
+    faq: [
+      {
+        question: 'How quickly can I set up an SPV or syndicate?',
+        answer: 'Most single-deal vehicles can be stood up in a few days. Templated setup, subscription documents and e-signature onboarding flows let you open a vehicle, invite members and start collecting commitments without building anything from scratch.'
+      },
+      {
+        question: 'Can the platform handle lead carry and deal fees?',
+        answer: 'Yes. You can configure carried interest, management or one-off deal fees and a preferred return or hurdle per vehicle. The system calculates the lead\'s carry and member distributions on a deal-by-deal basis and produces statements automatically.'
+      },
+      {
+        question: 'Do syndicate members get their own portal?',
+        answer: 'Every member gets access to a white-labeled portal with real-time positions, capital account statements, documents and deal updates — the same investor experience your fund LPs receive.'
+      },
+      {
+        question: 'How do you handle KYC/AML for syndicate members?',
+        answer: 'KYC/AML onboarding, accreditation and eligibility checks are built in, with e-signatures and a complete audit trail. Compliance monitoring is MAS-aligned so each vehicle stays audit-ready.'
+      },
+      {
+        question: 'Can I run many SPVs at once?',
+        answer: 'Yes. The platform is multi-entity by design, so serial dealmakers can manage dozens of SPVs and syndicates from a single dashboard with consolidated cap tables, accounting and reporting across every vehicle.'
+      },
+      {
+        question: 'Is an SPV just treated as a single-deal fund?',
+        answer: 'Effectively, yes — an SPV is administered as a focused, single-asset fund. You get the same fund accounting engine, investor portal, distribution waterfalls and reporting, scaled to the simpler structure of a one-deal vehicle.'
+      }
+    ],
+    relatedProducts: ['vc-pe-firms', 'mutual-fund-managers', 'financial-institutions']
+  },
+  {
+    id: '6',
+    slug: 'family-offices',
+    title: 'Family Office Software',
+    shortTitle: 'Family Offices',
+    description: 'Consolidated multi-entity, multi-asset administration, accounting and reporting for single and multi-family offices.',
+    heroDescription: 'Bring every entity, asset class and account into one system. aama.io gives family offices consolidated administration, fund accounting and bespoke reporting — across direct investments, funds, real assets and cash.',
+    icon: 'IconBriefcase',
+    image: '/images/family-office-blog.png',
+    category: 'Private Wealth',
+    features: [
+      {
+        title: 'Multi-entity consolidation',
+        description: 'A single view across every entity and account',
+        items: [
+          'Multi-entity and multi-currency consolidation',
+          'Direct investments, funds, real assets and cash',
+          'Look-through to underlying holdings',
+          'Inter-entity loans and transfers',
+          'Consolidated balance sheet and exposure',
+          'Ownership and structure mapping'
+        ]
+      },
+      {
+        title: 'Accounting & administration',
+        description: 'Institutional-grade books for the family',
+        items: [
+          'General ledger and automated NAV',
+          'Capital call and distribution tracking',
+          'Fee, expense and accrual management',
+          'Cash and liquidity management',
+          'Audit-ready records and document vault',
+          'Reconciliations and period close'
+        ]
+      },
+      {
+        title: 'Reporting & access',
+        description: 'Bespoke reporting for principals and advisors',
+        items: [
+          'Consolidated performance and exposure reports',
+          'Bespoke portfolio and cash reporting',
+          'Role-based access for family and advisors',
+          'White-labeled principal portal',
+          'Scheduled and on-demand reports',
+          'Secure document sharing'
+        ]
+      }
+    ],
+    benefits: [
+      {
+        title: 'Everything in one place',
+        description: 'Consolidate entities, asset classes and accounts into a single source of truth.',
+        icon: 'IconActivity'
+      },
+      {
+        title: 'Built for complexity',
+        description: 'Handle direct deals, funds, real assets and cash side by side, with look-through.',
+        icon: 'IconChartPie'
+      },
+      {
+        title: 'Privacy & control',
+        description: 'Granular, role-based access keeps sensitive family data tightly held.',
+        icon: 'IconShield'
+      },
+      {
+        title: 'Clarity for principals',
+        description: 'Clear, consolidated reporting the family actually understands.',
+        icon: 'IconUsers'
+      }
+    ],
+    useCases: [
+      {
+        title: 'Single family offices',
+        description: 'Run the family balance sheet end to end — administration, accounting and reporting in one system.',
+        metrics: [
+          { label: 'Entities', value: 'Unlimited' },
+          { label: 'Asset classes', value: 'All' }
+        ]
+      },
+      {
+        title: 'Multi-family offices',
+        description: 'Service multiple families with segregated data, white-labeled portals and consolidated reporting.',
+        metrics: [
+          { label: 'Reporting time', value: '75% faster' },
+          { label: 'Families', value: 'Many' }
+        ]
+      },
+      {
+        title: 'Direct & co-investments',
+        description: 'Track direct deals and co-investments alongside fund commitments with full look-through.',
+        metrics: [
+          { label: 'Look-through', value: 'Full' }
+        ]
+      }
+    ],
+    keyFeatures: [
+      { title: 'Multi-entity consolidation', description: 'Roll up every entity, currency and asset class into one consolidated view.' },
+      { title: 'Direct & fund investments', description: 'Track direct holdings, fund commitments, real assets and cash together.' },
+      { title: 'Bespoke reporting', description: 'Flexible reporting tailored to each principal and advisor.' },
+      { title: 'Principal portal', description: 'A white-labeled portal giving the family real-time, secure access.' },
+      { title: 'Accounting engine', description: 'A full general ledger with automated NAV and audit-ready records.' },
+      { title: 'Privacy & permissions', description: 'Granular role-based access and a complete audit trail.' }
+    ],
+    faq: [
+      {
+        question: 'What does the family office solution cover?',
+        answer: 'Consolidated multi-entity administration, fund accounting, capital tracking and bespoke reporting across direct investments, funds, real assets and cash — for single and multi-family offices.'
+      },
+      {
+        question: 'Can it consolidate multiple entities and currencies?',
+        answer: 'Yes. aama.io consolidates across unlimited entities and currencies with look-through to underlying holdings, giving one view of the family balance sheet.'
+      },
+      {
+        question: 'Does it handle direct investments as well as funds?',
+        answer: 'Yes — direct deals, co-investments, fund commitments, real assets and cash are all tracked side by side with full look-through.'
+      },
+      {
+        question: 'Is the family data kept private?',
+        answer: 'Yes. Granular role-based access controls exactly who sees what, with a complete audit trail and bank-grade security.'
+      },
+      {
+        question: 'Can multi-family offices use it?',
+        answer: 'Yes — segregated data per family, white-labeled principal portals and consolidated reporting make it well suited to multi-family offices.'
+      }
+    ],
+    relatedProducts: ['vc-pe-firms', 'spv-syndicates']
   }
 ];
 

@@ -119,7 +119,7 @@ export function Features() {
           <Text className={classes.description}>
             Transform your fund operations with enterprise-grade AI that automates complex workflows,
             ensures regulatory compliance, and delivers exceptional investor experiences.
-            Trusted by fund managers managing $500M+ in assets.
+            Trusted by fund managers managing $50M+ in assets.
           </Text>
         </motion.div>
 

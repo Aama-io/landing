@@ -18,7 +18,7 @@ export function TrustedBy() {
     {
       icon: IconTrendingUp,
       label: "Proven Track Record",
-      description: "Managing $500M+ in assets"
+      description: "Managing $100M+ in assets"
     },
     {
       icon: IconUsers,

@@ -1,5 +1,7 @@
 import type { GetServerSideProps } from 'next';
-import { ALL_TOOLS } from '@/lib/tools';
+import { ALL_TOOLS, PERSONAS } from '@/lib/tools';
+import { PLATFORMS } from '@/lib/platforms';
+import { SOLUTIONS } from '@/lib/solutions';
 
 const SITE = 'https://aama.io';
 
@@ -34,7 +36,10 @@ function tag(loc: string, priority: string, changefreq: string) {
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const urls = [
     ...STATIC.map((p) => tag(p.loc, p.priority, 'weekly')),
+    ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly')),
+    ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly')),
     tag('/tools', '0.9', 'weekly'),
+    ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly')),
     ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly')),
     ...BLOG.map((b) => tag(b, '0.6', 'monthly')),
   ].join('');

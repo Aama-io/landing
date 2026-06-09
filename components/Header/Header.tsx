@@ -7,11 +7,11 @@ import { IconArrowRight, IconChevronDown, IconLayoutGrid } from '@tabler/icons-r
 import { useAnalytics } from '../Analytics';
 import { Logo } from '../ui/Logo';
 import { FEATURED_TOOLS, ALL_TOOLS } from '@/lib/tools';
+import { PLATFORM_LINKS } from '@/lib/platforms';
+import { SOLUTIONS } from '@/lib/solutions';
 import classes from './Header.module.css';
 
 const links = [
-  { link: '/product', label: 'Product' },
-  { link: '/solutions', label: 'Solutions' },
   { link: '/pricing', label: 'Pricing' },
   { link: '/about', label: 'About' },
   { link: '/blog', label: 'Blog' },
@@ -42,6 +42,102 @@ export function Header() {
           <Logo onClick={() => handleNavClick('Home Logo')} />
 
           <Group gap={4} visibleFrom="md" className={classes.nav}>
+            <Menu
+              trigger="hover"
+              openDelay={60}
+              closeDelay={120}
+              position="bottom-start"
+              offset={10}
+              radius="md"
+              width={320}
+              withinPortal
+              transitionProps={{ transition: 'pop-top-left', duration: 160 }}
+            >
+              <Menu.Target>
+                <button
+                  type="button"
+                  className={`${classes.link} ${classes.navTrigger}`}
+                  data-active={isActive('/product') || isActive('/products') || undefined}
+                >
+                  Products
+                  <IconChevronDown size={15} className={classes.chevron} />
+                </button>
+              </Menu.Target>
+              <Menu.Dropdown className={classes.menuDropdown}>
+                <Menu.Label>Our platforms</Menu.Label>
+                {PLATFORM_LINKS.map((p) => (
+                  <Menu.Item
+                    key={p.href}
+                    component={Link}
+                    href={p.href}
+                    onClick={() => handleNavClick(p.label)}
+                    leftSection={<span className={classes.menuIcon}><p.icon size={18} stroke={1.7} /></span>}
+                  >
+                    <div className={classes.menuItemTitle}>{p.label}</div>
+                    <div className={classes.menuItemDesc}>{p.blurb}</div>
+                  </Menu.Item>
+                ))}
+                <Menu.Divider />
+                <Menu.Item
+                  component={Link}
+                  href="/product"
+                  onClick={() => handleNavClick('Platform overview')}
+                  leftSection={<span className={classes.menuIcon}><IconLayoutGrid size={18} stroke={1.7} /></span>}
+                >
+                  <div className={classes.menuItemTitle}>How it fits together</div>
+                  <div className={classes.menuItemDesc}>Two platforms for end to end solution</div>
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+
+            <Menu
+              trigger="hover"
+              openDelay={60}
+              closeDelay={120}
+              position="bottom-start"
+              offset={10}
+              radius="md"
+              width={320}
+              withinPortal
+              transitionProps={{ transition: 'pop-top-left', duration: 160 }}
+            >
+              <Menu.Target>
+                <button
+                  type="button"
+                  className={`${classes.link} ${classes.navTrigger}`}
+                  data-active={isActive('/solutions') || undefined}
+                >
+                  Solutions
+                  <IconChevronDown size={15} className={classes.chevron} />
+                </button>
+              </Menu.Target>
+              <Menu.Dropdown className={classes.menuDropdown}>
+                <Menu.Label>By fund type</Menu.Label>
+                {SOLUTIONS.map((sol) => (
+                  <Menu.Item
+                    key={sol.slug}
+                    component={Link}
+                    href={sol.href}
+                    onClick={() => handleNavClick(sol.label)}
+                    leftSection={<span className={classes.menuIcon}><sol.icon size={18} stroke={1.7} /></span>}
+                  >
+                    <div className={classes.menuItemTitle}>{sol.label}</div>
+                    <div className={classes.menuItemDesc}>{sol.blurb}</div>
+                  </Menu.Item>
+                ))}
+                <Menu.Divider />
+                <Menu.Item
+                  component={Link}
+                  href="/solutions"
+                  onClick={() => handleNavClick('All solutions')}
+                  leftSection={<span className={classes.menuIcon}><IconLayoutGrid size={18} stroke={1.7} /></span>}
+                >
+                  <div className={classes.menuItemTitle}>All solutions</div>
+                  <div className={classes.menuItemDesc}>Find the fit for your fund</div>
+                </Menu.Item>
+              </Menu.Dropdown>
+            </Menu>
+
             {links.map((link) => (
               <Link
                 key={link.label}
@@ -142,6 +238,46 @@ export function Header() {
               }}
             >
               {link.label}
+            </Link>
+          ))}
+
+          <Link
+            href="/product"
+            className={classes.drawerGroupLabel}
+            onClick={() => { handleNavClick('Mobile - Platform overview'); close(); }}
+          >
+            Product
+          </Link>
+          {PLATFORM_LINKS.map((p) => (
+            <Link
+              key={p.href}
+              href={p.href}
+              className={classes.drawerSubLink}
+              data-active={isActive(p.href) || undefined}
+              onClick={() => { handleNavClick(`Mobile - ${p.label}`); close(); }}
+            >
+              <p.icon size={18} stroke={1.7} />
+              {p.label}
+            </Link>
+          ))}
+
+          <Link
+            href="/solutions"
+            className={classes.drawerGroupLabel}
+            onClick={() => { handleNavClick('Mobile - All solutions'); close(); }}
+          >
+            Solutions
+          </Link>
+          {SOLUTIONS.map((sol) => (
+            <Link
+              key={sol.slug}
+              href={sol.href}
+              className={classes.drawerSubLink}
+              data-active={isActive(sol.href) || undefined}
+              onClick={() => { handleNavClick(`Mobile - ${sol.label}`); close(); }}
+            >
+              <sol.icon size={18} stroke={1.7} />
+              {sol.label}
             </Link>
           ))}
 

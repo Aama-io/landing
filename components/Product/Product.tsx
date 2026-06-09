@@ -33,48 +33,38 @@ const stats = [
 
 const flagships = [
   {
-    eyebrow: 'For fund administrators',
-    title: 'Fund Accounting',
+    eyebrow: 'Operations & investor experience',
+    title: 'Fund Administration & Investor Portal',
+    href: '/products/fund-administration',
     description:
-      'A multi-instrument accounting and administration engine that handles every asset class — equities, debt, derivatives, real assets and private holdings — across PE, VC, family offices, hedge funds and mutual funds.',
-    image: '/images/fund-detail.png',
-    icon: IconReportMoney,
+      'A white-labeled LP portal and full back-office administration in one — onboarding, capital calls, distributions, fees, carry, compliance and reporting.',
+    image: '/images/fund-investors.png',
+    icon: IconReportAnalytics,
     features: [
-      'Complete general ledger across every instrument',
-      'Automated NAV, valuations and reconciliations',
-      'IFRS-ready financial statements & regulatory reporting',
-      'Fee, carry and waterfall automation',
+      'White-labeled investor portal with KYC/AML onboarding',
+      'Investor register, cap table and capital calls',
+      'Distribution waterfalls, fees and carried interest',
+      'MAS-aligned compliance and LP reporting',
     ],
   },
   {
-    eyebrow: 'For investors & LPs',
-    title: 'Investor / LP Portal',
+    eyebrow: 'Accounting',
+    title: 'Fund Accounting',
+    href: '/products/fund-accounting',
     description:
-      'A white-labeled portal with full fund-admin capabilities — give investors a digital-first experience while your team runs onboarding, servicing and communications from one place.',
-    image: '/images/fund-investors.png',
-    icon: IconUsersGroup,
+      'A fund-grade accounting engine — double-entry general ledger, automated NAV, waterfalls and 12+ audit-ready reports. Powerful enough to run on its own.',
+    image: '/images/fund-detail.png',
+    icon: IconReportMoney,
     features: [
-      'KYC/AML onboarding with e-signatures',
-      'Real-time positions, statements and documents',
-      'Capital calls, distributions and notices',
-      'Secure messaging and a document vault',
+      'Double-entry general ledger and chart of accounts',
+      'Automated NAV (daily to quarterly)',
+      'European & American waterfall distributions',
+      '12+ reports: trial balance, balance sheet, P&L, NAV',
     ],
   },
 ];
 
 const fundTypes = [
-  {
-    value: 'mutual',
-    label: 'Mutual Funds',
-    icon: IconBuildingBank,
-    description: 'MAS-compliant operations for Singapore-regulated mutual funds.',
-    features: [
-      'Daily NAV calculation and unit pricing',
-      'MAS-compliant fund operations',
-      'Automated subscription and redemption',
-      'Dividend distribution and reinvestment',
-    ],
-  },
   {
     value: 'private',
     label: 'Private Capital (VC/PE)',
@@ -100,6 +90,18 @@ const fundTypes = [
     ],
   },
   {
+    value: 'spv',
+    label: 'SPVs & Syndicates',
+    icon: IconUsersGroup,
+    description: 'Single-asset funds — SPVs and syndicates — administered end to end.',
+    features: [
+      'Spin up a deal SPV or syndicate in days',
+      'Member onboarding, KYC/AML and e-signatures',
+      'Lead carry, deal fees and waterfall automation',
+      'Deal-by-deal distributions, statements and reporting',
+    ],
+  },
+  {
     value: 'hedge',
     label: 'Hedge Funds',
     icon: IconTrendingUp,
@@ -121,6 +123,18 @@ const fundTypes = [
       'Rental income tracking and forecasting',
       'Expense and maintenance scheduling',
       'Dividend calculation and distribution',
+    ],
+  },
+  {
+    value: 'mutual',
+    label: 'Mutual Funds',
+    icon: IconBuildingBank,
+    description: 'MAS-compliant operations for Singapore-regulated mutual funds.',
+    features: [
+      'Daily NAV calculation and unit pricing',
+      'MAS-compliant fund operations',
+      'Automated subscription and redemption',
+      'Dividend distribution and reinvestment',
     ],
   },
 ];
@@ -160,28 +174,22 @@ const capabilities = [
 
 const targetIndustries = [
   {
-    icon: IconBuildingBank,
-    title: 'Mutual Fund Managers',
-    description: 'Automated NAV, compliance monitoring and investor reporting for regulated funds.',
-    slug: 'mutual-fund-managers',
-  },
-  {
     icon: IconChartBar,
     title: 'VC / PE Firms',
     description: 'Capital calls, distributions, carry and LP communications in one place.',
     slug: 'vc-pe-firms',
   },
   {
-    icon: IconChartPie,
-    title: 'REITs',
-    description: 'Property portfolios, occupancy, rental income and dividend distributions.',
-    slug: 'reits',
+    icon: IconBriefcase,
+    title: 'Family Offices',
+    description: 'Consolidated multi-entity, multi-asset administration and reporting.',
+    slug: 'family-offices',
   },
   {
-    icon: IconShieldLock,
-    title: 'Financial Institutions',
-    description: 'Robust compliance controls, audit trails and secure investor management.',
-    slug: 'financial-institutions',
+    icon: IconUsersGroup,
+    title: 'SPV & Syndicate Leads',
+    description: 'Single-asset funds — SPVs and syndicates — with onboarding, carry, distributions and accounting.',
+    slug: 'spv-syndicates',
   },
 ];
 
@@ -190,7 +198,7 @@ const faqItems = [
     value: 'how-it-works',
     title: 'How does the fund-as-a-service platform work?',
     content:
-      'You configure your fund parameters through an intuitive interface, and the platform automates operations from investor onboarding to NAV calculations, accounting, reporting and compliance monitoring — with deep support for mutual, private capital, family office and hedge fund structures.',
+      'You configure your fund parameters through an intuitive interface, and the platform automates operations from investor onboarding to NAV calculations, accounting, reporting and compliance monitoring — with deep support for mutual, private capital, family office, hedge fund and single-asset SPV / syndicate structures.',
   },
   {
     value: 'compliance',
@@ -208,7 +216,7 @@ const faqItems = [
     value: 'instruments',
     title: 'Which instruments and fund types are supported?',
     content:
-      'The fund accounting engine is multi-instrument by design — equities, fixed income, derivatives, real assets and private holdings — serving PE, VC, family offices, hedge funds, REITs and mutual funds from a single system.',
+      'The fund accounting engine is multi-instrument by design — equities, fixed income, derivatives, real assets and private holdings — serving PE, VC, family offices, hedge funds, REITs, mutual funds and single-asset SPVs from a single system.',
   },
 ];
 
@@ -235,9 +243,9 @@ export function Product() {
               <span className={classes.accent}>modern fund managers.</span>
             </Title>
             <Text className={classes.heroDesc}>
-              Two flagship products — a multi-instrument <strong>Fund Accounting</strong> engine and a
-              white-labeled <strong>Investor / LP portal</strong> — covering your entire fund lifecycle,
-              from setup and onboarding to NAV, compliance and reporting.
+              Two modular products — <strong>Fund Administration</strong> with a white-labeled investor
+              portal, and a fund-grade <strong>Fund Accounting</strong> engine — covering your entire
+              fund lifecycle. Take one, or both.
             </Text>
             <Group gap="md" justify="center" mt="xl">
               <Button
@@ -295,8 +303,8 @@ export function Product() {
         <Container size="lg">
           <SectionHeading
             eyebrow="Two products, one platform"
-            title="Built for both sides of the fund"
-            description="The accounting engine your administrators run on, and the portal your investors love — designed to work as one."
+            title="Modular by design — take one, or both"
+            description="License Fund Administration (with its white-labeled investor portal) and Fund Accounting together, or start with just the piece you need. A manager who self-administers can run on Fund Accounting alone."
           />
           <div className={classes.flagships}>
             {flagships.map((f, i) => (
@@ -317,6 +325,9 @@ export function Product() {
                         </li>
                       ))}
                     </ul>
+                    <Link href={f.href} className={classes.industryLink}>
+                      Explore {f.title} <IconArrowRight size={15} />
+                    </Link>
                   </div>
                   <div className={classes.flagshipShot}>
                     <Image src={f.image} alt={f.title} width={900} height={580} className={classes.flagshipImg} />
@@ -416,11 +427,11 @@ export function Product() {
       {/* Who we serve */}
       <section className={classes.section}>
         <Container size="lg">
-          <SectionHeading eyebrow="Who we serve" title="Trusted across the fund landscape" />
+          <SectionHeading eyebrow="Solutions" title="Built for your kind of fund" description="Whatever you run, see the mix of products that fits — and how teams like yours put aama.io to work." />
           <div className={classes.industryGrid}>
             {targetIndustries.map((ind, i) => (
               <Reveal key={ind.slug} delay={(i % 4) * 0.06}>
-                <Link href={`/products/${ind.slug}`} className={classes.industryCard}>
+                <Link href={`/solutions/${ind.slug}`} className={classes.industryCard}>
                   <span className={classes.industryIcon}>
                     <ind.icon size={22} stroke={1.7} />
                   </span>

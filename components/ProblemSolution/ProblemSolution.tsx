@@ -8,13 +8,15 @@ import {
   IconShieldLock,
   IconPlugConnected,
 } from '@tabler/icons-react';
+import Link from 'next/link';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Reveal } from '../ui/Reveal';
 import classes from './ProblemSolution.module.css';
 
 const pillars = [
   {
-    title: 'Digital Investor Experience',
+    title: 'Investor Portal',
+    href: '/products/fund-administration',
     description:
       'A white-labeled investor portal with enterprise-grade security and real-time access.',
     icon: IconUsers,
@@ -26,7 +28,8 @@ const pillars = [
     ],
   },
   {
-    title: 'Fund Operations Hub',
+    title: 'Fund Administration',
+    href: '/products/fund-administration',
     description: 'Comprehensive back-office automation for fund administrators and managers.',
     icon: IconServer,
     features: [
@@ -37,7 +40,8 @@ const pillars = [
     ],
   },
   {
-    title: 'Modern Fund Accounting',
+    title: 'Fund Accounting',
+    href: '/products/fund-accounting',
     description:
       'An accounting platform with intelligent automation and built-in regulatory compliance.',
     icon: IconChartBar,
@@ -74,14 +78,14 @@ export function ProblemSolution() {
       <Container size="lg">
         <SectionHeading
           eyebrow="The platform"
-          title="Three integrated modules. One unified system."
-          description="Everything a modern fund manager needs to operate efficiently, stay compliant, and scale — without stitching together a dozen disconnected tools."
+          title="One platform, end to end."
+          description="Fund Administration with a white-labeled investor portal, and Fund Accounting — two products that share one data model and stay in real-time sync."
         />
 
         <div className={classes.pillars}>
           {pillars.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 0.08}>
-              <div className={classes.card}>
+              <Link href={pillar.href} className={classes.card} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
                 <ThemeIcon size={48} radius="md" className={classes.icon}>
                   <pillar.icon size={24} stroke={1.7} />
                 </ThemeIcon>
@@ -95,7 +99,7 @@ export function ProblemSolution() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </Link>
             </Reveal>
           ))}
         </div>

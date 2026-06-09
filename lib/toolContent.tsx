@@ -296,4 +296,70 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
     ],
     related: ['/tools/capital-call-schedule', '/tools/irr-tvpi-dpi-calculator', '/tools/waterfall'],
   },
+
+  '/tools/bond-je-generator': {
+    seoTitle: 'Bond Accounting JE Generator (IFRS 9 Amortised Cost)',
+    seoDescription: 'Generate IFRS 9 amortised-cost journal entries for a bond — day-1 recognition, effective-interest accruals and maturity — with the effective interest rate and amortisation schedule solved automatically.',
+    keywords: 'bond accounting, IFRS 9 amortised cost, effective interest method, EIR, amortisation schedule, journal entries, debt instrument accounting, fund administration, premium discount amortisation',
+    intro: [
+      'Under IFRS 9, a debt instrument held to collect contractual cash flows is measured at amortised cost using the effective interest method. The instrument is recognised at fair value plus transaction costs, and interest income is recognised at a constant effective interest rate (EIR) on the carrying amount — not at the cash coupon rate.',
+      'This generator solves the EIR for your bond, builds the full period-by-period amortisation schedule, and produces the journal entries you need: day-1 recognition, the effective-interest accrual for any period (with the premium amortised or discount accreted), and redemption at maturity.',
+    ],
+    how: [
+      'Enter the bond — face value, clean price, coupon, frequency, transaction costs and the settlement and maturity dates.',
+      'Read the solved effective interest rate, initial carrying amount and premium/discount, plus the full amortisation schedule.',
+      'Pick the period to show the accrual entry for, then download the journal entries as a print-ready PDF.',
+    ],
+    faqs: [
+      { q: 'What is the effective interest method?', a: 'The effective interest method recognises interest income at a constant rate (the effective interest rate) on the carrying amount of a financial asset. It spreads any premium or discount, plus transaction costs, over the life of the instrument so that the carrying amount amortises to face value at maturity.' },
+      { q: 'How is the effective interest rate (EIR) calculated?', a: 'The EIR is the rate that discounts all of the instrument\'s expected future cash flows — coupons and the redemption amount — back to its initial carrying amount (purchase price plus transaction costs). This tool solves for it numerically and reports both the per-period and annualised rate.' },
+      { q: 'How are premium and discount bonds accounted for under IFRS 9?', a: 'For a discount bond (bought below par), interest income exceeds the cash coupon and the difference accretes the carrying amount up to par. For a premium bond (bought above par), interest income is below the coupon and the excess amortises the carrying amount down to par. Either way the carrying amount equals face value at maturity.' },
+      { q: 'What journal entries does a bond at amortised cost require?', a: 'Three key entries: day-1 recognition (debit the investment at carrying amount, credit cash); each period\'s interest accrual (debit interest receivable for the coupon and adjust the investment for amortisation, credit interest income at the EIR); and maturity (debit cash, credit the investment at face value).' },
+    ],
+    related: ['/tools/fx-revaluation-je', '/tools/subscription-redemption-je', '/tools/ter-benchmarker'],
+  },
+
+  '/tools/fx-revaluation-je': {
+    seoTitle: 'FX Revaluation JE Generator (IAS 21 Closing Rate)',
+    seoDescription: 'Retranslate a foreign-currency monetary item to the closing rate under IAS 21, compute the period-end FX gain or loss, and generate the revaluation journal entry — ready to post and download.',
+    keywords: 'FX revaluation, IAS 21, foreign exchange gain loss, monetary items, closing rate, currency translation, journal entry, fund accounting, month-end close',
+    intro: [
+      'Under IAS 21, foreign-currency monetary items — cash, receivables, payables and borrowings — are retranslated at the closing (period-end) exchange rate. The resulting exchange difference is recognised in profit or loss. Non-monetary items measured at historical cost are not retranslated.',
+      'This generator takes the foreign-currency amount, the rate at initial (or prior) recognition and the closing rate, works out whether you have a gain or a loss given whether the item is an asset or a liability, and produces the revaluation journal entry.',
+    ],
+    how: [
+      'Choose the monetary item type — receivable, cash, payable or borrowing — and enter the foreign-currency amount.',
+      'Enter the opening (or prior) rate and the closing rate in functional currency per unit of foreign currency.',
+      'Read the gain or loss and the journal entry, then download it as a print-ready PDF.',
+    ],
+    faqs: [
+      { q: 'What is FX revaluation under IAS 21?', a: 'FX revaluation is the period-end retranslation of foreign-currency monetary items at the closing exchange rate. The change in the functional-currency carrying amount since the last measurement is recognised as a foreign exchange gain or loss in profit or loss.' },
+      { q: 'Which items are revalued at the closing rate?', a: 'Only monetary items — cash and bank balances, receivables, payables and borrowings denominated in a foreign currency. Non-monetary items carried at historical cost (such as prepayments or equity investments at cost) are kept at the exchange rate on the transaction date.' },
+      { q: 'Does an FX gain or loss go to profit or loss or to OCI?', a: 'For monetary items, exchange differences generally go to profit or loss. Exceptions include the effective portion of a designated cash-flow hedge and exchange differences on a net investment in a foreign operation, which are recognised in other comprehensive income.' },
+      { q: 'How do I know if a rate movement is a gain or a loss?', a: 'For a foreign-currency asset, a rise in the foreign currency increases its functional value and produces a gain; a fall produces a loss. For a foreign-currency liability it is the opposite — a rise in the foreign currency increases the amount owed and produces a loss.' },
+    ],
+    related: ['/tools/bond-je-generator', '/tools/subscription-redemption-je', '/tools/irr-tvpi-dpi-calculator'],
+  },
+
+  '/tools/subscription-redemption-je': {
+    seoTitle: 'Subscription & Redemption JE Generator (Unit Pricing)',
+    seoDescription: 'Price fund units at the dealing NAV, apply entry or exit fees, and generate the subscription or redemption journal entry — with the unit count and the impact on net assets attributable to unitholders.',
+    keywords: 'subscription journal entry, redemption journal entry, unit pricing, dealing NAV, open-ended fund accounting, unitholders capital, NAV impact, fund administration, IAS 32 puttable',
+    intro: [
+      'When an investor subscribes to or redeems from an open-ended fund, units are issued or cancelled at the dealing net asset value (NAV) per unit. The cash movement, any entry or exit fee, and the change in net assets attributable to unitholders all need to be booked correctly.',
+      'This generator prices the transaction at the dealing NAV, applies an entry or exit fee, and produces the subscription (units issued) or redemption (units cancelled) journal entry — together with the unit count and the impact on the unitholders\' balance.',
+    ],
+    how: [
+      'Choose subscription or redemption and enter the fund, investor and dealing NAV per unit.',
+      'Enter the subscription amount (or units redeemed) and any entry or exit fee percentage.',
+      'Read the units, capital and net cash, then download the journal entry as a print-ready PDF.',
+    ],
+    faqs: [
+      { q: 'How are fund units priced on subscription and redemption?', a: 'Units are priced at the dealing NAV per unit for the relevant dealing day. On subscription, units issued equal the net amount invested (after any entry fee) divided by the NAV per unit. On redemption, the gross amount equals units redeemed multiplied by the NAV per unit, less any exit fee.' },
+      { q: 'What is the journal entry for a fund subscription?', a: 'Debit cash for the gross amount received, credit net assets attributable to unitholders for the amount applied to NAV (units issued multiplied by NAV), and credit subscription/entry fee income for any sales charge retained by the fund.' },
+      { q: 'What is the journal entry for a redemption?', a: 'Debit net assets attributable to unitholders for the units cancelled multiplied by NAV, credit cash or redemptions payable for the net amount paid to the investor, and credit redemption/exit fee income for any exit charge.' },
+      { q: 'Are unitholders\' interests equity or a liability?', a: 'Where a fund\'s units are puttable — redeemable at the holder\'s option — the unitholders\' interest is generally presented as a financial liability under IAS 32, unless it meets the limited puttable-instruments exception to be classified as equity. Subscriptions and redemptions then move that liability balance.' },
+    ],
+    related: ['/tools/bond-je-generator', '/tools/fx-revaluation-je', '/tools/irr-tvpi-dpi-calculator'],
+  },
 };

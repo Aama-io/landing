@@ -1,3 +1,161 @@
+/* Persona chooser ("I am a…") */
+.chooser {
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.chooserHead {
+  margin-bottom: 18px;
+}
+
+.chooserTitle {
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+  margin: 0;
+}
+
+.chooserBlurb {
+  margin: 4px 0 0;
+  font-size: 14.5px;
+  color: var(--text-muted);
+}
+
+.personaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+
+  @media (max-width: 62em) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.personaCard {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(165deg, #f7faff 0%, var(--surface) 60%);
+  border: 1px solid var(--border);
+  box-shadow: var(--mantine-shadow-xs);
+  text-decoration: none;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.personaCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--mantine-color-blue-3);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.personaIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--brand-soft);
+  color: var(--mantine-color-blue-6);
+  border: 1px solid #dbe6ff;
+}
+
+.personaTagline {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mantine-color-blue-7);
+}
+
+.personaLabel {
+  margin-top: 4px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.personaBlurb {
+  margin-top: 8px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.personaFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.personaCard:hover .cardArrow {
+  color: var(--mantine-color-blue-6);
+  transform: translateX(3px);
+}
+
+.allHead {
+  margin-bottom: 18px;
+}
+
+/* Back link on persona pages */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.16s ease;
+}
+.backLink:hover { color: var(--mantine-color-blue-6); }
+
+/* Role switcher at the foot of a persona page */
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: clamp(20px, 4vw, 36px);
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.switcherLabel {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.switchPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-strong);
+  text-decoration: none;
+  transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.switchPill:hover {
+  border-color: var(--mantine-color-blue-3);
+  color: var(--mantine-color-blue-7);
+  transform: translateY(-1px);
+}
+
 .group {
   margin-bottom: clamp(36px, 5vw, 56px);
 }
@@ -28,6 +186,7 @@
   @media (max-width: 62em) {
     grid-template-columns: repeat(2, 1fr);
   }
+
   @media (max-width: 36em) {
     grid-template-columns: 1fr;
   }
@@ -37,7 +196,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 18px 18px;
+  padding: 18px;
   border-radius: var(--radius-lg);
   background: var(--surface);
   border: 1px solid var(--border);

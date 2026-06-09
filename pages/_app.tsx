@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events, measurementId]);
 
   return (
-    <MantineProvider theme={appTheme} defaultColorScheme="light">
+    <MantineProvider theme={appTheme} forceColorScheme="light">
       <div className={inter.variable}>
         {measurementId && <GoogleAnalytics measurementId={measurementId} />}
         <Head>
