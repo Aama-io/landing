@@ -2,6 +2,7 @@ import type { GetServerSideProps } from 'next';
 import { ALL_TOOLS, PERSONAS } from '@/lib/tools';
 import { PLATFORMS } from '@/lib/platforms';
 import { SOLUTIONS } from '@/lib/solutions';
+import { blogPosts } from '@/lib/blogPosts';
 
 const SITE = 'https://aama.io';
 
@@ -20,15 +21,6 @@ const STATIC: { loc: string; priority: string }[] = [
   { loc: '/terms', priority: '0.4' },
 ];
 
-const BLOG = [
-  '/blog/american-vs-european-waterfall',
-  '/blog/tvpi-dpi-rvpi-irr-explained',
-  '/blog/transforming-fund-operations-of-private-equity',
-  '/blog/simplify-operation-for-family-offices-in-singapore',
-  '/blog/fund-management-vs-fund-administration',
-  '/blog/ifrs-compliant-fund-management',
-];
-
 function tag(loc: string, priority: string, changefreq: string) {
   return `<url><loc>${SITE}${loc}</loc><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
 }
@@ -41,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     tag('/tools', '0.9', 'weekly'),
     ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly')),
     ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly')),
-    ...BLOG.map((b) => tag(b, '0.6', 'monthly')),
+    ...blogPosts.map((post) => tag(`/blog/${post.slug}`, '0.6', 'monthly')),
   ].join('');
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;
