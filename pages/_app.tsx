@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className={inter.variable}>
         {measurementId && <GoogleAnalytics measurementId={measurementId} />}
         <Head>
-          <title>aama.io — End-to-End Fund Management Software</title>
+          <title>aama.io — Fund Management, Administration and Accounting Software</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1"

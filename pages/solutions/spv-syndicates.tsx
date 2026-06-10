@@ -11,7 +11,7 @@ export default function SpvSyndicatesPage() {
       <SEO
         title="SPV & Syndicate Administration & Accounting Software"
         description="Run single-asset funds — SPVs and syndicates — end to end on aama.io: rapid vehicle setup, member KYC/AML onboarding, lead carry and deal-by-deal distributions, plus a real fund-accounting engine with NAV, general ledger and IFRS-ready reporting."
-        keywords="SPV management software, special purpose vehicle, syndicate management, single-asset fund, deal-by-deal carry, angel syndicate, co-investment, SPV accounting, fund administration, lead carry, cap table"
+        keywords="SPV administration software, special purpose vehicle, syndicate management, single-asset fund, deal-by-deal carry, angel syndicate, co-investment, SPV accounting, fund administration, lead carry, cap table"
         ogUrl="https://aama.io/solutions/spv-syndicates"
       />
       <PageShell>

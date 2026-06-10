@@ -9,7 +9,7 @@ export default function TermsOfUse() {
       <SEO
         title="Terms of Use | aama.io"
         description="aama.io's Terms of Use — the platform is developed by Uxqode Pte Ltd to enable compliant fund managers to launch and manage funds while meeting regulatory requirements."
-        keywords="software terms, fund management software, Singapore laws, aama terms, Uxqode, user agreement"
+        keywords="software terms, fund administration software, Singapore laws, aama terms, Uxqode, user agreement"
       />
       <PageShell>
         <div className={classes.wrapper}>
@@ -50,7 +50,7 @@ export default function TermsOfUse() {
               <List mb="xl">
                 <List.Item><b>Fund Managers:</b> Licensed entities responsible for fund operations, investment decisions, and regulatory compliance. Fund managers must maintain all necessary licenses and approvals.</List.Item>
                 <List.Item><b>Investors:</b> Individuals or entities investing in funds through the software. Investors are responsible for their investment decisions and ensuring they meet applicable investor qualification requirements.</List.Item>
-                <List.Item><b>Administrators:</b> Users who perform administrative and operational functions related to fund management.</List.Item>
+                <List.Item><b>Administrators:</b> Users who perform administrative and operational functions related to fund administration.</List.Item>
               </List>
 
               <Title order={2}>6. Accredited Investor Status</Title>

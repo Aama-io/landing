@@ -11,7 +11,7 @@ const milestones = [
     description: "Successfully deployed Our software with licensed fund managers in Nepal, establishing AAMA as a pioneer in fund administration technology in the region.",
     details: [
       "Onboarded first institutional clients",
-      "Deployed core fund management software",
+      "Deployed core fund administration software",
       "Established local support team",
       "Received regulatory approval"
     ],
@@ -66,7 +66,7 @@ const milestones = [
   { 
     date: "2026", 
     title: "Global Ecosystem", 
-    description: "Building a comprehensive ecosystem for fund management with global reach, serving diverse asset classes across multiple markets.",
+    description: "Building a comprehensive ecosystem for fund administration with global reach, serving diverse asset classes across multiple markets.",
     details: [
       "Multi-chain compatibility",
       "Global compliance framework",
@@ -102,7 +102,7 @@ export function Milestones() {
             From <span className={classes.accentText}>Nepal</span> to <span className={classes.accentText}>Global</span> Markets
           </Title>
           <Text className={classes.sectionDescription} c="dimmed">
-            Charting our path to revolutionize fund management with innovative technology and strategic expansion
+            Charting our path to revolutionize fund administration with innovative technology and strategic expansion
           </Text>
         </motion.div>
 

@@ -53,7 +53,7 @@ export function Footer() {
           <div className={classes.brand}>
             <Logo />
             <Text className={classes.tagline}>
-              End-to-end fund management software — onboarding, NAV, compliance and investor
+              End-to-end fund administration software — onboarding, portfolio management, investor relations and fund accounting, all in one modern platform. 
               servicing on one modern platform.
             </Text>
             <Group gap={10} mt="lg">

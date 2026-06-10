@@ -35,7 +35,7 @@ export function Logo({ variant = 'default', href = '/', onClick, tagline = true 
         <span className={classes.word}>
           aama<span className={classes.dot}>.</span>io
         </span>
-        {tagline ? <span className={classes.tagline}>Fund Administration &amp; Accounting</span> : null}
+        {tagline ? <span className={classes.tagline}>Fund Administration Software</span> : null}
       </span>
     </>
   );

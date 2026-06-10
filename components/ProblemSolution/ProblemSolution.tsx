@@ -77,9 +77,9 @@ export function ProblemSolution() {
     <section className={`${classes.wrapper} section`}>
       <Container size="lg">
         <SectionHeading
-          eyebrow="The platform"
-          title="One platform, end to end."
-          description="Fund Administration with a white-labeled investor portal, and Fund Accounting — two products that share one data model and stay in real-time sync."
+          eyebrow="Fund administration, accounting & investor portal"
+          title="One system for the whole fund operation."
+          description="Fund accounting, fund administration and a white-labeled investor portal on a single data model — so fund administrators and the managers they service stop reconciling between disconnected tools. IFRS 9 / SFRS(I) 9 ready."
         />
 
         <div className={classes.pillars}>

@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { PageShell } from '@/components/ui/PageShell';
 import { AboutHero } from '../components/AboutHero/AboutHero';
+import { AboutStory } from '../components/AboutStory/AboutStory';
+import { AboutCTA } from '../components/AboutStory/AboutCTA';
 import { Team } from '../components/Team/Team';
 import { SEO } from '@/components/SEO/SEO';
 
@@ -36,7 +38,7 @@ export default function AboutPage() {
     <>
       <SEO
         title="About Us | aama.io"
-        description="Learn about aama.io's mission to modernize fund management, the team behind the platform, and the journey so far."
+        description="Learn about aama.io's mission to modernize fund administration and accounting, the team behind the platform, and the journey so far."
         keywords="aama team, fund management team, fintech experts, fund innovation, financial technology"
       />
       <Head>
@@ -47,7 +49,9 @@ export default function AboutPage() {
       </Head>
       <PageShell>
         <AboutHero />
+        <AboutStory />
         <Team />
+        <AboutCTA />
       </PageShell>
     </>
   );

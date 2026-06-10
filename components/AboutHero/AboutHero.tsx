@@ -19,11 +19,11 @@ export function AboutHero() {
         <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
           <span className={s.pill}>Our vision</span>
           <Title className={s.heroTitle}>
-            Revolutionizing fund management <br />through <span className={s.accent}>technology</span>
+            Revolutionizing fund administration <br />through <span className={s.accent}>technology</span>
           </Title>
           <Text className={s.heroDesc}>
-            aama.io combines deep fund-management expertise with modern technology to build the next generation of
-            tools that fund managers, GPs and family offices actually want to use.
+            aama.io combines deep fund-administration expertise with modern technology to build the next generation of
+            tools that fund managers, fund admins, GPs and family offices actually want to use.
           </Text>
         </motion.div>
 

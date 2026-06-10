@@ -9,13 +9,15 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = 'AAMA - Fund management software',
-  description = 'AAMA is a cutting-edge fund management software for mutual funds, hedge funds, and SIPs. The software helps fund managers to create, manage, and track their funds with ease.',
-  keywords = 'fund management, investment software, mutual funds, hedge funds, SIP software, automated trading',
+  title = 'Fund Administration Software Singapore',
+  description = 'Fund administration and accounting software for mid-market fund managers and boutique fund administrators in Singapore and APAC — capital calls, NAV, IFRS 9 / SFRS(I) 9 accounting, an LP portal and SPV administration, without enterprise complexity.',
+  keywords = 'fund administration software Singapore, fund accounting software, LP portal for fund managers, SPV administration software, VCC fund administration MAS, PE fund administration Singapore, VC fund accounting APAC, boutique fund admin software',
   ogImage = '/product-investment-portal.png', // Using existing product image for OG
   ogUrl = 'https://aama.io', // Replace with your actual domain
 }: SEOProps) {
-  const fullTitle = `${title} | AAMA`;
+  // Append the brand only when the title doesn't already carry it — avoids
+  // "… | aama.io | AAMA" double-branding on pages that include the brand themselves.
+  const fullTitle = /aama/i.test(title) ? title : `${title} | aama.io`;
 
   return (
     <Head>

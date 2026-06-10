@@ -49,23 +49,23 @@ export const products: ProductData[] = [
   {
     id: '1',
     slug: 'mutual-fund-managers',
-    title: 'Mutual Fund Management Software',
+    title: 'Mutual Fund Administration Software',
     shortTitle: 'Mutual Fund Managers',
-    description: 'Complete fund management and administration solution for Singapore-regulated mutual funds with MAS-compliant operations.',
+    description: 'Complete fund administration and administration solution for Singapore-regulated mutual funds with MAS-compliant operations.',
     heroDescription: 'Transform your mutual fund operations with our comprehensive software platform. Built specifically for Singapore fund managers, our solution automates daily NAV calculations, ensures MAS compliance, and streamlines investor reporting - all from a single, integrated platform.',
     icon: 'IconBuildingBank',
     image: '/fund-types/mutual-fund.jpg',
-    category: 'Fund Management',
+    category: 'Fund Administration',
     features: [
       {
         title: 'Core Fund Operations',
-        description: 'Comprehensive tools for day-to-day fund management',
+        description: 'Comprehensive tools for day-to-day fund administration',
         items: [
           'Automated daily NAV calculation and unit pricing',
           'Real-time portfolio valuation and performance tracking',
           'Multi-currency support with automatic FX conversion',
           'Subscription and redemption processing automation',
-          'Dividend distribution and reinvestment management',
+          'Dividend distribution and reinvestment administration',
           'Fund accounting and general ledger integration'
         ]
       },
@@ -76,13 +76,13 @@ export const products: ProductData[] = [
           'MAS regulatory reporting automation',
           'Investment limits and restrictions monitoring',
           'Automated compliance alerts and notifications',
-          'Audit trail and document management',
+          'Audit trail and document administration',
           'KYC/AML investor verification workflows',
           'Regulatory filing calendar and reminders'
         ]
       },
       {
-        title: 'Investor Management',
+        title: 'Investor Administration',
         description: 'Seamless investor onboarding and servicing',
         items: [
           'Digital investor onboarding and KYC',
@@ -118,7 +118,7 @@ export const products: ProductData[] = [
     ],
     useCases: [
       {
-        title: 'Equity Fund Management',
+        title: 'Equity Fund Administration',
         description: 'Manage equity-focused mutual funds with real-time portfolio tracking, automated corporate actions processing, and comprehensive performance analytics.',
         metrics: [
           { label: 'Processing Time', value: '85% faster' },
@@ -165,7 +165,7 @@ export const products: ProductData[] = [
         description: 'Comprehensive performance attribution, risk metrics, and benchmark comparison tools.'
       },
       {
-        title: 'Document Management',
+        title: 'Document Administration',
         description: 'Centralized repository for all fund documents, prospectuses, financial statements, and regulatory filings.'
       }
     ],
@@ -200,28 +200,28 @@ export const products: ProductData[] = [
   {
     id: '2',
     slug: 'vc-pe-firms',
-    title: 'VC/PE Fund Management Software',
+    title: 'VC/PE Fund Administration Software',
     shortTitle: 'VC/PE Firms',
     description: 'Comprehensive software solution for venture capital and private equity fund operations with portfolio tracking, capital calls, and LP reporting.',
-    heroDescription: 'Streamline your private capital operations with purpose-built tools for VC and PE funds. From deal flow management to portfolio monitoring, capital calls to LP reporting - everything you need to manage your private equity investments efficiently.',
+    heroDescription: 'Streamline your private capital operations with purpose-built tools for VC and PE funds. From deal flow administration to portfolio monitoring, capital calls to LP reporting - everything you need to manage your private equity investments efficiently.',
     icon: 'IconChartBar',
     image: '/fund-types/vc.jpg',
     category: 'Private Capital',
     features: [
       {
-        title: 'Portfolio Management',
+        title: 'Portfolio Administration',
         description: 'Comprehensive visibility into your portfolio companies',
         items: [
           'Portfolio company performance dashboards',
-          'Investment tracking and valuation management',
-          'Board meeting management and minutes',
+          'Investment tracking and valuation administration',
+          'Board meeting administration and minutes',
           'Document repository for all portfolio companies',
           'Exit scenario modeling and planning',
           'Real-time portfolio analytics and metrics'
         ]
       },
       {
-        title: 'Capital Management',
+        title: 'Capital Administration',
         description: 'Automated capital calls and distribution processing',
         items: [
           'Capital call automation and tracking',
@@ -263,7 +263,7 @@ export const products: ProductData[] = [
       },
       {
         title: 'Ensure Compliance',
-        description: 'Maintain regulatory compliance with automated reporting, audit trails, and document management.',
+        description: 'Maintain regulatory compliance with automated reporting, audit trails, and document administration.',
         icon: 'IconShield'
       }
     ],
@@ -279,7 +279,7 @@ export const products: ProductData[] = [
       },
       {
         title: 'Growth Equity Funds',
-        description: 'Track growth-stage investments with detailed performance metrics, board management, and exit planning.',
+        description: 'Track growth-stage investments with detailed performance metrics, board administration, and exit planning.',
         metrics: [
           { label: 'Reporting Time', value: '75% faster' },
           { label: 'Data Accuracy', value: '99.9%' }
@@ -296,7 +296,7 @@ export const products: ProductData[] = [
     ],
     keyFeatures: [
       {
-        title: 'Deal Flow Management',
+        title: 'Deal Flow Administration',
         description: 'Track investment opportunities from sourcing to close with customizable pipeline stages and collaboration tools.'
       },
       {
@@ -351,35 +351,35 @@ export const products: ProductData[] = [
   {
     id: '3',
     slug: 'reits',
-    title: 'REIT Management Software',
+    title: 'REIT Administration Software',
     shortTitle: 'REITs',
-    description: 'Purpose-built platform for real estate investment trust management with property portfolio tracking, rental income management, and dividend distribution.',
-    heroDescription: 'Optimize your real estate investment operations with our specialized REIT management platform. From property portfolio management to rental income tracking, expense management to dividend distributions - everything you need to run your REIT efficiently.',
+    description: 'Purpose-built platform for real estate investment trust administration with property portfolio tracking, rental income administration, and dividend distribution.',
+    heroDescription: 'Optimize your real estate investment operations with our specialized REIT administration platform. From property portfolio administration to rental income tracking, expense administration to dividend distributions - everything you need to run your REIT efficiently.',
     icon: 'IconChartPie',
     image: '/fund-types/reit.jpg',
     category: 'Real Estate',
     features: [
       {
-        title: 'Property Portfolio Management',
+        title: 'Property Portfolio Administration',
         description: 'Complete visibility and control over your property assets',
         items: [
           'Property-level financial tracking and reporting',
-          'Lease management and tenant database',
+          'Lease administration and tenant database',
           'Occupancy tracking and vacancy analysis',
-          'Property valuation and appraisal management',
+          'Property valuation and appraisal administration',
           'Capital improvements and CapEx tracking',
           'Asset-level performance analytics'
         ]
       },
       {
-        title: 'Income & Expense Management',
+        title: 'Income & Expense Administration',
         description: 'Comprehensive tracking of all REIT revenues and costs',
         items: [
           'Rental income tracking and forecasting',
           'Automated rent collection and reconciliation',
           'Operating expense categorization and tracking',
           'Property maintenance scheduling and costs',
-          'Utility and service charge management',
+          'Utility and service charge administration',
           'Budget vs. actual variance analysis'
         ]
       },
@@ -399,12 +399,12 @@ export const products: ProductData[] = [
     benefits: [
       {
         title: 'Maximize NOI',
-        description: 'Increase net operating income by 15-25% through better expense management, rent optimization, and reduced vacancy periods.',
+        description: 'Increase net operating income by 15-25% through better expense administration, rent optimization, and reduced vacancy periods.',
         icon: 'IconCurrencyDollar'
       },
       {
         title: 'Improve Occupancy',
-        description: 'Reduce vacancy rates with proactive lease management, tenant retention tracking, and automated renewal notifications.',
+        description: 'Reduce vacancy rates with proactive lease administration, tenant retention tracking, and automated renewal notifications.',
         icon: 'IconBuildingBank'
       },
       {
@@ -421,7 +421,7 @@ export const products: ProductData[] = [
     useCases: [
       {
         title: 'Residential REITs',
-        description: 'Manage apartment complexes and residential properties with tenant management, lease tracking, and maintenance scheduling.',
+        description: 'Manage apartment complexes and residential properties with tenant administration, lease tracking, and maintenance scheduling.',
         metrics: [
           { label: 'Properties Managed', value: '200+' },
           { label: 'Occupancy Rate', value: '96%' },
@@ -448,7 +448,7 @@ export const products: ProductData[] = [
     keyFeatures: [
       {
         title: 'Lease Administration',
-        description: 'Complete lease lifecycle management including renewals, amendments, rent escalations, and tenant improvements.'
+        description: 'Complete lease lifecycle administration including renewals, amendments, rent escalations, and tenant improvements.'
       },
       {
         title: 'Rental Income Forecasting',
@@ -459,7 +459,7 @@ export const products: ProductData[] = [
         description: 'Track property values using multiple methods including cap rate, DCF, and comparable sales analysis.'
       },
       {
-        title: 'Maintenance Management',
+        title: 'Maintenance Administration',
         description: 'Schedule preventive maintenance, track work orders, and manage vendor relationships for property upkeep.'
       },
       {
@@ -481,8 +481,8 @@ export const products: ProductData[] = [
         answer: 'Yes, our system supports multi-property type REITs. You can manage residential, commercial, industrial, retail, and mixed-use properties all within one platform while maintaining separate accounting and reporting for each property type.'
       },
       {
-        question: 'How do you handle lease management?',
-        answer: 'We provide comprehensive lease administration including lease abstracting, critical date tracking, rent escalation calculations, CAM reconciliation, renewal notifications, and lease amendment management. All lease data is centralized and easily accessible.'
+        question: 'How do you handle lease administration?',
+        answer: 'We provide comprehensive lease administration including lease abstracting, critical date tracking, rent escalation calculations, CAM reconciliation, renewal notifications, and lease amendment administration. All lease data is centralized and easily accessible.'
       },
       {
         question: 'What kind of reporting do you provide for investors?',
@@ -493,8 +493,8 @@ export const products: ProductData[] = [
         answer: 'Our system calculates required distributions based on taxable income, tracks distribution history, generates distribution notices, processes payments through banking integration, and produces all necessary tax documentation - all automatically on your specified schedule.'
       },
       {
-        question: 'Can you integrate with property management systems?',
-        answer: 'Yes, we integrate with major property management systems, accounting software, and banking platforms. We can import tenant data, lease information, rent rolls, and financial transactions automatically to keep your REIT reporting current.'
+        question: 'Can you integrate with property administration systems?',
+        answer: 'Yes, we integrate with major property administration systems, accounting software, and banking platforms. We can import tenant data, lease information, rent rolls, and financial transactions automatically to keep your REIT reporting current.'
       }
     ],
     relatedProducts: ['mutual-fund-managers', 'vc-pe-firms', 'financial-institutions']
@@ -523,13 +523,13 @@ export const products: ProductData[] = [
         ]
       },
       {
-        title: 'Multi-Entity Management',
+        title: 'Multi-Entity Administration',
         description: 'Manage multiple funds and entities from one platform',
         items: [
           'Multi-fund and multi-entity support',
           'Consolidated reporting across entities',
-          'Inter-fund transfer management',
-          'Centralized user and permission management',
+          'Inter-fund transfer administration',
+          'Centralized user and permission administration',
           'White-label customization per entity',
           'Group-level analytics and dashboards'
         ]
@@ -565,14 +565,14 @@ export const products: ProductData[] = [
       },
       {
         title: 'Enhance Control',
-        description: 'Maintain complete oversight with centralized management, detailed reporting, and granular access controls.',
+        description: 'Maintain complete oversight with centralized administration, detailed reporting, and granular access controls.',
         icon: 'IconLock'
       }
     ],
     useCases: [
       {
         title: 'Private Banking',
-        description: 'Offer fund products to private banking clients with white-labeled investor portals and seamless integration with wealth management platforms.',
+        description: 'Offer fund products to private banking clients with white-labeled investor portals and seamless integration with wealth administration platforms.',
         metrics: [
           { label: 'Client Accounts', value: '10,000+' },
           { label: 'AUM', value: '$5B+' },
@@ -588,7 +588,7 @@ export const products: ProductData[] = [
         ]
       },
       {
-        title: 'Asset Management',
+        title: 'Asset Administration',
         description: 'Launch and manage proprietary fund products with institutional-grade infrastructure and comprehensive investor servicing.',
         metrics: [
           { label: 'Funds Managed', value: '30+' },
@@ -632,16 +632,16 @@ export const products: ProductData[] = [
         answer: 'Yes, our platform is designed for enterprise integration. We support SSO with major identity providers, API integration with core banking systems, connectivity with market data providers, and can deploy in cloud, on-premise, or hybrid configurations based on your requirements.'
       },
       {
-        question: 'How do you handle multi-entity and multi-fund management?',
+        question: 'How do you handle multi-entity and multi-fund administration?',
         answer: 'Our platform includes sophisticated multi-tenancy architecture that allows you to manage multiple legal entities, funds, and client organizations within one system. Each entity can have separate configurations, branding, user bases, and reporting while maintaining centralized administration and consolidated reporting capabilities.'
       },
       {
         question: 'What kind of SLA do you provide?',
-        answer: 'We offer enterprise-grade SLAs including 99.99% uptime guarantee, 24/7 technical support, dedicated account management, priority incident response, and guaranteed response times. We also provide business continuity and disaster recovery plans with RTO and RPO commitments.'
+        answer: 'We offer enterprise-grade SLAs including 99.99% uptime guarantee, 24/7 technical support, dedicated account administration, priority incident response, and guaranteed response times. We also provide business continuity and disaster recovery plans with RTO and RPO commitments.'
       },
       {
         question: 'How long does enterprise implementation take?',
-        answer: 'Enterprise implementations typically take 8-12 weeks depending on complexity, integration requirements, and customization needs. This includes infrastructure setup, data migration, system integration, user training, and parallel testing. We provide dedicated implementation teams and project management throughout the process.'
+        answer: 'Enterprise implementations typically take 8-12 weeks depending on complexity, integration requirements, and customization needs. This includes infrastructure setup, data migration, system integration, user training, and parallel testing. We provide dedicated implementation teams and project administration throughout the process.'
       },
       {
         question: 'Can the platform scale with our growth?',
@@ -653,7 +653,7 @@ export const products: ProductData[] = [
   {
     id: '5',
     slug: 'spv-syndicates',
-    title: 'SPV & Syndicate Management Software',
+    title: 'SPV & Syndicate Administration Software',
     shortTitle: 'SPVs & Syndicates',
     description: 'End-to-end administration for single-deal SPVs and investor syndicates — member onboarding, cap table, lead carry, distributions and reporting in one place.',
     heroDescription: 'Run single-deal vehicles and syndicates the same way you run a fund — without the overhead. Spin up an SPV in days, onboard members with built-in KYC/AML, automate lead carry and deal fees, and keep every investor updated through a white-labeled portal.',
@@ -754,7 +754,7 @@ export const products: ProductData[] = [
       },
       {
         title: 'Lead Carry & Deal Fees',
-        description: 'Configure carry, management or deal fees and hurdles per vehicle — calculated and distributed automatically.'
+        description: 'Configure carry, administration or deal fees and hurdles per vehicle — calculated and distributed automatically.'
       },
       {
         title: 'Deal-by-Deal Waterfalls',
@@ -780,7 +780,7 @@ export const products: ProductData[] = [
       },
       {
         question: 'Can the platform handle lead carry and deal fees?',
-        answer: 'Yes. You can configure carried interest, management or one-off deal fees and a preferred return or hurdle per vehicle. The system calculates the lead\'s carry and member distributions on a deal-by-deal basis and produces statements automatically.'
+        answer: 'Yes. You can configure carried interest, administration or one-off deal fees and a preferred return or hurdle per vehicle. The system calculates the lead\'s carry and member distributions on a deal-by-deal basis and produces statements automatically.'
       },
       {
         question: 'Do syndicate members get their own portal?',
@@ -830,8 +830,8 @@ export const products: ProductData[] = [
         items: [
           'General ledger and automated NAV',
           'Capital call and distribution tracking',
-          'Fee, expense and accrual management',
-          'Cash and liquidity management',
+          'Fee, expense and accrual administration',
+          'Cash and liquidity administration',
           'Audit-ready records and document vault',
           'Reconciliations and period close'
         ]

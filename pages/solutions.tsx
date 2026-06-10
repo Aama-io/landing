@@ -23,7 +23,7 @@ const heroStats = [
 const phaseComponents = [
   { phase: 'Onboarding', icon: IconUserCheck, components: ['Investor Portal', 'KYC Module', 'Risk Profiling'], description: 'Streamlined investor onboarding with automated KYC verification and personalized risk profiling.' },
   { phase: 'Fund Discovery', icon: IconSearch, components: ['Fund Investment Planning', 'Investor Portal'], description: 'Intuitive fund discovery tools that help investors find opportunities aligned with their goals.' },
-  { phase: 'Subscription', icon: IconCreditCard, components: ['Investor Portal', 'Back Office', 'Management Portal'], description: 'Seamless subscription with automated payment processing and real-time tracking.' },
+  { phase: 'Subscription', icon: IconCreditCard, components: ['Investor Portal', 'Back Office', 'Administration Portal'], description: 'Seamless subscription with automated payment processing and real-time tracking.' },
   { phase: 'Custody & Accounting', icon: IconBuildingBank, components: ['Fund Administration & Accounting'], description: 'Secure asset custody and comprehensive fund accounting with automated NAV calculations.' },
   { phase: 'Portfolio Monitoring', icon: IconChartLine, components: ['Investor Portal', 'Fund Administration', 'Manager Portal'], description: 'Real-time portfolio monitoring with detailed performance analytics and interactive dashboards.' },
   { phase: 'Redemption', icon: IconArrowBackUp, components: ['Investor Portal', 'Administration', 'Automation'], description: 'Efficient redemption with automated processing and transparent fee calculations.' },
@@ -32,14 +32,14 @@ const phaseComponents = [
 
 const softwareFeatures = [
   { title: 'Investor Experience', icon: IconUsers, features: ['Self-service investor portal with intuitive dashboard', 'Mobile-responsive design for on-the-go access', 'Personalized investment recommendations', 'Document storage and electronic signatures', 'Real-time portfolio performance tracking'] },
-  { title: 'Fund Manager Tools', icon: IconBriefcase, features: ['Comprehensive fund setup and configuration', 'Investor relationship management', 'Performance analytics and reporting', 'Fee management and distribution', 'Document generation and management'] },
-  { title: 'Administration & Operations', icon: IconSettings, features: ['Automated NAV calculations', 'Subscription and redemption processing', 'Corporate actions management', 'Cash flow reconciliation', 'Financial reporting and statements'] },
+  { title: 'Fund Manager Tools', icon: IconBriefcase, features: ['Comprehensive fund setup and configuration', 'Investor relationship administration', 'Performance analytics and reporting', 'Fee administration and distribution', 'Document generation and administration'] },
+  { title: 'Administration & Operations', icon: IconSettings, features: ['Automated NAV calculations', 'Subscription and redemption processing', 'Corporate actions administration', 'Cash flow reconciliation', 'Financial reporting and statements'] },
   { title: 'Compliance & Security', icon: IconShield, features: ['KYC/AML verification workflows', 'Regulatory reporting capabilities', 'Role-based access controls', 'Data encryption and security', 'Audit trails and compliance monitoring'] },
 ];
 
 const integrationOptions = [
   { title: 'Banking', icon: IconBuildingBank, description: 'Connect major banks and payment processors for seamless transfers and reconciliation.' },
-  { title: 'Custodian Services', icon: IconDatabase, description: 'Integrate leading custodians for secure asset management and storage.' },
+  { title: 'Custodian Services', icon: IconDatabase, description: 'Integrate leading custodians for secure asset administration and storage.' },
   { title: 'Analytics Platforms', icon: IconDeviceAnalytics, description: 'Connect analytics tools for enhanced reporting and data visualization.' },
   { title: 'Cloud Infrastructure', icon: IconCloudComputing, description: 'Secure cloud infrastructure for scalable, reliable platform performance.' },
 ];
@@ -54,7 +54,7 @@ const clientBenefits = [
 ];
 
 const faqItems = [
-  { value: 'how-it-works', title: 'How does your fund management software work?', content: 'The platform provides a comprehensive infrastructure for fund managers to launch, operate and grow their funds — from investor onboarding and KYC to NAV calculations, reporting and compliance monitoring, tailored to Singapore\'s regulatory environment.' },
+  { value: 'how-it-works', title: 'How does your fund administration software work?', content: 'The platform provides a comprehensive infrastructure for fund managers to launch, operate and grow their funds — from investor onboarding and KYC to NAV calculations, reporting and compliance monitoring, tailored to Singapore\'s regulatory environment.' },
   { value: 'compliance', title: 'How do you handle regulatory compliance?', content: 'MAS compliance requirements are built into the platform core, with modules for PDPA, SFA and other Singapore regulations. The system tracks regulatory changes, generates reports and ensures your operations meet applicable standards.' },
   { value: 'integration', title: 'Can I integrate with my existing systems?', content: 'Yes. The platform offers comprehensive APIs for integration with banking systems, CRM tools and accounting software, with data import/export in various formats for a smooth transition.' },
   { value: 'security', title: 'How secure is the platform?', content: 'We implement bank-grade encryption, multi-factor authentication, granular access controls, regular security audits and ongoing monitoring — meeting the highest data-protection standards for financial institutions in Singapore.' },
@@ -74,9 +74,9 @@ export default function SolutionsPage() {
   return (
     <>
       <SEO
-        title="Fund Management & Administration Platform | Solutions"
-        description="aama.io's comprehensive solutions for fund managers — covering the entire investment lifecycle from onboarding to reporting and compliance."
-        keywords="fund management software, investment lifecycle, investor onboarding, fund reporting, portfolio monitoring, Singapore fund management"
+        title="Fund Administration & Accounting Software | Solutions"
+        description="Fund administration and accounting software for VC/PE firms, family offices, SPV syndicates and fund administrators — covering the entire investment lifecycle from onboarding to NAV, reporting and compliance across Singapore and APAC."
+        keywords="fund administration software, fund accounting software, LP portal for fund managers, investor onboarding, fund reporting, Singapore fund administration, APAC fund accounting"
       />
       <PageShell>
         {/* Hero */}
@@ -85,7 +85,7 @@ export default function SolutionsPage() {
           <div className={m.heroGrid} />
           <Container size="lg" className={m.heroInner}>
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-              <span className={s.pill}>Fund management solutions</span>
+              <span className={s.pill}>Fund administration solutions</span>
               <h1 className={m.heroTitle}>Run the entire fund lifecycle on <span className={s.accent}>one platform</span></h1>
               <p className={m.heroDesc}>
                 From KYC onboarding to real-time NAV, automated compliance and a white-labeled investor portal —

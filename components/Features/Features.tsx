@@ -146,7 +146,7 @@ export function Features() {
           </motion.div>
         </Box>
         
-        {/* Future of Fund Management Section */}
+        {/* Future of Fund Administration Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -157,10 +157,10 @@ export function Features() {
           <Box mt={80} mb={30}>
             <Paper withBorder p="xl" radius="lg" className={classes.futureSection}>
               <Title order={2} mb="xl" ta="center" className={classes.futureTitle}>
-                The Future of Fund Management
+                The Future of Fund Administration
               </Title>
               <Text ta="center" size="lg" px={{ base: 0, md: 80 }} mb="xl">
-                AAMA.io is not just a fund management software—it's a vision for the future of regulated fund operations.
+                AAMA.io is not just a fund administration software—it's a vision for the future of regulated fund operations.
                 We're building the infrastructure that will power the next generation of funds, making them more
                 efficient, transparent, and accessible while maintaining the highest standards of regulatory compliance.
               </Text>

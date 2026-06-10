@@ -237,7 +237,7 @@ export function Product() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
           >
-            <span className={classes.pill}>End-to-end fund management</span>
+            <span className={classes.pill}>Fund administration &amp; accounting software</span>
             <Title className={classes.heroTitle}>
               The operating system for{' '}
               <span className={classes.accent}>modern fund managers.</span>

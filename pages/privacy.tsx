@@ -9,7 +9,7 @@ export default function PrivacyPolicy() {
       <SEO
         title="Privacy Policy | aama.io"
         description="aama.io's Privacy Policy — developed by Uxqode Pte Ltd, our platform enables fund managers to launch and manage funds while protecting personal data in compliance with Singapore's PDPA."
-        keywords="privacy policy, PDPA, Singapore data protection, personal data, aama.io privacy, Uxqode, fund management software, data security"
+        keywords="privacy policy, PDPA, Singapore data protection, personal data, aama.io privacy, Uxqode, fund administration software, data security"
       />
       <PageShell>
         <div className={classes.wrapper}>

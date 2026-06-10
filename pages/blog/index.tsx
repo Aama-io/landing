@@ -13,9 +13,9 @@ type BlogPost = BlogPostSummary;
 
 export default function BlogPage({ posts }: { posts: BlogPost[] }) {
   // Define SEO metadata
-  const seoTitle = "Fund Management Insights & News";
-  const seoDescription = "Expert insights on fund management softwares, IFRS accounting, investor portals, data integration, and blockchain technology in financial services.";
-  const seoKeywords = "fund management, IFRS accounting, investor portal, financial technology, blockchain, investment software";
+  const seoTitle = "Fund Administration Insights & News";
+  const seoDescription = "Expert insights on fund administration softwares, IFRS accounting, investor portals, data integration, and blockchain technology in financial services.";
+  const seoKeywords = "fund administration, IFRS accounting, investor portal, financial technology, blockchain, investment software";
   const seoUrl = "https://aama.io/blog";
   const seoImage = posts.length > 0 ? posts[0].coverImage : '/fund-types/mutual-fund.jpg';
 
@@ -23,7 +23,7 @@ export default function BlogPage({ posts }: { posts: BlogPost[] }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "headline": "AAMA Fund Management Blog",
+    "headline": "AAMA Fund Administration Blog",
     "description": seoDescription,
     "url": seoUrl,
     "publisher": {
@@ -68,7 +68,7 @@ export default function BlogPage({ posts }: { posts: BlogPost[] }) {
         <Container size="lg">
           <Stack align="center" justify="center" gap="md" className={classes.header}>
             <span className={s.pill}>aama.io blog</span>
-            <Title className={classes.title}>Fund management <span className={s.accent}>insights</span></Title>
+            <Title className={classes.title}>Fund administration <span className={s.accent}>insights</span></Title>
             <Text className={classes.subtitle}>
               Practical guides on distribution waterfalls, VCC structuring, fund economics and Singapore fund operations — plus deep dives behind our free tools.
             </Text>
@@ -206,7 +206,7 @@ export default function BlogPage({ posts }: { posts: BlogPost[] }) {
             <Stack align="center" justify="center" gap="xl" className={classes.content} py={50}>
               <Title className={classes.noPostsTitle}>No Blog Posts Found</Title>
               <Text className={classes.description}>
-                We're working on bringing you valuable insights about fund management, blockchain technology, 
+                We're working on bringing you valuable insights about fund administration, blockchain technology, 
                 and investment strategies. Stay tuned!
               </Text>
               <Group justify="center">

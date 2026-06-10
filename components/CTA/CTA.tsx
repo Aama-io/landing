@@ -23,11 +23,12 @@ export function CTA() {
 
           <div className={classes.inner}>
             <span className={classes.pill}>Get started</span>
-            <Title className={classes.title}>Transform your fund operations today</Title>
+            <Title className={classes.title}>Move your fund operation onto one platform</Title>
             <Text className={classes.description}>
-              Replace spreadsheets and disconnected tools with a modern platform where investors
-              apply, track and manage investments in real time — built for fund managers and
-              administrators in Singapore, from multi-asset funds to single-asset SPVs.
+              Replace spreadsheets and disconnected tools with one system for fund accounting,
+              investor reporting, deal flow and SPV management — built for fund managers and fund
+              administrators across Singapore and APAC, with IFRS 9 / SFRS(I) 9 accounting and VCC
+              sub-fund support.
             </Text>
 
             <div className={classes.points}>

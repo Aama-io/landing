@@ -18,7 +18,7 @@ export function PricingHero() {
             Institutional-grade at <span className={s.accent}>startup-friendly pricing</span>
           </Title>
           <Text className={s.heroDesc}>
-            Institutional-grade fund management software at startup-friendly pricing — designed to help Singaporean fund
+            Institutional-grade fund administration software at startup-friendly pricing — designed to help Singaporean fund
             managers scale, stay compliant and delight investors.
           </Text>
           <Group justify="center" gap={28} mt={28}>

@@ -62,9 +62,9 @@ export function PainPoints() {
     <section className={`${classes.wrapper} section`}>
       <Container size="lg">
         <SectionHeading
-          eyebrow="Built for Singapore fund managers"
-          title="We know the problems you face — and we built the answers."
-          description="Fund management is heavily regulated, operationally intense and increasingly tech-driven. Yet boutique firms lack affordable tools built for their needs. aama.io changes that."
+          eyebrow="Built for mid-market funds in Singapore & APAC"
+          title="The operating problems mid-market funds actually face."
+          description="Fund administration in Singapore is heavily regulated, operationally intense and increasingly technical. Mid-market managers and boutique fund administrators are stuck between spreadsheets and enterprise systems built for billion-dollar funds. aama.io is built for the middle."
         />
 
         <div className={classes.grid}>

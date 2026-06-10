@@ -7,7 +7,7 @@ import m from '../../styles/SolutionsNew.module.css';
 const SITE = 'https://aama.io';
 
 const faqData = [
-  { question: "What is aama.io's fund management software?", answer: 'aama.io is a comprehensive fund management platform that automates NAV calculations, compliance reporting and investor management. It streamlines operations for fund managers while giving investors transparency and a modern experience.' },
+  { question: "What is aama.io's fund administration software?", answer: 'aama.io is a comprehensive fund administration platform that automates NAV calculations, compliance reporting and investor administration. It streamlines operations for fund managers while giving investors transparency and a modern experience.' },
   { question: 'How does the automated NAV calculation work?', answer: 'The platform uses structured data and real-time feeds to calculate NAV automatically, eliminating manual processes and reducing errors. The system reconciles continuously and provides an up-to-date view of each fund.' },
   { question: 'What types of funds can use the software?', answer: 'The platform supports a range of structures including VCCs and sub-funds, private equity, venture, hedge and multi-asset funds. It is designed to be flexible across different investment strategies and asset classes.' },
   { question: 'Is the platform aligned with Singapore (MAS) requirements?', answer: 'Yes. Compliance requirements are built into the platform core, with support for MAS guidelines, PDPA and SFA, plus tooling for 13O/13U tax-incentive tracking. The system helps you generate the reports regulators expect.' },
@@ -17,7 +17,7 @@ const faqData = [
 
 export default function FAQPage() {
   const title = 'Frequently Asked Questions | aama.io';
-  const description = 'Answers to common questions about aama.io — fund management software, automated NAV, supported fund types, MAS compliance, security and reporting.';
+  const description = 'Answers to common questions about aama.io — fund administration software, automated NAV, supported fund types, MAS compliance, security and reporting.';
   const url = `${SITE}/faq`;
 
   const faqJsonLd = {

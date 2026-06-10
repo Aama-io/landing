@@ -3,8 +3,8 @@ import classes from './FAQ.module.css';
 
 const faqData = [
   {
-    question: 'What is AAMAs fund management software?',
-    answer: 'AAMA is a comprehensive fund management software that automates NAV calculations, compliance reporting, and investor management using blockchain technology. It streamlines operations for fund managers while providing transparency and efficiency.',
+    question: 'What is AAMAs fund administration software?',
+    answer: 'AAMA is a comprehensive fund administration software that automates NAV calculations, compliance reporting, and investor management using blockchain technology. It streamlines operations for fund managers while providing transparency and efficiency.',
   },
   {
     question: 'How does the automated NAV calculation work?',

@@ -11,8 +11,9 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="aama.io | Fund Management, Administration & Accounting Software"
-        description="aama.io empowers fund administrators and fund managers with comprehensive software for in-house fund administration, accounting, and investor servicing — KYC/AML onboarding, NAV calculations, capital calls, automated compliance and a white-labeled investor portal. Built for every fund type, from multi-asset funds to single-asset SPVs."
+        title="Fund Administration Software in Singapore & APAC"
+        description="Fund administration and fund accounting software for mid-market PE and VC fund managers and boutique fund administrators in Singapore and APAC — capital calls, NAV, IFRS 9 / SFRS(I) 9 accounting, an LP portal for fund managers and SPV administration, without enterprise complexity."
+        keywords="fund administration software Singapore, private equity fund administration software, venture capital fund administration software, fund accounting software, fund accounting software IFRS 9 Singapore, LP portal for fund managers, software for fund administrators, in-house fund administration software, fund administration for emerging managers, capital call software, distribution waterfall software, NAV calculation software, SPV administration software Singapore, VCC fund administration, VCC sub-fund accounting, boutique fund admin software Singapore"
       />
       <PageShell>
         <Hero />

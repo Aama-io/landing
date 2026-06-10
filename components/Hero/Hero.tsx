@@ -30,19 +30,20 @@ export function Hero() {
         >
           <Link href="/product" className={classes.badge}>
             <IconSparkles size={15} />
-            <span>End-to-end fund management platform</span>
+            <span>Fund administration software · Singapore &amp; APAC</span>
             <IconArrowRight size={14} className={classes.badgeArrow} />
           </Link>
 
           <Title className={classes.title}>
-            Run your entire fund on{' '}
+            Run your entire fund operations on{' '}
             <span className={classes.highlight}>one platform.</span>
           </Title>
 
           <Text className={classes.subtitle}>
-            From KYC-compliant investor onboarding to real-time NAV, automated compliance and a
-            white-labeled investor portal — aama.io replaces the spreadsheets and disconnected tools
-            fund managers rely on today.
+            Mid-market PE and VC fund managers — and the boutique fund administrators who service
+            them — still run on spreadsheets, email and a stack of disconnected tools. aama.io brings
+            fund administration and fund accounting into one
+            MAS-ready system, with IFRS 9 / SFRS(I) 9 accounting built in. Singapore-first, built for APAC.
           </Text>
 
           <Group gap="md" justify="center" className={classes.actions}>
@@ -71,11 +72,11 @@ export function Hero() {
           <div className={classes.assurance}>
             <span className={classes.assuranceItem}>
               <IconCircleCheckFilled size={16} className={classes.assuranceIcon} />
-              No engineering required
+              MAS-ready, built for VCC sub-funds
             </span>
             <span className={classes.assuranceItem}>
               <IconCircleCheckFilled size={16} className={classes.assuranceIcon} />
-              MAS &amp; IFRS aligned
+              IFRS 9 / SFRS(I) 9 fund accounting
             </span>
             <span className={classes.assuranceItem}>
               <IconCircleCheckFilled size={16} className={classes.assuranceIcon} />
@@ -100,7 +101,7 @@ export function Hero() {
             <div className={classes.frameBody}>
               <Image
                 src="/images/client-fund.png"
-                alt="aama.io fund management dashboard"
+                alt="aama.io fund administration dashboard"
                 width={1280}
                 height={820}
                 className={classes.shot}

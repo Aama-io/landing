@@ -18,11 +18,11 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'IFRS-Compliant Fund Management: The Cornerstone of Modern Financial Operations',
-    slug: 'ifrs-compliant-fund-management',
-    excerpt: 'Discover how our IFRS-based accounting software provides the foundation for accurate, transparent, and regulatory-compliant fund management.',
+    title: 'IFRS-Compliant Fund Administration: The Cornerstone of Modern Financial Operations',
+    slug: 'ifrs-compliant-fund-administration',
+    excerpt: 'Discover how our IFRS-based accounting software provides the foundation for accurate, transparent, and regulatory-compliant fund administration.',
     content: `
-      <p>In today's complex financial landscape, compliance with International Financial Reporting Standards (IFRS) isn't just a regulatory requirement—it's a competitive advantage. At AAMA, we've built our fund management software with IFRS compliance as a core principle, ensuring your financial operations meet global standards while delivering exceptional efficiency.</p>
+      <p>In today's complex financial landscape, compliance with International Financial Reporting Standards (IFRS) isn't just a regulatory requirement—it's a competitive advantage. At AAMA, we've built our fund administration software with IFRS compliance as a core principle, ensuring your financial operations meet global standards while delivering exceptional efficiency.</p>
       
       <h3>The Power of IFRS-Based Accounting</h3>
       
@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
       
       <h3>Relational Database: The Foundation of Accuracy</h3>
       
-      <p>At the core of Our software lies a robust relational database architecture specifically designed for financial management:</p>
+      <p>At the core of Our software lies a robust relational database architecture specifically designed for financial administration:</p>
       
       <ol>
         <li><strong>Error Minimization:</strong> Our structured data model prevents common accounting errors through built-in validation rules and consistency checks.</li>
@@ -59,7 +59,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>A mid-sized investment fund recently reported that implementing our IFRS-compliant software reduced their month-end closing process from five days to just one, while simultaneously improving reporting accuracy and detail. This efficiency gain allowed their financial team to shift focus from data processing to strategic analysis and decision support.</p>
       
-      <p>By choosing our fund management software, you're not just adopting a software solution—you're embracing a financial infrastructure built for accuracy, compliance, and efficiency in today's demanding investment environment.</p>
+      <p>By choosing our fund administration software, you're not just adopting a software solution—you're embracing a financial infrastructure built for accuracy, compliance, and efficiency in today's demanding investment environment.</p>
     `,
     author: 'Prashant Chaulagain',
     authorRole: 'Chief Technology Officer',
@@ -67,7 +67,7 @@ export const blogPosts: BlogPost[] = [
     coverImage: '/fund-types/mutual-fund.jpg',
     publishedDate: '2024-03-25',
     readTime: '6 min',
-    categories: ['IFRS Compliance', 'Fund Management', 'Financial Reporting']
+    categories: ['IFRS Compliance', 'Fund Administration', 'Financial Reporting']
   },
   {
     id: '2',
@@ -75,7 +75,7 @@ export const blogPosts: BlogPost[] = [
     slug: '24-7-investment-access',
     excerpt: 'Learn how our investor portal delivers round-the-clock investment capabilities with automated processing, enhanced compliance, and mobile-first accessibility.',
     content: `
-      <p>The traditional boundaries of investment management are disappearing. Today's investors expect the same 24/7 accessibility and seamless user experience they enjoy in other digital services. AAMA's investor portal software has been designed from the ground up to meet these expectations while maintaining the highest standards of security and compliance.</p>
+      <p>The traditional boundaries of investment administration are disappearing. Today's investors expect the same 24/7 accessibility and seamless user experience they enjoy in other digital services. AAMA's investor portal software has been designed from the ground up to meet these expectations while maintaining the highest standards of security and compliance.</p>
       
       <h3>Continuous Investment Access</h3>
       
@@ -112,11 +112,11 @@ export const blogPosts: BlogPost[] = [
       
       <h3>Operational Excellence for Fund Managers</h3>
       
-      <p>Behind the seamless investor experience lies powerful management capabilities:</p>
+      <p>Behind the seamless investor experience lies powerful administration capabilities:</p>
       
       <ul>
         <li><strong>Bulk Upload and Auto Reconciliation:</strong> Streamline back-office operations with automated data processing and matching.</li>
-        <li><strong>Distribution Center Management:</strong> Enable controlled access for distribution partners with appropriate limitations and customized reporting.</li>
+        <li><strong>Distribution Center Administration:</strong> Enable controlled access for distribution partners with appropriate limitations and customized reporting.</li>
         <li><strong>Advanced Reporting:</strong> Generate comprehensive reports that reduce operational overhead and provide actionable insights.</li>
         <li><strong>Automatic Dividend Calculations:</strong> The system handles complex dividend calculations automatically based on relevant data and policies.</li>
       </ul>
@@ -135,18 +135,18 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '3',
-    title: 'Streamlining Fund Operations with AAMA Fund Management Platform',
+    title: 'Streamlining Fund Operations with AAMA Fund Administration Platform',
     slug: 'streamlining-fund-operations',
-    excerpt: 'Discover how our integrated fund management software is helping fund managers reduce operational overhead and focus on investment decisions.',
+    excerpt: 'Discover how our integrated fund administration software is helping fund managers reduce operational overhead and focus on investment decisions.',
     content: `
-      <p>In the competitive world of fund management, operational efficiency can be the difference between success and mediocrity. AAMA's Fund Management Platform is designed specifically to address the operational challenges that fund managers face daily.</p>
+      <p>In the competitive world of fund administration, operational efficiency can be the difference between success and mediocrity. AAMA's Fund Administration Platform is designed specifically to address the operational challenges that fund managers face daily.</p>
       
       <h3>The Operational Challenge</h3>
       
       <p>Fund managers today are dealing with increasingly complex operational requirements:</p>
       
       <ul>
-        <li><strong>Data Management:</strong> Managing vast amounts of financial data across multiple sources and formats</li>
+        <li><strong>Data Administration:</strong> Managing vast amounts of financial data across multiple sources and formats</li>
         <li><strong>Regulatory Compliance:</strong> Keeping up with ever-changing regulatory requirements</li>
         <li><strong>Reporting Demands:</strong> Meeting the growing reporting expectations of sophisticated investors</li>
         <li><strong>Resource Allocation:</strong> Balancing time between administrative tasks and actual investment activities</li>
@@ -157,7 +157,7 @@ export const blogPosts: BlogPost[] = [
       <p>AAMA's software addresses these challenges through a comprehensive, integrated approach:</p>
       
       <ol>
-        <li><strong>Centralized Data Management:</strong> Our software consolidates data from multiple sources into a single, accessible interface, eliminating the need for manual data reconciliation.</li>
+        <li><strong>Centralized Data Administration:</strong> Our software consolidates data from multiple sources into a single, accessible interface, eliminating the need for manual data reconciliation.</li>
         <li><strong>Automated Workflows:</strong> Routine tasks such as NAV calculations, fee processing, and investor communications are automated, reducing the risk of human error.</li>
         <li><strong>Real-time Analytics:</strong> Fund managers can access performance metrics, exposure analyses, and risk assessments in real-time, enabling more informed decision-making.</li>
         <li><strong>Customizable Reporting:</strong> The software offers customizable reporting templates that can be tailored to meet the specific requirements of different investor types and regulatory bodies.</li>
@@ -181,17 +181,17 @@ export const blogPosts: BlogPost[] = [
     coverImage: '/fund-types/mutual-fund.jpg',
     publishedDate: '2024-03-15',
     readTime: '5 min',
-    categories: ['Fund Management', 'Operations', 'Technology']
+    categories: ['Fund Administration', 'Operations', 'Technology']
   },
   {
     id: '4',
-    title: 'Data Integration: The Foundation of Modern Fund Management',
-    slug: 'data-integration-modern-fund-management',
+    title: 'Data Integration: The Foundation of Modern Fund Administration',
+    slug: 'data-integration-modern-fund-administration',
     excerpt: 'Learn how AAMAs data integration capabilities are transforming how fund managers interact with and leverage their data.',
     content: `
-      <p>In the data-driven world of fund management, the ability to seamlessly integrate, analyze, and act on data from diverse sources has become a critical competitive advantage. At AAMA, we've built our fund management software with data integration as its foundation.</p>
+      <p>In the data-driven world of fund administration, the ability to seamlessly integrate, analyze, and act on data from diverse sources has become a critical competitive advantage. At AAMA, we've built our fund administration software with data integration as its foundation.</p>
       
-      <h3>The Data Challenge in Fund Management</h3>
+      <h3>The Data Challenge in Fund Administration</h3>
       
       <p>Today's fund managers are drowning in data but starving for insights. The challenges are numerous:</p>
       
@@ -213,13 +213,13 @@ export const blogPosts: BlogPost[] = [
         <li><strong>Data Governance:</strong> Comprehensive audit trails, access controls, and data quality measures to ensure data integrity</li>
       </ol>
       
-      <h3>Transformative Impacts on Fund Management</h3>
+      <h3>Transformative Impacts on Fund Administration</h3>
       
-      <p>The benefits of our integrated data approach extend across all aspects of fund management:</p>
+      <p>The benefits of our integrated data approach extend across all aspects of fund administration:</p>
       
       <ul>
         <li><strong>Investment Decision-Making:</strong> Fund managers gain a unified view of positions, exposure, and performance across all assets and strategies</li>
-        <li><strong>Risk Management:</strong> Real-time risk monitoring across multiple dimensions allows for proactive risk mitigation</li>
+        <li><strong>Risk Administration:</strong> Real-time risk monitoring across multiple dimensions allows for proactive risk mitigation</li>
         <li><strong>Investor Reporting:</strong> On-demand, accurate reporting capabilities that instill investor confidence</li>
         <li><strong>Operational Efficiency:</strong> Elimination of manual data handling reduces costs and frees up resources for higher-value activities</li>
       </ul>
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
     coverImage: '/fund-types/reit.jpg',
     publishedDate: '2024-03-18',
     readTime: '6 min',
-    categories: ['Data Integration', 'Fund Technology', 'Investment Management']
+    categories: ['Data Integration', 'Fund Technology', 'Investment Administration']
   },
   {
     id: '5',
@@ -296,28 +296,28 @@ export const blogPosts: BlogPost[] = [
     coverImage: '/fund-types/vc.jpg',
     publishedDate: '2024-03-22',
     readTime: '5 min',
-    categories: ['Investor Relations', 'Client Communication', 'Fund Management']
+    categories: ['Investor Relations', 'Client Communication', 'Fund Administration']
   },
   {
     id: '6',
-    title: 'Understanding Blockchain Fund Management',
-    slug: 'understanding-blockchain-fund-management',
+    title: 'Understanding Blockchain Fund Administration',
+    slug: 'understanding-blockchain-fund-administration',
     excerpt: 'Dive into the fundamentals of managing funds on blockchain softwares and how it is revolutionizing the investment industry.',
     content: `
-      <p>Blockchain technology has revolutionized fund management by introducing unprecedented levels of transparency, security, and efficiency. Traditional fund management systems often involve multiple intermediaries, lengthy settlement periods, and opaque processes that can lead to high costs and potential conflicts of interest.</p>
+      <p>Blockchain technology has revolutionized fund administration by introducing unprecedented levels of transparency, security, and efficiency. Traditional fund administration systems often involve multiple intermediaries, lengthy settlement periods, and opaque processes that can lead to high costs and potential conflicts of interest.</p>
       
-      <p>With blockchain-based fund management, investors can benefit from:</p>
+      <p>With blockchain-based fund administration, investors can benefit from:</p>
       
       <ul>
         <li><strong>Enhanced Transparency:</strong> All transactions are recorded on a distributed ledger, allowing investors to track their investments in real-time.</li>
-        <li><strong>Reduced Costs:</strong> By eliminating intermediaries, blockchain can significantly lower fees associated with fund management.</li>
+        <li><strong>Reduced Costs:</strong> By eliminating intermediaries, blockchain can significantly lower fees associated with fund administration.</li>
         <li><strong>Improved Security:</strong> The immutable nature of blockchain provides robust protection against fraud and unauthorized modifications.</li>
         <li><strong>24/7 Market Access:</strong> Unlike traditional markets with fixed operating hours, blockchain-based funds can be accessed and traded around the clock.</li>
       </ul>
       
-      <p>As we move forward, the integration of blockchain technology in fund management will continue to evolve, offering new possibilities for investors and fund managers alike. Smart contracts will automate complex processes, tokenization will enable fractional ownership of previously illiquid assets, and decentralized finance (DeFi) protocols will create new investment opportunities.</p>
+      <p>As we move forward, the integration of blockchain technology in fund administration will continue to evolve, offering new possibilities for investors and fund managers alike. Smart contracts will automate complex processes, tokenization will enable fractional ownership of previously illiquid assets, and decentralized finance (DeFi) protocols will create new investment opportunities.</p>
       
-      <p>At AAMA, we're at the forefront of this transformation, leveraging blockchain technology to provide our clients with cutting-edge fund management solutions that prioritize security, transparency, and accessibility.</p>
+      <p>At AAMA, we're at the forefront of this transformation, leveraging blockchain technology to provide our clients with cutting-edge fund administration solutions that prioritize security, transparency, and accessibility.</p>
     `,
     author: 'Prashant Chaulagain',
     authorRole: 'Chief Technology Officer',
@@ -325,7 +325,7 @@ export const blogPosts: BlogPost[] = [
     coverImage: '/fund-types/mutual-fund.jpg',
     publishedDate: '2023-12-15',
     readTime: '5 min',
-    categories: ['Blockchain', 'Fund Management', 'Investment']
+    categories: ['Blockchain', 'Fund Administration', 'Investment']
   },
   {
     id: '7',
@@ -342,7 +342,7 @@ export const blogPosts: BlogPost[] = [
       <ol>
         <li><strong>Automated Compliance:</strong> Smart contracts can be programmed to enforce regulatory requirements automatically, ensuring that all transactions comply with relevant regulations and fund policies.</li>
         <li><strong>Streamlined Subscriptions and Redemptions:</strong> The process of investors joining or exiting a fund can be automated, reducing processing time from days to minutes.</li>
-        <li><strong>Transparent Fee Calculation:</strong> Management and performance fees can be calculated and distributed automatically based on predefined formulas, increasing transparency and trust.</li>
+        <li><strong>Transparent Fee Calculation:</strong> Administration and performance fees can be calculated and distributed automatically based on predefined formulas, increasing transparency and trust.</li>
         <li><strong>Efficient Dividend Distribution:</strong> Dividend payments can be automated and executed instantly, ensuring timely distributions to investors.</li>
       </ol>
       
@@ -420,7 +420,7 @@ export const blogPosts: BlogPost[] = [
       
       <h3>Benefits of Asset Tokenization</h3>
       
-      <p>Tokenization offers numerous advantages over traditional asset management:</p>
+      <p>Tokenization offers numerous advantages over traditional asset administration:</p>
       
       <ul>
         <li><strong>Fractional Ownership:</strong> By dividing assets into smaller, affordable units, tokenization enables investors to access previously out-of-reach investments with lower capital requirements.</li>
@@ -432,7 +432,7 @@ export const blogPosts: BlogPost[] = [
       
       <p>Real-world applications of asset tokenization are already emerging across various sectors. In real estate, properties worth millions are being tokenized to allow fractional ownership. In the art world, valuable pieces are being tokenized to enable broader investment and partial ownership. Even in traditional commodities like gold and oil, tokenization is creating new investment vehicles with enhanced accessibility and liquidity.</p>
       
-      <p>As technology and regulatory frameworks continue to evolve, asset tokenization is poised to become a mainstream approach to asset management, potentially revolutionizing how we invest in and trade real-world assets.</p>
+      <p>As technology and regulatory frameworks continue to evolve, asset tokenization is poised to become a mainstream approach to asset administration, potentially revolutionizing how we invest in and trade real-world assets.</p>
     `,
     author: 'Prashant Chaulagain',
     authorRole: 'Chief Technology Officer',
@@ -491,17 +491,17 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '11',
-    title: 'Fund Management vs Fund Administration: What’s the Difference and Why It Matters',
-    slug: 'fund-management-vs-fund-administration',
-    excerpt: 'Understand the key differences between fund management and fund administration — two pillars of any investment vehicle — and how modern softwares like aama.io are streamlining both.',
+    title: 'Fund Administration vs Fund Administration: What’s the Difference and Why It Matters',
+    slug: 'fund-administration-vs-fund-administration',
+    excerpt: 'Understand the key differences between fund administration and fund administration — two pillars of any investment vehicle — and how modern softwares like aama.io are streamlining both.',
     content: `
-      <p>In the world of investment funds, the terms <strong>fund management</strong> and <strong>fund administration</strong> are often used interchangeably. But these two functions serve very different — yet equally critical — roles in the lifecycle of a fund.</p>
+      <p>In the world of investment funds, the terms <strong>fund administration</strong> and <strong>fund administration</strong> are often used interchangeably. But these two functions serve very different — yet equally critical — roles in the lifecycle of a fund.</p>
       
       <p>As modern funds become more global, digital, and complex, it’s essential for fund managers, GPs, LPs, and even investors to understand the distinction. At <strong>aama.io</strong>, we’ve built infrastructure that empowers both sides of the fund equation.</p>
   
-      <h3>What is Fund Management?</h3>
+      <h3>What is Fund Administration?</h3>
       
-      <p><strong>Fund management</strong> refers to the strategic oversight of an investment fund. Fund managers are responsible for:</p>
+      <p><strong>Fund administration</strong> refers to the strategic oversight of an investment fund. Fund managers are responsible for:</p>
       
       <ul>
         <li>Defining the fund’s investment thesis and asset allocation strategy</li>
@@ -510,7 +510,7 @@ export const blogPosts: BlogPost[] = [
         <li>Engaging with investors and raising capital</li>
       </ul>
       
-      <p>In short, fund management is about <strong>growing investor capital</strong> through smart, risk-adjusted decisions.</p>
+      <p>In short, fund administration is about <strong>growing investor capital</strong> through smart, risk-adjusted decisions.</p>
   
       <h3>What is Fund Administration?</h3>
       
@@ -538,7 +538,7 @@ export const blogPosts: BlogPost[] = [
         <thead>
           <tr>
             <th>Aspect</th>
-            <th>Fund Management</th>
+            <th>Fund Administration</th>
             <th>Fund Administration</th>
           </tr>
         </thead>
@@ -560,7 +560,7 @@ export const blogPosts: BlogPost[] = [
           </tr>
           <tr>
             <td>Tools</td>
-            <td>Portfolio management systems (PMS)</td>
+            <td>Portfolio administration systems (PMS)</td>
             <td>Fund admin software, compliance engines</td>
           </tr>
         </tbody>
@@ -568,7 +568,7 @@ export const blogPosts: BlogPost[] = [
   
       <h3>Bringing It All Together with aama.io</h3>
       
-      <p>Whether you're launching a venture fund, managing a mutual fund, or tokenizing a family office vehicle — both fund management and fund administration must work in harmony.</p>
+      <p>Whether you're launching a venture fund, managing a mutual fund, or tokenizing a family office vehicle — both fund administration and fund administration must work in harmony.</p>
   
       <p><strong>aama.io</strong> offers a comprehensive infrastructure where:</p>
   
@@ -581,7 +581,7 @@ export const blogPosts: BlogPost[] = [
   
       <p>Understanding the difference between these functions is the first step. Adopting a unified digital software like aama.io is the next.</p>
   
-      <p><strong>Explore how aama.io powers the future of fund lifecycle management.</strong></p>
+      <p><strong>Explore how aama.io powers the future of fund lifecycle administration.</strong></p>
     `,
     author: 'Prashant Chaulagain',
     authorRole: 'Chief Technology Officer',
@@ -589,7 +589,7 @@ export const blogPosts: BlogPost[] = [
     publishedDate: '2025-04-06',
     readTime: '6 min',
     coverImage: '/fund-types/mutual-fund.jpg',
-    categories: ['Fund Management', 'Fund Administration', 'Investment Infrastructure']
+    categories: ['Fund Administration', 'Fund Administration', 'Investment Infrastructure']
   },
   {
     id: '12',
@@ -597,7 +597,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'simplify-operation-for-family-offices-in-singapore',
     excerpt: 'Discover how aama.io simplify reduce operational overhead and focus on investment decisions in family offices in Singapore.',
     content: `
-      <p>Singapore-based family offices are evolving rapidly as the wealth management landscape in Asia-Pacific matures. Ultra-high-net-worth individuals (UHNWIs) and high-net-worth individuals (HNWIs) are increasingly seeking more agile, transparent, and tech-driven softwares to manage their multi-asset portfolios. Enter AAMA.io — a comprehensive solution designed to simplify fund operations for family offices in Singapore.
+      <p>Singapore-based family offices are evolving rapidly as the wealth administration landscape in Asia-Pacific matures. Ultra-high-net-worth individuals (UHNWIs) and high-net-worth individuals (HNWIs) are increasingly seeking more agile, transparent, and tech-driven softwares to manage their multi-asset portfolios. Enter AAMA.io — a comprehensive solution designed to simplify fund operations for family offices in Singapore.
 In this blog, we’ll explore how AAMA.io addresses the unique challenges faced by single and multi-family offices, and how it streamlines compliance, reporting, co-investment tracking, and fund structuring, all while aligning with Singapore's regulatory framework and tax incentives like Section 13O and 13U.
 </p>
       
@@ -640,7 +640,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
         <li>Drill down by fund, asset class, or beneficiary family member.</li>
       </ul>
 
-      <p>Learn more about our digital fund management software: https://aama.io/solutions </p>
+      <p>Learn more about our digital fund administration software: https://aama.io/solutions </p>
       
       <h4>2. Streamlined Fund Accounting & VCC Support.</h4>
      
@@ -720,7 +720,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
     coverImage: '/images/family-office-blog.png',
     publishedDate: '2025-07-22',
     readTime: '5 min',
-    categories: ['Fund Management', 'Operations', 'Family Offices']
+    categories: ['Fund Administration', 'Operations', 'Family Offices']
   },
   {
     id: '13',
@@ -740,7 +740,7 @@ In this blog, we’ll explore how AAMA.io addresses the unique challenges faced 
 
 The average private equity firm manages between 3-8 active funds simultaneously, each with unique structures, reporting requirements, and investor bases. This complexity has made manual processes not just inefficient, but practically impossible to manage effectively.
 
-Modern private equity softwares address these challenges by providing integrated solutions that handle multiple aspects of fund management from a single dashboard. These systems eliminate the need for multiple software solutions and reduce the risk of errors that come with manual data entry and reconciliation.</p>
+Modern private equity softwares address these challenges by providing integrated solutions that handle multiple aspects of fund administration from a single dashboard. These systems eliminate the need for multiple software solutions and reduce the risk of errors that come with manual data entry and reconciliation.</p>
 
       <h3>Legacy Systems vs Modern Fund Platforms.</h3>
       
@@ -771,7 +771,7 @@ Modern private equity softwares address these challenges by providing integrated
   
       <h4>3. Improved Accuracy.</h4>
      
-      <p> Manual processes are prone to human error, which can have significant consequences in fund management. Automated systems eliminate most data entry errors and provide built-in validation rules that catch inconsistencies before they become problems.</p>
+      <p> Manual processes are prone to human error, which can have significant consequences in fund administration. Automated systems eliminate most data entry errors and provide built-in validation rules that catch inconsistencies before they become problems.</p>
       
       <h4>4. Enhanced Compliance.</h4>
       <p>Fund compliance software ensures that all regulatory requirements are met consistently. These systems automatically track compliance deadlines, generate required reports, and maintain audit trails that satisfy regulatory requirements.</p>
@@ -783,7 +783,7 @@ Modern private equity softwares address these challenges by providing integrated
      
       <h3> Key Features of Modern Private Equity Platforms.</h3>
       
-      <p>Contemporary private equity fund management software includes several essential features that distinguish it from older systems.</p>
+      <p>Contemporary private equity fund administration software includes several essential features that distinguish it from older systems.</p>
       <h4>Fund Performance Dashboards.</h4>
       <p>Fund performance dashboards provide real-time visibility into key metrics across all funds. These dashboards typically include.</p>
       <ul>
@@ -796,10 +796,10 @@ Modern private equity softwares address these challenges by providing integrated
       <h4>Integrated Accounting.</h4>
       <p>Modern softwares include comprehensive fund accounting automation that handles complex partnership accounting requirements. These systems manage capital calls, distributions, carry calculations, and fee computations automatically.</p>
 
-      <h4>Document Management.</h4>
-      <p>Digital document management systems organize and secure all fund-related documents, making them easily accessible to authorized users while maintaining proper security controls.</p>
+      <h4>Document Administration.</h4>
+      <p>Digital document administration systems organize and secure all fund-related documents, making them easily accessible to authorized users while maintaining proper security controls.</p>
       
-      <h4>Workflow Management.</h4>
+      <h4>Workflow Administration.</h4>
       <p>Automated fund workflows guide users through complex processes, ensuring that all required steps are completed and approved by appropriate personnel.</p>
       
       <h3>How to Digitize Private Equity Workflows.</h3>
@@ -814,8 +814,8 @@ Modern private equity softwares address these challenges by providing integrated
       <h4>Data Migration.</h4>
       <p>Plan carefully for data migration from legacy systems. This process often reveals data quality issues that need to be addressed before moving to the new software.</p>
       
-      <h4>Training and Change Management.</h4>
-      <p>Successful digitization requires comprehensive training and change management. Users need to understand not just how to use the new system, but why the changes benefit them and the organization.</p>
+      <h4>Training and Change Administration.</h4>
+      <p>Successful digitization requires comprehensive training and change administration. Users need to understand not just how to use the new system, but why the changes benefit them and the organization.</p>
       
       <h4>Continuous Improvement.</h4>
       <p>Digital transformation is an ongoing process. Regular reviews and updates ensure that the system continues to meet evolving needs and takes advantage of new capabilities.</p>
@@ -839,11 +839,11 @@ Modern private equity softwares address these challenges by providing integrated
       <h4>Implementation Considerations.</h4>
       <p>Consider the implementation timeline and resource requirements. Some systems can be deployed quickly, while others require extensive customization and integration work.</p>
       
-      <h3>Regional Spotlight: VC Fund Management Singapore.</h3>
-      <p>Singapore has emerged as a major hub for venture capital and private equity activity in Asia. VC fund management Singapore presents unique opportunities and challenges that influence technology adoption.</p>
+      <h3>Regional Spotlight: VC Fund Administration Singapore.</h3>
+      <p>Singapore has emerged as a major hub for venture capital and private equity activity in Asia. VC fund administration Singapore presents unique opportunities and challenges that influence technology adoption.</p>
       
       <h4>Regulatory Environment.</h4>
-      <p>Singapore's regulatory framework supports innovation while maintaining investor protection. The Monetary Authority of Singapore has created clear guidelines for fund management that modern softwares help firms comply with automatically.</p>
+      <p>Singapore's regulatory framework supports innovation while maintaining investor protection. The Monetary Authority of Singapore has created clear guidelines for fund administration that modern softwares help firms comply with automatically.</p>
       
       <h4>Market Characteristics.</h4>
       <p>The Singapore market includes both domestic and international investors, requiring systems that can handle multiple currencies, languages, and reporting requirements. Digital fund administration tools provide the flexibility needed to serve this diverse investor base.</p>
@@ -861,7 +861,7 @@ Modern private equity softwares address these challenges by providing integrated
         <li> Tax-efficient structuring support</li>
         <li> Estate planning integration</li>
         <li>Personalized investment reporting</li>
-        <li> Multi-generational account management</li>
+        <li> Multi-generational account administration</li>
       </ul>
       
       <h3>Security in Digital Fund Administration .</h3>
@@ -885,7 +885,7 @@ Modern private equity softwares address these challenges by providing integrated
       <p>The future of private equity software 2025 includes several emerging trends:</p>
       
       <h4>Artificial Intelligence.</h4>
-      <p>AI capabilities are being integrated into fund management softwares to provide predictive analytics, automated data validation, and intelligent reporting.</p>
+      <p>AI capabilities are being integrated into fund administration softwares to provide predictive analytics, automated data validation, and intelligent reporting.</p>
       
       <h4>Blockchain Technology.</h4>
       <p>Blockchain offers potential improvements in transparency, security, and efficiency for fund administration processes.</p>
@@ -915,7 +915,7 @@ As we continue through 2025, the gap between firms using modern technology and t
     coverImage: '/fund-types/reit.jpg',
     publishedDate: '2025-07-30',
     readTime: '5 min',
-    categories: ['Fund Management', 'Private Equity', 'Family Offices']
+    categories: ['Fund Administration', 'Private Equity', 'Family Offices']
   },
   {
     id: '14',
@@ -954,7 +954,7 @@ As we continue through 2025, the gap between firms using modern technology and t
 
       <p>Take a fund with four equal $25M deals exiting at 3.0x, 1.8x, 0.6x and 2.2x, an 8% preferred return over a 5-year hold and 20% carry. Run those same deals through both structures and the GP earns roughly <strong>$20M of carry under the American waterfall but only $18M under the European</strong> — a ~$2M gap that comes straight out of LP pockets, created entirely by the loss-making deal not being netted against the winners before carry was paid.</p>
 
-      <p>You can reproduce this exact comparison — and test your own deals, hurdle and carry — with our free <a href="/tools/waterfall-comparator">American vs European Waterfall Comparator</a>. To model a single fund's full four-tier waterfall with catch-up and clawback, use the <a href="/tools/waterfall">Distribution Waterfall Calculator</a>, and to see how fees and carry combine over a fund's life, the <a href="/tools/fee-carry-modeler">Management Fee &amp; Carry Modeler</a>.</p>
+      <p>You can reproduce this exact comparison — and test your own deals, hurdle and carry — with our free <a href="/tools/waterfall-comparator">American vs European Waterfall Comparator</a>. To model a single fund's full four-tier waterfall with catch-up and clawback, use the <a href="/tools/waterfall">Distribution Waterfall Calculator</a>, and to see how fees and carry combine over a fund's life, the <a href="/tools/fee-carry-modeler">Administration Fee &amp; Carry Modeler</a>.</p>
 
       <h3>Which should you negotiate for?</h3>
 
@@ -1006,7 +1006,7 @@ As we continue through 2025, the gap between firms using modern technology and t
 
       <h3>Calculate and benchmark your own</h3>
 
-      <p>You can compute all four metrics from your fund's cash flows — with a full XIRR and a J-curve — using our free <a href="/tools/irr-tvpi-dpi-calculator">IRR, TVPI, DPI &amp; RVPI Calculator</a>. To see which quartile your net IRR lands in versus vintage peers, use the <a href="/tools/vintage-benchmarker">Fund Vintage Benchmarker</a>, and to understand how fees and carry erode the gross-to-net gap, the <a href="/tools/fee-carry-modeler">Management Fee &amp; Carry Modeler</a>.</p>
+      <p>You can compute all four metrics from your fund's cash flows — with a full XIRR and a J-curve — using our free <a href="/tools/irr-tvpi-dpi-calculator">IRR, TVPI, DPI &amp; RVPI Calculator</a>. To see which quartile your net IRR lands in versus vintage peers, use the <a href="/tools/vintage-benchmarker">Fund Vintage Benchmarker</a>, and to understand how fees and carry erode the gross-to-net gap, the <a href="/tools/fee-carry-modeler">Administration Fee &amp; Carry Modeler</a>.</p>
 
       <p>Get comfortable with these four numbers and you can read any fund's performance in seconds — and spot the difference between a fund that has truly delivered and one that is still hoping its NAV holds up.</p>
 
@@ -1019,6 +1019,343 @@ As we continue through 2025, the gap between firms using modern technology and t
     publishedDate: '2026-06-04',
     readTime: '7 min',
     categories: ['Fund Performance', 'LP Reporting', 'Private Equity']
+  },
+  {
+    id: '16',
+    title: 'How to Set Up a VCC in Singapore (2026): Structure, Cost and Timeline',
+    slug: 'how-to-set-up-a-vcc-singapore',
+    excerpt: 'A practical 2026 guide to the Singapore Variable Capital Company (VCC) — umbrella vs standalone structure, the service providers you must appoint, realistic set-up and annual costs, and how long incorporation actually takes.',
+    content: `
+      <p>The <strong>Variable Capital Company (VCC)</strong> is now the default fund structure in Singapore. It is a corporate vehicle built specifically for investment funds: it can hold one or many sub-funds under a single legal entity, vary its capital without shareholder approval, and segregate the assets and liabilities of each sub-fund. For mid-market PE and VC managers, family offices and SPV deals, it has become the structure to understand before anything else.</p>
+
+      <p>This guide walks through what a VCC is, the choice between an umbrella and a standalone, who you have to appoint, what it realistically costs in 2026, and how long it takes.</p>
+
+      <h3>What a VCC actually is</h3>
+
+      <p>A VCC is incorporated under the Variable Capital Companies Act and regulated by ACRA, with its fund manager regulated by the Monetary Authority of Singapore (MAS). Three features make it fit for funds:</p>
+
+      <ul>
+        <li><strong>Umbrella with sub-funds:</strong> one VCC can house multiple sub-funds, each with its own strategy, investors and assets, while sharing a single board and service-provider stack.</li>
+        <li><strong>Ring-fencing:</strong> the assets and liabilities of each sub-fund are legally segregated, so one sub-fund's creditors cannot reach another's assets.</li>
+        <li><strong>Variable capital:</strong> shares can be issued and redeemed at net asset value without the capital-reduction process an ordinary company requires — which is how open-ended funds handle subscriptions and redemptions.</li>
+      </ul>
+
+      <h3>Umbrella or standalone?</h3>
+
+      <p>A <strong>standalone VCC</strong> holds a single fund. An <strong>umbrella VCC</strong> holds several sub-funds and lets you launch each new strategy as a sub-fund rather than a new entity — cheaper and faster per fund once the umbrella exists, because sub-funds share the board, secretary, administrator and auditor.</p>
+
+      <p>If you expect to run more than one strategy or vintage, the umbrella usually wins on cost and speed over time. If you are launching one fund and have no near-term plans for a second, a standalone is simpler. You can model the two side by side — cost, ring-fencing and set-up time — with our free <a href="/tools/vcc-comparator">Umbrella vs Standalone VCC Comparator</a>.</p>
+
+      <h3>Who you must appoint</h3>
+
+      <p>A VCC cannot operate alone. Before and after incorporation you will need:</p>
+
+      <ol>
+        <li><strong>A permissible fund manager</strong> — an MAS-regulated manager (a CMS licence holder, a registered fund administration company, or a family-office arrangement). Use our <a href="/tools/mas-licensing-estimator">MAS Fund Administration Licence Estimator</a> to see which regime fits your AUM and investor base.</li>
+        <li><strong>At least one Singapore-resident director</strong> — who must also be a director or qualified representative of the fund manager.</li>
+        <li><strong>A company secretary</strong> based in Singapore.</li>
+        <li><strong>A fund administrator</strong> for NAV, capital accounts, investor servicing and books and records.</li>
+        <li><strong>An auditor</strong> — a Singapore-based auditor; VCC financial statements must be prepared under IFRS, SFRS(I) or US GAAP and audited.</li>
+      </ol>
+
+      <h3>What it costs in 2026</h3>
+
+      <p>The government fees are modest and fixed. ACRA charges a flat <strong>S$8,000</strong> to incorporate an umbrella VCC and <strong>S$400</strong> to register each sub-fund. The real cost is the professional and service-provider stack around it.</p>
+
+      <ul>
+        <li><strong>One-time set-up:</strong> a lean VCC with one sub-fund typically lands around <strong>S$50,000–125,000</strong> all-in, covering legal, structuring, incorporation and onboarding.</li>
+        <li><strong>Annual running cost:</strong> commonly <strong>S$40,000–100,000+</strong> for administration, director and secretarial fees, accounting, audit and filings — rising with the number of sub-funds and strategy complexity.</li>
+      </ul>
+
+      <p>Singapore has at times offered a <strong>VCC Grant Scheme</strong> co-funding up to 30% of qualifying set-up expenses (historically capped at S$30,000 per VCC, up to three VCCs per manager). Grant windows open and close, so confirm current availability with MAS before relying on it. To build your own line-item estimate by structure and manager route, use the <a href="/tools/vcc-cost-estimator">Singapore VCC Setup Cost Estimator</a>.</p>
+
+      <h3>How long it takes</h3>
+
+      <p>Incorporation with ACRA is fast once papers are in order — often a couple of weeks. The schedule is usually set by the slower items around it: appointing and onboarding the fund manager (or securing a licensing arrangement), opening bank and custody accounts, and investor KYC/AML. A realistic end-to-end timeline for a first-time manager is measured in <strong>weeks to a few months</strong>, with bank account opening frequently the critical path.</p>
+
+      <h3>Tax incentives sit on top</h3>
+
+      <p>A VCC is a structure, not a tax exemption. To exempt qualifying fund income from Singapore tax, the fund applies for an incentive — typically <strong>Section 13O or 13U</strong> — each with its own AUM, headcount and local-spend conditions. We cover the differences in <a href="/blog/section-13o-vs-13u-singapore">Section 13O vs 13U (2026)</a>.</p>
+
+      <h3>Common mistakes</h3>
+
+      <ul>
+        <li>Treating the VCC as a tax scheme in itself — it is not; you still apply for 13O/13U separately.</li>
+        <li>Underestimating bank-account timelines — start this early.</li>
+        <li>Choosing standalone when an umbrella would have been cheaper across the strategies you actually intend to launch.</li>
+        <li>Forgetting that the fund manager must be MAS-regulated before the VCC can operate.</li>
+      </ul>
+
+      <p><em>This guide is general information, not tax or legal advice. Fees and requirements reflect ACRA and MAS rules as understood in 2026 and change over time — confirm the current position with MAS, ACRA and a licensed adviser before acting.</em></p>
+
+      <p><strong>Modelling a VCC launch? Start with the <a href="/tools/vcc-cost-estimator">VCC Setup Cost Estimator</a> and the <a href="/tools/vcc-comparator">structure comparator</a>, or <a href="/contact">talk to our team</a> about running the fund on aama.io once it is live.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/fund-types/vc.jpg',
+    publishedDate: '2026-06-09',
+    readTime: '8 min',
+    categories: ['VCC', 'Singapore', 'Fund Setup']
+  },
+  {
+    id: '17',
+    title: 'Section 13O vs 13U (2026): Singapore Fund & Family Office Tax Incentives Explained',
+    slug: 'section-13o-vs-13u-singapore',
+    excerpt: 'The 13O and 13U schemes exempt qualifying Singapore fund income from tax — but the AUM thresholds, headcount, local-spend and Singapore-investment conditions differ. Here is how the two compare in 2026, and which fits.',
+    content: `
+      <p>Two tax-incentive schemes sit at the centre of almost every Singapore fund and family-office structure: <strong>Section 13O</strong> and <strong>Section 13U</strong> of the Income Tax Act 1947. Both exempt qualifying income of a fund vehicle managed by a Singapore-based fund manager from Singapore tax. The difference is in the conditions — and getting the choice wrong is expensive.</p>
+
+      <h3>What the two schemes do</h3>
+
+      <p>Both schemes grant a tax exemption on "specified income" from "designated investments" for a fund managed out of Singapore. 13O (the Onshore Fund scheme) is the more common entry point for single family offices and smaller funds; 13U (the Enhanced Tier scheme) is built for larger and more complex structures, including those with offshore or multiple fund vehicles.</p>
+
+      <h3>The conditions that differ</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Section 13O</th>
+            <th>Section 13U</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Minimum AUM</td>
+            <td>S$20M at application, maintained through the incentive period</td>
+            <td>S$50M at application</td>
+          </tr>
+          <tr>
+            <td>Fund vehicle</td>
+            <td>Singapore-incorporated company or VCC</td>
+            <td>Flexible — onshore or offshore; supports umbrella VCCs and multiple funds</td>
+          </tr>
+          <tr>
+            <td>Investment professionals</td>
+            <td>At least 2 (for a single family office, at least one must be a non-family member)</td>
+            <td>At least 3</td>
+          </tr>
+          <tr>
+            <td>Fund administration</td>
+            <td>Singapore-based administrator required</td>
+            <td>No mandatory local administrator, but substance still required</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>An investment professional means a portfolio manager, research analyst or trader earning more than S$3,500 a month and spending more than 50% of their time on the qualifying activity.</p>
+
+      <h3>Local business spending — tiered by fund size</h3>
+
+      <p>Both schemes require a minimum amount of annual local business spending, tiered by AUM under the updated family-office framework:</p>
+
+      <ul>
+        <li><strong>Under S$50M:</strong> at least S$200,000 per year.</li>
+        <li><strong>S$50M to S$100M:</strong> at least S$500,000 per year.</li>
+        <li><strong>Above S$100M:</strong> at least S$1,000,000 per year.</li>
+      </ul>
+
+      <h3>The Singapore investment requirement</h3>
+
+      <p>Family-office funds under these schemes must also keep capital working locally: at least <strong>10% of AUM or S$10 million, whichever is lower</strong>, invested in Singapore-based investments at any one time — including during the application. Eligible investments include Singapore equities, qualifying debt, funds distributed in Singapore and private-market investments into Singapore-incorporated companies.</p>
+
+      <h3>Substance: the physical office rule</h3>
+
+      <p>MAS requires the fund administration company to operate from <strong>physical commercial premises in Singapore</strong>. Virtual offices are not accepted and will result in rejection. This is part of a wider substance expectation — real people, real office, real local spend.</p>
+
+      <h3>Which one fits?</h3>
+
+      <ul>
+        <li><strong>13O</strong> suits a single family office or smaller fund: a Singapore company or VCC, S$20M+, two investment professionals, a local administrator.</li>
+        <li><strong>13U</strong> suits larger or multi-fund structures: S$50M+, three professionals, and the flexibility to use offshore vehicles or an umbrella VCC with several sub-funds.</li>
+      </ul>
+
+      <p>The scheme choice interacts with your structure decision. If you are still choosing a vehicle, read <a href="/blog/how-to-set-up-a-vcc-singapore">How to Set Up a VCC in Singapore (2026)</a>, and use the <a href="/tools/mas-licensing-estimator">MAS Fund Administration Licence Estimator</a> to confirm which licensing regime your manager needs and the <a href="/tools/vcc-cost-estimator">VCC Setup Cost Estimator</a> to budget the structure.</p>
+
+      <p><em>This guide is general information, not tax or legal advice. Thresholds reflect MAS and IRAS requirements as understood in 2026 and are revised periodically — confirm the current conditions with MAS/IRAS and a licensed tax adviser before applying.</em></p>
+
+      <p><strong>Building a 13O or 13U structure? <a href="/contact">Talk to our team</a> about running the fund — accounting, capital accounts and investor reporting — on aama.io once the incentive is in place.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/family-office-blog.png',
+    publishedDate: '2026-06-08',
+    readTime: '7 min',
+    categories: ['Tax Incentives', 'Family Offices', 'Singapore']
+  },
+  {
+    id: '18',
+    title: 'Fund Administration Licensing in Singapore (2026): VCFM, A/I LFMC and Retail LFMC',
+    slug: 'singapore-fund-administration-licence',
+    excerpt: 'The RFMC regime closed to new applicants in 2024. Here is the 2026 map of Singapore fund administration licences — the VCFM route, the Accredited/Institutional LFMC and the Retail LFMC — with the capital, headcount and substance each requires.',
+    content: `
+      <p>Anyone managing a fund out of Singapore must be licensed or registered by the Monetary Authority of Singapore (MAS). The regime changed in 2024, so a lot of older guidance is now wrong. This is the current 2026 picture for a boutique or mid-market manager.</p>
+
+      <h3>The 2024 change: RFMC is gone</h3>
+
+      <p>The lighter-touch <strong>Registered Fund Administration Company (RFMC)</strong> regime <strong>closed to new applicants on 1 August 2024</strong>, and existing RFMCs transitioned to licensed status during the 2024 window. As of 2026, a new manager applies under the <strong>Licensed Fund Administration Company (LFMC)</strong> framework — or, if it only manages venture capital, under the simplified <strong>VCFM</strong> route. If a guide still tells you to "register as an RFMC", it is out of date.</p>
+
+      <h3>VCFM — the venture capital route</h3>
+
+      <p>A manager that <em>solely</em> manages venture capital funds can apply as a <strong>Venture Capital Fund Manager (VCFM)</strong>, a simplified LFMC sub-regime with the lightest requirements:</p>
+
+      <ul>
+        <li><strong>Qualifying investments:</strong> the fund must invest at least 80% of committed capital in securities directly issued by unlisted business ventures incorporated no more than ten years at the time of first investment.</li>
+        <li><strong>No base capital and no risk-based capital requirement</strong> — the key advantage over an LFMC.</li>
+        <li><strong>People:</strong> at least two directors (one full-time and Singapore-resident) and at least two full-time professionals resident in Singapore (who may include the directors).</li>
+        <li><strong>Substance:</strong> a Singapore-incorporated company with a permanent, dedicated physical office.</li>
+        <li><strong>Timeline:</strong> roughly four months; full AML/CFT obligations apply.</li>
+      </ul>
+
+      <h3>Accredited/Institutional LFMC — the boutique default</h3>
+
+      <p>The <strong>A/I LFMC</strong> is the licence most boutique and mid-market PE/VC managers hold. It permits fund administration for <strong>accredited and institutional investors only</strong> and carries a <strong>S$250,000 base capital</strong> requirement with risk-based capital of at least 120%. Outsourcing of functions is permitted, subject to the MAS outsourcing notice (SFA 04-N09).</p>
+
+      <h3>Retail LFMC — if you serve retail money</h3>
+
+      <p>A <strong>Retail LFMC</strong> may additionally serve retail investors. It requires <strong>S$500,000 base capital</strong> — rising to <strong>S$1 million</strong> where the manager runs a retail collective investment scheme — and carries heavier compliance, audit and disclosure expectations, with in-house compliance generally expected rather than outsourced.</p>
+
+      <h3>At a glance</h3>
+
+      <table>
+        <thead>
+          <tr><th>Licence</th><th>Investors</th><th>Base capital</th><th>Best for</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>VCFM</td><td>Accredited / institutional (VC funds only)</td><td>None</td><td>Pure-play VC managers</td></tr>
+          <tr><td>A/I LFMC</td><td>Accredited / institutional</td><td>S$250,000 (RBC ≥120%)</td><td>Most boutique PE/VC and family-office managers</td></tr>
+          <tr><td>Retail LFMC</td><td>Retail + accredited / institutional</td><td>S$500,000 (S$1M with a retail CIS)</td><td>Managers raising from retail investors</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Which one fits?</h3>
+
+      <p>If you only run VC, the VCFM route is the lightest path. If you run PE, multi-strategy or want broader flexibility for accredited and institutional capital, the A/I LFMC is the standard choice. Only take on a Retail LFMC if your distribution genuinely includes retail investors — the capital and compliance step-up is significant. Our <a href="/tools/mas-licensing-estimator">MAS Fund Administration Licence Estimator</a> maps your AUM and investor base to the likely regime.</p>
+
+      <p>Licensing is one of three decisions that move together — structure, licence and tax incentive. See <a href="/blog/how-to-set-up-a-vcc-singapore">How to Set Up a VCC in Singapore (2026)</a> and <a href="/blog/section-13o-vs-13u-singapore">Section 13O vs 13U (2026)</a>, or the full <a href="/blog/how-to-start-a-fund-singapore">roadmap to starting a fund in Singapore</a>.</p>
+
+      <p><em>This guide is general information, not legal or regulatory advice. Requirements reflect MAS rules as understood in 2026 and change over time — confirm the current position with MAS and a licensed compliance adviser before applying.</em></p>
+
+      <p><strong>Planning your licence application? <a href="/tools/mas-licensing-estimator">Estimate your regime</a>, or <a href="/contact">talk to our team</a> about running the fund on aama.io once you are authorised.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/fund-types/reit.jpg',
+    publishedDate: '2026-06-07',
+    readTime: '7 min',
+    categories: ['Licensing', 'Singapore', 'Compliance']
+  },
+  {
+    id: '19',
+    title: 'IFRS 9 / SFRS(I) 9 for Funds: How Investment Funds Classify and Measure Financial Instruments',
+    slug: 'ifrs-9-sfrs-i-9-fund-accounting',
+    excerpt: 'Most fund assets end up at fair value through profit or loss under IFRS 9 / SFRS(I) 9 — but the classification test, the fair-value hierarchy and the expected-credit-loss rules still decide how your NAV is struck. A practical primer for fund accountants and CFOs.',
+    content: `
+      <p>Singapore-domiciled funds report under <strong>SFRS(I) 9</strong>, the Singapore-equivalent of <strong>IFRS 9</strong>. The two are aligned, and together they govern how a fund classifies, measures and impairs its financial instruments — which is to say, how your net asset value is actually struck. Here is what fund accountants and CFOs need to hold in their heads.</p>
+
+      <h3>Classification: the two-part test</h3>
+
+      <p>IFRS 9 classifies financial assets using two tests:</p>
+
+      <ol>
+        <li><strong>Business model</strong> — are the assets held to collect contractual cash flows, held to collect and sell, or held for trading / managed on a fair-value basis?</li>
+        <li><strong>SPPI</strong> — are the contractual cash flows solely payments of principal and interest?</li>
+      </ol>
+
+      <p>The two combine into three measurement categories: <strong>amortised cost</strong>, <strong>fair value through other comprehensive income (FVOCI)</strong>, and <strong>fair value through profit or loss (FVTPL)</strong>.</p>
+
+      <h3>For most funds, the answer is FVTPL</h3>
+
+      <p>Because a typical PE, VC or hedge fund manages its portfolio on a fair-value basis and reports performance to LPs on that basis, the great majority of its instruments fall into <strong>FVTPL</strong>. Equity investments are measured at fair value by default (the FVOCI election exists but is rarely used by funds, since it bars recycling gains to profit or loss). Where a fund holds debt instruments to collect contractual cash flows — certain private credit or bond positions — <strong>amortised cost</strong> can apply, and that is where the expected-credit-loss rules bite.</p>
+
+      <h3>The fair-value hierarchy</h3>
+
+      <p>Fair value itself follows IFRS 13's three levels, which drive your disclosures:</p>
+
+      <ul>
+        <li><strong>Level 1</strong> — quoted prices in active markets (listed equities, liquid bonds).</li>
+        <li><strong>Level 2</strong> — observable inputs other than quoted prices (many OTC instruments).</li>
+        <li><strong>Level 3</strong> — unobservable inputs (most private-company holdings) — the level that demands a defensible valuation policy and the most scrutiny at audit.</li>
+      </ul>
+
+      <h3>Expected credit losses</h3>
+
+      <p>For assets at amortised cost or debt at FVOCI, IFRS 9 replaced the old "incurred loss" model with a forward-looking <strong>expected credit loss (ECL)</strong> model — you recognise expected losses before a default occurs, staged by changes in credit risk. For an equity-heavy fund this is often immaterial; for a credit fund it is central.</p>
+
+      <h3>Where this becomes journal entries</h3>
+
+      <p>The accounting policy is only useful once it produces clean entries every period. Three of the most error-prone are worth automating:</p>
+
+      <ul>
+        <li><strong>Amortised-cost debt</strong> — effective-interest amortisation of premium or discount. Generate the entries with our <a href="/tools/bond-je-generator">Bond Accounting JE Generator (IFRS 9)</a>.</li>
+        <li><strong>FX revaluation</strong> — closing-rate restatement of monetary items under IAS 21, via the <a href="/tools/fx-revaluation-je">FX Revaluation JE Generator</a>.</li>
+        <li><strong>Subscriptions and redemptions</strong> — unit pricing and the NAV impact of investor flows, via the <a href="/tools/subscription-redemption-je">Subscription / Redemption JE Generator</a>.</li>
+      </ul>
+
+      <p>Getting classification right at the start — and keeping the entries consistent every close — is what makes a fund audit-ready rather than audit-anxious.</p>
+
+      <p><em>This guide is general information, not accounting or audit advice. Apply IFRS 9 / SFRS(I) 9 to your specific facts with your auditor.</em></p>
+
+      <p><strong>aama.io runs IFRS 9 / SFRS(I) 9 fund accounting — classification, fair-value reporting and NAV — on one platform. <a href="/contact">Book a demo</a> to see it on your structure.</strong></p>
+    `,
+    author: 'Prashant Chaulagain',
+    authorRole: 'Chief Technology Officer',
+    authorImage: '/team/prashant-chaulagain.jpg',
+    coverImage: '/fund-types/mutual-fund.jpg',
+    publishedDate: '2026-06-06',
+    readTime: '8 min',
+    categories: ['Fund Accounting', 'IFRS 9', 'Compliance']
+  },
+  {
+    id: '20',
+    title: 'How to Start a Fund in Singapore (2026): A Roadmap for Emerging Managers',
+    slug: 'how-to-start-a-fund-singapore',
+    excerpt: 'From investment thesis to first close — the end-to-end path to launching a PE or VC fund in Singapore in 2026: structure, licence, tax incentive, service providers and the realistic timeline, with the detail behind each step.',
+    content: `
+      <p>Singapore has become the default base for emerging PE and VC managers in Asia — regulatory clarity, a purpose-built fund structure and credible tax incentives. But "launch a fund" is really five decisions that move together. Here is the roadmap, with links to the detail behind each step.</p>
+
+      <h3>1. Define the thesis and economics</h3>
+
+      <p>Before any structure, fix the strategy: sector, stage, cheque size, target fund size and the team's edge. Then model the economics LPs will ask about — administration fee, carry, hurdle and the gross-to-net gap. Our <a href="/tools/fee-carry-modeler">Administration Fee &amp; Carry Modeler</a> and <a href="/tools/waterfall">Distribution Waterfall Calculator</a> let you pressure-test the terms before they go in a deck.</p>
+
+      <h3>2. Choose the structure: usually a VCC</h3>
+
+      <p>The <strong>Variable Capital Company (VCC)</strong> is the standard vehicle — umbrella or standalone, with ring-fenced sub-funds and variable capital. The structure decision drives cost and speed for every future fund. See <a href="/blog/how-to-set-up-a-vcc-singapore">How to Set Up a VCC in Singapore (2026)</a> for the detail, and compare options with the <a href="/tools/vcc-comparator">VCC Structure Comparator</a> and <a href="/tools/vcc-cost-estimator">Cost Estimator</a>.</p>
+
+      <h3>3. Get the manager licensed</h3>
+
+      <p>The fund manager must be authorised by MAS. Pure-play VC managers can use the lighter <strong>VCFM</strong> route; most others hold an <strong>Accredited/Institutional LFMC</strong>. The RFMC regime closed to new applicants in 2024, so plan around LFMC. Full detail in <a href="/blog/singapore-fund-administration-licence">Fund Administration Licensing in Singapore (2026)</a>, and map your regime with the <a href="/tools/mas-licensing-estimator">Licence Estimator</a>.</p>
+
+      <h3>4. Apply for a tax incentive</h3>
+
+      <p>A VCC is a structure, not an exemption. To exempt qualifying fund income from Singapore tax, apply for <strong>Section 13O</strong> (from S$20M AUM) or <strong>13U</strong> (from S$50M). The conditions — headcount, local spend, Singapore investment — differ; we compare them in <a href="/blog/section-13o-vs-13u-singapore">Section 13O vs 13U (2026)</a>.</p>
+
+      <h3>5. Appoint service providers and open accounts</h3>
+
+      <p>You will need a fund administrator, a Singapore-based auditor, a company secretary, and bank and custody accounts. Bank account opening is frequently the critical path — start it early. Investor onboarding then runs KYC/AML before first close.</p>
+
+      <h3>The realistic timeline</h3>
+
+      <p>For a first-time manager, expect the licence (~4 months for a VCFM), the structure and the incentive application to overlap. End to end, a realistic plan runs several months — paced by licensing and bank onboarding rather than incorporation, which is fast.</p>
+
+      <h3>After first close, operations begin</h3>
+
+      <p>The launch is the easy part to romanticise; the recurring work is capital calls, NAV, IFRS 9 / SFRS(I) 9 accounting, LP reporting and audit. That is exactly what an operating platform is for — see how IFRS 9 measurement works in practice in <a href="/blog/ifrs-9-sfrs-i-9-fund-accounting">IFRS 9 / SFRS(I) 9 for Funds</a>.</p>
+
+      <p><em>This guide is general information, not legal, tax or regulatory advice. Requirements reflect MAS, ACRA and IRAS rules as understood in 2026 — confirm the current position with the relevant authorities and licensed advisers.</em></p>
+
+      <p><strong>Launching in Singapore? <a href="/contact">Talk to our team</a> about running the whole operation — administration, accounting and the LP portal — on aama.io from first close.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/fund-types/vc.jpg',
+    publishedDate: '2026-06-05',
+    readTime: '9 min',
+    categories: ['Fund Setup', 'Singapore', 'Emerging Managers']
   },
 ];
 

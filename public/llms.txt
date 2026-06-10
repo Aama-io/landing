@@ -1,6 +1,6 @@
 # aama.io
 
-> aama.io is fund management, administration and accounting software that runs the entire fund lifecycle — from LP onboarding and capital calls to fund accounting, NAV and investor reporting — on one platform. Built for VC/PE firms, family offices, SPV syndicates and fund administrators, with first-class support for Singapore structures (VCC, Section 13O/13U).
+> aama.io is fund administration and fund accounting software for mid-market PE/VC fund managers, boutique fund administrators, family offices and SPV deals across Singapore and APAC (positioned as an end-to-end fund operating platform, or "Fund OS"). It covers the fund lifecycle on one platform — fund administration, fund accounting (IFRS 9 / SFRS(I) 9), an LP portal for fund managers, back-office automation, deal flow CRM, data room, SPV management and fund reporting — with MAS and VCC sub-fund support, without enterprise complexity or pricing.
 
 ## Platforms (products)
 
@@ -28,6 +28,11 @@
 ## Content
 
 - [Blog](https://aama.io/blog): Guides on distribution waterfalls, fund economics, VCC structuring and Singapore fund operations.
+- [How to Set Up a VCC in Singapore (2026)](https://aama.io/blog/how-to-set-up-a-vcc-singapore): Structure (umbrella vs standalone), required service providers, set-up and annual cost, and timeline.
+- [Section 13O vs 13U (2026)](https://aama.io/blog/section-13o-vs-13u-singapore): Singapore fund & family-office tax incentives — AUM thresholds, headcount, local-spend tiers and the Singapore-investment requirement compared.
+- [Fund Management Licensing in Singapore (2026)](https://aama.io/blog/singapore-fund-management-licence): VCFM vs A/I LFMC vs Retail LFMC — capital, headcount and substance (RFMC closed to new applicants in 2024).
+- [How to Start a Fund in Singapore (2026)](https://aama.io/blog/how-to-start-a-fund-singapore): End-to-end roadmap — thesis, VCC structure, MAS licence, 13O/13U incentive, service providers and timeline.
+- [IFRS 9 / SFRS(I) 9 for Funds](https://aama.io/blog/ifrs-9-sfrs-i-9-fund-accounting): How funds classify and measure financial instruments — business model + SPPI test, fair-value hierarchy, ECL.
 - [FAQ](https://aama.io/faq): Common questions on the platform, NAV, security and compliance.
 
 ## About

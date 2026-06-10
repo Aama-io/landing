@@ -44,7 +44,7 @@ export default function PricingPage() {
     <>
       <SEO
         title="Pricing | aama.io"
-        description="Institutional-grade fund management software at startup-friendly pricing, with plans for funds of all sizes and no hidden fees."
+        description="Institutional-grade fund administration and accounting software at startup-friendly pricing, with plans for funds of all sizes and no hidden fees."
         keywords="fund management pricing, SaaS pricing, fund software costs, startup-friendly pricing, Singapore fund management, AUM-based pricing"
       />
       <Head>
