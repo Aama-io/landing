@@ -95,7 +95,7 @@ export function Features() {
       <div className={classes.wrapperPattern} />
       <div className={classes.wrapperGradient} />
       
-      <Container size="lg">
+      <Container size="xl">
         {/* Header Section */}
         <motion.div
           className={classes.header}

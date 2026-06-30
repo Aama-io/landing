@@ -60,7 +60,7 @@ const challenges = [
 export function PainPoints() {
   return (
     <section className={`${classes.wrapper} section`}>
-      <Container size="lg">
+      <Container size="xl">
         <SectionHeading
           eyebrow="Built for mid-market funds in Singapore & APAC"
           title="The operating problems mid-market funds actually face."

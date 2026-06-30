@@ -104,7 +104,7 @@ export default function CashflowMetrics() {
       </section>
 
       <section className={s.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={s.layout} data-wide>
             <aside className={s.controls}>
               <div className={s.groupTitle}>Cash flows</div>

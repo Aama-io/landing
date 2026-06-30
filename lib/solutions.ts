@@ -1,5 +1,5 @@
 import {
-  IconChartBar, IconBriefcase, IconUsersGroup,
+  IconChartBar, IconBriefcase, IconUsersGroup, IconReportMoney,
 } from '@tabler/icons-react';
 import type { RelatedLink } from '@/components/ProductDetail/ProductDetail';
 
@@ -11,6 +11,7 @@ export type SolutionNav = RelatedLink & { slug: string; bespoke?: boolean };
 
 export const SOLUTIONS: SolutionNav[] = [
   { slug: 'vc-pe-firms', href: '/solutions/vc-pe-firms', label: 'VC / PE Firms', blurb: 'Capital calls, distributions, carry and LP communications in one place.', icon: IconChartBar },
+  { slug: 'private-credit', href: '/solutions/private-credit', label: 'Private Credit', blurb: 'Direct-lending and credit funds — amortised-cost accounting, interest accruals and ECL, done right.', icon: IconReportMoney },
   { slug: 'family-offices', href: '/solutions/family-offices', label: 'Family Offices', blurb: 'Consolidated multi-entity, multi-asset administration and reporting.', icon: IconBriefcase },
   { slug: 'spv-syndicates', href: '/solutions/spv-syndicates', label: 'SPVs & Syndicates', blurb: 'Single-asset funds — onboarding, carry, distributions and accounting.', icon: IconUsersGroup, bespoke: true },
 ];

@@ -927,6 +927,154 @@ export const products: ProductData[] = [
       }
     ],
     relatedProducts: ['vc-pe-firms', 'spv-syndicates']
+  },
+  {
+    id: '7',
+    slug: 'private-credit',
+    title: 'Private Credit Fund Administration Software',
+    shortTitle: 'Private Credit',
+    description: 'Fund administration and accounting software for private credit and direct-lending funds — amortised-cost and expected-credit-loss accounting under IFRS 9 / SFRS(I) 9, interest and PIK accruals, drawdowns and LP reporting in one platform.',
+    heroDescription: 'Credit funds break tools built for equity. aama.io runs the accounting direct lending actually requires — effective-interest amortisation, expected-credit-loss staging, PIK and cash interest, revolver drawdowns and fee income — alongside capital calls, distributions and investor reporting, for mid-market credit managers across Singapore and APAC.',
+    icon: 'IconReportMoney',
+    image: '/fund-types/reit.jpg',
+    category: 'Private Credit',
+    features: [
+      {
+        title: 'Credit accounting (IFRS 9 / SFRS(I) 9)',
+        description: 'The measurement model credit funds actually need',
+        items: [
+          'Amortised cost with effective-interest amortisation',
+          'Business-model and SPPI classification',
+          'Expected-credit-loss (ECL) staging and provisioning',
+          'PIK and cash interest accruals',
+          'Original issue discount and arrangement fee recognition',
+          'Fair value (FVTPL) where positions are traded'
+        ]
+      },
+      {
+        title: 'Loan & facility administration',
+        description: 'Every loan, drawdown and repayment tracked',
+        items: [
+          'Borrower and facility register',
+          'Term loans, revolvers and delayed-draw tranches',
+          'Drawdown, repayment and amortisation schedules',
+          'Covenant tracking and watchlist flags',
+          'Position-level valuation and impairment',
+          'Multi-currency loans with FX revaluation'
+        ]
+      },
+      {
+        title: 'Capital, distributions & LP reporting',
+        description: 'Investor operations end to end',
+        items: [
+          'Capital calls and commitment tracking',
+          'Income vs principal distributions',
+          'Interest and yield distributions to LPs',
+          'Capital account statements',
+          'Distribution waterfalls and carried interest',
+          'White-labeled LP portal and reporting'
+        ]
+      }
+    ],
+    benefits: [
+      {
+        title: 'Accounting that fits credit',
+        description: 'Effective-interest, ECL and PIK handled natively under IFRS 9 / SFRS(I) 9 — not forced through an equity-fund ledger.',
+        icon: 'IconReportMoney'
+      },
+      {
+        title: 'A NAV you can defend',
+        description: 'Accrued interest, amortisation and impairment flow into a NAV that stands up to audit.',
+        icon: 'IconShield'
+      },
+      {
+        title: 'One platform, end to end',
+        description: 'Loan administration, accounting and the LP portal share one data model — no reconciliation between systems.',
+        icon: 'IconActivity'
+      },
+      {
+        title: 'MAS & VCC ready',
+        description: 'Built for Singapore credit funds, including VCC sub-fund structures and MAS-aligned reporting.',
+        icon: 'IconShieldLock'
+      }
+    ],
+    useCases: [
+      {
+        title: 'Direct lending funds',
+        description: 'Senior and unitranche lending with effective-interest income, ECL provisioning and revolver mechanics.',
+        metrics: [
+          { label: 'Close cycle', value: 'Days, not weeks' },
+          { label: 'Audit prep', value: 'Always-ready' }
+        ]
+      },
+      {
+        title: 'Mezzanine & private credit',
+        description: 'Subordinated debt with PIK toggles, warrants and blended cash/PIK coupons.',
+        metrics: [
+          { label: 'PIK accruals', value: 'Automated' }
+        ]
+      },
+      {
+        title: 'Venture debt',
+        description: 'Loans to venture-backed companies with warrants, drawdowns and milestone tranches alongside equity upside.',
+        metrics: [
+          { label: 'Facilities tracked', value: 'Unlimited' }
+        ]
+      }
+    ],
+    keyFeatures: [
+      {
+        title: 'Effective-interest engine',
+        description: 'Amortises premium, discount and fees over the life of each loan and posts the journal entries automatically.'
+      },
+      {
+        title: 'Expected credit loss',
+        description: 'Forward-looking ECL staging and provisioning for assets held at amortised cost, with a full audit trail.'
+      },
+      {
+        title: 'PIK & cash interest',
+        description: 'Separate accrual of paid-in-kind and cash interest, with capitalisation to principal where the facility provides for it.'
+      },
+      {
+        title: 'Facility & covenant tracking',
+        description: 'A live register of facilities, drawdowns, repayments and covenants, with watchlist flags.'
+      },
+      {
+        title: 'Income distributions',
+        description: 'Distribute interest and yield to LPs, with income-versus-principal treatment and capital accounts.'
+      },
+      {
+        title: 'MAS & VCC support',
+        description: 'VCC sub-fund segregation and MAS-aligned reporting for Singapore credit vehicles.'
+      }
+    ],
+    faq: [
+      {
+        question: 'How do you handle IFRS 9 / SFRS(I) 9 for credit funds?',
+        answer: 'Loans held to collect contractual cash flows are measured at amortised cost using the effective-interest method, with expected-credit-loss (ECL) staging and provisioning. Positions managed on a fair-value basis are measured at FVTPL. The platform applies the business-model and SPPI tests and posts the resulting entries automatically.'
+      },
+      {
+        question: 'Do you support PIK and cash interest?',
+        answer: 'Yes. Paid-in-kind and cash interest are accrued separately, with PIK capitalised to principal where the facility provides for it, and both flow into NAV and investor reporting.'
+      },
+      {
+        question: 'Can you model revolvers and delayed-draw facilities?',
+        answer: 'Yes. Term loans, revolving credit facilities and delayed-draw tranches are supported, with drawdown, repayment and amortisation schedules tracked at the facility level.'
+      },
+      {
+        question: 'How are expected credit losses calculated?',
+        answer: 'For assets at amortised cost, the platform stages exposures by change in credit risk and provisions for expected losses on a forward-looking basis, keeping a complete audit trail for your auditor.'
+      },
+      {
+        question: 'Can LPs receive interest distributions?',
+        answer: 'Yes. The platform distinguishes income from principal, distributes interest and yield to LPs, maintains capital accounts and produces white-labeled LP statements.'
+      },
+      {
+        question: 'Is it suitable for Singapore VCC credit funds?',
+        answer: 'Yes. The platform supports VCC sub-fund segregation and MAS-aligned reporting, so a Singapore credit fund under a VCC is administered and accounted for in one place.'
+      }
+    ],
+    relatedProducts: ['vc-pe-firms', 'family-offices', 'spv-syndicates']
   }
 ];
 

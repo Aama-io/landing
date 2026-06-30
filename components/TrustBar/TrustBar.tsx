@@ -19,7 +19,7 @@ const standards = [
 export function TrustBar() {
   return (
     <section className={classes.wrapper}>
-      <Container size="lg">
+      <Container size="xl">
         <Text className={classes.eyebrow}>
           Built to the standards regulated fund managers are held to
         </Text>

@@ -48,7 +48,7 @@ export function ToolsHub() {
       </section>
 
       <section className={s.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={h.chooser}>
             <div className={h.chooserHead}>
               <h2 className={h.chooserTitle}>I am a…</h2>

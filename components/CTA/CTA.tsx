@@ -9,7 +9,7 @@ const points = ['No setup fees', 'Monthly subscription', 'Free investor portal',
 export function CTA() {
   return (
     <section className={`${classes.wrapper} section`}>
-      <Container size="lg">
+      <Container size="xl">
         <motion.div
           className={classes.card}
           initial={{ opacity: 0, y: 28 }}

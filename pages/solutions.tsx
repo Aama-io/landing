@@ -106,7 +106,7 @@ export default function SolutionsPage() {
 
         {/* Lifecycle */}
         <section className={m.section}>
-          <Container size="lg">
+          <Container size="xl">
             <motion.div className={m.sectionHead} {...reveal} transition={{ duration: 0.5, ease }}>
               <span className={m.eyebrow}>Investment lifecycle</span>
               <h2 className={m.sectionTitle}>End-to-end support, <span className={s.accent}>start to exit</span></h2>
@@ -130,7 +130,7 @@ export default function SolutionsPage() {
 
         {/* Features */}
         <section className={`${m.section} ${m.sectionAlt}`}>
-          <Container size="lg">
+          <Container size="xl">
             <motion.div className={m.sectionHead} {...reveal} transition={{ duration: 0.5, ease }}>
               <span className={m.eyebrow}>Platform features</span>
               <h2 className={m.sectionTitle}>Everything a modern fund <span className={s.accent}>actually needs</span></h2>
@@ -157,7 +157,7 @@ export default function SolutionsPage() {
         {/* Dark results band */}
         <section className={m.darkBand}>
           <div className={m.darkGlow1} /><div className={m.darkGlow2} /><div className={m.darkGrid} />
-          <Container size="lg">
+          <Container size="xl">
             <motion.div className={m.darkHead} {...reveal} transition={{ duration: 0.5, ease }}>
               <span className={m.darkEyebrow}>Client outcomes</span>
               <h2 className={m.darkTitle}>Built to move the <span className={m.darkTitleAccent}>numbers that matter</span></h2>
@@ -182,7 +182,7 @@ export default function SolutionsPage() {
 
         {/* Integrations */}
         <section className={m.section}>
-          <Container size="lg">
+          <Container size="xl">
             <motion.div className={m.sectionHead} {...reveal} transition={{ duration: 0.5, ease }}>
               <span className={m.eyebrow}>Integration ecosystem</span>
               <h2 className={m.sectionTitle}>Plugs into your <span className={s.accent}>existing stack</span></h2>
@@ -204,7 +204,7 @@ export default function SolutionsPage() {
 
         {/* FAQ */}
         <section className={`${m.section} ${m.sectionAlt}`}>
-          <Container size="lg">
+          <Container size="xl">
             <div className={m.sectionHead}>
               <span className={m.eyebrow}>FAQ</span>
               <h2 className={m.sectionTitle}>Questions, <span className={s.accent}>answered</span></h2>

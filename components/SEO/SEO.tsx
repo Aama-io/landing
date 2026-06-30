@@ -1,4 +1,7 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+const SITE = 'https://aama.io';
 
 interface SEOProps {
   title?: string;
@@ -6,6 +9,7 @@ interface SEOProps {
   keywords?: string;
   ogImage?: string;
   ogUrl?: string;
+  noindex?: boolean;
 }
 
 export function SEO({
@@ -13,8 +17,14 @@ export function SEO({
   description = 'Fund administration and accounting software for mid-market fund managers and boutique fund administrators in Singapore and APAC — capital calls, NAV, IFRS 9 / SFRS(I) 9 accounting, an LP portal and SPV administration, without enterprise complexity.',
   keywords = 'fund administration software Singapore, fund accounting software, LP portal for fund managers, SPV administration software, VCC fund administration MAS, PE fund administration Singapore, VC fund accounting APAC, boutique fund admin software',
   ogImage = '/product-investment-portal.png', // Using existing product image for OG
-  ogUrl = 'https://aama.io', // Replace with your actual domain
+  ogUrl,
+  noindex = false,
 }: SEOProps) {
+  const router = useRouter();
+  // Self-referencing canonical: use an explicit ogUrl when given, otherwise derive
+  // it from the current path so every page canonicalises to ITSELF — not the homepage.
+  const path = (router.asPath || '/').split(/[?#]/)[0];
+  const pageUrl = ogUrl ?? `${SITE}${path === '/' ? '' : path}`;
   // Append the brand only when the title doesn't already carry it — avoids
   // "… | aama.io | AAMA" double-branding on pages that include the brand themselves.
   const fullTitle = /aama/i.test(title) ? title : `${title} | aama.io`;
@@ -29,7 +39,7 @@ export function SEO({
       
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={ogUrl} />
+      <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
@@ -37,7 +47,7 @@ export function SEO({
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={ogUrl} />
+      <meta property="twitter:url" content={pageUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
@@ -45,8 +55,8 @@ export function SEO({
 
       {/* Additional SEO Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href={ogUrl} />
+      <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+      <link rel="canonical" href={pageUrl} />
       <meta name="generator" content="UXQode Pte Ltd" />
 
       {/* Favicon */}

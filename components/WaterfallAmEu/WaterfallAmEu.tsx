@@ -102,7 +102,7 @@ export default function WaterfallAmEu() {
       </section>
 
       <section className={s.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={s.layout} data-wide>
             <aside className={s.controls}>
               <div className={s.groupTitle}>Fund terms</div>

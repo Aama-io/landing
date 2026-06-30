@@ -30,7 +30,7 @@ export default function SolutionPage({ product }: { product: ProductData }) {
     image: product.image,
     heroDescription: product.heroDescription,
     description: product.description,
-    keywords: `${product.category}, fund management software, fund administration, fund accounting, ${product.shortTitle.toLowerCase()}`,
+    keywords: `${product.title}, fund administration software, fund accounting software, ${product.shortTitle.toLowerCase()} software, Singapore fund administration`,
     benefits: product.benefits.map((b) => ({ title: b.title, description: b.description, icon: ic(b.icon) })),
     featureGroups: product.features,
     useCases: product.useCases,

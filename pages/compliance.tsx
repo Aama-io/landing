@@ -14,7 +14,7 @@ export default function CompliancePage() {
       />
       <PageShell>
         <div className={classes.wrapper}>
-          <Container size="lg">
+          <Container size="xl">
             <Title className={classes.title}>Regulatory Compliance</Title>
             <Text className={classes.lastUpdated}>Last updated: April 2024</Text>
 

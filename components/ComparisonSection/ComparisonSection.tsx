@@ -5,7 +5,7 @@ import classes from './ComparisonSection.module.css';
 export function ComparisonSection() {
   return (
     <div className={classes.wrapper}>
-      <Container size="lg">
+      <Container size="xl">
         <Title ta="center" className={classes.title}>
           Traditional vs On-Chain Fund Management
         </Title>

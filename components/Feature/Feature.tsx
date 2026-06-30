@@ -105,7 +105,7 @@ const productFeatures = [
 export function Feature() {
   return (
     <Box className={classes.wrapper}>
-      <Container size="lg">
+      <Container size="xl">
         <Stack gap={50}>
           {productFeatures.map((product, index) => (
             <div key={product.title} className={classes.product}>

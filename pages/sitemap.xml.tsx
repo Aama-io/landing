@@ -21,19 +21,21 @@ const STATIC: { loc: string; priority: string }[] = [
   { loc: '/terms', priority: '0.4' },
 ];
 
-function tag(loc: string, priority: string, changefreq: string) {
-  return `<url><loc>${SITE}${loc}</loc><changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
+function tag(loc: string, priority: string, changefreq: string, lastmod?: string) {
+  const last = lastmod ? `<lastmod>${lastmod}</lastmod>` : '';
+  return `<url><loc>${SITE}${loc}</loc>${last}<changefreq>${changefreq}</changefreq><priority>${priority}</priority></url>`;
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+  const today = new Date().toISOString().split('T')[0];
   const urls = [
-    ...STATIC.map((p) => tag(p.loc, p.priority, 'weekly')),
-    ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly')),
-    ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly')),
-    tag('/tools', '0.9', 'weekly'),
-    ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly')),
-    ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly')),
-    ...blogPosts.map((post) => tag(`/blog/${post.slug}`, '0.6', 'monthly')),
+    ...STATIC.map((p) => tag(p.loc, p.priority, 'weekly', today)),
+    ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly', today)),
+    ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly', today)),
+    tag('/tools', '0.9', 'weekly', today),
+    ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly', today)),
+    ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly', today)),
+    ...blogPosts.map((post) => tag(`/blog/${post.slug}`, '0.6', 'monthly', post.publishedDate)),
   ].join('');
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls}</urlset>`;

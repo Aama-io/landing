@@ -170,7 +170,7 @@ function TeamMember({ member, index }: { member: Member; index: number }) {
 export function Team() {
   return (
     <section className={classes.section}>
-      <Container size="lg">
+      <Container size="xl">
         <motion.div className={classes.head} {...reveal} transition={{ duration: 0.55, ease }}>
           <span className={classes.eyebrow}>Our team</span>
           <h2 className={classes.title}>

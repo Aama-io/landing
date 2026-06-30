@@ -34,7 +34,7 @@ const contactInfo = [
 export function ContactSection() {
   return (
     <div className={classes.wrapper}>
-      <Container size="lg">
+      <Container size="xl">
         <SimpleGrid cols={{ base: 1, sm: 2 }} spacing={50}>
           <div>
             <Title className={classes.title}>Get in touch</Title>

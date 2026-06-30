@@ -82,7 +82,7 @@ export function ProductDetail({
       {/* Benefits */}
       {data.benefits.length > 0 && (
         <section className={`${s.section} ${s.sectionMuted}`}>
-          <Container size="lg">
+          <Container size="xl">
             <SectionHeading eyebrow="Why aama.io" title="Built to move your operations forward" />
             <div className={s.benefitGrid}>
               {data.benefits.map((b, i) => {
@@ -104,7 +104,7 @@ export function ProductDetail({
 
       {/* Features */}
       <section className={s.section}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading eyebrow="Capabilities" title="Everything you need, in one platform" />
           <div className={s.featureGrid}>
             {data.featureGroups.map((f, i) => (
@@ -127,7 +127,7 @@ export function ProductDetail({
       {/* Use cases */}
       {data.useCases && data.useCases.length > 0 && (
         <section className={`${s.section} ${s.sectionMuted}`}>
-          <Container size="lg">
+          <Container size="xl">
             <SectionHeading eyebrow="Use cases" title="How teams put it to work" />
             <div className={s.useGrid}>
               {data.useCases.map((u, i) => (
@@ -156,7 +156,7 @@ export function ProductDetail({
       {/* Key features */}
       {data.keyFeatures && data.keyFeatures.length > 0 && (
         <section className={s.section}>
-          <Container size="lg">
+          <Container size="xl">
             <SectionHeading eyebrow="Platform" title="More of what's under the hood" />
             <div className={s.capGrid}>
               {data.keyFeatures.map((k, i) => (
@@ -195,7 +195,7 @@ export function ProductDetail({
       {/* Related */}
       {related.length > 0 && (
         <section className={s.section}>
-          <Container size="lg">
+          <Container size="xl">
             <SectionHeading eyebrow="Explore" title={relatedHeading} />
             <div className={s.relatedGrid}>
               {related.map((r) => {
@@ -218,7 +218,7 @@ export function ProductDetail({
 
       {/* CTA */}
       <section className={s.ctaSection}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={s.ctaCard}>
             <div className={s.ctaGlow} />
             <h2 className={s.ctaTitle}>Ready to transform your fund operations?</h2>

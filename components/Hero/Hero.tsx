@@ -40,8 +40,8 @@ export function Hero() {
           </Title>
 
           <Text className={classes.subtitle}>
-            Mid-market PE and VC fund managers — and the boutique fund administrators who service
-            them — still run on spreadsheets, email and a stack of disconnected tools. aama.io brings
+            Mid-market PE, VC and private credit fund managers — and the boutique fund administrators
+            who service them — still run on spreadsheets, email and a stack of disconnected tools. aama.io brings
             fund administration and fund accounting into one
             MAS-ready system, with IFRS 9 / SFRS(I) 9 accounting built in. Singapore-first, built for APAC.
           </Text>

@@ -9,7 +9,7 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export function AboutCTA() {
   return (
     <section className={c.section}>
-      <Container size="lg">
+      <Container size="xl">
         <motion.div
           className={c.ctaBand}
           initial={{ opacity: 0, y: 24 }}

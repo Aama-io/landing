@@ -95,6 +95,16 @@ export const theme = createTheme({
     }),
     Container: Container.extend({
       defaultProps: { size: 'lg' },
+      // Unify the main content width: `lg`, `xl` and the default all resolve to one
+      // broad container, so sections never mismatch in width regardless of which
+      // size a component happens to pass. Narrow sizes (sm/md, numeric) are untouched.
+      vars: (_theme, props) => {
+        const size = props.size;
+        if (size === undefined || size === 'lg' || size === 'xl') {
+          return { root: { '--container-size': rem(1320) } };
+        }
+        return { root: {} };
+      },
     }),
   },
   other: {

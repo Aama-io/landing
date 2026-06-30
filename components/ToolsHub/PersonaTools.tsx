@@ -27,7 +27,7 @@ export function PersonaTools({ persona }: { persona: Persona }) {
       </section>
 
       <section className={s.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <ToolGroups groups={groups} />
 
           <div className={h.switcher}>

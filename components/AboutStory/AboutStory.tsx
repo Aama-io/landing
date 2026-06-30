@@ -45,7 +45,7 @@ export function AboutStory() {
     <>
       {/* Our story */}
       <section className={c.section}>
-        <Container size="lg">
+        <Container size="xl">
           <motion.div className={c.head} {...reveal} transition={{ duration: 0.55, ease }}>
             <span className={c.eyebrow}>Our story</span>
             <h2 className={c.title}>
@@ -102,7 +102,7 @@ export function AboutStory() {
 
       {/* What we believe */}
       <section className={`${c.section} ${c.sectionAlt}`}>
-        <Container size="lg">
+        <Container size="xl">
           <motion.div className={c.head} {...reveal} transition={{ duration: 0.55, ease }}>
             <span className={c.eyebrow}>What we believe</span>
             <h2 className={c.title}>

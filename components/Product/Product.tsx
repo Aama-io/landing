@@ -300,7 +300,7 @@ export function Product() {
 
       {/* Two flagship products */}
       <section className={`${classes.section} sectionMuted`}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading
             eyebrow="Two products, one platform"
             title="Modular by design — take one, or both"
@@ -341,7 +341,7 @@ export function Product() {
 
       {/* Fund types */}
       <section className={classes.section}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading
             eyebrow="Every fund type"
             title="One engine for every structure"
@@ -402,7 +402,7 @@ export function Product() {
 
       {/* Capabilities */}
       <section className={`${classes.section} sectionMuted`}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading
             eyebrow="Capabilities"
             title="Everything to run a fund, in one place"
@@ -426,7 +426,7 @@ export function Product() {
 
       {/* Who we serve */}
       <section className={classes.section}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading eyebrow="Solutions" title="Built for your kind of fund" description="Whatever you run, see the mix of products that fits — and how teams like yours put aama.io to work." />
           <div className={classes.industryGrid}>
             {targetIndustries.map((ind, i) => (

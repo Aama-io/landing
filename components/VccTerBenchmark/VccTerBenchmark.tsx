@@ -90,7 +90,7 @@ export function VccTerBenchmark() {
       </section>
 
       <section className={s.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={s.layout}>
             <aside className={s.controls}>
               <div className={s.panelTitle}>Your fund</div>

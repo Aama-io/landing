@@ -145,7 +145,7 @@ export function VccComparator() {
       </section>
 
       <section className={classes.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={classes.layout}>
             {/* Questionnaire */}
             <aside className={classes.controls}>

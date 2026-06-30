@@ -578,7 +578,7 @@ export default function WaterfallCalculator() {
       </section>
 
       <section className={classes.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={classes.layout}>
             {controls}
             <div className={classes.results}>

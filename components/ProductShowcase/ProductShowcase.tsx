@@ -71,7 +71,7 @@ export function ProductShowcase() {
 
   return (
     <section className={`${classes.wrapper} section sectionMuted`}>
-      <Container size="lg">
+      <Container size="xl">
         <SectionHeading
           eyebrow="Product tour"
           title="Two products, one platform"

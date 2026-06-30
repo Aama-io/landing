@@ -61,7 +61,7 @@ export default function BlogPostPage({ post }: { post: BlogPost }) {
         />
       </Head>
       <div className={classes.wrapper}>
-        <Container size="lg">
+        <Container size="xl">
           <Group mb="lg">
             <Button
               component={Link}

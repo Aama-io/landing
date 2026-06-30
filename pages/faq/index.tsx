@@ -60,7 +60,7 @@ export default function FAQPage() {
         </section>
 
         <section className={m.section}>
-          <Container size="lg">
+          <Container size="xl">
             <div className={`${m.grid} ${m.cols2}`}>
               {faqData.map((item) => (
                 <div key={item.question} className={m.card}>

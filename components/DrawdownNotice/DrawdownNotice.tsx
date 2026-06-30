@@ -154,7 +154,7 @@ export default function DrawdownNotice() {
       </section>
 
       <section className={classes.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={classes.layout}>
             {/* Form */}
             <aside className={classes.controls}>

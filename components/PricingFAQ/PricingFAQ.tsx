@@ -47,7 +47,7 @@ const faqData = [
 export function PricingFAQ() {
   return (
     <div className={classes.wrapper}>
-      <Container size="lg">
+      <Container size="xl">
         <Grid gutter={50}>
           <Grid.Col span={{ base: 12, md: 4 }}>
             <Stack className={classes.header}>

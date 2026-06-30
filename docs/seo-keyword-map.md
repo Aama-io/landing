@@ -81,6 +81,9 @@ Leverage points we already own: **13 free calculators**, a now server-rendered *
 | white-label fund administration platform | `/solutions/fund-administrators` | ⬜ new |
 | family office fund administration software APAC | `/solutions/family-offices` (re-optimise) | exists |
 | PE/VC fund administration software Singapore | `/solutions/vc-pe-firms` (re-optimise) | exists |
+| **private credit fund administration software** / direct lending fund accounting / credit fund IFRS 9 | `/solutions/private-credit` | ✅ **shipped** |
+
+**Private credit note:** strong, defensible vertical — credit funds live in the IFRS 9 / SFRS(I) 9 machinery (amortised cost, effective-interest, **ECL staging**, PIK) that equity-fund tools handle poorly. Page leads with that edge. Long-tail to build out: `direct lending fund administration`, `private credit fund accounting software`, `expected credit loss fund software`, `BDC / credit fund NAV`.
 
 ---
 

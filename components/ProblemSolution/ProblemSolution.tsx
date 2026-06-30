@@ -75,7 +75,7 @@ const benefits = [
 export function ProblemSolution() {
   return (
     <section className={`${classes.wrapper} section`}>
-      <Container size="lg">
+      <Container size="xl">
         <SectionHeading
           eyebrow="Fund administration, accounting & investor portal"
           title="One system for the whole fund operation."

@@ -116,7 +116,7 @@ export default function FxRevaluationJE() {
       </section>
 
       <section className={s.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={s.layout}>
             <aside className={s.controls} data-static>
               <div className={s.panelTitle}>Entity & item</div>

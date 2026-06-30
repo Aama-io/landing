@@ -111,7 +111,7 @@ export function SpvSyndicates() {
 
       {/* Audiences */}
       <section className={`${s.section} ${s.sectionMuted}`}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading
             eyebrow="Who it's for"
             title="Built for the people running deals"
@@ -133,7 +133,7 @@ export function SpvSyndicates() {
 
       {/* How it works */}
       <section className={s.section}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading eyebrow="How it works" title="From a handshake to a closed deal" description="Four steps from opening a vehicle to accounting for it — most leads get from setup to first commitment in days." />
           <div className={s.steps}>
             {steps.map((st, i) => (
@@ -154,7 +154,7 @@ export function SpvSyndicates() {
 
       {/* Capability pillars */}
       <section className={`${s.section} ${s.sectionMuted}`}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading eyebrow="Everything in one place" title="The full SPV stack — plus the accounting" description="Formation, compliance, documents, payments and an investor portal — and, unlike a pure SPV administrator, a real fund-accounting engine underneath." />
           <div className={s.pillarGrid}>
             {pillars.map((p, i) => (
@@ -177,7 +177,7 @@ export function SpvSyndicates() {
 
       {/* Accounting differentiator */}
       <section className={s.section}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={s.acctBand}>
             <div className={s.acctCopy}>
               <span className={s.acctEyebrow}>Why aama.io</span>
@@ -207,7 +207,7 @@ export function SpvSyndicates() {
 
       {/* Use cases */}
       <section className={`${s.section} ${s.sectionMuted}`}>
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading eyebrow="Use cases" title="One vehicle, many ways to use it" />
           <div className={s.useGrid}>
             {useCases.map((u, i) => (
@@ -249,7 +249,7 @@ export function SpvSyndicates() {
 
       {/* CTA */}
       <section className={s.ctaSection}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={s.ctaCard}>
             <div className={s.ctaGlow} />
             <h2 className={s.ctaTitle}>Launch your next SPV on aama.io</h2>

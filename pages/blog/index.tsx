@@ -65,7 +65,7 @@ export default function BlogPage({ posts }: { posts: BlogPost[] }) {
         />
       </Head>
       <div className={classes.wrapper}>
-        <Container size="lg">
+        <Container size="xl">
           <Stack align="center" justify="center" gap="md" className={classes.header}>
             <span className={s.pill}>aama.io blog</span>
             <Title className={classes.title}>Fund administration <span className={s.accent}>insights</span></Title>

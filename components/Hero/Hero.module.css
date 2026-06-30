@@ -170,7 +170,7 @@
 .showcase {
   position: relative;
   margin-top: clamp(48px, 7vw, 80px);
-  max-width: 1080px;
+  max-width: 1200px;
   margin-inline: auto;
 }
 

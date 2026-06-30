@@ -104,7 +104,7 @@ export default function CapitalCallBuilder() {
       </section>
 
       <section className={classes.tool}>
-        <Container size="lg">
+        <Container size="xl">
           <div className={classes.layout}>
             {/* Controls */}
             <aside className={classes.controls}>

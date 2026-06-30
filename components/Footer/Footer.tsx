@@ -48,7 +48,7 @@ const groups = [
 export function Footer() {
   return (
     <footer className={classes.footer}>
-      <Container size="lg">
+      <Container size="xl">
         <div className={classes.top}>
           <div className={classes.brand}>
             <Logo />

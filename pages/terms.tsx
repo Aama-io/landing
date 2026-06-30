@@ -13,7 +13,7 @@ export default function TermsOfUse() {
       />
       <PageShell>
         <div className={classes.wrapper}>
-          <Container size="lg">
+          <Container size="xl">
             <Title className={classes.title}>Terms of Use</Title>
             <Text className={classes.lastUpdated}>Last updated: April 2024</Text>
 
