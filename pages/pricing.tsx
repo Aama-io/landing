@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { PageShell } from '@/components/ui/PageShell';
 import { PricingHero } from '../components/PricingHero/PricingHero';
 import { PricingTables } from '../components/PricingTables/PricingTables';
-import { PricingFAQ } from '../components/PricingFAQ/PricingFAQ';
+import { PricingFAQ, faqData } from '../components/PricingFAQ/PricingFAQ';
 import { PricingSection } from '../components/PricingSection/PricingSection';
 import { SEO } from '@/components/SEO/SEO';
 
@@ -13,14 +13,14 @@ const structuredData = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
   description:
-    'Fund management, administration and accounting software for VC/PE firms, family offices and fund administrators.',
+    'Fund administration and accounting software for SPVs and syndicates, VC/PE and private credit funds, family offices, and fund administrators across Singapore and APAC.',
   url: 'https://aama.io/pricing',
   offers: {
     '@type': 'AggregateOffer',
     priceCurrency: 'USD',
     lowPrice: '625',
-    highPrice: '5000',
-    offerCount: '12',
+    highPrice: '6500',
+    offerCount: '21',
     url: 'https://aama.io/pricing',
   },
   provider: {
@@ -28,6 +28,17 @@ const structuredData = {
     name: 'aama.io',
     url: 'https://aama.io',
   },
+};
+
+// Built from the visible pricing FAQ so the structured data always matches the page.
+const faqPageData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqData.map((f) => ({
+    '@type': 'Question',
+    name: f.question,
+    acceptedAnswer: { '@type': 'Answer', text: f.answer },
+  })),
 };
 
 const breadcrumbData = {
@@ -43,9 +54,9 @@ export default function PricingPage() {
   return (
     <>
       <SEO
-        title="Pricing | aama.io"
-        description="Institutional-grade fund administration and accounting software at startup-friendly pricing, with plans for funds of all sizes and no hidden fees."
-        keywords="fund management pricing, SaaS pricing, fund software costs, startup-friendly pricing, Singapore fund management, AUM-based pricing"
+        title="Pricing — SPV, Fund Administration & Accounting Software | aama.io"
+        description="Transparent pricing: per-deal SPVs from USD 3,900, accounting-only plans for fund administrators from USD 1,500/month, and fund-manager subscriptions from USD 625/month. Singapore & APAC, no hidden fees."
+        keywords="SPV pricing Singapore, fund administration software pricing, fund accounting software pricing, SPV cost, syndicate SPV fees, fund admin software cost, private credit fund administration pricing, transparent fund software pricing"
       />
       <Head>
         <script
@@ -55,6 +66,10 @@ export default function PricingPage() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageData) }}
         />
       </Head>
       <PageShell>

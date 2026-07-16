@@ -1,8 +1,162 @@
 import { Container, Card, Text, Group, Button, List, ThemeIcon, SegmentedControl, Stack, Badge, Tooltip, Box, Tabs } from '@mantine/core';
-import { IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconDiscount2, IconBuildingSkyscraper, IconCoin, IconChartBar, IconChartPie } from '@tabler/icons-react';
+import { IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconBuildingSkyscraper, IconCoin, IconChartBar, IconChartPie, IconReportMoney, IconUsersGroup, IconBuildingBank } from '@tabler/icons-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import classes from './PricingTables.module.css';
+
+interface Plan {
+  title: string;
+  price: { monthly: string; yearly: string };
+  setupFee: string;
+  subtitle: string;
+  description: string;
+  perks: { feature: string; included: boolean }[];
+  buttonText: string;
+  highlighted: boolean;
+  mostPopular: boolean;
+  unit?: string;        // overrides the "per month/year" label (e.g. per-SPV pricing)
+  setupLabel?: string;  // overrides the "Setup fee:" label
+}
+
+// SPVs & syndicates price per deal, not by AUM. Benchmarked to undercut Auptimate
+// (the Singapore/APAC comparable): Founder SPV flat USD 6,000; Syndicate SPV 3% of
+// raise (USD 4,000–13,000). aama.io comes in below on both, with transparent caps.
+const spvPlans: Plan[] = [
+  {
+    title: 'Single SPV',
+    price: { monthly: 'USD 3,900', yearly: 'USD 3,900' },
+    unit: 'flat · per SPV',
+    setupFee: 'USD 500 / year',
+    setupLabel: 'Annual admin:',
+    subtitle: '',
+    description: 'A single-asset deal SPV — one lead, one round',
+    perks: [
+      { feature: 'SPV formation & ACRA registration', included: true },
+      { feature: 'Legal docs & subscription agreements', included: true },
+      { feature: 'Investor onboarding, e-KYC/AML & e-sign', included: true },
+      { feature: 'Capital collection & bank reconciliation', included: true },
+      { feature: 'Cap table & member register', included: true },
+      { feature: 'Lead carry & deal-fee automation', included: true },
+      { feature: 'Distributions, statements & tax docs', included: true },
+      { feature: 'Compliance & audit trail', included: true },
+      { feature: 'Custom branding', included: false },
+      { feature: 'API access', included: false },
+    ],
+    buttonText: 'Start a Deal',
+    highlighted: false,
+    mostPopular: false,
+  },
+  {
+    title: 'Syndicate SPV',
+    price: { monthly: '2.5% of raise', yearly: '2.5% of raise' },
+    unit: 'per deal · capped',
+    setupFee: 'Min USD 3,500 · Max USD 10,000',
+    setupLabel: 'Fee range:',
+    subtitle: '',
+    description: 'Raise from many investors, priced per deal',
+    perks: [
+      { feature: 'Everything in Single SPV', included: true },
+      { feature: '2.5% deal fee, capped — no surprises', included: true },
+      { feature: 'Unlimited investors per deal', included: true },
+      { feature: 'Reusable investor base across deals', included: true },
+      { feature: 'Automated capital calls & reminders', included: true },
+      { feature: 'Multi-SPV dashboard', included: true },
+      { feature: 'Priority support', included: true },
+      { feature: 'Custom branding', included: true },
+      { feature: 'API access', included: true },
+    ],
+    buttonText: 'Launch a Syndicate',
+    highlighted: true,
+    mostPopular: true,
+  },
+  {
+    title: 'Platform',
+    price: { monthly: 'Custom', yearly: 'Custom' },
+    unit: 'volume pricing',
+    setupFee: 'Volume rates',
+    setupLabel: 'Pricing:',
+    subtitle: '',
+    description: 'For leads running multiple deals a year',
+    perks: [
+      { feature: 'Everything in Syndicate SPV', included: true },
+      { feature: 'Volume formation & admin rates', included: true },
+      { feature: 'White-label SPV platform', included: true },
+      { feature: 'Dedicated account manager', included: true },
+      { feature: 'Custom integrations', included: true },
+      { feature: 'Advanced security & controls', included: true },
+    ],
+    buttonText: 'Contact Sales',
+    highlighted: false,
+    mostPopular: false,
+  },
+];
+
+// Fund administration firms buying the Fund Accounting engine to service multiple
+// client funds — no investor portal (available as an add-on), white-label, priced
+// by number of client funds. This is the Track-1 operator buyer.
+const fundAdminPlans: Plan[] = [
+  {
+    title: 'Studio',
+    price: { monthly: 'USD 1,500', yearly: 'USD 18,000' },
+    setupFee: 'USD 2,000 – 3,000',
+    subtitle: '',
+    description: 'Boutique fund admins — up to 5 client funds',
+    perks: [
+      { feature: 'Fund accounting engine (double-entry GL)', included: true },
+      { feature: 'IFRS 9 / SFRS(I) 9 accounting', included: true },
+      { feature: 'Automated NAV (daily to quarterly)', included: true },
+      { feature: 'Reconciliation & corporate actions', included: true },
+      { feature: '12+ audit-ready reports', included: true },
+      { feature: 'Multi-fund dashboard (up to 5 funds)', included: true },
+      { feature: 'Standard support', included: true },
+      { feature: 'White-label client reporting', included: false },
+      { feature: 'Investor / LP portal (add-on)', included: false },
+      { feature: 'API access', included: false },
+    ],
+    buttonText: 'Get Started',
+    highlighted: false,
+    mostPopular: false,
+  },
+  {
+    title: 'Practice',
+    price: { monthly: 'USD 3,500', yearly: 'USD 42,000' },
+    setupFee: 'USD 4,000 – 6,000',
+    subtitle: '',
+    description: 'Growing admin firms — up to 20 client funds',
+    perks: [
+      { feature: 'Everything in Studio', included: true },
+      { feature: 'Up to 20 client funds', included: true },
+      { feature: 'White-label client reporting', included: true },
+      { feature: 'Multi-currency & waterfall automation', included: true },
+      { feature: 'Per-client role-based access', included: true },
+      { feature: 'Priority support', included: true },
+      { feature: 'API access', included: true },
+      { feature: 'Investor / LP portal (add-on)', included: false },
+    ],
+    buttonText: 'Start 30-Day Trial',
+    highlighted: true,
+    mostPopular: true,
+  },
+  {
+    title: 'Firm',
+    price: { monthly: 'USD 6,500', yearly: 'USD 78,000' },
+    setupFee: 'USD 8,000+',
+    subtitle: '',
+    description: 'Established fund admins — unlimited funds',
+    perks: [
+      { feature: 'Everything in Practice', included: true },
+      { feature: 'Unlimited client funds', included: true },
+      { feature: 'Full white-label platform', included: true },
+      { feature: 'Investor / LP portal included', included: true },
+      { feature: 'Dedicated account manager', included: true },
+      { feature: 'Custom integrations & SSO', included: true },
+      { feature: 'Advanced security & controls', included: true },
+    ],
+    buttonText: 'Contact Sales',
+    highlighted: false,
+    mostPopular: false,
+  },
+];
 
 const hedgeFundPlans = [
   {
@@ -140,6 +294,81 @@ const privateEquityPlans = [
       { feature: 'Multi-fund administration', included: true },
       { feature: 'Advanced valuation tools', included: true },
       { feature: 'Complex waterfall structures', included: true },
+      { feature: 'Custom portfolio dashboards', included: true },
+      { feature: 'Enhanced automation capabilities', included: true },
+      { feature: 'Regulatory compliance automation', included: true },
+      { feature: 'Dedicated account manager', included: true },
+      { feature: 'Custom integrations', included: true },
+      { feature: 'White-label solution', included: true },
+      { feature: 'Advanced security features', included: true },
+    ],
+    buttonText: 'Contact Sales',
+    highlighted: false,
+    mostPopular: false,
+  },
+];
+
+const privateCreditPlans = [
+  {
+    title: 'Boutique',
+    price: { monthly: 'USD 1,350', yearly: 'USD 16,200' },
+    setupFee: 'USD 2,500 – 3,500',
+    subtitle: 'per month',
+    description: 'Emerging credit funds (< 5 funds)',
+    perks: [
+      { feature: 'Loan & facility administration', included: true },
+      { feature: 'Amortised cost & interest accruals', included: true },
+      { feature: 'Capital call processing', included: true },
+      { feature: 'Income & principal distributions', included: true },
+      { feature: 'Investor relations portal', included: true },
+      { feature: 'Basic financial reporting', included: true },
+      { feature: 'Document administration', included: true },
+      { feature: 'Compliance tools', included: true },
+      { feature: 'Standard support', included: true },
+      { feature: 'Maintenance included', included: true },
+      { feature: 'Custom branding', included: false },
+      { feature: 'API access', included: false },
+    ],
+    buttonText: 'Get Started',
+    highlighted: false,
+    mostPopular: false,
+  },
+  {
+    title: 'Growth',
+    price: { monthly: 'USD 2,750', yearly: 'USD 33,000' },
+    setupFee: 'USD 5,000 – 7,500',
+    subtitle: 'per month',
+    description: 'Established credit funds (5-15 funds)',
+    perks: [
+      { feature: 'All Boutique features', included: true },
+      { feature: 'IFRS 9 / SFRS(I) 9 accounting', included: true },
+      { feature: 'Expected credit loss (ECL) staging', included: true },
+      { feature: 'PIK & cash interest handling', included: true },
+      { feature: 'Revolver & delayed-draw facilities', included: true },
+      { feature: 'Advanced portfolio monitoring', included: true },
+      { feature: 'Automated capital calls', included: true },
+      { feature: 'Comprehensive audit trail', included: true },
+      { feature: 'Priority support', included: true },
+      { feature: 'Custom branding', included: true },
+      { feature: 'API access', included: true },
+      { feature: 'Custom integrations', included: false },
+    ],
+    buttonText: 'Start 30-Day Trial',
+    highlighted: true,
+    mostPopular: true,
+  },
+  {
+    title: 'Pro',
+    price: { monthly: 'USD 5,000', yearly: 'USD 60,000' },
+    setupFee: 'USD 10,000+',
+    subtitle: 'per month',
+    description: 'Large credit platforms (> 15 funds)',
+    perks: [
+      { feature: 'All Growth features', included: true },
+      { feature: 'VIP onboarding & migration', included: true },
+      { feature: 'Multi-fund administration', included: true },
+      { feature: 'Complex facility structures', included: true },
+      { feature: 'Covenant tracking & watchlist', included: true },
       { feature: 'Custom portfolio dashboards', included: true },
       { feature: 'Enhanced automation capabilities', included: true },
       { feature: 'Regulatory compliance automation', included: true },
@@ -306,20 +535,26 @@ const mutualFundPlans = [
 
 export function PricingTables() {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
-  const [fundType, setFundType] = useState('hedge');
+  const [fundType, setFundType] = useState('spv');
 
-  const getPlans = () => {
+  const getPlans = (): Plan[] => {
     switch (fundType) {
+      case 'spv':
+        return spvPlans;
+      case 'admin':
+        return fundAdminPlans;
       case 'family':
         return familyOfficePlans;
       case 'private':
         return privateEquityPlans;
+      case 'credit':
+        return privateCreditPlans;
       case 'hedge':
         return hedgeFundPlans;
       case 'mutual':
         return mutualFundPlans;
       default:
-        return privateEquityPlans;
+        return spvPlans;
     }
   };
 
@@ -340,11 +575,20 @@ export function PricingTables() {
             className={classes.fundTypeTabs}
           >
             <Tabs.List grow>
+              <Tabs.Tab value="spv" leftSection={<IconUsersGroup size={16} />}>
+                SPVs & Syndicates
+              </Tabs.Tab>
+              <Tabs.Tab value="admin" leftSection={<IconBuildingBank size={16} />}>
+                Fund Administrators
+              </Tabs.Tab>
               <Tabs.Tab value="family" leftSection={<IconCoin size={16} />}>
                 Family Offices
               </Tabs.Tab>
               <Tabs.Tab value="private" leftSection={<IconBuildingSkyscraper size={16} />}>
                 Private Equity / VC
+              </Tabs.Tab>
+              <Tabs.Tab value="credit" leftSection={<IconReportMoney size={16} />}>
+                Private Credit
               </Tabs.Tab>
               <Tabs.Tab value="hedge" leftSection={<IconChartBar size={16} />}>
                 Hedge Funds
@@ -356,18 +600,20 @@ export function PricingTables() {
             </Tabs.List>
           </Tabs>
 
-          <Group justify="center" mt="md">
-            <SegmentedControl
-              value={billingPeriod}
-              onChange={setBillingPeriod}
-              data={[
-                { label: 'Monthly Billing', value: 'monthly' },
-                { label: 'Annual Billing • Save', value: 'yearly' },
-              ]}
-              size="md"
-              className={classes.segmentedControl}
-            />
-          </Group>
+          {fundType !== 'spv' && (
+            <Group justify="center" mt="md">
+              <SegmentedControl
+                value={billingPeriod}
+                onChange={setBillingPeriod}
+                data={[
+                  { label: 'Monthly Billing', value: 'monthly' },
+                  { label: 'Annual Billing • Save', value: 'yearly' },
+                ]}
+                size="md"
+                className={classes.segmentedControl}
+              />
+            </Group>
+          )}
         </Stack>
 
         <div className={classes.grid}>
@@ -398,11 +644,11 @@ export function PricingTables() {
                 </Text>
 
                 <Text size="sm" c="dimmed" className={classes.subtitle}>
-                  {billingPeriod === 'monthly' ? 'per month' : 'per year'}
+                  {plan.unit ?? (billingPeriod === 'monthly' ? 'per month' : 'per year')}
                 </Text>
 
                 <Group gap="xs" className={classes.setupFee}>
-                  <Text size="sm" fw={500}>Setup fee:</Text>
+                  <Text size="sm" fw={500}>{plan.setupLabel ?? 'Setup fee:'}</Text>
                   <Text size="sm">{plan.setupFee}</Text>
                   <Tooltip label="One-time fee for software setup and implementation">
                     <ThemeIcon radius="xl" size="xs" variant="light">
@@ -466,9 +712,9 @@ export function PricingTables() {
                   <IconHeadset size={30} stroke={1.5} />
                 </ThemeIcon>
                 <div>
-                  <Text fw={700} fz="xl" className={classes.additionalTitle}>Need custom features or integrations?</Text>
+                  <Text fw={700} fz="xl" className={classes.additionalTitle}>Need advanced integrations or a tailored setup?</Text>
                   <Text className={classes.additionalDescription}>
-                    We can provide additional custom features or integrations to meet your specific requirements
+                    We can configure the platform and connect it to the systems your fund already runs on.
                   </Text>
                 </div>
               </Group>

@@ -97,7 +97,7 @@ const comparisonData = [
         apex: { value: 'Yes', highlight: false }
       },
       {
-        feature: 'Fund Management',
+        feature: 'Fund Administration & Accounting',
         aama: { value: 'Yes', highlight: true },
         allvue: { value: 'Yes', highlight: false },
         fundrecs: { value: 'No', highlight: false },
@@ -270,12 +270,12 @@ export function PricingSection() {
         <Group gap="xs" justify="center" mb="sm">
           <IconCrown color="var(--mantine-color-blue-6)" size={28} />
           <Title ta="center" className={classes.title}>
-           Global Market Comparison for 2025
+           Global Market Comparison for 2026
           </Title>
         </Group>
         <Text ta="center" c="dimmed" maw={800} mx="auto" mb={30}>
-          AAMA.io is positioned to deliver enterprise-grade fund management capabilities at a fraction of the cost 
-          of traditional providers in Singapore and global markets for 2025 and beyond
+          aama.io is positioned to deliver institutional-grade fund administration and accounting at a fraction of the cost
+          of traditional providers in Singapore and global markets for 2026 and beyond
         </Text>
         
         <Group mb={25} justify="center">

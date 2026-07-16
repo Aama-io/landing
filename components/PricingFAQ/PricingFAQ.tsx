@@ -1,10 +1,22 @@
 import { Container, Title, Accordion, Grid, Text, ThemeIcon, Stack, Box } from '@mantine/core';
 import { IconQuestionMark } from '@tabler/icons-react';
 import classes from './PricingFAQ.module.css';
-const faqData = [
+export const faqData = [
+  {
+    question: "How much does aama.io cost?",
+    answer: "Pricing depends on how you operate. SPVs and syndicates are priced per deal — a single-asset SPV is a flat USD 3,900 to form (plus USD 500/year administration), and syndicate SPVs are 2.5% of the amount raised, capped between USD 3,500 and USD 10,000. Fund managers running a fund pay a monthly subscription by fund type and AUM, from USD 625/month up to USD 5,000/month. Fund administrators who need only the fund accounting engine start at USD 1,500/month for up to five client funds. Every plan also lists a one-time setup fee."
+  },
+  {
+    question: "How much does an SPV cost?",
+    answer: "A single-asset SPV is a flat USD 3,900 to form, with USD 500/year for ongoing administration. If you are syndicating a deal to many investors, pricing is 2.5% of the amount raised, capped between USD 3,500 and USD 10,000 — below the typical market rate. High-volume syndicate leads get volume pricing."
+  },
+  {
+    question: "Do you offer accounting-only pricing for fund administrators?",
+    answer: "Yes. Fund administration firms that need only the fund accounting engine — double-entry ledger, automated NAV, IFRS 9 / SFRS(I) 9 accounting, reconciliations and audit-ready reports — can choose a Fund Administrators plan from USD 1,500/month, priced by the number of client funds and white-labelled for your clients. The investor/LP portal is an optional add-on rather than bundled, which keeps the cost down."
+  },
   {
     question: "How are the fees calculated?",
-    answer: "Our fees are based on your chosen plan tier - Starter, Growth, or Pro. Each plan has a fixed monthly fee and includes a set of features designed for different fund sizes and needs. The Starter plan is ideal for new funds, Growth for expanding funds, and Pro for established funds requiring advanced features."
+    answer: "Each plan has a fixed monthly fee (or a per-deal fee for SPVs) plus a one-time setup fee, with features scaled to your fund size and needs. Fund-manager plans scale by fund type and AUM; fund-administrator plans scale by the number of client funds; SPVs and syndicates are priced per deal."
   },
   {
     question: "What are the payment terms?",
@@ -24,11 +36,11 @@ const faqData = [
   },
   {
     question: "Are there any hidden fees?",
-    answer: "No, our pricing is completely transparent. You pay only the monthly fee for your chosen plan. The only additional costs would be for optional services like custom development, specialized integrations, or premium features, which are clearly outlined before any commitment."
+    answer: "No, our pricing is completely transparent. You pay only the monthly fee (or per-deal fee) for your chosen plan, plus the one-time setup fee. The only additional costs would be optional add-ons like advanced integrations or premium features, which are clearly outlined before any commitment."
   },
   {
     question: "What features are included in each plan?",
-    answer: "Starter plans include essential fund management tools, basic reporting, and investor portal. Growth adds advanced analytics, customizable reports, and API access. Pro includes everything plus white-labeling, unlimited users, custom workflows, and premium integrations. Full feature comparisons are available on our pricing page."
+    answer: "Starter plans include essential fund administration tools, basic reporting, and an investor portal. Growth adds advanced analytics, customizable reports, and API access. Pro includes everything plus white-labeling, unlimited users, configurable workflows, and premium integrations. Full feature comparisons are available on our pricing page."
   },
   {
     question: "Do you offer discounts?",
@@ -36,11 +48,11 @@ const faqData = [
   },
   {
     question: "How does the Enterprise plan differ?",
-    answer: "Enterprise plans are customized for large funds with complex needs. They include custom feature development, unlimited everything, dedicated support team, compliance consulting, and bespoke integrations. Pricing is tailored to your specific requirements."
+    answer: "Enterprise plans are configured for large funds with complex needs. They include configurable features, unlimited usage, a dedicated support team, compliance support, and advanced integrations. Pricing is tailored to your specific requirements."
   },
   {
     question: "What happens if my fund grows?",
-    answer: "Our tiered plans are designed to scale with your fund. As you grow, you can easily upgrade to access more features and capacity. Our team will help recommend the right plan based on your evolving needs and ensure a seamless transition."
+    answer: "Our tiered plans are designed to scale with your fund. As you grow, you can easily upgrade to access more features and capacity. Our team will help recommend the right plan based on your evolving needs and ensure a smooth transition."
   }
 ];
 
