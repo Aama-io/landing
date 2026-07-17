@@ -1,0 +1,67 @@
+/* Server-rendered hero / loading state for tool pages — gives crawlers a real
+   <h1> + lead copy before the client-only calculator hydrates. */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(64px, 10vw, 120px) 20px;
+  background: radial-gradient(120% 120% at 50% -10%, #f3f7ff 0%, #ffffff 55%);
+}
+
+.glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -260px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(61, 114, 255, 0.14) 0%, rgba(61, 114, 255, 0) 70%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  max-width: 720px;
+  text-align: center;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--brand-soft, #eef3ff);
+  border: 1px solid #dbe6ff;
+  color: var(--mantine-color-blue-7, #1247db);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.title {
+  margin-top: 18px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--text-strong, #0b1324);
+}
+
+.lead {
+  margin: 16px auto 0;
+  max-width: 620px;
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.6;
+  color: var(--text-muted, #5a6478);
+}
+
+.intro {
+  margin: 14px auto 0;
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted, #5a6478);
+}
