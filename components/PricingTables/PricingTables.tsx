@@ -24,9 +24,9 @@ interface Plan {
 const spvPlans: Plan[] = [
   {
     title: 'Single SPV',
-    price: { monthly: 'USD 3,900', yearly: 'USD 3,900' },
+    price: { monthly: 'USD 4,900', yearly: 'USD 4,900' },
     unit: 'flat · per SPV',
-    setupFee: 'USD 500 / year',
+    setupFee: 'Scoped to your fund',
     setupLabel: 'Annual admin:',
     subtitle: '',
     description: 'A single-asset deal SPV — one lead, one round',

@@ -4,11 +4,11 @@ import classes from './PricingFAQ.module.css';
 export const faqData = [
   {
     question: "How much does aama.io cost?",
-    answer: "Pricing depends on how you operate. SPVs and syndicates are priced per deal — a single-asset SPV is a flat USD 3,900 to form (plus USD 500/year administration), and syndicate SPVs are 2.5% of the amount raised, capped between USD 3,500 and USD 10,000. Fund managers running a fund pay a monthly subscription by fund type and AUM, from USD 625/month up to USD 5,000/month. Fund administrators who need only the fund accounting engine start at USD 1,500/month for up to five client funds. Every plan also lists a one-time setup fee."
+    answer: "Pricing depends on how you operate. SPVs and syndicates are priced per deal — a single-asset SPV is a flat USD 4,900 to form, with annual administration scoped to your fund, and syndicate SPVs are 2.5% of the amount raised, capped between USD 3,500 and USD 10,000. Fund managers running a fund pay a monthly subscription by fund type and AUM, from USD 625/month up to USD 5,000/month. Fund administrators who need only the fund accounting engine start at USD 1,500/month for up to five client funds. Every plan also lists a one-time setup fee."
   },
   {
     question: "How much does an SPV cost?",
-    answer: "A single-asset SPV is a flat USD 3,900 to form, with USD 500/year for ongoing administration. If you are syndicating a deal to many investors, pricing is 2.5% of the amount raised, capped between USD 3,500 and USD 10,000 — below the typical market rate. High-volume syndicate leads get volume pricing."
+    answer: "A single-asset SPV is a flat USD 4,900 to form, with annual administration scoped to your fund. If you are syndicating a deal to many investors, pricing is 2.5% of the amount raised, capped between USD 3,500 and USD 10,000 — below the typical market rate. High-volume syndicate leads get volume pricing."
   },
   {
     question: "Do you offer accounting-only pricing for fund administrators?",

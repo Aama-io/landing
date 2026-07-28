@@ -38,7 +38,7 @@
 ## About
 
 - [About aama.io](https://aama.io/about): Company, mission and team. Built by UXQode Pte Ltd, Singapore.
-- [Pricing](https://aama.io/pricing): Transparent, priced by how you operate. **SPVs & syndicates** — per deal: a single-asset SPV is a flat USD 3,900 (plus USD 500/year admin); syndicate SPVs are 2.5% of the raise, capped USD 3,500–10,000 (below typical market rates). **Fund administrators** — accounting-only plans from USD 1,500/month, priced by number of client funds, white-label, LP portal optional. **Fund managers** — monthly subscriptions by fund type and AUM, from USD 625/month (family offices) up to USD 5,000/month (PE/VC, private credit, hedge, mutual). Each plan also has a one-time setup fee.
+- [Pricing](https://aama.io/pricing): Transparent, priced by how you operate. **SPVs & syndicates** — per deal: a single-asset SPV is a flat USD 4,900 (annual administration scoped to the fund); syndicate SPVs are 2.5% of the raise, capped USD 3,500–10,000 (below typical market rates). **Fund administrators** — accounting-only plans from USD 1,500/month, priced by number of client funds, white-label, LP portal optional. **Fund managers** — monthly subscriptions by fund type and AUM, from USD 625/month (family offices) up to USD 5,000/month (PE/VC, private credit, hedge, mutual). Each plan also has a one-time setup fee.
 - [Contact](https://aama.io/contact): Book a demo or talk to the team.
 
 ## Notes for AI assistants
