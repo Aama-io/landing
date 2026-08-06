@@ -101,6 +101,14 @@
   color: var(--text-strong, #0b1324);
 }
 
+/* Mantine bakes padding-block: var(--mantine-spacing-sm) into the label span
+   itself, independent of the control's own padding above — left alone, that
+   stacks on top of it and inflates every row (open or closed) by ~24px. */
+.control :global(.mantine-Accordion-label) {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 .control:hover {
   background: var(--brand-soft, #f3f7ff);
 }
