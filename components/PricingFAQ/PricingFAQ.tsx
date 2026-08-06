@@ -1,5 +1,4 @@
-import { Container, Title, Accordion, Grid, Text, ThemeIcon, Stack, Box } from '@mantine/core';
-import { IconQuestionMark } from '@tabler/icons-react';
+import { Container, Title, Accordion, Grid, Text, Stack, Box } from '@mantine/core';
 import classes from './PricingFAQ.module.css';
 export const faqData = [
   {
@@ -40,15 +39,15 @@ export const faqData = [
   },
   {
     question: "What features are included in each plan?",
-    answer: "Starter plans include essential fund administration tools, basic reporting, and an investor portal. Growth adds advanced analytics, customizable reports, and API access. Pro includes everything plus white-labeling, unlimited users, configurable workflows, and premium integrations. Full feature comparisons are available on our pricing page."
+    answer: "Entry plans include the essential fund administration tools, reporting and an investor portal. Mid-tier plans add advanced analytics, customizable reports and API access. Top-tier plans include everything plus white-labeling, unlimited users, configurable workflows and premium integrations. Full feature comparisons are on the pricing table above."
   },
   {
     question: "Do you offer discounts?",
-    answer: "Yes, we offer a 20% discount for annual billing on all plans. Enterprise clients with multi-year commitments may qualify for additional discounts. Contact our sales team to discuss custom pricing options."
+    answer: "Annual billing is available on subscription plans, and multi-fund or multi-year commitments can qualify for better rates. Talk to our team and we'll recommend the most cost-effective plan for your setup."
   },
   {
-    question: "How does the Enterprise plan differ?",
-    answer: "Enterprise plans are configured for large funds with complex needs. They include configurable features, unlimited usage, a dedicated support team, compliance support, and advanced integrations. Pricing is tailored to your specific requirements."
+    question: "What do the top-tier plans include?",
+    answer: "The top tier of each track — Pro for fund managers, Firm for fund administrators and Platform for SPV leads — adds unlimited usage, a full white-label platform, a dedicated account manager, advanced integrations and priority support. Pricing is tailored to your specific requirements."
   },
   {
     question: "What happens if my fund grows?",
@@ -62,25 +61,23 @@ export function PricingFAQ() {
       <Container size="xl">
         <Grid gutter={50}>
           <Grid.Col span={{ base: 12, md: 4 }}>
-            <Stack className={classes.header}>
-              <ThemeIcon size={80} radius="md" className={classes.icon}>
-                <IconQuestionMark size={40} stroke={1.5} />
-              </ThemeIcon>
-              
+            <Stack className={classes.header} gap={0}>
+              <span className={classes.eyebrow}>Pricing FAQ</span>
+
               <Title className={classes.title}>
-                Frequently Asked Questions
+                Frequently asked <span className={classes.accent}>questions</span>
               </Title>
-              
+
               <Text className={classes.description}>
-                Find answers to common questions about our pricing, billing, and services. 
-                If you don't see your question here, please contact our support team.
+                Answers on pricing, billing and how plans work across SPVs, fund managers and fund
+                administrators. Don't see yours? Talk to us.
               </Text>
 
               <Box className={classes.contactInfo}>
-                <Text fw={700} mb={5}>Still have questions?</Text>
+                <Text fw={700} mb={6}>Still have questions?</Text>
                 <Text size="sm">
-                  Contact us at <a href="mailto:sales@aama.io" className={classes.link}>contact@aama.io</a> <br />
-                  or through our <a href="/contact" className={classes.link}>contact page</a>.
+                  Email <a href="mailto:contact@aama.io" className={classes.link}>contact@aama.io</a> or use
+                  our <a href="/contact" className={classes.link}>contact page</a>.
                 </Text>
               </Box>
             </Stack>

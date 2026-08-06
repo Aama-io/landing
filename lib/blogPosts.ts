@@ -1357,6 +1357,188 @@ As we continue through 2025, the gap between firms using modern technology and t
     readTime: '9 min',
     categories: ['Fund Setup', 'Singapore', 'Emerging Managers']
   },
+  {
+    id: '21',
+    title: 'Singapore Family Office Compliance in 2026: CDR, LBS, UBO Register and VCC Sub-Fund Rules Explained',
+    slug: 'singapore-family-office-compliance-cdr-lbs-ubo-vcc',
+    excerpt: 'A Section 13O/13U exemption is not won once and forgotten — it is re-earned every year through five ongoing conditions, split across the portfolio desk, the company secretary and the fund accountant. Here is the map of all five, and where to go for the full detail on each.',
+    content: `
+      <p>Most guidance on Singapore family offices stops at the point of approval — how to qualify for <a href="/blog/section-13o-vs-13u-singapore">Section 13O or 13U</a>, what AUM and headcount you need, which structure to use. Far less is written about what happens after: the five conditions MAS and ACRA expect a family office to keep meeting for the full five-to-ten-year life of the exemption, not just on the day of the application.</p>
+
+      <p>Miss one of these on an ongoing basis and the risk is not a warning letter — it is clawback of the tax exemption itself, retroactively. What makes this genuinely hard is that the five conditions land on different desks: a portfolio and finance problem, a governance and company-secretary problem, and a fund-accounting problem, each tracked in a different system that was never built to talk to the others. This is the map of all five, with a full breakdown of each linked below.</p>
+
+      <h3>The five things MAS and ACRA check after approval</h3>
+
+      <ol>
+        <li>The <strong>Capital Deployment Requirement (CDR)</strong> — a minimum share of AUM held in MAS-specified local investments, at all times.</li>
+        <li><strong>Local Business Spending (LBS)</strong> — a minimum annual spend on qualifying Singapore-based costs, verified every year.</li>
+        <li>A <strong>UBO register</strong> kept current, with any change reported to ACRA within <strong>two business days</strong>.</li>
+        <li><strong>VCC sub-fund segregation</strong> — no commingling or cross-liability between sub-funds sharing an umbrella.</li>
+        <li>Evidence, on renewal, that the <strong>AUM test, headcount, LBS and CDR</strong> were met throughout the period — not just at the last measurement date.</li>
+      </ol>
+
+      <h3>The spend and investment thresholds — CDR and LBS</h3>
+
+      <p>CDR and LBS are both running-total problems: a minimum share of AUM in local investments, and a minimum annual spend on local costs, both drifting all year rather than sitting still until a year-end check. They fail the same way — someone reconciles them once, at renewal, instead of watching the ratio move — and they hit the same desk: whoever owns the portfolio and the P&L. <a href="/blog/singapore-family-office-cdr-lbs-thresholds">Read the full breakdown of CDR and LBS</a>, including why an offshore administrator's invoice never counts toward LBS no matter how legitimate it is.</p>
+
+      <h3>Governance — the UBO register and the 2-business-day ACRA SLA</h3>
+
+      <p>This is the one with no grace period. Any change to who beneficially owns or controls a Singapore-incorporated entity must be reported to ACRA within two business days of the change — not the quarter it was noticed. It is a company-secretary and governance problem, not an accounting one, and it is the requirement most likely to be missed simply because nobody started the clock. <a href="/blog/singapore-family-office-ubo-register-acra-deadline">Read the full breakdown of the UBO register and the ACRA deadline</a>.</p>
+
+      <h3>Structure — VCC sub-fund segregation and the annual renewal pack</h3>
+
+      <p>If your family office runs a <a href="/blog/how-to-set-up-a-vcc-singapore">VCC umbrella with several sub-funds</a>, the regulatory promise is that they carry no cross-liability — but that only holds if the ledger enforces it, not just the paperwork. And whatever CDR, LBS, headcount and AUM evidence you've gathered over the year eventually needs to become a single renewal pack for MAS, per sub-fund if the structure calls for it. Both are fund-accounting problems, and they compound each other at renewal time. <a href="/blog/vcc-sub-fund-segregation-13o-13u-renewal-pack">Read the full breakdown of VCC segregation and the renewal pack</a>.</p>
+
+      <h3>What a missed condition actually costs</h3>
+
+      <p>A CDR ratio that drifts below threshold for a quarter, an LBS shortfall discovered in December, a UBO change filed on day four instead of day two — none of these are hypothetical edge cases for a busy family office running everything across spreadsheets, email and three different advisers. Each is a plausible finding at the next MAS-appointed screening review, and the consequence is not a fine — it is clawback of the exemption that was the entire reason for the structure. aama.io's <a href="/solutions/family-offices">family office platform</a> tracks all five conditions in one place, on top of the fund accounting you already run, so the evidence exists before anyone asks for it.</p>
+
+      <p><em>This guide is general information, not tax, legal or regulatory advice. CDR and LBS thresholds, AUM floors and renewal cadences reflect MAS/IRAS requirements as understood in 2026 and are revised periodically — confirm the current conditions with MAS, ACRA and a licensed tax adviser before relying on them. For the underlying 13O/13U conditions, see <a href="/blog/section-13o-vs-13u-singapore">Section 13O vs 13U (2026)</a>.</em></p>
+
+      <p><strong>Running a Singapore family office under 13O or 13U? <a href="/solutions/family-offices">See how aama.io tracks CDR, LBS, UBO and VCC sub-fund compliance</a> alongside your fund accounting in one platform, or <a href="/contact">book a walkthrough with our team</a> to see it on your own structure.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/family-office-blog.png',
+    publishedDate: '2026-08-06',
+    readTime: '6 min',
+    categories: ['Family Offices', 'Singapore', 'Compliance']
+  },
+  {
+    id: '22',
+    title: 'CDR & LBS: The Two Thresholds Singapore Family Offices Must Track All Year',
+    slug: 'singapore-family-office-cdr-lbs-thresholds',
+    excerpt: 'The Capital Deployment Requirement and Local Business Spending are the two 13O/13U conditions that move every day the portfolio trades and every month a bill gets paid. Track them once a year and you find out you failed months after it mattered.',
+    content: `
+      <p>Of the five ongoing conditions behind a Section 13O/13U exemption, two are pure numbers problems that live on a CFO or fund controller's desk: the <strong>Capital Deployment Requirement (CDR)</strong> and <strong>Local Business Spending (LBS)</strong>. Both are minimums measured against a moving target — AUM for CDR, the financial year for LBS — and both are far easier to fail quietly than most family offices expect. This is what each actually requires, where teams get caught out, and what tracking them properly looks like day to day.</p>
+
+      <h3>Capital Deployment Requirement (CDR)</h3>
+
+      <p>Family offices under 13O/13U must keep a minimum share of AUM invested in MAS-specified local investments — Singapore-listed equities, REITs, Qualifying Debt Securities and other designated categories. It is checked at application, but it does not stop being checked afterward: the ratio has to hold up throughout the exemption period, and a portfolio that qualified on day one can drift out of compliance months later purely through ordinary rebalancing, currency moves or a position being sold down.</p>
+
+      <p>The mechanics are more fiddly than they sound. Qualifying-local status has to be tracked independently of asset class — a Singapore REIT and an offshore REIT sit in the same asset-class bucket in most systems, but only one of them counts toward CDR. Get that flag wrong, or fail to update it when a holding changes character, and the ratio you're reporting is wrong without anyone noticing.</p>
+
+      <p><strong>What this looks like on a spreadsheet:</strong> someone has to remember to re-pull the holdings, re-tag qualifying positions, and recalculate the ratio against current AUM — every time the portfolio moves meaningfully, not on a fixed schedule. In practice, that check happens quarterly at best, sometimes only at renewal, which means a breach can sit undetected for months.</p>
+
+      <p><strong>What it looks like on aama.io:</strong> the CDR ratio is live on the fund dashboard, calculated from the security master's qualifying-local flag against current AUM in real time, with an alert the moment the ratio enters a configurable buffer zone above the minimum — so a trade that would push the fund toward breach gets flagged before it settles, not discovered weeks later.</p>
+
+      <h3>Local Business Spending (LBS)</h3>
+
+      <p>Annual qualifying local spend is verified every year, and MAS is specific about what counts: local staff salaries and CPF, office rental, legal/accounting/audit/fund-administration fees, local infrastructure and technology subscriptions, and SGX exchange fees. The complication is that this classification runs parallel to, not instead of, your normal P&L categories — a line item can be "Professional Fees" for financial reporting and separately "Qualifying LBS" for scheme purposes, and standard chart-of-accounts structures don't make that distinction on their own.</p>
+
+      <p>It also matters <em>who</em> gets paid, not just how much. Only fees paid to Singapore-incorporated providers with local staff count toward LBS — an offshore fund administrator's invoice does not qualify no matter how legitimate the service. That means every vendor needs a qualifying-provider attribute sitting behind the expense, not just an amount in a ledger.</p>
+
+      <p><strong>What this looks like on a spreadsheet:</strong> reconstructing twelve months of invoices in November, sorting them into qualifying and non-qualifying, and discovering the shortfall with no time left in the financial year to close the gap.</p>
+
+      <p><strong>What it looks like on aama.io:</strong> LBS-qualifying status is tagged on the vendor master and the chart of accounts at the point an expense is booked, so the running total against the applicable 13O (or 13U) threshold is visible all year — with enough runway to act on a shortfall while the financial year is still open, instead of finding out after it has closed.</p>
+
+      <h3>Why these two get missed together</h3>
+
+      <p>CDR and LBS fail for the same underlying reason: both are continuous conditions that most teams check like periodic ones. A family office with two or three staff, running the books in spreadsheets and reviewing compliance once a quarter if that, is structurally set up to discover a problem after it has already existed for months — which is exactly the gap a MAS-appointed screening review is designed to find.</p>
+
+      <p><em>This guide is general information, not tax or regulatory advice. CDR and LBS thresholds and qualifying categories reflect MAS/IRAS guidance as understood in 2026 and are revised periodically — confirm the current conditions with MAS and a licensed tax adviser. For the other three ongoing conditions, see the <a href="/blog/singapore-family-office-compliance-cdr-lbs-ubo-vcc">full compliance overview</a>, and for the underlying exemption terms, <a href="/blog/section-13o-vs-13u-singapore">Section 13O vs 13U (2026)</a>.</em></p>
+
+      <p><strong>Tracking CDR and LBS by hand? <a href="/solutions/family-offices">See how aama.io keeps both live against your fund accounting</a>, or <a href="/contact">book a walkthrough</a> with your own portfolio and vendor list.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/family-office-blog.png',
+    publishedDate: '2026-08-07',
+    readTime: '8 min',
+    categories: ['Family Offices', 'Singapore', 'Compliance']
+  },
+  {
+    id: '23',
+    title: 'The UBO Register & the 2-Business-Day ACRA Deadline: What Singapore Family Offices Miss',
+    slug: 'singapore-family-office-ubo-register-acra-deadline',
+    excerpt: 'Every other 13O/13U condition gives you a quarter or a year to sort it out. The UBO register gives you two business days from the moment a beneficial owner changes — and most family offices only find out about the deadline after they have already missed it.',
+    content: `
+      <p>Four of the five ongoing conditions behind a Section 13O/13U exemption are measured over a quarter, a year, or the life of the exemption. One is not. The <strong>UBO register</strong> — the record of who beneficially owns or controls a Singapore-incorporated entity — has to be kept current, and any change has to be reported to ACRA within <strong>two business days</strong>. Not two weeks. Not the next filing cycle. Two business days from the moment the underlying fact changes.</p>
+
+      <h3>What the UBO register actually tracks</h3>
+
+      <p>For every fund entity, the register holds each natural person with meaningful ownership or control: the percentage held, the nature of that control (direct shareholding, voting rights, the ability to appoint directors), the date they became a UBO, and the date any of that ceased. It has to reflect <em>natural persons</em> — tracing through holding companies and trusts to the individuals who ultimately control them, not stopping at the first corporate layer.</p>
+
+      <h3>Why family offices trip on this more than most entities</h3>
+
+      <p>A family office's ownership structure changes more often than a typical operating company's. A trust gets restructured across a generation. A family member is added to, or removed from, a holding vehicle. Voting control shifts as part of succession planning. Each of these is a UBO change — and each one starts a two-business-day clock the moment it happens, whether or not anyone has told the compliance team yet.</p>
+
+      <p>That last part is the actual failure mode. The deadline does not start when someone gets around to updating the register — it starts when the underlying fact changes. If the family's lawyer executes a trust amendment on a Tuesday and nobody logs it until the following Monday, the filing is already late, and there is no batching this at quarter-end to catch up.</p>
+
+      <h3>What "meeting the SLA" actually requires</h3>
+
+      <p>It is not enough to have filed on time — you need to be able to <em>show</em> you filed on time if a MAS-appointed screening provider or auditor asks. That means three things working together:</p>
+
+      <ul>
+        <li>A change-detection trigger the instant a UBO record is edited, not a manual reminder someone has to remember to set.</li>
+        <li>Escalating reminders before the deadline — early enough that a missed notification on day one doesn't become a missed filing on day two.</li>
+        <li>A filing log recording what was submitted, when, and by whom — an audit trail, not a to-do list that gets deleted once the task is "done."</li>
+      </ul>
+
+      <p><strong>What this looks like without a system for it:</strong> the UBO register lives in a spreadsheet or a company secretary's inbox, changes get logged whenever someone remembers, and the two-day SLA is met by luck as often as by process. There is usually no record of exactly when the underlying change happened versus when it was filed — which is precisely the gap an auditor will probe.</p>
+
+      <p><strong>What this looks like on aama.io:</strong> editing a UBO record starts a visible countdown on a compliance task dashboard immediately, with reminders at defined intervals before the two-day deadline, and every filing logged with what was submitted, when, and by whom — evidence generated as a byproduct of doing the filing, not reconstructed afterward from memory. Access to edit the register is role-based, so only authorized compliance or admin users can trigger a change in the first place, with full edit history retained.</p>
+
+      <h3>Why this is the requirement most worth automating first</h3>
+
+      <p>CDR and LBS give you room to course-correct within a quarter or a year. The UBO/ACRA SLA gives you two days, with no equivalent buffer — which makes it the single condition where a manual process is most likely to produce an outright breach rather than a slow drift. If a family office automates only one of the five conditions first, this is usually the one with the shortest fuse.</p>
+
+      <p><em>This guide is general information, not legal or regulatory advice. Confirm current ACRA filing obligations and timelines with your corporate secretary and legal adviser. For the other four ongoing conditions, see the <a href="/blog/singapore-family-office-compliance-cdr-lbs-ubo-vcc">full compliance overview</a>.</em></p>
+
+      <p><strong>Relying on someone remembering to update the UBO register? <a href="/solutions/family-offices">See how aama.io starts the ACRA countdown automatically</a>, or <a href="/contact">talk to our team</a> about your entity structure.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/family-office-blog.png',
+    publishedDate: '2026-08-08',
+    readTime: '7 min',
+    categories: ['Family Offices', 'Singapore', 'Compliance']
+  },
+  {
+    id: '24',
+    title: 'VCC Sub-Fund Segregation & the 13O/13U Annual Renewal Pack',
+    slug: 'vcc-sub-fund-segregation-13o-13u-renewal-pack',
+    excerpt: 'A VCC umbrella promises sub-funds with no cross-liability — a promise your ledger has to enforce, not just your legal documents. And whatever evidence you gather over the year eventually has to become one renewal pack per fund, or per sub-fund, for MAS. Two fund-accounting problems that compound at renewal time.',
+    content: `
+      <p>The last two ongoing conditions behind a Section 13O/13U exemption sit squarely on a fund accountant's desk rather than a portfolio manager's or a company secretary's: keeping <strong>VCC sub-funds legally segregated</strong> in the books, and assembling the <strong>annual renewal pack</strong> that proves everything held up over the period. They are separate problems, but they compound each other — a segregation failure discovered at renewal is far more expensive to unwind than one caught the week it happened.</p>
+
+      <h3>What VCC sub-fund segregation actually requires</h3>
+
+      <p>Most Singapore family offices run their structure through a <a href="/blog/how-to-set-up-a-vcc-singapore">VCC umbrella with multiple sub-funds</a>, often with different 13O or 13U elections per sub-fund. The entire regulatory value of that structure rests on one guarantee: sub-funds carry no cross-liability. One sub-fund's creditors cannot reach another sub-fund's assets — but only if the accounting actually enforces that separation, not just the constitutive documents.</p>
+
+      <p>That means each sub-fund needs its own general ledger, its own trial balance, and its own financial statements — not a shared chart of accounts with a sub-fund "tag" attached to each line. A tag is a UI convention that a mis-keyed entry can silently violate. Real segregation means the system refuses to let a transaction, journal entry or allocation reference more than one sub-fund in the first place — validation at the schema level, not a rule someone is supposed to remember.</p>
+
+      <p><strong>What this looks like without hard enforcement:</strong> a shared ledger with sub-fund tags, where a mis-tagged expense or a rushed month-end entry commingles two sub-funds' books without anyone noticing until an auditor pulls the trial balance apart and asks why an entry touches two entities that are supposed to have no relationship to each other.</p>
+
+      <p><strong>What this looks like on aama.io:</strong> each sub-fund gets an independent ledger, trial balance and set of financial statements, with cross-sub-fund postings blocked before they can be saved — not caught in review after the fact. An umbrella-level roll-up is still available for the family's overall position, but it is clearly labelled as a consolidated view, not a legal consolidation, so nobody mistakes a reporting convenience for something the structure was deliberately built to avoid.</p>
+
+      <h3>The annual renewal pack</h3>
+
+      <p>13O runs on a five-year renewal cycle and 13U on ten (confirm the current cadence with MAS, as scheme terms are revised from time to time). At renewal, you are not just reporting your current state — you have to evidence that the AUM test, investment-professional headcount, LBS and CDR were met <em>throughout</em> the period, at each required measurement point, for every fund and every sub-fund with its own election.</p>
+
+      <p><strong>What this looks like assembled by hand:</strong> pulling twelve (or sixty) months of AUM snapshots, LBS ledgers and CDR calculations out of spreadsheets and email threads, per sub-fund, and hoping nothing was missed or inconsistently recorded along the way — the kind of reconstruction project that turns a routine renewal into weeks of billable adviser time.</p>
+
+      <p><strong>What this looks like on aama.io:</strong> because CDR and LBS are tracked continuously rather than assembled at year-end, the renewal pack is a byproduct of normal operations rather than a special project — one click pulls together AUM test results, CDR ratio history and LBS accumulation, per sub-fund where structures require it, into an exportable PDF and Excel package ready to hand to your tax or fund administration adviser, with an archive of prior years' packs for the full exemption period.</p>
+
+      <h3>Why these two are worth solving together</h3>
+
+      <p>A renewal pack assembled from a shared ledger with soft sub-fund tags carries the risk that the underlying numbers are wrong before you even start compiling them — you can't evidence a sub-fund's CDR or LBS position cleanly if its transactions were never cleanly separated from its umbrella siblings in the first place. Fixing segregation after years of shared-ledger history is a real remediation project. Building it in from the first sub-fund is not.</p>
+
+      <p><em>This guide is general information, not accounting, tax or regulatory advice. Renewal cadences and evidentiary requirements reflect MAS guidance as understood in 2026 and are revised periodically — confirm the current position with MAS and a licensed adviser. For the other three ongoing conditions, see the <a href="/blog/singapore-family-office-compliance-cdr-lbs-ubo-vcc">full compliance overview</a>.</em></p>
+
+      <p><strong>Running a VCC umbrella with several sub-funds? <a href="/solutions/family-offices">See how aama.io enforces sub-fund segregation and assembles the renewal pack</a> automatically, or <a href="/contact">talk to our team</a> about your structure.</strong></p>
+    `,
+    author: 'Prashant Chaulagain',
+    authorRole: 'Chief Technology Officer',
+    authorImage: '/team/prashant.png',
+    coverImage: '/images/family-office-blog.png',
+    publishedDate: '2026-08-09',
+    readTime: '8 min',
+    categories: ['Family Offices', 'Singapore', 'VCC']
+  },
 ];
 
 // Listing payload — omits the heavy `content` field to keep responses small.

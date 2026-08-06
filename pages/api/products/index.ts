@@ -806,8 +806,8 @@ export const products: ProductData[] = [
     slug: 'family-offices',
     title: 'Family Office Software',
     shortTitle: 'Family Offices',
-    description: 'Consolidated multi-entity, multi-asset administration, accounting and reporting for single and multi-family offices.',
-    heroDescription: 'Bring every entity, asset class and account into one system. aama.io gives family offices consolidated administration, fund accounting and bespoke reporting — across direct investments, funds, real assets and cash.',
+    description: 'Consolidated multi-entity, multi-asset administration, accounting and reporting for single and multi-family offices, with a built-in compliance layer for Singapore Section 13O/13U structures.',
+    heroDescription: 'Bring every entity, asset class and account into one system. aama.io gives family offices consolidated administration, fund accounting and bespoke reporting — across direct investments, funds, real assets and cash — plus the Section 13O/13U compliance tracking Singapore family offices need to keep their tax exemption.',
     icon: 'IconBriefcase',
     image: '/images/family-office-blog.png',
     category: 'Private Wealth',
@@ -847,6 +847,18 @@ export const products: ProductData[] = [
           'Scheduled and on-demand reports',
           'Secure document sharing'
         ]
+      },
+      {
+        title: 'Section 13O/13U compliance',
+        description: 'Purpose-built tracking for MAS family office tax exemption conditions',
+        items: [
+          'Capital Deployment Requirement (CDR) dashboard vs. AUM, with breach-buffer alerts',
+          'Local Business Spending (LBS) tagging on the chart of accounts, tracked against annual thresholds',
+          'UBO register with a 2-business-day ACRA change-notification countdown',
+          'VCC umbrella and sub-fund accounting with no cross-sub-fund posting',
+          'One-click annual scheme-renewal compliance pack (CDR, LBS, AUM test history)',
+          'Configurable MAS thresholds — not hardcoded, since scheme rules are revised periodically'
+        ]
       }
     ],
     benefits: [
@@ -869,6 +881,11 @@ export const products: ProductData[] = [
         title: 'Clarity for principals',
         description: 'Clear, consolidated reporting the family actually understands.',
         icon: 'IconUsers'
+      },
+      {
+        title: '13O/13U exemption, evidenced',
+        description: 'CDR, LBS, UBO and AUM tracking stay audit-ready year-round, not assembled at renewal time.',
+        icon: 'IconShieldLock'
       }
     ],
     useCases: [
@@ -894,6 +911,14 @@ export const products: ProductData[] = [
         metrics: [
           { label: 'Look-through', value: 'Full' }
         ]
+      },
+      {
+        title: '13O/13U family offices',
+        description: 'Hold the Section 13O or 13U tax exemption with continuous CDR, LBS and UBO tracking instead of a scramble at renewal.',
+        metrics: [
+          { label: 'UBO/ACRA SLA', value: '2 business days' },
+          { label: 'Compliance pack', value: 'One click' }
+        ]
       }
     ],
     keyFeatures: [
@@ -902,7 +927,12 @@ export const products: ProductData[] = [
       { title: 'Bespoke reporting', description: 'Flexible reporting tailored to each principal and advisor.' },
       { title: 'Principal portal', description: 'A white-labeled portal giving the family real-time, secure access.' },
       { title: 'Accounting engine', description: 'A full general ledger with automated NAV and audit-ready records.' },
-      { title: 'Privacy & permissions', description: 'Granular role-based access and a complete audit trail.' }
+      { title: 'Privacy & permissions', description: 'Granular role-based access and a complete audit trail.' },
+      { title: 'CDR tracking', description: 'Qualifying-local-investment flags on the security master, with a real-time ratio against each fund’s configurable CDR threshold.' },
+      { title: 'LBS categorization', description: 'MAS-aligned qualifying-spend categories on the chart of accounts, accumulated against the 13O/13U threshold through the year.' },
+      { title: 'UBO register & ACRA workflow', description: 'Natural-person UBO records with edit history, and a 2-business-day countdown with escalating reminders on every change.' },
+      { title: 'VCC sub-fund segregation', description: 'Independent ledgers and financial statements per sub-fund, with hard validation against cross-sub-fund postings.' },
+      { title: 'Annual compliance pack', description: 'CDR ratio history, LBS accumulation and AUM test results assembled into one exportable renewal package.' }
     ],
     faq: [
       {
@@ -924,6 +954,26 @@ export const products: ProductData[] = [
       {
         question: 'Can multi-family offices use it?',
         answer: 'Yes — segregated data per family, white-labeled principal portals and consolidated reporting make it well suited to multi-family offices.'
+      },
+      {
+        question: 'Does the platform track the Section 13O/13U Capital Deployment Requirement (CDR)?',
+        answer: 'Yes. Qualifying-local-investment status (Singapore-listed equities, REITs, Qualifying Debt Securities and other MAS-specified categories) is tracked on the security master, independent of asset class, with a real-time CDR ratio, a breach-buffer alert, and historical time series for renewal evidence.'
+      },
+      {
+        question: 'How does Local Business Spending (LBS) tracking work?',
+        answer: 'Qualifying expense categories — IP/staff salaries and CPF, office rental, legal/accounting/audit/fund-admin fees, local infrastructure and technology, SGX exchange fees — sit alongside standard P&L categorization on the chart of accounts, with a running annual total against the applicable 13O or 13U threshold.'
+      },
+      {
+        question: 'How do you handle the 2-business-day UBO/ACRA reporting SLA?',
+        answer: 'Any edit to the UBO register starts a 2-business-day countdown with escalating reminders, visible on a compliance task dashboard, and an ACRA filing log that records what was filed, when and by whom — evidencing the SLA was met.'
+      },
+      {
+        question: 'How does VCC sub-fund accounting stay segregated?',
+        answer: 'Each sub-fund gets its own ledger, trial balance and financial statements, with validation that blocks any transaction or journal entry from referencing more than one sub-fund — plus an umbrella-level roll-up view clearly labeled as non-legal-consolidation.'
+      },
+      {
+        question: 'Can I generate a renewal pack for the MAS scheme audit?',
+        answer: 'Yes. A one-click Annual Compliance Pack pulls together AUM test results, CDR ratio history and LBS accumulation into an exportable PDF and Excel package for your tax or fund administration adviser, archived year over year for the exemption period.'
       }
     ],
     relatedProducts: ['vc-pe-firms', 'spv-syndicates']

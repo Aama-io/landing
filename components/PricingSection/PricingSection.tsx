@@ -1,62 +1,6 @@
-import { Container, Title, Text, Card, Switch, Group, List, Button, Stack, Table, Badge, Box, ScrollArea, Divider, ThemeIcon, Tooltip, Paper } from '@mantine/core';
-import { IconCheck, IconX, IconMinus, IconInfoCircle, IconAward, IconChevronsDown, IconCrown } from '@tabler/icons-react';
-import { useState } from 'react';
+import { Container, Title, Text, Group, Table, Badge, Box, ScrollArea, ThemeIcon, Tooltip, Paper } from '@mantine/core';
+import { IconCheck, IconX, IconMinus, IconInfoCircle, IconChevronsDown, IconCrown } from '@tabler/icons-react';
 import classes from './PricingSection.module.css';
-
-const plans = [
-  {
-    title: 'Basic',
-    monthlyPrice: '0.5%',
-    yearlyPrice: '0.4%',
-    description: 'Perfect for getting started',
-    features: [
-      'Up to $1M AUM',
-      'Basic fund setup',
-      'Standard KYC/AML',
-      'Email support',
-      'Basic analytics',
-      'Single blockchain',
-    ],
-    action: 'Get started',
-    highlight: false,
-  },
-  {
-    title: 'Professional',
-    monthlyPrice: '0.3%',
-    yearlyPrice: '0.25%',
-    description: 'For growing funds',
-    features: [
-      'Up to $10M AUM',
-      'Advanced fund setup',
-      'Priority KYC/AML',
-      'Priority support',
-      'Advanced analytics',
-      'Multi-chain support',
-      'Custom branding',
-      'API access',
-    ],
-    action: 'Start free trial',
-    highlight: true,
-  },
-  {
-    title: 'Enterprise',
-    price: 'Custom',
-    description: 'For institutional funds',
-    features: [
-      'Unlimited AUM',
-      'Custom fund structure',
-      'Dedicated KYC/AML',
-      '24/7 support',
-      'Custom analytics',
-      'All chains supported',
-      'White-label solution',
-      'Custom integrations',
-      'Dedicated account manager',
-    ],
-    action: 'Contact sales',
-    highlight: false,
-  },
-];
 
 // Data type for cell content
 interface CellData {
@@ -109,6 +53,33 @@ const comparisonData = [
         aama: { value: 'Yes', highlight: true },
         allvue: { value: 'Yes', highlight: false },
         fundrecs: { value: 'Yes', highlight: false },
+        efront: { value: 'Yes', highlight: false },
+        apex: { value: 'Yes', highlight: false }
+      },
+      {
+        feature: 'SPV & Syndicate Administration',
+        tooltip: 'Per-deal SPV formation, investor onboarding and administration',
+        aama: { value: 'Yes', highlight: true },
+        allvue: { value: 'No', highlight: false },
+        fundrecs: { value: 'No', highlight: false },
+        efront: { value: 'Limited', highlight: false },
+        apex: { value: 'Limited', highlight: false }
+      },
+      {
+        feature: 'VCC Sub-Fund Support (Singapore)',
+        tooltip: 'Native support for Singapore Variable Capital Company sub-fund structures',
+        aama: { value: 'Full', highlight: true },
+        allvue: { value: 'Limited', highlight: false },
+        fundrecs: { value: 'No', highlight: false },
+        efront: { value: 'Limited', highlight: false },
+        apex: { value: 'Limited', highlight: false }
+      },
+      {
+        feature: 'IFRS 9 / SFRS(I) 9 Accounting',
+        tooltip: 'Amortised cost, effective-interest and expected credit loss for credit funds',
+        aama: { value: 'Yes', highlight: true },
+        allvue: { value: 'Yes', highlight: false },
+        fundrecs: { value: 'Limited', highlight: false },
         efront: { value: 'Yes', highlight: false },
         apex: { value: 'Yes', highlight: false }
       },
@@ -262,8 +233,6 @@ const renderCellContent = (data: CellData) => {
 };
 
 export function PricingSection() {
-  const [yearly, setYearly] = useState(false);
-
   return (
     <div className={classes.wrapper}>
       <Container size="lg" py="xl">
@@ -326,7 +295,7 @@ export function PricingSection() {
                   <Table.Th className={classes.aamaColumn}>
                     <Group gap="xs" justify="center">
                       <Badge size="lg" color="blue" variant="filled" className={classes.providerBadge}>
-                        AAMA.io
+                        aama.io
                       </Badge>
                     </Group>
                   </Table.Th>
@@ -387,10 +356,10 @@ export function PricingSection() {
           <Group mt="md" justify="space-between" align="center" p="md">
             <Group gap="xs" c="dimmed">
               <IconInfoCircle size={16} />
-              <Text size="sm">Lower values are better for pricing and timeline metrics. AAMA.io can provide customized solutions for any market globally.</Text>
+              <Text size="sm">Lower values are better for pricing and timeline metrics. aama.io can configure the platform for funds in any market globally.</Text>
             </Group>
             <Text size="sm" ta="right" c="dimmed">
-              Based on projected market research for 2025
+              Based on projected market research for 2026
             </Text>
           </Group>
         </Paper>

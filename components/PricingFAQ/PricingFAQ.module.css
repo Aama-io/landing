@@ -1,106 +1,124 @@
+/* Pricing FAQ — aligned to the brand design system (slate/blue tokens, accent). */
+
 .wrapper {
-  padding: 80px 0;
-  background-color: var(--mantine-color-gray-0);
+  padding: clamp(56px, 8vw, 96px) 0;
+  background: radial-gradient(120% 120% at 50% -10%, #f3f7ff 0%, #ffffff 55%);
 }
 
+/* Sticky left column */
 .header {
   position: sticky;
   top: 100px;
 }
 
-.icon {
-  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-indigo-6) 100%);
-  color: white;
-  margin-bottom: 20px;
+.eyebrow {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--brand-soft, #eef3ff);
+  border: 1px solid #dbe6ff;
+  color: var(--mantine-color-blue-7, #1247db);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .title {
-  font-size: 38px;
-  font-weight: 800;
+  margin-top: 18px;
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
   line-height: 1.1;
-  margin-bottom: 15px;
-  color: var(--mantine-color-dark-8);
+  letter-spacing: -0.03em;
+  font-weight: 800;
+  color: var(--text-strong, #0b1324);
+}
+
+.accent {
+  background: linear-gradient(115deg, #1f5aff 0%, #5e8aff 55%, #1247db 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .description {
+  margin-top: 16px;
   font-size: 16px;
   line-height: 1.6;
-  color: var(--mantine-color-gray-7);
-  margin-bottom: 30px;
+  color: var(--text-muted, #5a6478);
 }
 
 .contactInfo {
-  background-color: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--mantine-color-gray-2);
+  margin-top: 26px;
+  padding: 22px;
+  border-radius: var(--radius-lg, 16px);
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e7ebf2);
+  box-shadow: var(--mantine-shadow-xs, 0 1px 3px rgba(15, 23, 42, 0.05));
+  color: var(--text-strong, #0b1324);
 }
 
 .link {
-  color: var(--mantine-color-blue-6);
+  color: var(--mantine-color-blue-7, #1247db);
+  font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .link:hover {
-  color: var(--mantine-color-blue-8);
   text-decoration: underline;
 }
 
+/* Accordion */
 .accordion {
-  max-width: 800px;
+  width: 100%;
 }
 
 .item {
-  background-color: white;
-  border: 1px solid var(--mantine-color-gray-2);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-  margin-bottom: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e7ebf2);
+  border-radius: var(--radius-lg, 16px) !important;
+  box-shadow: var(--mantine-shadow-xs, 0 1px 3px rgba(15, 23, 42, 0.04));
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+  border-color: #cfe0ff;
 }
 
 .item[data-active="true"] {
-  transform: scale(1.01);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  border-color: var(--mantine-color-blue-3);
+  border-color: #bcd3ff;
+  box-shadow: 0 14px 34px -22px rgba(31, 90, 255, 0.4);
 }
 
 .control {
-  padding: 16px 20px;
-  font-weight: 600;
+  padding: 18px 20px;
+  font-weight: 650;
   font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--text-strong, #0b1324);
 }
 
 .control:hover {
-  background-color: var(--mantine-color-gray-0);
+  background: var(--brand-soft, #f3f7ff);
 }
 
 .panel {
-  padding: 20px;
-  line-height: 1.6;
-  color: var(--mantine-color-gray-7);
   font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted, #5a6478);
+}
+
+.panel :global(.mantine-Accordion-content) {
+  padding: 0 20px 20px;
 }
 
 @media (max-width: 992px) {
   .header {
     position: relative;
     top: 0;
-    margin-bottom: 40px;
-  }
-  
-  .title {
-    font-size: 32px;
+    margin-bottom: 36px;
   }
 }
-
-@media (max-width: 768px) {
-  .wrapper {
-    padding: 60px 0;
-  }
-  
-  .title {
-    font-size: 28px;
-  }
-} 
