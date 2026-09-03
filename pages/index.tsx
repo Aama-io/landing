@@ -5,6 +5,7 @@ import { TrustBar } from '../components/TrustBar/TrustBar';
 import { ProblemSolution } from '../components/ProblemSolution/ProblemSolution';
 import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
 import { PainPoints } from '@/components/PainPoints/PainPoints';
+import { SocialProof } from '@/components/SocialProof/SocialProof';
 import { CTA } from '@/components/CTA/CTA';
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
         <ProblemSolution />
         <ProductShowcase />
         <PainPoints />
+        <SocialProof />
         <CTA />
       </PageShell>
     </>
