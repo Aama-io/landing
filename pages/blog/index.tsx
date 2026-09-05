@@ -48,8 +48,8 @@ export default function BlogPage({ posts }: { posts: BlogPost[] }) {
 
   // Define SEO metadata
   const seoTitle = "Fund Administration Insights & News";
-  const seoDescription = "Expert insights on fund administration softwares, IFRS accounting, investor portals, data integration, and blockchain technology in financial services.";
-  const seoKeywords = "fund administration, IFRS accounting, investor portal, financial technology, blockchain, investment software";
+  const seoDescription = "Practical guides on Singapore fund administration — VCC structuring, family office compliance, SPVs and syndicates, distribution waterfalls and IFRS 9 / SFRS(I) 9 fund accounting.";
+  const seoKeywords = "fund administration Singapore, VCC structuring, family office compliance, SPV administration, distribution waterfall, IFRS 9 fund accounting, MAS licensing";
   const seoUrl = "https://aama.io/blog";
   const seoImage = posts.length > 0 ? posts[0].coverImage : '/fund-types/mutual-fund.jpg';
 
@@ -104,7 +104,7 @@ export default function BlogPage({ posts }: { posts: BlogPost[] }) {
             <span className={s.pill}>aama.io blog</span>
             <Title className={classes.title}>Fund administration <span className={s.accent}>insights</span></Title>
             <Text className={classes.subtitle}>
-              Practical guides on distribution waterfalls, VCC structuring, fund economics and Singapore fund operations — plus deep dives behind our free tools.
+              Practical guides on distribution waterfalls, VCC and family office structuring, SPVs and syndicates, and Singapore fund operations — plus deep dives behind our free tools.
             </Text>
           </Stack>
 
