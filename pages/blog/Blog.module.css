@@ -162,6 +162,9 @@
 }
 
 .topicChip {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(6px);
   padding: rem(7px) rem(14px);
   border-radius: 999px;
   background: var(--mantine-color-white);
@@ -169,6 +172,92 @@
   font-size: rem(13px);
   font-weight: 600;
   color: var(--mantine-color-gray-7);
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.topicChip:hover {
+  border-color: var(--mantine-color-blue-3);
+  transform: translateY(-1px);
+}
+
+.topicChip[data-active='true'] {
+  background: var(--brand, var(--mantine-color-blue-6));
+  border-color: var(--brand, var(--mantine-color-blue-6));
+  color: #ffffff;
+}
+
+.topicCount {
+  font-size: rem(11px);
+  font-weight: 700;
+  opacity: 0.65;
+}
+
+.resultsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(14px);
+  margin: rem(4px) 0 rem(28px);
+}
+
+.clearFilter {
+  display: inline-flex;
+  align-items: center;
+  gap: rem(4px);
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: rem(13px);
+  font-weight: 600;
+  color: var(--mantine-color-blue-6);
+  cursor: pointer;
+}
+
+.clearFilter:hover {
+  text-decoration: underline;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(8px);
+  margin-top: rem(48px);
+}
+
+.pageBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: rem(38px);
+  height: rem(38px);
+  padding: 0 rem(10px);
+  border-radius: rem(10px);
+  background: var(--mantine-color-white);
+  border: 1px solid var(--mantine-color-gray-3);
+  font-size: rem(14px);
+  font-weight: 600;
+  color: var(--mantine-color-gray-7);
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.pageBtn:hover:not(:disabled) {
+  border-color: var(--mantine-color-blue-3);
+  background: var(--brand-soft, var(--mantine-color-blue-0));
+}
+
+.pageBtn[data-active='true'] {
+  background: var(--brand, var(--mantine-color-blue-6));
+  border-color: var(--brand, var(--mantine-color-blue-6));
+  color: #ffffff;
+}
+
+.pageBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 /* Tools CTA band */
