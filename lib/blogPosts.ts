@@ -1,3 +1,6 @@
+import { solutionBySlug, type SolutionNav } from './solutions';
+import { TOOL_CONTENT } from './toolContent';
+
 // Blog post data — single source of truth shared by the blog API route
 // (pages/api/blog/posts.ts) and static generation in the blog pages.
 export interface BlogPost {
@@ -1653,4 +1656,81 @@ export function getAllPosts(): BlogPostSummary[] {
 
 export function getPostBySlug(slug: string): BlogPost | null {
   return blogPosts.find((post) => post.slug === slug) ?? null;
+}
+
+// ---------------------------------------------------------------------------
+// Cross-linking: every post surfaces related posts, a matching solution page
+// and relevant calculator tools, so the blog, solutions and tools sections
+// stay woven together for both crawlers and readers rather than sitting as
+// three separate silos.
+// ---------------------------------------------------------------------------
+
+/** Only very confident category → solution matches; everything else is left unmapped
+ *  rather than forcing a loose association. */
+const CATEGORY_SOLUTION: Record<string, string> = {
+  SPVs: 'spv-syndicates',
+  'Venture Capital': 'vc-pe-firms',
+  'Private Equity': 'vc-pe-firms',
+  'Fund Waterfalls': 'vc-pe-firms',
+  'Carried Interest': 'vc-pe-firms',
+  'Family Offices': 'family-offices',
+  VCC: 'family-offices',
+};
+
+const CATEGORY_TOOLS: Record<string, string[]> = {
+  SPVs: ['/tools/capital-call-schedule', '/tools/fee-carry-modeler', '/tools/co-investment-modeler'],
+  'Venture Capital': ['/tools/co-investment-modeler', '/tools/irr-tvpi-dpi-calculator'],
+  'Private Equity': ['/tools/waterfall', '/tools/irr-tvpi-dpi-calculator'],
+  'Fund Waterfalls': ['/tools/waterfall', '/tools/waterfall-comparator'],
+  'Carried Interest': ['/tools/fee-carry-modeler', '/tools/carried-interest-tax'],
+  'Fund Performance': ['/tools/irr-tvpi-dpi-calculator', '/tools/vintage-benchmarker'],
+  'LP Reporting': ['/tools/irr-tvpi-dpi-calculator'],
+  VCC: ['/tools/vcc-comparator', '/tools/vcc-cost-estimator'],
+  Licensing: ['/tools/mas-licensing-estimator'],
+  'Tax Incentives': ['/tools/carried-interest-tax'],
+  'Fund Accounting': ['/tools/bond-je-generator', '/tools/fx-revaluation-je', '/tools/subscription-redemption-je'],
+  'IFRS 9': ['/tools/bond-je-generator', '/tools/fx-revaluation-je'],
+  'IFRS Compliance': ['/tools/bond-je-generator'],
+  'Fund Setup': ['/tools/vcc-cost-estimator', '/tools/mas-licensing-estimator'],
+  'Emerging Managers': ['/tools/mas-licensing-estimator', '/tools/vcc-cost-estimator'],
+};
+
+/** Other posts sharing the most categories with this one, newest first as a tiebreak. */
+export function getRelatedPosts(slug: string, limit = 3): BlogPostSummary[] {
+  const current = getPostBySlug(slug);
+  if (!current) {return [];}
+
+  return getAllPosts()
+    .filter((p) => p.slug !== slug)
+    .map((p) => ({
+      post: p,
+      score: p.categories.filter((c) => current.categories.includes(c)).length,
+    }))
+    .sort(
+      (a, b) =>
+        b.score - a.score ||
+        new Date(b.post.publishedDate).getTime() - new Date(a.post.publishedDate).getTime()
+    )
+    .slice(0, limit)
+    .map((s) => s.post);
+}
+
+/** The one solution page this post's categories most confidently point to, if any. */
+export function getRelatedSolution(categories: string[]): SolutionNav | undefined {
+  for (const c of categories) {
+    const slug = CATEGORY_SOLUTION[c];
+    if (slug) {return solutionBySlug(slug);}
+  }
+  return undefined;
+}
+
+/** Up to `limit` distinct calculator tools relevant to this post's categories. */
+export function getRelatedTools(categories: string[], limit = 3): { path: string; title: string }[] {
+  const paths: string[] = [];
+  categories.forEach((c) => {
+    (CATEGORY_TOOLS[c] ?? []).forEach((p) => {
+      if (!paths.includes(p)) {paths.push(p);}
+    });
+  });
+  return paths.slice(0, limit).map((path) => ({ path, title: TOOL_CONTENT[path]?.seoTitle ?? path }));
 }

@@ -247,6 +247,14 @@
   color: inherit;
 }
 
+/* Callout linking a post to the one solution page its topic matches */
+.solutionCallout {
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--brand-soft);
+  border: 1px solid var(--border);
+}
+
 .card:hover {
   transform: translateY(-6px);
   border-color: var(--mantine-color-blue-3);
