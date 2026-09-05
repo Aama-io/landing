@@ -36,12 +36,12 @@ export default function ToolsIndexPage() {
         <meta property="og:url" content={url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={`${SITE}/product-investment-portal.png`} />
+        <meta property="og:image" content={`${SITE}/og-image.png`} />
         <meta property="og:site_name" content="aama.io" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={`${SITE}/product-investment-portal.png`} />
+        <meta name="twitter:image" content={`${SITE}/og-image.png`} />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <link rel="manifest" href="/site.webmanifest" />

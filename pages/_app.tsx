@@ -28,6 +28,28 @@ const appTheme = mergeThemeOverrides(theme, {
   headings: { fontFamily: fontStack },
 });
 
+// Site-wide Organization + WebSite structured data — emitted once here rather
+// than per-page, since it describes the brand/site itself, not a given page.
+// `sameAs` intentionally omits any social profile we haven't confirmed is real;
+// add verified links (LinkedIn company page etc.) here when available.
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AAMA',
+  url: 'https://aama.io',
+  logo: 'https://aama.io/aama-logo.svg',
+  description:
+    'Fund administration and accounting software for mid-market PE, VC, private credit, family office and SPV/syndicate managers in Singapore and APAC.',
+  sameAs: ['https://twitter.com/uxqode'],
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'aama.io',
+  url: 'https://aama.io',
+};
+
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -57,6 +79,14 @@ export default function App({ Component, pageProps }: AppProps) {
             content="width=device-width, initial-scale=1"
           />
           <link rel="shortcut icon" href="/favicon.svg" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          />
         </Head>
         <MotionConfig reducedMotion="user" transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}>
           <Component {...pageProps} />

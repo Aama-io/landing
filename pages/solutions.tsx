@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Container, Title, Text, Button, Group, Accordion } from '@mantine/core';
+import { Container, Text, Button, Group, Accordion } from '@mantine/core';
 import {
   IconUserCheck, IconSearch, IconCreditCard, IconBuildingBank, IconChartLine,
   IconArrowBackUp, IconFileReport, IconArrowRight, IconCalendarEvent, IconRocket,
@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Cal, { getCalApi } from '@calcom/embed-react';
 import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
+import { Audiences } from '@/components/Audiences/Audiences';
 import s from '@/components/ui/tool.module.css';
 import m from '../styles/SolutionsNew.module.css';
 
@@ -21,9 +22,9 @@ const heroStats = [
 ];
 
 const phaseComponents = [
-  { phase: 'Onboarding', icon: IconUserCheck, components: ['Investor Portal', 'KYC Module', 'Risk Profiling'], description: 'Streamlined investor onboarding with automated KYC verification and personalized risk profiling.' },
+  { phase: 'Onboarding', icon: IconUserCheck, components: ['Investor Portal', 'KYC Module', 'Risk Profiling'], description: 'Fast investor onboarding with automated KYC verification and personalized risk profiling.' },
   { phase: 'Fund Discovery', icon: IconSearch, components: ['Fund Investment Planning', 'Investor Portal'], description: 'Intuitive fund discovery tools that help investors find opportunities aligned with their goals.' },
-  { phase: 'Subscription', icon: IconCreditCard, components: ['Investor Portal', 'Back Office', 'Administration Portal'], description: 'Seamless subscription with automated payment processing and real-time tracking.' },
+  { phase: 'Subscription', icon: IconCreditCard, components: ['Investor Portal', 'Back Office', 'Administration Portal'], description: 'Simple subscription with automated payment processing and real-time tracking.' },
   { phase: 'Custody & Accounting', icon: IconBuildingBank, components: ['Fund Administration & Accounting'], description: 'Secure asset custody and comprehensive fund accounting with automated NAV calculations.' },
   { phase: 'Portfolio Monitoring', icon: IconChartLine, components: ['Investor Portal', 'Fund Administration', 'Manager Portal'], description: 'Real-time portfolio monitoring with detailed performance analytics and interactive dashboards.' },
   { phase: 'Redemption', icon: IconArrowBackUp, components: ['Investor Portal', 'Administration', 'Automation'], description: 'Efficient redemption with automated processing and transparent fee calculations.' },
@@ -38,14 +39,14 @@ const softwareFeatures = [
 ];
 
 const integrationOptions = [
-  { title: 'Banking', icon: IconBuildingBank, description: 'Connect major banks and payment processors for seamless transfers and reconciliation.' },
+  { title: 'Banking', icon: IconBuildingBank, description: 'Connect major banks and payment processors for automated transfers and reconciliation.' },
   { title: 'Custodian Services', icon: IconDatabase, description: 'Integrate leading custodians for secure asset administration and storage.' },
   { title: 'Analytics Platforms', icon: IconDeviceAnalytics, description: 'Connect analytics tools for enhanced reporting and data visualization.' },
   { title: 'Cloud Infrastructure', icon: IconCloudComputing, description: 'Secure cloud infrastructure for scalable, reliable platform performance.' },
 ];
 
 const clientBenefits = [
-  { title: 'Reduced Operational Costs', description: 'Cut operational expenses through automation of manual processes and streamlined workflows.', value: '40%', icon: IconReportMoney },
+  { title: 'Reduced Operational Costs', description: 'Cut operational expenses through automation of manual processes and administrative workflows.', value: '40%', icon: IconReportMoney },
   { title: 'Faster Time to Market', description: 'Launch new funds faster with pre-configured templates and automated setup.', value: '60%', icon: IconRocket },
   { title: 'Enhanced Investor Experience', description: 'Improve investor satisfaction and retention with an intuitive portal and transparent reporting.', value: '95%', icon: IconUsers },
   { title: 'Regulatory Compliance', description: 'Stay compliant with evolving regulations through automated reporting and built-in controls.', value: '100%', icon: IconShield },
@@ -103,6 +104,9 @@ export default function SolutionsPage() {
             </motion.div>
           </Container>
         </section>
+
+        {/* Solutions by audience — the hub actually links to its own children here */}
+        <Audiences />
 
         {/* Lifecycle */}
         <section className={m.section}>
@@ -186,7 +190,7 @@ export default function SolutionsPage() {
             <motion.div className={m.sectionHead} {...reveal} transition={{ duration: 0.5, ease }}>
               <span className={m.eyebrow}>Integration ecosystem</span>
               <h2 className={m.sectionTitle}>Plugs into your <span className={s.accent}>existing stack</span></h2>
-              <p className={m.sectionDesc}>Seamless connections with the systems you already run — no rip-and-replace.</p>
+              <p className={m.sectionDesc}>Direct connections with the systems you already run — no rip-and-replace.</p>
             </motion.div>
             <div className={m.intGrid}>
               {integrationOptions.map((it, i) => (

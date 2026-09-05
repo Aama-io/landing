@@ -53,8 +53,8 @@ export function Footer() {
           <div className={classes.brand}>
             <Logo />
             <Text className={classes.tagline}>
-              End-to-end fund administration software — onboarding, portfolio management, investor relations and fund accounting, all in one modern platform. 
-              servicing on one modern platform.
+              End-to-end fund administration software — from capital call to accounting, all in one platform. The operating layer for private capital.
+
             </Text>
             <Group gap={10} mt="lg">
               <ActionIcon

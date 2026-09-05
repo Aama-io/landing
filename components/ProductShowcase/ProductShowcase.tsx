@@ -42,7 +42,7 @@ const products = [
   {
     title: 'Capital Calls',
     description:
-      'Streamlined capital call workflows with automated notifications, payment tracking and built-in compliance monitoring.',
+      'Automated capital call workflows with scheduled notifications, payment tracking and built-in compliance monitoring.',
     image: '/images/capital-call.png',
     icon: IconCoin,
     features: ['Automated calls', 'Payment tracking', 'Compliance reports'],

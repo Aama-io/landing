@@ -6,7 +6,7 @@ type LogoProps = {
   variant?: 'default' | 'light';
   href?: string | null;
   onClick?: () => void;
-  /** Show the "Fund Administration & Accounting" tagline under the wordmark */
+  /** Show "The operating layer for private capital" beside the wordmark, divider-separated */
   tagline?: boolean;
 };
 
@@ -14,6 +14,11 @@ type LogoProps = {
  * aama.io brand mark — a "ledger card" tile (gradient brand tile with three
  * balance lines and a rising teal balance dot) paired with a neutral ink
  * wordmark whose dot echoes the mark's accent.
+ *
+ * The tagline sits inline after a divider rather than stacked underneath —
+ * a five-word line has no business trying to be no wider than a seven-
+ * character wordmark. It hides below the point where the full nav also
+ * wants the room (see Logo.module.css).
  */
 export function Logo({ variant = 'default', href = '/', onClick, tagline = true }: LogoProps) {
   const content = (
@@ -31,12 +36,15 @@ export function Logo({ variant = 'default', href = '/', onClick, tagline = true 
         <rect x="11" y="26.5" width="10" height="3" rx="1.5" fill="#fff" opacity="0.46" />
         <circle cx="27.5" cy="15" r="2.8" fill="#00c896" />
       </svg>
-      <span className={classes.text}>
-        <span className={classes.word}>
-          aama<span className={classes.dot}>.</span>io
-        </span>
-        {tagline ? <span className={classes.tagline}>Fund Administration Software</span> : null}
+      <span className={classes.word}>
+        aama<span className={classes.dot}>.</span>io
       </span>
+      {tagline ? (
+        <span className={classes.taglineGroup}>
+          <span className={classes.divider} aria-hidden="true" />
+          <span className={classes.tagline}>The operating layer for private capital</span>
+        </span>
+      ) : null}
     </>
   );
 

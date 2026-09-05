@@ -3,7 +3,7 @@ import { TOOL_CONTENT } from '@/lib/toolContent';
 import { ALL_TOOLS } from '@/lib/tools';
 
 const SITE = 'https://aama.io';
-const OG_IMAGE = '/product-investment-portal.png';
+const OG_IMAGE = '/og-image.png';
 
 /**
  * Self-contained SEO head for a tool page: correct per-page canonical, Open
@@ -14,7 +14,7 @@ const OG_IMAGE = '/product-investment-portal.png';
 export function ToolMeta({ slug }: { slug: string }) {
   const c = TOOL_CONTENT[slug];
   const tool = ALL_TOOLS.find((t) => t.href === slug);
-  if (!c) return null;
+  if (!c) {return null;}
 
   const url = `${SITE}${slug}`;
   const title = `${c.seoTitle} | aama.io`;

@@ -16,7 +16,7 @@ export function SEO({
   title = 'Fund Administration Software Singapore',
   description = 'Fund administration and accounting software for mid-market fund managers and boutique fund administrators in Singapore and APAC — capital calls, NAV, IFRS 9 / SFRS(I) 9 accounting, an LP portal and SPV administration, without enterprise complexity.',
   keywords = 'fund administration software Singapore, fund accounting software, LP portal for fund managers, SPV administration software, VCC fund administration MAS, PE fund administration Singapore, VC fund accounting APAC, boutique fund admin software',
-  ogImage = '/product-investment-portal.png', // Using existing product image for OG
+  ogImage = '/og-image.png',
   ogUrl,
   noindex = false,
 }: SEOProps) {
@@ -25,6 +25,9 @@ export function SEO({
   // it from the current path so every page canonicalises to ITSELF — not the homepage.
   const path = (router.asPath || '/').split(/[?#]/)[0];
   const pageUrl = ogUrl ?? `${SITE}${path === '/' ? '' : path}`;
+  // og:image / twitter:image should be absolute per spec — most crawlers tolerate a
+  // relative path, but not all do, so resolve it against the site origin here once.
+  const absoluteOgImage = ogImage.startsWith('http') ? ogImage : `${SITE}${ogImage}`;
   // Append the brand only when the title doesn't already carry it — avoids
   // "… | aama.io | AAMA" double-branding on pages that include the brand themselves.
   const fullTitle = /aama/i.test(title) ? title : `${title} | aama.io`;
@@ -42,7 +45,7 @@ export function SEO({
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
+      <meta property="og:image" content={absoluteOgImage} />
       <meta property="og:site_name" content="AAMA" />
 
       {/* Twitter */}
@@ -50,7 +53,7 @@ export function SEO({
       <meta property="twitter:url" content={pageUrl} />
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={ogImage} />
+      <meta property="twitter:image" content={absoluteOgImage} />
       <meta name="twitter:creator" content="@uxqode" />
 
       {/* Additional SEO Tags */}
