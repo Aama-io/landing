@@ -1539,6 +1539,109 @@ As we continue through 2025, the gap between firms using modern technology and t
     readTime: '8 min',
     categories: ['Family Offices', 'Singapore', 'VCC']
   },
+  {
+    id: '25',
+    title: 'The Swiss Army Knife of Venture: Why VCs and Founders Use SPVs',
+    slug: 'why-vcs-founders-use-spvs',
+    excerpt: 'An SPV isn’t a smaller fund — it’s a different instrument entirely: one deal, one cap table, one set of economics. Here is why VCs reach for one instead of the main fund, what it actually costs, and what an LP is signing up for when they commit.',
+    content: `
+      <p>Ask a VC why they are running a deal through a separate vehicle instead of the fund, and the answer is almost never "because it's trendy." An SPV solves a specific, recurring problem: the fund's structure does not fit this particular check.</p>
+
+      <h3>A single-asset fund, not a smaller one</h3>
+
+      <p>A traditional venture fund is a blind pool — LPs commit capital before knowing which companies it will back, and the manager allocates across a portfolio over several years. An SPV inverts that: it exists to hold <strong>one specific company</strong>. Investors see the asset before they commit a dollar. Same wrapper mechanics — capital calls, a cap table, distributions, reporting — built around a single line item instead of twenty or thirty.</p>
+
+      <h3>Why VCs reach for one instead of the fund</h3>
+
+      <p>Three situations come up constantly:</p>
+
+      <ul>
+        <li><strong>The fund's reserves are spent.</strong> A breakout portfolio company raises again, the fund's follow-on reserve is already allocated elsewhere, and the manager still wants in — an SPV lets existing and new LPs fund the check without touching the fund itself.</li>
+        <li><strong>The deal sits outside the fund's mandate.</strong> High conviction on a company that does not fit the fund's stage, sector or geography thesis. Rather than stretch the fund's mandate, the check goes through its own vehicle.</li>
+        <li><strong>Ownership limits inside the fund.</strong> Funds often cap how much of a single company one vehicle can hold. An SPV lets a manager go further into a winner without breaching that limit at the fund level.</li>
+      </ul>
+
+      <h3>What it costs — and who it is cheap for</h3>
+
+      <p>SPV economics are lighter than a full fund, though terms vary deal to deal. Rather than an annual management fee, most SPVs run on a one-time <strong>expense reserve</strong> that covers legal, administration and banking costs for the vehicle's life. Carry is commonly in the mid-to-high teens, and a hurdle rate — often around 8% — is increasingly standard practice before the lead participates in the upside. For LPs, that combination often means lower or no management fee and direct, transparent exposure to one company, instead of a blended position inside a multi-asset fund.</p>
+
+      <h3>What an LP is actually signing up for</h3>
+
+      <p>The same structure that makes SPVs attractive also concentrates the risk. Before committing, it is worth being explicit about four things:</p>
+
+      <ul>
+        <li><strong>No diversification.</strong> This is a single bet. If the company fails, the vehicle returns nothing — there is no portfolio-level averaging to soften it.</li>
+        <li><strong>Information asymmetry.</strong> Private companies rarely owe SPV investors the reporting rights a lead investor gets. Ask up front what updates, if any, you will actually receive — many LPs end up holding a position at cost until the company has an exit or a markdown event.</li>
+        <li><strong>What is the manager's conviction actually built on?</strong> There is a real difference between a lead who has diligenced the company directly and one riding market interest in a hot round. Ask what they know that isn't in the deck.</li>
+        <li><strong>Operational expectations.</strong> How fast does capital need to move once you commit? Is there one capital call or several? What does reporting look like for the life of the vehicle? A well-run SPV answers these before you wire funds, not after.</li>
+      </ul>
+
+      <h3>The other side of the table: founders</h3>
+
+      <p>SPVs are not only a VC tool. A founder juggling a dozen angels, an advisor and a few friends-and-family checks can route all of them through a single vehicle instead of a dozen lines on the cap table. The company sees one entity; the SPV lead handles the individual relationships, KYC and reporting behind it.</p>
+
+      <h3>Where the mechanism breaks down</h3>
+
+      <p>The vehicle itself is simple. Running several of them is where spreadsheets stop being adequate — tracking commitments and capital calls, calculating lead carry correctly against the actual proceeds, producing a capital account statement per member, and keeping KYC and subscription documents somewhere other than an inbox. That is fund administration, scaled down to one asset per vehicle rather than removed.</p>
+
+      <p><strong><a href="/solutions/spv-syndicates">See how aama.io administers SPVs and syndicates</a></strong> — vehicle setup, member onboarding, carry automation and IFRS-ready accounting on the same engine that runs multi-asset funds. For the administrative side of running one well, see the companion piece: <a href="/blog/spv-administration-best-practices">SPV Administration: Best Practices for Setting Up and Managing a Single-Asset Vehicle</a>.</p>
+
+      <p><em>This article is general information about how SPVs are commonly structured, not investment, legal or tax advice. Fee structures, carry and hurdle terms vary by deal and jurisdiction — confirm the terms of any specific vehicle with its lead and your own advisers before committing capital.</em></p>
+
+      <p><strong>Running SPVs or a syndicate today? <a href="/contact">Talk to our team</a> about moving the administration onto aama.io.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/fund-types/vc.jpg',
+    publishedDate: '2026-09-03',
+    readTime: '7 min',
+    categories: ['SPVs', 'Venture Capital', 'Fund Structures']
+  },
+  {
+    id: '26',
+    title: 'SPV Administration: Best Practices for Setting Up and Managing a Single-Asset Vehicle',
+    slug: 'spv-administration-best-practices',
+    excerpt: 'The deal terms are the easy part. Raising the full amount you promised a founder, handling an oversubscribed round without a refund headache, and producing a member’s tax statement a year later — that is where SPVs are actually won or lost.',
+    content: `
+      <p>An SPV is easy to promise a founder and hard to run well. The mechanics that separate a clean vehicle from a painful one are rarely the deal terms — they are the raise, the allocation and the reporting that follow.</p>
+
+      <h3>Getting the vehicle right from day one</h3>
+
+      <p>Entity structure depends on where you and your investors sit. A US-based SPV commonly forms as an LLC, relies on a Form D exemption with the SEC, and has to clear state-level "Blue Sky" filings in every state where an investor is resident. A Singapore or wider-APAC vehicle more often sits as a private company limited by shares, or as a sub-fund under a VCC umbrella if it is part of a larger manager's structure — each with its own MAS or ACRA-facing considerations. The details differ by jurisdiction; get local counsel regardless. What travels across all of them is the same principle: decide the entity and the ledger structure together, not the entity first and the accounting as an afterthought.</p>
+
+      <h3>Avoiding the chicken-and-egg raise</h3>
+
+      <p>The single biggest risk in getting an SPV off the ground is promising a founder an allocation you then cannot fill. Two habits reduce that risk: set a clear minimum and maximum for the round before you start soliciting commitments, and secure one committed <strong>anchor LP</strong> early. An anchor does two things at once — it covers a meaningful share of the target and gives every LP after them real evidence the round is happening, rather than a lead asking them to be first.</p>
+
+      <h3>What to do when a deal is oversubscribed</h3>
+
+      <p>A hot deal creates its own problem: more commitments than the round has room for. Prorating everyone down and wiring back small refund amounts is the default response — and it is a genuine administrative drag for very little benefit to anyone. A cleaner pattern is keeping one reliable LP "in reserve," willing to flex their ticket up or down, so the lead has room to absorb the difference without touching every other member's allocation.</p>
+
+      <h3>Reporting: the difference between an SPV LPs trust and one they tolerate</h3>
+
+      <p>Because an SPV holds one asset, it is tempting to treat it more informally than a fund — fewer updates, looser records, reporting only when something happens. That instinct works against the lead. With no portfolio-level averaging to fall back on, a single missed update or a wrong number in a member's capital account statement is far more visible than the same mistake buried in a twenty-company fund. Send regular updates even when there is nothing to report beyond "no change," keep an accurate capital account per member, and get local tax documentation right for wherever your members actually sit — a K-1 in the US, or the jurisdiction-appropriate equivalent elsewhere. A reliable administrator matters <em>more</em> on a single-asset vehicle, not less.</p>
+
+      <h3>Manual administration does not survive your second SPV</h3>
+
+      <p>Subscription documents as PDFs passed around by email. A cap table in a spreadsheet. Carry and distribution math recalculated by hand for every close. All of this is survivable for one vehicle. It stops being survivable at three or four, run in parallel, each with its own commitments, capital calls and reporting calendar. The operational answer the industry has largely converged on is the same one fund administration reached years earlier: move subscription, KYC, cap table and accounting onto one system per vehicle instead of a folder of documents per deal.</p>
+
+      <p>That is the gap <a href="/solutions/spv-syndicates">aama.io's SPV &amp; syndicate administration</a> is built to close — templated vehicle setup with subscription documents and e-signatures, KYC/AML on every member, automated lead carry and deal-fee calculation, and NAV, a general ledger and IFRS-ready statements behind every vehicle, whether you are running one SPV or fifty from the same dashboard.</p>
+
+      <p>For why managers and LPs reach for an SPV in the first place, see the companion piece: <a href="/blog/why-vcs-founders-use-spvs">The Swiss Army Knife of Venture</a>.</p>
+
+      <p><em>This article is general information about common SPV administrative practice, not legal or tax advice. Entity choice, securities filings and tax documentation requirements vary by jurisdiction and change over time — confirm the current position with qualified local counsel before setting up a vehicle.</em></p>
+
+      <p><strong>Managing more than one SPV already? <a href="/contact">Talk to our team</a> about consolidating them onto aama.io.</strong></p>
+    `,
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/capital-call.png',
+    publishedDate: '2026-09-05',
+    readTime: '8 min',
+    categories: ['SPVs', 'Fund Administration', 'Operations']
+  },
 ];
 
 // Listing payload — omits the heavy `content` field to keep responses small.
