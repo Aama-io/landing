@@ -76,7 +76,7 @@ export default function SolutionsPage() {
     <>
       <SEO
         title="Fund Administration & Accounting Software | Solutions"
-        description="Fund administration and accounting software for VC/PE firms, family offices, SPV syndicates and fund administrators — covering the entire investment lifecycle from onboarding to NAV, reporting and compliance across Singapore and APAC."
+        description="Fund administration & accounting for VC/PE, private credit, family offices and SPVs — onboarding to NAV, reporting and compliance, Singapore & APAC."
         keywords="fund administration software, fund accounting software, LP portal for fund managers, investor onboarding, fund reporting, Singapore fund administration, APAC fund accounting"
       />
       <PageShell>

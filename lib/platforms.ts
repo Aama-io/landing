@@ -61,7 +61,7 @@ export const PLATFORMS: DetailData[] = [
     icon: IconReportMoney,
     image: '/images/fund-detail.png',
     heroDescription:
-      'A fund-grade accounting engine — full double-entry general ledger, automated NAV, European & American waterfalls and 12+ audit-ready reports. Purpose-built for PE, VC and alternative funds, and powerful enough to run on its own.',
+      'A fund-grade accounting engine — full double-entry general ledger, automated NAV, European & American waterfalls and 12+ audit-ready reports. Purpose-built for PE, VC and alternative funds, and complete enough to run on its own.',
     description:
       'aama.io fund accounting software — a double-entry general ledger with chart of accounts, automated NAV (daily to quarterly), European & American waterfalls, per-investor side letters, multi-currency support, securities valuation and 12+ fund reports. Purpose-built for PE, VC and alternative funds.',
     keywords: 'fund accounting software, fund general ledger, chart of accounts, NAV calculation, waterfall distribution, carried interest, side letters, capital account statement, trial balance, multi-currency, corporate actions, PE VC fund accounting',
@@ -104,6 +104,6 @@ export const platformBySlug = (slug: string) => PLATFORMS.find((p) => p.slug ===
 export const PLATFORM_LINKS: RelatedLink[] = PLATFORMS.map((p) => ({
   href: `/products/${p.slug}`,
   label: p.shortName,
-  blurb: p.heroDescription.split('.')[0] + '.',
+  blurb: `${p.heroDescription.split('.')[0]  }.`,
   icon: p.icon,
 }));

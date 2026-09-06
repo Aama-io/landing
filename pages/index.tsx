@@ -14,7 +14,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Fund Administration Software in Singapore & APAC"
-        description="Fund administration and fund accounting software for mid-market PE and VC fund managers and boutique fund administrators in Singapore and APAC — capital calls, NAV, IFRS 9 / SFRS(I) 9 accounting, an LP portal for fund managers and SPV administration, without enterprise complexity."
+        description="Fund administration & accounting software for mid-market PE, VC and private credit funds in Singapore & APAC — capital calls, NAV, IFRS 9, LP portal."
         keywords="fund administration software Singapore, private equity fund administration software, venture capital fund administration software, private credit fund administration software, fund accounting software, fund accounting software IFRS 9 Singapore, LP portal for fund managers, software for fund administrators, in-house fund administration software, fund administration for emerging managers, capital call software, distribution waterfall software, NAV calculation software, SPV administration software Singapore, VCC fund administration, VCC sub-fund accounting, boutique fund admin software Singapore"
       />
       <PageShell>

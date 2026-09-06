@@ -36,7 +36,7 @@ const values = [
   {
     icon: IconSparkles,
     title: 'Tools people enjoy using',
-    desc: 'From the GP dashboard to our free calculators, we obsess over clarity. Powerful underneath, effortless on the surface.',
+    desc: 'From the GP dashboard to our free calculators, we obsess over clarity. Capable underneath, effortless on the surface.',
   },
 ];
 

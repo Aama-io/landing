@@ -52,7 +52,7 @@ export const products: ProductData[] = [
     title: 'Mutual Fund Administration Software',
     shortTitle: 'Mutual Fund Managers',
     description: 'Complete fund administration and administration solution for Singapore-regulated mutual funds with MAS-compliant operations.',
-    heroDescription: 'Transform your mutual fund operations with our comprehensive software platform. Built specifically for Singapore fund managers, our solution automates daily NAV calculations, ensures MAS compliance, and streamlines investor reporting - all from a single, integrated platform.',
+    heroDescription: 'Run your mutual fund operations on one comprehensive software platform. Built specifically for Singapore fund managers, our solution automates daily NAV calculations, ensures MAS compliance, and automates investor reporting - all from a single, integrated platform.',
     icon: 'IconBuildingBank',
     image: '/fund-types/mutual-fund.jpg',
     category: 'Fund Administration',
@@ -83,7 +83,7 @@ export const products: ProductData[] = [
       },
       {
         title: 'Investor Administration',
-        description: 'Seamless investor onboarding and servicing',
+        description: 'Fast investor onboarding and servicing',
         items: [
           'Digital investor onboarding and KYC',
           'Secure investor portal for 24/7 access',
@@ -203,7 +203,7 @@ export const products: ProductData[] = [
     title: 'VC/PE Fund Administration Software',
     shortTitle: 'VC/PE Firms',
     description: 'Comprehensive software solution for venture capital and private equity fund operations with portfolio tracking, capital calls, and LP reporting.',
-    heroDescription: 'Streamline your private capital operations with purpose-built tools for VC and PE funds. From deal flow administration to portfolio monitoring, capital calls to LP reporting - everything you need to manage your private equity investments efficiently.',
+    heroDescription: 'Run your private capital operations with purpose-built tools for VC and PE funds. From deal flow administration to portfolio monitoring, capital calls to LP reporting - everything you need to manage your private equity investments efficiently.',
     icon: 'IconChartBar',
     image: '/fund-types/vc.jpg',
     category: 'Private Capital',
@@ -247,7 +247,7 @@ export const products: ProductData[] = [
     ],
     benefits: [
       {
-        title: 'Streamline Operations',
+        title: 'Automate Operations',
         description: 'Reduce administrative burden by 60% with automated capital calls, distributions, and reporting workflows.',
         icon: 'IconActivity'
       },
@@ -385,7 +385,7 @@ export const products: ProductData[] = [
       },
       {
         title: 'Investor Relations',
-        description: 'Streamlined dividend distribution and investor reporting',
+        description: 'Automated dividend distribution and investor reporting',
         items: [
           'Automated dividend calculations and payments',
           'Investor portal with property portfolio access',
@@ -408,7 +408,7 @@ export const products: ProductData[] = [
         icon: 'IconBuildingBank'
       },
       {
-        title: 'Streamline Distributions',
+        title: 'Automate Distributions',
         description: 'Automate dividend calculations based on REIT requirements and ensure timely, accurate distributions to investors.',
         icon: 'IconChartBar'
       },
@@ -504,7 +504,7 @@ export const products: ProductData[] = [
     slug: 'financial-institutions',
     title: 'Fund Infrastructure for Financial Institutions',
     shortTitle: 'Financial Institutions',
-    description: 'Enterprise-grade fund infrastructure software for banks and financial institutions with robust compliance controls, audit trails, and multi-entity support.',
+    description: 'Enterprise-grade fund infrastructure software for banks and financial institutions with thorough compliance controls, audit trails, and multi-entity support.',
     heroDescription: 'Power your fund operations with institutional-grade infrastructure designed for banks, wealth managers, and financial institutions. Built with enterprise security, comprehensive compliance controls, and the scalability to manage multiple fund structures across your organization.',
     icon: 'IconShield',
     image: '/fund-types/mutual-fund.jpg',
@@ -536,7 +536,7 @@ export const products: ProductData[] = [
       },
       {
         title: 'Integration & APIs',
-        description: 'Seamless integration with your existing systems',
+        description: 'Direct integration with your existing systems',
         items: [
           'REST API for custom integrations',
           'Banking system connectivity',
@@ -572,7 +572,7 @@ export const products: ProductData[] = [
     useCases: [
       {
         title: 'Private Banking',
-        description: 'Offer fund products to private banking clients with white-labeled investor portals and seamless integration with wealth administration platforms.',
+        description: 'Offer fund products to private banking clients with white-labeled investor portals and direct integration with wealth administration platforms.',
         metrics: [
           { label: 'Client Accounts', value: '10,000+' },
           { label: 'AUM', value: '$5B+' },
@@ -599,7 +599,7 @@ export const products: ProductData[] = [
     keyFeatures: [
       {
         title: 'Enterprise SSO Integration',
-        description: 'Seamless integration with corporate identity providers (Azure AD, Okta, etc.) for unified authentication across systems.'
+        description: 'Direct integration with corporate identity providers (Azure AD, Okta, etc.) for unified authentication across systems.'
       },
       {
         title: 'Advanced Analytics',
@@ -645,7 +645,7 @@ export const products: ProductData[] = [
       },
       {
         question: 'Can the platform scale with our growth?',
-        answer: 'Absolutely. Our cloud-based architecture is designed for unlimited scalability. Whether you manage 5 funds or 500, 1,000 investors or 1 million, the platform scales seamlessly. We handle some of the largest fund operations in the region with billions in AUM.'
+        answer: 'Absolutely. Our cloud-based architecture is designed for unlimited scalability. Whether you manage 5 funds or 500, 1,000 investors or 1 million, the platform scales with you. We handle some of the largest fund operations in the region with billions in AUM.'
       }
     ],
     relatedProducts: ['mutual-fund-managers', 'vc-pe-firms', 'reits']
@@ -806,7 +806,7 @@ export const products: ProductData[] = [
     slug: 'family-offices',
     title: 'Family Office Software',
     shortTitle: 'Family Offices',
-    description: 'Consolidated multi-entity, multi-asset administration, accounting and reporting for single and multi-family offices, with a built-in compliance layer for Singapore Section 13O/13U structures.',
+    description: 'Consolidated multi-entity, multi-asset administration & accounting for family offices, with Singapore Section 13O/13U compliance tracking built in.',
     heroDescription: 'Bring every entity, asset class and account into one system. aama.io gives family offices consolidated administration, fund accounting and bespoke reporting — across direct investments, funds, real assets and cash — plus the Section 13O/13U compliance tracking Singapore family offices need to keep their tax exemption.',
     icon: 'IconBriefcase',
     image: '/images/family-office-blog.png',
@@ -983,7 +983,7 @@ export const products: ProductData[] = [
     slug: 'private-credit',
     title: 'Private Credit Fund Administration Software',
     shortTitle: 'Private Credit',
-    description: 'Fund administration and accounting software for private credit and direct-lending funds — amortised-cost and expected-credit-loss accounting under IFRS 9 / SFRS(I) 9, interest and PIK accruals, drawdowns and LP reporting in one platform.',
+    description: 'Fund administration & accounting for private credit and direct-lending funds — amortised cost, ECL staging (IFRS 9), PIK accruals and LP reporting.',
     heroDescription: 'Credit funds break tools built for equity. aama.io runs the accounting direct lending actually requires — effective-interest amortisation, expected-credit-loss staging, PIK and cash interest, revolver drawdowns and fee income — alongside capital calls, distributions and investor reporting, for mid-market credit managers across Singapore and APAC.',
     icon: 'IconReportMoney',
     image: '/fund-types/reit.jpg',

@@ -11,6 +11,7 @@
 
 - [Solutions overview](https://aama.io/solutions): How aama.io maps to each type of fund and team.
 - [VC / PE Firms](https://aama.io/solutions/vc-pe-firms): Multi-fund administration, waterfalls, carry and LP reporting.
+- [Private Credit](https://aama.io/solutions/private-credit): Direct-lending and credit fund accounting — amortised cost, ECL staging (IFRS 9 / SFRS(I) 9), PIK accruals and loan/facility tracking.
 - [SPV Syndicates](https://aama.io/solutions/spv-syndicates): Single-asset vehicle administration and syndicate reporting.
 - [Family Offices](https://aama.io/solutions/family-offices): Multi-entity, multi-asset consolidation with MAS-aligned compliance.
 
@@ -30,9 +31,11 @@
 - [Blog](https://aama.io/blog): Guides on distribution waterfalls, fund economics, VCC structuring and Singapore fund operations.
 - [How to Set Up a VCC in Singapore (2026)](https://aama.io/blog/how-to-set-up-a-vcc-singapore): Structure (umbrella vs standalone), required service providers, set-up and annual cost, and timeline.
 - [Section 13O vs 13U (2026)](https://aama.io/blog/section-13o-vs-13u-singapore): Singapore fund & family-office tax incentives — AUM thresholds, headcount, local-spend tiers and the Singapore-investment requirement compared.
-- [Fund Management Licensing in Singapore (2026)](https://aama.io/blog/singapore-fund-management-licence): VCFM vs A/I LFMC vs Retail LFMC — capital, headcount and substance (RFMC closed to new applicants in 2024).
+- [Fund Management Licensing in Singapore (2026)](https://aama.io/blog/singapore-fund-administration-licence): VCFM vs A/I LFMC vs Retail LFMC — capital, headcount and substance (RFMC closed to new applicants in 2024).
 - [How to Start a Fund in Singapore (2026)](https://aama.io/blog/how-to-start-a-fund-singapore): End-to-end roadmap — thesis, VCC structure, MAS licence, 13O/13U incentive, service providers and timeline.
 - [IFRS 9 / SFRS(I) 9 for Funds](https://aama.io/blog/ifrs-9-sfrs-i-9-fund-accounting): How funds classify and measure financial instruments — business model + SPPI test, fair-value hierarchy, ECL.
+- [The Swiss Army Knife of Venture: Why VCs and Founders Use SPVs](https://aama.io/blog/why-vcs-founders-use-spvs): What an SPV is, why VCs and founders use one instead of the main fund, typical economics, and what LPs should ask before committing.
+- [SPV Administration: Best Practices](https://aama.io/blog/spv-administration-best-practices): Vehicle setup by jurisdiction, avoiding the chicken-and-egg raise, handling oversubscription, and LP-grade reporting for a single-asset vehicle.
 - [FAQ](https://aama.io/faq): Common questions on the platform, NAV, security and compliance.
 
 ## About

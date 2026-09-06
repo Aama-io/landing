@@ -1,7 +1,7 @@
 import { Container, Title, Text, List, Card, Grid, ThemeIcon, Group, Anchor } from '@mantine/core';
 import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
-import { IconCheck, IconShield, IconUserCheck, IconLock, IconReportMoney, IconScale, IconServer } from '@tabler/icons-react';
+import { IconUserCheck, IconLock, IconReportMoney, IconServer } from '@tabler/icons-react';
 import classes from '../styles/Legal.module.css';
 
 export default function CompliancePage() {
@@ -9,7 +9,7 @@ export default function CompliancePage() {
     <>
       <SEO
         title="Regulatory Compliance | aama.io"
-        description="aama.io is a software platform developed by Uxqode Pte Ltd, enabling compliant fund managers to launch, manage, and administer funds in accordance with Singapore regulations."
+        description="How aama.io helps compliant fund managers launch, manage and administer funds under Singapore's MAS, SFA, FAA and PDPA regulations."
         keywords="Singapore regulatory compliance, MAS compliance, fund administration software, SFA, FAA, PDPA, AML/CFT, Singapore financial regulations, Uxqode"
       />
       <PageShell>
@@ -23,7 +23,7 @@ export default function CompliancePage() {
                 AAMA.io is a software developed by Uxqode Pte Ltd, a registered software company with the Singapore authorities. 
                 We provide a technology software that enables compliant fund managers to easily launch funds to investors, process investments, 
                 and manage fund administration and accounting. Our software is designed to support fund managers in meeting 
-                their regulatory obligations while streamlining their operations.
+                their regulatory obligations while running their operations efficiently.
               </Text>
 
               <Title order={2}>1. Our Role as a Platform Provider</Title>
@@ -48,7 +48,7 @@ export default function CompliancePage() {
               </Text>
               <List mb="xl">
                 <List.Item><b>MAS Technology Risk Administration Guidelines</b> – Following best practices for technology risk administration</List.Item>
-                <List.Item><b>Data Protection Measures</b> – Implementing robust data protection controls</List.Item>
+                <List.Item><b>Data Protection Measures</b> – Implementing thorough data protection controls</List.Item>
                 <List.Item><b>System Availability</b> – Maintaining high standards for software uptime and reliability</List.Item>
                 <List.Item><b>Cybersecurity Standards</b> – Employing comprehensive security measures to protect software and data</List.Item>
               </List>
@@ -172,7 +172,7 @@ export default function CompliancePage() {
               <List mb="xl">
                 <List.Item>Comprehensive information security administration system</List.Item>
                 <List.Item>Regular security testing and vulnerability assessments</List.Item>
-                <List.Item>Robust business continuity and disaster recovery plans</List.Item>
+                <List.Item>Well-tested business continuity and disaster recovery plans</List.Item>
                 <List.Item>24/7 monitoring of software availability and security</List.Item>
                 <List.Item>Regular backups and data redundancy measures</List.Item>
               </List>

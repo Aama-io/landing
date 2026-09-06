@@ -12,6 +12,7 @@ export type ToolContent = {
   how: string[];           // "how to use" steps
   faqs: FAQ[];
   related: string[];       // related tool slugs (paths)
+  relatedReading?: { href: string; label: string }[]; // related blog posts
 };
 
 export const TOOL_CONTENT: Record<string, ToolContent> = {
@@ -36,6 +37,9 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
       { q: 'How is carried interest calculated?', a: 'Carried interest is the GP\'s share (commonly 20%) of profits above the return of capital and preferred return. With a full catch-up, the GP ultimately receives its carry percentage of all profit above invested capital.' },
     ],
     related: ['/tools/waterfall-comparator', '/tools/fee-carry-modeler', '/tools/carried-interest-tax'],
+    relatedReading: [
+      { href: '/blog/american-vs-european-waterfall', label: 'American vs European Waterfall: which structure pays the GP when' },
+    ],
   },
 
   '/tools/waterfall-comparator': {
@@ -58,6 +62,9 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
       { q: 'Why do GPs prefer deal-by-deal carry?', a: 'Deal-by-deal (American) carry lets the GP receive carried interest sooner, on each winning exit, rather than waiting until the whole fund has returned capital and preferred return — improving the GP\'s cash-flow timing.' },
     ],
     related: ['/tools/waterfall', '/tools/fee-carry-modeler', '/tools/carried-interest-tax'],
+    relatedReading: [
+      { href: '/blog/american-vs-european-waterfall', label: 'American vs European Waterfall: which structure pays the GP when' },
+    ],
   },
 
   '/tools/vcc-comparator': {

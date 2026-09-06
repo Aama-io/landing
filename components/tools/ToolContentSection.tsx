@@ -12,7 +12,7 @@ import c from './ToolContentSection.module.css';
  */
 export function ToolContentSection({ slug }: { slug: string }) {
   const data = TOOL_CONTENT[slug];
-  if (!data) return null;
+  if (!data) {return null;}
   const related = data.related
     .map((href) => ALL_TOOLS.find((t) => t.href === href))
     .filter(Boolean) as typeof ALL_TOOLS;
@@ -54,6 +54,22 @@ export function ToolContentSection({ slug }: { slug: string }) {
                   <span className={c.relatedBody}>
                     <span className={c.relatedTitle}>{t.label}</span>
                     <span className={c.relatedDesc}>{t.description}</span>
+                  </span>
+                  <IconArrowRight size={16} className={c.relatedArrow} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {data.relatedReading && data.relatedReading.length > 0 && (
+          <div className={c.related}>
+            <h2 className={c.h2}>Related reading</h2>
+            <div className={c.relatedGrid}>
+              {data.relatedReading.map((r) => (
+                <Link key={r.href} href={r.href} className={c.relatedCard}>
+                  <span className={c.relatedBody}>
+                    <span className={c.relatedTitle}>{r.label}</span>
                   </span>
                   <IconArrowRight size={16} className={c.relatedArrow} />
                 </Link>

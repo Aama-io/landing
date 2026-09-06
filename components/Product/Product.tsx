@@ -52,7 +52,7 @@ const flagships = [
     title: 'Fund Accounting',
     href: '/products/fund-accounting',
     description:
-      'A fund-grade accounting engine — double-entry general ledger, automated NAV, waterfalls and 12+ audit-ready reports. Powerful enough to run on its own.',
+      'A fund-grade accounting engine — double-entry general ledger, automated NAV, waterfalls and 12+ audit-ready reports. Complete enough to run on its own.',
     image: '/images/fund-detail.png',
     icon: IconReportMoney,
     features: [
