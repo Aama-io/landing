@@ -32,6 +32,10 @@ export default withBundleAnalyzer({
         destination: '/solutions',
         permanent: false,
       })),
+      // Search Console showed a real impression on this exact malformed slug —
+      // reads like an AI assistant mangling the post title ("...Why VCs and
+      // Founders Use SPVs") into a duplicated "vcs...spvs" URL when citing it.
+      { source: '/blog/why-vcs-founders-use-vcs-spvs', destination: '/blog/why-vcs-founders-use-spvs', permanent: true },
     ];
   },
 });

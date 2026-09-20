@@ -1589,7 +1589,7 @@ As we continue through 2025, the gap between firms using modern technology and t
 
       <p>The vehicle itself is simple. Running several of them is where spreadsheets stop being adequate — tracking commitments and capital calls, calculating lead carry correctly against the actual proceeds, producing a capital account statement per member, and keeping KYC and subscription documents somewhere other than an inbox. That is fund administration, scaled down to one asset per vehicle rather than removed.</p>
 
-      <p><strong><a href="/solutions/spv-syndicates">See how aama.io administers SPVs and syndicates</a></strong> — vehicle setup, member onboarding, carry automation and IFRS-ready accounting on the same engine that runs multi-asset funds. For the administrative side of running one well, see the companion piece: <a href="/blog/spv-administration-best-practices">SPV Administration: Best Practices for Setting Up and Managing a Single-Asset Vehicle</a>.</p>
+      <p><strong><a href="/solutions/spv-syndicates">See how aama.io administers SPVs and syndicates</a></strong> — vehicle setup, member onboarding, carry automation and IFRS-ready accounting on the same engine that runs multi-asset funds. For the administrative side of running one well, see the companion piece: <a href="/blog/spv-administration-best-practices">SPV Administration: Best Practices for Setting Up and Managing a Single-Asset Vehicle</a>, or the deeper series on <a href="/blog/spv-administration-problems">the 7 problems every SPV manager hits</a> and <a href="/blog/how-to-fix-spv-administration">how to fix them</a>.</p>
 
       <p><em>This article is general information about how SPVs are commonly structured, not investment, legal or tax advice. Fee structures, carry and hurdle terms vary by deal and jurisdiction — confirm the terms of any specific vehicle with its lead and your own advisers before committing capital.</em></p>
 
@@ -1633,7 +1633,7 @@ As we continue through 2025, the gap between firms using modern technology and t
 
       <p>That is the gap <a href="/solutions/spv-syndicates">aama.io's SPV &amp; syndicate administration</a> is built to close — templated vehicle setup with subscription documents and e-signatures, KYC/AML on every member, automated lead carry and deal-fee calculation, and NAV, a general ledger and IFRS-ready statements behind every vehicle, whether you are running one SPV or fifty from the same dashboard.</p>
 
-      <p>For why managers and LPs reach for an SPV in the first place, see the companion piece: <a href="/blog/why-vcs-founders-use-spvs">The Swiss Army Knife of Venture</a>.</p>
+      <p>For why managers and LPs reach for an SPV in the first place, see the companion piece: <a href="/blog/why-vcs-founders-use-spvs">The Swiss Army Knife of Venture</a>. For the problems that show up once the vehicle is running — and how to fix them — see <a href="/blog/spv-administration-problems">7 SPV Administration Problems Every Manager Hits</a>.</p>
 
       <p><em>This article is general information about common SPV administrative practice, not legal or tax advice. Entity choice, securities filings and tax documentation requirements vary by jurisdiction and change over time — confirm the current position with qualified local counsel before setting up a vehicle.</em></p>
 
