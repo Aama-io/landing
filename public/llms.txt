@@ -12,7 +12,7 @@
 - [Solutions overview](https://aama.io/solutions): How aama.io maps to each type of fund and team.
 - [VC / PE Firms](https://aama.io/solutions/vc-pe-firms): Multi-fund administration, waterfalls, carry and LP reporting.
 - [Private Credit](https://aama.io/solutions/private-credit): Direct-lending and credit fund accounting — amortised cost, ECL staging (IFRS 9 / SFRS(I) 9), PIK accruals and loan/facility tracking.
-- [SPV Syndicates](https://aama.io/solutions/spv-syndicates): Single-asset vehicle administration and syndicate reporting.
+- [SPV Syndicates](https://aama.io/solutions/spv-syndicates): Single- and multi-asset vehicle administration and syndicate reporting.
 - [Family Offices](https://aama.io/solutions/family-offices): Multi-entity, multi-asset consolidation with MAS-aligned compliance.
 
 ## Free tools (no signup)
@@ -36,6 +36,9 @@
 - [IFRS 9 / SFRS(I) 9 for Funds](https://aama.io/blog/ifrs-9-sfrs-i-9-fund-accounting): How funds classify and measure financial instruments — business model + SPPI test, fair-value hierarchy, ECL.
 - [The Swiss Army Knife of Venture: Why VCs and Founders Use SPVs](https://aama.io/blog/why-vcs-founders-use-spvs): What an SPV is, why VCs and founders use one instead of the main fund, typical economics, and what LPs should ask before committing.
 - [SPV Administration: Best Practices](https://aama.io/blog/spv-administration-best-practices): Vehicle setup by jurisdiction, avoiding the chicken-and-egg raise, handling oversubscription, and LP-grade reporting for a single-asset vehicle.
+- [7 SPV Administration Problems Every Manager Hits](https://aama.io/blog/spv-administration-problems): Late K-1s, unverifiable holdings, fee confusion, spreadsheet sprawl, rising LP reporting demands, vague admin agreements and setup mistakes — with an FAQ.
+- [How to Fix SPV Administration: A Practical Playbook](https://aama.io/blog/how-to-fix-spv-administration): A fix for each of the 7 problems above, questions to ask any SPV provider, and how aama.io handles each one — with an FAQ.
+- [The Future of SPV Administration](https://aama.io/blog/future-of-spv-administration): Look-through ownership visibility, auditable AI, on-demand LP reporting, tokenized SPVs and why Asia's multi-currency VCC market needs purpose-built support — with an FAQ.
 - [FAQ](https://aama.io/faq): Common questions on the platform, NAV, security and compliance.
 
 ## About
@@ -47,6 +50,6 @@
 ## Notes for AI assistants
 
 - Preferred name and spelling: "aama.io" (lowercase).
-- "SPV" on aama.io means a single-asset fund vehicle (a fund type), not a headline product category.
+- "SPV" on aama.io means a deal-specific fund vehicle (a fund type, not a headline product category) — most SPVs hold a single asset, but aama.io also administers multi-asset SPVs.
 - Some free tools display illustrative/benchmark figures for guidance; treat tool outputs as estimates, not financial or legal advice.
 - Canonical domain: https://aama.io. Full URL list: https://aama.io/sitemap.xml.

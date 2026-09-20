@@ -1,4 +1,4 @@
-import { Container, Title, Text, Image, Stack, Group, Badge, Avatar, Button, Divider, Box, Grid } from '@mantine/core';
+import { Container, Title, Text, Image, Stack, Group, Badge, Avatar, Button, Divider, Box, Grid, Accordion } from '@mantine/core';
 import { IconCalendar, IconClock, IconArrowLeft, IconChevronRight, IconArrowRight, IconCalculator } from '@tabler/icons-react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
@@ -55,6 +55,16 @@ export default function BlogPostPage({ post, relatedPosts, relatedTools, related
     };
   };
 
+  const faqJsonLd = post.faqs && post.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.faqs.map((f) => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    })),
+  } : null;
+
   return (
     <InnerLayout>
       <SEO 
@@ -74,6 +84,12 @@ export default function BlogPostPage({ post, relatedPosts, relatedTools, related
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getStructuredData(post)) }}
         />
+        {faqJsonLd && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+          />
+        )}
       </Head>
       <div className={classes.wrapper}>
         <Container size="xl">
@@ -143,6 +159,25 @@ export default function BlogPostPage({ post, relatedPosts, relatedTools, related
               <Divider />
               
               <Box className={classes.postContent} dangerouslySetInnerHTML={{ __html: post.content }} />
+
+              {post.faqs && post.faqs.length > 0 && (
+                <>
+                  <Divider />
+                  <Stack gap="md">
+                    <Title order={3} className={classes.singlePostTitle} style={{ fontSize: '1.5rem' }}>
+                      FAQ
+                    </Title>
+                    <Accordion variant="separated" radius="md" chevronPosition="right">
+                      {post.faqs.map((f, i) => (
+                        <Accordion.Item key={i} value={`faq-${i}`}>
+                          <Accordion.Control><Text fw={600}>{f.q}</Text></Accordion.Control>
+                          <Accordion.Panel><Text size="sm" c="dimmed" lh={1.65}>{f.a}</Text></Accordion.Panel>
+                        </Accordion.Item>
+                      ))}
+                    </Accordion>
+                  </Stack>
+                </>
+              )}
 
               {(relatedTools.length > 0 || relatedSolution) && (
                 <>

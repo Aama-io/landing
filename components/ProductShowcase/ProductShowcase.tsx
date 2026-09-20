@@ -18,7 +18,7 @@ const products = [
   {
     title: 'Fund Accounting',
     description:
-      'Multi-instrument fund accounting and administration for PE, VC, family offices, hedge funds, mutual funds and single-asset SPVs — a complete general ledger, automated NAV and IFRS-ready reporting across every asset class.',
+      'Multi-instrument fund accounting and administration for PE, VC, family offices, hedge funds, mutual funds and SPVs of any size — a complete general ledger, automated NAV and IFRS-ready reporting across every asset class.',
     image: '/images/fund-detail.png',
     icon: IconReportMoney,
     features: ['All fund types & instruments', 'Automated NAV & ledger', 'IFRS-ready reporting'],
@@ -75,7 +75,7 @@ export function ProductShowcase() {
         <SectionHeading
           eyebrow="Product tour"
           title="Two products, one platform"
-          description="Fund Administration with a white-labeled investor portal, and a fund-grade Fund Accounting engine — license them together, or start with just the piece you need."
+          description="Fund Administration with a white-labeled investor portal, and a fund-grade Fund Accounting engine — covering PE, VC, private credit, family offices and SPVs. License them together, or start with just the piece you need."
         />
 
         <div className={classes.layout}>

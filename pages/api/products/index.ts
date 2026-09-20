@@ -745,6 +745,14 @@ export const products: ProductData[] = [
           { label: 'Time Saved', value: '15 hrs/deal' },
           { label: 'Data Accuracy', value: '99.9%' }
         ]
+      },
+      {
+        title: 'Multi-Asset SPVs',
+        description: 'Hold several positions in one vehicle — a lighter-weight fund structure for a lead who wants breadth without standing up a full fund.',
+        metrics: [
+          { label: 'Positions', value: 'No fixed limit' },
+          { label: 'Accounting Engine', value: 'Same as full funds' }
+        ]
       }
     ],
     keyFeatures: [
@@ -795,8 +803,8 @@ export const products: ProductData[] = [
         answer: 'Yes. The platform is multi-entity by design, so serial dealmakers can manage dozens of SPVs and syndicates from a single dashboard with consolidated cap tables, accounting and reporting across every vehicle.'
       },
       {
-        question: 'Is an SPV just treated as a single-deal fund?',
-        answer: 'Effectively, yes — an SPV is administered as a focused, single-asset fund. You get the same fund accounting engine, investor portal, distribution waterfalls and reporting, scaled to the simpler structure of a one-deal vehicle.'
+        question: 'Is an SPV always a single-deal fund?',
+        answer: 'Most are — one deal, one lead, one group of members — but the platform also supports multi-asset SPVs, where a vehicle holds several positions. Either way, you get the same fund accounting engine, investor portal, distribution waterfalls and reporting, scaled to the vehicle you actually run.'
       }
     ],
     relatedProducts: ['vc-pe-firms', 'mutual-fund-managers', 'financial-institutions']

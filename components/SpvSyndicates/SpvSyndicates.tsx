@@ -29,7 +29,7 @@ const steps = [
 ];
 
 const pillars = [
-  { icon: IconLayoutDashboard, title: 'Vehicle formation & cap table', desc: 'Stand up a single-asset SPV or syndicate and manage ownership from day one.', items: ['Launch in days, not weeks', 'Automated cap table & ownership ledger', 'Multiple share classes & side letters'] },
+  { icon: IconLayoutDashboard, title: 'Vehicle formation & cap table', desc: 'Stand up an SPV or syndicate — single- or multi-asset — and manage ownership from day one.', items: ['Launch in days, not weeks', 'Automated cap table & ownership ledger', 'Multiple share classes & side letters'] },
   { icon: IconShieldCheck, title: 'Member KYC & onboarding', desc: 'Bring members in with compliance built into every step.', items: ['KYC/AML with e-signatures', 'Accreditation & eligibility checks', 'Commitment & funding tracking'] },
   { icon: IconFileText, title: 'Documents & data room', desc: 'Every agreement, notice and statement in one secure place.', items: ['Subscription & side-letter docs', 'Deal-level document vault', 'Secure member messaging'] },
   { icon: IconWallet, title: 'Capital & payments', desc: 'Move money in and out without the spreadsheet chase.', items: ['Capital collection & tracking', 'Distributions & payout instructions', 'Reconciliation with bank accounts'] },
@@ -47,11 +47,18 @@ const useCases = [
   { title: 'Angel & operator syndicates', desc: 'Pool angels into a single deal with a clean cap table, fast onboarding and automated carry for the lead.', metrics: [['Setup', 'Days'], ['Members / deal', '100+'], ['Carry', 'Automated']] },
   { title: 'Co-investment sidecars', desc: 'Run fee-light co-invest vehicles alongside the main fund, with separate accounting and reporting.', metrics: [['Reporting', '75% faster'], ['Fee models', 'Flexible']] },
   { title: 'Single-deal SPVs', desc: 'Hold a single asset or company in a dedicated vehicle with full administration and investor servicing.', metrics: [['Time saved', '15 hrs/deal'], ['Accuracy', '99.9%']] },
+  { title: 'Multi-asset SPVs', desc: 'Hold several positions in one vehicle — a lighter-weight fund structure for a lead who wants breadth without standing up a full fund.', metrics: [['Positions', 'No fixed limit'], ['Accounting', 'Same engine']] },
+];
+
+const furtherReading = [
+  { href: '/blog/spv-administration-problems', icon: IconFileText, label: '7 SPV Administration Problems Every Manager Hits', desc: 'Late K-1s, unverifiable holdings, fee confusion and more' },
+  { href: '/blog/how-to-fix-spv-administration', icon: IconReportAnalytics, label: 'How to Fix SPV Administration', desc: 'A practical playbook, one problem at a time' },
+  { href: '/blog/future-of-spv-administration', icon: IconRocket, label: 'The Future of SPV Administration', desc: 'Where LP expectations are heading next' },
 ];
 
 const faqs = [
-  { q: 'Is an SPV just a single-asset fund?', a: 'Effectively, yes. An SPV is administered as a focused, single-asset fund — one deal or asset, a lead and a group of members. You get the same accounting engine, investor portal and compliance that runs multi-asset funds, scaled to the simpler structure.' },
-  { q: 'How quickly can I launch an SPV or syndicate?', a: 'Most single-asset vehicles can be stood up in a few days. Templated setup, subscription documents and e-signature onboarding let you open a vehicle, invite members and start collecting commitments without building anything from scratch.' },
+  { q: 'Is an SPV always a single-asset fund?', a: 'Most are — one deal, a lead and a group of members — but aama.io also supports multi-asset SPVs, where a vehicle holds several positions. Either way, you get the same accounting engine, investor portal and compliance, scaled to the vehicle you actually run.' },
+  { q: 'How quickly can I launch an SPV or syndicate?', a: 'Most vehicles can be stood up in a few days, whether they hold one asset or several. Templated setup, subscription documents and e-signature onboarding let you open a vehicle, invite members and start collecting commitments without building anything from scratch.' },
   { q: 'Can the platform handle lead carry and deal fees?', a: 'Yes. Configure carried interest, management or one-off deal fees and a hurdle per vehicle. The system calculates the lead’s carry and member distributions on a deal-by-deal basis and produces statements automatically.' },
   { q: 'Do members get their own portal?', a: 'Every member gets a white-labeled portal with real-time positions, capital account statements, documents and deal updates — the same investor experience your fund LPs receive.' },
   { q: 'Can I run many SPVs at once?', a: 'Yes. The platform is multi-entity by design, so serial dealmakers can manage dozens of SPVs and syndicates from one dashboard with consolidated cap tables, accounting and reporting across every vehicle.' },
@@ -67,14 +74,14 @@ export function SpvSyndicates() {
           <div className={s.heroCopy}>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
               <Link href="/solutions" className={s.back}><IconArrowLeft size={15} /> All solutions</Link>
-              <span className={s.pill}>Single-asset funds · SPVs &amp; syndicates</span>
+              <span className={s.pill}>Single- &amp; multi-asset vehicles · SPVs &amp; syndicates</span>
               <Title className={s.title}>
                 Launch and run SPVs <span className={s.accent}>in days.</span> We handle the rest.
               </Title>
               <Text className={s.subtitle}>
-                An SPV is a single-asset fund — and aama.io administers it end to end: rapid vehicle setup, member
-                KYC/AML onboarding, lead carry and deal-by-deal distributions, all on a real fund-accounting engine
-                with NAV, a general ledger and IFRS-ready reporting.
+                Whether the deal holds one asset or several, aama.io administers your SPV end to end: rapid vehicle
+                setup, member KYC/AML onboarding, lead carry and deal-by-deal distributions, all on a real
+                fund-accounting engine with NAV, a general ledger and IFRS-ready reporting.
               </Text>
               <div className={s.ctaRow}>
                 <Button component={Link} href="/contact" size="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
@@ -115,7 +122,7 @@ export function SpvSyndicates() {
           <SectionHeading
             eyebrow="Who it's for"
             title="Built for the people running deals"
-            description="Syndicate leads, emerging managers and co-investors use aama.io to run single-asset vehicles with the rigour of a fund — and a fraction of the overhead."
+            description="Syndicate leads, emerging managers and co-investors use aama.io to run deal vehicles — single- or multi-asset — with the rigour of a fund and a fraction of the overhead."
           />
           <div className={s.audGrid}>
             {audiences.map((a, i) => (
@@ -184,7 +191,7 @@ export function SpvSyndicates() {
               <h2 className={s.acctTitle}>A real fund-accounting engine, not a spreadsheet</h2>
               <p className={s.acctDesc}>
                 Most SPV platforms stop at formation and admin. aama.io runs the books too — the same multi-instrument
-                accounting that powers multi-asset funds, scaled to a single-deal vehicle. NAV, a general ledger,
+                accounting that powers multi-asset funds, scaled to your vehicle — single-deal or multi-asset. NAV, a general ledger,
                 IFRS-ready statements and automated fee, carry and waterfall logic.
               </p>
               <Link href="/tools" className={s.acctLink}>Try our free fund-accounting tools <IconArrowRight size={16} /></Link>
@@ -244,6 +251,25 @@ export function SpvSyndicates() {
               ))}
             </Accordion>
           </Reveal>
+        </Container>
+      </section>
+
+      {/* Further reading */}
+      <section className={`${s.section} ${s.sectionMuted}`}>
+        <Container size="xl">
+          <SectionHeading eyebrow="Further reading" title="The SPV administration series" />
+          <div className={s.acctTools}>
+            {furtherReading.map((r) => (
+              <Link key={r.href} href={r.href} className={s.toolCard}>
+                <span className={s.toolIcon}><r.icon size={20} stroke={1.7} /></span>
+                <div className={s.toolBody}>
+                  <div className={s.toolLabel}>{r.label}</div>
+                  <div className={s.toolDesc}>{r.desc}</div>
+                </div>
+                <IconArrowRight size={16} className={s.toolArrow} />
+              </Link>
+            ))}
+          </div>
         </Container>
       </section>
 

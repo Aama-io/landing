@@ -1,56 +1,36 @@
-import { Container, Text, ThemeIcon } from '@mantine/core';
-import {
-  IconUsers,
-  IconServer,
-  IconChartBar,
-  IconCheck,
-  IconBolt,
-  IconShieldLock,
-  IconPlugConnected,
-} from '@tabler/icons-react';
-import Link from 'next/link';
+import { Container, Text } from '@mantine/core';
+import { IconX, IconCheck, IconBolt, IconShieldLock, IconPlugConnected } from '@tabler/icons-react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Reveal } from '../ui/Reveal';
 import classes from './ProblemSolution.module.css';
 
-const pillars = [
+// Paired "old way / aama.io way" rows — written as declarative, self-contained
+// statements so each one reads clearly on its own to a search crawler or an
+// LLM answering "how is aama.io different", not just in the visual pairing.
+const comparisons = [
   {
-    title: 'Investor Portal',
-    href: '/products/fund-administration',
-    description:
-      'A white-labeled investor portal with enterprise-grade security and real-time access.',
-    icon: IconUsers,
-    features: [
-      'AI-powered KYC/AML onboarding',
-      'Real-time portfolio dashboard',
-      'Automated capital call notifications',
-      'Document vault with e-signatures',
-    ],
+    before: 'Capital calls tracked in spreadsheets, reconciled by hand against bank statements.',
+    after: 'Capital calls, distributions and bank reconciliation run automatically from one ledger.',
   },
   {
-    title: 'Fund Administration',
-    href: '/products/fund-administration',
-    description: 'Comprehensive back-office automation for fund administrators and managers.',
-    icon: IconServer,
-    features: [
-      'Automated investor servicing',
-      'Distribution & redemption processing',
-      'Capital call management',
-      'Role-based permissions & audit trail',
-    ],
+    before: 'NAV calculated in Excel — formula errors, no audit trail, no version control.',
+    after: 'NAV calculated automatically, IFRS 9 / SFRS(I) 9 native, with a full audit trail.',
   },
   {
-    title: 'Fund Accounting',
-    href: '/products/fund-accounting',
-    description:
-      'An accounting platform with intelligent automation and built-in regulatory compliance.',
-    icon: IconChartBar,
-    features: [
-      'IFRS-compliant accounting',
-      'Automated NAV calculations',
-      'Regulatory reporting automation',
-      'Risk management dashboards',
-    ],
+    before: 'Investor updates sent by email — no self-service, no single source of truth.',
+    after: 'A white-labeled investor portal — real-time positions, statements, documents.',
+  },
+  {
+    before: 'Multi-currency, multi-asset positions consolidated by hand across workbooks.',
+    after: 'Multi-currency, multi-asset funds, SPVs and syndicates run on one engine.',
+  },
+  {
+    before: 'Compliance evidence assembled ad hoc when an auditor or MAS asks for it.',
+    after: 'KYC/AML and MAS-aligned compliance evidence generated continuously.',
+  },
+  {
+    before: 'A different vendor for accounting, the LP portal, e-signatures and reporting.',
+    after: 'Fund administration, accounting and the investor portal — one vendor, one data model.',
   },
 ];
 
@@ -77,32 +57,33 @@ export function ProblemSolution() {
     <section className={`${classes.wrapper} section`}>
       <Container size="xl">
         <SectionHeading
-          eyebrow="Fund administration, accounting & investor portal"
-          title="One system for the whole fund operation."
-          description="Fund accounting, fund administration and a white-labeled investor portal on a single data model — so fund administrators and the managers they service stop reconciling between disconnected tools. IFRS 9 / SFRS(I) 9 ready."
+          eyebrow="The problem with the old way"
+          title="From spreadsheets and email to one fund operations platform"
+          description="Most fund managers, administrators and SPV leads still run capital calls, NAV and investor communications across spreadsheets, email and several disconnected vendors — a multi-currency, multi-asset operation held together by manual reconciliation. aama.io consolidates fund administration, fund accounting and the investor portal into one system, built for Singapore and APAC."
         />
 
-        <div className={classes.pillars}>
-          {pillars.map((pillar, i) => (
-            <Reveal key={pillar.title} delay={i * 0.08}>
-              <Link href={pillar.href} className={classes.card} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-                <ThemeIcon size={48} radius="md" className={classes.icon}>
-                  <pillar.icon size={24} stroke={1.7} />
-                </ThemeIcon>
-                <Text className={classes.cardTitle}>{pillar.title}</Text>
-                <Text className={classes.cardDesc}>{pillar.description}</Text>
-                <ul className={classes.featureList}>
-                  {pillar.features.map((f) => (
-                    <li key={f}>
-                      <IconCheck size={17} className={classes.checkIcon} />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal delay={0.1}>
+          <div className={classes.compare}>
+            <div className={classes.compareHead}>
+              <span className={classes.compareHeadCol} data-tone="before">The old way</span>
+              <span className={classes.compareHeadCol} data-tone="after">On aama.io</span>
+            </div>
+            <div className={classes.compareRows}>
+              {comparisons.map((c) => (
+                <div key={c.before} className={classes.compareRow}>
+                  <div className={classes.compareCell} data-tone="before">
+                    <IconX size={15} className={classes.beforeIcon} />
+                    <span>{c.before}</span>
+                  </div>
+                  <div className={classes.compareCell} data-tone="after">
+                    <IconCheck size={15} className={classes.afterIcon} />
+                    <span>{c.after}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
 
         <div className={classes.benefits}>
           {benefits.map((b, i) => (

@@ -16,6 +16,8 @@ export interface BlogPost {
   publishedDate: string;
   readTime: string;
   categories: string[];
+  /** Optional FAQ — rendered visibly on the post AND emitted as matching FAQPage JSON-LD. */
+  faqs?: { q: string; a: string }[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -1644,6 +1646,266 @@ As we continue through 2025, the gap between firms using modern technology and t
     publishedDate: '2026-09-05',
     readTime: '8 min',
     categories: ['SPVs', 'Fund Administration', 'Operations']
+  },
+  {
+    id: '27',
+    title: '7 SPV Administration Problems Every Manager Hits',
+    slug: 'spv-administration-problems',
+    excerpt: 'Late K-1s, stacked fees, LPs who can’t see what they own. The 7 SPV administration problems managers face, why they happen, and what to watch for.',
+    content: `
+      <p>It’s 11pm on a Tuesday. An investor in your SPV has emailed for the third time. They want their capital account, and they’re asking why the fee looked bigger than they expected. You open a spreadsheet called “SPV_final_v3” and hope it’s the right version.</p>
+
+      <p>If that feels familiar, you’re not disorganized. SPVs are simply harder to run than they look. You raised money for one deal, which sounds small, but the paperwork behind it is the same paperwork a fund needs. Here are the seven problems, one at a time.</p>
+
+      <h3>What is SPV administration, really?</h3>
+
+      <p>An SPV (special purpose vehicle) is a company or partnership set up to hold one investment, usually so a group of investors can pool money into a single deal. SPV administration is everything that keeps that vehicle running properly: checking and onboarding investors, collecting subscriptions, issuing capital calls, keeping the books, reporting to investors, filing tax returns, and distributing proceeds at exit.</p>
+
+      <p>The GP still makes the investment decisions. Administration is what lets everyone trust the numbers afterward.</p>
+
+      <h3>1. Why are my K-1s always late?</h3>
+
+      <p>If you run a US-structured SPV, tax season is where the stress peaks. LPs start emailing early, some asking for K-1s by early March. You ask your tax provider for a timeline and get a spreadsheet of estimated dates. One LP has called their own accountant, who has now called you.</p>
+
+      <p>The delay often comes from how the work is organized. Administration happens in one place, tax preparation in another, and the data moves between them in a year-end export. Errors in how carry, expenses or distributions are allocated lead to expensive amended filings. It isn’t your fault, but it is your problem.</p>
+
+      <h3>2. Why can’t my investors see what they actually own?</h3>
+
+      <p>This one has become the loudest concern in the market. When SPVs sit inside other SPVs, the investor at the bottom can lose track of their real position. Around a recent mega-IPO, some investors who backed the company through SPVs still didn’t know how many shares they were entitled to, or whether they’d get any.</p>
+
+      <p>That’s a different problem from illiquidity. The share count, the effective price paid after layered fees, and the carry hurdle can stay undefined until a liquidity event years away. To be fair, this is a problem with how some structures are built, not with SPVs in general — company-approved, transparent vehicles don’t have it.</p>
+
+      <h3>3. Why do SPV fees feel so confusing?</h3>
+
+      <p>Fees themselves aren’t the complaint. Surprises are. Most SPVs charge some kind of fee, and recurring management fees are becoming more common as competition heats up. Fees hit smaller investors hardest, while managers often waive them for existing LPs they invite to co-invest.</p>
+
+      <p>When an LP can’t trace their return from gross to net, they assume the worst. Even honest managers pay for that.</p>
+
+      <h3>4. Why does everything live in spreadsheets?</h3>
+
+      <p>Because spreadsheets are free, familiar and flexible — right up until they aren’t. A 2026 survey found <strong>66%</strong> of fund accounting respondents still name time-consuming reporting and manual data entry as top pain points, and <strong>45%</strong> say their CRM, fundraising and reporting systems don’t integrate. Version control breaks, a formula gets overwritten, and someone re-keys the same wire amount three times.</p>
+
+      <p>Everyone is excited about AI, but automation can only be as good as the data underneath it.</p>
+
+      <h3>5. Why are LPs asking for so much more reporting?</h3>
+
+      <p>Because their own investors are asking them. LPs now ask harder questions about gross-to-net spread, DPI and cash flow history. Roughly three in four want performance data daily or on demand. Institutions want it their way too: <strong>86%</strong> of respondents in one survey saw more LP requests for bespoke SPV arrangements in the past year, with sovereign wealth funds the most likely to ask. A quarterly PDF used to be enough. Now it’s a starting point.</p>
+
+      <h3>6. Why is the admin agreement so vague?</h3>
+
+      <p>Most SPV managers sign an administration agreement quickly, because the deal is waiting. The gaps only show later. What does “closed” mean: documents in, money in, or wire out? Who prepares the tax return? Who owns the cap table file if you switch providers? Good guidance says to write the agreement around events, not vibes. Common red flags when choosing a provider: slow support, contracts with unseen fees, weak experience with liquidity events, and clunky investor portals.</p>
+
+      <h3>7. Why do setup mistakes haunt me two years later?</h3>
+
+      <p>The choices you make in the first week are the hardest to undo. Common pitfalls include the wrong jurisdiction, ignored tax implications, poorly defined governance, weak investor onboarding, and underestimating administrative complexity. KYC, AML, sanctions screening and investor disclosures are now table stakes even for a one-off SPV. In Singapore, add VCC and MAS considerations — getting them wrong early costs far more than getting good advice does.</p>
+
+      <h3>Which of these are you living with right now?</h3>
+
+      <table>
+        <thead>
+          <tr><th>#</th><th>Problem</th><th>The feeling</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Late K-1s</td><td>“Why is tax season my personal crisis?”</td></tr>
+          <tr><td>2</td><td>Unverifiable holdings</td><td>“Do we even hold those shares?”</td></tr>
+          <tr><td>3</td><td>Fee confusion</td><td>“Why is my LP upset about the numbers?”</td></tr>
+          <tr><td>4</td><td>Spreadsheet sprawl</td><td>“Which file is the right one?”</td></tr>
+          <tr><td>5</td><td>Reporting demands</td><td>“Another custom report?”</td></tr>
+          <tr><td>6</td><td>Vague admin scope</td><td>“Wait, whose job was that?”</td></tr>
+          <tr><td>7</td><td>Setup mistakes</td><td>“We should have set this up differently.”</td></tr>
+        </tbody>
+      </table>
+
+      <p>Next in this series: <a href="/blog/how-to-fix-spv-administration">how to fix each one</a>.</p>
+
+      <p><em>This article is general information about common SPV administration issues, not legal or tax advice. Confirm entity, tax and regulatory specifics with qualified counsel for your jurisdiction.</em></p>
+
+      <p><strong>Living with a few of these right now? <a href="/solutions/spv-syndicates">See how aama.io administers SPVs and syndicates</a>, or <a href="/contact">talk to our team</a> about your structure.</strong></p>
+    `,
+    faqs: [
+      { q: 'What does an SPV administrator do?', a: 'An SPV administrator handles investor onboarding and KYC, capital calls, bookkeeping, investor reporting, tax filing support and distributions across the vehicle’s life.' },
+      { q: 'How much does SPV administration cost?', a: 'It varies by structure, jurisdiction and provider. Ask specifically about setup fees, recurring fees, tax preparation and wind-down costs, since these are often quoted separately.' },
+      { q: 'Are SPVs risky?', a: 'The structure itself is well established. The risk usually sits in layered structures, undisclosed fees and unclear ownership, so transparency about those matters most.' },
+      { q: 'Do I need a fund administrator for an SPV?', a: 'Some institutional LPs require an independent administrator for governance reasons. For SPVs raised from individual accredited investors, it’s often a choice, but the work still has to be done by someone.' },
+    ],
+    author: 'Sunil Chaulagain',
+    authorRole: 'Chief Executive Officer',
+    authorImage: '/team/sunil.jpeg',
+    coverImage: '/images/settings.png',
+    publishedDate: '2026-09-16',
+    readTime: '9 min',
+    categories: ['SPVs', 'Fund Administration', 'Operations']
+  },
+  {
+    id: '28',
+    title: 'How to Fix SPV Administration: A Practical Playbook',
+    slug: 'how-to-fix-spv-administration',
+    excerpt: 'A step-by-step fix for the 7 biggest SPV administration problems, with questions to ask any provider and how aama.io handles each one.',
+    content: `
+      <p>In our <a href="/blog/spv-administration-problems">last post</a> we listed seven problems SPV managers keep running into. Here’s the good news: they’re more connected than they look. Fix the foundation and most of them get easier at once.</p>
+
+      <p><em>One honest note first: aama.io is software. We are not a licensed fund administrator, and we don’t give legal or tax advice. We help you run the operational side cleanly — structuring and tax decisions should go to qualified professionals, and we work with partners for that.</em></p>
+
+      <h3>How do I get K-1s and tax reporting out on time?</h3>
+
+      <p>Put administration and tax on the same data. When the preparer works from the live ledger — capital calls and distributions — instead of a year-end export, the slow handoff goes away. A large part of the K-1 timeline problem is structural, and it disappears when both run on the same platform.</p>
+
+      <p><strong>Ask any provider:</strong> Who prepares the 1065/K-1? By what date do you deliver? What happens if an LP misses a data request?</p>
+
+      <p><strong>How aama.io helps:</strong> Every capital call, distribution and expense is recorded once, in one ledger. For US structures we pair that with a qualified US tax preparer who signs off on software-assisted work. For Singapore vehicles, the same ledger feeds SFRS(I) 9 financial reporting.</p>
+
+      <h3>How do I show investors what they really own?</h3>
+
+      <p>Give every LP a clear view of their position: their capital account, their share of the vehicle, and evidence behind it. For layered structures, ask for proof that the underlying shares exist and how many each investor’s money represents.</p>
+
+      <p><strong>Ask any provider:</strong> Can my LPs see their position, and how current is it? Can you show cost after fees?</p>
+
+      <p><strong>How aama.io helps:</strong> Each investor gets a portal with their own capital account, contributions and distributions. We’re building toward fuller look-through views for layered structures, including supporting evidence and fee-inclusive cost per unit.</p>
+
+      <h3>How do I make fees easy to understand?</h3>
+
+      <p>Show fees like a receipt. Give each LP a statement that walks from gross return to net: management fee, carry, expenses, and what’s left. When people can trace every dollar, trust goes up even if fees stay the same.</p>
+
+      <p><strong>How aama.io helps:</strong> Our distribution engine calculates waterfalls, and we’re extending that into a per-LP gross-to-net view in the portal. Our free <a href="/tools/waterfall">Distribution Waterfall Calculator</a> lets you test a structure before you raise.</p>
+
+      <h3>How do I get out of spreadsheets?</h3>
+
+      <p>Move the whole lifecycle into one system: onboarding, KYC, subscriptions, capital calls, distributions, accounting, investor portal and deal pipeline. It matters less which tool you pick than that everything shares one record.</p>
+
+      <p><strong>How aama.io helps:</strong> That’s the core of the platform. Document extraction and reconciliation agents also cut manual entry, and every number keeps an audit trail so you can see where it came from. We use AI to save you typing — we don’t ask you to trust it blindly.</p>
+
+      <h3>How do I keep up with LP reporting demands?</h3>
+
+      <p>Build reports from clean data, then let LPs pull them when they want. On-demand access replaces the quarterly scramble. For institutional LPs with special needs, a flexible setup beats one-off manual reports every time.</p>
+
+      <p><strong>How aama.io helps:</strong> Investors see their statements and documents in the portal, and SFRS(I) 9 reporting comes from the same books. Our team configures each vehicle at the start, so custom structures are handled upfront, not patched later.</p>
+
+      <h3>How do I write an admin agreement that doesn’t cause fights?</h3>
+
+      <p>Write it around events and named owners. Define what “closed” means, who approves invoices, who prepares tax, who calculates the exit distribution, and who owns the data if you leave. Insist on full data export.</p>
+
+      <p><strong>How aama.io helps:</strong> Our model is self-service with clear roles — we deploy and configure, you operate day to day. We’ll spell out that split in writing, and your data stays exportable.</p>
+
+      <h3>How do I avoid setup mistakes?</h3>
+
+      <p>Slow down at the start. Choose the jurisdiction with advice, define governance before you raise, and run KYC and AML at onboarding, not at the last minute. Ask a lawyer and tax adviser about the parts that matter, especially VCC and MAS questions in Singapore.</p>
+
+      <p><strong>How aama.io helps:</strong> KYC and AML screening run through Sumsub during investor onboarding. Our <a href="/solutions/spv-syndicates">SPV solution</a> covers formation through wind-down workflows, and we introduce legal and tax partners for structuring questions.</p>
+
+      <h3>The whole map on one page</h3>
+
+      <table>
+        <thead>
+          <tr><th>Problem</th><th>The fix</th><th>How aama.io supports it</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Late K-1s</td><td>Admin and tax on one dataset</td><td>Single ledger, sign-off by a qualified preparer, SFRS(I) 9 from the same books</td></tr>
+          <tr><td>Unverifiable holdings</td><td>Position views with evidence</td><td>Investor portal; look-through in development</td></tr>
+          <tr><td>Fee confusion</td><td>Gross-to-net statements</td><td>Waterfall engine and calculator</td></tr>
+          <tr><td>Spreadsheets</td><td>One connected record</td><td>End-to-end platform, audit trail</td></tr>
+          <tr><td>Reporting demands</td><td>Clean data, on-demand access</td><td>Portal, configurable vehicles</td></tr>
+          <tr><td>Vague agreements</td><td>Events and named owners</td><td>Clear roles, data export</td></tr>
+          <tr><td>Setup mistakes</td><td>Advice first, KYC at onboarding</td><td>Sumsub KYC/AML, partner network</td></tr>
+        </tbody>
+      </table>
+
+      <p>Next in this series: <a href="/blog/future-of-spv-administration">where SPV administration is heading</a>.</p>
+
+      <p><strong>Ready to get off spreadsheets? <a href="/solutions/spv-syndicates">See aama.io’s SPV administration</a>, or <a href="/contact">talk to our team</a> about your setup.</strong></p>
+    `,
+    faqs: [
+      { q: 'What is SPV management software?', a: 'It’s a platform that handles investor onboarding, KYC, capital calls, accounting, reporting and distributions for special purpose vehicles in one place.' },
+      { q: 'What should I ask before choosing an SPV administrator?', a: 'Ask what counts as “closed,” who prepares tax and when, whether you can export all your data, which fees are recurring, and how LPs view their positions.' },
+      { q: 'Can software replace a fund administrator?', a: 'Software covers the operational work well. Where an LP or regulator requires a licensed independent administrator, you’ll still need one, so check your investors’ requirements first.' },
+      { q: 'Does aama.io support SFRS(I) 9 reporting?', a: 'Yes — the accounting module is built around SFRS(I) 9, with pricing and FX sources and an audit trail.' },
+    ],
+    author: 'Sunil Chaulagain',
+    authorRole: 'Chief Executive Officer',
+    authorImage: '/team/sunil.jpeg',
+    coverImage: '/images/share-class.png',
+    publishedDate: '2026-09-18',
+    readTime: '9 min',
+    categories: ['SPVs', 'Fund Administration', 'Operations']
+  },
+  {
+    id: '29',
+    title: 'The Future of SPV Administration: What LPs Will Expect',
+    slug: 'future-of-spv-administration',
+    excerpt: 'Look-through visibility, AI you can audit, on-demand reporting and Asia-first structures. Where SPV administration is heading and how to prepare.',
+    content: `
+      <p>Some of what follows is already possible. Some is where we believe the market is heading, and where we’re focusing at aama.io — we’ve marked which is which. This is the third post in a series; the first covered <a href="/blog/spv-administration-problems">the seven problems</a> and the second covered <a href="/blog/how-to-fix-spv-administration">how to fix them</a>.</p>
+
+      <h3>Will investors soon see through every layer of an SPV?</h3>
+
+      <p>We think so. The pressure is coming from every direction. Large issuers are pushing back on unauthorized, fee-heavy vehicles. The message is simple: know who’s behind the vehicle. Expect LPs to ask for the underlying share count, effective price after fees, and evidence the shares exist.</p>
+
+      <p><strong>Our direction:</strong> look-through views inside the LP portal.</p>
+
+      <h3>Will fees become as readable as a receipt?</h3>
+
+      <p>They should. A per-investor statement showing gross return, management fee, carry, expenses and net return, generated automatically, will move from “nice to have” to “expected.” Transparent fees earn more trust than cheap ones.</p>
+
+      <p><strong>Our direction:</strong> gross-to-net statements built from the same waterfall engine that calculates distributions.</p>
+
+      <h3>Will tax stop being a year-end scramble?</h3>
+
+      <p>It can. As administration and tax preparation share one live dataset, preparation starts earlier and handoffs shrink.</p>
+
+      <p><strong>Our direction:</strong> tax-ready data from day one, reviewed by a qualified preparer, so K-1 season — and Singapore audit season — stops surprising you.</p>
+
+      <h3>Will spreadsheets finally disappear?</h3>
+
+      <p>For most SPVs, yes, though the change will be gradual. Spreadsheets fade once one connected record holds investors, cash, books and reports. And the AI that helps will need to be <strong>auditable</strong>: LPs increasingly want managers to show that technology improves speed, transparency, customization and infrastructure, not just lead with an AI copilot.</p>
+
+      <p>Our rule for AI is simple: a human can always see what it did and why. If it can’t be traced, it shouldn’t touch the books.</p>
+
+      <h3>Will LPs get reports on demand?</h3>
+
+      <p>More and more, and in their format, not yours. Roughly three in four LPs want performance data daily or on demand. Expect self-service dashboards and exports shaped around each institution’s mandate.</p>
+
+      <p><strong>Our direction:</strong> configurable reporting on top of clean data, so a custom request stops meaning a custom project.</p>
+
+      <h3>Will admin agreements get clearer?</h3>
+
+      <p>They’ll have to. Data portability and named responsibilities are becoming reasons to choose a provider. We expect “can I take my data with me?” to be asked at the first meeting.</p>
+
+      <p><strong>Our direction:</strong> plain-language responsibility splits and full export as standard.</p>
+
+      <h3>What about tokenized SPVs and new structures?</h3>
+
+      <p>Vendors are already promoting tokenized SPVs, fully automated formation and management, global investor participation and integrated fund administration. We’re watching, without rushing. New wrappers only help if the compliance, accounting and investor reporting behind them work — structure is the easy part, operations decide whether it holds up.</p>
+
+      <h3>Why does Asia matter here?</h3>
+
+      <p>Singapore’s VCC keeps growing — one consultancy estimate put it at roughly 1,300 VCCs hosting more than 2,400 sub-funds by early 2026, with family offices pairing tax incentives with VCC umbrellas. The same estimate noted that India and Indonesia continue to scrutinize the substance of VCC sub-funds claiming treaty benefits. That means multi-currency books, sub-fund separation and clear evidence trails matter more here than in most markets. We’re building for that first, not last.</p>
+
+      <h3>How can I prepare today?</h3>
+
+      <ol>
+        <li>Put every investor, transaction and document into one system.</li>
+        <li>Ask any provider the questions from <a href="/blog/how-to-fix-spv-administration">our last post</a>.</li>
+        <li>Give LPs a portal instead of a PDF.</li>
+        <li>Write your fee story down before an LP asks for it.</li>
+        <li>Choose advice before structure, not after.</li>
+      </ol>
+
+      <p><em>This article reflects our current product direction as of publication and general market observation, not a commitment or timeline for specific features, and not legal, tax or investment advice.</em></p>
+
+      <p><strong>Want to see where the platform is headed on your own structure? <a href="/solutions/spv-syndicates">Explore aama.io’s SPV administration</a>, or <a href="/contact">talk to our team</a>.</strong></p>
+    `,
+    faqs: [
+      { q: 'What will SPV administration look like in 2028?', a: 'Expect look-through ownership views, automated gross-to-net fee statements, tax and accounting on shared data, on-demand LP reporting, and AI features with visible audit trails.' },
+      { q: 'Will AI replace SPV administrators?', a: 'AI will handle document reading, matching and flagging. Judgment, sign-off and accountability will still sit with people.' },
+      { q: 'Are tokenized SPVs the future?', a: 'Possibly, in some markets. The value depends on the compliance, accounting and reporting behind the token.' },
+      { q: 'Why choose an Asia-first platform?', a: 'Structures like VCCs, multi-currency portfolios and cross-border tax scrutiny need purpose-built support that global tools often treat as an afterthought.' },
+    ],
+    author: 'Sunil Chaulagain',
+    authorRole: 'Chief Executive Officer',
+    authorImage: '/team/sunil.png',
+    coverImage: '/images/fund-detail.png',
+    publishedDate: '2026-09-20',
+    readTime: '8 min',
+    categories: ['SPVs', 'Fund Administration', 'Compliance']
   },
 ];
 

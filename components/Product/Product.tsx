@@ -93,7 +93,7 @@ const fundTypes = [
     value: 'spv',
     label: 'SPVs & Syndicates',
     icon: IconUsersGroup,
-    description: 'Single-asset funds — SPVs and syndicates — administered end to end.',
+    description: 'Single- and multi-asset vehicles — SPVs and syndicates — administered end to end.',
     features: [
       'Spin up a deal SPV or syndicate in days',
       'Member onboarding, KYC/AML and e-signatures',
@@ -180,6 +180,12 @@ const targetIndustries = [
     slug: 'vc-pe-firms',
   },
   {
+    icon: IconReportMoney,
+    title: 'Private Credit',
+    description: 'Direct-lending and credit funds — amortised cost, ECL staging and LP reporting under IFRS 9.',
+    slug: 'private-credit',
+  },
+  {
     icon: IconBriefcase,
     title: 'Family Offices',
     description: 'Consolidated multi-entity, multi-asset administration and reporting.',
@@ -188,7 +194,7 @@ const targetIndustries = [
   {
     icon: IconUsersGroup,
     title: 'SPV & Syndicate Leads',
-    description: 'Single-asset funds — SPVs and syndicates — with onboarding, carry, distributions and accounting.',
+    description: 'Single- and multi-asset vehicles — SPVs and syndicates — with onboarding, carry, distributions and accounting.',
     slug: 'spv-syndicates',
   },
 ];
@@ -198,7 +204,7 @@ const faqItems = [
     value: 'how-it-works',
     title: 'How does the fund-as-a-service platform work?',
     content:
-      'You configure your fund parameters through an intuitive interface, and the platform automates operations from investor onboarding to NAV calculations, accounting, reporting and compliance monitoring — with deep support for mutual, private capital, family office, hedge fund and single-asset SPV / syndicate structures.',
+      'You configure your fund parameters through an intuitive interface, and the platform automates operations from investor onboarding to NAV calculations, accounting, reporting and compliance monitoring — with deep support for mutual, private capital, family office, hedge fund and SPV / syndicate structures, single- or multi-asset.',
   },
   {
     value: 'compliance',
@@ -216,7 +222,7 @@ const faqItems = [
     value: 'instruments',
     title: 'Which instruments and fund types are supported?',
     content:
-      'The fund accounting engine is multi-instrument by design — equities, fixed income, derivatives, real assets and private holdings — serving PE, VC, family offices, hedge funds, REITs, mutual funds and single-asset SPVs from a single system.',
+      'The fund accounting engine is multi-instrument by design — equities, fixed income, derivatives, real assets and private holdings — serving PE, VC, family offices, hedge funds, REITs, mutual funds and SPVs of any size from a single system.',
   },
 ];
 
@@ -239,7 +245,7 @@ export function Product() {
           >
             <span className={classes.pill}>Fund administration &amp; accounting software</span>
             <Title className={classes.heroTitle}>
-              The operating system for{' '}
+              The operating layer for{' '}
               <span className={classes.accent}>modern fund managers.</span>
             </Title>
             <Text className={classes.heroDesc}>
