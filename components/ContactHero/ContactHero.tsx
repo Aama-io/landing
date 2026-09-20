@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import type { CSSProperties } from 'react';
+import { useEffect, type CSSProperties } from 'react';
 import { Container, Text, Title, Group } from '@mantine/core';
 import { IconMail, IconCalendar } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
@@ -45,10 +44,10 @@ export function ContactHero() {
               <Text fw={700} mt="sm" size="sm">Email us</Text>
               <Text size="sm" c="dimmed">contact@aama.io</Text>
             </a>
-            <a href="https://cal.com/aamaio/30min" target="_blank" rel="noopener noreferrer" style={card}>
+            <a href="#schedule" style={card}>
               <span style={iconChip}><IconCalendar size={20} stroke={1.7} /></span>
               <Text fw={700} mt="sm" size="sm">Schedule a meeting</Text>
-              <Text size="sm" c="dimmed">Book a time</Text>
+              <Text size="sm" c="dimmed">Book a time, below</Text>
             </a>
           </Group>
         </motion.div>

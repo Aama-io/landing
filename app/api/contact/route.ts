@@ -63,7 +63,10 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json();
-    const { name, email, company, phone, inquiryType, message, fundSize, investmentStrategy } =
+    // `aum` replaced the old `fundSize` dropdown + `investmentStrategy`/`phone` fields when
+    // the form was shortened and re-segmented around actual audience type. `phone` and
+    // `investmentStrategy` are read too, for backward compatibility with any older client.
+    const { name, email, company, phone, inquiryType, message, aum, fundSize, investmentStrategy } =
       body ?? {};
 
     if (!name || !email || !inquiryType || !message) {
@@ -117,7 +120,7 @@ export async function POST(request: Request) {
     // 2) Create a deal associated with the contact.
     const description = [
       `Inquiry type: ${inquiryType}`,
-      fundSize ? `Fund size: ${fundSize}` : null,
+      aum ? `Approximate AUM / fund size: ${aum}` : fundSize ? `Fund size: ${fundSize}` : null,
       investmentStrategy ? `Investment strategy: ${investmentStrategy}` : null,
       phone ? `Phone: ${phone}` : null,
       '',

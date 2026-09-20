@@ -14,20 +14,22 @@ import {
   Title,
   Divider,
   Box,
-  Center,
 } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import { IconCheck, IconX, IconMail, IconCalendar } from '@tabler/icons-react';
+import { IconCheck, IconX, IconMail } from '@tabler/icons-react';
 import { useAnalytics } from '../Analytics';
 import classes from './ContactForm.module.css';
 import Cal, { getCalApi } from "@calcom/embed-react";
 
+// Audience types this platform actually serves — matches the Solutions taxonomy
+// (lib/solutions.ts) plus "Fund Administrator", a service-provider persona
+// distinct from fund type. Replaces a generic list that didn't name any of them.
 const INQUIRY_TYPES = [
-  'Fund Management Solutions',
-  'Technical Support',
-  'Partnership Opportunities',
-  'Investment Inquiries',
-  'General Questions',
+  'VC / PE Fund Manager',
+  'Private Credit Fund Manager',
+  'Family Office',
+  'SPV / Syndicate Lead',
+  'Fund Administrator',
   'Other',
 ];
 
@@ -53,18 +55,15 @@ export function ContactForm() {
       name: '',
       email: '',
       company: '',
-      phone: '',
       inquiryType: '',
+      aum: '',
       message: '',
-      fundSize: '',
-      investmentStrategy: '',
     },
     validate: {
       name: (value: any) => (value.trim().length < 2 ? 'Name must be at least 2 characters' : null),
       email: (value: any) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      phone: (value: any) => (value && !/^\+?[\d\s-]{8,}$/.test(value) ? 'Invalid phone number' : null),
       message: (value: any) => (value.trim().length < 10 ? 'Message must be at least 10 characters' : null),
-      inquiryType: (value: any) => (!value ? 'Please select an inquiry type' : null),
+      inquiryType: (value: any) => (!value ? 'Please select what best describes you' : null),
     },
   });
 
@@ -87,7 +86,7 @@ export function ContactForm() {
       if (!response.ok) {
         throw new Error(data.details || data.error || 'Failed to submit your request');
       }
-      
+
       // Track successful form submission
       trackEvent({
         action: 'form_submission',
@@ -115,12 +114,31 @@ export function ContactForm() {
 
   return (
     <Container size="md" py="xl">
-      <Paper radius="lg" p="xl" withBorder className={classes.form}>
+      {/* Primary path — what "Book a demo" actually promises, front and center */}
+      <Paper radius="lg" p="xl" withBorder className={classes.schedulerCard} id="schedule">
         <Title order={2} ta="center" className={classes.formTitle}>
-          Send us a Message
+          Book a 30-minute demo
+        </Title>
+        <Text c="dimmed" size="sm" ta="center" mb="lg">
+          Pick a time that works — we'll walk through the platform on your own structure.
+        </Text>
+        <Box className={classes.calBox}>
+          <Cal
+            calLink="aamaio/30min"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
+      </Paper>
+
+      <Divider my="xl" label="OR" labelPosition="center" />
+
+      {/* Secondary path — for anyone not ready to book yet */}
+      <Paper radius="lg" p="xl" withBorder className={classes.form}>
+        <Title order={2} ta="center" className={classes.formTitle} style={{ fontSize: 'inherit' }}>
+          Send us a message instead
         </Title>
         <Text c="dimmed" size="sm" ta="center" mb="xl">
-          Fill out the form below and we'll get back to you within 24 hours
+          Have a question first? We'll get back to you within 24 hours.
         </Text>
 
         <form onSubmit={form.onSubmit(handleSubmit)}>
@@ -130,12 +148,12 @@ export function ContactForm() {
                 Thank you for your message. We'll get back to you shortly.
               </Notification>
             )}
-            
+
             {status === 'error' && (
-              <Notification 
-                icon={<IconX size={20} />} 
-                color="red" 
-                title="Error!" 
+              <Notification
+                icon={<IconX size={20} />}
+                color="red"
+                title="Error!"
                 onClose={() => {
                   setStatus(null);
                   setErrorMessage(null);
@@ -166,40 +184,19 @@ export function ContactForm() {
                 placeholder="Your company name"
                 {...form.getInputProps('company')}
               />
-              <TextInput
-                label="Phone"
-                placeholder="+1 234 567 890"
-                {...form.getInputProps('phone')}
-              />
-            </SimpleGrid>
-
-            <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="md">
               <Select
-                label="Inquiry Type"
-                placeholder="Select inquiry type"
+                label="What best describes you?"
+                placeholder="Select one"
                 data={INQUIRY_TYPES}
                 required
                 {...form.getInputProps('inquiryType')}
               />
-              <Select
-                label="Fund Size"
-                placeholder="Select fund size"
-                data={[
-                  'Under $1M',
-                  '$1M - $10M',
-                  '$10M - $50M',
-                  '$50M - $100M',
-                  '$100M - $500M',
-                  'Over $500M',
-                ]}
-                {...form.getInputProps('fundSize')}
-              />
             </SimpleGrid>
 
             <TextInput
-              label="Investment Strategy"
-              placeholder="e.g., Long-term growth, Value investing, etc."
-              {...form.getInputProps('investmentStrategy')}
+              label="Approximate AUM or fund size (optional)"
+              placeholder="e.g. S$40M, or N/A for a single SPV"
+              {...form.getInputProps('aum')}
             />
 
             <Textarea
@@ -243,21 +240,7 @@ export function ContactForm() {
             </Text>
           </Stack>
         </form>
-        
-        <Divider my="xl" label="OR" labelPosition="center" />
-        
-        <Box my="md">
-          <Center>
-              <Title size="sm" c="dimmed" mb="xs">
-                Prefer to schedule a live conversation?
-              </Title>
-              </Center>
-                <Cal
-                  calLink="aamaio/30min"
-                  style={{ width: "100%", height: "100%" }}
-                />
-        </Box>
       </Paper>
     </Container>
   );
-} 
+}
