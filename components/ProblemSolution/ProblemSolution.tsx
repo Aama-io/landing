@@ -1,54 +1,43 @@
-import { Container, Text } from '@mantine/core';
-import { IconX, IconCheck, IconBolt, IconShieldLock, IconPlugConnected } from '@tabler/icons-react';
-import { SectionHeading } from '../ui/SectionHeading';
+import Link from 'next/link';
+import { IconArrowRight, IconCheck, IconMinus } from '@tabler/icons-react';
+import { Container, Text, Title } from '@mantine/core';
 import { Reveal } from '../ui/Reveal';
 import classes from './ProblemSolution.module.css';
 
-// Paired "old way / aama.io way" rows — written as declarative, self-contained
-// statements so each one reads clearly on its own to a search crawler or an
-// LLM answering "how is aama.io different", not just in the visual pairing.
-const comparisons = [
+// One row per fund-operations workflow: how it is typically run today vs. on
+// aama.io. Written as declarative, self-contained statements so each one reads
+// clearly on its own to a search crawler or an LLM answering "how is aama.io
+// different", not just in the visual pairing.
+const workflows = [
   {
-    before: 'Capital calls tracked in spreadsheets, reconciled by hand against bank statements.',
-    after: 'Capital calls, distributions and bank reconciliation run automatically from one ledger.',
+    area: 'Capital calls & distributions',
+    before: 'Tracked in spreadsheets and reconciled by hand against bank statements.',
+    after: 'Calls, distributions and bank reconciliation run from one ledger.',
   },
   {
-    before: 'NAV calculated in Excel — formula errors, no audit trail, no version control.',
-    after: 'NAV calculated automatically, IFRS 9 / SFRS(I) 9 native, with a full audit trail.',
+    area: 'NAV & fund accounting',
+    before: 'Calculated in Excel — formula risk, no audit trail, no version control.',
+    after: 'Calculated automatically, IFRS 9 / SFRS(I) 9 native, fully audit-trailed.',
   },
   {
-    before: 'Investor updates sent by email — no self-service, no single source of truth.',
-    after: 'A white-labeled investor portal — real-time positions, statements, documents.',
+    area: 'Investor reporting',
+    before: 'Statements and updates sent as email attachments.',
+    after: 'A white-labeled LP portal with real-time positions, statements and documents.',
   },
   {
-    before: 'Multi-currency, multi-asset positions consolidated by hand across workbooks.',
-    after: 'Multi-currency, multi-asset funds, SPVs and syndicates run on one engine.',
+    area: 'Multi-entity consolidation',
+    before: 'Currencies, assets and vehicles consolidated by hand across workbooks.',
+    after: 'Funds, VCC sub-funds, SPVs and syndicates on one multi-currency engine.',
   },
   {
-    before: 'Compliance evidence assembled ad hoc when an auditor or MAS asks for it.',
-    after: 'KYC/AML and MAS-aligned compliance evidence generated continuously.',
+    area: 'Compliance & audit',
+    before: 'Evidence assembled ad hoc when an auditor or MAS asks for it.',
+    after: 'KYC/AML and MAS-aligned evidence generated continuously.',
   },
   {
-    before: 'A different vendor for accounting, the LP portal, e-signatures and reporting.',
-    after: 'Fund administration, accounting and the investor portal — one vendor, one data model.',
-  },
-];
-
-const benefits = [
-  {
-    title: 'Rapid fund launch',
-    description: 'Pre-configured templates and automated setup cut time-to-market by up to 75%.',
-    icon: IconBolt,
-  },
-  {
-    title: 'Enterprise security',
-    description: 'End-to-end encryption, granular access controls and a 99.9% uptime SLA.',
-    icon: IconShieldLock,
-  },
-  {
-    title: 'One connected system',
-    description: 'No more data silos — every module stays in real-time sync, end to end.',
-    icon: IconPlugConnected,
+    area: 'Vendor stack',
+    before: 'Separate tools for accounting, the LP portal, e-signatures and reporting.',
+    after: 'Administration, accounting and the investor portal — one vendor, one data model.',
   },
 ];
 
@@ -56,50 +45,77 @@ export function ProblemSolution() {
   return (
     <section className={`${classes.wrapper} section`}>
       <Container size="xl">
-        <SectionHeading
-          eyebrow="The problem with the old way"
-          title="From spreadsheets and email to one fund operations platform"
-          description="Most fund managers, administrators and SPV leads still run capital calls, NAV and investor communications across spreadsheets, email and several disconnected vendors — a multi-currency, multi-asset operation held together by manual reconciliation. aama.io consolidates fund administration, fund accounting and the investor portal into one system, built for Singapore and APAC."
-        />
-
-        <Reveal delay={0.1}>
-          <div className={classes.compare}>
-            <div className={classes.compareHead}>
-              <span className={classes.compareHeadCol} data-tone="before">The old way</span>
-              <span className={classes.compareHeadCol} data-tone="after">On aama.io</span>
+        <Reveal>
+          <div className={classes.header}>
+            <div>
+              <span className={classes.eyebrow}>The problem with the old way</span>
+              <Title order={2} className={classes.title}>
+                Fund operations still run on spreadsheets, inboxes and disconnected vendors.
+              </Title>
             </div>
-            <div className={classes.compareRows}>
-              {comparisons.map((c) => (
-                <div key={c.before} className={classes.compareRow}>
-                  <div className={classes.compareCell} data-tone="before">
-                    <IconX size={15} className={classes.beforeIcon} />
-                    <span>{c.before}</span>
-                  </div>
-                  <div className={classes.compareCell} data-tone="after">
-                    <IconCheck size={15} className={classes.afterIcon} />
-                    <span>{c.after}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Text className={classes.lede}>
+              Mid-market managers, fund administrators and SPV leads are stuck between Excel and
+              enterprise systems priced for billion-dollar funds. aama.io consolidates fund
+              administration, fund accounting and the investor portal into one system — built for
+              Singapore and APAC.
+            </Text>
           </div>
         </Reveal>
 
-        <div className={classes.benefits}>
-          {benefits.map((b, i) => (
-            <Reveal key={b.title} delay={i * 0.08}>
-              <div className={classes.benefit}>
-                <span className={classes.benefitIcon}>
-                  <b.icon size={20} stroke={1.8} />
-                </span>
-                <div>
-                  <Text className={classes.benefitTitle}>{b.title}</Text>
-                  <Text className={classes.benefitDesc}>{b.description}</Text>
+        <Reveal delay={0.1}>
+          <div
+            className={classes.table}
+            role="table"
+            aria-label="The old way compared with aama.io"
+          >
+            <div className={classes.head} role="row">
+              <span className={classes.headCell} role="columnheader">
+                Workflow
+              </span>
+              <span className={classes.headCell} role="columnheader">
+                Today
+              </span>
+              <span className={classes.headCell} data-tone="after" role="columnheader">
+                With aama.io
+              </span>
+            </div>
+
+            {workflows.map((w, i) => (
+              <div key={w.area} className={classes.row} role="row">
+                <div className={classes.area} role="rowheader">
+                  <span className={classes.index}>{String(i + 1).padStart(2, '0')}</span>
+                  {w.area}
+                </div>
+                <div className={classes.cell} data-tone="before" role="cell">
+                  <span className={classes.mobileLabel}>Today</span>
+                  <span className={classes.cellInner}>
+                    <IconMinus size={14} className={classes.beforeIcon} aria-hidden="true" />
+                    {w.before}
+                  </span>
+                </div>
+                <div className={classes.cell} data-tone="after" role="cell">
+                  <span className={classes.mobileLabel} data-tone="after">
+                    With aama.io
+                  </span>
+                  <span className={classes.cellInner}>
+                    <span className={classes.afterIcon} aria-hidden="true">
+                      <IconCheck size={12} stroke={3} />
+                    </span>
+                    {w.after}
+                  </span>
                 </div>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+
+            <div className={classes.foot}>
+              <span>Six workflows. One ledger. One vendor.</span>
+              <Link href="/product" className={classes.footLink}>
+                See how the platform fits together
+                <IconArrowRight size={15} />
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

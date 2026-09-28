@@ -1,16 +1,22 @@
-import { Container, Text } from '@mantine/core';
 import {
   IconArrowUpRight,
-  IconUsersGroup,
+  IconChartLine,
   IconClock,
   IconShieldCheck,
-  IconChartLine,
+  IconUsersGroup,
 } from '@tabler/icons-react';
-import { SectionHeading } from '../ui/SectionHeading';
+import { Container, Text } from '@mantine/core';
 import { Reveal } from '../ui/Reveal';
+import { SectionHeading } from '../ui/SectionHeading';
 import classes from './SocialProof.module.css';
 
-const clients = ['Kumari Capital', 'Prabhu Capital', 'Sanima Capital', 'Siddhartha Capital', 'LS Capital'];
+const clients = [
+  'Kumari Capital',
+  'Prabhu Capital',
+  'Sanima Capital',
+  'Siddhartha Capital',
+  'LS Capital',
+];
 
 const stats = [
   {
@@ -46,8 +52,8 @@ export function SocialProof() {
       <Container size="xl">
         <SectionHeading
           eyebrow="Live in production, not a pilot"
-          title="The same engine behind this platform already runs at 5 regulated capital-markets institutions"
-          description="The fund-accounting core behind aama.io has been in production for years, calculating NAV every day across each institution's open- and closed-end funds, processing transactions and regulatory reporting for institutional clients — with a zero-data-loss record across every migration."
+          title="Proven in production at five regulated institutions"
+          description="The fund-accounting core behind aama.io calculates NAV daily across open- and closed-end funds at five regulated capital-markets firms — with zero data loss across every migration."
         />
 
         <Reveal delay={0.1}>
@@ -72,12 +78,12 @@ export function SocialProof() {
               </Text>
               <Text className={classes.caseStudyBody}>
                 When Kumari Capital replaced its legacy mutual fund system, daily transactions and
-                clients grew roughly five-fold — handled by the same operations headcount, while
-                the engine calculates NAV every day across its open- and closed-end funds.
-                Automating client actions that previously needed manual authorization freed up
-                1–2 hours a day for the operations and call-centre teams, correct NAV and DP-fee
-                computation removed recurring reconciliation errors, and investor numbers grew 566%
-                in the 12 months after go-live.
+                clients grew roughly five-fold — handled by the same operations headcount, while the
+                engine calculates NAV every day across its open- and closed-end funds. Automating
+                client actions that previously needed manual authorization freed up 1–2 hours a day
+                for the operations and call-centre teams, correct NAV and DP-fee computation removed
+                recurring reconciliation errors, and investor numbers grew 566% in the 12 months
+                after go-live.
               </Text>
             </div>
 

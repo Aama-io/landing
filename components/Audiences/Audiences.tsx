@@ -1,29 +1,32 @@
-import { Container, Text } from '@mantine/core';
-import { IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
+import { IconArrowRight, IconCheck } from '@tabler/icons-react';
+import { Container, Text, Title } from '@mantine/core';
 import { SOLUTIONS } from '@/lib/solutions';
-import { SectionHeading } from '../ui/SectionHeading';
 import { Reveal } from '../ui/Reveal';
 import classes from './Audiences.module.css';
 
 // Homepage-only detail layered onto the shared SOLUTIONS data (lib/solutions.ts) —
 // kept local so the Header's nav dropdown, which uses the same array, is untouched.
-const DETAIL: Record<string, { tag: string; capabilities: string }> = {
+const DETAIL: Record<string, { kicker: string; capabilities: string[] }> = {
   'vc-pe-firms': {
-    tag: '60% less admin',
-    capabilities: 'Waterfall automation · Capital calls · LP portal & K-1s',
-  },
-  'spv-syndicates': {
-    tag: 'Live in days',
-    capabilities: 'Templated vehicle setup · Automated lead carry',
-  },
-  'family-offices': {
-    tag: 'Built for 13O/13U',
-    capabilities: 'Multi-entity consolidation · CDR, LBS & UBO tracking',
+    kicker: 'Closed-end funds',
+    capabilities: [
+      'Distribution waterfalls & carry',
+      'Capital calls & LP notices',
+      'LP portal & statements',
+    ],
   },
   'private-credit': {
-    tag: 'Built for IFRS 9',
-    capabilities: 'Amortised cost & ECL staging · Loan & covenant tracking',
+    kicker: 'Direct lending & credit',
+    capabilities: ['Amortised cost & ECL staging', 'Interest accruals', 'Loan & covenant tracking'],
+  },
+  'family-offices': {
+    kicker: 'Single & multi-family',
+    capabilities: ['Multi-entity consolidation', '13O / 13U reporting', 'CDR, LBS & UBO tracking'],
+  },
+  'spv-syndicates': {
+    kicker: 'Deal-by-deal vehicles',
+    capabilities: ['Templated vehicle setup', 'Investor onboarding & KYC', 'Automated lead carry'],
   },
 };
 
@@ -31,37 +34,59 @@ export function Audiences() {
   return (
     <section className={`${classes.wrapper} section`}>
       <Container size="xl">
-        <SectionHeading
-          eyebrow="Solutions"
-          title="Built for how you deploy capital"
-          description="Venture and private equity, private credit, family offices, single-deal SPVs and syndicates — the same fund-accounting engine, configured for how each one actually runs."
-        />
-
-        <Reveal delay={0.1}>
-          <div className={classes.matrix}>
-            {SOLUTIONS.map((solution) => {
-              const detail = DETAIL[solution.slug];
-              return (
-                <Link key={solution.slug} href={solution.href} className={classes.cell}>
-                  <div className={classes.cellHead}>
-                    <solution.icon size={22} stroke={1.6} className={classes.cellIcon} />
-                    {detail && <span className={classes.tag}>{detail.tag}</span>}
-                  </div>
-
-                  <Text className={classes.cellTitle}>{solution.label}</Text>
-                  <Text className={classes.cellBlurb}>{solution.blurb}</Text>
-
-                  {detail && <Text className={classes.capabilities}>{detail.capabilities}</Text>}
-
-                  <span className={classes.cellLink}>
-                    Explore
-                    <IconArrowRight size={14} />
-                  </span>
-                </Link>
-              );
-            })}
+        <Reveal>
+          <div className={classes.header}>
+            <div>
+              <span className={classes.eyebrow}>Solutions</span>
+              <Title order={2} className={classes.title}>
+                Built for how you deploy capital
+              </Title>
+              <Text className={classes.lede}>
+                One fund-accounting engine, configured for how venture and private equity, private
+                credit, family offices and SPVs actually run.
+              </Text>
+            </div>
+            <Link href="/solutions" className={classes.allLink}>
+              All solutions
+              <IconArrowRight size={16} />
+            </Link>
           </div>
         </Reveal>
+
+        <div className={classes.grid}>
+          {SOLUTIONS.map((solution, i) => {
+            const detail = DETAIL[solution.slug];
+            return (
+              <Reveal key={solution.slug} delay={i * 0.06} className={classes.gridItem}>
+                <Link href={solution.href} className={classes.card}>
+                  <span className={classes.iconWrap}>
+                    <solution.icon size={22} stroke={1.7} />
+                  </span>
+
+                  {detail && <span className={classes.kicker}>{detail.kicker}</span>}
+                  <Text className={classes.cardTitle}>{solution.label}</Text>
+                  <Text className={classes.cardBlurb}>{solution.blurb}</Text>
+
+                  {detail && (
+                    <ul className={classes.list}>
+                      {detail.capabilities.map((c) => (
+                        <li key={c} className={classes.listItem}>
+                          <IconCheck size={14} stroke={2.4} className={classes.listIcon} />
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <span className={classes.cardLink}>
+                    Explore {solution.label}
+                    <IconArrowRight size={15} className={classes.cardArrow} />
+                  </span>
+                </Link>
+              </Reveal>
+            );
+          })}
+        </div>
       </Container>
     </section>
   );

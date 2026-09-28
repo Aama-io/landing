@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Title, Text, Button } from '@mantine/core';
+import Link from 'next/link';
 import {
   IconArrowRight,
   IconArrowUpRight,
@@ -8,14 +8,14 @@ import {
   IconTrendingUp,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { Button, Text, Title } from '@mantine/core';
 import classes from './Hero.module.css';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const capabilities = [
   'Built for VCC sub-funds and standalone SPVs',
-  'Automated Capital calls, KYC, and  distributions',
+  'Automated capital calls, KYC and distributions',
   'Go live in weeks, not quarters',
 ];
 
@@ -38,7 +38,9 @@ function useCountUp(target: number, duration = 1600) {
   const started = useRef(false);
 
   useEffect(() => {
-    if (started.current) {return;}
+    if (started.current) {
+      return;
+    }
     started.current = true;
     const start = Math.round(target * 0.9);
     const t0 = performance.now();
@@ -48,7 +50,9 @@ function useCountUp(target: number, duration = 1600) {
       const p = Math.min(1, (now - t0) / duration);
       const eased = 1 - (1 - p) ** 3;
       setValue(start + (target - start) * eased);
-      if (p < 1) {raf = requestAnimationFrame(tick);}
+      if (p < 1) {
+        raf = requestAnimationFrame(tick);
+      }
     };
 
     raf = requestAnimationFrame(tick);
@@ -84,10 +88,10 @@ export function Hero() {
           </Title>
 
           <Text className={classes.subtitle}>
-            PE, VC, and SPV fund managers, syndicate leads, and the administrators who service them still juggle spreadsheets, email, and disconnected tools. <span className={classes.highlight}>
-              <span className={classes.highlightMark} aria-hidden="true" />
-              <span className={classes.highlightText}>aama.io</span>
-            </span> unifies fund administration and IFRS 9 / SFRS(I) 9 accounting in one integrated system. Singapore-first, built for APAC & beyond.
+            PE, VC, and SPV fund managers, syndicate leads, and the administrators who service them
+            still juggle spreadsheets, email, and disconnected tools. aama.io unifies fund
+            administration and IFRS 9 / SFRS(I) 9 accounting in one integrated system.
+            Singapore-first, built for APAC & beyond.
           </Text>
 
           <div className={classes.actions}>

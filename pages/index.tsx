@@ -1,13 +1,12 @@
-import { PageShell } from '@/components/ui/PageShell';
+import { Audiences } from '@/components/Audiences/Audiences';
+import { CTA } from '@/components/CTA/CTA';
 import { SEO } from '@/components/SEO/SEO';
+import { SocialProof } from '@/components/SocialProof/SocialProof';
+import { PageShell } from '@/components/ui/PageShell';
 import { Hero } from '../components/Hero/Hero';
-import { TrustBar } from '../components/TrustBar/TrustBar';
 import { ProblemSolution } from '../components/ProblemSolution/ProblemSolution';
 import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
-import { Audiences } from '@/components/Audiences/Audiences';
-import { PainPoints } from '@/components/PainPoints/PainPoints';
-import { SocialProof } from '@/components/SocialProof/SocialProof';
-import { CTA } from '@/components/CTA/CTA';
+import { TrustBar } from '../components/TrustBar/TrustBar';
 
 export default function HomePage() {
   return (
@@ -23,7 +22,6 @@ export default function HomePage() {
         <ProblemSolution />
         <ProductShowcase />
         <Audiences />
-        <PainPoints />
         <SocialProof />
         <CTA />
       </PageShell>
