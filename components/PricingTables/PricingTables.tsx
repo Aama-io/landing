@@ -1,4 +1,4 @@
-import { Container, Card, Text, Group, Button, List, ThemeIcon, SegmentedControl, Stack, Badge, Tooltip, Box, Tabs } from '@mantine/core';
+import { Container, Card, Text, Group, Button, List, ThemeIcon, SegmentedControl, Stack, Tooltip, Box, Tabs } from '@mantine/core';
 import { IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconBuildingSkyscraper, IconCoin, IconChartBar, IconChartPie, IconReportMoney, IconUsersGroup, IconBuildingBank } from '@tabler/icons-react';
 import { useState } from 'react';
 import Link from 'next/link';
@@ -564,17 +564,15 @@ export function PricingTables() {
     <div className={classes.wrapper}>
       <Container size="lg" py="xl">
         <Stack align="center" gap="lg" className={classes.header}>
-          <Text className={classes.subtitle}>SaaS Subscription Model</Text>
           <Text className={classes.sectionTitle}>Choose the plan that fits your fund</Text>
 
           <Tabs
             value={fundType}
-            onChange={(value) => setFundType(value || 'hedge')}
+            onChange={(value) => setFundType(value || 'spv')}
             radius="md"
             mt="md"
-            className={classes.fundTypeTabs}
           >
-            <Tabs.List grow>
+            <Tabs.List className={classes.fundTypeTabsList}>
               <Tabs.Tab value="spv" leftSection={<IconUsersGroup size={16} />}>
                 SPVs & Syndicates
               </Tabs.Tab>
@@ -590,13 +588,12 @@ export function PricingTables() {
               <Tabs.Tab value="credit" leftSection={<IconReportMoney size={16} />}>
                 Private Credit
               </Tabs.Tab>
-              <Tabs.Tab value="hedge" leftSection={<IconChartBar size={16} />}>
+              <Tabs.Tab value="hedge" leftSection={<IconChartBar size={14} />} className={classes.secondaryTab}>
                 Hedge Funds
               </Tabs.Tab>
-              <Tabs.Tab value="mutual" leftSection={<IconChartPie size={16} />}>
+              <Tabs.Tab value="mutual" leftSection={<IconChartPie size={14} />} className={classes.secondaryTab}>
                 Mutual Funds
               </Tabs.Tab>
-
             </Tabs.List>
           </Tabs>
 
@@ -626,13 +623,14 @@ export function PricingTables() {
               radius="md"
               withBorder={!plan.highlighted}
             >
-              {plan.mostPopular && (
-                <Badge className={classes.mostPopularBadge}>Most Popular</Badge>
-              )}
-
-              <Text className={classes.cardTitle}>
-                {plan.title}
-              </Text>
+              <div className={classes.cardHead}>
+                <Text className={classes.cardTitle}>
+                  {plan.title}
+                </Text>
+                {plan.mostPopular && (
+                  <span className={classes.recommendedTag}>Recommended</span>
+                )}
+              </div>
 
               <Text className={classes.description}>
                 {plan.description}
@@ -650,9 +648,9 @@ export function PricingTables() {
                 <Group gap="xs" className={classes.setupFee}>
                   <Text size="sm" fw={500}>{plan.setupLabel ?? 'Setup fee:'}</Text>
                   <Text size="sm">{plan.setupFee}</Text>
-                  <Tooltip label="One-time fee for software setup and implementation">
-                    <ThemeIcon radius="xl" size="xs" variant="light">
-                      <IconInfoCircle size={12} />
+                  <Tooltip label="One-time fee for software setup and implementation" events={{ hover: true, focus: true, touch: true }}>
+                    <ThemeIcon radius="xl" size="sm" variant="light" tabIndex={0} className={classes.setupInfoIcon}>
+                      <IconInfoCircle size={14} />
                     </ThemeIcon>
                   </Tooltip>
                 </Group>
@@ -704,8 +702,13 @@ export function PricingTables() {
           ))}
         </div>
 
+        <Link href="#compare" className={classes.compareLink}>
+          See the full feature comparison
+          <IconArrowRight size={14} />
+        </Link>
+
         <Card className={classes.additionalCard} withBorder mt={60}>
-          <Group align="center" wrap="nowrap" gap={40}>
+          <Group align="center" wrap="nowrap" gap={40} className={classes.additionalGroup}>
             <div className={classes.additionalContent}>
               <Group align="center" gap="md">
                 <ThemeIcon size={52} radius="md" className={classes.supportIcon}>

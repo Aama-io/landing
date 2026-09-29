@@ -19,7 +19,7 @@
   overflow: hidden;
   padding-top: clamp(116px, 13vw, 168px);
   padding-bottom: clamp(48px, 7vw, 88px);
-  background: radial-gradient(120% 120% at 50% -10%, #f3f7ff 0%, #fff 58%);
+  background: var(--surface);
 }
 
 .heroGlow {
@@ -30,7 +30,7 @@
   left: 60%;
   transform: translateX(-50%);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(61, 114, 255, 0.18) 0%, transparent 70%);
+  background: rgba(61, 114, 255, 0.11);
   filter: blur(90px);
   pointer-events: none;
 }
@@ -87,11 +87,7 @@
 }
 
 .accent {
-  background: linear-gradient(115deg, #1f5aff 0%, #5e8aff 55%, #1247db 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--brand-700);
 }
 
 .subtitle {
@@ -110,7 +106,7 @@
 }
 
 .primary {
-  background: linear-gradient(120deg, #2563ff 0%, #1247db 100%);
+  background: var(--brand);
   box-shadow: 0 10px 24px rgba(31, 90, 255, 0.26);
 }
 
@@ -389,7 +385,7 @@
 
 .pillar[data-feature] {
   border-color: var(--mantine-color-blue-3);
-  background: linear-gradient(165deg, #f5f8ff 0%, #fff 60%);
+  background: var(--brand-soft);
 }
 
 .pillarIcon {
@@ -449,7 +445,7 @@
   align-items: center;
   padding: clamp(32px, 4vw, 52px);
   border-radius: var(--radius-xl);
-  background: linear-gradient(145deg, #0f172a 0%, #1b2a4a 100%);
+  background: var(--surface-ink);
   overflow: hidden;
 }
 
@@ -638,7 +634,7 @@
   text-align: center;
   padding: clamp(40px, 6vw, 72px) clamp(24px, 4vw, 48px);
   border-radius: var(--radius-xl);
-  background: linear-gradient(140deg, #1247db 0%, #2563ff 55%, #5e8aff 100%);
+  background: var(--brand);
 }
 
 .ctaGlow {
@@ -649,7 +645,7 @@
   left: 50%;
   transform: translateX(-50%);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+  background: rgba(255, 255, 255, 0.15);
   pointer-events: none;
 }
 

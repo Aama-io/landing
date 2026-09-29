@@ -14,7 +14,7 @@ const card: CSSProperties = {
 };
 const iconChip: CSSProperties = {
   display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: 42, height: 42,
-  borderRadius: 11, background: 'var(--gradient-brand)', color: '#fff', boxShadow: '0 8px 18px rgba(31,90,255,0.26)',
+  borderRadius: 11, background: 'var(--brand)', color: '#fff', boxShadow: '0 8px 18px rgba(31,90,255,0.26)',
 };
 
 export function ContactHero() {

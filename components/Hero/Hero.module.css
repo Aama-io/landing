@@ -3,8 +3,7 @@
   overflow: hidden;
   padding-top: clamp(56px, 8vw, 96px);
   padding-bottom: clamp(72px, 9vw, 128px);
-  background:
-    radial-gradient(120% 120% at 78% -10%, #f3f7ff 0%, #ffffff 42%, #ffffff 100%);
+  background: var(--surface);
 }
 
 /* Ambient light — weighted toward the visual panel to reinforce the asymmetry */
@@ -22,7 +21,7 @@
   height: 640px;
   top: -220px;
   right: -140px;
-  background: radial-gradient(circle, rgba(61, 114, 255, 0.22) 0%, rgba(61, 114, 255, 0) 70%);
+  background: rgba(61, 114, 255, 0.14);
 }
 
 .glowB {
@@ -30,26 +29,7 @@
   height: 420px;
   bottom: -160px;
   left: 6%;
-  background: radial-gradient(circle, rgba(132, 166, 255, 0.12) 0%, rgba(132, 166, 255, 0) 70%);
-}
-
-/* Fine ledger-rule lines instead of a generic dot grid — a quiet nod to the spreadsheets aama.io replaces */
-.ledgerLines {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(15, 23, 42, 0.05) 0px,
-    rgba(15, 23, 42, 0.05) 1px,
-    transparent 1px,
-    transparent 40px
-  );
-}
-
-.maskFade {
-  -webkit-mask-image: radial-gradient(ellipse 50% 65% at 80% 20%, #000 30%, transparent 100%);
-  mask-image: radial-gradient(ellipse 50% 65% at 80% 20%, #000 30%, transparent 100%);
+  background: rgba(132, 166, 255, 0.08);
 }
 
 /* Layout — asymmetric two-column split, not a centered stack */
@@ -217,7 +197,7 @@
   position: absolute;
   inset: 12% -6% -8% 10%;
   border-radius: 26px;
-  background: linear-gradient(135deg, var(--brand-soft) 0%, #e2eaff 60%, #d8e3ff 100%);
+  background: var(--brand-soft);
   transform: rotate(4deg);
   z-index: 0;
 

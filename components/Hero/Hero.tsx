@@ -70,7 +70,6 @@ export function Hero() {
       {/* Ambient light */}
       <div className={classes.glowA} />
       <div className={classes.glowB} />
-      <div className={`${classes.ledgerLines} ${classes.maskFade}`} />
 
       <div className={classes.layout}>
         <motion.div
@@ -89,7 +88,10 @@ export function Hero() {
 
           <Text className={classes.subtitle}>
             PE, VC, and SPV fund managers, syndicate leads, and the administrators who service them
-            still juggle spreadsheets, email, and disconnected tools. aama.io unifies fund
+            still juggle spreadsheets, email, and disconnected tools. <span className={classes.highlight}>
+              <span className={classes.highlightMark} aria-hidden="true" />
+              <span className={classes.highlightText}>aama.io</span>
+            </span> unifies fund
             administration and IFRS 9 / SFRS(I) 9 accounting in one integrated system.
             Singapore-first, built for APAC & beyond.
           </Text>

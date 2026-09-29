@@ -112,7 +112,7 @@ export function Milestones() {
               key={index}
               bullet={
                 <ThemeIcon size={34} radius={34} className={`${classes.bulletWrapper} ${milestone.isActive ? classes.activeBullet : ''}`} 
-                  style={{ background: milestone.inProgress ? `linear-gradient(135deg, var(--mantine-color-${milestone.color}-5) 0%, var(--mantine-color-${milestone.color}-7) 100%)` : undefined }}>
+                  style={{ background: milestone.inProgress ? `var(--mantine-color-${milestone.color}-6)` : undefined }}>
                   {milestone.isActive ? <IconCheck size={18} /> : milestone.inProgress ? <IconBolt size={18} /> : <milestone.icon size={18} />}
                 </ThemeIcon>
               }

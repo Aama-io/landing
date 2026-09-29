@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
   padding: clamp(112px, 13vw, 156px) 0 clamp(56px, 7vw, 88px);
-  background: radial-gradient(120% 120% at 50% -10%, #f3f7ff 0%, #ffffff 50%);
+  background: var(--surface);
   overflow: hidden;
   color: var(--text);
 }
@@ -57,7 +57,7 @@
 
 .icon {
   color: white;
-  background: var(--gradient-brand);
+  background: var(--brand);
   padding: 10px;
   border-radius: 50%;
   box-shadow: 0 6px 14px rgba(31, 90, 255, 0.28);
@@ -79,7 +79,7 @@
 }
 
 .actionButton {
-  background: var(--gradient-brand);
+  background: var(--brand);
   color: white;
   border: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;

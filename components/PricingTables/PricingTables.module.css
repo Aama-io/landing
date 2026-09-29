@@ -1,34 +1,8 @@
 .wrapper {
   padding: 80px 0;
-  background-color: var(--mantine-color-gray-0);
+  background-color: var(--surface-muted);
   position: relative;
   overflow: hidden;
-}
-
-.wrapper::before {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--mantine-color-blue-1) 0%, transparent 70%);
-  top: -100px;
-  left: -100px;
-  opacity: 0.7;
-  z-index: 0;
-}
-
-.wrapper::after {
-  content: '';
-  position: absolute;
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--mantine-color-indigo-1) 0%, transparent 70%);
-  bottom: -50px;
-  right: -50px;
-  opacity: 0.7;
-  z-index: 0;
 }
 
 .header {
@@ -37,35 +11,25 @@
   margin-bottom: 50px;
 }
 
-.subtitle {
-  font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: var(--mantine-color-blue-6);
-  letter-spacing: 1px;
-}
-
 .sectionTitle {
-  font-size: 40px;
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: 800;
-  color: var(--mantine-color-dark-8);
+  color: var(--text-strong);
   margin-top: 5px;
   margin-bottom: 30px;
 }
 
-.segmentedControl {
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--mantine-color-gray-2);
-  padding: 5px;
+/* Also used for the small "per month" label under each plan's price. */
+.subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
-.comingSoonBanner {
-  background-color: var(--mantine-color-blue-0);
-  border: 1px solid var(--mantine-color-blue-1);
-  border-radius: 8px;
-  padding: 10px 15px;
-  max-width: 600px;
+.segmentedControl {
+  background-color: var(--surface);
+  box-shadow: var(--mantine-shadow-xs);
+  border: 1px solid var(--border);
+  padding: 5px;
 }
 
 .grid {
@@ -77,7 +41,7 @@
 }
 
 .card {
-  background-color: white;
+  background-color: var(--surface);
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
@@ -85,42 +49,48 @@
   overflow: visible;
 }
 
+/* Recommended tier — a static border + inline label, not a floating ribbon
+   and zoom-transform (the latter is stock SaaS-template chrome). */
 .card[data-highlighted] {
-  background: linear-gradient(135deg, var(--mantine-color-blue-0) 0%, #f8faff 100%);
+  background: var(--brand-soft);
   border: 1px solid var(--mantine-color-blue-3);
-  transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  z-index: 2;
+  box-shadow: var(--mantine-shadow-md);
 }
 
 .card:hover:not([data-highlighted]) {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--mantine-shadow-sm);
 }
 
-.mostPopularBadge {
-  position: absolute;
-  top: -12px;
-  right: 20px;
-  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-indigo-7) 100%);
-  color: white;
-  font-weight: 600;
-  font-size: 12px;
-  padding: 5px 15px;
-  border-radius: 20px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.recommendedTag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+  background: #ffffff;
+  border: 1px solid var(--mantine-color-blue-3);
+  padding: 3px 8px;
+  border-radius: 999px;
 }
 
 .cardTitle {
   font-size: 24px;
   font-weight: 800;
-  margin-bottom: 5px;
-  color: var(--mantine-color-dark-8);
+  color: var(--text-strong);
 }
 
 .description {
-  color: var(--mantine-color-gray-6);
+  color: var(--text-muted);
   font-size: 15px;
+  margin-top: 5px;
   margin-bottom: 25px;
 }
 
@@ -133,17 +103,23 @@
   font-weight: 800;
   line-height: 1;
   margin-bottom: 5px;
-  background: linear-gradient(135deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-indigo-7) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--brand-700);
 }
 
 .setupFee {
   margin-top: 15px;
-  background-color: var(--mantine-color-gray-0);
+  background-color: var(--surface-muted);
   padding: 10px;
   border-radius: 5px;
+}
+
+.setupInfoIcon {
+  cursor: help;
+}
+
+.setupInfoIcon:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
 .button {
@@ -153,11 +129,16 @@
 
 .button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--mantine-shadow-sm);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
 .featuresTitle {
-  border-bottom: 1px solid var(--mantine-color-gray-2);
+  border-bottom: 1px solid var(--border);
   padding-bottom: 10px;
   margin-bottom: 15px;
 }
@@ -167,11 +148,13 @@
 }
 
 .included {
-  opacity: 1;
+  color: var(--text);
 }
 
+/* A direct muted color, not opacity-on-top-of-gray, keeps this reliably
+   readable rather than compounding two dimming steps. */
 .notIncluded {
-  opacity: 0.6;
+  color: var(--text-faint);
 }
 
 .includedIcon {
@@ -182,8 +165,24 @@
   box-shadow: none;
 }
 
+.compareLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 32px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-700);
+  text-decoration: none;
+}
+
+.compareLink:hover {
+  text-decoration: underline;
+}
+
 .additionalCard {
-  background: linear-gradient(135deg, var(--mantine-color-blue-0) 0%, #f8faff 100%);
+  background: var(--brand-soft);
   border: 1px solid var(--mantine-color-blue-2);
   position: relative;
   z-index: 1;
@@ -197,54 +196,47 @@
 }
 
 .supportIcon {
-  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-indigo-6) 100%);
+  background: var(--brand);
   color: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--mantine-shadow-sm);
 }
 
 .additionalTitle {
-  color: var(--mantine-color-dark-8);
+  color: var(--text-strong);
   margin-bottom: 4px;
   font-size: 20px;
 }
 
 .additionalDescription {
-  color: var(--mantine-color-gray-6);
+  color: var(--text-muted);
   font-size: 15px;
   max-width: 500px;
   line-height: 1.5;
 }
 
 .additionalButton {
-  background-color: white;
+  background-color: var(--surface);
   border-color: var(--mantine-color-blue-5);
-  color: var(--mantine-color-blue-7);
+  color: var(--brand-700);
   font-weight: 600;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   min-width: 220px;
 }
 
 .additionalButton:hover {
-  background-color: white;
+  background-color: var(--surface);
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--mantine-shadow-sm);
+}
+
+.additionalButton:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
 }
 
 @media (max-width: 992px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .card[data-highlighted] {
-    transform: scale(1.03);
-  }
-  
-  .sectionTitle {
-    font-size: 36px;
-  }
-  
-  .comingSoonBanner {
-    padding: 10px;
   }
 }
 
@@ -254,39 +246,46 @@
     max-width: 500px;
     margin: 0 auto;
   }
-  
-  .card[data-highlighted] {
-    transform: none;
-  }
-  
+
   .card:hover {
     transform: none;
   }
-  
+
   .wrapper {
     padding: 60px 0;
   }
-  
-  .sectionTitle {
-    font-size: 30px;
-  }
-  
+
   .additionalCard {
     padding: 20px;
   }
-  
-  .additionalCard .Group {
+
+  .additionalGroup {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .additionalButton {
     margin-top: 20px;
     width: 100%;
   }
-  
-  .comingSoonBanner {
-    padding: 8px 12px;
-    text-align: center;
+}
+
+/* Fund-type tabs — the primary five (SPV, Fund Administrators, Family Offices,
+   Private Equity/VC, Private Credit) carry full weight; Hedge Funds and Mutual
+   Funds are supported but not the focus, so they're visually de-prioritized
+   rather than removed. */
+.fundTypeTabsList {
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 8px;
+}
+
+.secondaryTab {
+  font-size: 13px;
+  color: var(--text-faint);
+  margin-left: 4px;
+
+  &[data-active] {
+    color: inherit;
   }
-} 
+}

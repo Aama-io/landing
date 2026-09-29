@@ -97,7 +97,7 @@ export function MasLicensing() {
             <div className={s.results}>
               <div className={s.recCard}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                  <span className={s.kpiIcon} style={{ width: 52, height: 52, background: 'var(--gradient-brand)', color: '#fff', border: 'none' }}><IconCertificate size={26} stroke={1.7} /></span>
+                  <span className={s.kpiIcon} style={{ width: 52, height: 52, background: 'var(--brand)', color: '#fff', border: 'none' }}><IconCertificate size={26} stroke={1.7} /></span>
                   <div>
                     <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase', color: 'var(--mantine-color-blue-6)' }}>Recommended regime</div>
                     <div style={{ fontSize: 'clamp(1.4rem,3vw,1.9rem)', fontWeight: 800, letterSpacing: '-0.025em', color: 'var(--text-strong)', lineHeight: 1.1 }}>{REGIMES[rec].name}</div>

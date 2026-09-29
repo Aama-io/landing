@@ -53,8 +53,7 @@ export function Footer() {
           <div className={classes.brand}>
             <Logo />
             <Text className={classes.tagline}>
-              End-to-end fund administration software — from capital call to accounting, all in one platform. The operating layer for private capital.
-
+              End-to-end fund administration software — from capital call to accounting, all in one platform.
             </Text>
             <Group gap={10} mt="lg">
               <ActionIcon

@@ -83,7 +83,6 @@ export default function SolutionsPage() {
         {/* Hero */}
         <section className={m.hero}>
           <div className={m.heroGlow1} /><div className={m.heroGlow2} /><div className={m.heroGlow3} />
-          <div className={m.heroGrid} />
           <Container size="lg" className={m.heroInner}>
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
               <span className={s.pill}>Fund administration solutions</span>
@@ -160,7 +159,7 @@ export default function SolutionsPage() {
 
         {/* Dark results band */}
         <section className={m.darkBand}>
-          <div className={m.darkGlow1} /><div className={m.darkGlow2} /><div className={m.darkGrid} />
+          <div className={m.darkGlow1} /><div className={m.darkGlow2} />
           <Container size="xl">
             <motion.div className={m.darkHead} {...reveal} transition={{ duration: 0.5, ease }}>
               <span className={m.darkEyebrow}>Client outcomes</span>

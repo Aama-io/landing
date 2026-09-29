@@ -25,6 +25,10 @@
 - [Capital Call Schedule](https://aama.io/tools/capital-call-schedule): Build and visualise a drawdown schedule.
 - [VCC Cost Estimator](https://aama.io/tools/vcc-cost-estimator): Estimate set-up and running costs of a Singapore VCC.
 - [MAS Licensing Estimator](https://aama.io/tools/mas-licensing-estimator): Gauge MAS licensing requirements and fees.
+- [SPV Jurisdiction Comparator](https://aama.io/tools/spv-jurisdiction-comparator): Singapore vs Cayman vs BVI vs Delaware for a single-deal SPV.
+- [SPV Formation Cost Estimator](https://aama.io/tools/spv-cost-estimator): One-time and annual setup cost for a single-deal SPV, by jurisdiction.
+- [SPV Admin Cost Calculator](https://aama.io/tools/spv-admin-cost-calculator): Annual administration run-rate for one SPV or a portfolio of them.
+- [SPV Formation Checklist](https://aama.io/tools/spv-formation-checklist): Step-by-step formation checklist and critical-path timeline to funding-ready.
 
 ## Content
 

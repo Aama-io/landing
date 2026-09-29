@@ -92,7 +92,6 @@ export function Features() {
 
   return (
     <div className={classes.wrapper}>
-      <div className={classes.wrapperPattern} />
       <div className={classes.wrapperGradient} />
       
       <Container size="xl">

@@ -19,7 +19,7 @@ export const faqData = [
   },
   {
     question: "What are the payment terms?",
-    answer: "All plans are billed monthly with options for annual billing at a discount. We accept major credit cards, bank transfers, and electronic payment methods. Enterprise clients can arrange custom billing cycles and payment terms."
+    answer: "All plans are billed monthly with options for annual billing at a discount. We accept major credit cards, bank transfers, and electronic payment methods. Top-tier accounts can arrange custom billing cycles and payment terms."
   },
   {
     question: "Can I switch between plans?",
@@ -27,11 +27,11 @@ export const faqData = [
   },
   {
     question: "What's included in the setup fee?",
-    answer: "The one-time setup fee covers software configuration, account setup, basic data migration, and compliance integration. This includes setting up your fund dashboard, investor portal, and essential reporting templates. Enterprise plans may include additional customization during setup."
+    answer: "The one-time setup fee covers software configuration, account setup, basic data migration, and compliance integration. This includes setting up your fund dashboard, investor portal, and essential reporting templates. Top-tier plans may include additional customization during setup."
   },
   {
     question: "What kind of support do you provide?",
-    answer: "Starter plans include email support with 24-hour response time. Growth plans add priority email support and scheduled consultations. Pro plans include 24/7 support, dedicated account manager, and regular strategy sessions. All clients have access to our documentation and training resources."
+    answer: "Entry-tier plans (Single SPV, Studio, Boutique) include email support with 24-hour response time. Mid-tier plans (Syndicate SPV, Practice, Growth) add priority email support and scheduled consultations. Top-tier plans (Platform, Firm, Pro) include 24/7 support, a dedicated account manager, and regular strategy sessions. All clients have access to our documentation and training resources."
   },
   {
     question: "Are there any hidden fees?",
@@ -64,7 +64,7 @@ export function PricingFAQ() {
             <Stack className={classes.header} gap={0}>
               <span className={classes.eyebrow}>Pricing FAQ</span>
 
-              <Title className={classes.title}>
+              <Title order={2} className={classes.title}>
                 Frequently asked <span className={classes.accent}>questions</span>
               </Title>
 

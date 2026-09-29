@@ -12,7 +12,7 @@
   overflow: hidden;
   padding-top: clamp(120px, 14vw, 168px);
   padding-bottom: clamp(56px, 7vw, 88px);
-  background: radial-gradient(120% 120% at 50% -10%, #f3f7ff 0%, #ffffff 48%);
+  background: var(--surface);
 }
 
 .glowA {
@@ -23,23 +23,9 @@
   left: 50%;
   transform: translateX(-50%);
   border-radius: 999px;
-  background: radial-gradient(circle, rgba(61, 114, 255, 0.16) 0%, transparent 70%);
+  background: rgba(61, 114, 255, 0.1);
   filter: blur(80px);
   pointer-events: none;
-}
-
-.grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-}
-
-.maskFade {
-  -webkit-mask-image: radial-gradient(ellipse 75% 55% at 50% 20%, #000 35%, transparent 100%);
-  mask-image: radial-gradient(ellipse 75% 55% at 50% 20%, #000 35%, transparent 100%);
 }
 
 .heroInner {
@@ -76,11 +62,7 @@
 }
 
 .accent {
-  background: linear-gradient(115deg, #1f5aff 0%, #5e8aff 55%, #1247db 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--brand-700);
 }
 
 .heroDesc {
@@ -137,7 +119,7 @@
   height: 42px;
   padding: 0 16px;
   border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, #fbfcfe 0%, #f6f8fc 100%);
+  background: var(--surface-muted);
 }
 
 .dot {

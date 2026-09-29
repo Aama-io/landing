@@ -1,11 +1,11 @@
-import { Container, Title, Text, Group, Table, Badge, Box, ScrollArea, ThemeIcon, Tooltip, Paper } from '@mantine/core';
-import { IconCheck, IconX, IconMinus, IconInfoCircle, IconChevronsDown, IconCrown } from '@tabler/icons-react';
+import { Container, Title, Text, Group, Table, Box, ScrollArea, ThemeIcon, Tooltip, Paper } from '@mantine/core';
+import { IconCheck, IconX, IconMinus, IconInfoCircle, IconChevronsDown, IconScale } from '@tabler/icons-react';
 import classes from './PricingSection.module.css';
 
 // Data type for cell content
 interface CellData {
   value: string;
-  highlight: boolean;
+  status: 'yes' | 'no' | 'limited' | 'neutral';
 }
 
 // Feature interface
@@ -13,338 +13,179 @@ interface Feature {
   feature: string;
   tooltip?: string;
   aama: CellData;
-  allvue: CellData;
-  fundrecs: CellData;
-  efront: CellData;
-  apex: CellData;
+  traditional: CellData;
 }
 
-// Group data by categories
-const comparisonData = [
+// A general comparison against the category of enterprise fund administration
+// platforms — never a named vendor, and never an invented figure. Every claim
+// here is either about aama.io's own published product (see the plans above,
+// the single source of truth for pricing) or a widely-documented pattern of
+// how enterprise B2B software is typically sold and delivered (custom quoting,
+// multi-month implementations). No competitor names, no fabricated numbers.
+const comparisonData: { category: string; features: Feature[] }[] = [
   {
-    category: "Core Features",
+    category: 'Core features',
     features: [
       {
-        feature: 'Investor Onboarding',
-        aama: { value: 'Yes (fully digital)', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Limited', highlight: false },
-        apex: { value: 'Yes', highlight: false }
+        feature: 'Investor onboarding',
+        aama: { value: 'Fully digital, self-serve', status: 'yes' },
+        traditional: { value: 'Often manual or paper-based', status: 'limited' },
       },
       {
-        feature: 'Investor Portal',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Yes', highlight: false },
-        apex: { value: 'Yes', highlight: false }
+        feature: 'Investor / LP portal',
+        aama: { value: 'Included, white-labeled', status: 'yes' },
+        traditional: { value: 'Frequently a separate paid module', status: 'limited' },
       },
       {
-        feature: 'Fund Administration & Accounting',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Yes', highlight: false },
-        apex: { value: 'Yes', highlight: false }
-      },
-      {
-        feature: 'Fund Accounting & NAV',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'Yes', highlight: false },
-        efront: { value: 'Yes', highlight: false },
-        apex: { value: 'Yes', highlight: false }
-      },
-      {
-        feature: 'SPV & Syndicate Administration',
+        feature: 'SPV & syndicate administration',
         tooltip: 'Per-deal SPV formation, investor onboarding and administration',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'No', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Limited', highlight: false },
-        apex: { value: 'Limited', highlight: false }
+        aama: { value: 'Native, per-deal setup', status: 'yes' },
+        traditional: { value: 'Rarely built in — usually needs a separate SPV administrator', status: 'no' },
       },
       {
-        feature: 'VCC Sub-Fund Support (Singapore)',
+        feature: 'VCC sub-fund support (Singapore)',
         tooltip: 'Native support for Singapore Variable Capital Company sub-fund structures',
-        aama: { value: 'Full', highlight: true },
-        allvue: { value: 'Limited', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Limited', highlight: false },
-        apex: { value: 'Limited', highlight: false }
+        aama: { value: 'Native support', status: 'yes' },
+        traditional: { value: 'Varies by provider — often needs custom configuration', status: 'limited' },
       },
       {
-        feature: 'IFRS 9 / SFRS(I) 9 Accounting',
+        feature: 'IFRS 9 / SFRS(I) 9 accounting',
         tooltip: 'Amortised cost, effective-interest and expected credit loss for credit funds',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'Limited', highlight: false },
-        efront: { value: 'Yes', highlight: false },
-        apex: { value: 'Yes', highlight: false }
+        aama: { value: 'Native to the general ledger', status: 'yes' },
+        traditional: { value: 'Typically available in established platforms', status: 'yes' },
       },
       {
-        feature: 'Compliance & AML Tools',
-        aama: { value: 'Yes (Enhanced)', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Yes', highlight: false },
-        apex: { value: 'Yes', highlight: false }
+        feature: 'Compliance & AML tooling',
+        aama: { value: 'Included', status: 'yes' },
+        traditional: { value: 'Typically available, sometimes a paid add-on', status: 'neutral' },
       },
       {
-        feature: 'Custom Reporting',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'Limited', highlight: false },
-        efront: { value: 'Yes', highlight: false },
-        apex: { value: 'Yes', highlight: false }
+        feature: 'Configuration & customization',
+        aama: { value: 'Included in every plan', status: 'yes' },
+        traditional: { value: 'Often a separate professional-services engagement', status: 'limited' },
       },
-      {
-        feature: 'Admin Dashboard',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Yes', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Yes', highlight: false },
-        apex: { value: 'Yes', highlight: false }
-      },
-      {
-        feature: 'AI-Powered Analytics',
-        tooltip: 'Machine learning features for investment insights',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Limited', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Limited', highlight: false },
-        apex: { value: 'Limited', highlight: false }
-      }
-    ]
+    ],
   },
   {
-    category: "Implementation & Support",
+    category: 'How it’s delivered',
     features: [
       {
-        feature: 'Client Type',
-        aama: { value: 'Boutique, Mid-size', highlight: true },
-        allvue: { value: 'Enterprise', highlight: false },
-        fundrecs: { value: 'Mid-size', highlight: false },
-        efront: { value: 'PE/VC/Enterprise', highlight: false },
-        apex: { value: 'Enterprise', highlight: false }
+        feature: 'Built for',
+        aama: { value: 'Boutique & mid-market funds', status: 'neutral' },
+        traditional: { value: 'Large institutional scale', status: 'neutral' },
       },
       {
         feature: 'Deployment',
-        aama: { value: 'SaaS', highlight: true },
-        allvue: { value: 'SaaS/On-prem', highlight: false },
-        fundrecs: { value: 'SaaS', highlight: true },
-        efront: { value: 'On-prem', highlight: false },
-        apex: { value: 'SaaS', highlight: true }
+        aama: { value: 'Cloud SaaS', status: 'yes' },
+        traditional: { value: 'Cloud or on-premise, depending on provider', status: 'neutral' },
       },
       {
-        feature: 'Local Support (Singapore)',
-        aama: { value: 'Full Coverage', highlight: true },
-        allvue: { value: 'Yes', highlight: true },
-        fundrecs: { value: 'Limited', highlight: false },
-        efront: { value: 'Yes', highlight: true },
-        apex: { value: 'Yes', highlight: true }
+        feature: 'Pricing model',
+        aama: { value: 'Published — see plans above', status: 'yes' },
+        traditional: { value: 'Custom-quoted, rarely published', status: 'limited' },
       },
       {
-        feature: 'Global Market Support',
-        tooltip: 'Ability to support fund operations across multiple jurisdictions',
-        aama: { value: 'Yes (Comprehensive)', highlight: true },
-        allvue: { value: 'Limited Regions', highlight: false },
-        fundrecs: { value: 'No', highlight: false },
-        efront: { value: 'Selected Markets', highlight: false },
-        apex: { value: 'Major Markets', highlight: false }
+        feature: 'Typical go-live',
+        tooltip: 'How enterprise software of this kind is commonly rolled out, based on publicly documented industry norms',
+        aama: { value: 'Weeks, not months', status: 'yes' },
+        traditional: { value: 'Often 3–6 months for full implementation', status: 'limited' },
       },
-      {
-        feature: 'Customization',
-        aama: { value: 'Yes', highlight: true },
-        allvue: { value: 'Limited/Expensive', highlight: false },
-        fundrecs: { value: 'Limited', highlight: false },
-        efront: { value: 'Limited', highlight: false },
-        apex: { value: 'Limited', highlight: false }
-      }
-    ]
+    ],
   },
-  {
-    category: "Cost & Timeline",
-    features: [
-      {
-        feature: 'Pricing (Year 1)',
-        tooltip: 'Total first-year cost including subscription and setup fees',
-        aama: { value: '$12K – $45K', highlight: true },
-        allvue: { value: '$120K – $350K+', highlight: false },
-        fundrecs: { value: '$65K – $160K', highlight: false },
-        efront: { value: '$160K – $520K+', highlight: false },
-        apex: { value: '$220K+', highlight: false }
-      },
-      {
-        feature: 'Setup Fees',
-        tooltip: 'One-time implementation and configuration costs',
-        aama: { value: '$2K – $12K', highlight: true },
-        allvue: { value: '$25K – $60K+', highlight: false },
-        fundrecs: { value: '$12K – $35K', highlight: false },
-        efront: { value: '$30K – $80K+', highlight: false },
-        apex: { value: '$55K+', highlight: false }
-      },
-      {
-        feature: 'Go-Live Time',
-        tooltip: 'Average time from contract signing to production deployment',
-        aama: { value: '1–3 weeks', highlight: true },
-        allvue: { value: '2–6 months', highlight: false },
-        fundrecs: { value: '1–3 months', highlight: false },
-        efront: { value: '3–6 months', highlight: false },
-        apex: { value: '3–6 months', highlight: false }
-      }
-    ]
-  }
 ];
 
-// Function to render cell content with appropriate styling
-const renderCellContent = (data: CellData) => {
-  if (data.value === 'Yes' || data.value === 'Yes (fully digital)') {
-    return (
-      <Group gap="xs" wrap="nowrap">
-        <ThemeIcon size="sm" radius="xl" color={data.highlight ? "green" : "gray"} variant={data.highlight ? "filled" : "light"}>
-          <IconCheck size={14} stroke={2.5} />
-        </ThemeIcon>
-        <Text>{data.value}</Text>
-      </Group>
-    );
-  } else if (data.value === 'No') {
-    return (
-      <Group gap="xs" wrap="nowrap">
-        <ThemeIcon size="sm" radius="xl" color="red" variant="light">
-          <IconX size={14} stroke={2.5} />
-        </ThemeIcon>
-        <Text>{data.value}</Text>
-      </Group>
-    );
-  } else if (data.value === 'Limited' || data.value.includes('Limited')) {
-    return (
-      <Group gap="xs" wrap="nowrap">
-        <ThemeIcon size="sm" radius="xl" color="yellow" variant="light">
-          <IconMinus size={14} stroke={2.5} />
-        </ThemeIcon>
-        <Text>{data.value}</Text>
-      </Group>
-    );
-  } else {
-    return <Text fw={data.highlight ? 700 : 400}>{data.value}</Text>;
-  }
+const statusColor: Record<CellData['status'], string> = {
+  yes: 'green',
+  no: 'red',
+  limited: 'yellow',
+  neutral: 'gray',
 };
+
+const StatusIcon = ({ status }: { status: CellData['status'] }) => {
+  if (status === 'yes') {return <IconCheck size={14} stroke={2.5} />;}
+  if (status === 'no') {return <IconX size={14} stroke={2.5} />;}
+  if (status === 'limited') {return <IconMinus size={14} stroke={2.5} />;}
+  return null;
+};
+
+const renderCellContent = (data: CellData, isAama: boolean) => (
+  <Group gap="xs" wrap="nowrap">
+    {data.status !== 'neutral' && (
+      <ThemeIcon
+        size="sm"
+        radius="xl"
+        color={statusColor[data.status]}
+        variant={isAama && data.status === 'yes' ? 'filled' : 'light'}
+      >
+        <StatusIcon status={data.status} />
+      </ThemeIcon>
+    )}
+    <Text size="sm" fw={isAama ? 600 : 400}>{data.value}</Text>
+  </Group>
+);
 
 export function PricingSection() {
   return (
-    <div className={classes.wrapper}>
-      <Container size="lg" py="xl">
-        <Group gap="xs" justify="center" mb="sm">
-          <IconCrown color="var(--mantine-color-blue-6)" size={28} />
-          <Title ta="center" className={classes.title}>
-           Global Market Comparison for 2026
-          </Title>
-        </Group>
-        <Text ta="center" c="dimmed" maw={800} mx="auto" mb={30}>
-          aama.io is positioned to deliver institutional-grade fund administration and accounting at a fraction of the cost
-          of traditional providers in Singapore and global markets for 2026 and beyond
-        </Text>
-        
-        <Group mb={25} justify="center">
-          <Box className={classes.legendItem}>
-            <ThemeIcon size="sm" radius="xl" color="green" variant="filled">
-              <IconCheck size={14} stroke={2.5} />
-            </ThemeIcon>
-            <Text size="sm">Best Option</Text>
-          </Box>
-          
-          <Box className={classes.legendItem}>
-            <ThemeIcon size="sm" radius="xl" color="gray" variant="light">
-              <IconCheck size={14} stroke={2.5} />
-            </ThemeIcon>
-            <Text size="sm">Available</Text>
-          </Box>
-          
-          <Box className={classes.legendItem}>
-            <ThemeIcon size="sm" radius="xl" color="yellow" variant="light">
-              <IconMinus size={14} stroke={2.5} />
-            </ThemeIcon>
-            <Text size="sm">Limited</Text>
-          </Box>
-          
-          <Box className={classes.legendItem}>
-            <ThemeIcon size="sm" radius="xl" color="red" variant="light">
-              <IconX size={14} stroke={2.5} />
-            </ThemeIcon>
-            <Text size="sm">Not Available</Text>
-          </Box>
-        </Group>
-        
+    <div className={classes.wrapper} id="compare">
+      <Container size="lg">
+        <Box className={classes.header}>
+          <Group gap="xs" justify="center" mb="sm">
+            <IconScale color="var(--brand)" size={26} />
+            <Title ta="center" order={2} className={classes.title}>
+              How aama.io compares
+            </Title>
+          </Group>
+          <Text ta="center" c="dimmed" maw={720} mx="auto">
+            A general comparison against the category of enterprise fund administration platforms —
+            not any specific vendor. Providers vary widely; confirm current features and pricing
+            directly with anyone else you&apos;re evaluating. aama.io&apos;s own pricing is fully published above.
+          </Text>
+        </Box>
+
         <Paper shadow="sm" radius="md" withBorder className={classes.tableContainer}>
           <ScrollArea>
-            <Table 
-              stickyHeader
-              stickyHeaderOffset={60}
-              verticalSpacing="sm" 
-              horizontalSpacing="lg" 
-              striped 
+            <Table
+              verticalSpacing="sm"
+              horizontalSpacing="lg"
+              striped
               highlightOnHover
               withColumnBorders
               className={classes.comparisonTable}
             >
               <Table.Thead>
                 <Table.Tr className={classes.headerRow}>
-                  <Table.Th className={classes.featureColumn}>Feature / Provider</Table.Th>
-                  <Table.Th className={classes.aamaColumn}>
-                    <Group gap="xs" justify="center">
-                      <Badge size="lg" color="blue" variant="filled" className={classes.providerBadge}>
-                        aama.io
-                      </Badge>
-                    </Group>
-                  </Table.Th>
-                  <Table.Th>
-                    <Text fw={600} ta="center">Allvue Systems</Text>
-                  </Table.Th>
-                  <Table.Th>
-                    <Text fw={600} ta="center">FundRecs</Text>
-                  </Table.Th>
-                  <Table.Th>
-                    <Text fw={600} ta="center">eFront (BlackRock)</Text>
-                  </Table.Th>
-                  <Table.Th>
-                    <Text fw={600} ta="center">Apex Group (FIS Investran)</Text>
-                  </Table.Th>
+                  <Table.Th className={classes.featureColumn}>Feature</Table.Th>
+                  <Table.Th className={classes.aamaColumn}>aama.io</Table.Th>
+                  <Table.Th>Traditional enterprise platforms</Table.Th>
                 </Table.Tr>
               </Table.Thead>
               <Table.Tbody>
                 {comparisonData.map((category, categoryIndex) => (
                   <>
                     <Table.Tr key={`category-${categoryIndex}`} className={classes.categoryRow}>
-                      <Table.Td colSpan={6} className={classes.categoryCell}>
+                      <Table.Td colSpan={3} className={classes.categoryCell}>
                         <Group gap="xs">
                           <IconChevronsDown size={16} />
                           <Text fw={700}>{category.category}</Text>
                         </Group>
                       </Table.Td>
                     </Table.Tr>
-                    {category.features.map((row: Feature, index) => (
+                    {category.features.map((row, index) => (
                       <Table.Tr key={`${categoryIndex}-${index}`}>
                         <Table.Td fw={500}>
                           {row.tooltip ? (
                             <Tooltip label={row.tooltip} position="top-start" withArrow>
                               <Group gap="xs">
-                                <Text>{row.feature}</Text>
+                                <Text size="sm">{row.feature}</Text>
                                 <IconInfoCircle size={16} color="gray" />
                               </Group>
                             </Tooltip>
                           ) : (
-                            row.feature
+                            <Text size="sm">{row.feature}</Text>
                           )}
                         </Table.Td>
-                        <Table.Td className={classes.aamaColumn}>
-                          {renderCellContent(row.aama)}
-                        </Table.Td>
-                        <Table.Td>{renderCellContent(row.allvue)}</Table.Td>
-                        <Table.Td>{renderCellContent(row.fundrecs)}</Table.Td>
-                        <Table.Td>{renderCellContent(row.efront)}</Table.Td>
-                        <Table.Td>{renderCellContent(row.apex)}</Table.Td>
+                        <Table.Td className={classes.aamaColumn}>{renderCellContent(row.aama, true)}</Table.Td>
+                        <Table.Td>{renderCellContent(row.traditional, false)}</Table.Td>
                       </Table.Tr>
                     ))}
                   </>
@@ -352,18 +193,15 @@ export function PricingSection() {
               </Table.Tbody>
             </Table>
           </ScrollArea>
-          
-          <Group mt="md" justify="space-between" align="center" p="md">
-            <Group gap="xs" c="dimmed">
-              <IconInfoCircle size={16} />
-              <Text size="sm">Lower values are better for pricing and timeline metrics. aama.io can configure the platform for funds in any market globally.</Text>
-            </Group>
-            <Text size="sm" ta="right" c="dimmed">
-              Based on projected market research for 2026
+
+          <Group mt="md" justify="center" p="md">
+            <Text size="sm" ta="center" c="dimmed" maw={640}>
+              &ldquo;Traditional enterprise platforms&rdquo; describes a category, not a specific product —
+              individual vendors differ, and some may match aama.io on some rows above.
             </Text>
           </Group>
         </Paper>
       </Container>
     </div>
   );
-} 
+}

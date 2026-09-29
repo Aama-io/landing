@@ -2,7 +2,7 @@
 
 .wrapper {
   padding: clamp(56px, 8vw, 96px) 0;
-  background: radial-gradient(120% 120% at 50% -10%, #f3f7ff 0%, #ffffff 55%);
+  background: var(--surface);
 }
 
 /* Sticky left column */
@@ -34,11 +34,7 @@
 }
 
 .accent {
-  background: linear-gradient(115deg, #1f5aff 0%, #5e8aff 55%, #1247db 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  color: var(--brand-700);
 }
 
 .description {

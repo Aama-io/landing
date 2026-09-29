@@ -172,6 +172,7 @@
   flex-shrink: 0;
   margin-top: 4px;
   color: var(--text-faint);
+  background: var(--surface-muted);
 }
 
 .afterIcon {

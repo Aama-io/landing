@@ -1,5 +1,4 @@
 import { Audiences } from '@/components/Audiences/Audiences';
-import { CTA } from '@/components/CTA/CTA';
 import { SEO } from '@/components/SEO/SEO';
 import { SocialProof } from '@/components/SocialProof/SocialProof';
 import { PageShell } from '@/components/ui/PageShell';
@@ -7,8 +6,20 @@ import { Hero } from '../components/Hero/Hero';
 import { ProblemSolution } from '../components/ProblemSolution/ProblemSolution';
 import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
 import { TrustBar } from '../components/TrustBar/TrustBar';
+import Head from 'next/head';
+import { HOME_FAQS, HomeFAQ } from '@/components/HomeFAQ/HomeFAQ';
 
 export default function HomePage() {
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: HOME_FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <>
       <SEO
@@ -16,6 +27,9 @@ export default function HomePage() {
         description="Fund administration & accounting software for mid-market PE, VC and private credit funds in Singapore & APAC — capital calls, NAV, IFRS 9, LP portal."
         keywords="fund administration software Singapore, private equity fund administration software, venture capital fund administration software, private credit fund administration software, fund accounting software, fund accounting software IFRS 9 Singapore, LP portal for fund managers, software for fund administrators, in-house fund administration software, fund administration for emerging managers, capital call software, distribution waterfall software, NAV calculation software, SPV administration software Singapore, VCC fund administration, VCC sub-fund accounting, boutique fund admin software Singapore"
       />
+      <Head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      </Head>
       <PageShell>
         <Hero />
         <TrustBar />
@@ -23,7 +37,7 @@ export default function HomePage() {
         <ProductShowcase />
         <Audiences />
         <SocialProof />
-        <CTA />
+        <HomeFAQ />
       </PageShell>
     </>
   );

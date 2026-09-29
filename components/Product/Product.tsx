@@ -235,7 +235,6 @@ export function Product() {
       {/* Hero */}
       <section className={classes.hero}>
         <div className={classes.glowA} />
-        <div className={`${classes.grid} ${classes.maskFade}`} />
         <Container size="lg" className={classes.heroInner}>
           <motion.div
             className={classes.heroContent}

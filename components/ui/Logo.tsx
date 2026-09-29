@@ -6,7 +6,7 @@ type LogoProps = {
   variant?: 'default' | 'light';
   href?: string | null;
   onClick?: () => void;
-  /** Show "The operating layer for private capital" beside the wordmark, divider-separated */
+  /** Show "The infrastructure layer for private capital" stacked under the wordmark */
   tagline?: boolean;
 };
 
@@ -15,10 +15,9 @@ type LogoProps = {
  * balance lines and a rising teal balance dot) paired with a neutral ink
  * wordmark whose dot echoes the mark's accent.
  *
- * The tagline sits inline after a divider rather than stacked underneath —
- * a five-word line has no business trying to be no wider than a seven-
- * character wordmark. It hides below the point where the full nav also
- * wants the room (see Logo.module.css).
+ * The mark is sized and centered to span both lines as one matched unit —
+ * a badge standing beside the full wordmark+tagline block, not just the
+ * wordmark — so it carries the same visual weight it did as a single line.
  */
 export function Logo({ variant = 'default', href = '/', onClick, tagline = true }: LogoProps) {
   const content = (
@@ -36,15 +35,14 @@ export function Logo({ variant = 'default', href = '/', onClick, tagline = true 
         <rect x="11" y="26.5" width="10" height="3" rx="1.5" fill="#fff" opacity="0.46" />
         <circle cx="27.5" cy="15" r="2.8" fill="#00c896" />
       </svg>
-      <span className={classes.word}>
-        aama<span className={classes.dot}>.</span>io
-      </span>
-      {tagline ? (
-        <span className={classes.taglineGroup}>
-          <span className={classes.divider} aria-hidden="true" />
-          <span className={classes.tagline}>The operating layer for private capital</span>
+      <span className={classes.textStack}>
+        <span className={classes.word}>
+          aama<span className={classes.dot}>.</span>io
         </span>
-      ) : null}
+        {tagline ? (
+          <span className={classes.tagline}>The infrastructure layer for private capital</span>
+        ) : null}
+      </span>
     </>
   );
 

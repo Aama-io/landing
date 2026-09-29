@@ -26,10 +26,6 @@
   --brand-700: #1247db;
   --brand-soft: #ecf2ff;
 
-  /* Accent gradient (used sparingly) */
-  --gradient-brand: linear-gradient(135deg, #1f5aff 0%, #3d72ff 100%);
-  --gradient-brand-soft: linear-gradient(135deg, #ecf2ff 0%, #f5f8ff 100%);
-
   /* Layout */
   --container: 1200px;
   --section-pad: clamp(72px, 9vw, 128px);
@@ -80,10 +76,6 @@ body {
   background-color: var(--surface-muted);
 }
 
-.sectionSunken {
-  background: linear-gradient(180deg, #ffffff 0%, var(--surface-muted) 100%);
-}
-
 /* Eyebrow / kicker label above section headings */
 .eyebrow {
   display: inline-flex;
@@ -111,15 +103,6 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Gradient text */
-.gradientText {
-  background: linear-gradient(120deg, #1f5aff 0%, #5e8aff 60%, #1247db 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
-
 /* Soft radial backdrop glow — placed behind hero / CTA art */
 .glow {
   position: absolute;
@@ -128,19 +111,6 @@ body {
   opacity: 0.5;
   pointer-events: none;
   z-index: 0;
-}
-
-/* Decorative dotted / grid backgrounds */
-.bgGrid {
-  background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
-  background-size: 56px 56px;
-}
-
-.bgDots {
-  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
-  background-size: 22px 22px;
 }
 
 /* Fade mask helper for decorative layers */

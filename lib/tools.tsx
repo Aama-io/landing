@@ -4,6 +4,7 @@ import {
   IconPercentage, IconCalendarDollar, IconArrowsSplit2, IconAward, IconFileInvoice,
   IconRocket, IconChartLine, IconReportAnalytics,
   IconCoin, IconCurrencyDollar, IconArrowsExchange,
+  IconWorld, IconCalculator, IconChecklist,
 } from '@tabler/icons-react';
 
 export type Persona = 'founder' | 'manager' | 'admin';
@@ -26,6 +27,16 @@ export const TOOL_GROUPS: { title: string; blurb: string; tools: Tool[] }[] = [
       { href: '/tools/mas-licensing-estimator', label: 'MAS Licensing Estimator', description: 'CMS vs RFMC vs family office', icon: IconCertificate, group: 'Singapore & VCC', personas: ['founder'] },
       { href: '/tools/vcc-cost-estimator', label: 'VCC Setup Cost Estimator', description: 'Indicative launch & running costs', icon: IconReceipt2, group: 'Singapore & VCC', personas: ['founder'] },
       { href: '/tools/ter-benchmarker', label: 'Fund Expense Ratio Benchmarker', description: 'Your TER vs strategy peers', icon: IconChartHistogram, group: 'Singapore & VCC', personas: ['founder', 'manager', 'admin'] },
+    ],
+  },
+  {
+    title: 'SPV formation & administration',
+    blurb: 'Structure, cost out and stand up a single-deal SPV.',
+    tools: [
+      { href: '/tools/spv-jurisdiction-comparator', label: 'SPV Jurisdiction Comparator', description: 'Singapore vs Cayman vs BVI vs Delaware', icon: IconWorld, group: 'SPV formation & administration', personas: ['founder'] },
+      { href: '/tools/spv-cost-estimator', label: 'SPV Formation Cost Estimator', description: 'Setup cost for a single-deal SPV', icon: IconReceipt2, group: 'SPV formation & administration', personas: ['founder'] },
+      { href: '/tools/spv-admin-cost-calculator', label: 'SPV Admin Cost Calculator', description: 'Annual run-rate, one SPV or a portfolio', icon: IconCalculator, group: 'SPV formation & administration', personas: ['admin', 'manager'] },
+      { href: '/tools/spv-formation-checklist', label: 'SPV Formation Checklist', description: 'Steps and timeline to funding-ready', icon: IconChecklist, group: 'SPV formation & administration', personas: ['founder'] },
     ],
   },
   {

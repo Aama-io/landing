@@ -331,8 +331,8 @@ export default function WaterfallCalculator() {
       <div className={classes.card}>
         <div className={classes.cardLabel}>Proceeds split — {fmt(result.proceeds)}</div>
         <div className={classes.splitTrack}>
-          <div style={{ width: `${barW(result.lpReceived)}%`, background: 'linear-gradient(90deg,#3d72ff,#1f5aff)' }} />
-          <div style={{ width: `${barW(result.gpReceived)}%`, background: 'linear-gradient(90deg,#f59e0b,#d97706)' }} />
+          <div style={{ width: `${barW(result.lpReceived)}%`, background: COL.lp }} />
+          <div style={{ width: `${barW(result.gpReceived)}%`, background: COL.gp }} />
         </div>
         <div className={classes.legend}>
           {[{ color: COL.lp, label: 'LP', val: result.lpReceived }, { color: COL.gp, label: 'GP', val: result.gpReceived }].map(({ color, label, val }) => (

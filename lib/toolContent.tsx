@@ -89,6 +89,110 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
     related: ['/tools/vcc-cost-estimator', '/tools/mas-licensing-estimator', '/tools/ter-benchmarker'],
   },
 
+  '/tools/spv-jurisdiction-comparator': {
+    seoTitle: 'SPV Jurisdiction Comparator (Singapore vs Cayman vs BVI vs Delaware)',
+    seoDescription: 'Compare Singapore, Cayman, BVI and Delaware for a single-deal special purpose vehicle — cost, speed, tax, banking and disclosure — and get a fit recommendation.',
+    keywords: 'SPV jurisdiction, special purpose vehicle, Singapore SPV, Cayman exempted company, BVI business company, Delaware LLC, SPV formation, co-investment vehicle, single-deal SPV',
+    intro: [
+      'A special purpose vehicle (SPV) is a single-purpose entity set up to hold one deal — a co-investment, a real estate asset or a syndicated round — separately from a fund\'s main portfolio. The right jurisdiction depends on who is investing, how fast you need to move, and how much privacy and tax neutrality matter relative to cost.',
+      'This comparator weighs your investor base and priorities against four common SPV jurisdictions — Singapore, Cayman Islands, BVI and Delaware — and recommends the one that fits, with a full side-by-side on cost, speed, tax, banking and disclosure.',
+    ],
+    how: [
+      'Tell the tool about your investor base — US taxable individuals, institutional or tax-exempt LPs — and how quickly you need an Asia-based bank account.',
+      'Flag whether privacy (no public register) or cost is your top priority.',
+      'Read the recommended jurisdiction, fit confidence and the full four-way comparison matrix.',
+    ],
+    faqs: [
+      { q: 'What is a single-deal SPV used for?', a: 'A single-deal special purpose vehicle holds one investment — a co-investment alongside a lead fund, a real estate asset, or a syndicated round — ring-fencing that deal\'s assets and liabilities from a manager\'s other funds and giving each investor a clean, deal-specific vehicle to invest through.' },
+      { q: 'Which jurisdiction is best for an SPV: Singapore, Cayman, BVI or Delaware?', a: 'It depends on the investor base. Cayman is the market-standard choice for institutional and tax-exempt LPs; Delaware suits a mostly US taxable investor base familiar with K-1 reporting; Singapore is strongest when you need fast, local Asia banking; BVI offers the same tax-neutral, private structure as Cayman at a lower ongoing cost.' },
+      { q: 'Do Cayman and BVI SPVs pay any tax?', a: 'No — both charge zero corporate income, capital gains or withholding tax at the entity level. The cost of using them is entirely in formation and administration fees, not tax, and both require an annual economic substance and beneficial-ownership filing.' },
+      { q: 'Is a Delaware LLC taxed at the entity level?', a: 'By default, no — a Delaware LLC is a pass-through entity for US federal tax purposes. However, non-US owners of a foreign-owned disregarded LLC must still file annual US information returns (such as Form 5472), even though no US tax is typically due.' },
+    ],
+    related: ['/tools/spv-cost-estimator', '/tools/spv-admin-cost-calculator', '/tools/vcc-comparator'],
+    relatedReading: [
+      { href: '/solutions/spv-syndicates', label: 'SPV & Syndicate Administration on aama.io' },
+      { href: '/products/fund-administration', label: 'Fund Administration & Investor Portal' },
+    ],
+  },
+
+  '/tools/spv-cost-estimator': {
+    seoTitle: 'SPV Formation Cost Estimator (Setup Cost by Jurisdiction)',
+    seoDescription: 'Estimate the one-time and first-year cost of forming a single-deal SPV in Singapore, Cayman, BVI or Delaware — incorporation, legal drafting, director and bank account setup.',
+    keywords: 'SPV formation cost, SPV setup cost, special purpose vehicle cost, Singapore SPV cost, Cayman SPV cost, BVI company formation, Delaware LLC formation cost, co-investment vehicle',
+    intro: [
+      'Setting up a single-deal SPV involves incorporation and registered-agent fees, legal drafting for the subscription and constitutional documents, and — depending on jurisdiction — a nominee or independent director and bank account opening support.',
+      'This estimator breaks those costs down by jurisdiction, so you can see the one-time setup, the annual recurring cost, and the combined first-year all-in figure before you commit to a structure.',
+    ],
+    how: [
+      'Choose a jurisdiction — Singapore, Cayman, BVI or Delaware — and set the legal drafting complexity for your deal.',
+      'Toggle whether you need a nominee or independent director, an audit, and whether you\'re opening a new bank relationship.',
+      'Read the one-time setup cost, annual recurring cost and first-year all-in total, broken down line by line.',
+    ],
+    faqs: [
+      { q: 'How much does it cost to set up an SPV?', a: 'A simple single-deal SPV typically costs a few thousand dollars to incorporate in Delaware or Singapore, rising to the higher end of that range — plus a director fee — for Cayman or BVI. Legal drafting for the subscription and constitutional documents is usually the largest line item.' },
+      { q: 'What ongoing costs does an SPV have after formation?', a: 'Annual recurring costs typically include a registered office / agent and corporate secretary fee, annual filings or tax return preparation, and — for offshore SPVs — a nominee or independent director fee. An audit is only needed if a bank, regulator or investor requires one.' },
+      { q: 'Why does an offshore SPV need a director?', a: 'Cayman and BVI entities are commonly administered with a registered agent as registered office but still need an appointed director; many SPV sponsors appoint an independent director for governance and banking purposes, which adds an annual fee not present for a Delaware LLC managed by its members.' },
+      { q: 'Is a new bank account more expensive to open than an existing relationship?', a: 'Yes — opening a brand-new banking relationship for a new entity involves a full KYC/AML review and typically costs more (and takes longer) than adding a new SPV to an existing bank relationship you already maintain.' },
+    ],
+    related: ['/tools/spv-jurisdiction-comparator', '/tools/spv-admin-cost-calculator', '/tools/spv-formation-checklist'],
+    relatedReading: [
+      { href: '/solutions/spv-syndicates', label: 'SPV & Syndicate Administration on aama.io' },
+      { href: '/products/fund-administration', label: 'Fund Administration & Investor Portal' },
+    ],
+  },
+
+  '/tools/spv-admin-cost-calculator': {
+    seoTitle: 'SPV Administration Cost Calculator (Annual Run-Rate)',
+    seoDescription: 'Calculate the annual administration cost of a single-deal SPV, or a whole portfolio of them — registered agent, bookkeeping, KYC/CRS reporting, audit — and see the savings from shared administration.',
+    keywords: 'SPV administration cost, SPV annual cost, fund administrator SPV, KYC CRS reporting cost, SPV bookkeeping, SPV portfolio administration, registered agent fees',
+    intro: [
+      'Running an SPV doesn\'t stop at formation — every year it needs a registered agent or office, bookkeeping and investor reporting, KYC refreshes and FATCA/CRS filings, and sometimes an audit. Managers running several SPVs side by side also see per-entity overhead fall as one administrator spreads its fixed costs across the portfolio.',
+      'This calculator estimates the annual run-rate for one SPV, or a portfolio of them, and shows how much shared administration saves per entity as the count grows.',
+    ],
+    how: [
+      'Choose a jurisdiction and set how many SPVs are administered together and how many investors sit in each.',
+      'Toggle director, audit and multi-currency requirements.',
+      'Read the per-SPV annual cost, the portfolio total, and the savings from administering multiple SPVs under one provider.',
+    ],
+    faqs: [
+      { q: 'What does it cost to administer an SPV each year?', a: 'Annual administration typically covers a registered office/agent and corporate secretary fee, bookkeeping and investor reporting, KYC refresh and FATCA/CRS filings, and — if required — a director fee and an audit. The total scales with jurisdiction, investor count and whether an audit is needed.' },
+      { q: 'Does administering multiple SPVs together reduce the cost per SPV?', a: 'Yes, for the fixed overhead — registered agent, filings and bookkeeping setup can be spread across a portfolio when one administrator runs several SPVs together. Costs that scale with the underlying investors, such as KYC/CRS reporting, director fees and audit, do not benefit from this and stay roughly constant per SPV.' },
+      { q: 'Why does KYC/CRS reporting cost scale with the number of investors?', a: 'Each investor in an SPV needs individual KYC/AML documentation on file and is reportable separately under FATCA/CRS, so the administrator\'s workload — and cost — rises with the number of underlying investors, independent of the SPV\'s jurisdiction.' },
+      { q: 'When does an SPV need an audit?', a: 'Most single-deal SPVs are not legally required to be audited, but a lending bank, a fund-of-funds investor, or the sponsor\'s own institutional LPs will sometimes require audited financial statements as a condition of investing or lending.' },
+    ],
+    related: ['/tools/spv-cost-estimator', '/tools/spv-jurisdiction-comparator', '/tools/ter-benchmarker'],
+    relatedReading: [
+      { href: '/solutions/spv-syndicates', label: 'SPV & Syndicate Administration on aama.io' },
+      { href: '/products/fund-accounting', label: 'Fund Accounting' },
+    ],
+  },
+
+  '/tools/spv-formation-checklist': {
+    seoTitle: 'SPV Formation Checklist & Timeline (Steps to Funding-Ready)',
+    seoDescription: 'The step-by-step checklist and realistic timeline for forming a single-deal SPV in Singapore, Cayman, BVI or Delaware — from structuring to a funded bank account.',
+    keywords: 'SPV formation checklist, SPV formation timeline, SPV formation steps, KYC AML SPV, SPV bank account opening, EIN foreign owner, SPV incorporation timeline',
+    intro: [
+      'Forming a single-deal SPV involves a fairly predictable sequence — structuring and naming, drafting constitutional and subscription documents, incorporation, director and UBO KYC, and opening a bank account — but the pace of each step, and which one becomes the bottleneck, differs by jurisdiction.',
+      'This checklist lays out that sequence for Singapore, Cayman, BVI and Delaware, with realistic day ranges for each step and a critical-path estimate of when the SPV is actually ready to receive funds.',
+    ],
+    how: [
+      'Choose a jurisdiction and set how many directors or UBOs need KYC documentation.',
+      'Flag whether you\'re opening a brand-new bank relationship, and — for Delaware — whether a US person can apply for the EIN.',
+      'Work through the checklist and read the critical-path timeline to a funding-ready SPV.',
+    ],
+    faqs: [
+      { q: 'What is the longest step in forming an SPV?', a: 'Opening a bank account is very often the actual bottleneck, not incorporation. A new banking relationship for an offshore entity can take two to four weeks of KYC/AML review, far longer than the one to five days most registered agents need to incorporate the entity itself.' },
+      { q: 'How long does it take to open a bank account for an SPV?', a: 'For a brand-new banking relationship, budget roughly 10-20 business days for a Singapore entity and 15-30 business days for a Cayman or BVI entity; a Delaware LLC can often open an account with a fintech provider in as little as 3-10 days if its members are US-based.' },
+      { q: 'How long does it take a foreign owner to get an EIN for a Delaware LLC?', a: 'A US person or an applicant with an SSN/ITIN can typically get an EIN online in one to three business days. A foreign applicant without an SSN or ITIN must apply by fax or mail and should budget two to four weeks.' },
+      { q: 'Which steps can run in parallel when forming an SPV?', a: 'Tasks like appointing a registered office and corporate secretary, filing an economic substance or beneficial-ownership notification, or a federal beneficial ownership report typically run alongside incorporation or bank onboarding rather than blocking them, so they don\'t add to the critical-path timeline.' },
+    ],
+    related: ['/tools/spv-cost-estimator', '/tools/spv-jurisdiction-comparator', '/tools/spv-admin-cost-calculator'],
+    relatedReading: [
+      { href: '/solutions/spv-syndicates', label: 'SPV & Syndicate Administration on aama.io' },
+      { href: '/products/fund-administration', label: 'Fund Administration & Investor Portal' },
+    ],
+  },
+
   '/tools/mas-licensing-estimator': {
     seoTitle: 'MAS Fund Management Licence Estimator (CMS, RFMC, Family Office)',
     seoDescription: 'Find which Singapore fund management regime fits — single family office exemption, RFMC, or a CMS licence (A/I or Retail LFMC) — based on AUM and investor base.',

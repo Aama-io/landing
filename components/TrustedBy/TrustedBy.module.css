@@ -1,11 +1,11 @@
 .wrapper {
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.02) 0%, rgba(168, 85, 247, 0.02) 100%);
+  background: rgba(99, 102, 241, 0.02);
   border-top: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
   border-bottom: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4));
 }
 
 .badge {
-  background: linear-gradient(135deg, var(--mantine-color-blue-0) 0%, var(--mantine-color-indigo-0) 100%);
+  background: var(--brand-soft);
   color: var(--mantine-color-blue-7);
   border: 1px solid var(--mantine-color-blue-2);
   font-weight: 600;
@@ -52,7 +52,7 @@
 
 .icon {
   margin: 0 auto;
-  background: linear-gradient(135deg, var(--mantine-color-blue-0) 0%, var(--mantine-color-indigo-0) 100%);
+  background: var(--brand-soft);
   color: var(--mantine-color-blue-7);
   border: 1px solid var(--mantine-color-blue-2);
 }

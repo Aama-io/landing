@@ -1,7 +1,7 @@
 /* Common styles to be imported by other components */
 .wrapper {
   padding: calc(var(--mantine-spacing-xl) * 3) var(--mantine-spacing-md);
-  background: linear-gradient(180deg, var(--mantine-color-body) 0%, var(--mantine-color-blue-0) 100%);
+  background: var(--mantine-color-blue-0);
 }
 
 .title {
@@ -17,9 +17,7 @@
 }
 
 .highlight {
-  background: var(--mantine-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--brand-700);
 }
 
 .card {

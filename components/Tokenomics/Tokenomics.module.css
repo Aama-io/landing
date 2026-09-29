@@ -90,9 +90,7 @@
 .statsValue {
   font-size: rem(24px);
   font-weight: 700;
-  background: linear-gradient(45deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--brand-700);
 }
 
 @media (max-width: $mantine-breakpoint-sm) {

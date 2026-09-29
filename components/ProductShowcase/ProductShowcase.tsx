@@ -17,6 +17,7 @@ import classes from './ProductShowcase.module.css';
 const products = [
   {
     title: 'Fund Accounting',
+    group: 'Fund Accounting',
     description:
       'Multi-instrument fund accounting and administration for PE, VC, family offices, hedge funds, mutual funds and SPVs of any size — a complete general ledger, automated NAV and IFRS-ready reporting across every asset class.',
     image: '/images/fund-detail.png',
@@ -24,15 +25,8 @@ const products = [
     features: ['All fund types & instruments', 'Automated NAV & ledger', 'IFRS-ready reporting'],
   },
   {
-    title: 'Investor / LP Portal',
-    description:
-      'A white-labeled investor and LP portal with full fund-admin capabilities — KYC/AML onboarding, real-time positions, capital calls, statements and a secure document vault.',
-    image: '/images/fund-investors.png',
-    icon: IconUsersGroup,
-    features: ['KYC/AML onboarding', 'Real-time LP positions', 'Document vault'],
-  },
-  {
     title: 'Fund Dashboard',
+    group: 'Fund Accounting',
     description:
       'A real-time overview of every fund — NAV, performance analytics, asset allocation and operational health in one view.',
     image: '/images/client-fund.png',
@@ -40,15 +34,8 @@ const products = [
     features: ['Real-time NAV', 'Performance analytics', 'Asset allocation'],
   },
   {
-    title: 'Capital Calls',
-    description:
-      'Automated capital call workflows with scheduled notifications, payment tracking and built-in compliance monitoring.',
-    image: '/images/capital-call.png',
-    icon: IconCoin,
-    features: ['Automated calls', 'Payment tracking', 'Compliance reports'],
-  },
-  {
     title: 'Share Classes & Instruments',
+    group: 'Fund Accounting',
     description:
       'Flexible share class and instrument setup with customizable fee structures, voting rights and distribution preferences.',
     image: '/images/share-class.png',
@@ -57,13 +44,37 @@ const products = [
   },
   {
     title: 'Configuration',
+    group: 'Fund Accounting',
     description:
       'Comprehensive fund setup and configuration with regulatory compliance and complete audit trails.',
     image: '/images/settings.png',
     icon: IconSettings,
     features: ['Compliance setup', 'Audit trails', 'Risk management'],
   },
+  {
+    title: 'Investor / LP Portal',
+    group: 'Investor / LP Portal',
+    description:
+      'A white-labeled investor and LP portal with full fund-admin capabilities — KYC/AML onboarding, real-time positions, capital calls, statements and a secure document vault.',
+    image: '/images/fund-investors.png',
+    icon: IconUsersGroup,
+    features: ['KYC/AML onboarding', 'Real-time LP positions', 'Document vault'],
+  },
+  {
+    title: 'Capital Calls',
+    group: 'Investor / LP Portal',
+    description:
+      'Automated capital call workflows with scheduled notifications, payment tracking and built-in compliance monitoring.',
+    image: '/images/capital-call.png',
+    icon: IconCoin,
+    features: ['Automated calls', 'Payment tracking', 'Compliance reports'],
+  },
 ];
+
+// The tab list groups by product line (matching the section heading's own
+// "two products" claim) so the 6 tabs read as 2 chunks of ≤4, not one flat
+// list of 6 — keeps the decision point within working-memory limits.
+const GROUP_ORDER = ['Fund Accounting', 'Investor / LP Portal'] as const;
 
 export function ProductShowcase() {
   const [active, setActive] = useState(0);
@@ -80,32 +91,40 @@ export function ProductShowcase() {
 
         <div className={classes.layout}>
           <div className={classes.tabs} role="tablist" aria-label="Product features">
-            {products.map((p, i) => (
-              <button
-                key={p.title}
-                type="button"
-                role="tab"
-                aria-selected={i === active}
-                className={classes.tab}
-                data-active={i === active || undefined}
-                onClick={() => setActive(i)}
-              >
-                <span className={classes.tabIcon}>
-                  <p.icon size={20} stroke={1.7} />
-                </span>
-                <span className={classes.tabText}>
-                  <span className={classes.tabTitle}>{p.title}</span>
-                  <span className={classes.tabDesc}>{p.description}</span>
-                  <span className={classes.tabChips}>
-                    {p.features.map((f) => (
-                      <span key={f} className={classes.chip}>
-                        {f}
+            {GROUP_ORDER.map((group) => (
+              <div key={group} className={classes.tabGroup}>
+                <span className={classes.tabGroupLabel}>{group}</span>
+                {products.map((p, i) => {
+                  if (p.group !== group) {return null;}
+                  return (
+                    <button
+                      key={p.title}
+                      type="button"
+                      role="tab"
+                      aria-selected={i === active}
+                      className={classes.tab}
+                      data-active={i === active || undefined}
+                      onClick={() => setActive(i)}
+                    >
+                      <span className={classes.tabIcon}>
+                        <p.icon size={20} stroke={1.7} />
                       </span>
-                    ))}
-                  </span>
-                </span>
-                <IconArrowRight size={18} className={classes.tabArrow} />
-              </button>
+                      <span className={classes.tabText}>
+                        <span className={classes.tabTitle}>{p.title}</span>
+                        <span className={classes.tabDesc}>{p.description}</span>
+                        <span className={classes.tabChips}>
+                          {p.features.map((f) => (
+                            <span key={f} className={classes.chip}>
+                              {f}
+                            </span>
+                          ))}
+                        </span>
+                      </span>
+                      <IconArrowRight size={18} className={classes.tabArrow} />
+                    </button>
+                  );
+                })}
+              </div>
             ))}
           </div>
 
