@@ -31,9 +31,6 @@ const DETAIL: Record<string, { kicker: string; capabilities: string[] }> = {
 };
 
 export function Audiences() {
-  const [featured, ...rest] = SOLUTIONS;
-  const featuredDetail = DETAIL[featured.slug];
-
   return (
     <section className={`${classes.wrapper} section`}>
       <Container size="xl">
