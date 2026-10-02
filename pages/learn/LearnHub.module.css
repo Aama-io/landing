@@ -1,0 +1,343 @@
+/* Learn hub — builds on the shared tool/hero styles so it matches /tools. */
+.searchWrap {
+  position: relative;
+  max-width: 560px;
+  margin: 28px auto 0;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  transform: translateY(-50%);
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+.search {
+  width: 100%;
+  height: 52px;
+  padding: 0 18px 0 48px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--mantine-shadow-sm);
+  color: var(--text-strong);
+  font: inherit;
+  font-size: 15.5px;
+  outline: none;
+  transition: border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.search::placeholder {
+  color: var(--text-faint);
+}
+
+.search:focus {
+  border-color: var(--mantine-color-blue-4);
+  box-shadow: 0 0 0 4px rgba(61, 114, 255, 0.14);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-strong);
+  text-decoration: none;
+  transition: border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.chip:hover {
+  border-color: var(--mantine-color-blue-3);
+  color: var(--mantine-color-blue-7);
+  transform: translateY(-1px);
+}
+
+.chipCount {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--mantine-color-blue-7);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.section {
+  margin-bottom: clamp(40px, 6vw, 64px);
+  scroll-margin-top: 96px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.sectionIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--brand-soft);
+  color: var(--mantine-color-blue-6);
+  border: 1px solid #dbe6ff;
+  flex-shrink: 0;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.sectionBlurb {
+  margin: 2px 0 0;
+  font-size: 14.5px;
+  color: var(--text-muted);
+}
+
+.sectionLink {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--mantine-color-blue-7);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.sectionLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 36em) {
+  .sectionLink {
+    display: none;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 62em) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 36em) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gridFour {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 75em) {
+  .gridFour {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 36em) {
+  .gridFour {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--mantine-shadow-xs);
+  text-decoration: none;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--mantine-color-blue-3);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
+}
+
+.cardTopic {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mantine-color-blue-7);
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--text-strong);
+}
+
+.cardDesc {
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.cardFoot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.cardArrow {
+  color: var(--text-faint);
+  transition: transform 0.16s ease, color 0.16s ease;
+}
+
+.card:hover .cardArrow {
+  color: var(--mantine-color-blue-6);
+  transform: translateX(3px);
+}
+
+/* "Start here" band */
+.startBand {
+  margin-bottom: clamp(40px, 6vw, 64px);
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: var(--radius-xl);
+  background: var(--brand-soft);
+  border: 1px solid var(--border);
+}
+
+.startHead {
+  margin-bottom: 16px;
+}
+
+.empty {
+  padding: 48px 16px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* A–Z index */
+.index {
+  columns: 3;
+  column-gap: 32px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@media (max-width: 62em) {
+  .index {
+    columns: 2;
+  }
+}
+
+@media (max-width: 36em) {
+  .index {
+    columns: 1;
+  }
+}
+
+.index li {
+  break-inside: avoid;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.index a {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-strong);
+  text-decoration: none;
+}
+
+.index a:hover {
+  color: var(--mantine-color-blue-7);
+}
+
+.notice {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: clamp(32px, 5vw, 48px);
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.noticeIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--mantine-color-yellow-7);
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: clamp(32px, 5vw, 48px);
+  padding: clamp(22px, 3vw, 32px);
+  border-radius: var(--radius-xl);
+  background: var(--surface-ink);
+  color: #fff;
+}
+
+.ctaTitle {
+  margin: 0;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ctaText {
+  margin: 4px 0 0;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
