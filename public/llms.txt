@@ -36,6 +36,10 @@
 - [What is a VCC?](https://aama.io/learn/singapore-fund-structures/vcc): Singapore Variable Capital Company — umbrella vs standalone, mandatory roles, ACRA fees, how it differs from a tax incentive.
 - [What is a Distribution Waterfall?](https://aama.io/learn/fund-economics/distribution-waterfall): Return of capital, preferred return, GP catch-up and carry, with a worked $100M example.
 - [What is a Capital Call?](https://aama.io/learn/fund-operations/capital-call): How drawdowns work, pro rata allocation and unfunded commitment, with a worked example.
+- [Section 13O vs 13U](https://aama.io/learn/singapore-fund-structures/13o-13u): Singapore fund tax incentives — AUM floors, investment professionals, local business spending tiers and the Singapore-investment rule.
+- [What is Carried Interest?](https://aama.io/learn/fund-economics/carried-interest): GP carry, hurdle, catch-up and clawback, with three worked outcomes.
+- [TVPI, DPI and RVPI](https://aama.io/learn/lp-reporting/tvpi-dpi-rvpi): Fund performance multiples against paid-in capital, and how they differ from IRR and MOIC.
+- [What is a Fund Administrator?](https://aama.io/learn/fund-operations/fund-administrator): Fund administration vs fund management vs custody, with a who-does-what table.
 
 ## Content
 
