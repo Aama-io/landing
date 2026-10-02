@@ -181,6 +181,7 @@ export const LEARN_TERMS: LearnTerm[] = [
     relatedPosts: [
       { slug: 'how-to-set-up-a-vcc-singapore', title: 'How to Set Up a VCC in Singapore (2026)' },
       { slug: 'section-13o-vs-13u-singapore', title: 'Section 13O vs 13U (2026)' },
+         { slug: 'vcc-sub-fund-segregation-13o-13u-renewal-pack', title: 'VCC Sub-Fund Segregation & the 13O/13U Annual Renewal Pack' },
     ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['ACRA', 'MAS'],
@@ -277,7 +278,9 @@ export const LEARN_TERMS: LearnTerm[] = [
     ],
     relatedTerms: ['capital-call', 'carried-interest', 'management-fee'],
     relatedTools: ['/tools/waterfall', '/tools/waterfall-comparator', '/tools/fee-carry-modeler'],
-    relatedPosts: [],
+    relatedPosts: [
+      { slug: 'american-vs-european-waterfall', title: 'American vs European Waterfalls: How Carry Timing Changes What LPs Keep' },
+    ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['your fund documents (LPA)', 'legal counsel'],
     sources: [
@@ -468,6 +471,7 @@ export const LEARN_TERMS: LearnTerm[] = [
     relatedPosts: [
       { slug: 'section-13o-vs-13u-singapore', title: 'Section 13O vs 13U (2026)' },
       { slug: 'how-to-set-up-a-vcc-singapore', title: 'How to Set Up a VCC in Singapore (2026)' },
+         { slug: 'singapore-family-office-compliance-cdr-lbs-ubo-vcc', title: 'Singapore Family Office Compliance in 2026: CDR, LBS, UBO Register and VCC Sub-Fund Rules Explained' },
     ],
     relatedSolution: 'family-offices',
     authorities: ['MAS', 'IRAS', 'a licensed tax adviser'],
@@ -555,7 +559,9 @@ export const LEARN_TERMS: LearnTerm[] = [
     ],
     relatedTerms: ['distribution-waterfall', 'management-fee', 'tvpi-dpi-rvpi'],
     relatedTools: ['/tools/fee-carry-modeler', '/tools/carried-interest-tax', '/tools/waterfall'],
-    relatedPosts: [],
+    relatedPosts: [
+      { slug: 'american-vs-european-waterfall', title: 'American vs European Waterfalls: How Carry Timing Changes What LPs Keep' },
+    ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['your fund documents (LPA)', 'IRAS (for tax treatment)', 'a licensed tax adviser'],
     sources: [
@@ -636,7 +642,9 @@ export const LEARN_TERMS: LearnTerm[] = [
     ],
     relatedTerms: ['irr-vs-moic', 'carried-interest', 'capital-call'],
     relatedTools: ['/tools/irr-tvpi-dpi-calculator', '/tools/vintage-benchmarker'],
-    relatedPosts: [],
+    relatedPosts: [
+      { slug: 'tvpi-dpi-rvpi-irr-explained', title: 'TVPI, DPI, RVPI and IRR: The Four Numbers Every LP Uses to Judge a Fund' },
+    ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['your fund documents', 'the ILPA reporting guidance'],
     sources: [
@@ -718,7 +726,9 @@ export const LEARN_TERMS: LearnTerm[] = [
     ],
     relatedTerms: ['capital-call', 'nav', 'side-letter', '13o-13u'],
     relatedTools: ['/tools/spv-admin-cost-calculator', '/tools/capital-call-schedule'],
-    relatedPosts: [],
+    relatedPosts: [
+      { slug: 'singapore-fund-administration-licence', title: 'Fund Management Licensing in Singapore (2026)' },
+    ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['MAS', 'your fund documents'],
     sources: [
@@ -808,7 +818,9 @@ export const LEARN_TERMS: LearnTerm[] = [
     ],
     relatedTerms: ['fair-value-hierarchy', 'fund-administrator', 'tvpi-dpi-rvpi'],
     relatedTools: ['/tools/subscription-redemption-je', '/tools/fx-revaluation-je'],
-    relatedPosts: [],
+    relatedPosts: [
+      { slug: 'ifrs-9-sfrs-i-9-fund-accounting', title: 'IFRS 9 / SFRS(I) 9 for Funds' },
+    ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['the fund documents', 'your auditor', 'ACRA (for VCCs)', 'MAS'],
     sources: [
@@ -1224,7 +1236,9 @@ export const LEARN_TERMS: LearnTerm[] = [
     ],
     relatedTerms: ['tvpi-dpi-rvpi', 'carried-interest'],
     relatedTools: ['/tools/irr-tvpi-dpi-calculator', '/tools/vintage-benchmarker'],
-    relatedPosts: [],
+    relatedPosts: [
+      { slug: 'tvpi-dpi-rvpi-irr-explained', title: 'TVPI, DPI, RVPI and IRR: The Four Numbers Every LP Uses to Judge a Fund' },
+    ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['your fund documents', 'the ILPA reporting guidance'],
     sources: [
@@ -1260,4 +1274,37 @@ export function getLearnRelatedTools(term: LearnTerm): { path: string; title: st
 
 export function getLearnRelatedSolution(term: LearnTerm): SolutionNav | undefined {
   return term.relatedSolution ? solutionBySlug(term.relatedSolution) : undefined;
+}
+
+// Blog post slug -> Learn terms defined/used in that post. The blog post shows a
+// "Key terms" box linking to the definition pages, so each Learn page is the
+// canonical definition and the blog stays the long-form guide (avoids the two
+// competing for the same "what is X" query).
+export const BLOG_LEARN_TERMS: Record<string, string[]> = {
+  'ifrs-compliant-fund-administration': ['ifrs-9-sfrs-i-9', 'nav', 'fund-administrator'],
+  'american-vs-european-waterfall': ['distribution-waterfall', 'carried-interest', 'management-fee'],
+  'tvpi-dpi-rvpi-irr-explained': ['tvpi-dpi-rvpi', 'irr-vs-moic', 'nav'],
+  'how-to-set-up-a-vcc-singapore': ['vcc', '13o-13u', 'fund-administrator'],
+  'section-13o-vs-13u-singapore': ['13o-13u', 'vcc', 'fund-administrator'],
+  'singapore-fund-administration-licence': ['fund-administrator', 'vcc', '13o-13u'],
+  'ifrs-9-sfrs-i-9-fund-accounting': ['ifrs-9-sfrs-i-9', 'fair-value-hierarchy', 'nav'],
+  'how-to-start-a-fund-singapore': ['vcc', '13o-13u', 'management-fee', 'fund-administrator'],
+  'singapore-family-office-compliance-cdr-lbs-ubo-vcc': ['13o-13u', 'vcc'],
+  'singapore-family-office-cdr-lbs-thresholds': ['13o-13u'],
+  'singapore-family-office-ubo-register-acra-deadline': ['13o-13u'],
+  'vcc-sub-fund-segregation-13o-13u-renewal-pack': ['vcc', '13o-13u', 'nav'],
+  'simplify-operation-for-family-offices-in-singapore': ['13o-13u', 'vcc', 'fund-administrator'],
+  'transforming-fund-operations-of-private-equity': ['capital-call', 'distribution-waterfall', 'fund-administrator'],
+  'fund-administration-vs-fund-administration': ['fund-administrator'],
+  'why-vcs-founders-use-spvs': ['carried-interest', 'management-fee', 'capital-call'],
+  'spv-administration-best-practices': ['capital-call', 'fund-administrator'],
+  'spv-administration-problems': ['capital-call', 'fund-administrator'],
+  'how-to-fix-spv-administration': ['capital-call', 'fund-administrator'],
+  'future-of-spv-administration': ['fund-administrator'],
+};
+
+export function getLearnTermsForPost(postSlug: string): LearnTerm[] {
+  return (BLOG_LEARN_TERMS[postSlug] ?? [])
+    .map((slug) => LEARN_TERMS.find((t) => t.slug === slug))
+    .filter((t): t is LearnTerm => Boolean(t));
 }

@@ -1,4 +1,4 @@
-import { LEARN_TERMS, LEARN_TOPICS } from './learn';
+import { BLOG_LEARN_TERMS, LEARN_TERMS, LEARN_TOPICS } from './learn';
 import { TOOL_CONTENT } from './toolContent';
 import { blogPosts } from './blogPosts';
 import { SOLUTIONS } from './solutions';
@@ -29,5 +29,12 @@ describe('Learn terms', () => {
   it('avoids banned marketing words', () => {
     const text = JSON.stringify(LEARN_TERMS).toLowerCase();
     ['streamline', 'seamlessly', 'robust', 'powerful'].forEach((w) => expect(text).not.toContain(w));
+  });
+
+  it('maps only real blog posts to real Learn terms', () => {
+    Object.entries(BLOG_LEARN_TERMS).forEach(([post, terms]) => {
+      expect(blogPosts.map((b) => b.slug)).toContain(post);
+      terms.forEach((t) => expect(LEARN_TERMS.map((x) => x.slug)).toContain(t));
+    });
   });
 });

@@ -14,6 +14,7 @@ import {
   type BlogPost,
   type BlogPostSummary,
 } from '@/lib/blogPosts';
+import { getLearnTermsForPost, learnHref } from '@/lib/learn';
 import classes from './Blog.module.css';
 
 type Props = {
@@ -21,9 +22,10 @@ type Props = {
   relatedPosts: BlogPostSummary[];
   relatedTools: { path: string; title: string }[];
   relatedSolution: { href: string; label: string; blurb: string } | null;
+  learnTerms: { href: string; term: string; definition: string }[];
 };
 
-export default function BlogPostPage({ post, relatedPosts, relatedTools, relatedSolution }: Props) {
+export default function BlogPostPage({ post, relatedPosts, relatedTools, relatedSolution, learnTerms }: Props) {
   // Build structured data for the blog post
   const getStructuredData = (post: BlogPost) => {
     return {
@@ -159,6 +161,30 @@ export default function BlogPostPage({ post, relatedPosts, relatedTools, related
               <Divider />
               
               <Box className={classes.postContent} dangerouslySetInnerHTML={{ __html: post.content }} />
+
+              {learnTerms.length > 0 && (
+                <>
+                  <Divider />
+                  <Stack gap="md">
+                    <Title order={3} className={classes.singlePostTitle} style={{ fontSize: '1.5rem' }}>
+                      Key terms in this guide
+                    </Title>
+                    <Stack gap="sm">
+                      {learnTerms.map((t) => (
+                        <Box key={t.href} className={classes.solutionCallout}>
+                          <Text fw={700} component={Link} href={t.href} style={{ textDecoration: 'none' }}>
+                            {t.term} →
+                          </Text>
+                          <Text size="sm" c="dimmed" lineClamp={2}>{t.definition}</Text>
+                        </Box>
+                      ))}
+                    </Stack>
+                    <Text size="sm">
+                      <Link href="/learn">Browse the full fund operations glossary</Link>
+                    </Text>
+                  </Stack>
+                </>
+              )}
 
               {post.faqs && post.faqs.length > 0 && (
                 <>
@@ -306,6 +332,11 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
       relatedPosts: getRelatedPosts(post.slug, 3),
       relatedTools: getRelatedTools(post.categories, 3),
       relatedSolution: solution ? { href: solution.href, label: solution.label, blurb: solution.blurb } : null,
+      learnTerms: getLearnTermsForPost(post.slug).map((t) => ({
+        href: learnHref(t),
+        term: t.term,
+        definition: t.directAnswer,
+      })),
     },
   };
 };
