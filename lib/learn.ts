@@ -65,6 +65,11 @@ export const LEARN_TOPICS: LearnTopic[] = [
     blurb: 'Waterfalls, carried interest, fees and returns — how money moves between LPs and the GP.',
   },
   {
+    slug: 'lp-reporting',
+    title: 'LP reporting & performance',
+    blurb: 'TVPI, DPI, RVPI and the metrics limited partners use to judge a fund.',
+  },
+  {
     slug: 'fund-operations',
     title: 'Fund operations',
     blurb: 'Capital calls, distributions, investor servicing and the day-to-day mechanics of running a fund.',
@@ -164,7 +169,7 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'Yes. VCCs are used for open-ended and closed-ended funds across PE, VC, hedge, credit and real assets, and by family offices.',
       },
     ],
-    relatedTerms: ['capital-call', 'distribution-waterfall'],
+    relatedTerms: ['13o-13u', 'fund-administrator', 'capital-call'],
     relatedTools: ['/tools/vcc-comparator', '/tools/vcc-cost-estimator', '/tools/mas-licensing-estimator'],
     relatedPosts: [
       { slug: 'how-to-set-up-a-vcc-singapore', title: 'How to Set Up a VCC in Singapore (2026)' },
@@ -262,7 +267,7 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'In the fund\'s legal documents, usually the limited partnership agreement. The terms are negotiated and vary by fund.',
       },
     ],
-    relatedTerms: ['capital-call', 'vcc'],
+    relatedTerms: ['capital-call', 'carried-interest', 'vcc'],
     relatedTools: ['/tools/waterfall', '/tools/waterfall-comparator', '/tools/fee-carry-modeler'],
     relatedPosts: [],
     relatedSolution: 'vc-pe-firms',
@@ -355,12 +360,355 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'The LPA\'s default provisions apply. These commonly include penalty interest, loss of voting rights, forced sale of the interest, or forfeiture of part of the existing contribution.',
       },
     ],
-    relatedTerms: ['distribution-waterfall', 'vcc'],
+    relatedTerms: ['distribution-waterfall', 'fund-administrator', 'vcc'],
     relatedTools: ['/tools/capital-call-schedule', '/tools/drawdown-notice'],
     relatedPosts: [],
     relatedSolution: 'vc-pe-firms',
     sources: [
       { label: 'ILPA Capital Call and Distribution Notice Template', url: 'https://ilpa.org' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: '13o-13u',
+    topic: 'singapore-fund-structures',
+    term: 'Section 13O and 13U Tax Incentives',
+    shortName: '13O / 13U',
+    title: 'Section 13O vs 13U: Singapore Fund Tax Incentives Explained',
+    description:
+      'Sections 13O and 13U exempt qualifying income of Singapore-managed funds from tax. AUM floors, headcount, local spend and the Singapore-investment rule, compared.',
+    directAnswer:
+      'Sections 13O and 13U of the Singapore Income Tax Act are tax incentive schemes that exempt qualifying income of a fund managed from Singapore. 13O is the onshore scheme, usually for single family offices from S$20M AUM; 13U is the enhanced tier for larger or multi-vehicle structures from S$50M AUM.',
+    keyFacts: [
+      { label: 'Legislation', value: 'Income Tax Act 1947, sections 13O and 13U' },
+      { label: 'Administered by', value: 'MAS (approval) and IRAS (tax)' },
+      { label: 'Minimum AUM', value: '13O: S$20M. 13U: S$50M' },
+      { label: 'Investment professionals', value: '13O: at least 2. 13U: at least 3' },
+      { label: 'Fund vehicle', value: '13O: Singapore company or VCC. 13U: onshore or offshore, including umbrella VCCs' },
+      { label: 'Local business spending', value: 'Tiered by AUM: S$200,000 (under S$50M), S$500,000 (S$50M–100M), S$1,000,000 (over S$100M) a year' },
+      { label: 'Singapore investment', value: 'At least 10% of AUM or S$10M, whichever is lower' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Pick the scheme',
+        body: '13O suits a single family office or smaller fund. 13U suits larger or multi-fund structures that need offshore vehicles or an umbrella VCC with several sub-funds.',
+      },
+      {
+        heading: 'Set up the vehicle and substance',
+        body: 'The fund administration company must operate from physical commercial premises in Singapore. Virtual offices are not accepted. 13O also requires a Singapore-based administrator.',
+      },
+      {
+        heading: 'Hire the investment professionals',
+        body: 'An investment professional is a portfolio manager, research analyst or trader earning more than S$3,500 a month and spending more than 50% of their time on the qualifying activity.',
+      },
+      {
+        heading: 'Meet spending and investment tests',
+        body: 'Commit to the annual local business spending tier for your AUM, and keep the Singapore investment requirement met at any one time, including during the application.',
+      },
+      {
+        heading: 'Apply, then re-earn it every year',
+        body: 'Approval is not permanent. Conditions such as AUM, headcount, local spend, capital deployment and the UBO register are tested on an ongoing basis, and the incentive is renewed periodically.',
+      },
+    ],
+    workedExample: {
+      title: 'A S$60M single family office',
+      setup:
+        'A family office with S$60M in AUM wants to apply. Work out which scheme and what the spending and investment tests require.',
+      rows: [
+        { label: 'AUM meets 13O floor (S$20M)?', value: 'Yes' },
+        { label: 'AUM meets 13U floor (S$50M)?', value: 'Yes' },
+        { label: 'Local business spending tier (S$50M–100M)', value: 'S$500,000 a year' },
+        { label: '10% of AUM (10% × S$60M)', value: 'S$6M' },
+        { label: 'Singapore investment required (lower of S$6M and S$10M)', value: 'S$6M' },
+        { label: 'Investment professionals needed', value: '2 for 13O, 3 for 13U' },
+      ],
+      takeaway:
+        'Both schemes are open at this size. If the family office holds a single Singapore vehicle, 13O needs one fewer professional. If it needs offshore vehicles or several sub-funds, 13U is the route.',
+    },
+    mistakes: [
+      'Treating the VCC as the tax exemption. The incentive is applied for separately.',
+      'Counting a virtual office as substance. MAS requires physical commercial premises.',
+      'Testing conditions once a year. Spending and Singapore-investment minimums move every month.',
+      'Forgetting the UBO register, which must be kept current within days of an ownership change, not on an annual cycle.',
+    ],
+    singaporeNote:
+      'This is a Singapore-only regime, and thresholds and renewal terms are revised from time to time, so confirm the current conditions with MAS and IRAS before applying. The operational point most often missed is that approval is the start: the spending, investment, headcount and UBO conditions are tested continuously, which is a fund-accounting and compliance-tracking job, not a one-off filing.',
+    faqs: [
+      {
+        q: 'What is the difference between 13O and 13U?',
+        a: '13O is the onshore fund scheme, with a S$20M AUM floor, two investment professionals and a Singapore company or VCC vehicle. 13U is the enhanced tier, with a S$50M floor, three professionals and flexibility to use offshore vehicles and umbrella VCCs.',
+      },
+      {
+        q: 'Is a VCC the same as 13O or 13U?',
+        a: 'No. A VCC is a legal structure. 13O and 13U are tax incentives applied for separately, and can be held by a fund that uses a VCC.',
+      },
+      {
+        q: 'What counts as an investment professional?',
+        a: 'A portfolio manager, research analyst or trader earning more than S$3,500 a month and spending more than 50% of their time on the qualifying activity.',
+      },
+      {
+        q: 'Does the incentive need to be renewed?',
+        a: 'Yes. The incentive runs for a fixed period and is renewed periodically, with the conditions re-evidenced at renewal. Confirm the current cadence with MAS.',
+      },
+    ],
+    relatedTerms: ['vcc', 'fund-administrator'],
+    relatedTools: ['/tools/mas-licensing-estimator', '/tools/vcc-comparator', '/tools/carried-interest-tax'],
+    relatedPosts: [
+      { slug: 'section-13o-vs-13u-singapore', title: 'Section 13O vs 13U (2026)' },
+      { slug: 'how-to-set-up-a-vcc-singapore', title: 'How to Set Up a VCC in Singapore (2026)' },
+    ],
+    relatedSolution: 'family-offices',
+    sources: [
+      { label: 'MAS — Tax incentive schemes for fund management', url: 'https://www.mas.gov.sg' },
+      { label: 'IRAS — Fund tax incentives', url: 'https://www.iras.gov.sg' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'carried-interest',
+    topic: 'fund-economics',
+    term: 'Carried Interest',
+    shortName: 'Carried interest',
+    title: 'What is Carried Interest? How Carry Works in PE & VC Funds',
+    description:
+      'Carried interest is the GP\'s share of fund profits, typically 20%, paid only after LPs clear a hurdle. How carry is calculated, with a worked example.',
+    directAnswer:
+      'Carried interest, or carry, is the share of a fund\'s profits paid to the general partner as performance compensation, typically 20%. It is earned only after limited partners have received their capital back and, in most funds, a preferred return, and it is paid through the fund\'s distribution waterfall.',
+    keyFacts: [
+      { label: 'Also called', value: 'Carry, performance fee, promote' },
+      { label: 'Typical rate', value: '20% of profits (negotiated per fund)' },
+      { label: 'Paid to', value: 'The GP, or its carry vehicle, from fund distributions' },
+      { label: 'Conditions', value: 'Usually a hurdle (preferred return), often with a GP catch-up' },
+      { label: 'Timing', value: 'Whole-fund (European) or deal-by-deal (American) waterfall' },
+      { label: 'Risk to the GP', value: 'Clawback if carry is overpaid over the fund\'s life' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Profit is measured',
+        body: 'Profit is what the fund distributes above the capital LPs contributed, including capital used for fees and expenses.',
+      },
+      {
+        heading: 'The hurdle is tested',
+        body: 'If the fund has a preferred return, LPs must receive it before the GP earns any carry. Below the hurdle, carry is zero.',
+      },
+      {
+        heading: 'The catch-up applies',
+        body: 'Above the hurdle, the GP receives all or part of distributions until it holds its carry percentage of total profit to date.',
+      },
+      {
+        heading: 'The split applies',
+        body: 'Remaining profit is split between LPs and the GP at the carry ratio, usually 80/20.',
+      },
+      {
+        heading: 'Clawback true-up',
+        body: 'At the end of the fund, if the GP was paid more than its entitlement, it returns the excess to LPs under the clawback.',
+      },
+    ],
+    workedExample: {
+      title: '$100M fund, 8% hurdle, 20% carry, full catch-up',
+      setup:
+        'LPs contributed $100M. For simplicity, the 8% compounding hurdle works out to $36M of profit over four years. Compare three outcomes (whole-fund waterfall).',
+      rows: [
+        { label: 'Outcome A: $130M returned → profit $30M, below the $36M hurdle', value: 'Carry $0' },
+        { label: 'Outcome B: $140M returned → profit $40M, $4M into the catch-up', value: 'Carry $4M' },
+        { label: 'Outcome C: $200M returned → profit $100M, catch-up complete', value: 'Carry $20M' },
+      ],
+      takeaway:
+        'The hurdle creates a cliff: A earns nothing despite a 30% gain. By C, a full catch-up has put the GP at exactly 20% of total profit, as if there had been no hurdle.',
+    },
+    mistakes: [
+      'Calculating carry as 20% of all gains without applying the hurdle and catch-up.',
+      'Ignoring fees and expenses when measuring profit. LPs must recover them before carry is earned.',
+      'Forgetting that early carry in a deal-by-deal waterfall may have to be clawed back later.',
+      'Assuming carry is taxed the same everywhere. Treatment varies by jurisdiction and facts.',
+    ],
+    singaporeNote:
+      'Carry terms are set in the fund documents, not by Singapore law. The Singapore-specific question is tax: how carry is taxed depends on the jurisdictions of the GP and its investment team and the facts, and on whether the fund holds a Section 13O or 13U incentive. Model it with the tools below and take advice before relying on a figure.',
+    faqs: [
+      {
+        q: 'What is the difference between carried interest and a management fee?',
+        a: 'A management fee is charged on commitments or invested capital regardless of performance. Carried interest is paid only out of profits, after LPs have been repaid.',
+      },
+      {
+        q: 'What is a typical carried interest percentage?',
+        a: '20% is the most common headline rate, though it varies by strategy and fund. Some funds step up to 25–30% above a higher return threshold.',
+      },
+      {
+        q: 'What is a clawback?',
+        a: 'A clawback requires the GP to return carry it has received if, over the fund\'s life, it has been paid more than its entitlement.',
+      },
+    ],
+    relatedTerms: ['distribution-waterfall', 'tvpi-dpi-rvpi'],
+    relatedTools: ['/tools/fee-carry-modeler', '/tools/carried-interest-tax', '/tools/waterfall'],
+    relatedPosts: [],
+    relatedSolution: 'vc-pe-firms',
+    sources: [
+      { label: 'ILPA Principles 3.0', url: 'https://ilpa.org/ilpa-principles/' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'tvpi-dpi-rvpi',
+    topic: 'lp-reporting',
+    term: 'TVPI, DPI and RVPI',
+    shortName: 'TVPI / DPI / RVPI',
+    title: 'TVPI, DPI and RVPI Explained: PE & VC Fund Performance Metrics',
+    description:
+      'DPI is cash returned, RVPI is value still held, and TVPI is the two combined, each divided by paid-in capital. Formulas, a worked example and how they differ from IRR.',
+    directAnswer:
+      'DPI, RVPI and TVPI are fund performance multiples measured against paid-in capital. DPI is distributions divided by paid-in capital, the cash actually returned. RVPI is remaining net asset value divided by paid-in capital, the value still held. TVPI is DPI plus RVPI, the total value created so far.',
+    keyFacts: [
+      { label: 'DPI', value: 'Cumulative distributions ÷ paid-in capital (realised)' },
+      { label: 'RVPI', value: 'Residual NAV ÷ paid-in capital (unrealised)' },
+      { label: 'TVPI', value: '(Distributions + residual NAV) ÷ paid-in capital = DPI + RVPI' },
+      { label: 'Basis', value: 'Net to LPs, after fees and carry' },
+      { label: 'Denominator', value: 'Paid-in capital, not total commitment' },
+      { label: 'Reported', value: 'Quarterly in LP reports' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Start with paid-in capital',
+        body: 'Paid-in capital is the total an LP has actually contributed to date through capital calls. It is not the commitment, which includes capital not yet called.',
+      },
+      {
+        heading: 'Measure what has come back',
+        body: 'DPI divides cumulative distributions to the LP by paid-in capital. It is the only one of the three that is cash in hand.',
+      },
+      {
+        heading: 'Measure what is still held',
+        body: 'RVPI divides the LP\'s share of the fund\'s residual NAV by paid-in capital. It depends on valuations, so it is an estimate.',
+      },
+      {
+        heading: 'Add them for the total',
+        body: 'TVPI is DPI plus RVPI. As a fund matures and exits investments, RVPI falls and DPI rises, while TVPI converges on the final multiple.',
+      },
+    ],
+    workedExample: {
+      title: 'A mid-life fund',
+      setup: 'An LP has paid in $80M. The fund has distributed $20M to it, and its share of remaining NAV is $100M.',
+      rows: [
+        { label: 'DPI ($20M ÷ $80M)', value: '0.25x' },
+        { label: 'RVPI ($100M ÷ $80M)', value: '1.25x' },
+        { label: 'TVPI (0.25x + 1.25x)', value: '1.50x' },
+      ],
+      takeaway:
+        'The fund shows a 1.50x total value, but only 0.25x has been returned in cash. That gap is why LPs watch DPI as closely as TVPI.',
+    },
+    mistakes: [
+      'Dividing by commitment instead of paid-in capital.',
+      'Reading a high TVPI as realised performance when most of it is RVPI, which rests on valuations.',
+      'Comparing a gross deal-level multiple (MOIC) with a net fund-level TVPI.',
+      'Comparing funds of different ages without adjusting for vintage. Young funds sit below 1.0x because of the J-curve.',
+    ],
+    singaporeNote:
+      'There is no Singapore-specific definition, but APAC LPs are commonly multi-currency, so state the reporting currency and the FX basis behind paid-in capital, distributions and NAV. For a VCC, report at sub-fund level, since each sub-fund has its own investors, NAV and cash flows.',
+    faqs: [
+      {
+        q: 'What is a good TVPI?',
+        a: 'It depends on strategy, vintage and fund age. Compare against peers of the same vintage and strategy rather than against a fixed number.',
+      },
+      {
+        q: 'What is the difference between TVPI and IRR?',
+        a: 'TVPI is a multiple that ignores timing. IRR is a rate of return that accounts for when cash flows occurred. A fund can have a high TVPI and a low IRR if returns took a long time.',
+      },
+      {
+        q: 'What is the difference between TVPI and MOIC?',
+        a: 'MOIC is usually a gross investment-level or fund-level multiple before fees and carry. TVPI is a net, LP-level multiple.',
+      },
+    ],
+    relatedTerms: ['carried-interest', 'capital-call'],
+    relatedTools: ['/tools/irr-tvpi-dpi-calculator', '/tools/vintage-benchmarker'],
+    relatedPosts: [],
+    relatedSolution: 'vc-pe-firms',
+    sources: [
+      { label: 'ILPA Reporting Template', url: 'https://ilpa.org' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'fund-administrator',
+    topic: 'fund-operations',
+    term: 'Fund Administrator',
+    shortName: 'Fund administrator',
+    title: 'What is a Fund Administrator? Fund Administration vs Fund Management',
+    description:
+      'A fund administrator runs a fund\'s back office: NAV, accounting, investor records and reporting. How it differs from the fund manager, with who-does-what.',
+    directAnswer:
+      'A fund administrator is the firm, or in-house team, that runs a fund\'s back office: calculating NAV, keeping the books, processing capital calls and distributions, maintaining investor records and producing reports. It is distinct from the fund manager, which makes the investment decisions.',
+    keyFacts: [
+      { label: 'Core services', value: 'NAV, fund accounting, investor services, capital calls and distributions, reporting' },
+      { label: 'Not the same as', value: 'The fund manager (investment decisions) or the custodian (safekeeping of assets)' },
+      { label: 'Appointed by', value: 'The fund or its manager, under an administration agreement' },
+      { label: 'Models', value: 'Third-party administrator, in-house administration, or software-assisted' },
+      { label: 'Why it matters', value: 'Independent books and investor records are a core LP comfort point' },
+    ],
+    howItWorks: [
+      {
+        heading: 'The manager decides, the administrator records',
+        body: 'The fund manager sources and approves investments. The administrator books the resulting transactions and keeps the fund\'s official records.',
+      },
+      {
+        heading: 'NAV and accounting',
+        body: 'The administrator maintains the general ledger, applies valuations provided by the manager or valuation agent, and calculates NAV and capital accounts.',
+      },
+      {
+        heading: 'Investor servicing',
+        body: 'It onboards investors, runs KYC and AML checks, issues capital call and distribution notices, reconciles receipts and answers LP queries.',
+      },
+      {
+        heading: 'Reporting',
+        body: 'It prepares financial statements for audit and the periodic investor reports, such as statements and performance metrics.',
+      },
+    ],
+    workedExample: {
+      title: 'Who does what when a fund makes an investment',
+      setup: 'A fund approves a $5M investment and funds it through a capital call.',
+      rows: [
+        { label: 'Decide and approve the investment', value: 'Fund manager' },
+        { label: 'Calculate each LP\'s pro rata share of the call', value: 'Fund administrator' },
+        { label: 'Issue drawdown notices and track receipts', value: 'Fund administrator' },
+        { label: 'Hold the investment and cash safely', value: 'Custodian / bank' },
+        { label: 'Book the transaction and update NAV', value: 'Fund administrator' },
+        { label: 'Audit the year-end financials', value: 'Auditor' },
+      ],
+      takeaway:
+        'The administrator never decides what to invest in. Splitting these roles gives LPs independent records alongside the manager\'s decisions.',
+    },
+    mistakes: [
+      'Conflating the fund administrator with the fund manager. They are different roles with different regulation and liability.',
+      'Assuming the administrator verifies valuations. It usually applies valuations supplied by the manager.',
+      'Choosing a provider on headline price without checking multi-currency, sub-fund and LP reporting support.',
+    ],
+    singaporeNote:
+      'The fund manager is the entity MAS regulates, and tax incentives such as Section 13O require a Singapore-based administrator. For VCCs, administration must work at the sub-fund level, with books and NAV kept per sub-fund. Whether a particular administrator needs any authorisation depends on the services it provides, so confirm with MAS.',
+    faqs: [
+      {
+        q: 'What is the difference between a fund administrator and a fund manager?',
+        a: 'The fund manager makes investment decisions and is the regulated entity. The fund administrator handles accounting, NAV, investor records and reporting.',
+      },
+      {
+        q: 'Do all funds need an administrator?',
+        a: 'Many do, because LPs and regulators expect independent records, and some structures and incentives require one. Small funds sometimes administer in-house, supported by software.',
+      },
+      {
+        q: 'What is the difference between a fund administrator and a custodian?',
+        a: 'The administrator keeps the books and investor records. The custodian safeguards the fund\'s assets.',
+      },
+    ],
+    relatedTerms: ['capital-call', '13o-13u'],
+    relatedTools: ['/tools/spv-admin-cost-calculator', '/tools/capital-call-schedule'],
+    relatedPosts: [],
+    relatedSolution: 'vc-pe-firms',
+    sources: [
+      { label: 'MAS — Fund management', url: 'https://www.mas.gov.sg' },
     ],
     author: AUTHOR,
     publishedDate: '2026-10-02',
