@@ -46,6 +46,8 @@ export interface LearnTerm {
   relatedPosts: { slug: string; title: string }[];
   /** Slug in lib/solutions.ts. */
   relatedSolution?: string;
+  /** Who to check with, shown in the "may change" notice, e.g. ['MAS', 'ACRA']. */
+  authorities: string[];
   sources: { label: string; url: string }[];
   author: string;
   publishedDate: string;
@@ -63,6 +65,11 @@ export const LEARN_TOPICS: LearnTopic[] = [
     slug: 'fund-economics',
     title: 'Fund economics',
     blurb: 'Waterfalls, carried interest, fees and returns — how money moves between LPs and the GP.',
+  },
+  {
+    slug: 'fund-accounting',
+    title: 'Fund accounting',
+    blurb: 'NAV, fair value and IFRS 9 / SFRS(I) 9 — how fund books are kept and valued.',
   },
   {
     slug: 'lp-reporting',
@@ -176,6 +183,7 @@ export const LEARN_TERMS: LearnTerm[] = [
       { slug: 'section-13o-vs-13u-singapore', title: 'Section 13O vs 13U (2026)' },
     ],
     relatedSolution: 'vc-pe-firms',
+    authorities: ['ACRA', 'MAS'],
     sources: [
       { label: 'ACRA — Variable Capital Companies', url: 'https://www.acra.gov.sg' },
       { label: 'MAS — Variable Capital Companies', url: 'https://www.mas.gov.sg' },
@@ -267,10 +275,11 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'In the fund\'s legal documents, usually the limited partnership agreement. The terms are negotiated and vary by fund.',
       },
     ],
-    relatedTerms: ['capital-call', 'carried-interest', 'vcc'],
+    relatedTerms: ['capital-call', 'carried-interest', 'management-fee'],
     relatedTools: ['/tools/waterfall', '/tools/waterfall-comparator', '/tools/fee-carry-modeler'],
     relatedPosts: [],
     relatedSolution: 'vc-pe-firms',
+    authorities: ['your fund documents (LPA)', 'legal counsel'],
     sources: [
       { label: 'ILPA Principles 3.0', url: 'https://ilpa.org/ilpa-principles/' },
     ],
@@ -364,6 +373,7 @@ export const LEARN_TERMS: LearnTerm[] = [
     relatedTools: ['/tools/capital-call-schedule', '/tools/drawdown-notice'],
     relatedPosts: [],
     relatedSolution: 'vc-pe-firms',
+    authorities: ['your fund documents (LPA)', 'legal counsel'],
     sources: [
       { label: 'ILPA Capital Call and Distribution Notice Template', url: 'https://ilpa.org' },
     ],
@@ -453,13 +463,14 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'Yes. The incentive runs for a fixed period and is renewed periodically, with the conditions re-evidenced at renewal. Confirm the current cadence with MAS.',
       },
     ],
-    relatedTerms: ['vcc', 'fund-administrator'],
+    relatedTerms: ['vcc', 'fund-administrator', 'management-fee'],
     relatedTools: ['/tools/mas-licensing-estimator', '/tools/vcc-comparator', '/tools/carried-interest-tax'],
     relatedPosts: [
       { slug: 'section-13o-vs-13u-singapore', title: 'Section 13O vs 13U (2026)' },
       { slug: 'how-to-set-up-a-vcc-singapore', title: 'How to Set Up a VCC in Singapore (2026)' },
     ],
     relatedSolution: 'family-offices',
+    authorities: ['MAS', 'IRAS', 'a licensed tax adviser'],
     sources: [
       { label: 'MAS — Tax incentive schemes for fund management', url: 'https://www.mas.gov.sg' },
       { label: 'IRAS — Fund tax incentives', url: 'https://www.iras.gov.sg' },
@@ -542,10 +553,11 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'A clawback requires the GP to return carry it has received if, over the fund\'s life, it has been paid more than its entitlement.',
       },
     ],
-    relatedTerms: ['distribution-waterfall', 'tvpi-dpi-rvpi'],
+    relatedTerms: ['distribution-waterfall', 'management-fee', 'tvpi-dpi-rvpi'],
     relatedTools: ['/tools/fee-carry-modeler', '/tools/carried-interest-tax', '/tools/waterfall'],
     relatedPosts: [],
     relatedSolution: 'vc-pe-firms',
+    authorities: ['your fund documents (LPA)', 'IRAS (for tax treatment)', 'a licensed tax adviser'],
     sources: [
       { label: 'ILPA Principles 3.0', url: 'https://ilpa.org/ilpa-principles/' },
     ],
@@ -622,10 +634,11 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'MOIC is usually a gross investment-level or fund-level multiple before fees and carry. TVPI is a net, LP-level multiple.',
       },
     ],
-    relatedTerms: ['carried-interest', 'capital-call'],
+    relatedTerms: ['irr-vs-moic', 'carried-interest', 'capital-call'],
     relatedTools: ['/tools/irr-tvpi-dpi-calculator', '/tools/vintage-benchmarker'],
     relatedPosts: [],
     relatedSolution: 'vc-pe-firms',
+    authorities: ['your fund documents', 'the ILPA reporting guidance'],
     sources: [
       { label: 'ILPA Reporting Template', url: 'https://ilpa.org' },
     ],
@@ -703,12 +716,519 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'The administrator keeps the books and investor records. The custodian safeguards the fund\'s assets.',
       },
     ],
-    relatedTerms: ['capital-call', '13o-13u'],
+    relatedTerms: ['capital-call', 'nav', 'side-letter', '13o-13u'],
     relatedTools: ['/tools/spv-admin-cost-calculator', '/tools/capital-call-schedule'],
     relatedPosts: [],
     relatedSolution: 'vc-pe-firms',
+    authorities: ['MAS', 'your fund documents'],
     sources: [
       { label: 'MAS — Fund management', url: 'https://www.mas.gov.sg' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'nav',
+    topic: 'fund-accounting',
+    term: 'Net Asset Value (NAV)',
+    shortName: 'NAV',
+    title: 'What is NAV? How Fund Net Asset Value Is Calculated',
+    description:
+      'NAV is a fund\'s assets minus its liabilities, often shown per unit or share. How it is calculated, how often, how illiquid assets are valued, with a worked example.',
+    directAnswer:
+      'Net asset value (NAV) is the total value of a fund\'s assets minus its liabilities at a point in time. Dividing NAV by the number of units or shares gives NAV per unit, the price at which investors subscribe or redeem in open-ended funds and the basis for reported value in closed-end funds.',
+    keyFacts: [
+      { label: 'Formula', value: 'NAV = total assets − total liabilities' },
+      { label: 'Per unit', value: 'NAV per unit = NAV ÷ units (or shares) in issue' },
+      { label: 'Calculated by', value: 'The fund administrator, using valuations from the manager' },
+      { label: 'Frequency', value: 'Daily to quarterly, set by the fund documents' },
+      { label: 'Basis', value: 'Fair value for investments, under the fund\'s accounting framework' },
+      { label: 'Used for', value: 'Subscriptions, redemptions, fees, LP statements and performance metrics' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Value the assets',
+        body: 'Listed holdings use market prices. Private holdings use fair-value techniques supplied by the manager or a valuation agent, such as recent round pricing or discounted cash flows.',
+      },
+      {
+        heading: 'Add cash and receivables',
+        body: 'Cash, accrued income and amounts owed to the fund are included alongside investments.',
+      },
+      {
+        heading: 'Deduct liabilities',
+        body: 'Accrued management fees, expenses, payables and any borrowings are deducted. Carry accrued but not yet payable is also deducted where the waterfall provides for it.',
+      },
+      {
+        heading: 'Divide for NAV per unit',
+        body: 'NAV is divided by units in issue. Open-ended funds use this price for subscriptions and redemptions. Closed-end funds typically report NAV and each LP\'s capital account.',
+      },
+    ],
+    workedExample: {
+      title: 'An open-ended fund at month-end',
+      setup: 'The fund holds investments, cash and receivables, and owes fees and expenses. It has 10 million units in issue.',
+      rows: [
+        { label: 'Investments at fair value', value: '$110.0M' },
+        { label: 'Cash', value: '$8.0M' },
+        { label: 'Accrued income receivable', value: '$2.0M' },
+        { label: 'Total assets', value: '$120.0M' },
+        { label: 'Accrued fees and expenses', value: '($3.0M)' },
+        { label: 'Payables', value: '($5.0M)' },
+        { label: 'NAV ($120.0M − $8.0M)', value: '$112.0M' },
+        { label: 'NAV per unit ($112.0M ÷ 10M units)', value: '$11.20' },
+      ],
+      takeaway:
+        'An investor subscribing at this NAV buys units at $11.20. The same NAV also feeds LP statements, fee calculations and TVPI.',
+    },
+    mistakes: [
+      'Using stale valuations for private holdings. NAV is only as current as the valuations behind it.',
+      'Forgetting to accrue fees, expenses or carry, which overstates NAV.',
+      'Mixing currencies without applying closing FX rates to foreign-currency assets and liabilities.',
+      'Dealing at an NAV that omits a late-booked transaction, which dilutes or advantages some investors.',
+    ],
+    singaporeNote:
+      'A VCC\'s financial statements must be prepared under IFRS, SFRS(I) or US GAAP and audited, and for an umbrella VCC NAV is calculated per sub-fund, because each sub-fund\'s assets and liabilities are segregated. Multi-currency investor bases make FX treatment a routine part of the calculation.',
+    faqs: [
+      {
+        q: 'How often is NAV calculated?',
+        a: 'It depends on the fund documents. Open-ended funds may calculate it daily or monthly, and private equity and venture funds usually report it quarterly.',
+      },
+      {
+        q: 'Who calculates NAV?',
+        a: 'Usually the fund administrator, based on valuations and instructions from the fund manager. The manager is generally responsible for valuations of illiquid assets.',
+      },
+      {
+        q: 'What is the difference between NAV and NAV per unit?',
+        a: 'NAV is the fund\'s total net value. NAV per unit divides it by the number of units in issue and is the price used for subscriptions and redemptions.',
+      },
+      {
+        q: 'How are private investments valued for NAV?',
+        a: 'At fair value, using techniques such as recent transaction prices, comparable company multiples or discounted cash flows, and classified within the fair value hierarchy.',
+      },
+    ],
+    relatedTerms: ['fair-value-hierarchy', 'fund-administrator', 'tvpi-dpi-rvpi'],
+    relatedTools: ['/tools/subscription-redemption-je', '/tools/fx-revaluation-je'],
+    relatedPosts: [],
+    relatedSolution: 'vc-pe-firms',
+    authorities: ['the fund documents', 'your auditor', 'ACRA (for VCCs)', 'MAS'],
+    sources: [
+      { label: 'IFRS 13 Fair Value Measurement (IFRS Foundation)', url: 'https://www.ifrs.org/issued-standards/list-of-standards/ifrs-13-fair-value-measurement/' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'fair-value-hierarchy',
+    topic: 'fund-accounting',
+    term: 'Fair Value Hierarchy',
+    shortName: 'Fair value hierarchy',
+    title: 'Fair Value Hierarchy (Level 1, 2, 3) Explained for Funds',
+    description:
+      'The IFRS 13 fair value hierarchy ranks valuation inputs into Levels 1, 2 and 3. What each level means, how funds classify holdings, and a worked example.',
+    directAnswer:
+      'The fair value hierarchy, set out in IFRS 13, ranks the inputs used to value an asset by reliability. Level 1 uses quoted prices in active markets, Level 2 uses other observable inputs, and Level 3 uses unobservable inputs and management judgement. Funds disclose how much of their portfolio sits in each level.',
+    keyFacts: [
+      { label: 'Standard', value: 'IFRS 13 Fair Value Measurement (SFRS(I) 13 in Singapore)' },
+      { label: 'Level 1', value: 'Quoted prices in active markets for identical assets' },
+      { label: 'Level 2', value: 'Observable inputs other than Level 1, such as prices of similar assets or yield curves' },
+      { label: 'Level 3', value: 'Unobservable inputs, such as DCF assumptions or adjusted private-round prices' },
+      { label: 'Classified by', value: 'The lowest-level input that is significant to the whole measurement' },
+      { label: 'Disclosure', value: 'Level 3 carries the heaviest disclosure, including a roll-forward and valuation inputs' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Identify the valuation inputs',
+        body: 'For each holding, list the inputs used: quoted prices, comparable transactions, yield curves, discount rates, growth assumptions.',
+      },
+      {
+        heading: 'Find the lowest significant input',
+        body: 'The whole measurement is classified by the lowest level of input that is significant to it. One significant unobservable input makes it Level 3.',
+      },
+      {
+        heading: 'Classify and tally',
+        body: 'Each holding is assigned to Level 1, 2 or 3 and the totals per level are reported.',
+      },
+      {
+        heading: 'Disclose',
+        body: 'Funds disclose the classification and, for Level 3, the valuation techniques, key unobservable inputs and movements during the period.',
+      },
+    ],
+    workedExample: {
+      title: 'A $100M portfolio',
+      setup: 'A fund holds a listed share, a corporate bond priced from comparable yields, and unlisted venture holdings valued with a discounted cash flow.',
+      rows: [
+        { label: 'Level 1: listed shares (quoted price)', value: '$30M · 30%' },
+        { label: 'Level 2: bonds (comparable-yield pricing)', value: '$20M · 20%' },
+        { label: 'Level 3: unlisted holdings (DCF, unobservable inputs)', value: '$50M · 50%' },
+        { label: 'Total investments at fair value', value: '$100M' },
+      ],
+      takeaway:
+        'Half the NAV rests on Level 3 judgement. That is typical for a private markets fund and is why auditors and LPs focus on Level 3 valuation inputs.',
+    },
+    mistakes: [
+      'Classifying by the primary input instead of the lowest significant input.',
+      'Treating a stale private-round price as Level 2 without evidence the inputs are observable.',
+      'Leaving Level 3 disclosures thin. This is where reviewers look first.',
+      'Not re-assessing the level when markets become less active.',
+    ],
+    singaporeNote:
+      'Singapore reporting entities apply SFRS(I) 13, which is identical to IFRS 13. For VCC sub-funds, the hierarchy table is prepared per sub-fund, since each prepares its own accounts for its investors.',
+    faqs: [
+      {
+        q: 'What is a Level 3 asset?',
+        a: 'An asset valued using significant unobservable inputs, such as a private company valued with a discounted cash flow or adjusted comparables.',
+      },
+      {
+        q: 'Can an asset move between levels?',
+        a: 'Yes. For example, a private holding becomes Level 1 when the company lists, or a listed holding drops to Level 2 or 3 if trading becomes inactive. Transfers are disclosed.',
+      },
+      {
+        q: 'Which standard sets out the hierarchy?',
+        a: 'IFRS 13 Fair Value Measurement, which in Singapore is SFRS(I) 13.',
+      },
+    ],
+    relatedTerms: ['nav', 'ifrs-9-sfrs-i-9'],
+    relatedTools: ['/tools/bond-je-generator', '/tools/fx-revaluation-je'],
+    relatedPosts: [
+      { slug: 'ifrs-9-sfrs-i-9-fund-accounting', title: 'IFRS 9 / SFRS(I) 9 for Funds' },
+    ],
+    relatedSolution: 'vc-pe-firms',
+    authorities: ['your auditor', 'the Accounting Standards Council (ASC) Singapore', 'the IFRS Foundation'],
+    sources: [
+      { label: 'IFRS 13 Fair Value Measurement (IFRS Foundation)', url: 'https://www.ifrs.org/issued-standards/list-of-standards/ifrs-13-fair-value-measurement/' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'ifrs-9-sfrs-i-9',
+    topic: 'fund-accounting',
+    term: 'IFRS 9 / SFRS(I) 9',
+    shortName: 'IFRS 9',
+    title: 'IFRS 9 / SFRS(I) 9 for Funds: Classification, SPPI and ECL',
+    description:
+      'IFRS 9 and SFRS(I) 9 set how financial instruments are classified and measured: business model, SPPI test and expected credit loss. A worked classification example.',
+    directAnswer:
+      'IFRS 9, called SFRS(I) 9 in Singapore, is the accounting standard for financial instruments. It classifies each instrument by the entity\'s business model and whether cash flows are solely payments of principal and interest (SPPI), then measures it at amortised cost, fair value through OCI, or fair value through profit or loss, with expected credit loss for impairment.',
+    keyFacts: [
+      { label: 'Standard', value: 'IFRS 9 Financial Instruments; SFRS(I) 9 in Singapore (identical to IFRS 9)' },
+      { label: 'Classification tests', value: 'Business model test and SPPI test' },
+      { label: 'Measurement categories', value: 'Amortised cost, FVOCI, FVTPL' },
+      { label: 'Impairment', value: 'Expected credit loss (ECL), in three stages' },
+      { label: 'Investment entities', value: 'Entities that qualify under IFRS 10 measure investments at FVTPL' },
+      { label: 'Most relevant to', value: 'Private credit, SPVs and entities that are not investment entities' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Is the entity an investment entity?',
+        body: 'An entity that qualifies as an investment entity under IFRS 10 measures its investments at fair value through profit or loss, which covers most investment funds. The classification tests below then matter mainly for entities that do not qualify.',
+      },
+      {
+        heading: 'Apply the business model test',
+        body: 'Is the instrument held to collect contractual cash flows, held to collect and sell, or managed on a fair value basis?',
+      },
+      {
+        heading: 'Apply the SPPI test',
+        body: 'Do the contractual cash flows consist solely of payments of principal and interest? Equity, and debt with features like conversion options, generally fail.',
+      },
+      {
+        heading: 'Assign the category',
+        body: 'Hold to collect plus SPPI gives amortised cost. Hold to collect and sell plus SPPI gives FVOCI. Everything else is FVTPL.',
+      },
+      {
+        heading: 'Measure expected credit losses',
+        body: 'For amortised cost and FVOCI debt, recognise 12-month ECL at Stage 1. Move to lifetime ECL at Stage 2 on a significant increase in credit risk, and Stage 3 when credit-impaired.',
+      },
+    ],
+    workedExample: {
+      title: 'Classifying four instruments',
+      setup: 'An entity that is not an investment entity holds four instruments. Classify each.',
+      rows: [
+        { label: 'Senior loan, held to collect, plain interest', value: 'Amortised cost' },
+        { label: 'Bond, held to collect and sell, SPPI passes', value: 'FVOCI' },
+        { label: 'Convertible note (conversion feature fails SPPI)', value: 'FVTPL' },
+        { label: 'Listed equity (not debt, fails SPPI)', value: 'FVTPL' },
+      ],
+      takeaway:
+        'Classification follows the tests, not the asset label. The same bond could be amortised cost or FVOCI depending on the business model.',
+    },
+    mistakes: [
+      'Skipping the investment-entity assessment and assuming amortised cost applies to a fund.',
+      'Treating a convertible or leveraged-return feature as plain interest.',
+      'Applying ECL at the wrong stage, or not tracking significant increases in credit risk.',
+      'Changing classification without a genuine change in business model.',
+    ],
+    singaporeNote:
+      'SFRS(I) is Singapore\'s IFRS-identical framework, and VCC financial statements may be prepared under IFRS, SFRS(I) or US GAAP. Private credit funds and debt-holding SPVs in Singapore are where amortised cost and ECL most often apply, so they need effective-interest accounting and staged ECL in the ledger.',
+    faqs: [
+      {
+        q: 'Is SFRS(I) 9 different from IFRS 9?',
+        a: 'No. SFRS(I) is Singapore\'s IFRS-identical financial reporting framework, so SFRS(I) 9 mirrors IFRS 9.',
+      },
+      {
+        q: 'What is the SPPI test?',
+        a: 'The solely payments of principal and interest test checks whether an instrument\'s contractual cash flows are only principal and interest on the principal outstanding. If not, it is measured at FVTPL.',
+      },
+      {
+        q: 'What are the three ECL stages?',
+        a: 'Stage 1 recognises 12-month expected credit losses. Stage 2 recognises lifetime losses after a significant increase in credit risk. Stage 3 applies to credit-impaired assets.',
+      },
+      {
+        q: 'Do investment funds use amortised cost?',
+        a: 'Funds that qualify as investment entities measure investments at FVTPL. Amortised cost mostly applies to entities that are not investment entities.',
+      },
+    ],
+    relatedTerms: ['fair-value-hierarchy', 'nav'],
+    relatedTools: ['/tools/bond-je-generator', '/tools/fx-revaluation-je'],
+    relatedPosts: [
+      { slug: 'ifrs-9-sfrs-i-9-fund-accounting', title: 'IFRS 9 / SFRS(I) 9 for Funds' },
+    ],
+    relatedSolution: 'private-credit',
+    authorities: ['your auditor', 'the Accounting Standards Council (ASC) Singapore', 'the IFRS Foundation'],
+    sources: [
+      { label: 'IFRS 9 Financial Instruments (IFRS Foundation)', url: 'https://www.ifrs.org/issued-standards/list-of-standards/ifrs-9-financial-instruments/' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'management-fee',
+    topic: 'fund-economics',
+    term: 'Management Fee',
+    shortName: 'Management fee',
+    title: 'What is a Management Fee? How PE & VC Fund Fees Are Calculated',
+    description:
+      'A management fee is the annual fee a fund pays its manager, typically around 2% of commitments, stepping down after the investment period. Worked example included.',
+    directAnswer:
+      'A management fee is the annual fee a fund pays its manager to cover operating costs, regardless of performance. In private equity and venture capital it is commonly around 2% a year, charged on committed capital during the investment period and on invested capital afterwards, and it is funded through capital calls.',
+    keyFacts: [
+      { label: 'Typical rate', value: 'About 1.5%–2.5% a year (negotiated per fund)' },
+      { label: 'Investment period basis', value: 'Committed capital' },
+      { label: 'Post-investment-period basis', value: 'Invested capital or NAV, often at a lower rate' },
+      { label: 'Paid', value: 'Quarterly or semi-annually, usually in advance' },
+      { label: 'Funded by', value: 'Capital calls on LPs' },
+      { label: 'Defined in', value: 'The limited partnership agreement' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Fee basis is set',
+        body: 'The LPA sets the rate and the basis. During the investment period (commonly the first five years) the basis is committed capital.',
+      },
+      {
+        heading: 'Basis steps down',
+        body: 'After the investment period, the fee is typically charged on invested capital, or net invested capital after realisations, sometimes at a reduced rate.',
+      },
+      {
+        heading: 'Fee is called and paid',
+        body: 'The fee is included in capital calls and paid to the manager each period, normally in advance.',
+      },
+      {
+        heading: 'Offsets are applied',
+        body: 'Where the LPA provides, transaction, monitoring or director fees received by the manager are offset against the management fee.',
+      },
+    ],
+    workedExample: {
+      title: '$100M fund, 2% fee, 10-year life',
+      setup: 'Years 1–5 are charged on $100M of commitments. Years 6–10 are charged on $60M of invested capital (held constant for simplicity).',
+      rows: [
+        { label: 'Years 1–5: 2% × $100M = $2.0M a year', value: '$10.0M' },
+        { label: 'Years 6–10: 2% × $60M = $1.2M a year', value: '$6.0M' },
+        { label: 'Total management fees over the fund\'s life', value: '$16.0M' },
+        { label: 'Capital left to invest ($100M − $16.0M)', value: '$84.0M' },
+      ],
+      takeaway:
+        'About 16% of commitments goes to fees over the fund\'s life, so only about $84M is available to invest. This fee drag is why gross and net returns differ.',
+    },
+    mistakes: [
+      'Charging the post-investment-period fee on commitments instead of the stepped-down basis.',
+      'Not applying fee offsets in the calculation.',
+      'Pro-rating partial periods and late-closing LPs inconsistently, including catch-up fees for later closings.',
+      'Ignoring fees when comparing gross and net returns.',
+    ],
+    singaporeNote:
+      'Fee terms are commercial and set in the fund documents. For VCCs, calculate and book fees at sub-fund level, and check how the fee interacts with any tax incentive conditions you rely on.',
+    faqs: [
+      {
+        q: 'What is a typical management fee?',
+        a: 'Around 2% a year is common for private equity and venture funds, with larger funds often lower and smaller or newer funds sometimes higher.',
+      },
+      {
+        q: 'Is the management fee charged on committed or invested capital?',
+        a: 'Commonly on committed capital during the investment period and on invested capital afterwards, but the LPA decides.',
+      },
+      {
+        q: 'What is the difference between management fee and carried interest?',
+        a: 'The management fee is paid regardless of performance. Carried interest is paid only out of profits, after LPs have been repaid.',
+      },
+    ],
+    relatedTerms: ['carried-interest', 'capital-call'],
+    relatedTools: ['/tools/fee-carry-modeler'],
+    relatedPosts: [],
+    relatedSolution: 'vc-pe-firms',
+    authorities: ['your fund documents (LPA)', 'MAS and IRAS (for incentive conditions)', 'legal counsel'],
+    sources: [
+      { label: 'ILPA Principles 3.0', url: 'https://ilpa.org/ilpa-principles/' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'side-letter',
+    topic: 'fund-operations',
+    term: 'Side Letter',
+    shortName: 'Side letter',
+    title: 'What is a Side Letter? LP Side Letters and MFN Clauses Explained',
+    description:
+      'A side letter is a separate agreement giving an LP terms beyond the fund\'s LPA, such as fee discounts or co-invest rights. How MFN clauses work, with an example.',
+    directAnswer:
+      'A side letter is a separate agreement between a fund and an individual limited partner that grants that investor rights or terms beyond the limited partnership agreement, such as fee discounts, co-investment rights, extra reporting or excuse rights. Most LPs of meaningful size also negotiate a most-favoured-nation (MFN) clause.',
+    keyFacts: [
+      { label: 'Parties', value: 'The fund (and usually the GP) and one LP' },
+      { label: 'Common terms', value: 'Fee discounts, co-invest rights, reporting and information rights, excuse rights, regulatory carve-outs' },
+      { label: 'MFN clause', value: 'Lets an LP elect terms granted to other LPs, usually within a commitment-size tier' },
+      { label: 'Governs', value: 'Only the LP that signed it, but it binds the fund and so affects the administrator\'s process' },
+      { label: 'Timing', value: 'Usually negotiated before the LP is admitted' },
+    ],
+    howItWorks: [
+      {
+        heading: 'LP negotiates its terms',
+        body: 'Large or regulated investors ask for terms their own policies require, such as specific reporting or regulatory carve-outs.',
+      },
+      {
+        heading: 'The GP agrees and documents',
+        body: 'Agreed terms are written into a side letter signed by the fund and the LP, supplementing the LPA for that investor.',
+      },
+      {
+        heading: 'MFN elections follow',
+        body: 'After the final closing, the GP circulates the side letters, and LPs with MFN rights may elect eligible terms granted to others.',
+      },
+      {
+        heading: 'Obligations are tracked',
+        body: 'Each term, such as a reduced fee or a special report, becomes an operational obligation the administrator must apply to that LP.',
+      },
+    ],
+    workedExample: {
+      title: 'MFN tiers',
+      setup: 'LP B ($30M) negotiates a fee discount. MFN rights allow an LP to elect terms granted to LPs with equal or smaller commitments.',
+      rows: [
+        { label: 'LP A ($75M): holds MFN, can elect B\'s discount?', value: 'Yes ($30M is smaller)' },
+        { label: 'LP C ($40M): holds MFN, can elect B\'s discount?', value: 'Yes ($30M is smaller)' },
+        { label: 'LP D ($20M): holds MFN, can elect B\'s discount?', value: 'No ($30M is larger)' },
+      ],
+      takeaway:
+        'The tiering protects bigger investors from being treated worse than smaller ones, while smaller LPs cannot claim terms won by larger ones.',
+    },
+    mistakes: [
+      'Granting a term to one LP without checking the MFN rights of others.',
+      'Failing to carry side-letter terms into the administrator\'s fee and reporting rules.',
+      'Inconsistent disclosure of side letters to other LPs.',
+      'Letting side-letter terms conflict with the LPA without a clear order of precedence.',
+    ],
+    singaporeNote:
+      'In a VCC, different sub-funds can have different investors and side-letter terms, so obligations must be tracked at investor and sub-fund level. Terms linked to regulatory carve-outs or tax incentive conditions should be reviewed with counsel.',
+    faqs: [
+      {
+        q: 'What is an MFN clause?',
+        a: 'A most-favoured-nation clause lets an LP elect to receive terms granted to other LPs, usually only those with equal or smaller commitments.',
+      },
+      {
+        q: 'Are side letters disclosed to other LPs?',
+        a: 'Practice varies. MFN mechanics typically require the GP to share the relevant terms after closing, and industry guidance encourages transparency.',
+      },
+      {
+        q: 'Does a side letter override the LPA?',
+        a: 'Only as stated in the side letter and the LPA. The documents should set a clear order of precedence.',
+      },
+    ],
+    relatedTerms: ['management-fee', 'fund-administrator'],
+    relatedTools: ['/tools/fee-carry-modeler'],
+    relatedPosts: [],
+    relatedSolution: 'vc-pe-firms',
+    authorities: ['your fund documents (LPA)', 'legal counsel'],
+    sources: [
+      { label: 'ILPA Principles 3.0', url: 'https://ilpa.org/ilpa-principles/' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-02',
+    lastReviewed: '2026-10-02',
+  },
+  {
+    slug: 'irr-vs-moic',
+    topic: 'lp-reporting',
+    term: 'IRR vs MOIC',
+    shortName: 'IRR vs MOIC',
+    title: 'IRR vs MOIC: What\'s the Difference in PE & VC Returns?',
+    description:
+      'MOIC is how many times you got your money back; IRR is the annualised return that accounts for timing. How to calculate each, with an example showing why both matter.',
+    directAnswer:
+      'MOIC, the multiple on invested capital, is total value divided by capital invested, showing how many times money was returned. IRR, the internal rate of return, is the annualised return that accounts for when cash flows occurred. Two investments with the same MOIC can have very different IRRs if one took longer.',
+    keyFacts: [
+      { label: 'MOIC', value: 'Total value ÷ invested capital' },
+      { label: 'IRR', value: 'Discount rate at which the net present value of all cash flows is zero' },
+      { label: 'Timing', value: 'MOIC ignores timing; IRR is driven by it' },
+      { label: 'Basis', value: 'MOIC is often gross (deal level); fund-level TVPI is net to LPs' },
+      { label: 'Weakness of IRR', value: 'Can be inflated by early distributions or subscription-line financing' },
+      { label: 'Weakness of MOIC', value: 'Says nothing about how long it took' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Calculate MOIC',
+        body: 'Add up all value received (realised plus unrealised) and divide by total capital invested.',
+      },
+      {
+        heading: 'Calculate IRR',
+        body: 'List every cash flow with its date, then find the annual rate that makes their present value net to zero. Spreadsheets use XIRR for dated flows.',
+      },
+      {
+        heading: 'Read them together',
+        body: 'MOIC shows the size of the outcome, IRR shows the speed. A good result usually needs both to be strong.',
+      },
+    ],
+    workedExample: {
+      title: 'Same 2.0x, different speed',
+      setup: 'Two investments each put in $10M and return $20M in one lump sum. One returns the cash after 3 years, the other after 7. IRR below uses the single-cash-flow formula (MOIC^(1/years) − 1).',
+      rows: [
+        { label: 'Investment A: MOIC', value: '2.0x' },
+        { label: 'Investment A: IRR over 3 years', value: '26.0%' },
+        { label: 'Investment B: MOIC', value: '2.0x' },
+        { label: 'Investment B: IRR over 7 years', value: '10.4%' },
+      ],
+      takeaway:
+        'Both doubled the money, but A\'s annualised return is more than double B\'s. MOIC alone would hide that.',
+    },
+    mistakes: [
+      'Comparing a gross deal MOIC with a net fund TVPI.',
+      'Reporting IRR without the MOIC, or the reverse.',
+      'Ignoring that subscription credit lines can lift IRR by delaying capital calls.',
+      'Comparing IRRs of funds with very different holding periods.',
+    ],
+    singaporeNote:
+      'There is no Singapore-specific definition, but IRR depends on dated cash flows, so multi-currency funds should state the currency and FX basis. For a VCC, compute returns per sub-fund, with its own investors and cash flow dates.',
+    faqs: [
+      {
+        q: 'What is a good IRR for private equity?',
+        a: 'It varies by strategy and vintage, so compare with peers of the same vintage and strategy rather than a fixed number.',
+      },
+      {
+        q: 'Is MOIC the same as TVPI?',
+        a: 'Not exactly. MOIC is usually a gross multiple, often at deal level. TVPI is net to LPs, after fees and carry, at fund level.',
+      },
+      {
+        q: 'Why can IRR and MOIC disagree?',
+        a: 'Because IRR depends on timing and MOIC does not. A quick 1.5x can beat a slow 2.0x on IRR.',
+      },
+    ],
+    relatedTerms: ['tvpi-dpi-rvpi', 'carried-interest'],
+    relatedTools: ['/tools/irr-tvpi-dpi-calculator', '/tools/vintage-benchmarker'],
+    relatedPosts: [],
+    relatedSolution: 'vc-pe-firms',
+    authorities: ['your fund documents', 'the ILPA reporting guidance'],
+    sources: [
+      { label: 'ILPA Reporting Template', url: 'https://ilpa.org' },
     ],
     author: AUTHOR,
     publishedDate: '2026-10-02',

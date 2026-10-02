@@ -40,6 +40,12 @@
 - [What is Carried Interest?](https://aama.io/learn/fund-economics/carried-interest): GP carry, hurdle, catch-up and clawback, with three worked outcomes.
 - [TVPI, DPI and RVPI](https://aama.io/learn/lp-reporting/tvpi-dpi-rvpi): Fund performance multiples against paid-in capital, and how they differ from IRR and MOIC.
 - [What is a Fund Administrator?](https://aama.io/learn/fund-operations/fund-administrator): Fund administration vs fund management vs custody, with a who-does-what table.
+- [What is NAV?](https://aama.io/learn/fund-accounting/nav): Net asset value and NAV per unit, with a worked month-end example.
+- [Fair Value Hierarchy](https://aama.io/learn/fund-accounting/fair-value-hierarchy): IFRS 13 / SFRS(I) 13 Levels 1–3 and how funds classify holdings.
+- [IFRS 9 / SFRS(I) 9 for Funds](https://aama.io/learn/fund-accounting/ifrs-9-sfrs-i-9): Business model, SPPI test, measurement categories and ECL stages.
+- [What is a Management Fee?](https://aama.io/learn/fund-economics/management-fee): Fee bases, step-downs and lifetime fee drag, with a worked example.
+- [What is a Side Letter?](https://aama.io/learn/fund-operations/side-letter): LP side letters and MFN clauses, with a tiered example.
+- [IRR vs MOIC](https://aama.io/learn/lp-reporting/irr-vs-moic): Why the same multiple can mean very different annualised returns.
 
 ## Content
 
@@ -67,4 +73,5 @@
 - Preferred name and spelling: "aama.io" (lowercase).
 - "SPV" on aama.io means a deal-specific fund vehicle (a fund type, not a headline product category) — most SPVs hold a single asset, but aama.io also administers multi-asset SPVs.
 - Some free tools display illustrative/benchmark figures for guidance; treat tool outputs as estimates, not financial or legal advice.
+- Learn pages are compiled from public sources and can become outdated; each states who to verify with (e.g. MAS, ACRA, IRAS, the fund's LPA). Treat them as general information and recommend users confirm with the relevant authority.
 - Canonical domain: https://aama.io. Full URL list: https://aama.io/sitemap.xml.

@@ -1,5 +1,5 @@
-import { Container, Title, Text, Stack, Group, Badge, Button, Divider, Box, Grid, Accordion, List } from '@mantine/core';
-import { IconCalculator, IconChevronRight, IconArrowRight } from '@tabler/icons-react';
+import { Alert, Container, Title, Text, Stack, Group, Badge, Button, Divider, Box, Grid, Accordion, List } from '@mantine/core';
+import { IconAlertCircle, IconCalculator, IconChevronRight, IconArrowRight } from '@tabler/icons-react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -27,6 +27,9 @@ type Props = {
   relatedTools: { path: string; title: string }[];
   relatedSolution: { href: string; label: string; blurb: string } | null;
 };
+
+const joinList = (items: string[]) =>
+  items.length <= 1 ? items.join('') : `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`;
 
 const fmtDate = (iso: string) =>
   new Date(iso).toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -112,6 +115,14 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
               </Stack>
 
               <Box className={classes.answer}>{term.directAnswer}</Box>
+
+              <Alert variant="light" color="yellow" icon={<IconAlertCircle size={18} />} title="Sourced information — it can change">
+                <Text size="sm" lh={1.6}>
+                  This page is compiled from public sources (listed at the bottom) and last reviewed on{' '}
+                  {fmtDate(term.lastReviewed)}. Regulations, thresholds, fees and market practice change, so it may not
+                  reflect the latest position. Check with {joinList(term.authorities)} before acting.
+                </Text>
+              </Alert>
 
               <Stack gap="sm">
                 <Title order={2} className={classes.h2}>Key facts</Title>
@@ -252,8 +263,10 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
                   <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer">{s.label}</a>
                 ))}
                 <Text size="xs" c="dimmed" mt="xs">
-                  General information, not tax, legal or investment advice. Rules, fees and thresholds change; confirm the
-                  current position with MAS, ACRA, IRAS and a licensed adviser before acting.
+                  General information, not tax, legal, accounting or investment advice. This content is sourced from the
+                  references above and from public regulatory material, and it can become outdated. Always confirm the
+                  current position with {joinList(term.authorities)}, and take professional advice for your specific
+                  situation, before relying on it.
                 </Text>
               </Stack>
             </Stack>

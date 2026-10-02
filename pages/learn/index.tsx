@@ -52,6 +52,12 @@ export default function LearnHub({ topics, glossary }: Props) {
                 </Text>
               </Stack>
 
+              <Text size="sm" c="dimmed">
+                These explainers are compiled from public sources and can become outdated as rules, thresholds and
+                market practice change. Each page lists its sources and who to check with. They are general information,
+                not legal, tax, accounting or investment advice.
+              </Text>
+
               {topics.map((topic) => (
                 <Stack gap="md" key={topic.slug}>
                   <div>

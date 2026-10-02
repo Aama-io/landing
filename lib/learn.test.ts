@@ -18,6 +18,8 @@ describe('Learn terms', () => {
     expect(words).toBeLessThanOrEqual(60);
     expect(t.description.length).toBeLessThanOrEqual(175);
     expect(t.faqs.length).toBeGreaterThanOrEqual(3);
+    expect(t.authorities.length).toBeGreaterThan(0);
+    expect(t.sources.length).toBeGreaterThan(0);
     t.relatedTerms.forEach((r) => expect(LEARN_TERMS.map((x) => x.slug)).toContain(r));
     t.relatedTools.forEach((p) => expect(TOOL_CONTENT[p]).toBeDefined());
     t.relatedPosts.forEach((p) => expect(blogPosts.map((b) => b.slug)).toContain(p.slug));
