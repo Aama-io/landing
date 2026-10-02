@@ -3,6 +3,7 @@ import { ALL_TOOLS, PERSONAS } from '@/lib/tools';
 import { PLATFORMS } from '@/lib/platforms';
 import { SOLUTIONS } from '@/lib/solutions';
 import { blogPosts } from '@/lib/blogPosts';
+import { LEARN_TERMS, learnHref, populatedTopics } from '@/lib/learn';
 
 const SITE = 'https://aama.io';
 
@@ -15,6 +16,7 @@ const STATIC: { loc: string; priority: string }[] = [
   { loc: '/about', priority: '0.7' },
   { loc: '/contact', priority: '0.7' },
   { loc: '/blog', priority: '0.7' },
+  { loc: '/learn', priority: '0.8' },
   { loc: '/faq', priority: '0.6' },
   { loc: '/compliance', priority: '0.5' },
   { loc: '/privacy', priority: '0.4' },
@@ -35,6 +37,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     tag('/tools', '0.9', 'weekly', today),
     ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly', today)),
     ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly', today)),
+    ...populatedTopics().map((t) => tag(`/learn/${t.slug}`, '0.7', 'monthly', today)),
+    ...LEARN_TERMS.map((t) => tag(learnHref(t), '0.8', 'monthly', t.lastReviewed)),
     ...blogPosts.map((post) => tag(`/blog/${post.slug}`, '0.6', 'monthly', post.publishedDate)),
   ].join('');
 
