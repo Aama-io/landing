@@ -1907,6 +1907,200 @@ As we continue through 2025, the gap between firms using modern technology and t
     readTime: '8 min',
     categories: ['SPVs', 'Fund Administration', 'Compliance']
   },
+  {
+  id: '30',
+  title: 'Don\'t Start With an AI Agent for Your Fund Administration Software',
+  slug: 'dont-start-with-an-ai-agent-for-your-fund-administration-software',
+  excerpt: 'A fund administration platform is a system of record. It holds NAVs, investor registers, capital accounts, and the books that investors and auditors rely on. If an AI gives a bad suggestion in a CRM, someone fixes it on Monday. If it posts a wrong $500,000 entry to a fund\'s ledger, you have a very different kind of Monday.',
+  content: `
+  <p>A fund administration platform isn’t just another app — it’s a firm’s source of truth. It holds NAVs, investor registers, capital accounts, and every book investors and auditors trust. If AI recommends bad pipeline steps in a CRM, you fix it next Monday. If AI posts a $500,000 mistake into your fund ledger, “fixing it on Monday” could mean explaining it to a regulator or auditor.</p>
+  <p>So, before asking, “how do we add an agent?”, the real question is: <strong>where should AI decide, and where should it only suggest?</strong></p>
+  
+  <h3>Three Paths for AI in Your Tech Stack</h3>
+  <ul>
+    <li>
+      <strong>Traditional software:</strong> All workflow is coded. It’s dependable and transparent, but can’t cope with messy, unstructured data.
+    </li>
+    <li>
+      <strong>Software + LLM:</strong> Workflow is coded; specific ambiguous steps use AI, e.g. extracting figures from a messy invoice. AI gives back structured, reviewable results; code still calls the shots.
+    </li>
+    <li>
+      <strong>Agentic software:</strong> AI gets a goal (“reconcile September”), and chooses its own steps, using your system's tools.
+    </li>
+  </ul>
+  <p><em>Easy rule of thumb: In scenario 2, AI is a helper function. In scenario 3, AI becomes the orchestrator.</em></p>
+  
+  <h3>Where AI Belongs: Ambiguity &amp; Judgement, Not the Ledger</h3>
+  <p><strong>AI should handle:</strong> scanning messy emails, classifying documents, matching ambiguous records, surfacing exceptions, and giving explanations for what doesn’t fit the pattern.</p>
+  <p><strong>Code should handle:</strong> double-entry postings, NAV and unit valuation, complex fee/tax rules, accounting logic, permissions, and all posting and audit-trail controls.</p>
+  
+  <h4>An Example: Explaining a 18-cent Difference</h4>
+  <p>Suppose your bank shows $438.00 from PayPal, but your books show $437.82. A rules engine flags this and waits. An LLM might check past PayPal reconciliations and reply, “0.18 is probably a processing fee.” The accounting engine, not AI, builds the entry:</p>
+  <pre>
+Dr PayPal expense $437.82
+Dr Bank charges $0.18
+Cr Bank $438.00
+  </pre>
+  <p>The model didn’t construct the accounting — it interpreted ambiguity. The ledger rules did the rest.</p>
+
+  <h3>“Never Hand the Agent Your Database”</h3>
+  <p>Give AI safe, limited tools: <code>getInvoice()</code>, <code>searchTransactions()</code>, <code>proposeJournalVoucher()</code>, <code>validateJournalVoucher()</code>. Every action must flow through an API and a validation layer. The agent can suggest — but not directly write.</p>
+  
+  <h3>Calibrate Autonomy by Confidence</h3>
+  <p>A small SaaS invoice with 95% model confidence? Maybe OK for auto-processing. A $100,000 suspicious transfer at 68%? That needs a human. Maximum autonomy isn’t the goal — <strong>maximum reliable automation, with controls, is.</strong></p>
+  <p>And always remember: A model's self-reported confidence isn’t probability. Calibrate it against your history before letting it trigger anything!</p>
+  
+  <h3>What Can Go Wrong?</h3>
+  <ul>
+    <li><strong>Prompt injection:</strong> File uploads can hide attack instructions.</li>
+    <li><strong>Reproducibility:</strong> Auditors will want to know why a decision got made. <em>Log inputs, outputs, model version, approver, everything.</em></li>
+    <li><strong>Data privacy:</strong> Don’t let sensitive investor data out of your secure stack without review.</li>
+    <li><strong>Model drift:</strong> AI models change. Re-test or monitor after each upgrade.</li>
+  </ul>
+
+  <h3>When Should You Use Agents?</h3>
+  <p>Agents shine in the “long tail” — rare exceptions, logic that jumps between systems, odd edge cases a fixed pipeline can’t anticipate. But don’t try to bolt on agents before you have focused AI features working and trusted:</p>
+  <ul>
+    <li>Extracting clean data from complex documents</li>
+    <li>Suggesting the correct GL account</li>
+    <li>Proposing journal vouchers, complete with audit trails</li>
+    <li>Matching payees across banks/custodians</li>
+    <li>Generating explanations for exceptions</li>
+  </ul>
+  <p>Once those are validated, they become tools for agents. You haven’t “replaced” your platform, but composed it into something extensible and safe.</p>
+  
+  <h4>Practical Impact: Transparency, Not Black Boxes</h4>
+  <p>At aama.io, we want platforms to deliver real transparency. Imagine: “Process this month's custodian statement and show me issues.” The system reviews 1,284 transactions, clears 1,271 automatically, flags 9 for manual review, notes 4 with discrepancies, 2 with detected corporate actions — and gives you the facts, not just an answer to trust on faith.</p>
+  
+  <h3>The Agent Isn’t Your Product — Your Workflow Is</h3>
+  <p>Anyone can demo an agent that strings together five APIs. The true product is the audit trails, accounting logic, domain rules, and validation behind it — the “rails” that keep funds safe and processes explainable. The agent is just a smart interface on top.</p>
+  
+  <p>We don’t think the future is “everything becomes an agent.” The future is “everything becomes AI-accessible, but *not* everything is AI-controlled.”</p>
+  
+  <p>The real question isn’t “how do we make agents more autonomous?” It’s “where should autonomy responsibly stop?”</p>
+  
+  <p><strong>This is how we think about AI at aama.io: <em>AI weaves around a deterministic core, with the ledger as the source of truth, and transparency for LPs always at the center.</em></strong></p>
+  <p><strong>Want to see where the platform is headed on your own structure? <a href="/solutions/spv-syndicates">Explore aama.io's SPV administration</a>, or <a href="/contact">talk to our team</a>.</strong></p>
+  `,
+  faqs: [
+    { q: 'Should I start with an AI agent for my fund administration software?', a: 'No. A fund administration platform is a system of record. It holds NAVs, investor registers, capital accounts, and the books that investors and auditors rely on. If an AI gives a bad suggestion in a CRM, someone fixes it on Monday. If it posts a wrong $500,000 entry to a fund\'s ledger, you have a very different kind of Monday.' },  
+    { q: 'What is a fund administration platform?', a: 'A fund administration platform is a platform that handles investor onboarding, KYC, capital calls, accounting, reporting and distributions for special purpose vehicles in one place.' },
+    { q: 'What is a system of record?', a: 'A system of record is a system that holds the books that investors and auditors rely on. It is the source of truth for the fund administration platform.' },
+    { q: 'What is a ledger?', a: 'A ledger is a system that holds the books that investors and auditors rely on. It is the source of truth for the fund administration platform.' },
+    { q: 'What is a book?', a: 'A book is a system that holds the books that investors and auditors rely on. It is the source of truth for the fund administration platform.' },
+    { q: 'What is a CRM?', a: 'A CRM is a system that holds the customer relationship management for the fund administration platform.' },
+  ],
+  author: 'Sunil Chaulagain',
+  authorRole: 'Chief Executive Officer',
+  authorImage: '/team/sunil.png',
+  coverImage: '/images/fund-detail.png',
+  publishedDate: '2026-10-03',
+  readTime: '5 min',
+  categories: ['SPVs', 'Fund Administration', 'Operations']
+  },
+  {
+    id: '31',
+    title: 'How Fund Administrators Should Run VCC Accounting (Umbrella, Sub-Funds and the Books)',
+    slug: 'vcc-accounting-for-fund-administrators',
+    excerpt: 'Fund admins evaluating Singapore VCCs usually ask the same thing: how does the accounting treat the umbrella versus each sub-fund? Here is how aama.io models the hierarchy, keeps ledgers separate, consolidates for the GP, and avoids the spreadsheet traps that break ring-fencing.',
+    content: `
+      <p>When a fund administrator looks at a Singapore <a href="/blog/how-to-set-up-a-vcc-singapore">Variable Capital Company (VCC)</a>, they are rarely asking for another incorporation checklist. They already know the legal shape: one umbrella, several sub-funds, assets and liabilities ring-fenced. What they need to know is whether the <strong>books</strong> match that promise — every day, not only at audit.</p>
+
+      <p>That is the question we get from administrators and outsourced CFOs evaluating aama.io: <em>how do you handle VCC in accounting?</em> This is the operational answer — what the platform enforces, what sits on the umbrella versus the sub-fund, and how reporting works without turning the umbrella into a second set of conflicting books.</p>
+
+      <h3>The hierarchy the books actually need</h3>
+
+      <p>On aama.io a VCC is not a separate product module. It is a fund hierarchy with hard rules:</p>
+
+      <ul>
+        <li><strong>Legal structure = VCC</strong> identifies the vehicle as a VCC (umbrella or sub-fund).</li>
+        <li><strong>Umbrella flag</strong> is allowed only on VCC funds — you cannot mark an LP or LLC as an umbrella and pretend it is the same thing.</li>
+        <li><strong>Parent link</strong> attaches a sub-fund to a VCC umbrella only. An umbrella cannot also have a parent (no multi-level nesting).</li>
+        <li>When a sub-fund is attached, it <strong>inherits VCC</strong> as its legal structure so the hierarchy cannot drift into mixed vehicle types.</li>
+      </ul>
+
+      <p>Those rules live in both the fund portal and the accounting layer, so a structure that was set up correctly in onboarding stays correct when someone opens the books.</p>
+
+      <h3>Where the ledger lives: sub-fund first</h3>
+
+      <p>For day-to-day fund administration, the working assumption is simple:</p>
+
+      <ul>
+        <li><strong>Sub-funds</strong> hold investors, capital calls, NAV, fees and most of the general ledger activity.</li>
+        <li>The <strong>umbrella</strong> is the legal shell and the parent in the hierarchy — not a dumping ground for untagged journals.</li>
+        <li>Each fund (umbrella or sub-fund) has its own books. Reporting for a sub-fund does not silently pull sibling balances.</li>
+      </ul>
+
+      <p>That matches how administrators already think about ring-fencing. Soft “tags” on a shared ledger are how segregation fails quietly; separate fund books with an explicit parent relationship are how it holds up when an auditor asks for a trial balance per sub-fund. We go deeper on that failure mode in <a href="/blog/vcc-sub-fund-segregation-13o-13u-renewal-pack">VCC sub-fund segregation and the renewal pack</a>.</p>
+
+      <h3>What “umbrella consolidation” means in the platform</h3>
+
+      <p>GPs still want a single view across strategies. aama.io’s <strong>umbrella consolidated BS / P&amp;L</strong> is built for that: pick an approved VCC umbrella and an as-at date, and the system rolls up ledger balances from each active sub-fund into a pack the administrator can review.</p>
+
+      <p>Three details matter for fund admins:</p>
+
+      <ol>
+        <li><strong>VCC-only.</strong> Consolidation is available for VCC umbrellas, not for any fund that someone casually flagged as “parent.”</li>
+        <li><strong>Sub-fund columns.</strong> The pack keeps sub-fund identity visible — you can see which child contributed which balances, not only a blended total.</li>
+        <li><strong>Roll-up, not legal consolidation with eliminations.</strong> The view sums sub-fund ledgers for management and oversight. It is labelled and used as a consolidated reporting pack, not a substitute for statutory accounts prepared under your engagement letter and applicable standards.</li>
+      </ol>
+
+      <p>If a sub-fund has no financial year covering the as-at date, that child is skipped with a warning rather than inventing balances — so month-end does not hide incomplete books behind a clean total.</p>
+
+      <h3>Firm-level AUM and MAS-facing numbers</h3>
+
+      <p>When firm AUM is assembled for MAS-style reporting (for example QDC Basic packs), <strong>umbrella NAV is not double-counted with its sub-funds</strong>. The platform treats the umbrella shell differently from the sub-funds that hold the economic NAV — which is what administrators expect when one VCC houses several strategies.</p>
+
+      <p>That does not replace your MAS filing judgement or a licensed adviser’s sign-off. It does stop the most common spreadsheet error: adding umbrella and sub-fund NAVs and overstating AUM.</p>
+
+      <h3>How a typical admin workflow looks</h3>
+
+      <ol>
+        <li><strong>Set up the umbrella</strong> as VCC with the umbrella flag in fund setup (synced into accounting).</li>
+        <li><strong>Open each sub-fund</strong> under that parent — strategy, currency and investors per child.</li>
+        <li><strong>Book and close on the sub-fund</strong> — journals, NAV, investor activity stay on the child ledger.</li>
+        <li><strong>Produce umbrella packs</strong> when the GP or IC wants a cross-strategy view.</li>
+        <li><strong>Export per sub-fund</strong> for auditors, banks and tax advisers who need ring-fenced statements.</li>
+      </ol>
+
+      <h3>What this is not</h3>
+
+      <p>aama.io does not incorporate the VCC, appoint your directors, or replace ACRA/MAS filings. Structure choice, grant schemes and tax incentives (13O/13U) are covered in our setup guides — start with <a href="/blog/how-to-set-up-a-vcc-singapore">How to set up a VCC in Singapore</a> and <a href="/blog/section-13o-vs-13u-singapore">Section 13O vs 13U</a>. The accounting layer’s job is narrower and harder: keep the hierarchy honest after the lawyers have gone home.</p>
+
+      <p><em>This article is general product and operational information, not accounting, tax or regulatory advice. Confirm statutory reporting, consolidation policy and MAS submissions with your licensed advisers.</em></p>
+
+      <p><strong>Evaluating aama.io for a VCC book of business? <a href="/contact">Book a walkthrough with our team</a> — bring one umbrella and two sub-funds and we will show the ledgers, the consolidated pack and how AUM aggregation behaves on your structure. For the legal setup path, use the <a href="/tools/vcc-comparator">umbrella vs standalone comparator</a> and <a href="/tools/vcc-cost-estimator">VCC cost estimator</a>.</strong></p>
+    `,
+    faqs: [
+      {
+        q: 'Can only a VCC be an umbrella fund on aama.io?',
+        a: 'Yes. The platform only allows the umbrella flag on funds with legal structure VCC. Parent funds for sub-funds must also be VCC umbrellas.',
+      },
+      {
+        q: 'Where should investors and capital calls sit — umbrella or sub-fund?',
+        a: 'Typically on each sub-fund. The umbrella is the legal shell; day-to-day investor, capital call and NAV activity is booked per sub-fund ledger.',
+      },
+      {
+        q: 'Is umbrella consolidated reporting a full statutory consolidation?',
+        a: 'No. It is a management roll-up of sub-fund ledger balances for an approved VCC umbrella as at a date, with sub-fund columns visible. Statutory consolidation and eliminations remain an adviser and engagement decision.',
+      },
+      {
+        q: 'How does aama.io avoid double-counting VCC AUM?',
+        a: 'For firm-level packs such as MAS QDC Basic style AUM, umbrella NAV is not counted together with its sub-funds’ NAV, so the shell and the strategies are not added twice.',
+      },
+      {
+        q: 'Does aama.io replace my fund administrator licence or MAS filings?',
+        a: 'No. It is the operating and accounting system. Licensing, ACRA incorporation and MAS submissions still sit with the regulated manager, administrator and advisers.',
+      },
+    ],
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/fund-detail.png',
+    publishedDate: '2026-10-03',
+    readTime: '8 min',
+    categories: ['VCC', 'Fund Administration', 'Fund Accounting']
+  }
 ];
 
 // Listing payload — omits the heavy `content` field to keep responses small.

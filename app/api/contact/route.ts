@@ -160,7 +160,7 @@ export async function POST(request: Request) {
 
     // 3) Add a timeline note with the full message (non-fatal if it fails).
     try {
-      const noteBody = `<strong>New website enquiry: ${inquiryType}</strong><br/>${String(message).replace(
+      const noteBody = `<strong>New website enquiry on aama.io from ${name}: ${inquiryType}</strong><br/>${String(message).replace(
         /\n/g,
         '<br/>'
       )}`;
