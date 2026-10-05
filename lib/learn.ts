@@ -1156,9 +1156,18 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'Only as stated in the side letter and the LPA. The documents should set a clear order of precedence.',
       },
     ],
-    relatedTerms: ['management-fee', 'fund-administrator'],
-    relatedTools: ['/tools/fee-carry-modeler'],
-    relatedPosts: [],
+    relatedTerms: ['management-fee', 'fund-administrator', 'distribution-waterfall', 'carried-interest'],
+    relatedTools: ['/tools/fee-carry-modeler', '/tools/waterfall'],
+    relatedPosts: [
+      {
+        slug: 'side-letters-fund-operations-pain-points',
+        title: 'The Side Letter Was Signed Months Ago. Why Is Month-End Still Wrong?',
+      },
+      {
+        slug: 'american-vs-european-waterfall',
+        title: 'American vs European Waterfalls: How Carry Timing Changes What LPs Keep',
+      },
+    ],
     relatedSolution: 'vc-pe-firms',
     authorities: ['your fund documents (LPA)', 'legal counsel'],
     sources: [
@@ -1166,7 +1175,7 @@ export const LEARN_TERMS: LearnTerm[] = [
     ],
     author: AUTHOR,
     publishedDate: '2026-10-02',
-    lastReviewed: '2026-10-02',
+    lastReviewed: '2026-10-05',
   },
   {
     slug: 'irr-vs-moic',
@@ -1301,6 +1310,14 @@ export const BLOG_LEARN_TERMS: Record<string, string[]> = {
   'spv-administration-problems': ['capital-call', 'fund-administrator'],
   'how-to-fix-spv-administration': ['capital-call', 'fund-administrator'],
   'future-of-spv-administration': ['fund-administrator'],
+  'side-letters-fund-operations-pain-points': [
+    'side-letter',
+    'management-fee',
+    'distribution-waterfall',
+    'fund-administrator',
+  ],
+  'vcc-accounting-for-fund-administrators': ['vcc', 'nav', 'fund-administrator'],
+  'dont-start-with-an-ai-agent-for-your-fund-administration-software': ['fund-administrator'],
 };
 
 export function getLearnTermsForPost(postSlug: string): LearnTerm[] {

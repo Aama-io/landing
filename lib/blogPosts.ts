@@ -2100,6 +2100,96 @@ Cr Bank $438.00
     publishedDate: '2026-10-03',
     readTime: '8 min',
     categories: ['VCC', 'Fund Administration', 'Fund Accounting']
+  },
+  {
+    id: '32',
+    title: 'The Side Letter Was Signed Months Ago. Why Is Month-End Still Wrong?',
+    slug: 'side-letters-fund-operations-pain-points',
+    excerpt: 'Side letters rarely blow up at closing. They blow up later — when one LP’s fee discount never made it into the books, an MFN election sat in someone’s inbox, and the capital account no longer matches what was negotiated.',
+    content: `
+      <p>Nobody argues about the <a href="/learn/fund-operations/side-letter">side letter</a> the week it gets signed. Legal is done. The LP is happy. The PDF goes into the data room. Then three quarters later someone reconciles fees and realises that investor has been charged the fund default the whole time.</p>
+
+      <p>That is the usual failure mode. Not a bad lawyer. Not a dishonest GP. Just a term that never left the document and entered the fee engine.</p>
+
+      <h3>What actually ends up in a side letter</h3>
+
+      <p>Most of the time it is economics. A lower management fee. Different carry. A different hurdle. Sometimes a fee waiver for the first year. Sometimes the LP wants monthly capital accounts instead of quarterly, or the right to sit out certain deals. Larger LPs often add an MFN clause so they can pick up terms you later give to someone smaller.</p>
+
+      <p>None of that is exotic. The hard part is that only one investor has those terms, and every capital call, NAV, waterfall and statement still has to get them right — without inventing a parallel set of books for everyone else.</p>
+
+      <h3>Where it goes wrong</h3>
+
+      <p><strong>The PDF is the system of record.</strong> Legal closes. Ops files. Accounting keeps accruing at 2% because that is what the fund screen says. The capital account looks tidy until an LP asks why their fee drag does not match the side letter. By then you are explaining three quarters of history, not fixing a setting.</p>
+
+      <p><strong>MFN is treated like a one-off email.</strong> You give LP B a discount. After final closing, three other LPs elect into it. If those elections live in a thread instead of on each commitment, the next fee run is already wrong — and nobody notices until statements go out.</p>
+
+      <p><strong>Everyone gets the same share of a fund-level fee.</strong> Accruing fees at fund level is fine. Splitting that pool by commitment size alone is not, once some LPs pay 1.5% and others pay 2%. The discounted LP gets overcharged; the full-fee LP gets undercharged. Both will eventually ask questions.</p>
+
+      <p><strong>The waterfall assumes one rate for the whole room.</strong> One preview, one carry rate, one hurdle. That works until it doesn’t. If two LPs have different economics, a single fund-level waterfall will not match either capital account. You end up reconciling in a spreadsheet that nobody wants to own next quarter.</p>
+
+      <p><strong>Special reporting becomes someone’s Tuesday job.</strong> One LP wants monthly packs. Another wants look-through. Another wants something ESG-shaped. Doing it once is easy. Doing it every period from memory is how things get missed when that person is on leave.</p>
+
+      <p><strong>VCCs make the same problem quieter.</strong> On an umbrella, investors and side letters usually sit on the sub-fund. The same LP can have different terms on two strategies. If you keep one fund-wide side-letter list, the wrong rate lands on the wrong child ledger and consolidated packs will not save you.</p>
+
+      <p><strong>Then the auditor asks for the trail.</strong> Commitment, effective rate, fee line, capital account. If the honest answer is “we true it up in Excel,” you do not have a process. You have a recurring cleanup.</p>
+
+      <h3>What “handled properly” actually looks like</h3>
+
+      <p>Keep the fund defaults on the fund. Put overrides on the investor’s commitment — fee, carry, hurdle — and stamp a side-letter date when those diverge on purpose. From there, every fee run and every waterfall preview should use that investor’s rate, not a blended average.</p>
+
+      <p>If fees still sit at fund level in the ledger, allocate them the way the economics work: weighted by effective rate and commitment, not only by commitment size. Otherwise the discount you granted on paper never shows up in the statement.</p>
+
+      <p>When rates really differ across the LP base, run the waterfall per investor — same deal, their rates, their share of capital and proceeds — and post lines you can tie back to the commitment. After an MFN election, update the electing LP the same way you would if they had negotiated the term on day one. And if you are on a VCC, keep all of that on the right sub-fund.</p>
+
+      <p>Counsel still owns whether the side letter beats the LPA. Ops owns whether the numbers match what counsel closed.</p>
+
+      <h3>Where aama.io fits</h3>
+
+      <p>We built the boring part on purpose. Fee overrides live on the commitment next to the fund defaults, with a side-letter date when terms diverge. Management fee accrual can follow each commitment’s rate. European and American waterfalls can preview and provision per investor instead of forcing one blended answer. Capital account fee lines can allocate on a fee-weighted basis so a discounted LP does not eat the same drag as everyone else.</p>
+
+      <p>The investor register, the ledger and the LP portal are meant to read from the same place. For VCCs, sub-fund books stay separate so strategy-level terms do not get mashed together in an umbrella view — we wrote more on that in <a href="/blog/vcc-accounting-for-fund-administrators">how fund admins should run VCC accounting</a>.</p>
+
+      <p>We are not your lawyers and we are not pretending to be a licensed administrator. Drafting, MFN mechanics and regulatory carve-outs stay with counsel. Once the terms are agreed, the job of the software is simpler: stop the side letter from dying in a folder.</p>
+
+      <p>If you are heading into another closing and still cannot show, without a spreadsheet dig, which LPs are on which rates — that is usually the moment to fix it. Not after the first angry capital account email.</p>
+
+      <p><em>General operational notes, not legal or accounting advice. Confirm side-letter drafting, MFN elections and how your LPA ranks against them with counsel; validate fee and waterfall setup with your administrator and auditor.</em></p>
+
+      <p><strong>Want to walk through one fund with two LPs on different fees? <a href="/contact">Talk to us</a>, or start with <a href="/products/fund-accounting">fund accounting</a> and the short explainer on <a href="/learn/fund-operations/side-letter">what a side letter is</a>.</strong></p>
+    `,
+    faqs: [
+      {
+        q: 'What is a side letter in a private fund?',
+        a: 'A separate agreement between the fund (usually with the GP) and one LP that gives that investor terms beyond the LPA — often a fee discount, different carry or hurdle, extra reporting, or excuse rights.',
+      },
+      {
+        q: 'Why do side letters cause operational problems?',
+        a: 'Because the negotiated terms often stay in a PDF while fees, waterfalls and capital accounts keep using fund defaults. The mismatch shows up later as wrong fee drag, missed MFN elections, or LP statement disputes.',
+      },
+      {
+        q: 'Where should side-letter fee terms live?',
+        a: 'Fund defaults on the fund; overrides on the investor commitment. Use the commitment rate when it is set, otherwise the fund default. After an MFN election, update the electing LP’s commitment the same way.',
+      },
+      {
+        q: 'What does fee-weighted allocation mean?',
+        a: 'When fee balances sit at fund level, you allocate management fees or carry using each LP’s effective rate times their commitment — not commitment size alone — so a discounted LP does not take the same fee share as a full-fee LP.',
+      },
+      {
+        q: 'Does aama.io handle per-investor side letters?',
+        a: 'Yes. Commitments can hold management fee, performance fee and hurdle overrides; waterfalls can preview and provision per investor; and capital account fee lines can allocate on a fee-weighted basis.',
+      },
+      {
+        q: 'Anything different for a VCC?',
+        a: 'The legal idea is the same, but you should track investors and side-letter terms on the correct sub-fund so umbrella reporting does not mix strategy-level economics.',
+      },
+    ],
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/fund-detail.png',
+    publishedDate: '2026-10-05',
+    readTime: '7 min',
+    categories: ['Fund Administration', 'Fund Accounting', 'Private Equity', 'Fund Waterfalls']
   }
 ];
 

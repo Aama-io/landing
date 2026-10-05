@@ -60,6 +60,9 @@
 - [7 SPV Administration Problems Every Manager Hits](https://aama.io/blog/spv-administration-problems): Late K-1s, unverifiable holdings, fee confusion, spreadsheet sprawl, rising LP reporting demands, vague admin agreements and setup mistakes — with an FAQ.
 - [How to Fix SPV Administration: A Practical Playbook](https://aama.io/blog/how-to-fix-spv-administration): A fix for each of the 7 problems above, questions to ask any SPV provider, and how aama.io handles each one — with an FAQ.
 - [The Future of SPV Administration](https://aama.io/blog/future-of-spv-administration): Look-through ownership visibility, auditable AI, on-demand LP reporting, tokenized SPVs and why Asia's multi-currency VCC market needs purpose-built support — with an FAQ.
+- [Don't Start With an AI Agent for Your Fund Administration Software](https://aama.io/blog/dont-start-with-an-ai-agent-for-your-fund-administration-software): Why a fund admin platform is a system of record, where AI should suggest vs decide, and how aama.io thinks about agents around a deterministic ledger.
+- [How Fund Administrators Should Run VCC Accounting](https://aama.io/blog/vcc-accounting-for-fund-administrators): Umbrella vs sub-fund books, consolidated packs, AUM double-count avoidance and the admin workflow on aama.io.
+- [The Side Letter Was Signed Months Ago. Why Is Month-End Still Wrong?](https://aama.io/blog/side-letters-fund-operations-pain-points): Why side-letter terms fail after closing, where fee/MFN/waterfall mistakes come from, and how aama.io keeps per-investor economics in the books.
 - [FAQ](https://aama.io/faq): Common questions on the platform, NAV, security and compliance.
 
 ## About
