@@ -1892,6 +1892,8 @@ As we continue through 2025, the gap between firms using modern technology and t
 
       <p><em>This article reflects our current product direction as of publication and general market observation, not a commitment or timeline for specific features, and not legal, tax or investment advice.</em></p>
 
+      <p>Two concrete steps already on the platform: a <a href="/blog/true-syndicates-vs-invite-links">true syndicate roster</a> (roles, allocations, invite-from-roster) and <a href="/blog/continuation-vehicles-spv-admin">continuation-vehicle elections</a> linked from a source SPV — both reuse the same LP portal and fund admin path.</p>
+
       <p><strong>Want to see where the platform is headed on your own structure? <a href="/solutions/spv-syndicates">Explore aama.io’s SPV administration</a>, or <a href="/contact">talk to our team</a>.</strong></p>
     `,
     faqs: [
@@ -2191,7 +2193,125 @@ Cr Bank $438.00
     publishedDate: '2026-10-05',
     readTime: '7 min',
     categories: ['Fund Administration', 'Fund Accounting', 'Private Equity', 'Fund Waterfalls']
-  }
+  },
+  {
+    id: '33',
+    title: 'True Syndicates vs Invite Links: What Deal Leads Actually Need to Administer',
+    slug: 'true-syndicates-vs-invite-links',
+    excerpt:
+      'Open syndication mode is not a syndicate. A real syndicate roster tracks lead and co-leads, allocation percentages, soft-circles and who has been invited — then plugs into the same LP portal, capital calls and reporting as a single-deal SPV.',
+    content: `
+      <p>Most platforms treat a “syndicate” as a visibility switch: invite-only, existing LPs, or open to the network. That answers who can <em>see</em> the deal. It does not answer who is on the deal, what share they reserved, or how the lead plans to invite them in bulk when the round fills.</p>
+
+      <h3>Visibility is not a roster</h3>
+
+      <p>An <a href="/blog/why-vcs-founders-use-spvs">SPV</a> is the legal wrapper. A syndicate is the people around it — lead, co-leads and participants — with soft-circles and allocation targets that must add up before anyone wires money. When that roster lives in a spreadsheet while invites live in another tool, the lead loses the thread the moment the deal gets busy.</p>
+
+      <h3>What a true syndicate admin surface needs</h3>
+
+      <ul>
+        <li><strong>Roles.</strong> Lead, co-lead and participant are different jobs. Soft-circle expectations and invite priority usually follow the role.</li>
+        <li><strong>Allocation % and soft-circles.</strong> A running total against the target amount catches over-allocation before you promise a founder more than you can fill — the same chicken-and-egg problem we covered in <a href="/blog/spv-administration-best-practices">SPV administration best practices</a>.</li>
+        <li><strong>Invite from the roster.</strong> Select members and send magic-link or platform invites without re-typing emails. Bulk paste belongs here, not in a side channel.</li>
+        <li><strong>One path into capital ops.</strong> Once invited, commitments, KYC, capital calls and reporting should sit on the linked fund — not a second parallel process.</li>
+      </ul>
+
+      <h3>Why this matters for small deals</h3>
+
+      <p>Institutions ignore most sub-$50M vehicles. That is exactly where SPV and syndicate volume lives, and where admin fees of a few thousand dollars a year have to stay light. A lead who runs ten deals a year cannot afford a new spreadsheet per deal. The roster has to be a first-class object on the vehicle, then reuse the same formation-to-wind-down stack you already use for a single-asset SPV.</p>
+
+      <h3>What aama.io does today</h3>
+
+      <p>On each SPV deal, the LP portal now includes a <strong>syndicate roster</strong>: add lead / co-lead / participants with allocation and soft-circle, see when the book is over-allocated, and invite selected members through the existing LP invite flow. Catalog visibility modes still control who finds the deal; the roster controls who is actually in it.</p>
+
+      <p>For definitions, see <a href="/learn/fund-operations/syndicate">What is a syndicate?</a> in Learn. For the product surface, see <a href="/solutions/spv-syndicates">SPVs &amp; Syndicates</a>.</p>
+
+      <p><em>General information about deal administration practice, not legal or investment advice. Syndication and securities rules vary by jurisdiction — confirm with counsel before inviting investors.</em></p>
+
+      <p><strong>Running deal-by-deal syndicates today? <a href="/contact">Talk to our team</a> about consolidating roster, invites and books on aama.io.</strong></p>
+    `,
+    faqs: [
+      {
+        q: 'Is an open syndicate network the same as a true syndicate?',
+        a: 'No. Open network (or similar modes) usually controls catalog visibility. A true syndicate tracks named members, roles, allocations and invite status on the deal itself.',
+      },
+      {
+        q: 'Do syndicate members need a separate product from SPV LPs?',
+        a: 'Usually not. Once invited, they should use the same commitment, KYC, capital call and reporting path as any other LP on the linked fund.',
+      },
+      {
+        q: 'Why track allocation % on the roster?',
+        a: 'So the lead sees over-subscription against the target before promising a founder more capital than the book can support.',
+      },
+    ],
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/fund-types/vc.jpg',
+    publishedDate: '2026-10-09',
+    readTime: '6 min',
+    categories: ['SPVs', 'Venture Capital', 'Fund Administration', 'Operations'],
+  },
+  {
+    id: '34',
+    title: 'Continuation Vehicles for Emerging Managers: Admin Without a Secondaries Desk',
+    slug: 'continuation-vehicles-spv-admin',
+    excerpt:
+      'Every GP-led continuation creates a new vehicle that needs onboarding, elections, capital calls and clean reporting. You do not need a full secondaries platform on day one — you need a linked CV, roll/sell elections and the same SPV admin stack.',
+    content: `
+      <p>Secondaries and continuation vehicles (CVs) are one of the fastest-growing sources of <em>new</em> private-market vehicles. Each GP-led deal spins up a structure that must onboard electing LPs, record who sold, call capital and report cleanly. That is fund administration under time pressure — not a trading desk.</p>
+
+      <h3>What a CV actually is (for operators)</h3>
+
+      <p>A continuation vehicle is a new fund or SPV that takes assets (or LP interests) from an existing vehicle so the manager can hold winners longer while giving selling LPs an exit. Operationally, the hard parts are:</p>
+
+      <ul>
+        <li><strong>Linking source → CV.</strong> Everyone must know which deal or fund this vehicle continues.</li>
+        <li><strong>Elections.</strong> Each LP chooses roll or sell (or stays undecided) against their source commitment.</li>
+        <li><strong>Onboarding rollers.</strong> Electing LPs become investors in the new vehicle — KYC, subscription, soft-circle or commitment, then capital ops.</li>
+        <li><strong>Reuse of admin.</strong> Capital calls, distributions and reporting should not be reinvented for CVs.</li>
+      </ul>
+
+      <h3>What you can skip at MVP (and still be credible)</h3>
+
+      <p>A full secondaries desk — bid processes, deferred consideration, escrow economics, stapled primary — is a multi-quarter product. Most emerging managers and SPV leads need the admin path first: create the CV from the source deal, seed elections from existing fund investors, mark roll/sell, then invite rollers into the LP portal. That is enough to run the vehicle without pretending you cleared a transfer window.</p>
+
+      <h3>How this fits Singapore and VCC structures</h3>
+
+      <p>Many APAC managers will house a CV as a new SPV, a new sub-fund under a <a href="/blog/how-to-set-up-a-vcc-singapore">VCC umbrella</a>, or a standalone fund. The legal choice is counsel’s; the admin requirement is the same — ring-fenced books, investor elections and a clean trail from the source vehicle. See also <a href="/learn/fund-operations/continuation-vehicle">What is a continuation vehicle?</a>.</p>
+
+      <h3>What aama.io does today</h3>
+
+      <p>From an SPV deal you can <strong>create a linked continuation vehicle</strong>, seed roll/sell elections from the source fund’s investors when a fund exists, update elections in the UI, and invite rolling LPs through the same invite pipeline used for syndicates and ordinary SPV members. Capital calls and reporting stay on the CV’s linked fund once published.</p>
+
+      <p>For single-deal admin fundamentals, start with <a href="/blog/spv-administration-best-practices">SPV administration best practices</a> and the <a href="/solutions/spv-syndicates">SPVs &amp; Syndicates</a> solution page. For syndicate roster mechanics on the same stack, see <a href="/blog/true-syndicates-vs-invite-links">True Syndicates vs Invite Links</a>.</p>
+
+      <p><em>General information about vehicle administration, not legal, tax or investment advice. GP-led secondaries and CVs involve conflicts and disclosure obligations — use qualified counsel for each transaction.</em></p>
+
+      <p><strong>Planning a GP-led continuation? <a href="/contact">Talk to our team</a> about standing up the CV on aama.io.</strong></p>
+    `,
+    faqs: [
+      {
+        q: 'Is a continuation vehicle the same as a secondary fund?',
+        a: 'No. A secondary fund typically buys LP interests or portfolios as its strategy. A CV is a new vehicle created so existing LPs can roll or sell around a specific asset or portfolio continuation.',
+      },
+      {
+        q: 'Do I need transfer-window tooling to admin a CV?',
+        a: 'Not for an operations MVP. You need a linked vehicle, elections and onboarding for rollers. Bid processes and settlement mechanics can come later.',
+      },
+      {
+        q: 'Can a CV reuse SPV administration?',
+        a: 'Yes. Once rollers are invited onto the CV’s linked fund, capital calls, distributions and reporting should use the same fund-admin path as any other vehicle.',
+      },
+    ],
+    author: 'Sunil Chaulagain',
+    authorRole: 'Chief Executive Officer',
+    authorImage: '/team/sunil.jpeg',
+    coverImage: '/images/capital-call.png',
+    publishedDate: '2026-10-09',
+    readTime: '7 min',
+    categories: ['SPVs', 'Private Equity', 'Fund Administration', 'Operations'],
+  },
 ];
 
 // Listing payload — omits the heavy `content` field to keep responses small.

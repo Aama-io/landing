@@ -44,16 +44,17 @@ const accountingTools = [
 ];
 
 const useCases = [
-  { title: 'Angel & operator syndicates', desc: 'Pool angels into a single deal with a clean cap table, fast onboarding and automated carry for the lead.', metrics: [['Setup', 'Days'], ['Members / deal', '100+'], ['Carry', 'Automated']] },
+  { title: 'Angel & operator syndicates', desc: 'Pool angels into a single deal with a named roster, allocation targets, fast onboarding and automated carry for the lead.', metrics: [['Setup', 'Days'], ['Members / deal', '100+'], ['Carry', 'Automated']] },
   { title: 'Co-investment sidecars', desc: 'Run fee-light co-invest vehicles alongside the main fund, with separate accounting and reporting.', metrics: [['Reporting', '75% faster'], ['Fee models', 'Flexible']] },
   { title: 'Single-deal SPVs', desc: 'Hold a single asset or company in a dedicated vehicle with full administration and investor servicing.', metrics: [['Time saved', '15 hrs/deal'], ['Accuracy', '99.9%']] },
-  { title: 'Multi-asset SPVs', desc: 'Hold several positions in one vehicle — a lighter-weight fund structure for a lead who wants breadth without standing up a full fund.', metrics: [['Positions', 'No fixed limit'], ['Accounting', 'Same engine']] },
+  { title: 'Continuation vehicles', desc: 'Spin a linked CV from an existing SPV, collect roll/sell elections and onboard rollers on the same admin stack.', metrics: [['Elections', 'Roll / sell'], ['Onboarding', 'Same LP portal']] },
 ];
 
 const furtherReading = [
+  { href: '/blog/true-syndicates-vs-invite-links', icon: IconUsersGroup, label: 'True Syndicates vs Invite Links', desc: 'Roster, roles, allocations — not just catalog visibility' },
+  { href: '/blog/continuation-vehicles-spv-admin', icon: IconArrowsExchange, label: 'Continuation Vehicles for Emerging Managers', desc: 'Linked CVs, roll/sell elections, same SPV admin stack' },
   { href: '/blog/spv-administration-problems', icon: IconFileText, label: '7 SPV Administration Problems Every Manager Hits', desc: 'Late K-1s, unverifiable holdings, fee confusion and more' },
   { href: '/blog/how-to-fix-spv-administration', icon: IconReportAnalytics, label: 'How to Fix SPV Administration', desc: 'A practical playbook, one problem at a time' },
-  { href: '/blog/future-of-spv-administration', icon: IconRocket, label: 'The Future of SPV Administration', desc: 'Where LP expectations are heading next' },
 ];
 
 const faqs = [

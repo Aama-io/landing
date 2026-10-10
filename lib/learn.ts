@@ -1257,6 +1257,179 @@ export const LEARN_TERMS: LearnTerm[] = [
     publishedDate: '2026-10-02',
     lastReviewed: '2026-10-02',
   },
+  {
+    slug: 'syndicate',
+    topic: 'fund-operations',
+    term: 'Investment Syndicate',
+    shortName: 'Syndicate',
+    title: 'What is an Investment Syndicate? Deal Leads, Co-Investors and SPVs',
+    description:
+      'An investment syndicate is a group of investors pooling into one deal behind a lead, often through an SPV. Roles, allocations, soft-circles and how it differs from fund LP onboarding.',
+    directAnswer:
+      'An investment syndicate is a group of investors who participate in a single deal behind a lead (and sometimes co-leads), usually through an SPV or similar vehicle. Unlike a blind-pool fund, members typically see the deal before they commit, and the lead’s carry or deal fee is set at vehicle level.',
+    keyFacts: [
+      { label: 'Typical wrapper', value: 'Single-deal SPV or company limited by shares' },
+      { label: 'Roles', value: 'Lead, co-lead, participant / syndicate LP' },
+      { label: 'Economics', value: 'Often a one-time expense reserve plus lead carry; terms vary' },
+      { label: 'Not the same as', value: 'Catalog “open syndicate” visibility on a fundraising platform' },
+      { label: 'Admin work', value: 'Roster, soft-circles, KYC, invites, capital calls, reporting' },
+      { label: 'Scale pain', value: 'Spreadsheets break after a few parallel deals' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Lead builds the book',
+        body: 'The lead sets target size, ticket range and a roster of intended members with soft-circles or allocation percentages.',
+      },
+      {
+        heading: 'Vehicle and compliance',
+        body: 'Counsel forms the SPV (or sub-fund). Members complete KYC/AML and subscription documents before capital is called.',
+      },
+      {
+        heading: 'Close and report',
+        body: 'Capital is collected, the investment is made, and members receive capital accounts and updates for the life of the vehicle.',
+      },
+    ],
+    workedExample: {
+      title: 'A $2M follow-on syndicate',
+      setup:
+        'A VC lead wants $2M for a follow-on outside the main fund. Three co-leads soft-circle $200k each; twelve participants soft-circle the rest.',
+      rows: [
+        { label: 'Target', value: '$2,000,000' },
+        { label: 'Lead + co-lead soft-circles', value: '$600,000 (30%)' },
+        { label: 'Participants', value: '$1,400,000 across 12 names' },
+        { label: 'Admin check', value: 'Roster allocation totals ≤ 100% before invites go out' },
+      ],
+      takeaway:
+        'The roster is the control surface. Without it, soft-circles live in chat and over-allocation shows up only when wires fail.',
+    },
+    mistakes: [
+      'Treating “open to the syndicate network” as a substitute for a named roster.',
+      'Promising a founder an allocation before soft-circles cover a realistic minimum.',
+      'Running KYC and invites in email while the cap table sits in a disconnected spreadsheet.',
+    ],
+    singaporeNote:
+      'Singapore vehicles are often private companies or VCC sub-funds. MAS and accreditation rules still apply to who you can invite; admin platforms do not replace licensing or securities advice.',
+    faqs: [
+      {
+        q: 'Is a syndicate the same as an SPV?',
+        a: 'No. The SPV is the legal vehicle. The syndicate is the group of people (and their allocations) investing through it.',
+      },
+      {
+        q: 'Do syndicate members get fund-style reporting?',
+        a: 'They should get capital accounts and deal updates. Formal NAV and statements depend on how the vehicle is administered.',
+      },
+      {
+        q: 'Where does lead carry get calculated?',
+        a: 'At the vehicle level on proceeds, per the deal terms — the same class of calculation as a simple deal-by-deal waterfall.',
+      },
+    ],
+    relatedTerms: ['capital-call', 'carried-interest', 'fund-administrator'],
+    relatedTools: ['/tools/spv-admin-cost-calculator', '/tools/co-investment-modeler'],
+    relatedPosts: [
+      {
+        slug: 'true-syndicates-vs-invite-links',
+        title: 'True Syndicates vs Invite Links: What Deal Leads Actually Need to Administer',
+      },
+      {
+        slug: 'why-vcs-founders-use-spvs',
+        title: 'The Swiss Army Knife of Venture: Why VCs and Founders Use SPVs',
+      },
+    ],
+    relatedSolution: 'spv-syndicates',
+    authorities: ['your counsel', 'MAS (if Singapore-facing)'],
+    sources: [{ label: 'aama.io — SPVs & Syndicates', url: 'https://aama.io/solutions/spv-syndicates' }],
+    author: AUTHOR,
+    publishedDate: '2026-10-09',
+    lastReviewed: '2026-10-09',
+  },
+  {
+    slug: 'continuation-vehicle',
+    topic: 'fund-operations',
+    term: 'Continuation Vehicle (CV)',
+    shortName: 'Continuation vehicle',
+    title: 'What is a Continuation Vehicle? GP-Led Secondaries Explained for Operators',
+    description:
+      'A continuation vehicle is a new fund or SPV that lets LPs roll or sell when a GP extends an asset. Elections, onboarding and admin — without assuming a full secondaries desk.',
+    directAnswer:
+      'A continuation vehicle (CV) is a new private-market vehicle created so a GP can hold assets longer while offering existing LPs a choice to roll into the new vehicle or sell. Operationally it is a fresh vehicle with elections, KYC and capital ops — not merely a rename of the old fund.',
+    keyFacts: [
+      { label: 'Triggered by', value: 'GP-led secondary / desire to hold winners past fund life' },
+      { label: 'LP choice', value: 'Typically roll, sell, or a mix' },
+      { label: 'New vehicle', value: 'New SPV, fund or VCC sub-fund with its own books' },
+      { label: 'Admin focus', value: 'Source link, elections, invite rollers, capital calls, reporting' },
+      { label: 'Not required for MVP', value: 'Full bid desk, escrow and stapled-primary automation' },
+      { label: 'Conflicts', value: 'GP-led deals need disclosure and often independent advice' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Propose and disclose',
+        body: 'The GP proposes transferring assets or interests into a new vehicle and discloses conflicts, pricing basis and options to LPs.',
+      },
+      {
+        heading: 'Collect elections',
+        body: 'Each LP elects to roll (stay invested via the CV), sell, or remains undecided until a deadline.',
+      },
+      {
+        heading: 'Onboard and operate the CV',
+        body: 'Rolling LPs complete onboarding on the new vehicle; capital calls, NAV and reporting run like any other fund or SPV.',
+      },
+    ],
+    workedExample: {
+      title: 'One portfolio company into a CV',
+      setup:
+        'A five-year PE fund wants to hold a breakout company longer. A new SPV/CV is formed; 12 LPs elect to roll $40M of commitment; 8 elect to sell.',
+      rows: [
+        { label: 'Source fund LPs', value: '20' },
+        { label: 'Roll elections', value: '12 LPs / $40M' },
+        { label: 'Sell elections', value: '8 LPs' },
+        { label: 'Admin next step', value: 'Invite 12 rollers onto the CV LP portal and publish the linked fund' },
+      ],
+      takeaway:
+        'The election register is the bridge between the old vehicle and the new one. Without it, onboarding becomes a manual reconstruction of who stayed.',
+    },
+    mistakes: [
+      'Treating the CV as a label on the old fund instead of a new vehicle with its own investor register.',
+      'Inviting everyone from the source fund without recording roll vs sell.',
+      'Building a full secondaries trading desk before the admin path for elections and onboarding works.',
+    ],
+    singaporeNote:
+      'CVs in Singapore may sit as a new company, LP or VCC sub-fund. Tax incentives (13O/13U) and MAS licensing follow the manager and structure — confirm with advisors; software does not grant the incentive.',
+    faqs: [
+      {
+        q: 'Is a continuation vehicle a type of secondary?',
+        a: 'It is part of the GP-led secondary toolkit. Selling LPs get liquidity; rolling LPs keep exposure through a new vehicle.',
+      },
+      {
+        q: 'What must software track on day one?',
+        a: 'A link to the source vehicle, each LP’s election, and a path to invite rollers into KYC and capital ops on the CV.',
+      },
+      {
+        q: 'Do CVs need different accounting from SPVs?',
+        a: 'Once live, books, NAV and LP reporting are the same class of work as any other private vehicle — which is why reusing SPV/fund admin matters.',
+      },
+    ],
+    relatedTerms: ['capital-call', 'fund-administrator', 'syndicate'],
+    relatedTools: ['/tools/spv-admin-cost-calculator', '/tools/capital-call-schedule'],
+    relatedPosts: [
+      {
+        slug: 'continuation-vehicles-spv-admin',
+        title: 'Continuation Vehicles for Emerging Managers: Admin Without a Secondaries Desk',
+      },
+      {
+        slug: 'true-syndicates-vs-invite-links',
+        title: 'True Syndicates vs Invite Links',
+      },
+    ],
+    relatedSolution: 'spv-syndicates',
+    authorities: ['your counsel', 'ILPA guidance on GP-led secondaries'],
+    sources: [
+      { label: 'ILPA — GP-led secondaries', url: 'https://ilpa.org' },
+      { label: 'aama.io — SPVs & Syndicates', url: 'https://aama.io/solutions/spv-syndicates' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-09',
+    lastReviewed: '2026-10-09',
+  },
 ];
 
 export const topicBySlug = (slug: string) => LEARN_TOPICS.find((t) => t.slug === slug);
@@ -1305,11 +1478,18 @@ export const BLOG_LEARN_TERMS: Record<string, string[]> = {
   'simplify-operation-for-family-offices-in-singapore': ['13o-13u', 'vcc', 'fund-administrator'],
   'transforming-fund-operations-of-private-equity': ['capital-call', 'distribution-waterfall', 'fund-administrator'],
   'fund-administration-vs-fund-administration': ['fund-administrator'],
-  'why-vcs-founders-use-spvs': ['carried-interest', 'management-fee', 'capital-call'],
-  'spv-administration-best-practices': ['capital-call', 'fund-administrator'],
+  'why-vcs-founders-use-spvs': ['carried-interest', 'management-fee', 'capital-call', 'syndicate'],
+  'spv-administration-best-practices': ['capital-call', 'fund-administrator', 'syndicate'],
   'spv-administration-problems': ['capital-call', 'fund-administrator'],
   'how-to-fix-spv-administration': ['capital-call', 'fund-administrator'],
-  'future-of-spv-administration': ['fund-administrator'],
+  'future-of-spv-administration': ['fund-administrator', 'continuation-vehicle'],
+  'true-syndicates-vs-invite-links': ['syndicate', 'capital-call', 'fund-administrator'],
+  'continuation-vehicles-spv-admin': [
+    'continuation-vehicle',
+    'syndicate',
+    'capital-call',
+    'fund-administrator',
+  ],
   'side-letters-fund-operations-pain-points': [
     'side-letter',
     'management-fee',
