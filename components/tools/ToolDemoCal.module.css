@@ -1,0 +1,36 @@
+.wrap {
+  padding: clamp(40px, 6vw, 72px) 0 clamp(56px, 8vw, 96px);
+  background: var(--surface-muted);
+  border-top: 1px solid var(--border);
+}
+
+.card {
+  padding: clamp(24px, 4vw, 40px);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--mantine-shadow-md);
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.sub {
+  margin: 10px 0 24px;
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+.calBox {
+  width: 100%;
+  height: 580px;
+  max-width: 100%;
+  margin: 0 auto;
+}

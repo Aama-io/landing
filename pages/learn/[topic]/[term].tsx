@@ -42,14 +42,23 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
     '@type': 'Article',
     headline: term.title,
     description: term.description,
+    image: `${SITE}/og-image.png`,
+    inLanguage: 'en-SG',
+    articleSection: topic.title,
     datePublished: term.publishedDate,
     dateModified: term.lastReviewed,
-    author: { '@type': 'Organization', name: term.author },
+    author: { '@type': 'Organization', name: term.author, url: SITE },
     publisher: {
       '@type': 'Organization',
       name: 'AAMA',
-      logo: { '@type': 'ImageObject', url: `${SITE}/aama-logo.svg` },
+      url: SITE,
+      logo: { '@type': 'ImageObject', url: `${SITE}/og-image.png` },
     },
+    about: { '@type': 'DefinedTerm', name: term.term },
+    isPartOf: { '@type': 'CollectionPage', name: topic.title, url: `${SITE}/learn/${topic.slug}` },
+    citation: term.sources.map((s) => ({ '@type': 'CreativeWork', name: s.label, url: s.url })),
+    // Points answer engines at the citable 40–60 word definition.
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#direct-answer', 'h1'] },
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
   };
 
@@ -59,6 +68,8 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
     name: term.term,
     description: term.directAnswer,
     url,
+    termCode: term.shortName,
+    inLanguage: 'en-SG',
     inDefinedTermSet: { '@type': 'DefinedTermSet', name: 'aama.io Fund Glossary', url: `${SITE}/learn` },
   };
 
@@ -84,8 +95,11 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
 
   return (
     <InnerLayout>
-      <SEO title={term.title} description={term.description} ogUrl={url} />
+      <SEO title={term.title} description={term.description} ogUrl={url} ogType="article" />
       <Head>
+        <meta property="article:published_time" content={term.publishedDate} />
+        <meta property="article:modified_time" content={term.lastReviewed} />
+        <meta property="article:section" content={topic.title} />
         {[article, definedTerm, faqJsonLd, breadcrumbs].map((data, i) => (
           <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
         ))}
@@ -110,11 +124,11 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
                 <Badge variant="light" color="blue" w="fit-content">{topic.title}</Badge>
                 <Title component="h1" className={classes.title}>{term.title}</Title>
                 <Text size="sm" c="dimmed">
-                  By {term.author} · Last reviewed {fmtDate(term.lastReviewed)}
+                  By {term.author} · Last reviewed <time dateTime={term.lastReviewed}>{fmtDate(term.lastReviewed)}</time>
                 </Text>
               </Stack>
 
-              <Box className={classes.answer}>{term.directAnswer}</Box>
+              <Box id="direct-answer" className={classes.answer}>{term.directAnswer}</Box>
 
               <Alert variant="light" color="yellow" icon={<IconAlertCircle size={18} />} title="Sourced information — it can change">
                 <Text size="sm" lh={1.6}>
@@ -124,8 +138,25 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
                 </Text>
               </Alert>
 
+              <nav className={classes.toc} aria-label="On this page">
+                <Text size="xs" fw={700} c="dimmed" tt="uppercase" mb={8}>On this page</Text>
+                <div className={classes.tocLinks}>
+                  {[
+                    ['key-facts', 'Key facts'],
+                    ['how-it-works', 'How it works'],
+                    ['worked-example', 'Worked example'],
+                    ['common-mistakes', 'Common mistakes'],
+                    ['singapore-angle', 'Singapore angle'],
+                    ['faq', 'FAQ'],
+                    ...(relatedTerms.length > 0 ? [['related-terms', 'Related terms']] : []),
+                  ].map(([id, label]) => (
+                    <a key={id} href={`#${id}`} className={classes.tocLink}>{label}</a>
+                  ))}
+                </div>
+              </nav>
+
               <Stack gap="sm">
-                <Title order={2} className={classes.h2}>Key facts</Title>
+                <Title order={2} id="key-facts" className={classes.h2}>Key facts</Title>
                 <table className={classes.table}>
                   <tbody>
                     {term.keyFacts.map((f) => (
@@ -139,7 +170,7 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
               </Stack>
 
               <Stack gap="md">
-                <Title order={2} className={classes.h2}>How it works</Title>
+                <Title order={2} id="how-it-works" className={classes.h2}>How it works</Title>
                 <List type="ordered" spacing="md">
                   {term.howItWorks.map((s) => (
                     <List.Item key={s.heading}>
@@ -151,7 +182,7 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
               </Stack>
 
               <Stack gap="sm">
-                <Title order={2} className={classes.h2}>Worked example: {term.workedExample.title}</Title>
+                <Title order={2} id="worked-example" className={classes.h2}>Worked example: {term.workedExample.title}</Title>
                 <Text c="dimmed">{term.workedExample.setup}</Text>
                 <table className={`${classes.table} ${classes.tableValueRight}`}>
                   <tbody>
@@ -167,7 +198,7 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
               </Stack>
 
               <Stack gap="sm">
-                <Title order={2} className={classes.h2}>Common mistakes</Title>
+                <Title order={2} id="common-mistakes" className={classes.h2}>Common mistakes</Title>
                 <List spacing="xs">
                   {term.mistakes.map((m) => (
                     <List.Item key={m}>{m}</List.Item>
@@ -176,12 +207,12 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
               </Stack>
 
               <Stack gap="sm">
-                <Title order={2} className={classes.h2}>The Singapore and APAC angle</Title>
+                <Title order={2} id="singapore-angle" className={classes.h2}>The Singapore and APAC angle</Title>
                 <Text lh={1.7}>{term.singaporeNote}</Text>
               </Stack>
 
               <Stack gap="md">
-                <Title order={2} className={classes.h2}>Frequently asked questions</Title>
+                <Title order={2} id="faq" className={classes.h2}>Frequently asked questions</Title>
                 <Accordion variant="separated" radius="md" chevronPosition="right">
                   {term.faqs.map((f, i) => (
                     <Accordion.Item key={f.q} value={`faq-${i}`}>
@@ -241,7 +272,7 @@ export default function LearnTermPage({ term, topic, relatedTerms, relatedTools,
 
               {relatedTerms.length > 0 && (
                 <Stack gap="md">
-                  <Title order={2} className={classes.h2}>Related terms</Title>
+                  <Title order={2} id="related-terms" className={classes.h2}>Related terms</Title>
                   <Grid gutter="md">
                     {relatedTerms.map((r) => (
                       <Grid.Col span={{ base: 12, sm: 6 }} key={r.href}>

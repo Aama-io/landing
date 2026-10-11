@@ -10,6 +10,7 @@ interface SEOProps {
   ogImage?: string;
   ogUrl?: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article';
 }
 
 export function SEO({
@@ -19,6 +20,7 @@ export function SEO({
   ogImage = '/og-image.png',
   ogUrl,
   noindex = false,
+  ogType = 'website',
 }: SEOProps) {
   const router = useRouter();
   // Self-referencing canonical: use an explicit ogUrl when given, otherwise derive
@@ -41,7 +43,7 @@ export function SEO({
       <meta name="author" content="UXQode Pte Ltd" />
       
       {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

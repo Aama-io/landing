@@ -1,6 +1,7 @@
 import { Container, Title, Text, Stack, Group, Box, Grid } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons-react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import InnerLayout from '@/components/InnerLayout';
 import { SEO } from '@/components/SEO/SEO';
@@ -12,13 +13,51 @@ type Props = {
   terms: { href: string; term: string; directAnswer: string }[];
 };
 
+const SITE = 'https://aama.io';
+
 export default function LearnTopicPage({ topic, terms }: Props) {
+  const url = `${SITE}/learn/${topic.slug}`;
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: topic.title,
+      description: topic.blurb,
+      url,
+      inLanguage: 'en-SG',
+      isPartOf: { '@type': 'WebSite', name: 'AAMA', url: SITE },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: terms.map((t, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: t.term,
+          url: `${SITE}${t.href}`,
+        })),
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Learn', item: `${SITE}/learn` },
+        { '@type': 'ListItem', position: 2, name: topic.title, item: url },
+      ],
+    },
+  ];
+
   return (
     <InnerLayout>
       <SEO
         title={`${topic.title} — Definitions and Guides`}
         description={`${topic.blurb} Plain-English definitions with worked examples and the Singapore angle.`}
+        ogUrl={url}
       />
+      <Head>
+        {jsonLd.map((data, i) => (
+          <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+        ))}
+      </Head>
       <div className={classes.wrapper}>
         <Container size="xl">
           <div className={classes.article}>

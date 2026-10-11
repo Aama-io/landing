@@ -57,6 +57,18 @@ const furtherReading = [
   { href: '/blog/how-to-fix-spv-administration', icon: IconReportAnalytics, label: 'How to Fix SPV Administration', desc: 'A practical playbook, one problem at a time' },
 ];
 
+const definitions = [
+  { href: '/learn/fund-operations/syndicate', label: 'Syndicate', desc: 'A lead, a roster and allocations — not an invite link' },
+  { href: '/learn/fund-operations/capital-call', label: 'Capital call', desc: 'How drawdown notices and funding deadlines work' },
+  { href: '/learn/fund-operations/continuation-vehicle', label: 'Continuation vehicle', desc: 'Roll vs sell elections on a new vehicle' },
+  { href: '/learn/fund-operations/side-letter', label: 'Side letter', desc: 'Member-specific terms and what they do to the fee and waterfall' },
+];
+
+const readingTools = [
+  { href: '/tools/spv-admin-cost-calculator', label: 'SPV admin cost calculator' },
+  { href: '/tools/capital-call-schedule', label: 'Capital call schedule' },
+];
+
 const faqs = [
   { q: 'Is an SPV always a single-asset fund?', a: 'Most are — one deal, a lead and a group of members — but aama.io also supports multi-asset SPVs, where a vehicle holds several positions. Either way, you get the same accounting engine, investor portal and compliance, scaled to the vehicle you actually run.' },
   { q: 'How quickly can I launch an SPV or syndicate?', a: 'Most vehicles can be stood up in a few days, whether they hold one asset or several. Templated setup, subscription documents and e-signature onboarding let you open a vehicle, invite members and start collecting commitments without building anything from scratch.' },
@@ -86,7 +98,7 @@ export function SpvSyndicates() {
               </Text>
               <div className={s.ctaRow}>
                 <Button component={Link} href="/contact" size="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
-                <Button component={Link} href="/product" size="md" variant="default" className={s.secondary}>Explore the platform</Button>
+                <Button component={Link} href="/products/spv-fund-management" size="md" variant="default" className={s.secondary}>Explore the SPV platform</Button>
               </div>
               <div className={s.assurance}>
                 <span className={s.assItem}><IconCircleCheckFilled size={16} className={s.assIcon} /> Live in days</span>
@@ -258,18 +270,50 @@ export function SpvSyndicates() {
       {/* Further reading */}
       <section className={`${s.section} ${s.sectionMuted}`}>
         <Container size="xl">
-          <SectionHeading eyebrow="Further reading" title="The SPV administration series" />
-          <div className={s.acctTools}>
-            {furtherReading.map((r) => (
-              <Link key={r.href} href={r.href} className={s.toolCard}>
-                <span className={s.toolIcon}><r.icon size={20} stroke={1.7} /></span>
-                <div className={s.toolBody}>
-                  <div className={s.toolLabel}>{r.label}</div>
-                  <div className={s.toolDesc}>{r.desc}</div>
-                </div>
-                <IconArrowRight size={16} className={s.toolArrow} />
-              </Link>
-            ))}
+          <SectionHeading
+            eyebrow="Further reading"
+            title="The SPV administration series"
+            description="Playbooks from the field, plus plain-English definitions of the terms they rely on."
+          />
+          <div className={s.readGrid}>
+            <div>
+              <h3 className={s.readHead}>Guides</h3>
+              <div className={s.readList}>
+                {furtherReading.map((r) => (
+                  <Link key={r.href} href={r.href} className={s.readCard}>
+                    <span className={s.readIcon}><r.icon size={20} stroke={1.7} /></span>
+                    <span className={s.readBody}>
+                      <span className={s.readLabel}>{r.label}</span>
+                      <span className={s.readDesc}>{r.desc}</span>
+                    </span>
+                    <IconArrowRight size={16} className={s.readArrow} />
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className={s.readHead}>Key terms</h3>
+              <div className={s.readList}>
+                {definitions.map((d) => (
+                  <Link key={d.href} href={d.href} className={s.readCard}>
+                    <span className={s.readBody}>
+                      <span className={s.readLabel}>{d.label}</span>
+                      <span className={s.readDesc}>{d.desc}</span>
+                    </span>
+                    <IconArrowRight size={16} className={s.readArrow} />
+                  </Link>
+                ))}
+              </div>
+              <div className={s.readTools}>
+                <span className={s.readToolsLabel}>Free tools</span>
+                {readingTools.map((t) => (
+                  <Link key={t.href} href={t.href} className={s.readChip}>{t.label}</Link>
+                ))}
+                <Link href="/learn" className={s.readAll}>
+                  All definitions <IconArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
@@ -279,11 +323,42 @@ export function SpvSyndicates() {
         <Container size="xl">
           <div className={s.ctaCard}>
             <div className={s.ctaGlow} />
-            <h2 className={s.ctaTitle}>Launch your next SPV on aama.io</h2>
-            <p className={s.ctaDesc}>Set up the vehicle, onboard members and account for the deal — all in one place. See it on your own structure.</p>
-            <div className={s.ctaRow}>
-              <Button component={Link} href="/contact" size="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
-              <Button component={Link} href="/pricing" size="md" variant="white" className={s.ctaSecondary}>View pricing</Button>
+            <div className={s.ctaGrid}>
+              <div className={s.ctaCopy}>
+                <span className={s.ctaEyebrow}>Ready when your next deal is</span>
+                <h2 className={s.ctaTitle}>Launch your next SPV on aama.io</h2>
+                <p className={s.ctaDesc}>
+                  Bring a live or planned deal. We will set up the vehicle, onboard your members and show carry and
+                  distributions calculating on your own numbers, in one walkthrough.
+                </p>
+                <div className={s.ctaRow}>
+                  <Button component={Link} href="/contact" size="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
+                  <Button component={Link} href="/tools/spv-admin-cost-calculator" size="md" variant="default" className={s.ctaGhost}>Estimate your admin cost</Button>
+                </div>
+                <ul className={s.ctaProof}>
+                  <li><IconCheck size={15} stroke={2.6} /> Live in days, not weeks</li>
+                  <li><IconCheck size={15} stroke={2.6} /> KYC/AML and e-signatures built in</li>
+                  <li><IconCheck size={15} stroke={2.6} /> Single or multi-asset vehicles</li>
+                </ul>
+              </div>
+
+              <div className={s.ctaPanel} aria-hidden="true">
+                <div className={s.ctaPanelHead}>
+                  <span>Your SPV, launch checklist</span>
+                  <span className={s.ctaPanelBadge}>In days</span>
+                </div>
+                {steps.map((st, i) => (
+                  <div key={st.n} className={s.ctaStep}>
+                    <span className={i < 2 ? s.ctaDotDone : s.ctaDot}>
+                      {i < 2 ? <IconCheck size={13} stroke={3} /> : st.n}
+                    </span>
+                    <span className={s.ctaStepBody}>
+                      <span className={s.ctaStepTitle}>{st.title}</span>
+                      <span className={s.ctaStepDesc}>{['Templated setup, share classes, cap table', 'Invite members, collect commitments', 'Carry, deal fees and waterfalls', 'NAV, ledger and member statements'][i]}</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </Container>

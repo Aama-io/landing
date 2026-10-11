@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { PageShell } from '@/components/ui/PageShell';
 import { ToolsHub } from '@/components/ToolsHub/ToolsHub';
+import { ToolDemoCal } from '@/components/tools/ToolDemoCal';
 import { ALL_TOOLS } from '@/lib/tools';
 
 const SITE = 'https://aama.io';
@@ -49,6 +50,7 @@ export default function ToolsIndexPage() {
       </Head>
       <PageShell>
         <ToolsHub />
+        <ToolDemoCal />
       </PageShell>
     </>
   );

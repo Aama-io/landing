@@ -33,6 +33,21 @@ const stats = [
 
 const flagships = [
   {
+    eyebrow: 'Flagship · SPVs & syndicates',
+    title: 'SPV Fund Management',
+    href: '/products/spv-fund-management',
+    description:
+      'End-to-end SPV and syndicate management in one box: formation, cap table, KYC/AML, capital calls, lead carry, distributions, the general ledger, NAV and member reporting.',
+    image: '/images/client-fund.png',
+    icon: IconUsersGroup,
+    features: [
+      'Spin up a single- or multi-asset SPV in days',
+      'Member onboarding with KYC/AML and e-signatures',
+      'Lead carry, deal fees and deal-by-deal waterfalls',
+      'Double-entry ledger, NAV and IFRS-ready statements',
+    ],
+  },
+  {
     eyebrow: 'Operations & investor experience',
     title: 'Fund Administration & Investor Portal',
     href: '/products/fund-administration',

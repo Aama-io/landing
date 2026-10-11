@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { PageShell } from '@/components/ui/PageShell';
 import { PersonaTools } from '@/components/ToolsHub/PersonaTools';
+import { ToolDemoCal } from '@/components/tools/ToolDemoCal';
 import { toolsForPersona } from '@/lib/tools';
 
 const SITE = 'https://aama.io';
@@ -50,6 +51,7 @@ export default function FounderToolsPage() {
       </Head>
       <PageShell>
         <PersonaTools persona="founder" />
+        <ToolDemoCal />
       </PageShell>
     </>
   );

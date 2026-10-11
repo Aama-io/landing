@@ -16,10 +16,10 @@ import Link from 'next/link';
 import InnerLayout from '@/components/InnerLayout';
 import { SEO } from '@/components/SEO/SEO';
 import s from '@/components/ui/tool.module.css';
-import { LEARN_TERMS, learnHref, populatedTopics, termsInTopic } from '@/lib/learn';
+import { LEARN_TERMS, aliasesFor, learnHref, populatedTopics, termsInTopic } from '@/lib/learn';
 import h from './LearnHub.module.css';
 
-type HubTerm = { href: string; term: string; directAnswer: string; topicTitle: string };
+type HubTerm = { href: string; term: string; directAnswer: string; topicTitle: string; aliases: string[] };
 
 type Props = {
   topics: { slug: string; title: string; blurb: string; terms: HubTerm[] }[];
@@ -56,7 +56,7 @@ export default function LearnHub({ topics, terms, startHere }: Props) {
   const q = query.trim().toLowerCase();
 
   const results = useMemo(
-    () => (q ? terms.filter((t) => `${t.term} ${t.directAnswer}`.toLowerCase().includes(q)) : []),
+    () => (q ? terms.filter((t) => `${t.term} ${t.aliases.join(' ')} ${t.directAnswer}`.toLowerCase().includes(q)) : []),
     [q, terms]
   );
 
@@ -65,6 +65,8 @@ export default function LearnHub({ topics, terms, startHere }: Props) {
     '@type': 'DefinedTermSet',
     name: 'aama.io Fund Glossary',
     url: 'https://aama.io/learn',
+    description: 'Plain-English definitions of fund administration, fund accounting and Singapore fund-structure terms.',
+    inLanguage: 'en-SG',
     hasDefinedTerm: terms.map((t) => ({ '@type': 'DefinedTerm', name: t.term, url: `https://aama.io${t.href}` })),
   };
 
@@ -95,7 +97,7 @@ export default function LearnHub({ topics, terms, startHere }: Props) {
             <input
               type="search"
               className={h.search}
-              placeholder="Search terms, e.g. VCC or NAV"
+              placeholder="Search terms, e.g. VCC, drawdown or waterfall"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               aria-label="Search the glossary"
@@ -231,6 +233,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     term: t.term,
     directAnswer: t.directAnswer,
     topicTitle: topicTitle(t.topic),
+    aliases: aliasesFor(t.slug),
   });
 
   return {

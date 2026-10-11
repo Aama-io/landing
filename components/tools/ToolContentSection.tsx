@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { TOOL_CONTENT } from '@/lib/toolContent';
 import { ALL_TOOLS } from '@/lib/tools';
 import c from './ToolContentSection.module.css';
+import { ToolDemoCal } from './ToolDemoCal';
 
 /**
  * Visible, crawlable explanatory content rendered below each tool: an intro,
@@ -18,6 +19,7 @@ export function ToolContentSection({ slug }: { slug: string }) {
     .filter(Boolean) as typeof ALL_TOOLS;
 
   return (
+    <>
     <section className={c.wrap}>
       <Container size="md">
         <div className={c.grid}>
@@ -79,5 +81,7 @@ export function ToolContentSection({ slug }: { slug: string }) {
         )}
       </Container>
     </section>
+    <ToolDemoCal />
+    </>
   );
 }

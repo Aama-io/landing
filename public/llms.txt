@@ -4,6 +4,7 @@
 
 ## Platforms (products)
 
+- [SPV Fund Management](https://aama.io/products/spv-fund-management): Flagship end-to-end SPV and syndicate platform — vehicle formation, cap table, KYC/AML onboarding, capital calls, lead carry, distributions, general ledger, NAV and member reporting in one system.
 - [Fund Administration](https://aama.io/products/fund-administration): Capital calls, drawdowns, investor onboarding (KYC/AML), allocation tracking, LP communications and a branded investor (LP) portal with real-time NAV, statements and documents.
 - [Fund Accounting](https://aama.io/products/fund-accounting): IFRS-based fund accounting, NAV calculation, reconciliation, corporate actions and audit-ready financials.
 
@@ -46,6 +47,8 @@
 - [What is a Management Fee?](https://aama.io/learn/fund-economics/management-fee): Fee bases, step-downs and lifetime fee drag, with a worked example.
 - [What is a Side Letter?](https://aama.io/learn/fund-operations/side-letter): LP side letters and MFN clauses, with a tiered example.
 - [IRR vs MOIC](https://aama.io/learn/lp-reporting/irr-vs-moic): Why the same multiple can mean very different annualised returns.
+- [What is a Syndicate?](https://aama.io/learn/fund-operations/syndicate): A lead, a roster and allocations pooled into one deal, usually through an SPV, and how it differs from fund LP onboarding.
+- [What is a Continuation Vehicle?](https://aama.io/learn/fund-operations/continuation-vehicle): GP-led continuation vehicles, roll vs sell elections and the admin needed to onboard rolling LPs.
 
 ## Content
 

@@ -1264,7 +1264,7 @@ export const LEARN_TERMS: LearnTerm[] = [
     shortName: 'Syndicate',
     title: 'What is an Investment Syndicate? Deal Leads, Co-Investors and SPVs',
     description:
-      'An investment syndicate is a group of investors pooling into one deal behind a lead, often through an SPV. Roles, allocations, soft-circles and how it differs from fund LP onboarding.',
+      'An investment syndicate is a group of investors pooling into one deal behind a lead, often through an SPV. Roles, allocations, soft-circles and how it differs from a fund.',
     directAnswer:
       'An investment syndicate is a group of investors who participate in a single deal behind a lead (and sometimes co-leads), usually through an SPV or similar vehicle. Unlike a blind-pool fund, members typically see the deal before they commit, and the lead’s carry or deal fee is set at vehicle level.',
     keyFacts: [
@@ -1432,6 +1432,27 @@ export const LEARN_TERMS: LearnTerm[] = [
   },
 ];
 
+// Extra words people search for that are not in the term name or answer.
+const LEARN_ALIASES: Record<string, string[]> = {
+  vcc: ['variable capital company', 'umbrella fund', 'sub-fund', 'acra'],
+  'distribution-waterfall': ['waterfall', 'american waterfall', 'european waterfall', 'whole fund', 'deal by deal', 'hurdle', 'catch-up'],
+  'capital-call': ['drawdown', 'drawdown notice', 'capital drawdown', 'call notice'],
+  '13o-13u': ['13o', '13u', 'section 13o', 'section 13u', 'family office tax', 'tax exemption', 'fund tax incentive'],
+  'carried-interest': ['carry', 'promote', 'performance fee'],
+  'tvpi-dpi-rvpi': ['tvpi', 'dpi', 'rvpi', 'multiple', 'paid-in'],
+  'fund-administrator': ['fund admin', 'administrator', 'third-party administrator'],
+  nav: ['net asset value', 'valuation'],
+  'fair-value-hierarchy': ['level 1', 'level 2', 'level 3', 'ifrs 13', 'sfrs(i) 13'],
+  'ifrs-9-sfrs-i-9': ['ifrs 9', 'sfrs(i) 9', 'fvtpl', 'expected credit loss', 'ecl'],
+  'management-fee': ['mgmt fee', 'fee basis', '2 and 20', '2/20'],
+  'side-letter': ['mfn', 'most favoured nation', 'fee break'],
+  'irr-vs-moic': ['irr', 'moic', 'money multiple', 'internal rate of return'],
+  syndicate: ['spv', 'deal lead', 'soft circle', 'angel group'],
+  'continuation-vehicle': ['cv', 'gp-led secondary', 'secondaries', 'roll or sell'],
+};
+
+export const aliasesFor = (slug: string): string[] => LEARN_ALIASES[slug] ?? [];
+
 export const topicBySlug = (slug: string) => LEARN_TOPICS.find((t) => t.slug === slug);
 
 export const termBySlug = (topic: string, slug: string) =>
@@ -1477,7 +1498,7 @@ export const BLOG_LEARN_TERMS: Record<string, string[]> = {
   'vcc-sub-fund-segregation-13o-13u-renewal-pack': ['vcc', '13o-13u', 'nav'],
   'simplify-operation-for-family-offices-in-singapore': ['13o-13u', 'vcc', 'fund-administrator'],
   'transforming-fund-operations-of-private-equity': ['capital-call', 'distribution-waterfall', 'fund-administrator'],
-  'fund-administration-vs-fund-administration': ['fund-administrator'],
+  'fund-management-vs-fund-administration': ['fund-administrator'],
   'why-vcs-founders-use-spvs': ['carried-interest', 'management-fee', 'capital-call', 'syndicate'],
   'spv-administration-best-practices': ['capital-call', 'fund-administrator', 'syndicate'],
   'spv-administration-problems': ['capital-call', 'fund-administrator'],

@@ -86,7 +86,7 @@ export function Header() {
                   leftSection={<span className={classes.menuIcon}><IconLayoutGrid size={18} stroke={1.7} /></span>}
                 >
                   <div className={classes.menuItemTitle}>How it fits together</div>
-                  <div className={classes.menuItemDesc}>Two platforms for end to end solution</div>
+                  <div className={classes.menuItemDesc}>How the products fit together</div>
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
