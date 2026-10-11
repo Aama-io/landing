@@ -15,6 +15,7 @@ const STATIC: { loc: string; priority: string }[] = [
   { loc: '/pricing', priority: '0.8' },
   { loc: '/about', priority: '0.7' },
   { loc: '/contact', priority: '0.7' },
+  { loc: '/partners', priority: '0.7' },
   { loc: '/blog', priority: '0.7' },
   { loc: '/learn', priority: '0.8' },
   { loc: '/faq', priority: '0.6' },
