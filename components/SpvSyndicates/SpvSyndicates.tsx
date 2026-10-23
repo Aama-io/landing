@@ -51,6 +51,7 @@ const useCases = [
 ];
 
 const furtherReading = [
+  { href: '/blog/delaware-spv-formation-and-administration', icon: IconFileText, label: 'Delaware SPV Formation and Administration', desc: 'LLC vs LP, annual tax, K-1s and non-US investor withholding' },
   { href: '/blog/true-syndicates-vs-invite-links', icon: IconUsersGroup, label: 'True Syndicates vs Invite Links', desc: 'Roster, roles, allocations — not just catalog visibility' },
   { href: '/blog/continuation-vehicles-spv-admin', icon: IconArrowsExchange, label: 'Continuation Vehicles for Emerging Managers', desc: 'Linked CVs, roll/sell elections, same SPV admin stack' },
   { href: '/blog/spv-administration-problems', icon: IconFileText, label: '7 SPV Administration Problems Every Manager Hits', desc: 'Late K-1s, unverifiable holdings, fee confusion and more' },

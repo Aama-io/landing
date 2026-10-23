@@ -36,6 +36,9 @@ export default withBundleAnalyzer({
       // reads like an AI assistant mangling the post title ("...Why VCs and
       // Founders Use SPVs") into a duplicated "vcs...spvs" URL when citing it.
       { source: '/blog/why-vcs-founders-use-vcs-spvs', destination: '/blog/why-vcs-founders-use-spvs', permanent: true },
+      // Original slug had a typo ("fund-administration-vs-fund-administration"); it had
+      // indexed impressions, so keep them pointing at the corrected post.
+      { source: '/blog/fund-administration-vs-fund-administration', destination: '/blog/fund-management-vs-fund-administration', permanent: true },
     ];
   },
 });

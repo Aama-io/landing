@@ -1430,6 +1430,99 @@ export const LEARN_TERMS: LearnTerm[] = [
     publishedDate: '2026-10-09',
     lastReviewed: '2026-10-09',
   },
+  {
+    slug: 'delaware-spv',
+    topic: 'fund-operations',
+    term: 'Delaware SPV',
+    shortName: 'Delaware SPV',
+    title: 'What is a Delaware SPV? LLC vs LP, Taxes and Annual Compliance',
+    description:
+      'A Delaware SPV is a single-purpose LLC or LP used to pool investors into one deal. What it is, how it is taxed, what it files each year and who administers it.',
+    directAnswer:
+      'A Delaware SPV is a special purpose vehicle, usually an LLC or limited partnership formed in Delaware, that pools investors into a single investment. It is generally taxed as a partnership, pays Delaware a flat annual tax, files a federal partnership return and issues a Schedule K-1 to each investor.',
+    keyFacts: [
+      { label: 'Usual form', value: 'Delaware LLC; LP also common' },
+      { label: 'Default US tax', value: 'Partnership with two or more investors; no entity-level federal tax' },
+      { label: 'Delaware annual charge', value: 'Flat $300 tax for an LLC or LP, due June 1; no annual report' },
+      { label: 'Federal return', value: 'Form 1065, with a Schedule K-1 per investor' },
+      { label: 'Non-US investors', value: 'W-8 collection and possible withholding and reporting' },
+      { label: 'Administration', value: 'Investor register, capital accounts, calls, distributions, K-1 support' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Form the entity',
+        body: 'A registered agent files the certificate of formation. The operating agreement then sets the economics: contributions, carry, expense reserve and the distribution waterfall.',
+      },
+      {
+        heading: 'Raise from investors',
+        body: 'Investors complete subscription documents, KYC/AML and a tax form (W-9 or W-8), and fund their commitment. The securities exemption relied on is a legal question for counsel.',
+      },
+      {
+        heading: 'Invest, report and file',
+        body: 'The SPV makes the investment, keeps a capital account per investor, reports quarterly, pays the Delaware annual tax and files the partnership return each year.',
+      },
+      {
+        heading: 'Distribute and wind down',
+        body: 'Proceeds are distributed through the waterfall, final returns and K-1s are filed, and a certificate of cancellation closes the entity.',
+      },
+    ],
+    workedExample: {
+      title: 'A $1.5M SPV with 20 investors, two of them non-US',
+      setup:
+        'A deal lead forms a Delaware LLC to invest $1.5M in a US company. Eighteen investors are US persons; two are non-US. The SPV holds shares in a C-corporation and has no operating business of its own.',
+      rows: [
+        { label: 'Delaware annual tax', value: '$300 by June 1' },
+        { label: 'Federal return', value: 'Form 1065 plus 20 Schedule K-1s' },
+        { label: 'Tax forms to collect', value: '18 × W-9, 2 × W-8' },
+        { label: 'Likely extra filings', value: 'Forms 1042 / 1042-S if US-source income is withheld on; 8804 / 8805 only if effectively connected income arises' },
+      ],
+      takeaway:
+        'The count that drives the workload is investors, not dollars: every extra investor adds a K-1, a tax form and a capital account to reconcile.',
+    },
+    mistakes: [
+      'Forgetting the June 1 Delaware tax because the SPV has no activity.',
+      'Not telling investors the K-1 will arrive after an extension, usually in September.',
+      'Collecting W-8 and W-9 forms after the first distribution has already been paid.',
+      'Relying on a series LLC to ring-fence assets without checking that banks and counterparties will respect it.',
+    ],
+    singaporeNote:
+      'Singapore and Asia-based sponsors often use a Delaware SPV for US deals. The sponsor’s own licensing in Singapore is a separate question for MAS rules, and the Delaware vehicle does not change it. Non-US investors in the SPV will need W-8 forms and may face US withholding.',
+    faqs: [
+      {
+        q: 'Is a Delaware SPV the same as a Delaware LLC?',
+        a: 'Not exactly. A Delaware LLC is the legal form. An SPV is the purpose: a vehicle formed to hold one investment. Most Delaware SPVs are LLCs, but some are LPs.',
+      },
+      {
+        q: 'Does a Delaware SPV pay US tax?',
+        a: 'An LLC or LP with two or more investors is by default a partnership, so it pays no entity-level federal income tax. Income passes through to investors on their K-1s. Delaware charges a flat annual tax, and a corporation is taxed differently.',
+      },
+      {
+        q: 'Who files the tax return for a Delaware SPV?',
+        a: 'The SPV does, through a US tax preparer, working from the capital accounts the administrator maintains. The manager signs and the preparer files.',
+      },
+    ],
+    relatedTerms: ['syndicate', 'capital-call', 'fund-administrator'],
+    relatedTools: ['/tools/delaware-spv-compliance-calendar', '/tools/spv-formation-checklist', '/tools/spv-cost-estimator'],
+    relatedPosts: [
+      {
+        slug: 'delaware-spv-formation-and-administration',
+        title: 'Delaware SPV Formation and Administration: A Practical Guide for Deal Leads',
+      },
+      {
+        slug: 'why-vcs-founders-use-spvs',
+        title: 'The Swiss Army Knife of Venture: Why VCs and Founders Use SPVs',
+      },
+    ],
+    relatedSolution: 'spv-syndicates',
+    authorities: ['Delaware Division of Corporations', 'IRS', 'your US counsel and tax adviser'],
+    sources: [
+      { label: 'Delaware Division of Corporations — LLC and LP annual tax', url: 'https://corp.delaware.gov/paytaxes/' },
+      { label: 'aama.io — SPVs & Syndicates', url: 'https://aama.io/solutions/spv-syndicates' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-10-19',
+    lastReviewed: '2026-10-19',
+  },
 ];
 
 // Extra words people search for that are not in the term name or answer.
@@ -1449,6 +1542,7 @@ const LEARN_ALIASES: Record<string, string[]> = {
   'irr-vs-moic': ['irr', 'moic', 'money multiple', 'internal rate of return'],
   syndicate: ['spv', 'deal lead', 'soft circle', 'angel group'],
   'continuation-vehicle': ['cv', 'gp-led secondary', 'secondaries', 'roll or sell'],
+  'delaware-spv': ['delaware llc', 'delaware lp', 'us spv', 'k-1'],
 };
 
 export const aliasesFor = (slug: string): string[] => LEARN_ALIASES[slug] ?? [];
@@ -1519,6 +1613,7 @@ export const BLOG_LEARN_TERMS: Record<string, string[]> = {
   ],
   'vcc-accounting-for-fund-administrators': ['vcc', 'nav', 'fund-administrator'],
   'dont-start-with-an-ai-agent-for-your-fund-administration-software': ['fund-administrator'],
+  'delaware-spv-formation-and-administration': ['delaware-spv', 'syndicate', 'capital-call', 'fund-administrator'],
 };
 
 export function getLearnTermsForPost(postSlug: string): LearnTerm[] {

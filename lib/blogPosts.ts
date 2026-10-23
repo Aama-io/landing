@@ -2312,6 +2312,123 @@ Cr Bank $438.00
     readTime: '7 min',
     categories: ['SPVs', 'Private Equity', 'Fund Administration', 'Operations'],
   },
+  {
+    id: '35',
+    title: 'Delaware SPV Formation and Administration: A Practical Guide for Deal Leads',
+    slug: 'delaware-spv-formation-and-administration',
+    excerpt:
+      'Forming a Delaware SPV takes days. Running one takes a calendar: a flat state tax, a partnership return, a K-1 for every investor and extra withholding for non-US money. Here is the whole lifecycle, from LLC vs LP to wind-down.',
+    content: `
+      <p>Delaware is the default home for US-facing SPVs. Formation is fast, the law gives the sponsor wide freedom to write the economics, and US investors, lawyers and banks already know the structure. The part that catches deal leads out is not the formation. It is the second year, when the K-1s, the state tax and the investor questions arrive.</p>
+
+      <h3>Why Delaware, and when it is not the answer</h3>
+
+      <p>Delaware wins on familiarity and flexibility. An LLC or LP can be formed by filing a single certificate, the operating or partnership agreement is largely a matter of contract, and courts have a deep body of case law on both. For a deal into a US company, investors usually expect it.</p>
+
+      <p>It is not always the right wrapper. An SPV that will hold Asian assets and raise mostly from Asian investors may sit better in <a href="/blog/how-to-set-up-a-vcc-singapore">Singapore</a> or an offshore jurisdiction. Our <a href="/tools/spv-jurisdiction-comparator">SPV Jurisdiction Comparator</a> lays the options side by side, and the <a href="/blog/why-vcs-founders-use-spvs">overview of why VCs and founders use SPVs</a> covers the wider case.</p>
+
+      <h3>LLC, LP or corporation</h3>
+
+      <ul>
+        <li><strong>Delaware LLC.</strong> The usual choice. Flexible governance, limited liability for investors, and by default taxed as a partnership once there are two or more members. Investors become members; the sponsor is typically the manager.</li>
+        <li><strong>Delaware LP.</strong> Common for funds, and sometimes used for SPVs where the sponsor wants a general partner and limited partners in the classic form. The general partner carries unlimited liability unless it is itself an entity.</li>
+        <li><strong>Delaware corporation.</strong> Rarely right for a pooled SPV. It pays tax at entity level and then investors are taxed again on dividends. It can make sense where a single investor needs a blocker.</li>
+        <li><strong>Series LLC.</strong> Allowed in Delaware, with separate series that can hold separate assets. Treat it with caution: banks, counterparties and tax authorities do not always respect the separation the statute describes, so take advice before you rely on it.</li>
+      </ul>
+
+      <h3>The formation sequence</h3>
+
+      <ol>
+        <li><strong>Check and reserve the name.</strong> A same-day check with your registered agent is enough for most deals.</li>
+        <li><strong>Appoint a registered agent.</strong> Every Delaware entity must have one with a Delaware address. This is a real annual cost, not a formality.</li>
+        <li><strong>File the certificate of formation (or certificate of limited partnership).</strong> The certificate is short and names the entity and its agent. The filing fee is set by the state and changes, so check the current schedule with the Division of Corporations.</li>
+        <li><strong>Sign the operating agreement.</strong> This is the document that carries the economics: capital contributions, the carry, expense reserve, distribution waterfall, transfer limits and what the manager can do alone. It is where most of the legal cost sits.</li>
+        <li><strong>Get an EIN.</strong> A US person can usually apply online and receive it quickly. A foreign applicant without an SSN or ITIN has to apply by fax or mail and should budget weeks, not days.</li>
+        <li><strong>Onboard investors.</strong> Subscription documents, accreditation or eligibility checks, KYC/AML and tax forms (W-9 or W-8) before any money moves.</li>
+        <li><strong>Open the bank account.</strong> Often the real bottleneck. The <a href="/tools/spv-formation-checklist">SPV Formation Checklist</a> shows a realistic critical path.</li>
+      </ol>
+
+      <p>Costs vary by provider and deal complexity. The <a href="/tools/spv-cost-estimator">SPV Formation Cost Estimator</a> gives indicative ranges for setup and the first year.</p>
+
+      <h3>The securities side: do not skip it</h3>
+
+      <p>Selling interests in an SPV is an offering of securities. Most US SPVs rely on a private placement exemption such as Regulation D, which brings a Form D notice filing after the first sale and state notice filings where investors live. If the SPV has more than a handful of investors, the Investment Company Act and the sponsor’s own status under the Investment Advisers Act also need a view from counsel. These are legal questions, not administration ones, but the administrator inherits the consequences: the investor register has to record who is accredited and who is not.</p>
+
+      <h3>What running a Delaware SPV actually involves</h3>
+
+      <p>Once the money is in, the administration is a repeating calendar. Our <a href="/tools/delaware-spv-compliance-calendar">Delaware SPV Compliance Calendar</a> lists it by entity type; the core items are:</p>
+
+      <ul>
+        <li><strong>Delaware annual tax.</strong> A flat $300 for an LLC or LP, due June 1, with no annual report. Corporations instead file an annual report and pay franchise tax, due March 1. Missing the payment accrues a penalty and interest, and prolonged non-payment risks the entity’s good standing.</li>
+        <li><strong>Partnership return and K-1s.</strong> An LLC or LP with two or more investors files Form 1065 and issues a Schedule K-1 to each. The due date is March 15 for a calendar-year entity; most SPVs extend to September 15. The late-filing penalty accrues per partner per month, so it grows with the investor list.</li>
+        <li><strong>Foreign-owned single-member LLC.</strong> Form 5472 with a pro forma Form 1120, even with no income. The penalty for missing it is $25,000 per form.</li>
+        <li><strong>Non-US investors.</strong> A W-8 from each, refreshed when it expires, and potentially Forms 1042 and 1042-S for withheld US-source income. If the SPV has income effectively connected with a US trade or business, Forms 8804, 8805 and quarterly installments follow. An SPV that only holds shares in a C-corporation usually does not have that income, but the answer depends on what it holds.</li>
+        <li><strong>Beneficial ownership reporting.</strong> FinCEN’s March 2025 interim final rule exempts US-formed entities from BOI reporting. The rules in this area have changed repeatedly, so check the current position rather than relying on an older checklist.</li>
+      </ul>
+
+      <h3>The investor-facing work behind the filings</h3>
+
+      <p>The filings are the visible part. Behind them sits the work that makes them correct:</p>
+
+      <ul>
+        <li><strong>A real capital account per investor.</strong> Contributions, distributions, the expense reserve and any fee or carry allocation, reconciled to the bank. A K-1 is a statement of that account.</li>
+        <li><strong>Carry and waterfall calculations.</strong> A deal-by-deal SPV waterfall is simple only until there is a side letter, a fee break or a follow-on. See <a href="/blog/side-letters-fund-operations-pain-points">why side-letter terms break month-end</a>.</li>
+        <li><strong>Capital calls and distributions.</strong> Notices, tracking of who has funded, and distribution mechanics when the exit comes. The <a href="/tools/capital-call-schedule">Capital Call Schedule</a> helps plan this.</li>
+        <li><strong>Investor reporting.</strong> Quarterly statements that match what the K-1 will say later. If they do not, expect questions.</li>
+      </ul>
+
+      <h3>Where Delaware SPVs go wrong</h3>
+
+      <ul>
+        <li><strong>The K-1 surprise.</strong> No one told investors the K-1 would arrive in September. Say so in the subscription documents and the first quarterly update.</li>
+        <li><strong>The June 1 tax missed.</strong> A $300 payment is easy to forget when the SPV is quiet. Put it on the calendar the day the entity is formed.</li>
+        <li><strong>W-8 and W-9 collected late.</strong> Chasing tax forms after distributions have been paid is how withholding errors happen.</li>
+        <li><strong>Books kept in a spreadsheet.</strong> Fine for one SPV, not for ten. The <a href="/blog/spv-administration-problems">seven recurring SPV administration problems</a> mostly start here.</li>
+        <li><strong>No wind-down plan.</strong> The entity does not end when the company exits. It needs final distributions, a final return, a certificate of cancellation and a clean record for the investors.</li>
+      </ul>
+
+      <h3>Winding down</h3>
+
+      <p>After the final distribution, file the final return and K-1s (marked final), file a certificate of cancellation with Delaware, and settle the last annual tax. Keep the records for the retention period your adviser sets. Closing the entity properly stops the annual tax and the agent fee from running on a vehicle that no longer holds anything.</p>
+
+      <h3>What aama.io does</h3>
+
+      <p>On aama.io an SPV is a first-class vehicle: investor register and onboarding in the LP portal, capital calls, distributions and a per-investor capital account in the books, with side-letter terms carried into the economics. That gives your tax preparer a reconciled account per investor to prepare the K-1 from, rather than a spreadsheet to rebuild. We do not file tax returns or give tax advice; your US tax adviser does that, and our reporting is what they work from. See <a href="/solutions/spv-syndicates">SPVs &amp; Syndicates</a> for the product surface, and <a href="/learn/fund-operations/delaware-spv">What is a Delaware SPV?</a> for the definition.</p>
+
+      <p><em>General information about SPV formation and administration practice, not legal, tax or investment advice. Filing requirements, fees and deadlines depend on how the SPV is structured and who invests, and they change. Confirm each point with qualified US counsel and a tax adviser before acting.</em></p>
+
+      <p><strong>Running Delaware SPVs and tired of rebuilding the books each March? <a href="/contact">Talk to our team</a> about administering them on aama.io.</strong></p>
+    `,
+    faqs: [
+      {
+        q: 'How long does it take to form a Delaware SPV?',
+        a: 'Filing the certificate of formation usually takes a day or two. The realistic timeline is set by the operating agreement, the EIN for a foreign owner and, most of all, opening the bank account, which can take longer than everything else combined.',
+      },
+      {
+        q: 'Should a Delaware SPV be an LLC or an LP?',
+        a: 'An LLC is the usual choice for a single-deal SPV because governance is flexible and no one carries unlimited liability. An LP is sometimes used where the sponsor wants a classic general partner and limited partner structure. Both are taxed as partnerships by default when there are two or more investors.',
+      },
+      {
+        q: 'What does a Delaware SPV have to file every year?',
+        a: 'An LLC or LP pays a flat $300 annual tax to Delaware by June 1 and has no annual report. Federally, a multi-investor LLC or LP files Form 1065 and issues a K-1 to each investor. Non-US investors can add W-8 collection, withholding and Forms 1042 and 1042-S.',
+      },
+      {
+        q: 'Who prepares the K-1s for an SPV?',
+        a: 'A US tax preparer, working from the SPV’s final capital accounts. The administrator’s job is to deliver a reconciled capital account per investor so the K-1s are correct the first time.',
+      },
+      {
+        q: 'Does a Delaware SPV with non-US investors have extra obligations?',
+        a: 'Yes. The SPV should collect a W-8 from each non-US investor and may need to withhold and report on US-source income. If it has income effectively connected with a US trade or business, additional withholding returns apply. What applies depends on what the SPV holds.',
+      },
+    ],
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/capital-call.png',
+    publishedDate: '2026-10-19',
+    readTime: '9 min',
+    categories: ['SPVs', 'Fund Administration', 'Fund Setup', 'Operations'],
+  },
 ];
 
 // Listing payload — omits the heavy `content` field to keep responses small.
@@ -2345,7 +2462,7 @@ const CATEGORY_SOLUTION: Record<string, string> = {
 };
 
 const CATEGORY_TOOLS: Record<string, string[]> = {
-  SPVs: ['/tools/capital-call-schedule', '/tools/fee-carry-modeler', '/tools/co-investment-modeler'],
+  SPVs: ['/tools/delaware-spv-compliance-calendar', '/tools/capital-call-schedule', '/tools/fee-carry-modeler', '/tools/co-investment-modeler'],
   'Venture Capital': ['/tools/co-investment-modeler', '/tools/irr-tvpi-dpi-calculator'],
   'Private Equity': ['/tools/waterfall', '/tools/irr-tvpi-dpi-calculator'],
   'Fund Waterfalls': ['/tools/waterfall', '/tools/waterfall-comparator'],

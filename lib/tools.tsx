@@ -4,7 +4,7 @@ import {
   IconPercentage, IconCalendarDollar, IconArrowsSplit2, IconAward, IconFileInvoice,
   IconRocket, IconChartLine, IconReportAnalytics,
   IconCoin, IconCurrencyDollar, IconArrowsExchange,
-  IconWorld, IconCalculator, IconChecklist,
+  IconWorld, IconCalculator, IconChecklist, IconCalendarEvent,
 } from '@tabler/icons-react';
 
 export type Persona = 'founder' | 'manager' | 'admin';
@@ -37,6 +37,7 @@ export const TOOL_GROUPS: { title: string; blurb: string; tools: Tool[] }[] = [
       { href: '/tools/spv-cost-estimator', label: 'SPV Formation Cost Estimator', description: 'Setup cost for a single-deal SPV', icon: IconReceipt2, group: 'SPV formation & administration', personas: ['founder'] },
       { href: '/tools/spv-admin-cost-calculator', label: 'SPV Admin Cost Calculator', description: 'Annual run-rate, one SPV or a portfolio', icon: IconCalculator, group: 'SPV formation & administration', personas: ['admin', 'manager'] },
       { href: '/tools/spv-formation-checklist', label: 'SPV Formation Checklist', description: 'Steps and timeline to funding-ready', icon: IconChecklist, group: 'SPV formation & administration', personas: ['founder'] },
+      { href: '/tools/delaware-spv-compliance-calendar', label: 'Delaware SPV Compliance Calendar', description: 'State and IRS filings due, in date order', icon: IconCalendarEvent, group: 'SPV formation & administration', personas: ['admin', 'manager'] },
     ],
   },
   {

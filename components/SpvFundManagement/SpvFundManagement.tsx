@@ -165,6 +165,7 @@ const resources = [
       ['SPV jurisdiction comparator', '/tools/spv-jurisdiction-comparator'],
       ['SPV formation cost estimator', '/tools/spv-cost-estimator'],
       ['SPV admin cost calculator', '/tools/spv-admin-cost-calculator'],
+      ['Delaware SPV compliance calendar', '/tools/delaware-spv-compliance-calendar'],
       ['Capital call schedule builder', '/tools/capital-call-schedule'],
       ['Drawdown notice generator', '/tools/drawdown-notice'],
       ['Waterfall calculator', '/tools/waterfall'],

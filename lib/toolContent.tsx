@@ -193,6 +193,34 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
     ],
   },
 
+  '/tools/delaware-spv-compliance-calendar': {
+    seoTitle: 'Delaware SPV Compliance Calendar (State & IRS Filings)',
+    seoDescription: 'Every recurring Delaware and IRS filing for an SPV in date order — annual tax, Form 1065 and K-1s, Form 5472, W-8 collection and non-US investor withholding.',
+    keywords: 'Delaware SPV compliance, Delaware LLC annual tax, Delaware LLC compliance calendar, SPV K-1 deadline, Form 5472 foreign owned LLC, Form 1065 SPV, SPV administration Delaware, W-8BEN SPV',
+    intro: [
+      'A Delaware SPV is cheap to form, but it is not a set-and-forget vehicle. Delaware charges a flat annual tax on LLCs and LPs, the IRS expects a partnership return and a Schedule K-1 for every investor, and any non-US investor adds withholding and documentation duties on top.',
+      'This calendar lists the dated filings for your entity type in order, separates statutory deadlines from investor-facing and best-practice items, and shows how the K-1 count and the non-US investor mix change the workload.',
+    ],
+    how: [
+      'Choose the entity type — LLC or LP taxed as a partnership, a single-member LLC, or a C-corporation.',
+      'Set the number of investors and whether any are non-US, then toggle whether you file on extension.',
+      'Work down the dated list and the ongoing list, ticking items off, and use Copy share link to send the exact setup to your adviser or administrator.',
+    ],
+    faqs: [
+      { q: 'What does a Delaware SPV have to file every year?', a: 'A Delaware LLC or LP pays a flat annual tax of $300 by June 1 and has no annual report. Federally, an LLC or LP with more than one investor files a partnership return and issues a Schedule K-1 to each investor. A foreign-owned single-member LLC files Form 5472, and a C-corporation files Form 1120 plus the Delaware franchise tax report.' },
+      { q: 'When are K-1s due for an SPV?', a: 'The partnership return and K-1s are due March 15 for a calendar-year entity. Most SPVs file Form 7004 to extend by six months to September 15, which means investors often receive K-1s late in the summer. Tell investors the expected timing up front.' },
+      { q: 'Does a Delaware LLC with a foreign owner have extra filings?', a: 'A single-member LLC with one non-US owner must file Form 5472 with a pro forma Form 1120 each year, even if it had no income. The penalty for failing to file is $25,000 per form. A multi-member LLC taxed as a partnership files Form 1065 instead.' },
+      { q: 'What changes when an SPV has non-US investors?', a: 'The administrator must collect a W-8 from each non-US investor and a W-9 from each US investor, and may need to withhold and report under Forms 1042 and 1042-S. If the SPV has income effectively connected with a US trade or business, Forms 8804 and 8805 and quarterly installments also apply. A vehicle that only holds shares in a C-corporation usually does not have that income.' },
+      { q: 'Do Delaware SPVs still need to file a beneficial ownership (BOI) report?', a: 'Under FinCEN’s March 2025 interim final rule, entities formed in the US are exempt from beneficial ownership reporting. The rules have changed several times, so confirm the current position with counsel before relying on that exemption.' },
+    ],
+    related: ['/tools/spv-formation-checklist', '/tools/spv-admin-cost-calculator', '/tools/spv-jurisdiction-comparator'],
+    relatedReading: [
+      { href: '/blog/delaware-spv-formation-and-administration', label: 'Delaware SPV Formation and Administration: A Practical Guide' },
+      { href: '/learn/fund-operations/delaware-spv', label: 'What is a Delaware SPV?' },
+      { href: '/solutions/spv-syndicates', label: 'SPV & Syndicate Administration on aama.io' },
+    ],
+  },
+
   '/tools/mas-licensing-estimator': {
     seoTitle: 'MAS Fund Management Licence Estimator (CMS, RFMC, Family Office)',
     seoDescription: 'Find which Singapore fund management regime fits — single family office exemption, RFMC, or a CMS licence (A/I or Retail LFMC) — based on AUM and investor base.',
