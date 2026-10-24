@@ -4,6 +4,7 @@ import { PricingHero } from '../components/PricingHero/PricingHero';
 import { PricingTables } from '../components/PricingTables/PricingTables';
 import { PricingFAQ, faqData } from '../components/PricingFAQ/PricingFAQ';
 import { PricingSection } from '../components/PricingSection/PricingSection';
+import { LaunchFreeBanner } from '@/components/EmergingManagers/LaunchFreeBanner';
 import { SEO } from '@/components/SEO/SEO';
 
 const structuredData = {
@@ -74,6 +75,7 @@ export default function PricingPage() {
       </Head>
       <PageShell>
         <PricingHero />
+        <LaunchFreeBanner />
         <PricingTables />
         <PricingSection />
         <PricingFAQ />

@@ -3,17 +3,18 @@ import { SEO } from '@/components/SEO/SEO';
 import { SocialProof } from '@/components/SocialProof/SocialProof';
 import { PageShell } from '@/components/ui/PageShell';
 import { Hero } from '../components/Hero/Hero';
-import { ProblemSolution } from '../components/ProblemSolution/ProblemSolution';
+import { ProblemSolution, WORKFLOW_FAQS } from '../components/ProblemSolution/ProblemSolution';
 import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
 import { TrustBar } from '../components/TrustBar/TrustBar';
 import Head from 'next/head';
+import { LaunchFreeBanner } from '@/components/EmergingManagers/LaunchFreeBanner';
 import { HOME_FAQS, HomeFAQ } from '@/components/HomeFAQ/HomeFAQ';
 
 export default function HomePage() {
   const faqJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: HOME_FAQS.map((f) => ({
+    mainEntity: [...HOME_FAQS, ...WORKFLOW_FAQS].map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
@@ -24,7 +25,7 @@ export default function HomePage() {
     <>
       <SEO
         title="Fund Administration Software in Singapore & APAC"
-        description="Fund administration & accounting software for mid-market PE, VC and private credit funds in Singapore & APAC — capital calls, NAV, IFRS 9, LP portal."
+        description="Fund administration software for mid-market PE, VC and private credit funds in Singapore & APAC. Automated capital calls, NAV, IFRS 9, LP portal."
         keywords="fund administration software Singapore, private equity fund administration software, venture capital fund administration software, private credit fund administration software, fund accounting software, fund accounting software IFRS 9 Singapore, LP portal for fund managers, software for fund administrators, in-house fund administration software, fund administration for emerging managers, capital call software, distribution waterfall software, NAV calculation software, SPV administration software Singapore, VCC fund administration, VCC sub-fund accounting, boutique fund admin software Singapore"
       />
       <Head>
@@ -32,6 +33,7 @@ export default function HomePage() {
       </Head>
       <PageShell>
         <Hero />
+        <LaunchFreeBanner />
         <TrustBar />
         <ProblemSolution />
         <ProductShowcase />

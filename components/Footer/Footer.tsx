@@ -32,6 +32,7 @@ const groups = [
       { label: 'Learn', href: '/learn' },
       { label: 'Blog', href: '/blog' },
       { label: 'Partners', href: '/partners' },
+      { label: 'Launch Free', href: '/emerging-managers' },
       { label: 'Contact', href: '/contact' },
       { label: 'Book a demo', href: '/contact' },
     ],

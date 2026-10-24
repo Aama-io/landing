@@ -21,6 +21,7 @@ const products = [
     description:
       'Multi-instrument fund accounting and administration for PE, VC, family offices, hedge funds, mutual funds and SPVs of any size — a complete general ledger, automated NAV and IFRS-ready reporting across every asset class.',
     image: '/images/fund-detail.png',
+    alt: 'Fund accounting software screen showing the general ledger, NAV and IFRS-ready reporting',
     icon: IconReportMoney,
     features: ['All fund types & instruments', 'Automated NAV & ledger', 'IFRS-ready reporting'],
   },
@@ -30,6 +31,7 @@ const products = [
     description:
       'A real-time overview of every fund — NAV, performance analytics, asset allocation and operational health in one view.',
     image: '/images/client-fund.png',
+    alt: 'Fund administration dashboard with real-time NAV, performance analytics and asset allocation across funds',
     icon: IconLayoutDashboard,
     features: ['Real-time NAV', 'Performance analytics', 'Asset allocation'],
   },
@@ -39,6 +41,7 @@ const products = [
     description:
       'Flexible share class and instrument setup with customizable fee structures, voting rights and distribution preferences.',
     image: '/images/share-class.png',
+    alt: 'Share class and instrument setup screen with fee structures, voting rights and distribution rules',
     icon: IconStack2,
     features: ['Fee structures', 'Voting rights', 'Distribution rules'],
   },
@@ -48,6 +51,7 @@ const products = [
     description:
       'Comprehensive fund setup and configuration with regulatory compliance and complete audit trails.',
     image: '/images/settings.png',
+    alt: 'Fund configuration screen for compliance setup, risk management and audit trails',
     icon: IconSettings,
     features: ['Compliance setup', 'Audit trails', 'Risk management'],
   },
@@ -57,6 +61,7 @@ const products = [
     description:
       'A white-labeled investor and LP portal with full fund-admin capabilities — KYC/AML onboarding, real-time positions, capital calls, statements and a secure document vault.',
     image: '/images/fund-investors.png',
+    alt: 'White-labeled LP portal listing fund investors, KYC/AML status and positions',
     icon: IconUsersGroup,
     features: ['KYC/AML onboarding', 'Real-time LP positions', 'Document vault'],
   },
@@ -66,6 +71,7 @@ const products = [
     description:
       'Automated capital call workflows with scheduled notifications, payment tracking and built-in compliance monitoring.',
     image: '/images/capital-call.png',
+    alt: 'Capital call workflow in fund administration software with payment tracking per investor',
     icon: IconCoin,
     features: ['Automated calls', 'Payment tracking', 'Compliance reports'],
   },
@@ -147,7 +153,7 @@ export function ProductShowcase() {
                   >
                     <Image
                       src={current.image}
-                      alt={current.title}
+                      alt={current.alt}
                       width={1280}
                       height={820}
                       className={classes.shot}

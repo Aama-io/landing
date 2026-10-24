@@ -138,7 +138,11 @@ export function Hero() {
           <div className={classes.stack}>
             <div className={classes.backdrop} />
 
-            <div className={classes.ledger}>
+            <div
+              className={classes.ledger}
+              role="img"
+              aria-label="Illustrative aama.io fund administration dashboard for a Singapore fund: net asset value, capital called, distributions, management fee and active investors"
+            >
               <div className={classes.ledgerHead}>
                 <span className={classes.fundTag}>
                   <span className={classes.fundDot} />

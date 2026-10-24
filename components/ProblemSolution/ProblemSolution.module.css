@@ -111,6 +111,29 @@
   }
 }
 
+.areaTitle {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+.faq {
+  margin-top: clamp(28px, 4vw, 40px);
+}
+
+.faqQ {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.faqA {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
 .index {
   font-size: 12px;
   font-weight: 600;

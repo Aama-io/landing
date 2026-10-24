@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { IconArrowRight, IconCheck, IconMinus } from '@tabler/icons-react';
-import { Container, Text, Title } from '@mantine/core';
+import { Accordion, Container, Text, Title } from '@mantine/core';
 import { Reveal } from '../ui/Reveal';
 import classes from './ProblemSolution.module.css';
 
@@ -38,6 +38,29 @@ const workflows = [
     area: 'Vendor stack',
     before: 'Separate tools for accounting, the LP portal, e-signatures and reporting.',
     after: 'Administration, accounting and the investor portal — one vendor, one data model.',
+  },
+];
+
+// Workflow-level questions shown directly under the table. Exported so
+// pages/index.tsx folds them into the same FAQPage JSON-LD as HOME_FAQS (one
+// FAQPage per page — separate blocks get ignored or merged unpredictably).
+// Answers restate only what the table and product pages already claim.
+export const WORKFLOW_FAQS: { q: string; a: string }[] = [
+  {
+    q: 'How does aama.io handle capital calls and distributions?',
+    a: 'Capital calls and distributions run from the same ledger as the fund accounts. Notices are sent with scheduled notifications, payments are tracked against each investor, and bank reconciliation happens in the platform rather than in a separate spreadsheet.',
+  },
+  {
+    q: 'Does aama.io calculate NAV automatically?',
+    a: 'Yes. NAV is calculated automatically from the general ledger, with IFRS 9 / SFRS(I) 9 accounting built in and every recalculation recorded in an audit trail.',
+  },
+  {
+    q: 'Can one platform consolidate several funds, VCC sub-funds and SPVs?',
+    a: 'Yes. Funds, VCC sub-funds, SPVs and syndicates run on one multi-currency engine, so consolidation does not depend on workbooks maintained by hand.',
+  },
+  {
+    q: 'What compliance evidence does aama.io produce for auditors and MAS?',
+    a: 'KYC/AML records and MAS-aligned evidence are generated continuously as work happens, so an auditor or regulator request draws on existing records instead of a manual compilation.',
   },
 ];
 
@@ -84,7 +107,7 @@ export function ProblemSolution() {
               <div key={w.area} className={classes.row} role="row">
                 <div className={classes.area} role="rowheader">
                   <span className={classes.index}>{String(i + 1).padStart(2, '0')}</span>
-                  {w.area}
+                  <h3 className={classes.areaTitle}>{w.area}</h3>
                 </div>
                 <div className={classes.cell} data-tone="before" role="cell">
                   <span className={classes.mobileLabel}>Today</span>
@@ -115,6 +138,17 @@ export function ProblemSolution() {
               </Link>
             </div>
           </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <Accordion variant="separated" radius="md" chevronPosition="right" className={classes.faq}>
+            {WORKFLOW_FAQS.map((f, i) => (
+              <Accordion.Item key={f.q} value={`workflow-faq-${i}`}>
+                <Accordion.Control><span className={classes.faqQ}>{f.q}</span></Accordion.Control>
+                <Accordion.Panel><span className={classes.faqA}>{f.a}</span></Accordion.Panel>
+              </Accordion.Item>
+            ))}
+          </Accordion>
         </Reveal>
       </Container>
     </section>
