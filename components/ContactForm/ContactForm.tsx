@@ -33,6 +33,17 @@ const INQUIRY_TYPES = [
   'Other',
 ];
 
+// What the fund is raising or running. Optional, so it never blocks a submission, but it lets
+// a note or debt issuer be routed to the right conversation from the first message.
+const FUND_TYPES = [
+  'Venture capital fund',
+  'Private equity fund',
+  'Private credit / debt fund',
+  'Debt or note programme (promissory notes, convertible note)',
+  'SPV or syndicate',
+  'Other',
+];
+
 export function ContactForm() {
   const [status, setStatus] = useState<'success' | 'error' | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -56,6 +67,7 @@ export function ContactForm() {
       email: '',
       company: '',
       inquiryType: '',
+      fundType: '',
       aum: '',
       message: '',
     },
@@ -192,6 +204,14 @@ export function ContactForm() {
                 {...form.getInputProps('inquiryType')}
               />
             </SimpleGrid>
+
+            <Select
+              label="Fund type (optional)"
+              placeholder="What are you raising or running?"
+              data={FUND_TYPES}
+              clearable
+              {...form.getInputProps('fundType')}
+            />
 
             <TextInput
               label="Approximate AUM or fund size (optional)"

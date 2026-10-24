@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { Container, Accordion, Button } from '@mantine/core';
 import { IconArrowRight, IconChevronRight, IconCheck } from '@tabler/icons-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { SectionHeading } from '@/components/ui/SectionHeading';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Reveal } from '@/components/ui/Reveal';
 import s from './ProductDetail.module.css';
 
@@ -30,6 +30,12 @@ export type RelatedLink = { href: string; label: string; blurb: string; icon: Ic
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+const walkthrough = [
+  { title: 'Share your structure', desc: 'Your fund type, vehicles and investors' },
+  { title: 'See it on your numbers', desc: 'Capital calls, accounting and reporting for your set-up' },
+  { title: 'Get a plan that fits', desc: 'Pricing for your fund type, explained up front' },
+];
+
 export function ProductDetail({
   data, backHref, backLabel, related, relatedHeading,
 }: {
@@ -40,6 +46,8 @@ export function ProductDetail({
   relatedHeading: string;
 }) {
   const Icon = data.icon;
+  const [activeGroup, setActiveGroup] = useState(0);
+  const group = data.featureGroups[Math.min(activeGroup, data.featureGroups.length - 1)];
   return (
     <>
       {/* Hero */}
@@ -79,17 +87,20 @@ export function ProductDetail({
         </Container>
       </section>
 
-      {/* Benefits */}
+      {/* Benefits — a single ruled strip, not a card grid */}
       {data.benefits.length > 0 && (
         <section className={`${s.section} ${s.sectionMuted}`}>
           <Container size="xl">
-            <SectionHeading eyebrow="Why aama.io" title="Built to move your operations forward" />
-            <div className={s.benefitGrid}>
+            <div className={s.leftHead}>
+              <span className={s.eyebrow}>Why aama.io</span>
+              <h2 className={s.h2}>Built to move your operations forward</h2>
+            </div>
+            <div className={s.benefitStrip}>
               {data.benefits.map((b, i) => {
                 const BIcon = b.icon;
                 return (
                   <Reveal key={b.title} delay={(i % 4) * 0.07}>
-                    <div className={s.benefitCard}>
+                    <div className={s.benefitCol}>
                       <span className={s.benefitIcon}><BIcon size={22} stroke={1.7} /></span>
                       <div className={s.benefitTitle}>{b.title}</div>
                       <div className={s.benefitDesc}>{b.description}</div>
@@ -102,45 +113,98 @@ export function ProductDetail({
         </section>
       )}
 
-      {/* Features */}
+      {/* Capabilities — tab rail and a detail panel */}
       <section className={s.section}>
         <Container size="xl">
-          <SectionHeading eyebrow="Capabilities" title="Everything you need, in one platform" />
-          <div className={s.featureGrid}>
-            {data.featureGroups.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 3) * 0.07}>
-                <div className={s.featureCard}>
-                  <div className={s.featureTitle}>{f.title}</div>
-                  <div className={s.featureDesc}>{f.description}</div>
-                  <ul className={s.featureList}>
-                    {f.items.map((it) => (
-                      <li key={it}><IconCheck size={15} className={s.featureCheck} /> {it}</li>
+          <div className={s.leftHead}>
+            <span className={s.eyebrow}>Capabilities</span>
+            <h2 className={s.h2}>Everything you need, in one platform</h2>
+            <p className={s.lead}>{data.description}</p>
+          </div>
+          <div className={s.explorer}>
+            <div className={s.rail} role="tablist" aria-label="Capabilities">
+              {data.featureGroups.map((f, i) => (
+                <button
+                  key={f.title}
+                  type="button"
+                  role="tab"
+                  id={`cap-tab-${i}`}
+                  aria-selected={i === activeGroup}
+                  aria-controls="cap-panel"
+                  className={s.railItem}
+                  data-active={i === activeGroup || undefined}
+                  onClick={() => setActiveGroup(i)}
+                >
+                  <span className={s.railNum}>{String(i + 1).padStart(2, '0')}</span>
+                  <span className={s.railText}>
+                    <span className={s.railTitle}>{f.title}</span>
+                    <span className={s.railDesc}>{f.description}</span>
+                  </span>
+                  <IconArrowRight size={18} className={s.railArrow} />
+                </button>
+              ))}
+            </div>
+
+            <div className={s.panel} role="tabpanel" id="cap-panel" aria-labelledby={`cap-tab-${Math.min(activeGroup, data.featureGroups.length - 1)}`}>
+              <div className={s.panelGlow} />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={group.title}
+                  className={s.panelBody}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3, ease }}
+                >
+                  <div className={s.panelHead}>
+                    <span className={s.panelIcon}><Icon size={22} stroke={1.7} /></span>
+                    <span className={s.panelCount}>{group.items.length} capabilities</span>
+                  </div>
+                  <h3 className={s.panelTitle}>{group.title}</h3>
+                  <p className={s.panelDesc}>{group.description}</p>
+                  <ul className={s.tiles}>
+                    {group.items.map((it) => (
+                      <li key={it} className={s.tile}>
+                        <span className={s.tileCheck}><IconCheck size={13} stroke={3} /></span>
+                        <span>{it}</span>
+                      </li>
                     ))}
                   </ul>
-                </div>
-              </Reveal>
-            ))}
+                  <div className={s.panelFoot}>
+                    <Link href="/contact" className={s.panelLink}>
+                      See it on your own structure <IconArrowRight size={15} />
+                    </Link>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Use cases */}
+      {/* Use cases — numbered rows with metrics aligned right */}
       {data.useCases && data.useCases.length > 0 && (
         <section className={`${s.section} ${s.sectionMuted}`}>
           <Container size="xl">
-            <SectionHeading eyebrow="Use cases" title="How teams put it to work" />
-            <div className={s.useGrid}>
+            <div className={s.leftHead}>
+              <span className={s.eyebrow}>Use cases</span>
+              <h2 className={s.h2}>How teams put it to work</h2>
+            </div>
+            <div className={s.caseList}>
               {data.useCases.map((u, i) => (
-                <Reveal key={u.title} delay={(i % 3) * 0.07}>
-                  <div className={s.useCard}>
-                    <div className={s.useTitle}>{u.title}</div>
-                    <div className={s.useDesc}>{u.description}</div>
+                <Reveal key={u.title} delay={(i % 3) * 0.05}>
+                  <div className={s.caseRow}>
+                    <span className={s.caseNum}>{String(i + 1).padStart(2, '0')}</span>
+                    <div className={s.caseMain}>
+                      <div className={s.useTitle}>{u.title}</div>
+                      <div className={s.useDesc}>{u.description}</div>
+                    </div>
                     {u.metrics && (
-                      <div className={s.useMetrics}>
+                      <div className={s.caseMetrics}>
                         {u.metrics.map((m) => (
-                          <div key={m.label} className={s.useMetric}>
-                            <span className={s.useMetricLabel}>{m.label}</span>
+                          <div key={m.label} className={s.caseMetric}>
                             <span className={s.useMetricValue}>{m.value}</span>
+                            <span className={s.useMetricLabel}>{m.label}</span>
                           </div>
                         ))}
                       </div>
@@ -153,42 +217,54 @@ export function ProductDetail({
         </section>
       )}
 
-      {/* Key features */}
+      {/* Key features — rounded ink band */}
       {data.keyFeatures && data.keyFeatures.length > 0 && (
-        <section className={s.section}>
+        <section className={s.bandSection}>
           <Container size="xl">
-            <SectionHeading eyebrow="Platform" title="More of what's under the hood" />
-            <div className={s.capGrid}>
-              {data.keyFeatures.map((k, i) => (
-                <Reveal key={k.title} delay={(i % 3) * 0.05}>
-                  <div className={s.capCard}>
-                    <span className={s.capIcon}><IconCheck size={14} /></span>
-                    <div>
-                      <div className={s.capTitle}>{k.title}</div>
-                      <div className={s.capDesc}>{k.description}</div>
+            <div className={s.inkCard}>
+              <div className={s.inkGlow} />
+              <div className={s.inkInner}>
+                <span className={s.inkEyebrow}>Platform</span>
+                <h2 className={s.inkTitle}>More of what&apos;s under the hood</h2>
+                <div className={s.inkGrid}>
+                  {data.keyFeatures.map((k) => (
+                    <div key={k.title} className={s.inkItem}>
+                      <span className={s.inkCheck}><IconCheck size={14} stroke={2.6} /></span>
+                      <div>
+                        <div className={s.inkItemTitle}>{k.title}</div>
+                        <div className={s.inkItemDesc}>{k.description}</div>
+                      </div>
                     </div>
-                  </div>
-                </Reveal>
-              ))}
+                  ))}
+                </div>
+              </div>
             </div>
           </Container>
         </section>
       )}
 
-      {/* FAQ */}
+      {/* FAQ — sticky intro beside the accordion */}
       <section className={`${s.section} ${s.sectionMuted}`}>
-        <Container size="md">
-          <SectionHeading eyebrow="FAQ" title="Frequently asked questions" />
-          <Reveal>
-            <Accordion variant="separated" radius="md" chevronPosition="right" className={s.faq}>
-              {data.faqs.map((item, i) => (
-                <Accordion.Item key={i} value={`faq-${i}`}>
-                  <Accordion.Control><span className={s.faqQ}>{item.q}</span></Accordion.Control>
-                  <Accordion.Panel><span className={s.faqA}>{item.a}</span></Accordion.Panel>
-                </Accordion.Item>
-              ))}
-            </Accordion>
-          </Reveal>
+        <Container size="xl">
+          <div className={s.split}>
+            <div className={s.splitIntro}>
+              <span className={s.eyebrow}>FAQ</span>
+              <h2 className={s.h2}>Frequently asked questions</h2>
+              <p className={s.lead}>
+                Something else on your mind? <Link href="/contact" className={s.inlineLink}>Talk to the team</Link>.
+              </p>
+            </div>
+            <Reveal>
+              <Accordion variant="separated" radius="md" chevronPosition="right">
+                {data.faqs.map((item, i) => (
+                  <Accordion.Item key={i} value={`faq-${i}`}>
+                    <Accordion.Control><span className={s.faqQ}>{item.q}</span></Accordion.Control>
+                    <Accordion.Panel><span className={s.faqA}>{item.a}</span></Accordion.Panel>
+                  </Accordion.Item>
+                ))}
+              </Accordion>
+            </Reveal>
+          </div>
         </Container>
       </section>
 
@@ -196,7 +272,10 @@ export function ProductDetail({
       {related.length > 0 && (
         <section className={s.section}>
           <Container size="xl">
-            <SectionHeading eyebrow="Explore" title={relatedHeading} />
+            <div className={s.leftHead}>
+              <span className={s.eyebrow}>Explore</span>
+              <h2 className={s.h2}>{relatedHeading}</h2>
+            </div>
             <div className={s.relatedGrid}>
               {related.map((r) => {
                 const RIcon = r.icon;
@@ -221,11 +300,43 @@ export function ProductDetail({
         <Container size="xl">
           <div className={s.ctaCard}>
             <div className={s.ctaGlow} />
-            <h2 className={s.ctaTitle}>Ready to transform your fund operations?</h2>
-            <p className={s.ctaDesc}>See aama.io run on your own structure — book a walkthrough with our team.</p>
-            <div className={s.ctaRow}>
-              <Button component={Link} href="/contact" size="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
-              <Button component={Link} href="/pricing" size="md" variant="white" className={s.ctaSecondary}>View pricing</Button>
+            <div className={s.ctaGrid}>
+              <div className={s.ctaCopy}>
+                <span className={s.ctaChip}>Book a walkthrough</span>
+                <h2 className={s.ctaTitle}>See {data.shortName} running on your own structure</h2>
+                <p className={s.ctaDesc}>
+                  Bring your fund or vehicle and your questions. Our team will show aama.io working on your set-up,
+                  not a generic demo.
+                </p>
+                <div className={s.ctaRow}>
+                  <Button component={Link} href="/contact" size="md" radius="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
+                  <Button component={Link} href="/pricing" size="md" radius="md" variant="default" className={s.ctaGhost}>View pricing</Button>
+                </div>
+                <ul className={s.ctaProof}>
+                  <li><IconCheck size={15} stroke={2.6} /> Shown on your own structure</li>
+                  <li><IconCheck size={15} stroke={2.6} /> Pricing explained up front</li>
+                  <li><IconCheck size={15} stroke={2.6} /> Singapore and APAC specialists</li>
+                </ul>
+              </div>
+
+              <div className={s.ctaPanel}>
+                <div className={s.ctaPanelHead}>
+                  <span>Your walkthrough</span>
+                  <span className={s.ctaPanelBadge}>3 steps</span>
+                </div>
+                {walkthrough.map((st, i) => (
+                  <div key={st.title} className={s.ctaStep}>
+                    <span className={s.ctaDot}>{i + 1}</span>
+                    <span className={s.ctaStepBody}>
+                      <span className={s.ctaStepTitle}>{st.title}</span>
+                      <span className={s.ctaStepDesc}>{st.desc}</span>
+                    </span>
+                  </div>
+                ))}
+                <Link href="/emerging-managers" className={s.ctaPanelLink}>
+                  Raising your first fund? See Launch Free <IconArrowRight size={14} />
+                </Link>
+              </div>
             </div>
           </div>
         </Container>

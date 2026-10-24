@@ -1,7 +1,7 @@
-import { Accordion, Button, Container, Paper, SimpleGrid, ThemeIcon } from '@mantine/core';
+import { Accordion, Button, Container, ThemeIcon } from '@mantine/core';
 import {
-  IconArrowRight, IconArrowUpRight, IconChartLine, IconCheck, IconCircleCheckFilled, IconCoin, IconFileText,
-  IconFlag, IconReportMoney, IconRocket, IconSend, IconShieldCheck, IconSparkles, IconUserPlus, IconUsersGroup,
+  IconArrowRight, IconArrowUpRight, IconChartLine, IconCheck, IconCircleCheckFilled, IconFileText,
+  IconFlag, IconReportMoney, IconRocket, IconSend, IconShieldCheck, IconUserPlus,
 } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -37,21 +37,28 @@ const included = [
   { icon: IconFileText, title: 'Document sharing', body: 'Share subscription documents, notices and reports through a secure vault.' },
 ];
 
-const proofPoints = [
+const paths = [
   {
-    icon: IconSparkles,
-    title: 'Free to start',
-    body: 'Set up your fund, invite investors, send capital calls and share documents. No card and no trial clock.',
-  },
-  {
-    icon: IconUsersGroup,
+    tag: 'First fund',
     title: 'Free through your first close',
-    body: 'First fund with up to 10 investors? The LP portal stays free until your first close is done. Your own entity does not count towards the 10.',
+    text: 'Up to 10 investors, and your own entity does not count towards the 10.',
+    points: [
+      'Fund set-up, investor invites and KYC/AML onboarding',
+      'Capital calls, payment tracking and document sharing',
+      'Mark your first close, then choose your plan',
+    ],
+    primary: true,
   },
   {
-    icon: IconCoin,
+    tag: 'Larger funds',
     title: 'Pay when you collect',
-    body: 'Bigger fund? You pay nothing until your first LP payment is recorded, so you never pay before the fund raises.',
+    text: 'More than 10 investors, or a bigger raise? You never pay before the fund raises.',
+    points: [
+      'The same LP portal, with no fees until your first LP payment is recorded',
+      'The paid plan for your fund type starts after that payment',
+      'You are told before anything is charged',
+    ],
+    primary: false,
   },
 ];
 
@@ -135,8 +142,12 @@ export const EM_FAQS: { q: string; a: string }[] = [
     a: 'No. Launch Free is a founding offer and we will close it without notice. Apply while it is open.',
   },
   {
+    q: 'Can I use Launch Free for debt funds or note programmes?',
+    a: 'Yes. The LP portal supports note issuance, including principal, interest, maturity and conversion terms, so promissory notes and convertible note can be raised and tracked alongside funds. Choose “Debt or note programme” as your fund type when you apply, and we will confirm how the free period applies to your structure. Whether and how you can offer notes to investors depends on your jurisdiction, so check with your legal adviser.',
+  },
+  {
     q: 'Who is Launch Free for?',
-    a: 'First-time and emerging fund managers, SPV leads and syndicate leads, anywhere in the world. We review each application to make sure the platform fits your fund.',
+    a: 'First-time and emerging fund managers, SPV leads, syndicate leads and debt or note issuers, anywhere in the world. We review each application to make sure the platform fits your fund.',
   },
 ];
 
@@ -238,64 +249,71 @@ export function EmergingManagers() {
 
       <section className={s.section}>
         <Container size="xl">
-          <SectionHeading
-            eyebrow="What you get free"
-            title="The full LP portal, from set-up to statements"
-            description="Everything you need to run the investor side of your first fund. Fund accounting is a paid upgrade when you are ready for it."
-          />
-          <SimpleGrid cols={{ base: 1, sm: 2, lg: 3 }} spacing="lg" mt="xl">
-            {included.map((f, i) => (
-              <Reveal key={f.title} delay={(i % 3) * 0.06}>
-                <div className={s.feature}>
-                  <ThemeIcon size={40} radius="md" variant="light"><f.icon size={20} stroke={1.7} /></ThemeIcon>
-                  <div>
-                    <h3 className={s.featureTitle}>{f.title}</h3>
-                    <p className={s.featureBody}>{f.body}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </SimpleGrid>
+          <div className={s.split}>
+            <div className={s.splitIntro}>
+              <span className={s.eyebrow}>What you get free</span>
+              <h2 className={s.h2}>The full LP portal, from set-up to statements</h2>
+              <p className={s.lead}>
+                Everything you need to run the investor side of your first fund. Fund accounting is a paid upgrade
+                when you are ready for it.
+              </p>
+            </div>
+            <ul className={s.rows}>
+              {included.map((f, i) => (
+                <Reveal key={f.title} delay={(i % 2) * 0.06}>
+                  <li className={s.rowItem}>
+                    <ThemeIcon size={40} radius="md" variant="light"><f.icon size={20} stroke={1.7} /></ThemeIcon>
+                    <div>
+                      <h3 className={s.featureTitle}>{f.title}</h3>
+                      <p className={s.featureBody}>{f.body}</p>
+                    </div>
+                  </li>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
         </Container>
       </section>
 
       <section className={`${s.section} ${s.sectionMuted}`}>
         <Container size="xl">
-          <SectionHeading
-            eyebrow="The offer"
-            title="You pay when the fund is working"
-            description="Two ways in, built for first-time and emerging managers."
-          />
-          <SimpleGrid cols={{ base: 1, md: 3 }} spacing="lg" mt="xl">
-            {proofPoints.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.07}>
-                <Paper withBorder radius="lg" p="xl" className={s.card}>
-                  <ThemeIcon size={46} radius="md" variant="light"><p.icon size={24} stroke={1.7} /></ThemeIcon>
-                  <h3 className={s.cardTitle}>{p.title}</h3>
-                  <p className={s.cardBody}>{p.body}</p>
-                </Paper>
+          <div className={s.leftHead}>
+            <span className={s.eyebrow}>The offer</span>
+            <h2 className={s.h2}>Two ways in. You pay when the fund is working.</h2>
+          </div>
+          <div className={s.fork}>
+            {paths.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.08}>
+                <div className={p.primary ? `${s.pathPanel} ${s.pathPrimary}` : s.pathPanel}>
+                  <span className={s.pathTag}>{p.tag}</span>
+                  <h3 className={s.pathTitle}>{p.title}</h3>
+                  <p className={s.pathText}>{p.text}</p>
+                  <ul className={s.pathList}>
+                    {p.points.map((pt) => (
+                      <li key={pt}><IconCircleCheckFilled size={16} className={s.pathCheck} />{pt}</li>
+                    ))}
+                  </ul>
+                </div>
               </Reveal>
             ))}
-          </SimpleGrid>
+          </div>
         </Container>
       </section>
 
       <section className={s.section} id="how">
-        <Container size="lg">
+        <Container size="xl">
           <SectionHeading
             eyebrow="Your first fund"
             title="Form it. Raise it. Then run it."
           />
-          <ol className={s.steps}>
+          <ol className={s.timeline}>
             {journey.map((st, i) => (
               <Reveal key={st.title} delay={i * 0.07}>
-                <li className={s.step}>
-                  <span className={s.stepNum}>{i + 1}</span>
-                  <div>
-                    <span className={s.stepWhen}>{st.when}</span>
-                    <h3 className={s.stepTitle}>{st.title}</h3>
-                    <p className={s.stepBody}>{st.body}</p>
-                  </div>
+                <li className={s.tlItem}>
+                  <span className={s.tlDot}>{i + 1}</span>
+                  <span className={s.stepWhen}>{st.when}</span>
+                  <h3 className={s.stepTitle}>{st.title}</h3>
+                  <p className={s.stepBody}>{st.body}</p>
                 </li>
               </Reveal>
             ))}

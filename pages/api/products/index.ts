@@ -1066,17 +1066,17 @@ export const products: ProductData[] = [
         ]
       },
       {
-        title: 'Mezzanine & private credit',
-        description: 'Subordinated debt with PIK toggles, warrants and blended cash/PIK coupons.',
-        metrics: [
-          { label: 'PIK accruals', value: 'Automated' }
-        ]
-      },
-      {
         title: 'Venture debt',
         description: 'Loans to venture-backed companies with warrants, drawdowns and milestone tranches alongside equity upside.',
         metrics: [
           { label: 'Facilities tracked', value: 'Unlimited' }
+        ]
+      },
+      {
+        title: 'Note programmes & convertible note',
+        description: 'Issue promissory notes and convertible note to investors, with principal, interest, maturity and conversion terms tracked in the LP portal.',
+        metrics: [
+          { label: 'Noteholder reporting', value: 'In the portal' }
         ]
       }
     ],
@@ -1126,6 +1126,10 @@ export const products: ProductData[] = [
       {
         question: 'Can LPs receive interest distributions?',
         answer: 'Yes. The platform distinguishes income from principal, distributes interest and yield to LPs, maintains capital accounts and produces white-labeled LP statements.'
+      },
+      {
+        question: 'Do you support promissory notes and convertible note?',
+        answer: 'Yes. The LP portal supports note issuance, including principal, interest, maturity and conversion terms, so a note or convertible-debt programme can be raised and reported to investors alongside your funds. Whether and how you can offer notes to investors depends on your jurisdiction, so check with your legal adviser.'
       },
       {
         question: 'Is it suitable for Singapore VCC credit funds?',
