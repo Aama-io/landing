@@ -74,7 +74,7 @@ export function Footer() {
               </ActionIcon>
               <ActionIcon
                 component="a"
-                href="mailto:hello@aama.io"
+                href="mailto:contact@aama.io"
                 variant="default"
                 size="lg"
                 radius="md"

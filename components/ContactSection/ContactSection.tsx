@@ -16,7 +16,7 @@ import classes from './ContactSection.module.css';
 const contactInfo = [
   {
     title: 'Email',
-    description: 'hello@aama.io',
+    description: 'contact@aama.io',
     icon: IconMail,
   },
   {

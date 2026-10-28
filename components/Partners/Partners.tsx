@@ -155,7 +155,7 @@ export function Partners() {
     } catch (error: any) {
       trackEvent({ action: 'partner_enquiry_error', category: 'Partners', label: 'Submission failed' });
       setStatus('error');
-      setErrorMessage(error.message || 'Failed to send your enquiry. Please try again or email hello@aama.io.');
+      setErrorMessage(error.message || 'Failed to send your enquiry. Please try again or email contact@aama.io.');
     } finally {
       setSubmitting(false);
     }
