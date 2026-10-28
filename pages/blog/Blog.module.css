@@ -452,3 +452,11 @@
   font-weight: 600;
   color: light-dark(var(--mantine-color-dark-9), var(--mantine-color-gray-0));
 } 
+/* Crawlable archive of every post */
+.archive { margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--border); }
+.archiveTitle { margin: 0 0 16px; font-size: 1.15rem; font-weight: 800; color: var(--text-strong); }
+.archiveList { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 40px; }
+.archiveList li { break-inside: avoid; padding: 6px 0; font-size: 14.5px; line-height: 1.45; }
+.archiveList a { color: var(--text); text-decoration: none; }
+.archiveList a:hover { color: var(--brand-700); text-decoration: underline; }
+@media (max-width: 48em) { .archiveList { columns: 1; } }

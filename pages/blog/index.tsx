@@ -289,6 +289,17 @@ export default function BlogPage({ posts }: { posts: BlogPost[] }) {
                 </div>
               )}
 
+              {/* Every post, as plain links: the grid above paginates in the browser, so older posts
+                  would otherwise have no crawlable link from the blog index. */}
+              <nav className={classes.archive} aria-label="All articles">
+                <h2 className={classes.archiveTitle}>All articles</h2>
+                <ul className={classes.archiveList}>
+                  {posts.map((p) => (
+                    <li key={p.slug}><Link href={`/blog/${p.slug}`}>{p.title}</Link></li>
+                  ))}
+                </ul>
+              </nav>
+
               {/* Free tools CTA */}
               <div className={classes.toolsCta}>
                 <div className={classes.toolsCtaGlow} />

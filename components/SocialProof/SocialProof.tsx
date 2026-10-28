@@ -6,17 +6,10 @@ import {
   IconUsersGroup,
 } from '@tabler/icons-react';
 import { Container, Text } from '@mantine/core';
+import { ClientLogos } from '../ClientLogos/ClientLogos';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeading } from '../ui/SectionHeading';
 import classes from './SocialProof.module.css';
-
-const clients = [
-  'Kumari Capital',
-  'Prabhu Capital',
-  'Sanima Capital',
-  'Siddhartha Capital',
-  'LS Capital',
-];
 
 const stats = [
   {
@@ -32,7 +25,7 @@ const stats = [
   {
     icon: IconChartLine,
     value: '15+',
-    label: 'Open- and closed-end mutual funds with NAV calculated daily',
+    label: 'open-end and closed-end mutual funds with NAV calculated daily',
   },
   {
     icon: IconClock,
@@ -51,21 +44,15 @@ export function SocialProof() {
     <section className={`${classes.wrapper} section`}>
       <Container size="xl">
         <SectionHeading
-          eyebrow="Live in production, not a pilot"
-          title="Proven in production at five regulated institutions"
-          description="The fund-accounting core behind aama.io calculates NAV daily across open- and closed-end funds at five regulated capital-markets firms — with zero data loss across every migration."
+          eyebrow="In production for over two years"
+          title="The fund accounting engine behind 15+ regulated funds"
+          description="For over two years, the fund-accounting core behind aama.io has calculated NAV daily across more than 15 open-end and closed-end funds at regulated capital-markets firms, with zero data loss across every migration."
         />
 
         <Reveal delay={0.1}>
           <div className={classes.logoStrip}>
-            <span className={classes.logoStripLabel}>Live in production at</span>
-            <div className={classes.logoRow}>
-              {clients.map((name) => (
-                <span key={name} className={classes.logo}>
-                  {name}
-                </span>
-              ))}
-            </div>
+            <span className={classes.logoStripLabel}>Trusted by</span>
+            <ClientLogos />
           </div>
         </Reveal>
 
@@ -79,7 +66,7 @@ export function SocialProof() {
               <Text className={classes.caseStudyBody}>
                 When Kumari Capital replaced its legacy mutual fund system, daily transactions and
                 clients grew roughly five-fold — handled by the same operations headcount, while the
-                engine calculates NAV every day across its open- and closed-end funds. Automating
+                engine calculates NAV every day across its open-end and closed-end funds. Automating
                 client actions that previously needed manual authorization freed up 1–2 hours a day
                 for the operations and call-centre teams, correct NAV and DP-fee computation removed
                 recurring reconciliation errors, and investor numbers grew 566% in the 12 months

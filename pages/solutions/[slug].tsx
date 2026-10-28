@@ -7,6 +7,7 @@ import {
 } from '@tabler/icons-react';
 import InnerLayout from '@/components/InnerLayout';
 import { SEO } from '@/components/SEO/SEO';
+import { PageSchema } from '@/components/SEO/PageSchema';
 import { ProductDetail, type DetailData } from '@/components/ProductDetail/ProductDetail';
 import { SOLUTIONS, DYNAMIC_SOLUTION_SLUGS } from '@/lib/solutions';
 import { products, type ProductData } from '@/pages/api/products';
@@ -56,6 +57,13 @@ export default function SolutionPage({ product }: { product: ProductData }) {
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
       </Head>
+      <PageSchema
+        name={product.title}
+        description={product.description}
+        path={`/solutions/${product.slug}`}
+        crumbs={[{ name: 'Solutions', path: '/solutions' }, { name: product.title, path: `/solutions/${product.slug}` }]}
+        faqs={data.faqs}
+      />
       <ProductDetail data={data} backHref="/solutions" backLabel="Solutions" related={related} relatedHeading="Other solutions" />
     </InnerLayout>
   );

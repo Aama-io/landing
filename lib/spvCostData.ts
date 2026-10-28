@@ -80,6 +80,26 @@ export const SPV_JURISDICTIONS: Record<SpvJurisdictionKey, SpvJurisdictionData> 
   },
 };
 
+// Government and registry fees only (not agent or professional fees), for a single-asset SPV.
+// Confirmed figures come from the cited public fee schedules and secondary sources; anything we
+// have not confirmed says "Quoted per deal". Re-check each figure before relying on it.
+export const GOV_FEES_AS_OF = 'October 2026';
+
+export const GOV_FEES: Record<SpvJurisdictionKey, { formation: string; annual: string; regulatory: string }> = {
+  singapore: {
+    formation: 'S$315 (S$15 name application plus S$300 registration)',
+    annual: 'S$60 annual return filing fee',
+    regulatory: 'Depends on how the SPV is offered. Quoted per deal',
+  },
+  delaware: {
+    formation: 'About USD 110 certificate of formation (expedite is extra)',
+    annual: 'USD 300 annual tax, due 1 June',
+    regulatory: 'No federal Form D fee. State notice filings vary by investor state, roughly USD 100 to 1,200 each',
+  },
+  cayman: { formation: 'Quoted per deal', annual: 'Quoted per deal', regulatory: 'Quoted per deal' },
+  bvi: { formation: 'Quoted per deal', annual: 'Quoted per deal', regulatory: 'Quoted per deal' },
+};
+
 export const COMPLEXITY_MULTIPLIER: Record<'simple' | 'moderate' | 'complex', number> = {
   simple: 1,
   moderate: 1.3,

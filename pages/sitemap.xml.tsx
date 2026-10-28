@@ -31,16 +31,15 @@ function tag(loc: string, priority: string, changefreq: string, lastmod?: string
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const today = new Date().toISOString().split('T')[0];
   const urls = [
-    ...STATIC.map((p) => tag(p.loc, p.priority, 'weekly', today)),
-    tag('/products/spv-fund-management', '0.95', 'weekly', today),
-    ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly', today)),
-    ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly', today)),
-    tag('/tools', '0.9', 'weekly', today),
-    ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly', today)),
-    ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly', today)),
-    ...populatedTopics().map((t) => tag(`/learn/${t.slug}`, '0.7', 'monthly', today)),
+    ...STATIC.map((p) => tag(p.loc, p.priority, 'weekly')),
+    tag('/products/spv-fund-management', '0.95', 'weekly'),
+    ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly')),
+    ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly')),
+    tag('/tools', '0.9', 'weekly'),
+    ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly')),
+    ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly')),
+    ...populatedTopics().map((t) => tag(`/learn/${t.slug}`, '0.7', 'monthly')),
     ...LEARN_TERMS.map((t) => tag(learnHref(t), '0.8', 'monthly', t.lastReviewed)),
     ...blogPosts.map((post) => tag(`/blog/${post.slug}`, '0.6', 'monthly', post.publishedDate)),
   ].join('');

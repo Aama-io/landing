@@ -70,7 +70,7 @@ const readingTools = [
   { href: '/tools/capital-call-schedule', label: 'Capital call schedule' },
 ];
 
-const faqs = [
+export const faqs = [
   { q: 'Is an SPV always a single-asset fund?', a: 'Most are — one deal, a lead and a group of members — but aama.io also supports multi-asset SPVs, where a vehicle holds several positions. Either way, you get the same accounting engine, investor portal and compliance, scaled to the vehicle you actually run.' },
   { q: 'How quickly can I launch an SPV or syndicate?', a: 'Most vehicles can be stood up in a few days, whether they hold one asset or several. Templated setup, subscription documents and e-signature onboarding let you open a vehicle, invite members and start collecting commitments without building anything from scratch.' },
   { q: 'Can the platform handle lead carry and deal fees?', a: 'Yes. Configure carried interest, management or one-off deal fees and a hurdle per vehicle. The system calculates the lead’s carry and member distributions on a deal-by-deal basis and produces statements automatically.' },

@@ -1,7 +1,8 @@
 import { Container, Card, Text, Group, Button, List, ThemeIcon, SegmentedControl, Stack, Tooltip, Box, Tabs } from '@mantine/core';
-import { IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconBuildingSkyscraper, IconCoin, IconChartBar, IconChartPie, IconReportMoney, IconUsersGroup, IconBuildingBank } from '@tabler/icons-react';
+import { IconGift, IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconBuildingSkyscraper, IconCoin, IconChartBar, IconChartPie, IconReportMoney, IconUsersGroup, IconBuildingBank } from '@tabler/icons-react';
 import { useState } from 'react';
 import Link from 'next/link';
+import { GovFeesTable } from '@/components/GovFeesTable/GovFeesTable';
 import classes from './PricingTables.module.css';
 
 interface Plan {
@@ -16,19 +17,21 @@ interface Plan {
   mostPopular: boolean;
   unit?: string;        // overrides the "per month/year" label (e.g. per-SPV pricing)
   setupLabel?: string;  // overrides the "Setup fee:" label
+  offer?: { tag: string; text: string }; // optional launch-offer banner shown at the top of the card
 }
 
-// SPVs & syndicates price per deal, not by AUM. Benchmarked to undercut Auptimate
-// (the Singapore/APAC comparable): Founder SPV flat USD 6,000; Syndicate SPV 3% of
-// raise (USD 4,000–13,000). aama.io comes in below on both, with transparent caps.
+// SPVs & syndicates price per deal, not by AUM. Competitor prices change and sources
+// disagree, so re-verify (Auptimate for Singapore, Sydecar and others for the US) before
+// publishing any claim that these prices are lower than a named or "typical" market rate.
 const spvPlans: Plan[] = [
   {
     title: 'Single SPV',
-    price: { monthly: 'USD 4,900', yearly: 'USD 4,900' },
+    price: { monthly: 'USD 3,900', yearly: 'USD 3,900' },
     unit: 'flat · per SPV',
     setupFee: 'Scoped to your fund',
     setupLabel: 'Annual admin:',
     subtitle: '',
+    offer: { tag: 'Founding offer · first-time founders', text: 'Pay when you collect. The SPV fee starts once your first LP payment is recorded.' },
     description: 'A single-asset deal SPV — one lead, one round',
     perks: [
       { feature: 'SPV formation & ACRA registration', included: true },
@@ -39,6 +42,7 @@ const spvPlans: Plan[] = [
       { feature: 'Lead carry & deal-fee automation', included: true },
       { feature: 'Distributions, statements & tax docs', included: true },
       { feature: 'Compliance & audit trail', included: true },
+      { feature: 'Government and registry fees (extra, at cost)', included: false },
       { feature: 'Custom branding', included: false },
       { feature: 'API access', included: false },
     ],
@@ -48,15 +52,16 @@ const spvPlans: Plan[] = [
   },
   {
     title: 'Syndicate SPV',
-    price: { monthly: '2.5% of raise', yearly: '2.5% of raise' },
+    price: { monthly: '2% of raise', yearly: '2% of raise' },
     unit: 'per deal · capped',
     setupFee: 'Min USD 3,500 · Max USD 10,000',
     setupLabel: 'Fee range:',
     subtitle: '',
+    offer: { tag: 'Founding offer · syndicate leads', text: 'Pay when you collect. The SPV fee starts once your first LP payment is recorded.' },
     description: 'Raise from many investors, priced per deal',
     perks: [
       { feature: 'Everything in Single SPV', included: true },
-      { feature: '2.5% deal fee, capped — no surprises', included: true },
+      { feature: '2% deal fee, capped — no surprises', included: true },
       { feature: 'Unlimited investors per deal', included: true },
       { feature: 'Reusable investor base across deals', included: true },
       { feature: 'Automated capital calls & reminders', included: true },
@@ -64,6 +69,7 @@ const spvPlans: Plan[] = [
       { feature: 'Priority support', included: true },
       { feature: 'Custom branding', included: true },
       { feature: 'API access', included: true },
+      { feature: 'Government and registry fees (extra, at cost)', included: false },
     ],
     buttonText: 'Launch a Syndicate',
     highlighted: true,
@@ -518,6 +524,15 @@ export function PricingTables() {
               radius="md"
               withBorder={!plan.highlighted}
             >
+              {plan.offer && (
+                <div className={classes.offerBanner}>
+                  <span className={classes.offerIcon}><IconGift size={16} /></span>
+                  <span className={classes.offerCopy}>
+                    <span className={classes.offerTag}>{plan.offer.tag}</span>
+                    <span className={classes.offerText}>{plan.offer.text}</span>
+                  </span>
+                </div>
+              )}
               <div className={classes.cardHead}>
                 <Text className={classes.cardTitle}>
                   {plan.title}
@@ -596,6 +611,8 @@ export function PricingTables() {
             </Card>
           ))}
         </div>
+
+        {fundType === 'spv' && <GovFeesTable embedded />}
 
         <Link href="#compare" className={classes.compareLink}>
           See the full feature comparison

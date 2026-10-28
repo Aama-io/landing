@@ -2,6 +2,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 import InnerLayout from '@/components/InnerLayout';
 import { SEO } from '@/components/SEO/SEO';
+import { PageSchema } from '@/components/SEO/PageSchema';
 import { ProductDetail } from '@/components/ProductDetail/ProductDetail';
 import { PLATFORMS, PLATFORM_LINKS, platformBySlug } from '@/lib/platforms';
 
@@ -30,6 +31,13 @@ export default function PlatformPage({ slug }: { slug: string }) {
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
       </Head>
+      <PageSchema
+        name={data.name}
+        description={data.description}
+        path={`/products/${data.slug}`}
+        crumbs={[{ name: 'Products', path: '/product' }, { name: data.name, path: `/products/${data.slug}` }]}
+        faqs={data.faqs}
+      />
       <ProductDetail data={data} backHref="/product" backLabel="Products" related={related} relatedHeading="Other products" />
     </InnerLayout>
   );

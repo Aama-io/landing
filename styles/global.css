@@ -149,3 +149,15 @@ body {
     background-position: 200% 0;
   }
 }
+
+/* Hero entrance — pure CSS so the headline paints and animates without waiting for
+   JavaScript hydration (framer-motion's initial opacity:0 held back LCP on slow phones). */
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+.heroEnter { animation: heroEnter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.heroEnterLate { animation-duration: 0.8s; animation-delay: 0.15s; }
+@media (prefers-reduced-motion: reduce) {
+  .heroEnter { animation: none; }
+}

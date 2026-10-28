@@ -20,6 +20,10 @@ export const SPV_FAQS = [
     a: 'Most SPV tools stop at formation, documents and capital collection, and leave the books to an accountant. aama.io also runs a double-entry general ledger, NAV and IFRS-ready financial statements, so the accounting is produced from the same records as the cap table and the waterfall.',
   },
   {
+    q: 'Do I pay before my SPV raises?',
+    a: 'No. Under the founding offer you set up your SPV, invite your investors and call capital first. The SPV fee starts once your first LP payment is recorded, or 60 days after your first investor accepts an invite if no payment has been recorded by then. It applies to single SPVs and to syndicates. Government and registry fees are extra and paid at cost, and are not included in the SPV fee. The offer ends without notice.',
+  },
+  {
     q: 'Do I still need a fund administrator or accountant?',
     a: 'You can run the vehicle yourself on the platform, or give your administrator and accountant access to the same records. The software does not replace the legal, tax and audit advice an SPV still needs.',
   },
@@ -123,6 +127,7 @@ const resources = [
   {
     title: 'Guides',
     items: [
+      ['Free and low-cost SPV administration', '/blog/free-low-cost-spv-administration'],
       ['Why VCs and founders use SPVs', '/blog/why-vcs-founders-use-spvs'],
       ['SPV administration best practices', '/blog/spv-administration-best-practices'],
       ['7 SPV administration problems', '/blog/spv-administration-problems'],
@@ -218,6 +223,7 @@ export function SpvFundManagement() {
               <span className={s.assItem}><IconCircleCheckFilled size={16} className={s.assIcon} /> Live in days</span>
               <span className={s.assItem}><IconCircleCheckFilled size={16} className={s.assIcon} /> KYC/AML built in</span>
               <span className={s.assItem}><IconCircleCheckFilled size={16} className={s.assIcon} /> IFRS-ready accounting</span>
+              <span className={s.assItem}><IconCircleCheckFilled size={16} className={s.assIcon} /> Pay when you collect</span>
             </div>
           </motion.div>
 
@@ -248,6 +254,61 @@ export function SpvFundManagement() {
               <Badge variant="light" size="sm">Ready</Badge>
             </div>
           </motion.div>
+        </Container>
+      </section>
+
+      {/* Founding offer for SPV managers: single SPVs and syndicates */}
+      <section className={s.section} id="launch-offer">
+        <Container size="xl">
+          <div className={s.offerCard}>
+            <div className={s.offerGlow} />
+            <div className={s.offerGrid}>
+              <div>
+                <span className={s.offerChip}>Founding offer · SPV managers</span>
+                <h2 className={s.offerTitle}>Launch your SPV. Pay when you collect.</h2>
+                <p className={s.offerDesc}>
+                  Set up your SPV, invite your investors and call capital on aama.io. The SPV fee starts once your
+                  first LP payment is recorded, so you never pay before the raise. This founding offer ends without
+                  notice.
+                </p>
+                <div className={s.ctaRow}>
+                  <Button component={Link} href="/contact" size="md" radius="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Claim your founding spot</Button>
+                  <Button component={Link} href="/pricing" size="md" radius="md" variant="default" className={s.secondary}>See SPV pricing</Button>
+                </div>
+                <ul className={s.offerProof}>
+                  <li><IconCheck size={15} stroke={2.6} /> No card required</li>
+                  <li><IconCheck size={15} stroke={2.6} /> Single SPVs and syndicates</li>
+                  <li><IconCheck size={15} stroke={2.6} /> Fee shown up front</li>
+                </ul>
+              </div>
+
+              <div className={s.offerPanel}>
+                <div className={s.offerPanelHead}>
+                  <span>What you pay, and when</span>
+                  <span className={s.offerBadge}>Pay when you collect</span>
+                </div>
+                <div className={s.offerRow}>
+                  <span className={s.offerRowLabel}>Single SPV</span>
+                  <span className={s.offerRowValue}>USD 3,900 flat</span>
+                  <span className={s.offerRowNote}>One lead, one round. Due at your first recorded LP payment.</span>
+                </div>
+                <div className={s.offerRow}>
+                  <span className={s.offerRowLabel}>Syndicate SPV</span>
+                  <span className={s.offerRowValue}>2% of the raise</span>
+                  <span className={s.offerRowNote}>Minimum USD 3,500, maximum USD 10,000. Due at your first recorded LP payment.</span>
+                </div>
+                <div className={s.offerRow}>
+                  <span className={s.offerRowLabel}>Several deals a year?</span>
+                  <span className={s.offerRowValue}>Platform plan</span>
+                  <span className={s.offerRowNote}>Volume pricing for leads who run multiple SPVs.</span>
+                </div>
+                <p className={s.offerFine}>Government and registry fees are extra and paid at cost. They are not included in the SPV fee.</p>
+                <Link href="/partners" className={s.offerPartner}>
+                  SPV administrator or formation firm? See our partner programme <IconArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
         </Container>
       </section>
 

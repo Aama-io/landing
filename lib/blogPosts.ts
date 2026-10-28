@@ -2429,6 +2429,80 @@ Cr Bank $438.00
     readTime: '9 min',
     categories: ['SPVs', 'Fund Administration', 'Fund Setup', 'Operations'],
   },
+  {
+    id: '36',
+    title: 'Free and Low-Cost SPV Administration: What You Get, What It Costs and What to Check',
+    slug: 'free-low-cost-spv-administration',
+    excerpt: 'Can an SPV be run for free? Setup can be cheap or deferred, but running costs rarely reach zero. The five ways platforms charge, what "free" usually leaves out, and the questions to ask before you pick one.',
+    content: `
+      <p>Founders, syndicate leads and emerging managers keep asking the same question: can I run an SPV for free, or close to it? The honest answer is that <strong>setup can be cheap or deferred, but running an SPV is rarely free</strong>. Someone still files the paperwork, keeps the books and answers investors, and that cost lands somewhere: in a fee, in an add-on, or in a share of your profits.</p>
+      <p>This guide explains what an SPV actually costs, the five ways platforms charge for it, what a "free" offer usually leaves out, and how to compare options on total cost instead of the headline price.</p>
+
+      <h3>What an SPV costs to set up and run</h3>
+      <ul>
+        <li><strong>Formation:</strong> incorporation and a registered agent or office.</li>
+        <li><strong>Legal documents:</strong> the operating agreement and subscription documents.</li>
+        <li><strong>Regulatory filings:</strong> these depend on the jurisdiction and the investors. In the US, notice filings with the SEC and states are common.</li>
+        <li><strong>Investor onboarding:</strong> KYC/AML checks and tax forms for each investor.</li>
+        <li><strong>A bank account</strong>, which is often the slowest step.</li>
+        <li><strong>Every year after:</strong> registered office or agent, bookkeeping, tax filings, investor reporting and, where required, an audit.</li>
+        <li><strong>At exit:</strong> distributions, final returns and closing the entity.</li>
+      </ul>
+
+      <h3>Five ways platforms charge</h3>
+      <ol>
+        <li><strong>A flat fee per SPV.</strong> Easy to budget. Check what it covers and what is billed on top.</li>
+        <li><strong>A percentage of the raise, with a minimum and a cap.</strong> It scales with the deal. At the minimum and the cap it behaves like a flat fee, so the percentage only matters in the middle of the range.</li>
+        <li><strong>A setup fee plus an annual fee.</strong> A low setup price can hide a recurring cost that continues for years.</li>
+        <li><strong>Free or freemium tiers.</strong> Often limited by deal size, number of investors, who qualifies or which features are included. Ask what the free tier stops at.</li>
+        <li><strong>A share of profits.</strong> Some platforms take carry on the deal in return for lower upfront fees. That is cheap on day one and expensive if the deal does well.</li>
+      </ol>
+
+      <h3>Why small deals feel the cost most</h3>
+      <p>Fixed costs do not shrink with the cheque size. A USD 5,000 cost is 5% of a USD 100,000 raise but only 1% of a USD 500,000 raise. For small angel syndicates, that percentage can take a visible slice of the return, which is why founders and leads look for low-cost or deferred-fee options.</p>
+      <p>A percentage fee with a minimum and a cap works the same way. For example, a 2% fee with a USD 3,500 minimum and a USD 10,000 cap sits at the minimum for any raise below USD 175,000 and at the cap for any raise above USD 500,000. Only raises in between pay the straight percentage.</p>
+
+      <h3>What "free" usually leaves out</h3>
+      <ul>
+        <li>Annual administration, bookkeeping and tax filings.</li>
+        <li>Regulatory or notice-filing fees, which are usually paid to third parties.</li>
+        <li>Add-ons for non-US investors, extra closes or different entity types.</li>
+        <li>Distributions, K-1s or investor statements.</li>
+        <li>The cost of moving off the platform later.</li>
+        <li>A share of profits, or a requirement to bring deal flow.</li>
+      </ul>
+
+      <h3>Questions to ask before you choose</h3>
+      <ul>
+        <li>What is the total cost in year one, and what is it in year three?</li>
+        <li>Is there an annual fee, and what does it cover?</li>
+        <li>Which third-party fees are passed through at cost?</li>
+        <li>What happens to the price if there are more investors, a second close or a non-US investor?</li>
+        <li>Does the platform take carry or any share of the profits?</li>
+        <li>Who keeps the books, and are they tied to the investor records?</li>
+        <li>When is the fee due: at signing, at first close, or when investors pay?</li>
+      </ul>
+
+      <h3>How aama.io approaches it</h3>
+      <p>For SPV managers, aama.io's founding offer defers the fee: you set up the SPV, invite investors and call capital first, and <strong>the SPV fee starts once your first LP payment is recorded</strong>. The offer ends without notice. A single-asset SPV is a flat USD 3,900, and a syndicate SPV is 2% of the raise with a USD 3,500 minimum and a USD 10,000 cap, with annual administration scoped to the vehicle. Government and registry fees are extra, paid at cost, and not included in either price. Prices change, so confirm them on the <a href="/pricing">pricing page</a>.</p>
+      <p>You can model your own costs with the <a href="/tools/spv-cost-estimator">SPV Formation Cost Estimator</a> and the <a href="/tools/spv-admin-cost-calculator">SPV Admin Cost Calculator</a>, and see how the platform runs a vehicle on the <a href="/products/spv-fund-management">SPV Fund Management</a> page.</p>
+      <p><em>Figures are indicative and change often. Check current price sheets with each provider. This is general information, not legal or tax advice.</em></p>
+    `,
+    faqs: [
+      { q: 'Is there a free SPV platform?', a: 'Some providers offer free or freemium tiers, or defer their fee until investors pay. Free usually has limits on deal size, investor count, eligibility or features, and it often leaves out annual administration, tax filings and third-party fees. Ask what is excluded and what the total cost is over the life of the SPV.' },
+      { q: 'What does free SPV administration usually leave out?', a: 'Typically annual administration and bookkeeping, tax filings, regulatory or notice-filing fees, add-ons for non-US investors or extra closes, distributions and investor statements, and sometimes a share of profits.' },
+      { q: 'How much does it cost to run an SPV each year?', a: 'It depends on the jurisdiction and the work involved. Typical items are a registered office or agent, bookkeeping, tax filings and investor reporting, plus an audit where required. Ask any provider for the annual cost in writing before you commit.' },
+      { q: 'Is a flat fee or a percentage of the raise cheaper?', a: 'It depends on the raise. A flat fee is cheaper on larger raises. A percentage fee is cheaper on smaller raises, but a minimum fee often makes small deals cost the same as a flat fee. A cap makes large raises cost the same as a flat fee too, so compare the actual amount at your raise size.' },
+      { q: 'Does aama.io charge before my SPV raises?', a: 'No. Under the founding offer the SPV fee starts once your first LP payment is recorded. Government and registry fees are extra and paid at cost, and are not included in the SPV fee. The offer ends without notice, so check the pricing page for current terms.' },
+    ],
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/share-class.png',
+    publishedDate: '2026-10-27',
+    readTime: '7 min',
+    categories: ['SPVs', 'Fund Administration', 'Fund Setup'],
+  },
 ];
 
 // Listing payload — omits the heavy `content` field to keep responses small.

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import {
   IconArrowRight,
@@ -32,9 +32,10 @@ function formatSgd(n: number) {
   return `S$${Math.round(n).toLocaleString('en-SG')}`;
 }
 
-/** Counts up to the target NAV once, on mount — the hero's one authored motion moment. */
+/** Counts up to the target NAV once, on mount — the hero's one authored motion moment.
+ *  Writes straight to the DOM node, so no React re-render runs on every animation frame. */
 function useCountUp(target: number, duration = 1600) {
-  const [value, setValue] = useState(Math.round(target * 0.9));
+  const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
 
   useEffect(() => {
@@ -49,7 +50,9 @@ function useCountUp(target: number, duration = 1600) {
     const tick = (now: number) => {
       const p = Math.min(1, (now - t0) / duration);
       const eased = 1 - (1 - p) ** 3;
-      setValue(start + (target - start) * eased);
+      if (ref.current) {
+        ref.current.textContent = formatSgd(start + (target - start) * eased);
+      }
       if (p < 1) {
         raf = requestAnimationFrame(tick);
       }
@@ -59,11 +62,11 @@ function useCountUp(target: number, duration = 1600) {
     return () => cancelAnimationFrame(raf);
   }, [target, duration]);
 
-  return value;
+  return ref;
 }
 
 export function Hero() {
-  const nav = useCountUp(NAV_TARGET);
+  const navRef = useCountUp(NAV_TARGET);
 
   return (
     <section className={classes.root}>
@@ -72,12 +75,7 @@ export function Hero() {
       <div className={classes.glowB} />
 
       <div className={classes.layout}>
-        <motion.div
-          className={classes.content}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease }}
-        >
+        <div className={`${classes.content} heroEnter`}>
           <Title className={classes.title}>
             Run every fund, SPV, and syndicate on{' '}
             <span className={classes.highlight}>
@@ -127,14 +125,9 @@ export function Hero() {
               </li>
             ))}
           </ul>
-        </motion.div>
+        </div>
 
-        <motion.div
-          className={classes.showcase}
-          initial={{ opacity: 0, y: 32 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease }}
-        >
+        <div className={`${classes.showcase} heroEnter heroEnterLate`}>
           <div className={classes.stack}>
             <div className={classes.backdrop} />
 
@@ -154,7 +147,7 @@ export function Hero() {
               <div className={classes.navBlock}>
                 <Text className={classes.navLabel}>Net asset value</Text>
                 <div className={classes.navRow}>
-                  <span className={classes.navValue}>{formatSgd(nav)}</span>
+                  <span className={classes.navValue} ref={navRef}>{formatSgd(Math.round(NAV_TARGET * 0.9))}</span>
                   <span className={classes.navDelta}>
                     <IconTrendingUp size={13} stroke={2.2} />
                     2.4%
@@ -208,7 +201,7 @@ export function Hero() {
               </div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

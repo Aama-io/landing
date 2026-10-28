@@ -56,7 +56,7 @@ export default function PricingPage() {
     <>
       <SEO
         title="Pricing — SPV, Fund Administration & Accounting Software | aama.io"
-        description="Transparent pricing: SPVs from $4,900/deal, fund-admin plans from $1,500/mo, fund-manager subscriptions from $625/mo. Singapore & APAC, no hidden fees."
+        description="Transparent pricing: SPVs from $3,900/deal, fund-admin plans from $1,500/mo, fund-manager subscriptions from $625/mo. Singapore & APAC, no hidden fees."
         keywords="SPV pricing Singapore, fund administration software pricing, fund accounting software pricing, SPV cost, syndicate SPV fees, fund admin software cost, private credit fund administration pricing, transparent fund software pricing"
       />
       <Head>

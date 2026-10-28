@@ -42,7 +42,7 @@ export function Header() {
         <div className={classes.inner}>
           <Logo onClick={() => handleNavClick('Home Logo')} />
 
-          <Group gap={4} visibleFrom="md" className={classes.nav}>
+          <Group gap={2} wrap="nowrap" visibleFrom="md" className={classes.nav}>
             <Menu
               trigger="hover"
               openDelay={60}

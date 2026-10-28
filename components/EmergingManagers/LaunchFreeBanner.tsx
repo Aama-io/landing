@@ -7,7 +7,7 @@ export function LaunchFreeBanner() {
   return (
     <div className={s.banner}>
       <span className={s.bannerText}>
-        <strong>Founding offer: your first close, on us.</strong> The aama.io LP portal is free through your first close. Ends without notice.
+        <strong>Founding offer: your first close, on us.</strong> The aama.io LP portal is free through your first close, and SPVs pay when they collect. Ends without notice.
       </span>
       <Link href="/emerging-managers" className={s.bannerLink}>
         Claim your spot <IconArrowRight size={15} />

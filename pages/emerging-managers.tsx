@@ -6,7 +6,7 @@ import { EmergingManagers, EM_FAQS } from '@/components/EmergingManagers/Emergin
 const SITE = 'https://aama.io';
 const URL = `${SITE}/emerging-managers`;
 const DESCRIPTION =
-  'Founding offer for fund managers worldwide: bring your fund or form one with aama.io, then raise capital on the LP portal free through your first close, with up to 10 investors, before running full operations. Larger funds pay only when the first LP payment is recorded.';
+  'Run your first fund or SPV on the aama.io LP portal, free through your first close. Larger funds and SPVs pay when they collect. Open worldwide.';
 
 export default function EmergingManagersPage() {
   const jsonLd = [

@@ -3,11 +3,25 @@ import { Container, Accordion, Button } from '@mantine/core';
 import { IconArrowRight, IconChevronRight, IconCheck } from '@tabler/icons-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { AnimatePresence, motion } from 'framer-motion';
 import { Reveal } from '@/components/ui/Reveal';
+import { AiTimeIllustration } from './AiTimeIllustration';
 import s from './ProductDetail.module.css';
 
 type IconType = typeof IconCheck;
+
+export type AiDoc = { icon: IconType; title: string; result: string; sentence: string; bullets: string[] };
+
+export type AiSection = {
+  eyebrow: string;
+  headline: string;
+  subhead: string;
+  results?: { title: string; text: string }[];
+  docs: AiDoc[];
+  mapping?: { eyebrow: string; title: string; text: string; points: string[]; loopTitle: string; loop: { label: string; text: string }[] };
+  illustration?: boolean;
+  steps: string[];
+  note: string;
+};
 
 export type DetailData = {
   slug: string;
@@ -23,12 +37,11 @@ export type DetailData = {
   featureGroups: { title: string; description: string; items: string[] }[];
   useCases?: { title: string; description: string; metrics?: { label: string; value: string }[] }[];
   keyFeatures?: { title: string; description: string }[];
+  aiSection?: AiSection;
   faqs: { q: string; a: string }[];
 };
 
 export type RelatedLink = { href: string; label: string; blurb: string; icon: IconType };
-
-const ease = [0.22, 1, 0.36, 1] as const;
 
 const walkthrough = [
   { title: 'Share your structure', desc: 'Your fund type, vehicles and investors' },
@@ -47,7 +60,6 @@ export function ProductDetail({
 }) {
   const Icon = data.icon;
   const [activeGroup, setActiveGroup] = useState(0);
-  const group = data.featureGroups[Math.min(activeGroup, data.featureGroups.length - 1)];
   return (
     <>
       {/* Hero */}
@@ -55,7 +67,7 @@ export function ProductDetail({
         <div className={s.heroGlow} />
         <Container size="lg" className={s.heroInner}>
           <div className={s.heroCopy}>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
+            <div className="heroEnter">
               <div className={s.breadcrumb}>
                 <Link href={backHref} className={s.crumbLink}>{backLabel}</Link>
                 <IconChevronRight size={13} className={s.crumbSep} />
@@ -71,19 +83,19 @@ export function ProductDetail({
                 <Button component={Link} href="/contact" size="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
                 <Button component={Link} href="/pricing" size="md" variant="default" className={s.secondary}>View pricing</Button>
               </div>
-            </motion.div>
+            </div>
           </div>
-          <motion.div className={s.heroShot} initial={{ opacity: 0, y: 32 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.15, ease }}>
+          <div className={`${s.heroShot} heroEnter heroEnterLate`}>
             <div className={s.frame}>
               <div className={s.frameBar}>
                 <span className={s.dot} data-c="r" /><span className={s.dot} data-c="y" /><span className={s.dot} data-c="g" />
                 <span className={s.url}>app.aama.io</span>
               </div>
               <div className={s.frameBody}>
-                <Image src={data.image} alt={data.name} width={1280} height={820} className={s.shot} priority />
+                <Image src={data.image} alt={data.name} width={1280} height={820} sizes="(max-width: 64em) 100vw, 640px" className={s.shot} priority />
               </div>
             </div>
-          </motion.div>
+          </div>
         </Container>
       </section>
 
@@ -130,7 +142,7 @@ export function ProductDetail({
                   role="tab"
                   id={`cap-tab-${i}`}
                   aria-selected={i === activeGroup}
-                  aria-controls="cap-panel"
+                  aria-controls={i === 0 ? 'cap-panel' : `cap-panel-${i}`}
                   className={s.railItem}
                   data-active={i === activeGroup || undefined}
                   onClick={() => setActiveGroup(i)}
@@ -145,25 +157,27 @@ export function ProductDetail({
               ))}
             </div>
 
-            <div className={s.panel} role="tabpanel" id="cap-panel" aria-labelledby={`cap-tab-${Math.min(activeGroup, data.featureGroups.length - 1)}`}>
+            <div className={s.panel}>
               <div className={s.panelGlow} />
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={group.title}
+              {/* Every group stays in the DOM (inactive ones are `hidden`) so crawlers and
+                  answer engines read all capabilities, not just the selected tab. */}
+              {data.featureGroups.map((g, gi) => (
+                <div
+                  key={g.title}
                   className={s.panelBody}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.3, ease }}
+                  role="tabpanel"
+                  id={gi === 0 ? 'cap-panel' : `cap-panel-${gi}`}
+                  aria-labelledby={`cap-tab-${gi}`}
+                  hidden={gi !== activeGroup}
                 >
                   <div className={s.panelHead}>
                     <span className={s.panelIcon}><Icon size={22} stroke={1.7} /></span>
-                    <span className={s.panelCount}>{group.items.length} capabilities</span>
+                    <span className={s.panelCount}>{g.items.length} capabilities</span>
                   </div>
-                  <h3 className={s.panelTitle}>{group.title}</h3>
-                  <p className={s.panelDesc}>{group.description}</p>
+                  <h3 className={s.panelTitle}>{g.title}</h3>
+                  <p className={s.panelDesc}>{g.description}</p>
                   <ul className={s.tiles}>
-                    {group.items.map((it) => (
+                    {g.items.map((it) => (
                       <li key={it} className={s.tile}>
                         <span className={s.tileCheck}><IconCheck size={13} stroke={3} /></span>
                         <span>{it}</span>
@@ -175,12 +189,97 @@ export function ProductDetail({
                       See it on your own structure <IconArrowRight size={15} />
                     </Link>
                   </div>
-                </motion.div>
-              </AnimatePresence>
+                </div>
+              ))}
             </div>
           </div>
         </Container>
       </section>
+
+      {/* AI-assisted accounting — only on pages that supply it */}
+      {data.aiSection && (
+        <section className={`${s.section} ${s.sectionMuted}`} id="ai">
+          <Container size="xl">
+            <div className={s.leftHead}>
+              <span className={s.eyebrow}>{data.aiSection.eyebrow}</span>
+              <h2 className={s.h2}>{data.aiSection.headline}</h2>
+              <p className={s.lead}>{data.aiSection.subhead}</p>
+            </div>
+            {data.aiSection.results && (
+              <div className={s.resultStrip}>
+                {data.aiSection.results.map((r, i) => (
+                  <Reveal key={r.title} delay={i * 0.06}>
+                    <div className={s.resultCol}>
+                      <span className={s.resultTick}><IconCheck size={14} stroke={3} /></span>
+                      <div className={s.resultTitle}>{r.title}</div>
+                      <div className={s.resultText}>{r.text}</div>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            )}
+            <div className={s.docGrid}>
+              {data.aiSection.docs.map((d, i) => {
+                const DIcon = d.icon;
+                return (
+                  <Reveal key={d.title} delay={i * 0.07}>
+                    <div className={s.docCard}>
+                      <span className={s.docIcon}><DIcon size={22} stroke={1.7} /></span>
+                      <span className={s.docKind}>{d.title}</span>
+                      <h3 className={s.docTitle}>{d.result}</h3>
+                      <p className={s.docText}>{d.sentence}</p>
+                      <div className={s.docListLabel}>What it reads</div>
+                      <ul className={s.docList}>
+                        {d.bullets.map((b) => (
+                          <li key={b}><IconCheck size={15} className={s.featureCheck} /> {b}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+            {data.aiSection.mapping && (
+              <Reveal>
+                <div className={s.mapBlock}>
+                  <div className={s.mapCopy}>
+                    <span className={s.mapEyebrow}>{data.aiSection.mapping.eyebrow}</span>
+                    <h3 className={s.mapTitle}>{data.aiSection.mapping.title}</h3>
+                    <p className={s.mapText}>{data.aiSection.mapping.text}</p>
+                    <ul className={s.mapPoints}>
+                      {data.aiSection.mapping.points.map((pt) => (
+                        <li key={pt}><IconCheck size={15} className={s.mapCheck} /> {pt}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className={s.loopCard}>
+                    <div className={s.loopHead}>{data.aiSection.mapping.loopTitle}</div>
+                    {data.aiSection.mapping.loop.map((l, i) => (
+                      <div key={l.label} className={s.loopStep}>
+                        <span className={s.loopDot}>{i + 1}</span>
+                        <span className={s.loopBody}>
+                          <span className={s.loopLabel}>{l.label}</span>
+                          <span className={s.loopText}>{l.text}</span>
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            )}
+            {data.aiSection.illustration && <AiTimeIllustration />}
+            <ol className={s.stepStrip} aria-label="How a document reaches the books">
+              {data.aiSection.steps.map((st, i) => (
+                <li key={st} className={s.stripStep}>
+                  <span className={s.stripNum}>{i + 1}</span>
+                  <span className={s.stripLabel}>{st}</span>
+                </li>
+              ))}
+            </ol>
+            <p className={s.aiNote}>{data.aiSection.note}</p>
+          </Container>
+        </section>
+      )}
 
       {/* Use cases — numbered rows with metrics aligned right */}
       {data.useCases && data.useCases.length > 0 && (

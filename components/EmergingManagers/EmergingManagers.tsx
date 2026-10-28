@@ -50,12 +50,12 @@ const paths = [
     primary: true,
   },
   {
-    tag: 'Larger funds',
+    tag: 'Larger funds, SPVs and syndicates',
     title: 'Pay when you collect',
-    text: 'More than 10 investors, or a bigger raise? You never pay before the fund raises.',
+    text: 'More than 10 investors, a bigger raise, or an SPV or syndicate? You never pay before the raise.',
     points: [
       'The same LP portal, with no fees until your first LP payment is recorded',
-      'The paid plan for your fund type starts after that payment',
+      'The paid plan for your fund type, or your SPV fee, starts after that payment',
       'You are told before anything is charged',
     ],
     primary: false,
@@ -65,8 +65,8 @@ const paths = [
 const journey = [
   {
     when: 'Step one',
-    title: 'Bring your fund, or form one with us',
-    body: 'Already formed? Set it up on aama.io. Not formed yet? We can help you form it. Third-party formation costs are charged at cost.',
+    title: 'Bring your fund or SPV, or form one with us',
+    body: 'Already formed? Set up your fund or SPV on aama.io. Not formed yet? We can help you form it. Government fees and third-party formation costs are extra and charged at cost.',
   },
   {
     when: 'Step two',
@@ -86,14 +86,14 @@ const journey = [
 ];
 
 const comparison: { label: string; emerging: string; collect: string }[] = [
-  { label: 'Who it is for', emerging: 'First fund, up to 10 investors', collect: 'Larger funds, or more than 10 investors' },
+  { label: 'Who it is for', emerging: 'First fund, up to 10 investors', collect: 'Larger funds, SPVs and syndicates' },
   { label: 'Free until', emerging: 'Your first close is completed', collect: 'Your first LP payment is recorded' },
   { label: 'Raising capital: LP portal, invites, capital calls, documents', emerging: 'Free', collect: 'Free until the first payment' },
   { label: 'Investor portal', emerging: 'The aama.io portal', collect: 'The aama.io portal' },
   { label: 'Running the fund: accounting, NAV, waterfalls, IFRS 9', emerging: 'Paid plans', collect: 'Paid plans' },
   { label: 'White-label branding, API access', emerging: 'Paid plans', collect: 'Paid plans' },
-  { label: 'After the free period', emerging: 'Plan for your fund type', collect: 'Plan for your fund type' },
-  { label: 'Legal formation, registration fees, e-KYC checks', emerging: 'At cost', collect: 'At cost' },
+  { label: 'After the free period', emerging: 'Plan for your fund type', collect: 'Plan for your fund type, or your SPV fee' },
+  { label: 'Government and registry fees, legal formation, e-KYC checks', emerging: 'Extra, at cost', collect: 'Extra, at cost' },
 ];
 
 export const EM_FAQS: { q: string; a: string }[] = [
@@ -103,7 +103,7 @@ export const EM_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Do I need a fund that is already formed?',
-    a: 'No. If your fund is already formed, you set it up on aama.io. If it is not, we can help you form it, and third-party formation costs are charged at cost. Then you raise your capital on the LP portal.',
+    a: 'No. If your fund is already formed, you set it up on aama.io. If it is not, we can help you form it, and government fees and third-party formation costs are extra and charged at cost. Then you raise your capital on the LP portal.',
   },
   {
     q: 'What happens once I have raised capital?',
@@ -135,11 +135,15 @@ export const EM_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Is anything not free?',
-    a: 'Third-party costs such as legal formation, registration fees and e-KYC checks are charged at cost. Fund accounting, white-label branding and API access are part of paid plans. Your investors use the aama.io portal.',
+    a: 'Government and registry fees, and third-party costs such as legal formation and e-KYC checks, are extra and charged at cost. Fund accounting, white-label branding and API access are part of paid plans. Your investors use the aama.io portal.',
   },
   {
     q: 'Will this offer last?',
     a: 'No. Launch Free is a founding offer and we will close it without notice. Apply while it is open.',
+  },
+  {
+    q: 'Does Launch Free work for SPVs and syndicates?',
+    a: 'Yes. SPV founders, operators and syndicate leads use the pay-when-you-collect path: set up your SPV, invite your investors and call capital on the LP portal, and the SPV fee starts once your first LP payment is recorded. The free-through-first-close offer is for a first fund, so it does not apply to a single-deal SPV. Government fees and third-party formation costs are extra and charged at cost.',
   },
   {
     q: 'Can I use Launch Free for debt funds or note programmes?',
@@ -158,12 +162,7 @@ export function EmergingManagers() {
         <div className={s.glowA} />
         <div className={s.glowB} />
         <div className={s.layout}>
-          <motion.div
-            className={s.content}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease }}
-          >
+          <div className={`${s.content} heroEnter`}>
             <span className={s.pill}><IconFlag size={14} /> Founding offer · Open worldwide</span>
             <h1 className={s.title}>
               Your first close,{' '}
@@ -173,7 +172,7 @@ export function EmergingManagers() {
               </span>
             </h1>
             <p className={s.subtitle}>
-              Already have a fund, or want us to help you form one? Raise your capital on the aama.io LP portal:
+              Already have a fund or SPV, or want us to help you form one? Raise your capital on the aama.io LP portal:
               invite investors, call capital and share documents, free through your first close. Once you have
               raised, you run the whole fund on aama.io.
             </p>
@@ -193,14 +192,9 @@ export function EmergingManagers() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className={s.showcase}
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.15, ease }}
-          >
+          <div className={`${s.showcase} heroEnter heroEnterLate`}>
             <div className={s.stack}>
               <div className={s.backdrop} />
               <div
@@ -243,7 +237,7 @@ export function EmergingManagers() {
                 </div>
               </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

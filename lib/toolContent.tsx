@@ -130,6 +130,7 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
     ],
     faqs: [
       { q: 'How much does it cost to set up an SPV?', a: 'A simple single-deal SPV typically costs a few thousand dollars to incorporate in Delaware or Singapore, rising to the higher end of that range — plus a director fee — for Cayman or BVI. Legal drafting for the subscription and constitutional documents is usually the largest line item.' },
+      { q: 'Are government fees included in the aama.io SPV price?', a: 'No. Government and registry fees, meaning incorporation or registration fees, annual registry or franchise fees and regulatory filing fees, are extra. aama.io passes them through at cost with no markup. The estimator lists the typical amounts for Singapore and Delaware, and Cayman and BVI fees are quoted per deal.' },
       { q: 'What ongoing costs does an SPV have after formation?', a: 'Annual recurring costs typically include a registered office / agent and corporate secretary fee, annual filings or tax return preparation, and — for offshore SPVs — a nominee or independent director fee. An audit is only needed if a bank, regulator or investor requires one.' },
       { q: 'Why does an offshore SPV need a director?', a: 'Cayman and BVI entities are commonly administered with a registered agent as registered office but still need an appointed director; many SPV sponsors appoint an independent director for governance and banking purposes, which adds an annual fee not present for a Delaware LLC managed by its members.' },
       { q: 'Is a new bank account more expensive to open than an existing relationship?', a: 'Yes — opening a brand-new banking relationship for a new entity involves a full KYC/AML review and typically costs more (and takes longer) than adding a new SPV to an existing bank relationship you already maintain.' },
@@ -218,6 +219,33 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
       { href: '/blog/delaware-spv-formation-and-administration', label: 'Delaware SPV Formation and Administration: A Practical Guide' },
       { href: '/learn/fund-operations/delaware-spv', label: 'What is a Delaware SPV?' },
       { href: '/solutions/spv-syndicates', label: 'SPV & Syndicate Administration on aama.io' },
+    ],
+  },
+
+  '/tools/fund-accounting-data-entry-time-estimator': {
+    seoTitle: 'Fund Accounting Data-Entry Time Estimator',
+    seoDescription: 'Estimate the hours a month spent keying invoices, bank statement lines and custodian statement rows, and how much becomes checking an extract. You enter every number.',
+    keywords: 'fund accounting data entry time, invoice data entry hours, bank statement processing time, custodian statement reconciliation time, fund accounting automation, journal voucher data entry, month-end close workload, AI invoice extraction fund accounting',
+    intro: [
+      'Much of fund accounting is still retyping: the supplier invoice becomes a journal voucher, each bank statement line becomes an entry, and each custodian statement is rebuilt into holdings and movements. How long that takes depends on your fund size, how many documents arrive each month and how fast your team works.',
+      'This estimator makes that workload visible. You enter your own volumes and timings for three document types, and it shows the hours spent keying by hand, the hours spent checking an extract instead, and the time that moves from typing to checking. A person still reviews every extract and posts every journal voucher, so the review time stays in the answer.',
+    ],
+    how: [
+      'Enter how many supplier invoices, bank statement lines and custodian statement rows you process in a typical month.',
+      'Enter how many minutes it takes your team to key one by hand, and how many minutes to check one extract that has already been read for you.',
+      'Read the monthly and yearly hours, then use Copy share link to send the exact numbers to a colleague.',
+    ],
+    faqs: [
+      { q: 'How accurate is this estimate?', a: 'It is only as accurate as the numbers you enter. The starting values are placeholders, and the tool makes no claim about what you will save. Time depends on fund size, document volume and quality, and how long your team takes to key and to check.' },
+      { q: 'Does checking an extract take as long as keying?', a: 'It can. If your checking time is close to your keying time, the tool says no time moves. A person still reviews every extract, corrects anything that looks wrong and posts every journal voucher, so review time is part of the answer.' },
+      { q: 'Which documents does the tool cover?', a: 'Supplier invoices, bank statement lines and custodian statement rows (holdings and securities movements). These are the three documents AI-assisted fund accounting reads and returns as structured fields for a person to check.' },
+      { q: 'Does it include ledger mapping or learning?', a: 'No. The estimator only compares keying with checking. Suggested ledger mapping, and learning from earlier mappings, are not modelled.' },
+      { q: 'Does anything post to the ledger automatically?', a: 'No. Nothing is posted until a person accepts the extract, and a person posts each journal voucher.' },
+    ],
+    related: ['/tools/bond-je-generator', '/tools/fx-revaluation-je', '/tools/subscription-redemption-je'],
+    relatedReading: [
+      { href: '/products/fund-accounting', label: 'Fund Accounting on aama.io' },
+      { href: '/blog/dont-start-with-an-ai-agent-for-your-fund-administration-software', label: "Don't Start With an AI Agent for Your Fund Administration Software" },
     ],
   },
 

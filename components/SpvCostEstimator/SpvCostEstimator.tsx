@@ -8,6 +8,7 @@ import {
   SPV_JURISDICTIONS, COMPLEXITY_MULTIPLIER, scaleRange, sumRanges, fmtUsd, fmtRangeK,
   type SpvJurisdictionKey, type Range,
 } from '@/lib/spvCostData';
+import { GovFeesTable } from '@/components/GovFeesTable/GovFeesTable';
 import classes from './SpvCostEstimator.module.css';
 
 const JUR_OPTIONS = (Object.keys(SPV_JURISDICTIONS) as SpvJurisdictionKey[]).map((k) => ({
@@ -199,6 +200,9 @@ export function SpvCostEstimator() {
                   </tfoot>
                 </table>
               </div>
+
+              <div className={classes.sectionLabel} style={{ marginTop: 28 }}>Government and registry fees, paid at cost</div>
+              <GovFeesTable compact />
 
               <div className={classes.noteCard}>
                 <IconInfoCircle size={18} className={classes.noteIcon} />

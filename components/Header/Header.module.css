@@ -7,16 +7,18 @@
   align-items: center;
   background-color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid transparent;
-  transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, height 200ms ease;
+  transition: background-color 240ms ease, border-color 240ms ease, height 240ms ease;
 }
 
+/* Scrolled: the bar dissolves and the content row lifts off the page as a floating pill. */
 .header[data-scrolled] {
-  height: rem(64px);
-  background-color: rgba(255, 255, 255, 0.82);
-  backdrop-filter: saturate(180%) blur(16px);
-  -webkit-backdrop-filter: saturate(180%) blur(16px);
-  border-bottom-color: var(--border);
-  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02), 0 8px 24px rgba(15, 23, 42, 0.04);
+  height: rem(72px);
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.header[data-scrolled] .container {
+  pointer-events: auto;
 }
 
 .container {
@@ -28,6 +30,28 @@
   justify-content: space-between;
   align-items: center;
   gap: rem(24px);
+  border: 1px solid transparent;
+  border-radius: rem(16px);
+  transition: background-color 240ms ease, border-color 240ms ease, box-shadow 240ms ease,
+    margin 240ms ease, padding 240ms ease;
+}
+
+.header[data-scrolled] .inner {
+  min-height: rem(64px);
+  margin-inline: rem(-8px);
+  padding-inline: rem(8px) rem(8px) ;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border-color: var(--border);
+  box-shadow: 0 1px 0 rgba(15, 23, 42, 0.03), 0 16px 40px rgba(15, 23, 42, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .inner {
+    transition: none;
+  }
 }
 
 .nav {
@@ -38,6 +62,8 @@
 }
 
 .link {
+  flex-shrink: 0;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   height: rem(36px);
@@ -176,4 +202,18 @@
 
 .drawerSubLink svg {
   color: var(--mantine-color-blue-6);
+}
+
+/* Tighter nav on narrow desktops so every menu fits on one line, in the pill too. */
+@media (max-width: 75em) {
+  .inner {
+    gap: rem(12px);
+  }
+  .link {
+    padding: 0 rem(9px);
+    font-size: rem(14.5px);
+  }
+  .cta {
+    white-space: nowrap;
+  }
 }

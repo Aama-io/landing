@@ -56,8 +56,12 @@ export const HOME_FAQS: { q: string; a: string }[] = [
     a: "Mid-market PE and VC fund managers, private credit managers, family offices, boutique fund administrators who service other managers' funds, and syndicate leads or founders running a single-deal SPV — anyone currently stitched together across spreadsheets, a separate LP portal and outside accounting help.",
   },
   {
+    q: 'Does aama.io use AI?',
+    a: 'Yes, in fund accounting. AI reads supplier invoices, bank statements and custodian statements, returns structured fields for a person to check, suggests ledger mapping and learns from earlier mappings. Nothing is posted until someone accepts it, a person posts the journal voucher, and the ledger stays the source of truth.',
+  },
+  {
     q: 'How much does aama.io cost?',
-    a: 'Pricing scales with how you operate: fund-manager subscriptions run USD 625–5,000/month by fund type and AUM, accounting-only plans for fund administrators start at USD 1,500/month, and a single-asset SPV is a flat USD 4,900.',
+    a: 'Pricing scales with how you operate: fund-manager subscriptions run USD 625–5,000/month by fund type and AUM, accounting-only plans for fund administrators start at USD 1,500/month, and a single-asset SPV is a flat USD 3,900.',
   },
 ];
 

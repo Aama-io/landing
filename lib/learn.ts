@@ -1614,6 +1614,7 @@ export const BLOG_LEARN_TERMS: Record<string, string[]> = {
   'vcc-accounting-for-fund-administrators': ['vcc', 'nav', 'fund-administrator'],
   'dont-start-with-an-ai-agent-for-your-fund-administration-software': ['fund-administrator'],
   'delaware-spv-formation-and-administration': ['delaware-spv', 'syndicate', 'capital-call', 'fund-administrator'],
+  'free-low-cost-spv-administration': ['syndicate', 'fund-administrator', 'capital-call'],
 };
 
 export function getLearnTermsForPost(postSlug: string): LearnTerm[] {

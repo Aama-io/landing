@@ -289,3 +289,10 @@
     color: inherit;
   }
 }
+
+/* Launch-offer banner at the top of a plan card: coupon-style, readable on white and brand-soft cards */
+.offerBanner { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 18px; padding: 10px 12px; border-radius: 12px; background: var(--surface); border: 1px dashed var(--brand); }
+.offerIcon { flex-shrink: 0; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: var(--brand-soft); color: var(--brand); }
+.offerCopy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.offerTag { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--brand-700); }
+.offerText { font-size: 13px; line-height: 1.45; color: var(--text-strong); }

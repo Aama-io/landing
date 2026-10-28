@@ -1,6 +1,7 @@
 import { Container, Title, Text, List, Card, Grid, ThemeIcon, Group, Anchor } from '@mantine/core';
 import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
+import { PageSchema } from '@/components/SEO/PageSchema';
 import { IconUserCheck, IconLock, IconReportMoney, IconServer } from '@tabler/icons-react';
 import classes from '../styles/Legal.module.css';
 
@@ -12,6 +13,7 @@ export default function CompliancePage() {
         description="How aama.io helps compliant fund managers launch, manage and administer funds under Singapore's MAS, SFA, FAA and PDPA regulations."
         keywords="Singapore regulatory compliance, MAS compliance, fund administration software, SFA, FAA, PDPA, AML/CFT, Singapore financial regulations, Uxqode"
       />
+      <PageSchema name="Regulatory compliance" description="How aama.io supports fund managers under Singapore MAS, SFA, FAA and PDPA regulations." path="/compliance" />
       <PageShell>
         <div className={classes.wrapper}>
           <Container size="xl">

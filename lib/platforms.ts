@@ -1,7 +1,7 @@
 import {
   IconReportAnalytics, IconReportMoney,
   IconDeviceMobile, IconChartBar, IconRefresh, IconShieldCheck,
-  IconBolt, IconBox,
+  IconBolt, IconBox, IconFileInvoice, IconBuildingBank, IconBriefcase,
 } from '@tabler/icons-react';
 import type { DetailData, RelatedLink } from '@/components/ProductDetail/ProductDetail';
 
@@ -20,7 +20,7 @@ export const PLATFORMS: DetailData[] = [
     heroDescription:
       'One system for your investors and your back office — a white-labeled LP portal plus full fund administration: onboarding, capital calls, distributions, fees, carry, compliance and reporting.',
     description:
-      'aama.io fund administration software with a built-in white-labeled LP / investor portal — KYC/AML onboarding, investor register and cap table, capital calls and distributions, fee and carried-interest calculations, compliance monitoring and LP reporting.',
+      'Fund administration software with a built-in white-labeled LP portal: KYC/AML onboarding, capital calls, distributions, carry calculations and LP reporting.',
     keywords: 'fund administration software, LP portal, investor portal, KYC AML onboarding, capital calls, distributions, cap table, carried interest, waterfall, LP reporting, fund admin',
     benefits: [
       { title: 'Digital-first onboarding', description: 'Investors apply, sign and fund online — KYC/AML built in.', icon: IconDeviceMobile },
@@ -63,7 +63,7 @@ export const PLATFORMS: DetailData[] = [
     heroDescription:
       'A fund-grade accounting engine — full double-entry general ledger, automated NAV, European & American waterfalls and 12+ audit-ready reports. Purpose-built for PE, VC and alternative funds, and complete enough to run on its own.',
     description:
-      'aama.io fund accounting software — a double-entry general ledger with chart of accounts, automated NAV (daily to quarterly), European & American waterfalls, per-investor side letters, multi-currency support, securities valuation and 12+ fund reports. Purpose-built for PE, VC and alternative funds.',
+      'Fund accounting software with a double-entry ledger, automated NAV, waterfalls and AI-assisted extraction of invoices, bank and custodian statements.',
     keywords: 'fund accounting software, fund general ledger, chart of accounts, NAV calculation, waterfall distribution, carried interest, side letters, capital account statement, trial balance, multi-currency, corporate actions, PE VC fund accounting',
     benefits: [
       { title: 'Purpose-built for funds', description: 'A double-entry general ledger and NAV engine built for fund accounting — not generic bookkeeping.', icon: IconReportMoney },
@@ -87,7 +87,65 @@ export const PLATFORMS: DetailData[] = [
       { title: 'Auto-booking engine', description: 'Rule-based daily accruals and payment vouchers cut manual data entry.' },
       { title: 'Real-time sync', description: 'Incremental REST API sync keeps the accounting module and platform aligned.' },
     ],
+    aiSection: {
+      eyebrow: 'AI-assisted accounting',
+      headline: 'Stop retyping invoices and statements. Keep full control of the books.',
+      subhead: 'AI reads three documents and returns structured fields for a person to check. Nothing is posted until someone accepts it. It also suggests ledger mapping and learns from earlier mappings.',
+      results: [
+        { title: 'No retyping', text: 'Fields are read from the document instead of keyed in by hand.' },
+        { title: 'A draft to check, not a blank form', text: 'Each voucher starts pre-filled, and a person edits anything that looks wrong.' },
+        { title: 'Nothing posts by itself', text: 'A person accepts the extract and posts every journal voucher.' },
+        { title: 'The source stays with the entry', text: 'Each accepted document stays attached, ready for your auditor.' },
+      ],
+      docs: [
+        {
+          icon: IconFileInvoice,
+          title: 'Supplier invoices',
+          result: 'Invoice in, draft voucher out',
+          sentence: 'Upload a PDF or photo. On accept, the invoice becomes an unposted journal voucher with the file attached, ready for a person to check and post.',
+          bullets: ['Vendor, invoice number, dates and currency', 'Tax and total', 'Line items'],
+        },
+        {
+          icon: IconBuildingBank,
+          title: 'Bank statements',
+          result: 'Every confirmed line becomes a voucher to review',
+          sentence: 'Upload a PDF or photo. On accept, each confirmed line becomes an unposted journal voucher with the statement attached, so no one keys the lines by hand.',
+          bullets: ['Bank, account and period', 'Opening and closing balances', 'Every posted line, money in positive and money out negative (totals, headers and pending items are left out)'],
+        },
+        {
+          icon: IconBriefcase,
+          title: 'Custodian statements',
+          result: 'Holdings and trades imported once you have reviewed them',
+          sentence: 'Upload a PDF or photo, review the preview, then import the confirmed holdings and movements instead of rebuilding them from the statement; cash accounts, FX deposits and FX derivatives are skipped.',
+          bullets: ['Holdings: ISIN or ticker, name, currency, quantity, cost, last price and asset class', 'Movements: buy, sell and transfer in', 'Trade date, value date, quantity, price, settlement amount and reference'],
+        },
+      ],
+      mapping: {
+        eyebrow: 'Suggested ledger mapping',
+        title: 'Every mapping you make teaches the next suggestion',
+        text: 'For each line it reads, AI suggests where it belongs in the ledger. You confirm or change the suggestion, a person posts it as a journal voucher, and later suggestions improve from earlier mappings.',
+        points: [
+          'Suggests ledger mapping for the lines it reads',
+          'Matches extracted items to journal vouchers',
+          'Learns from earlier mappings to improve future suggestions',
+          'Reconciles custodian statements',
+        ],
+        loopTitle: 'How a suggestion improves',
+        loop: [
+          { label: 'AI suggests', text: 'A ledger mapping for each line it reads' },
+          { label: 'You decide', text: 'Confirm or change it, then a person posts the journal voucher' },
+          { label: 'It learns', text: 'Earlier mappings inform the next suggestion' },
+        ],
+      },
+      illustration: true,
+      steps: ['Upload', 'Review the extract', 'Correct', 'Accept into the books'],
+      note: 'AI saves the typing. You still approve the books.',
+    },
     faqs: [
+      { q: 'Does AI post to the ledger?', a: 'No. AI reads the document, fills in a form and suggests the ledger mapping, all for a person to check. Nothing is posted until someone accepts it. For invoices and bank statements, accepting creates unposted journal vouchers with the document attached, and a person posts each one as a journal voucher. For custodian statements, you review a preview and import the confirmed holdings and movements.' },
+      { q: 'What if the extract is wrong?', a: 'Change it. The model fills the form, and a person edits anything that looks wrong before accepting. Bank statement lines are confirmed one by one, and custodian holdings and movements are reviewed in a preview before import. If you do not accept, nothing is created. Each accepted document stays attached to the entry, and the ledger stays the source of truth.' },
+      { q: 'Does it suggest ledger accounts and learn?', a: 'Yes. For the lines it reads, AI suggests the ledger mapping and you confirm or change it. A person then posts it as a journal voucher. Later suggestions learn from earlier mappings, so they improve with use.' },
+      { q: 'What changes for my accounting team?', a: 'Less retyping from invoices and statements, a pre-filled voucher to check instead of a blank one, the source document attached to each entry, and ledger mapping suggestions that improve with use. People still review the extract and post every journal voucher.' },
       { q: 'Is the general ledger true double-entry?', a: 'Yes — a full double-entry general ledger with a chart of accounts, journal vouchers, multi-entry debit/credit balancing, reversals and complete audit trails, purpose-built for funds.' },
       { q: 'Which NAV periods are supported?', a: 'Daily, weekly, monthly and quarterly NAV — Gross NAV, Net NAV and per-unit NAV — with holiday-aware period closures and automatic price re-evaluation.' },
       { q: 'Do you support European and American waterfalls?', a: 'Yes — both models, with per-investor preview, provisioning and equalization calls, plus management and performance (carried-interest) fees and per-investor side-letter overrides.' },

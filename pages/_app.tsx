@@ -15,7 +15,6 @@ const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800'],
 });
 
 const fontStack = `${inter.style.fontFamily}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif`;
@@ -41,6 +40,13 @@ const organizationJsonLd = {
   description:
     'Fund administration and accounting software for mid-market PE, VC, private credit, family office and SPV/syndicate managers in Singapore and APAC.',
   sameAs: ['https://twitter.com/uxqode'],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    email: 'contact@aama.io',
+    areaServed: 'Worldwide',
+    availableLanguage: 'English',
+  },
 };
 
 const websiteJsonLd = {

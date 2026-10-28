@@ -4,7 +4,7 @@ import {
   IconPercentage, IconCalendarDollar, IconArrowsSplit2, IconAward, IconFileInvoice,
   IconRocket, IconChartLine, IconReportAnalytics,
   IconCoin, IconCurrencyDollar, IconArrowsExchange,
-  IconWorld, IconCalculator, IconChecklist, IconCalendarEvent,
+  IconWorld, IconCalculator, IconChecklist, IconCalendarEvent, IconClockEdit,
 } from '@tabler/icons-react';
 
 export type Persona = 'founder' | 'manager' | 'admin';
@@ -67,6 +67,7 @@ export const TOOL_GROUPS: { title: string; blurb: string; tools: Tool[] }[] = [
     tools: [
       { href: '/tools/bond-je-generator', label: 'Bond Accounting JE Generator', description: 'IFRS 9 amortised cost entries', icon: IconCoin, group: 'Fund accounting', personas: ['admin'] },
       { href: '/tools/fx-revaluation-je', label: 'FX Revaluation JE Generator', description: 'IAS 21 closing-rate entries', icon: IconArrowsExchange, group: 'Fund accounting', personas: ['admin'] },
+      { href: '/tools/fund-accounting-data-entry-time-estimator', label: 'Data-Entry Time Estimator', description: 'Keying hours vs checking an extract', icon: IconClockEdit, group: 'Fund accounting', personas: ['manager', 'admin'] },
       { href: '/tools/subscription-redemption-je', label: 'Subscription / Redemption JE', description: 'Unit pricing & NAV impact entries', icon: IconCurrencyDollar, group: 'Fund accounting', personas: ['admin'] },
     ],
   },

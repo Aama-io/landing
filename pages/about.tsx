@@ -5,6 +5,7 @@ import { AboutStory } from '../components/AboutStory/AboutStory';
 import { AboutCTA } from '../components/AboutStory/AboutCTA';
 import { Team } from '../components/Team/Team';
 import { SEO } from '@/components/SEO/SEO';
+import { PageSchema } from '@/components/SEO/PageSchema';
 
 const organizationData = {
   '@context': 'https://schema.org',
@@ -47,6 +48,7 @@ export default function AboutPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }}
         />
       </Head>
+      <PageSchema type="AboutPage" name="About aama.io" description="The mission, team and journey behind aama.io fund administration software." path="/about" />
       <PageShell>
         <AboutHero />
         <AboutStory />

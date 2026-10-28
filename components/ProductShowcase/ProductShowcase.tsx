@@ -156,6 +156,7 @@ export function ProductShowcase() {
                       alt={current.alt}
                       width={1280}
                       height={820}
+                      sizes="(max-width: 64em) 100vw, 720px"
                       className={classes.shot}
                     />
                   </motion.div>

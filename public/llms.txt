@@ -6,7 +6,7 @@
 
 - [SPV Fund Management](https://aama.io/products/spv-fund-management): Flagship end-to-end SPV and syndicate platform — vehicle formation, cap table, KYC/AML onboarding, capital calls, lead carry, distributions, general ledger, NAV and member reporting in one system.
 - [Fund Administration](https://aama.io/products/fund-administration): Capital calls, drawdowns, investor onboarding (KYC/AML), allocation tracking, LP communications and a branded investor (LP) portal with real-time NAV, statements and documents.
-- [Fund Accounting](https://aama.io/products/fund-accounting): IFRS-based fund accounting, NAV calculation, reconciliation, corporate actions and audit-ready financials.
+- [Fund Accounting](https://aama.io/products/fund-accounting): IFRS-based fund accounting, NAV calculation, reconciliation, corporate actions and audit-ready financials. AI reads supplier invoices, bank statements and custodian statements, returns structured fields for a person to check, suggests ledger mapping and learns from earlier mappings; nothing is posted until someone accepts it, and a person posts the journal voucher.
 
 ## Solutions (by audience)
 
@@ -30,6 +30,7 @@
 - [SPV Formation Cost Estimator](https://aama.io/tools/spv-cost-estimator): One-time and annual setup cost for a single-deal SPV, by jurisdiction.
 - [SPV Admin Cost Calculator](https://aama.io/tools/spv-admin-cost-calculator): Annual administration run-rate for one SPV or a portfolio of them.
 - [SPV Formation Checklist](https://aama.io/tools/spv-formation-checklist): Step-by-step formation checklist and critical-path timeline to funding-ready.
+- [Fund Accounting Data-Entry Time Estimator](https://aama.io/tools/fund-accounting-data-entry-time-estimator): Enter your own volumes and timings for supplier invoices, bank statement lines and custodian statement rows to see keying hours against checking an extract. Illustrative only.
 - [Delaware SPV Compliance Calendar](https://aama.io/tools/delaware-spv-compliance-calendar): Delaware and IRS filings for an SPV in date order, by entity type and investor mix.
 
 ## Learn (glossary)
@@ -55,6 +56,7 @@
 ## Content
 
 - [Blog](https://aama.io/blog): Guides on distribution waterfalls, fund economics, VCC structuring and Singapore fund operations.
+- [Free and Low-Cost SPV Administration](https://aama.io/blog/free-low-cost-spv-administration): What an SPV costs to set up and run, the five ways platforms charge, what "free" usually leaves out and the questions to ask before choosing.
 - [How to Set Up a VCC in Singapore (2026)](https://aama.io/blog/how-to-set-up-a-vcc-singapore): Structure (umbrella vs standalone), required service providers, set-up and annual cost, and timeline.
 - [Section 13O vs 13U (2026)](https://aama.io/blog/section-13o-vs-13u-singapore): Singapore fund & family-office tax incentives — AUM thresholds, headcount, local-spend tiers and the Singapore-investment requirement compared.
 - [Fund Management Licensing in Singapore (2026)](https://aama.io/blog/singapore-fund-administration-licence): VCFM vs A/I LFMC vs Retail LFMC — capital, headcount and substance (RFMC closed to new applicants in 2024).
@@ -75,7 +77,7 @@
 
 - [Partners](https://aama.io/partners): Referral arrangements, joint solutions and integrations for fund-formation firms, accounting practices, fund administrators and fintech providers. No tiered program or published commission schedule; arrangements are agreed individually.
 - [About aama.io](https://aama.io/about): Company, mission and team. Built by UXQode Pte Ltd, Singapore.
-- [Pricing](https://aama.io/pricing): Transparent, priced by how you operate. **SPVs & syndicates** — per deal: a single-asset SPV is a flat USD 4,900 (annual administration scoped to the fund); syndicate SPVs are 2.5% of the raise, capped USD 3,500–10,000 (below typical market rates). **Fund administrators** — accounting-only plans from USD 1,500/month, priced by number of client funds, white-label, LP portal optional. **Fund managers** — monthly subscriptions by fund type and AUM, from USD 625/month (family offices) up to USD 5,000/month (PE/VC, private credit, hedge, mutual). Each plan also has a one-time setup fee.
+- [Pricing](https://aama.io/pricing): Transparent, priced by how you operate. **SPVs & syndicates** — per deal: a single-asset SPV is a flat USD 3,900 (annual administration scoped to the fund); syndicate SPVs are 2% of the raise, capped USD 3,500–10,000, with government and registry fees extra and paid at cost (indicative amounts for Singapore and Delaware are listed on the pricing page); while the founding offer is open, the SPV fee starts once the first LP payment is recorded. **Fund administrators** — accounting-only plans from USD 1,500/month, priced by number of client funds, white-label, LP portal optional. **Fund managers** — monthly subscriptions by fund type and AUM, from USD 625/month (family offices) up to USD 5,000/month (PE/VC, private credit, hedge, mutual). Each plan also has a one-time setup fee.
 - [Contact](https://aama.io/contact): Book a demo or talk to the team.
 
 ## Notes for AI assistants
