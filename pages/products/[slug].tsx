@@ -27,7 +27,7 @@ export default function PlatformPage({ slug }: { slug: string }) {
 
   return (
     <InnerLayout>
-      <SEO title={data.name} description={data.description} keywords={data.keywords} ogUrl={`https://aama.io/products/${data.slug}`} />
+      <SEO title={data.seoTitle ?? data.name} description={data.description} keywords={data.keywords} ogUrl={`https://aama.io/products/${data.slug}`} />
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured) }} />
       </Head>

@@ -6,7 +6,7 @@ import { SpvFundManagement, SPV_FAQS } from '@/components/SpvFundManagement/SpvF
 const SITE = 'https://aama.io';
 const URL = `${SITE}/products/spv-fund-management`;
 const DESCRIPTION =
-  'End-to-end SPV fund management in one platform: vehicle formation, cap table, KYC/AML, capital calls, lead carry, distributions, general ledger, NAV and member reporting.';
+  'End-to-end SPV management and administration in one platform: vehicle formation, cap table, KYC/AML, capital calls, lead carry, distributions, general ledger, NAV and member reporting.';
 
 // Literal route: takes precedence over the dynamic /products/[slug] template, so
 // the flagship SPV product gets its own bespoke page while the other platforms
@@ -16,7 +16,7 @@ export default function SpvFundManagementPage() {
     {
       '@context': 'https://schema.org',
       '@type': 'SoftwareApplication',
-      name: 'aama.io SPV Fund Management',
+      name: 'aama.io SPV Management & Administration',
       description: DESCRIPTION,
       url: URL,
       applicationCategory: 'BusinessApplication',
@@ -37,7 +37,7 @@ export default function SpvFundManagementPage() {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Products', item: `${SITE}/product` },
-        { '@type': 'ListItem', position: 2, name: 'SPV Fund Management', item: URL },
+        { '@type': 'ListItem', position: 2, name: 'SPV Management & Administration', item: URL },
       ],
     },
   ];
@@ -45,9 +45,9 @@ export default function SpvFundManagementPage() {
   return (
     <>
       <SEO
-        title="SPV Fund Management Software: Formation to Accounting"
+        title="SPV Management & Administration Software: Formation to Accounting"
         description={DESCRIPTION}
-        keywords="SPV fund management software, SPV administration software, SPV accounting, syndicate management platform, special purpose vehicle software, SPV formation, lead carry, deal-by-deal waterfall, end-to-end SPV platform, Singapore SPV"
+        keywords="SPV fund management software, SPV management and administration software, SPV management software, SPV administration software, SPV accounting, syndicate management platform, special purpose vehicle software, SPV formation, lead carry, deal-by-deal waterfall, end-to-end SPV platform, Singapore SPV"
         ogUrl={URL}
       />
       <Head>

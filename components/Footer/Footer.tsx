@@ -9,6 +9,9 @@ const groups = [
     title: 'Product',
     links: [
       { label: 'Overview', href: '/product' },
+      { label: 'Fund Accounting Software', href: '/products/fund-accounting' },
+      { label: 'Fund Administration Software', href: '/products/fund-administration' },
+      { label: 'SPV Management & Administration Software', href: '/products/spv-fund-management' },
       { label: 'Solutions', href: '/solutions' },
       { label: 'Pricing', href: '/pricing' },
       { label: 'Investor Portal', href: '/product' },

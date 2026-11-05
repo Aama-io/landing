@@ -1,3 +1,4 @@
+import { LaunchFreeBanner } from '@/components/EmergingManagers/LaunchFreeBanner';
 import { useState } from 'react';
 import { Accordion, Badge, Button, Container, Paper, SegmentedControl, Tabs, ThemeIcon } from '@mantine/core';
 import {
@@ -44,8 +45,8 @@ export const SPV_FAQS = [
     a: 'It is a product: a complete SPV management platform you license. It is built on aama.io Fund Administration & Investor Portal and Fund Accounting, which share one data model, and it is configured for single- and multi-asset SPVs and syndicates.',
   },
   {
-    q: 'What is end-to-end SPV fund management?',
-    a: 'It means one system covers the whole life of a deal vehicle: forming the SPV and cap table, onboarding members with KYC/AML, collecting capital, calculating lead carry and distributions, keeping the general ledger and NAV, and giving members a portal with statements. Nothing is re-keyed between tools.',
+    q: 'What is end-to-end SPV management and administration?',
+    a: 'It means one system manages and administers the whole life of a deal vehicle: forming the SPV and cap table, onboarding members with KYC/AML, collecting capital, calculating lead carry and distributions, keeping the general ledger and NAV, and giving members a portal with statements. Nothing is re-keyed between tools.',
   },
 ];
 
@@ -206,12 +207,12 @@ export function SpvFundManagement() {
         <div className={s.heroGlow} />
         <Container size="xl" className={s.heroInner}>
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease }}>
-            <span className={s.pill}><IconBox size={14} /> SPV Fund Management Platform</span>
+            <span className={s.pill}><IconBox size={14} /> SPV Management &amp; Administration Platform</span>
             <h1 className={s.title}>
-              SPV fund management, <span className={s.accent}>end to end in one box.</span>
+              SPV management and administration, <span className={s.accent}>end to end in one box.</span>
             </h1>
             <p className={s.subtitle}>
-              From forming the vehicle to closing the books. aama.io runs your SPV or syndicate on one system: cap
+              From forming the vehicle to closing the books. aama.io manages and administers your SPV or syndicate on one system: cap
               table, member KYC/AML, capital calls, carry and distributions, the general ledger, NAV and member
               reporting. Single- or multi-asset, live in days.
             </p>
@@ -257,60 +258,7 @@ export function SpvFundManagement() {
         </Container>
       </section>
 
-      {/* Founding offer for SPV managers: single SPVs and syndicates */}
-      <section className={s.section} id="launch-offer">
-        <Container size="xl">
-          <div className={s.offerCard}>
-            <div className={s.offerGlow} />
-            <div className={s.offerGrid}>
-              <div>
-                <span className={s.offerChip}>Founding offer · SPV managers</span>
-                <h2 className={s.offerTitle}>Launch your SPV. Pay when you collect.</h2>
-                <p className={s.offerDesc}>
-                  Set up your SPV, invite your investors and call capital on aama.io. The SPV fee starts once your
-                  first LP payment is recorded, so you never pay before the raise. This founding offer ends without
-                  notice.
-                </p>
-                <div className={s.ctaRow}>
-                  <Button component={Link} href="/contact" size="md" radius="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Claim your founding spot</Button>
-                  <Button component={Link} href="/pricing" size="md" radius="md" variant="default" className={s.secondary}>See SPV pricing</Button>
-                </div>
-                <ul className={s.offerProof}>
-                  <li><IconCheck size={15} stroke={2.6} /> No card required</li>
-                  <li><IconCheck size={15} stroke={2.6} /> Single SPVs and syndicates</li>
-                  <li><IconCheck size={15} stroke={2.6} /> Fee shown up front</li>
-                </ul>
-              </div>
-
-              <div className={s.offerPanel}>
-                <div className={s.offerPanelHead}>
-                  <span>What you pay, and when</span>
-                  <span className={s.offerBadge}>Pay when you collect</span>
-                </div>
-                <div className={s.offerRow}>
-                  <span className={s.offerRowLabel}>Single SPV</span>
-                  <span className={s.offerRowValue}>USD 3,900 flat</span>
-                  <span className={s.offerRowNote}>One lead, one round. Due at your first recorded LP payment.</span>
-                </div>
-                <div className={s.offerRow}>
-                  <span className={s.offerRowLabel}>Syndicate SPV</span>
-                  <span className={s.offerRowValue}>2% of the raise</span>
-                  <span className={s.offerRowNote}>Minimum USD 3,500, maximum USD 10,000. Due at your first recorded LP payment.</span>
-                </div>
-                <div className={s.offerRow}>
-                  <span className={s.offerRowLabel}>Several deals a year?</span>
-                  <span className={s.offerRowValue}>Platform plan</span>
-                  <span className={s.offerRowNote}>Volume pricing for leads who run multiple SPVs.</span>
-                </div>
-                <p className={s.offerFine}>Government and registry fees are extra and paid at cost. They are not included in the SPV fee.</p>
-                <Link href="/partners" className={s.offerPartner}>
-                  SPV administrator or formation firm? See our partner programme <IconArrowRight size={14} />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <LaunchFreeBanner />
 
       {/* 2 · Why one box — interactive toggle */}
       <section className={`${s.section} ${s.sectionMuted}`}>

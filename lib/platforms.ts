@@ -21,7 +21,9 @@ export const PLATFORMS: DetailData[] = [
       'One system for your investors and your back office — a white-labeled LP portal plus full fund administration: onboarding, capital calls, distributions, fees, carry, compliance and reporting.',
     description:
       'Fund administration software with a built-in white-labeled LP portal: KYC/AML onboarding, capital calls, distributions, carry calculations and LP reporting.',
-    keywords: 'fund administration software, LP portal, investor portal, KYC AML onboarding, capital calls, distributions, cap table, carried interest, waterfall, LP reporting, fund admin',
+    seoTitle: 'Fund Administration Software & LP Portal, Singapore',
+    h1: 'Fund Administration Software & Investor Portal',
+    keywords: 'fund administration software, fund administration software Singapore, VCC fund administration software, fund management and administration software, LP portal, investor portal, KYC AML onboarding, capital calls, distributions, cap table, carried interest, waterfall, LP reporting, fund admin',
     benefits: [
       { title: 'Digital-first onboarding', description: 'Investors apply, sign and fund online — KYC/AML built in.', icon: IconDeviceMobile },
       { title: 'Real-time transparency', description: 'A white-labeled portal with live positions, statements and documents.', icon: IconChartBar },
@@ -64,7 +66,9 @@ export const PLATFORMS: DetailData[] = [
       'A fund-grade accounting engine — full double-entry general ledger, automated NAV, European & American waterfalls and 12+ audit-ready reports. Purpose-built for PE, VC and alternative funds, and complete enough to run on its own.',
     description:
       'Fund accounting software with a double-entry ledger, automated NAV, waterfalls and AI-assisted extraction of invoices, bank and custodian statements.',
-    keywords: 'fund accounting software, fund general ledger, chart of accounts, NAV calculation, waterfall distribution, carried interest, side letters, capital account statement, trial balance, multi-currency, corporate actions, PE VC fund accounting',
+    seoTitle: 'Fund Accounting Software for PE, VC and Alternative Funds',
+    h1: 'Fund Accounting Software',
+    keywords: 'fund accounting software, fund accounting software Singapore, PE fund accounting software, VC fund accounting software, VCC fund accounting software, fund general ledger, chart of accounts, NAV calculation, waterfall distribution, carried interest, side letters, capital account statement, trial balance, multi-currency, corporate actions, PE VC fund accounting',
     benefits: [
       { title: 'Purpose-built for funds', description: 'A double-entry general ledger and NAV engine built for fund accounting — not generic bookkeeping.', icon: IconReportMoney },
       { title: 'Investor-level economics', description: 'Waterfalls, carry and per-investor side letters give every LP exactly the right numbers.', icon: IconChartBar },

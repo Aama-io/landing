@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { PageShell } from '@/components/ui/PageShell';
 import { SEO } from '@/components/SEO/SEO';
 import { PageSchema } from '@/components/SEO/PageSchema';
+import { CompareNote } from '@/components/Compare/CompareNote';
 import { Reveal } from '@/components/ui/Reveal';
 import { SOLUTIONS } from '@/lib/solutions';
 import s from '../styles/Solutions.module.css';
@@ -282,6 +283,7 @@ export default function SolutionsPage() {
             </div>
           </Container>
         </section>
+      <CompareNote />
       </PageShell>
     </>
   );

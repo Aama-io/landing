@@ -2,6 +2,7 @@ import { PageShell } from '@/components/ui/PageShell';
 import { Product } from '../components/Product/Product';
 import { SEO } from '@/components/SEO/SEO';
 import { PageSchema } from '@/components/SEO/PageSchema';
+import { CompareNote } from '@/components/Compare/CompareNote';
 
 export default function ProductPage() {
   return (
@@ -20,6 +21,7 @@ export default function ProductPage() {
       />
       <PageShell>
         <Product />
+        <CompareNote />
       </PageShell>
     </>
   );

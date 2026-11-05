@@ -4,7 +4,6 @@ import { IconArrowRight, IconChevronRight, IconCheck } from '@tabler/icons-react
 import Link from 'next/link';
 import Image from 'next/image';
 import { Reveal } from '@/components/ui/Reveal';
-import { AiTimeIllustration } from './AiTimeIllustration';
 import s from './ProductDetail.module.css';
 
 type IconType = typeof IconCheck;
@@ -33,6 +32,10 @@ export type DetailData = {
   heroDescription: string;
   description: string;
   keywords: string;
+  /** Search title for the <title> tag; falls back to name. */
+  seoTitle?: string;
+  /** On-page heading; falls back to name. */
+  h1?: string;
   benefits: { title: string; description: string; icon: IconType }[];
   featureGroups: { title: string; description: string; items: string[] }[];
   useCases?: { title: string; description: string; metrics?: { label: string; value: string }[] }[];
@@ -77,7 +80,7 @@ export function ProductDetail({
                 <span className={s.heroIcon}><Icon size={24} stroke={1.7} /></span>
                 <span className={s.badge}>{data.category}</span>
               </div>
-              <h1 className={s.title}>{data.name}</h1>
+              <h1 className={s.title}>{data.h1 ?? data.name}</h1>
               <p className={s.heroDesc}>{data.heroDescription}</p>
               <div className={s.ctaRow}>
                 <Button component={Link} href="/contact" size="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>Book a demo</Button>
@@ -267,7 +270,6 @@ export function ProductDetail({
                 </div>
               </Reveal>
             )}
-            {data.aiSection.illustration && <AiTimeIllustration />}
             <ol className={s.stepStrip} aria-label="How a document reaches the books">
               {data.aiSection.steps.map((st, i) => (
                 <li key={st} className={s.stripStep}>
@@ -277,6 +279,13 @@ export function ProductDetail({
               ))}
             </ol>
             <p className={s.aiNote}>{data.aiSection.note}</p>
+            {data.aiSection.illustration && (
+              <p className={s.aiTry}>
+                <Link href="/tools/fund-accounting-data-entry-time-estimator" className={s.inlineLink}>
+                  Try it with your own volumes <IconArrowRight size={14} />
+                </Link>
+              </p>
+            )}
           </Container>
         </section>
       )}

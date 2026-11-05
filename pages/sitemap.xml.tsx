@@ -3,6 +3,7 @@ import { ALL_TOOLS, PERSONAS } from '@/lib/tools';
 import { PLATFORMS } from '@/lib/platforms';
 import { SOLUTIONS } from '@/lib/solutions';
 import { blogPosts } from '@/lib/blogPosts';
+import { ALTERNATIVES } from '@/lib/compare';
 import { LEARN_TERMS, learnHref, populatedTopics } from '@/lib/learn';
 
 const SITE = 'https://aama.io';
@@ -36,6 +37,8 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
     tag('/products/spv-fund-management', '0.95', 'weekly'),
     ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly')),
     ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly')),
+    tag('/alternatives', '0.8', 'monthly'),
+    ...ALTERNATIVES.map((a) => tag(`/alternatives/${a.slug}`, '0.8', 'monthly')),
     tag('/tools', '0.9', 'weekly'),
     ...PERSONAS.map((p) => tag(p.href, '0.85', 'weekly')),
     ...ALL_TOOLS.map((t) => tag(t.href, '0.8', 'monthly')),

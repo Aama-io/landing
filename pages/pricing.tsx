@@ -6,6 +6,7 @@ import { PricingFAQ, faqData } from '../components/PricingFAQ/PricingFAQ';
 import { PricingSection } from '../components/PricingSection/PricingSection';
 import { LaunchFreeBanner } from '@/components/EmergingManagers/LaunchFreeBanner';
 import { SEO } from '@/components/SEO/SEO';
+import { CompareNote } from '@/components/Compare/CompareNote';
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -79,6 +80,7 @@ export default function PricingPage() {
         <PricingTables />
         <PricingSection />
         <PricingFAQ />
+        <CompareNote />
       </PageShell>
     </>
   );

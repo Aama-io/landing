@@ -1,4 +1,4 @@
-# aama.io — Organic Traffic Strategy & Keyword → URL Map
+# Aama.io — Organic Traffic Strategy & Keyword → URL Map
 
 > Working document for the SEO/content roadmap. Phasing: **Singapore → APAC → Global.**
 > **Positioning category (deck/narrative, NOT a search term):** *End-to-End Fund Operating Platform / "Fund OS"*. Nobody searches this — keep it for pitch/brand copy only.
@@ -35,7 +35,7 @@ Leverage points we already own: **13 free calculators**, a now server-rendered *
 - `VCC fund administration`, `VCC sub-fund accounting` → new pages (pair with the shipped VCC pillar)
 - ⚠️ `MAS RFMC compliance software` — **RFMC closed to new applicants 1 Aug 2024.** Don't target it as a live regime. Instead target `MAS LFMC compliance software` / `VCFM compliance`, **and** consider an `RFMC → LFMC transition` page to capture residual "RFMC" searches and redirect them (high regulatory-depth signal).
 
-**Excluded — do NOT target:** `custom fund administration software`. Attracts bespoke-development / agency shoppers and invites scope-creep conversations, not SaaS buyers. aama.io is a **configurable product, not a custom build** — keep "custom" out of the keyword set and the copy entirely.
+**Excluded — do NOT target:** `custom fund administration software`. Attracts bespoke-development / agency shoppers and invites scope-creep conversations, not SaaS buyers. Aama.io is a **configurable product, not a custom build** — keep "custom" out of the keyword set and the copy entirely.
 
 ---
 
@@ -72,7 +72,7 @@ Leverage points we already own: **13 free calculators**, a now server-rendered *
 | virtual data room PE VC Singapore | `/products/data-room` | ⬜ new |
 | SPV administration software Singapore | `/products/spv-administration` | ⬜ new |
 | fund back office automation software | `/products/back-office-automation` | ⬜ new |
-| **comparison / alternative** (high-convert, undefended) | `/compare/auptimate-alternative`, `/compare/carta-apac-alternative` | ⬜ new |
+| **comparison / alternative** (high-convert, undefended) | `/alternatives` (hub) | ⬜ new |
 
 ## Cluster D — Segment / persona pages (Priority 2, long-tail high-convert)
 
@@ -86,6 +86,19 @@ Leverage points we already own: **13 free calculators**, a now server-rendered *
 **Private credit note:** strong, defensible vertical — credit funds live in the IFRS 9 / SFRS(I) 9 machinery (amortised cost, effective-interest, **ECL staging**, PIK) that equity-fund tools handle poorly. Page leads with that edge. Long-tail to build out: `direct lending fund administration`, `private credit fund accounting software`, `expected credit loss fund software`, `BDC / credit fund NAV`.
 
 ---
+
+## Cluster E — Comparison, alternatives and category pages (shipped 2026-10-31)
+
+Data lives in `lib/compare.ts`; templates in `components/Compare/Compare.tsx`. Adding an entry to `COMPETITORS`, `ALTERNATIVES` auto-wires the route and sitemap. Head-to-head `/compare` pages were removed (2026-11-03, legal risk); only alternatives and category pages are published. `COMPETITORS` is now source data for the alternatives pages.
+
+| Type | URL | Target intent |
+|---|---|---|
+| Alternatives | `/alternatives` hub: one section and anchor each for Carta, Juniper Square and Allvue (`ALTERNATIVES_HUB` in `lib/compare.ts`). Investran is folded into the fund administration guide. Split a vendor into its own page only when Search Console shows impressions and there is unique material | `X alternatives` |
+| Alternatives | `/alternatives/best-fund-administration-software` (merged Singapore fund administration and emerging-manager fund accounting guide) | best-of intent |
+
+SPV layer (added 2026-10-31): `/alternatives/best-spv-administration-software` (Sydecar, Auptimate and AngelList are folded into this guide; per-vendor pages return when each has its own material), . Competitor SPV prices are deliberately not quoted (vendor-written and conflicting).
+
+Rules: no competitor pricing or weakness claims unless sourced; every page names where the competitor is stronger; Aama.io claims limited to live product. Re-verify competitor text each quarter (`REVIEWED` in `lib/compare.ts`). Not yet verified from public sources: Investran ownership/hosting, Fundwave KYC scope. Statements there are deliberately generic.
 
 ## Geographic phasing
 
@@ -109,3 +122,10 @@ Leverage points we already own: **13 free calculators**, a now server-rendered *
 5. Write the IFRS 9 / SFRS(I) 9 pillar (Cluster B differentiator).
 6. Ship 2–3 comparison pages (vs Auptimate / Carta APAC).
 7. **Measure:** Cluster A/B rankings + clicks, tool-page → demo conversion, assisted pipeline — not raw traffic.
+
+
+Update 2026-11-04: the `/software/*` category pages were removed to avoid overlapping the product pages. The "software" terms now live in the product pages' `seoTitle` and `keywords` (`lib/platforms.ts`, `pages/products/spv-fund-management.tsx`).
+
+Update 2026-11-04: `/alternatives/{sydecar,auptimate,angellist}` removed and folded into the SPV guide. Alternatives pages now describe Aama.io's own offer, plus a "How a move works" section, and make no claims about the named vendor.
+
+Update 2026-11-05: `/alternatives/{carta,juniper-square,allvue}` merged into one hub at `/alternatives`. Guides: `/alternatives/best-fund-administration-software` and `/alternatives/best-spv-administration-software`.

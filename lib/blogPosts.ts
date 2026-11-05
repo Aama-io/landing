@@ -2503,6 +2503,76 @@ Cr Bank $438.00
     readTime: '7 min',
     categories: ['SPVs', 'Fund Administration', 'Fund Setup'],
   },
+  {
+    id: '37',
+    title: 'Private Debt Notes: Running a Real Estate Note Raise From Fundraise to Accounting',
+    slug: 'private-debt-note-real-estate-fundraise-to-accounting',
+    excerpt: 'A recent project: a private debt note for an Australian real estate developer building a 5-star resort, with a fixed-income return and interest paid after 18 months. What a private debt note is, how the lifecycle runs on one platform, and the accounting points that are easy to miss.',
+    content: `
+      <p>A recent project for us was a <strong>private debt note</strong>. An Australian client was raising money from investors to build a 5-star resort. Investors would receive a fixed-income return, with an interest payment after 18 months. We set up the instrument and ran it on aama.io end to end, from the fundraise through to the accounting.</p>
+
+      <p>This post uses that project to explain what a private debt note is, how the lifecycle fits together on one platform, and the accounting points that are easy to get wrong. We have left the client unnamed and have not published deal figures.</p>
+
+      <h3>What a private debt note is</h3>
+      <p>A private debt note is a loan, packaged so that several investors can lend to the same borrower. Each investor subscribes for a note. The issuer owes them the principal back, plus interest on the terms in the note. Unlike an equity investor, a noteholder does not own a share of the project. They are a creditor with a fixed claim.</p>
+      <ul>
+        <li><strong>Fixed terms:</strong> principal, interest rate, interest dates and maturity are set up front.</li>
+        <li><strong>Fixed-income return:</strong> investors are paid what the note says, not a share of whatever the project makes.</li>
+        <li><strong>Private:</strong> the notes are offered to selected investors, not listed on an exchange.</li>
+      </ul>
+
+      <h3>Why a note suits a construction project</h3>
+      <p>A resort earns nothing while it is being built. A developer therefore has a cash-flow gap: money goes out for years before any comes in. A note whose first interest payment falls after a set period, 18 months in this case, lets the issuer line up the cost of the capital with the build. Investors get a defined return and a known payment date. Whether that works for a given project depends on the build programme, the security offered and the investors' appetite. Those are commercial and legal choices for the issuer and its advisers.</p>
+
+      <h3>The lifecycle, on one platform</h3>
+      <p>Most note raises are run across several tools: a spreadsheet for the investor list, email for subscriptions, a bank account that someone matches by hand, and an accountant who gets the numbers later. The point of running it end to end is that each step feeds the next.</p>
+      <ol>
+        <li><strong>Investor onboarding.</strong> Each investor applies online, signs the subscription documents electronically and goes through KYC/AML checks. The record of who they are and what they subscribed for is created once.</li>
+        <li><strong>Collecting the money.</strong> Subscription amounts are tracked against each investor, and payments received are matched to the investor and the amount due.</li>
+        <li><strong>The note register.</strong> Every note holder, the amount, the issue date and the terms sit in one register, which is the source for every statement and payment that follows.</li>
+        <li><strong>Accounting.</strong> The same data feeds the general ledger. Receipts, the liability to noteholders and the interest that builds up over time are booked from the register, not retyped.</li>
+        <li><strong>Interest and reporting.</strong> Interest is calculated from the terms, and investors can see their position and statements in a portal under the issuer's own brand.</li>
+      </ol>
+
+      <h3>The accounting points that are easy to miss</h3>
+      <p>These are the issues we would check on any note, whatever the project. Your auditor and your reporting framework decide the final treatment.</p>
+      <ul>
+        <li><strong>Interest builds up before it is paid.</strong> If the first payment is after 18 months, the cost of that interest is still incurred every month. It should be accrued over the period, not recognised only on the payment date. Leaving it out understates the liability until the payment hits.</li>
+        <li><strong>Amortised cost and the effective interest rate.</strong> A note issued to investors is normally a financial liability measured at amortised cost. Transaction costs, and any difference between the amount received and the amount repayable, are spread over the life of the note using the effective interest rate. Our <a href="/tools/bond-je-generator">Bond Accounting JE Generator</a> shows the mechanics for a bond.</li>
+        <li><strong>Borrowing costs on a construction asset.</strong> Under IFRS (IAS 23, or the Australian equivalent AASB 123), borrowing costs directly attributable to building a qualifying asset may be added to the cost of the asset instead of being expensed. Whether it applies depends on the issuer's framework and the facts.</li>
+        <li><strong>The investor's side.</strong> If investors hold notes in a fund or SPV, a plain fixed-interest note is typically tested against the business model and the SPPI test. See our guide to <a href="/blog/ifrs-9-sfrs-i-9-fund-accounting">IFRS 9 / SFRS(I) 9 for funds</a>. A fund that is an investment entity usually measures it at fair value instead.</li>
+        <li><strong>Maturity and repayment.</strong> The register should show what is due, to whom and when, so that the final payment is a check against the books and not a reconstruction.</li>
+      </ul>
+
+      <h3>What to get right before you launch a note</h3>
+      <ul>
+        <li><strong>Regulation:</strong> offering debt to investors is regulated in most places, including Australia. Whether the offer needs a disclosure document, a licence or an exemption depends on who the investors are and how they are approached. Take advice from a local lawyer before you raise. aama.io is software and does not give legal advice or arrange the offer.</li>
+        <li><strong>Terms in writing:</strong> principal, rate, interest dates, security, ranking, maturity and what happens on default.</li>
+        <li><strong>Who holds the money:</strong> where subscription funds sit until the note is issued, and who can release them.</li>
+        <li><strong>One record of investors and balances:</strong> so the register, the bank and the ledger agree.</li>
+        <li><strong>Reporting:</strong> what investors will see, and how often.</li>
+      </ul>
+
+      <h3>How aama.io fits</h3>
+      <p>The same platform that onboards investors and runs a fund's books handles the note's investor records, collection and accounting. See <a href="/products/fund-administration">Fund Administration &amp; Investor Portal</a> for onboarding, subscriptions and the investor portal, <a href="/products/fund-accounting">Fund Accounting</a> for the ledger, and <a href="/solutions/private-credit">Private Credit</a> for credit funds and debt instruments.</p>
+      <p><strong>Planning a note programme or a project raise? <a href="/contact">Talk to our team</a> about how it would run.</strong></p>
+      <p><em>This is general information, not legal, tax or accounting advice. The example describes one project, anonymised. Your instrument, regulatory position and accounting depend on your own facts.</em></p>
+    `,
+    faqs: [
+      { q: 'What is a private debt note?', a: 'A loan packaged so several investors can lend to the same borrower. Each investor holds a note, and the issuer owes them the principal and interest on the agreed terms. It is offered privately rather than listed on an exchange.' },
+      { q: 'How is a debt note different from equity?', a: 'A noteholder is a creditor with a fixed claim for principal and interest, not an owner sharing in the project\'s profit. The return is set by the note\'s terms.' },
+      { q: 'Does interest paid after 18 months mean no interest cost for 18 months?', a: 'No. The issuer incurs the cost as time passes, so interest is normally accrued over the period and the liability grows until it is paid. How it is measured depends on the reporting framework.' },
+      { q: 'How is a debt note issued by a developer usually accounted for?', a: 'Usually as a financial liability at amortised cost using the effective interest rate. Borrowing costs on a qualifying construction asset may be capitalised under IAS 23 or AASB 123. Confirm the treatment with your auditor.' },
+      { q: 'Can aama.io run a private debt note end to end?', a: 'We ran one for an Australian real estate project, from investor onboarding and subscriptions through to the ledger and investor reporting. aama.io is software. Legal structuring, regulatory advice and the offer itself are for your lawyers and advisers.' },
+    ],
+    author: 'Sunil Chaulagain',
+    authorRole: 'Chief Executive Officer',
+    authorImage: '/team/sunil.png',
+    coverImage: '/images/client-fund.png',
+    publishedDate: '2026-11-04',
+    readTime: '7 min',
+    categories: ['Private Credit', 'Fund Accounting', 'IFRS 9'],
+  },
 ];
 
 // Listing payload — omits the heavy `content` field to keep responses small.
@@ -2533,6 +2603,7 @@ const CATEGORY_SOLUTION: Record<string, string> = {
   'Carried Interest': 'vc-pe-firms',
   'Family Offices': 'family-offices',
   VCC: 'family-offices',
+  'Private Credit': 'private-credit',
 };
 
 const CATEGORY_TOOLS: Record<string, string[]> = {

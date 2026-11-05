@@ -1,4 +1,4 @@
-import { Container, Accordion, Text } from '@mantine/core';
+import { Container, Accordion } from '@mantine/core';
 import { IconArrowRight, IconChartLine, IconReportAnalytics, IconUsersGroup } from '@tabler/icons-react';
 import Link from 'next/link';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -13,18 +13,21 @@ const paths = [
     icon: IconChartLine,
     label: 'Fund manager',
     desc: 'Capital calls, waterfalls, carry and LP reporting for your fund type.',
+    cta: 'See the manager workflow',
     href: '/solutions/vc-pe-firms',
   },
   {
     icon: IconReportAnalytics,
     label: 'Fund administrator',
     desc: 'White-label the platform for every fund you service.',
+    cta: 'See white-label options',
     href: '/products/fund-administration',
   },
   {
     icon: IconUsersGroup,
     label: 'SPV / syndicate lead',
     desc: 'Launch and administer a single-deal vehicle in days.',
+    cta: 'See how SPVs launch',
     href: '/solutions/spv-syndicates',
   },
 ];
@@ -69,6 +72,39 @@ export function HomeFAQ() {
   return (
     <section className={`${classes.wrapper} section`}>
       <Container size="xl">
+        <Reveal>
+          <div className={classes.start}>
+            <div className={classes.startGlow} aria-hidden="true" />
+            <div className={classes.startCopy}>
+              <h3 className={classes.startTitle}>What do you run?</h3>
+              <p className={classes.startLede}>Pick the closest fit and go straight to the page built for it.</p>
+              <p className={classes.startAlt}>Not sure, or just want to talk?</p>
+              <div className={classes.startActions}>
+                <Link href="/contact" className={classes.btnPrimary}>
+                  Book a demo <IconArrowRight size={16} />
+                </Link>
+                <Link href="/pricing" className={classes.btnGhost}>View pricing</Link>
+              </div>
+            </div>
+
+            <div className={classes.paths}>
+              {paths.map((p) => (
+                <Link key={p.label} href={p.href} className={classes.path}>
+                  <span className={classes.pathIcon}><p.icon size={22} stroke={1.7} /></span>
+                  <span className={classes.pathBody}>
+                    <span className={classes.pathLabel}>{p.label}</span>
+                    <span className={classes.pathDesc}>{p.desc}</span>
+                    <span className={classes.pathLink}>{p.cta}</span>
+                  </span>
+                  <IconArrowRight size={18} className={classes.pathArrow} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        <div className={classes.divider} />
+
         <SectionHeading
           eyebrow="FAQ"
           title="Before you talk to us"
@@ -89,33 +125,6 @@ export function HomeFAQ() {
         <Link href="/faq" className={classes.seeAll}>
           See all FAQs <IconArrowRight size={16} />
         </Link>
-
-        <div className={classes.divider} />
-
-        <div className={classes.startHead}>
-          <span className={classes.startEyebrow}>Get started</span>
-          <p className={classes.startTitle}>Where should we start?</p>
-          <p className={classes.startLede}>Pick the closest fit and we'll take you straight there.</p>
-        </div>
-
-        <Reveal delay={0.1}>
-          <div className={classes.panel}>
-            {paths.map((p) => (
-              <Link key={p.label} href={p.href} className={classes.path}>
-                <p.icon size={22} stroke={1.7} className={classes.pathIcon} />
-                <span className={classes.pathLabel}>{p.label}</span>
-                <span className={classes.pathDesc}>{p.desc}</span>
-                <span className={classes.pathLink}>
-                  Explore <IconArrowRight size={14} className={classes.pathArrow} />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </Reveal>
-
-        <Text className={classes.fallback}>
-          Not sure, or just want to talk? <Link href="/contact">Book a demo</Link> or <Link href="/pricing">view pricing</Link>.
-        </Text>
       </Container>
     </section>
   );

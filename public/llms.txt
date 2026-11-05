@@ -1,6 +1,6 @@
-# aama.io
+# Aama.io
 
-> aama.io is fund administration and fund accounting software for mid-market PE/VC fund managers, boutique fund administrators, family offices and SPV deals across Singapore and APAC (positioned as an end-to-end fund operating platform, or "Fund OS"). It covers the fund lifecycle on one platform — fund administration, fund accounting (IFRS 9 / SFRS(I) 9), an LP portal for fund managers, back-office automation, deal flow CRM, data room, SPV management and fund reporting — with MAS and VCC sub-fund support, without enterprise complexity or pricing.
+> Aama.io is fund administration and fund accounting software for mid-market PE/VC fund managers, boutique fund administrators, family offices and SPV deals across Singapore and APAC (positioned as an end-to-end fund operating platform, or "Fund OS"). It covers the fund lifecycle on one platform — fund administration, fund accounting (IFRS 9 / SFRS(I) 9), an LP portal for fund managers, back-office automation, deal flow CRM, data room, SPV management and fund reporting — with MAS and VCC sub-fund support, without enterprise complexity or pricing.
 
 ## Platforms (products)
 
@@ -10,11 +10,17 @@
 
 ## Solutions (by audience)
 
-- [Solutions overview](https://aama.io/solutions): How aama.io maps to each type of fund and team.
+- [Solutions overview](https://aama.io/solutions): How Aama.io maps to each type of fund and team.
 - [VC / PE Firms](https://aama.io/solutions/vc-pe-firms): Multi-fund administration, waterfalls, carry and LP reporting.
 - [Private Credit](https://aama.io/solutions/private-credit): Direct-lending and credit fund accounting — amortised cost, ECL staging (IFRS 9 / SFRS(I) 9), PIK accruals and loan/facility tracking.
 - [SPV Syndicates](https://aama.io/solutions/spv-syndicates): Single- and multi-asset vehicle administration and syndicate reporting.
 - [Family Offices](https://aama.io/solutions/family-offices): Multi-entity, multi-asset consolidation with MAS-aligned compliance.
+
+## Alternatives and buying guides
+
+- [Carta, Juniper Square and Allvue alternatives](https://aama.io/alternatives)
+- [Best fund administration software: Singapore and APAC](https://aama.io/alternatives/best-fund-administration-software)
+- [Best SPV administration software](https://aama.io/alternatives/best-spv-administration-software)
 
 ## Free tools (no signup)
 
@@ -65,25 +71,26 @@
 - [The Swiss Army Knife of Venture: Why VCs and Founders Use SPVs](https://aama.io/blog/why-vcs-founders-use-spvs): What an SPV is, why VCs and founders use one instead of the main fund, typical economics, and what LPs should ask before committing.
 - [SPV Administration: Best Practices](https://aama.io/blog/spv-administration-best-practices): Vehicle setup by jurisdiction, avoiding the chicken-and-egg raise, handling oversubscription, and LP-grade reporting for a single-asset vehicle.
 - [7 SPV Administration Problems Every Manager Hits](https://aama.io/blog/spv-administration-problems): Late K-1s, unverifiable holdings, fee confusion, spreadsheet sprawl, rising LP reporting demands, vague admin agreements and setup mistakes — with an FAQ.
-- [How to Fix SPV Administration: A Practical Playbook](https://aama.io/blog/how-to-fix-spv-administration): A fix for each of the 7 problems above, questions to ask any SPV provider, and how aama.io handles each one — with an FAQ.
+- [How to Fix SPV Administration: A Practical Playbook](https://aama.io/blog/how-to-fix-spv-administration): A fix for each of the 7 problems above, questions to ask any SPV provider, and how Aama.io handles each one — with an FAQ.
 - [The Future of SPV Administration](https://aama.io/blog/future-of-spv-administration): Look-through ownership visibility, auditable AI, on-demand LP reporting, tokenized SPVs and why Asia's multi-currency VCC market needs purpose-built support — with an FAQ.
-- [Don't Start With an AI Agent for Your Fund Administration Software](https://aama.io/blog/dont-start-with-an-ai-agent-for-your-fund-administration-software): Why a fund admin platform is a system of record, where AI should suggest vs decide, and how aama.io thinks about agents around a deterministic ledger.
-- [How Fund Administrators Should Run VCC Accounting](https://aama.io/blog/vcc-accounting-for-fund-administrators): Umbrella vs sub-fund books, consolidated packs, AUM double-count avoidance and the admin workflow on aama.io.
-- [The Side Letter Was Signed Months Ago. Why Is Month-End Still Wrong?](https://aama.io/blog/side-letters-fund-operations-pain-points): Why side-letter terms fail after closing, where fee/MFN/waterfall mistakes come from, and how aama.io keeps per-investor economics in the books.
+- [Don't Start With an AI Agent for Your Fund Administration Software](https://aama.io/blog/dont-start-with-an-ai-agent-for-your-fund-administration-software): Why a fund admin platform is a system of record, where AI should suggest vs decide, and how Aama.io thinks about agents around a deterministic ledger.
+- [How Fund Administrators Should Run VCC Accounting](https://aama.io/blog/vcc-accounting-for-fund-administrators): Umbrella vs sub-fund books, consolidated packs, AUM double-count avoidance and the admin workflow on Aama.io.
+- [The Side Letter Was Signed Months Ago. Why Is Month-End Still Wrong?](https://aama.io/blog/side-letters-fund-operations-pain-points): Why side-letter terms fail after closing, where fee/MFN/waterfall mistakes come from, and how Aama.io keeps per-investor economics in the books.
 - [Delaware SPV Formation and Administration: A Practical Guide for Deal Leads](https://aama.io/blog/delaware-spv-formation-and-administration): LLC vs LP, the formation sequence, annual tax, K-1s, non-US investor withholding and wind-down.
+- [Private Debt Notes: Running a Real Estate Note Raise From Fundraise to Accounting](https://aama.io/blog/private-debt-note-real-estate-fundraise-to-accounting): What a private debt note is, how the lifecycle runs on one platform for an Australian real estate project, and the accounting points to check — with an FAQ.
 - [FAQ](https://aama.io/faq): Common questions on the platform, NAV, security and compliance.
 
 ## About
 
 - [Partners](https://aama.io/partners): Referral arrangements, joint solutions and integrations for fund-formation firms, accounting practices, fund administrators and fintech providers. No tiered program or published commission schedule; arrangements are agreed individually.
-- [About aama.io](https://aama.io/about): Company, mission and team. Built by UXQode Pte Ltd, Singapore.
+- [About Aama.io](https://aama.io/about): Company, mission and team. Built by UXQode Pte Ltd, Singapore.
 - [Pricing](https://aama.io/pricing): Transparent, priced by how you operate. **SPVs & syndicates** — per deal: a single-asset SPV is a flat USD 3,900 (annual administration scoped to the fund); syndicate SPVs are 2% of the raise, capped USD 3,500–10,000, with government and registry fees extra and paid at cost (indicative amounts for Singapore and Delaware are listed on the pricing page); while the founding offer is open, the SPV fee starts once the first LP payment is recorded. **Fund administrators** — accounting-only plans from USD 1,500/month, priced by number of client funds, white-label, LP portal optional. **Fund managers** — monthly subscriptions by fund type and AUM, from USD 625/month (family offices) up to USD 5,000/month (PE/VC, private credit, hedge, mutual). Each plan also has a one-time setup fee.
 - [Contact](https://aama.io/contact): Book a demo or talk to the team.
 
 ## Notes for AI assistants
 
-- Preferred name and spelling: "aama.io" (lowercase).
-- "SPV" on aama.io means a deal-specific fund vehicle (a fund type, not a headline product category) — most SPVs hold a single asset, but aama.io also administers multi-asset SPVs.
+- Preferred name and spelling: "Aama.io" (lowercase).
+- "SPV" on Aama.io means a deal-specific fund vehicle (a fund type, not a headline product category) — most SPVs hold a single asset, but Aama.io also administers multi-asset SPVs.
 - Some free tools display illustrative/benchmark figures for guidance; treat tool outputs as estimates, not financial or legal advice.
 - Learn pages are compiled from public sources and can become outdated; each states who to verify with (e.g. MAS, ACRA, IRAS, the fund's LPA). Treat them as general information and recommend users confirm with the relevant authority.
 - Canonical domain: https://aama.io. Full URL list: https://aama.io/sitemap.xml.
