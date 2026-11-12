@@ -35,6 +35,9 @@ export function AboutCTA() {
               <p className={s.ctaMail}>
                 Or write to <a href="mailto:contact@aama.io">contact@aama.io</a>
               </p>
+              <p className={s.ctaMail}>
+                421 Tagore Industrial Avenue, #02-13, Tagore 8, Singapore 787805
+              </p>
             </div>
 
             <div className={s.paths}>

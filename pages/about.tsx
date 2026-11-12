@@ -18,6 +18,9 @@ const organizationData = {
     'aama.io is fund management, administration and accounting software that runs the entire fund lifecycle on one platform.',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: '421 Tagore Industrial Avenue, #02-13, Tagore 8',
+    addressLocality: 'Singapore',
+    postalCode: '787805',
     addressCountry: 'SG',
   },
   founder: {
