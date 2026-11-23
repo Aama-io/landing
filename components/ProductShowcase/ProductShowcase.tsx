@@ -20,7 +20,7 @@ import classes from './ProductShowcase.module.css';
 const products = [
   {
     title: 'General ledger',
-    group: 'Fund Accounting',
+    group: 'Aama Accounting',
     description:
       'A double-entry ledger for the fund. Accruals post by rule, and the trial balance comes off those same books.',
     image: '/images/fund-detail.png',
@@ -30,7 +30,7 @@ const products = [
   },
   {
     title: 'NAV across funds',
-    group: 'Fund Accounting',
+    group: 'Aama Accounting',
     description:
       'Gross, net and per-unit NAV for every fund you run, closed on that fund’s calendar.',
     image: '/images/client-fund.png',
@@ -40,7 +40,7 @@ const products = [
   },
   {
     title: 'Fees & waterfalls',
-    group: 'Fund Accounting',
+    group: 'Aama Accounting',
     description:
       'European or American waterfall, with the hurdle, catch-up and any side letter applied to that LP.',
     image: '/images/share-class.png',
@@ -50,7 +50,7 @@ const products = [
   },
   {
     title: 'Approvals',
-    group: 'Fund Accounting',
+    group: 'Aama Accounting',
     description:
       'Initiate, post, approve, archive. The entry is not on the books until the right person accepts it.',
     image: '/images/settings.png',
@@ -60,7 +60,7 @@ const products = [
   },
   {
     title: 'LP onboarding',
-    group: 'Fund Administration & LP Portal',
+    group: 'Aama Fund',
     description:
       'Investors apply, sign and clear KYC in one workflow. Your team sees the status on the same list.',
     image: '/images/fund-investors.png',
@@ -70,7 +70,7 @@ const products = [
   },
   {
     title: 'Investor register',
-    group: 'Fund Administration & LP Portal',
+    group: 'Aama Fund',
     description:
       'Commitments, unfunded capital and ownership stay on one register, including transfers.',
     image: '/images/fund-investors.png',
@@ -80,7 +80,7 @@ const products = [
   },
   {
     title: 'Calls & distributions',
-    group: 'Fund Administration & LP Portal',
+    group: 'Aama Fund',
     description:
       'Call from unfunded commitments, match the payment, then issue the distribution from the same register.',
     image: '/images/capital-call.png',
@@ -90,7 +90,7 @@ const products = [
   },
   {
     title: 'LP portal',
-    group: 'Fund Administration & LP Portal',
+    group: 'Aama Fund',
     description:
       'LPs see positions, statements and performance on your brand, across every fund they hold.',
     image: '/images/fund-investors.png',
@@ -100,7 +100,7 @@ const products = [
   },
   {
     title: 'Form the vehicle',
-    group: 'SPV Fund Management',
+    group: 'Aama SPV',
     description:
       'Stand up a single- or multi-asset SPV from a template, with its own cap table.',
     image: '/images/client-fund.png',
@@ -110,7 +110,7 @@ const products = [
   },
   {
     title: 'Onboard members',
-    group: 'SPV Fund Management',
+    group: 'Aama SPV',
     description:
       'Members commit with KYC and e-sign in the same steps used for a fund.',
     image: '/images/fund-investors.png',
@@ -120,7 +120,7 @@ const products = [
   },
   {
     title: 'Carry & waterfall',
-    group: 'SPV Fund Management',
+    group: 'Aama SPV',
     description:
       'Lead carry, hurdle and catch-up, then a deal-by-deal waterfall with per-member side letters.',
     image: '/images/share-class.png',
@@ -130,7 +130,7 @@ const products = [
   },
   {
     title: 'Calls & payouts',
-    group: 'SPV Fund Management',
+    group: 'Aama SPV',
     description:
       'Call capital against commitments, match what lands, and pay the distribution out to members.',
     image: '/images/capital-call.png',
@@ -141,12 +141,12 @@ const products = [
 ];
 
 // Three product lines, matching PLATFORM_LINKS and the product overview page.
-const GROUP_ORDER = ['Fund Accounting', 'Fund Administration & LP Portal', 'SPV Fund Management'] as const;
+const GROUP_ORDER = ['Aama Accounting', 'Aama Fund', 'Aama SPV'] as const;
 
 const GROUP_HINT: Record<(typeof GROUP_ORDER)[number], string> = {
-  'Fund Accounting': 'Close the books across every fund',
-  'Fund Administration & LP Portal': 'Onboard LPs and move capital',
-  'SPV Fund Management': 'Run one deal on fund-grade books',
+  'Aama Accounting': 'Ledger, NAV and fund economics',
+  'Aama Fund': 'Administration, calls and reporting',
+  'Aama SPV': 'One deal, from subscription to payout',
 };
 
 export function ProductShowcase() {
@@ -166,7 +166,7 @@ export function ProductShowcase() {
         <SectionHeading
           eyebrow="Product tour"
           title="Three products, one platform"
-          description="Fund administration software for the books, the LP portal and the deal vehicle. Administrators, managers and syndicate leads start with the product they need — or license all three."
+          description="Fund administration software, sold as three products: Aama Accounting, Aama Fund and Aama SPV. Administrators, managers and syndicate leads license the one they need — or all three."
         />
 
         <div className={classes.switch} role="tablist" aria-label="Products">

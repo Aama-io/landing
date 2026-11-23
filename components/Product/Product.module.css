@@ -524,6 +524,73 @@
   font-size: 14px;
   font-weight: 600;
   color: var(--mantine-color-blue-6);
+  text-decoration: none;
+}
+
+.layer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+
+  @media (max-width: 48em) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.layerName {
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.layerDesc {
+  margin-top: 8px;
+  max-width: 62ch;
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.layer .industryLink {
+  margin-top: 0;
+  flex-shrink: 0;
+}
+
+.infra {
+  margin-top: 16px;
+  padding: 22px 32px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-muted);
+}
+
+.infraLabel {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.infraList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.infraList li {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-strong);
 }
 
 /* ---------- FAQ ---------- */

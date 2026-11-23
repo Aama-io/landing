@@ -65,7 +65,7 @@ export function Header() {
                 </button>
               </Menu.Target>
               <Menu.Dropdown className={classes.menuDropdown}>
-                <Menu.Label>Our platforms</Menu.Label>
+                <Menu.Label>Three products</Menu.Label>
                 {PLATFORM_LINKS.map((p) => (
                   <Menu.Item
                     key={p.href}

@@ -12,13 +12,13 @@ import type { DetailData, RelatedLink } from '@/components/ProductDetail/Product
 export const PLATFORMS: DetailData[] = [
   {
     slug: 'fund-administration',
-    name: 'Fund Administration & Investor Portal',
-    shortName: 'Fund Administration & LP Portal',
+    name: 'Aama Fund',
+    shortName: 'Aama Fund',
     category: 'Operations & investor experience',
     icon: IconReportAnalytics,
     image: '/images/fund-investors.png',
     heroDescription:
-      'One system for your investors and your back office — a white-labeled LP portal plus full fund administration: onboarding, capital calls, distributions, fees, carry, compliance and reporting.',
+      'Fund administration for LP management, capital calls, distributions and investor reporting. The white-labeled LP portal is included.',
     description:
       'Fund administration software with a built-in white-labeled LP portal: KYC/AML onboarding, capital calls, distributions, carry calculations and LP reporting.',
     seoTitle: 'Fund Administration Software & LP Portal, Singapore',
@@ -57,13 +57,13 @@ export const PLATFORMS: DetailData[] = [
   },
   {
     slug: 'fund-accounting',
-    name: 'Fund Accounting',
-    shortName: 'Fund Accounting',
+    name: 'Aama Accounting',
+    shortName: 'Aama Accounting',
     category: 'Accounting',
     icon: IconReportMoney,
     image: '/images/fund-detail.png',
     heroDescription:
-      'A fund-grade accounting engine — full double-entry general ledger, automated NAV, European & American waterfalls and 12+ audit-ready reports. Purpose-built for PE, VC and alternative funds, and complete enough to run on its own.',
+      'Ledger, NAV, fund economics, reconciliation, reporting and multi-entity accounting. A fund-grade engine, complete enough to run on its own.',
     description:
       'Fund accounting software with a double-entry ledger, automated NAV, waterfalls and AI-assisted extraction of invoices, bank and custodian statements.',
     seoTitle: 'Fund Accounting Software for PE, VC and Alternative Funds',
@@ -167,13 +167,13 @@ export const platformBySlug = (slug: string) => PLATFORMS.find((p) => p.slug ===
 // Fund Accounting is the lead product; SPV is a secondary offering and is listed last.
 export const SPV_PRODUCT_LINK: RelatedLink = {
   href: '/products/spv-fund-management',
-  label: 'SPV Fund Management',
-  blurb: 'End-to-end SPV and syndicate management, from formation to accounting, in one box.',
+  label: 'Aama SPV',
+  blurb: 'SPV operations, deal management, investor subscriptions, accounting and distributions.',
   icon: IconBox,
 };
 
 // Compact list for nav menus and related-product strips.
-const LEAD_PLATFORM_ORDER = ['fund-administration', 'fund-accounting'];
+const LEAD_PLATFORM_ORDER = ['fund-accounting', 'fund-administration'];
 
 export const PLATFORM_LINKS: RelatedLink[] = [
   ...[...PLATFORMS]

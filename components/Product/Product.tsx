@@ -34,11 +34,11 @@ const stats = [
 // Order matches PLATFORM_LINKS: Fund Accounting (lead), Fund Administration, SPV (secondary).
 const flagships = [
   {
-    eyebrow: 'Lead product · Accounting',
-    title: 'Fund Accounting',
+    eyebrow: 'Accounting',
+    title: 'Aama Accounting',
     href: '/products/fund-accounting',
     description:
-      'A fund-grade accounting engine — double-entry general ledger, automated NAV, waterfalls and 12+ audit-ready reports. Complete enough to run on its own.',
+      'Ledger, NAV, fund economics, reconciliation, reporting and multi-entity accounting. Complete enough to run on its own.',
     image: '/images/fund-detail.png',
     icon: IconReportMoney,
     features: [
@@ -49,35 +49,45 @@ const flagships = [
     ],
   },
   {
-    eyebrow: 'Operations & investor experience',
-    title: 'Fund Administration & Investor Portal',
+    eyebrow: 'Fund administration',
+    title: 'Aama Fund',
     href: '/products/fund-administration',
     description:
-      'A white-labeled LP portal and full back-office administration in one — onboarding, capital calls, distributions, fees, carry, compliance and reporting.',
+      'Fund administration, LP management, capital calls, distributions and investor reporting. The LP portal is included.',
     image: '/images/fund-investors.png',
     icon: IconReportAnalytics,
     features: [
-      'White-labeled investor portal with KYC/AML onboarding',
-      'Investor register, cap table and capital calls',
-      'Distribution waterfalls, fees and carried interest',
-      'MAS-aligned compliance and LP reporting',
+      'Investor register, cap table and commitments',
+      'Capital calls, distributions and payment tracking',
+      'Fees, carry and LP reporting packs',
+      'White-labeled portal for positions and statements',
     ],
   },
   {
-    eyebrow: 'SPVs & syndicates',
-    title: 'SPV Fund Management',
+    eyebrow: 'SPVs and syndicates',
+    title: 'Aama SPV',
     href: '/products/spv-fund-management',
     description:
-      'End-to-end SPV and syndicate management in one box: formation, cap table, KYC/AML, capital calls, lead carry, distributions, the general ledger, NAV and member reporting.',
+      'SPV operations, deal management, investor subscriptions, accounting and distributions — on the same books as a fund.',
     image: '/images/client-fund.png',
     icon: IconUsersGroup,
     features: [
-      'Spin up a single- or multi-asset SPV in days',
-      'Member onboarding with KYC/AML and e-signatures',
-      'Lead carry, deal fees and deal-by-deal waterfalls',
-      'Double-entry ledger, NAV and IFRS-ready statements',
+      'Templated single- or multi-asset vehicles',
+      'Member subscriptions with KYC/AML and e-sign',
+      'Lead carry and deal-by-deal waterfalls',
+      'Ledger, NAV and member statements',
     ],
   },
+];
+
+const SHARED = [
+  'Unified ledger',
+  'Investor database',
+  'Fund data',
+  'Workflow engine',
+  'API',
+  'Compliance',
+  'Analytics',
 ];
 
 const fundTypes = [
@@ -266,13 +276,13 @@ export function Product() {
           >
             <span className={classes.pill}>Fund administration &amp; accounting software</span>
             <Title className={classes.heroTitle}>
-              The operating layer for{' '}
-              <span className={classes.accent}>modern fund managers.</span>
+              Private capital{' '}
+              <span className={classes.accent}>operating infrastructure.</span>
             </Title>
             <Text className={classes.heroDesc}>
-              <strong>Fund administration</strong> with a white-labeled investor portal, a fund-grade{' '}
-              <strong>Fund Accounting</strong> engine, and <strong>SPV management</strong> — covering
-              your entire fund lifecycle. License one, or all three.
+              Three products on one platform: <strong>Aama Accounting</strong>, <strong>Aama Fund</strong> and{' '}
+              <strong>Aama SPV</strong>. Fund administration software, the accounting engine, and deal
+              vehicles — license one, or all three.
             </Text>
             <Group gap="md" justify="center" mt="xl">
               <Button
@@ -330,8 +340,8 @@ export function Product() {
         <Container size="xl">
           <SectionHeading
             eyebrow="Fund administration software"
-            title="Modular by design — take one, or all three"
-            description="Fund administration (with its white-labeled investor portal), Fund Accounting, and SPV management on one platform. A manager who self-administers can run on Fund Accounting alone."
+            title="Three products. License one, or all three."
+            description="Aama Accounting closes the books. Aama Fund runs LPs, calls and reporting. Aama SPV runs the deal. A manager who self-administers can run on Aama Accounting alone."
           />
           <div className={classes.flagships}>
             {flagships.map((f, i) => (
@@ -362,6 +372,31 @@ export function Product() {
                 </div>
               </Reveal>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className={classes.section}>
+        <Container size="xl">
+          <div className={classes.layer}>
+            <div>
+              <Text className={classes.layerName}>Aama Investor</Text>
+              <Text className={classes.layerDesc}>
+                Investor onboarding, the LP portal, communications, statements and documents.
+                LPs use it whether the vehicle is a fund or an SPV.
+              </Text>
+            </div>
+            <Link href="/products/fund-administration" className={classes.industryLink}>
+              Included with Aama Fund <IconArrowRight size={15} />
+            </Link>
+          </div>
+          <div className={classes.infra}>
+            <Text className={classes.infraLabel}>Shared infrastructure</Text>
+            <ul className={classes.infraList}>
+              {SHARED.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
         </Container>
       </section>
