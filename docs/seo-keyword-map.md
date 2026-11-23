@@ -50,7 +50,7 @@ Leverage points we already own: **13 free calculators**, a now server-rendered *
 | Licensing | VCFM licence, LFMC, A/I vs retail, fund administration licence Singapore | `/blog/singapore-fund-administration-licence` + `/tools/mas-licensing-estimator` | ✅ **shipped** |
 | 13O/13U eligibility (tool) | 13O calculator, family office eligibility | **new tool** `/tools/family-office-incentive` | ⬜ **gap — validated demand** |
 | Fund setup | how to start a VC fund Singapore, how to launch a PE fund, emerging manager first fund | `/blog/how-to-start-a-fund-singapore` (hub linking VCC/licence/13O/IFRS 9) | ✅ **shipped** |
-| SPV | SPV vs fund, set up an SPV Singapore, syndicate investment | new pillar `/blog/spv-vs-fund-singapore` | ⬜ TODO |
+| SPV | set up an SPV Singapore, Singapore SPV vs VCC, syndicate investment | `/blog/singapore-spv-formation-and-administration` + `/learn/singapore-fund-structures/singapore-spv` | ✅ **shipped** |
 
 ## Cluster B — Fund operations & accounting concepts (Priority 1, tool-led, global-evergreen)
 
@@ -78,7 +78,7 @@ Leverage points we already own: **13 free calculators**, a now server-rendered *
 
 | Keyword | Target URL | Status |
 |---|---|---|
-| white-label fund administration platform | `/solutions/fund-administrators` | ⬜ new |
+| white-label fund administration platform | `/solutions/fund-administrators` | ✅ live |
 | family office fund administration software APAC | `/solutions/family-offices` (re-optimise) | exists |
 | PE/VC fund administration software Singapore | `/solutions/vc-pe-firms` (re-optimise) | exists |
 | **private credit fund administration software** / direct lending fund accounting / credit fund IFRS 9 | `/solutions/private-credit` | ✅ **shipped** |

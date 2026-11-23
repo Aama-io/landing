@@ -25,13 +25,25 @@ import Cal, { getCalApi } from "@calcom/embed-react";
 // (lib/solutions.ts) plus "Fund Administrator", a service-provider persona
 // distinct from fund type. Replaces a generic list that didn't name any of them.
 const INQUIRY_TYPES = [
+  'Launch Free / LP portal',
   'VC / PE Fund Manager',
   'Private Credit Fund Manager',
   'Family Office',
   'SPV / Syndicate Lead',
   'Fund Administrator',
+  'Security / due diligence',
+  'Partner enquiry',
   'Other',
 ];
+
+// Map URL ?inquiryType= values to Select labels for conversion tracking.
+const INQUIRY_QUERY_MAP: Record<string, string> = {
+  launch_free: 'Launch Free / LP portal',
+  security: 'Security / due diligence',
+  partner: 'Partner enquiry',
+  'fund-administrator': 'Fund Administrator',
+  spv: 'SPV / Syndicate Lead',
+};
 
 // What the fund is raising or running. Optional, so it never blocks a submission, but it lets
 // a note or debt issuer be routed to the right conversation from the first message.
@@ -79,6 +91,25 @@ export function ContactForm() {
     },
   });
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {return;}
+    const raw = new URLSearchParams(window.location.search).get('inquiryType');
+    if (!raw) {return;}
+    const mapped = INQUIRY_QUERY_MAP[raw] || (INQUIRY_TYPES.includes(raw) ? raw : null);
+    if (mapped) {
+      form.setFieldValue('inquiryType', mapped);
+      if (mapped === 'Launch Free / LP portal') {
+        trackEvent({
+          action: 'launch_free_contact_land',
+          category: 'launch_free',
+          label: 'lp_portal',
+        });
+      }
+    }
+  // Prefill once from the landing URL; form/trackEvent are stable enough for this mount effect.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const handleSubmit = async (values: typeof form.values) => {
     try {
       setStatus(null);
@@ -105,6 +136,13 @@ export function ContactForm() {
         category: 'Contact',
         label: values.inquiryType,
       });
+      if (values.inquiryType === 'Launch Free / LP portal') {
+        trackEvent({
+          action: 'launch_free_apply_submit',
+          category: 'launch_free',
+          label: 'lp_portal',
+        });
+      }
 
       setStatus('success');
       form.reset();

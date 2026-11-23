@@ -60,6 +60,21 @@
   color: var(--text-muted);
 }
 
+.caseStudyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--brand-700);
+  text-decoration: none;
+}
+
+.caseStudyLink:hover {
+  text-decoration: underline;
+}
+
 .statGrid {
   margin-top: 32px;
   padding-top: 28px;

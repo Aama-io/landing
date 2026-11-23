@@ -128,6 +128,8 @@ const resources = [
   {
     title: 'Guides',
     items: [
+      ['Singapore SPV formation and administration', '/blog/singapore-spv-formation-and-administration'],
+      ['Delaware SPV formation and administration', '/blog/delaware-spv-formation-and-administration'],
       ['Free and low-cost SPV administration', '/blog/free-low-cost-spv-administration'],
       ['Why VCs and founders use SPVs', '/blog/why-vcs-founders-use-spvs'],
       ['SPV administration best practices', '/blog/spv-administration-best-practices'],
@@ -147,6 +149,8 @@ const resources = [
   {
     title: 'Key terms',
     items: [
+      ['Singapore SPV', '/learn/singapore-fund-structures/singapore-spv'],
+      ['Delaware SPV', '/learn/fund-operations/delaware-spv'],
       ['Syndicate', '/learn/fund-operations/syndicate'],
       ['Continuation vehicle', '/learn/fund-operations/continuation-vehicle'],
       ['Capital call', '/learn/fund-operations/capital-call'],

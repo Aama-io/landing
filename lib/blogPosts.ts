@@ -99,7 +99,7 @@ export const blogPosts: BlogPost[] = [
       
       <ol>
         <li><strong>Detailed KYC Process:</strong> Our thorough verification protocols improve compliance while protecting against fraud and unauthorized access.</li>
-        <li><strong>VAPT Certified Security:</strong> The software has undergone rigorous Vulnerability Assessment and Penetration Testing to ensure data protection.</li>
+        <li><strong>Security controls:</strong> Encryption, role-based access and audit trails; independent penetration testing is available under NDA for due diligence.</li>
         <li><strong>Auto-Saving Forms:</strong> Incomplete forms are automatically saved, preventing data loss while allowing for thorough completion of compliance documentation.</li>
         <li><strong>Audit Trails:</strong> Comprehensive logging of all system activities ensures transparency and accountability.</li>
       </ol>
@@ -2325,7 +2325,7 @@ Cr Bank $438.00
 
       <p>Delaware wins on familiarity and flexibility. An LLC or LP can be formed by filing a single certificate, the operating or partnership agreement is largely a matter of contract, and courts have a deep body of case law on both. For a deal into a US company, investors usually expect it.</p>
 
-      <p>It is not always the right wrapper. An SPV that will hold Asian assets and raise mostly from Asian investors may sit better in <a href="/blog/how-to-set-up-a-vcc-singapore">Singapore</a> or an offshore jurisdiction. Our <a href="/tools/spv-jurisdiction-comparator">SPV Jurisdiction Comparator</a> lays the options side by side, and the <a href="/blog/why-vcs-founders-use-spvs">overview of why VCs and founders use SPVs</a> covers the wider case.</p>
+      <p>It is not always the right wrapper. An SPV that will hold Asian assets and raise mostly from Asian investors may sit better as a <a href="/blog/singapore-spv-formation-and-administration">Singapore SPV</a>, or as a <a href="/blog/how-to-set-up-a-vcc-singapore">Singapore VCC</a> if it is really a fund. Our <a href="/tools/spv-jurisdiction-comparator">SPV Jurisdiction Comparator</a> lays the options side by side, and the <a href="/blog/why-vcs-founders-use-spvs">overview of why VCs and founders use SPVs</a> covers the wider case.</p>
 
       <h3>LLC, LP or corporation</h3>
 
@@ -2484,7 +2484,7 @@ Cr Bank $438.00
       </ul>
 
       <h3>How aama.io approaches it</h3>
-      <p>For SPV managers, aama.io's founding offer defers the fee: you set up the SPV, invite investors and call capital first, and <strong>the SPV fee starts once your first LP payment is recorded</strong>. The offer ends without notice. A single-asset SPV is a flat USD 3,900, and a syndicate SPV is 2% of the raise with a USD 3,500 minimum and a USD 10,000 cap, with annual administration scoped to the vehicle. Government and registry fees are extra, paid at cost, and not included in either price. Prices change, so confirm them on the <a href="/pricing">pricing page</a>.</p>
+      <p>For SPV managers, aama.io's founding offer defers the fee: you set up the SPV, invite investors and call capital first, and <strong>the SPV fee starts once your first LP payment is recorded, or 60 days after your first investor accepts an invite if no payment has been recorded by then</strong>. The offer ends without notice. A single-asset SPV is a flat USD 3,900, and a syndicate SPV is 2% of the raise with a USD 3,500 minimum and a USD 10,000 cap, with annual administration scoped to the vehicle. Government and registry fees are extra, paid at cost, and not included in either price. Prices change, so confirm them on the <a href="/pricing">pricing page</a>.</p>
       <p>You can model your own costs with the <a href="/tools/spv-cost-estimator">SPV Formation Cost Estimator</a> and the <a href="/tools/spv-admin-cost-calculator">SPV Admin Cost Calculator</a>, and see how the platform runs a vehicle on the <a href="/products/spv-fund-management">SPV Fund Management</a> page.</p>
       <p><em>Figures are indicative and change often. Check current price sheets with each provider. This is general information, not legal or tax advice.</em></p>
     `,
@@ -2493,7 +2493,7 @@ Cr Bank $438.00
       { q: 'What does free SPV administration usually leave out?', a: 'Typically annual administration and bookkeeping, tax filings, regulatory or notice-filing fees, add-ons for non-US investors or extra closes, distributions and investor statements, and sometimes a share of profits.' },
       { q: 'How much does it cost to run an SPV each year?', a: 'It depends on the jurisdiction and the work involved. Typical items are a registered office or agent, bookkeeping, tax filings and investor reporting, plus an audit where required. Ask any provider for the annual cost in writing before you commit.' },
       { q: 'Is a flat fee or a percentage of the raise cheaper?', a: 'It depends on the raise. A flat fee is cheaper on larger raises. A percentage fee is cheaper on smaller raises, but a minimum fee often makes small deals cost the same as a flat fee. A cap makes large raises cost the same as a flat fee too, so compare the actual amount at your raise size.' },
-      { q: 'Does aama.io charge before my SPV raises?', a: 'No. Under the founding offer the SPV fee starts once your first LP payment is recorded. Government and registry fees are extra and paid at cost, and are not included in the SPV fee. The offer ends without notice, so check the pricing page for current terms.' },
+      { q: 'Does aama.io charge before my SPV raises?', a: 'No. Under the founding offer the SPV fee starts once your first LP payment is recorded, or 60 days after your first investor accepts an invite if no payment has been recorded by then. Government and registry fees are extra and paid at cost, and are not included in the SPV fee. The offer ends without notice, so check the pricing page for current terms.' },
     ],
     author: 'Luis Lim',
     authorRole: 'Chief Operations Officer',
@@ -2572,6 +2572,123 @@ Cr Bank $438.00
     publishedDate: '2026-11-04',
     readTime: '7 min',
     categories: ['Private Credit', 'Fund Accounting', 'IFRS 9'],
+  },
+  {
+    id: '38',
+    title: 'Singapore SPV Formation and Administration: A Practical Guide for Deal Leads',
+    slug: 'singapore-spv-formation-and-administration',
+    excerpt:
+      'A Singapore SPV is usually a private company, not a pass-through. Here is the lifecycle: Pte Ltd versus VCC, ACRA incorporation, the resident director, annual return and what administration actually involves.',
+    content: `
+      <p>Singapore is the natural home for a deal SPV when the asset, the investors or the bank account are in Asia. Formation through ACRA is straightforward. The part that surprises people who have only run a Delaware SPV is the shape of the vehicle: a Singapore SPV is usually a private company, taxed as a company, with a director who lives in Singapore. There is no Schedule K-1.</p>
+
+      <h3>When Singapore is the right wrapper</h3>
+
+      <p>Choose Singapore when the investors, the asset or the banking relationship are in Singapore or the wider region, and you want a company that local banks, lawyers and auditors already recognise. Choose <a href="/blog/delaware-spv-formation-and-administration">Delaware</a> when the deal and most of the investors are in the US and they expect a partnership and K-1s. Choose Cayman or BVI when institutional LPs want a tax-neutral offshore company. The <a href="/tools/spv-jurisdiction-comparator">SPV Jurisdiction Comparator</a> puts the four side by side.</p>
+
+      <p>A single-deal syndicate is not the same thing as a fund. If you are raising a blind pool, calling capital over years, or need sub-funds under one umbrella, look at a <a href="/blog/how-to-set-up-a-vcc-singapore">variable capital company</a> and <a href="/blog/how-to-start-a-fund-singapore">how to start a fund in Singapore</a> instead of stretching a private company into a fund.</p>
+
+      <h3>Pte Ltd, VCC or something else</h3>
+
+      <ul>
+        <li><strong>Private company (Pte. Ltd.).</strong> The usual single-deal SPV. Incorporated with ACRA, limited liability for shareholders, fixed share capital, and corporate tax at the company. The sponsor is typically a director and shareholder; investors take shares.</li>
+        <li><strong>Variable capital company (VCC).</strong> Built for funds. Capital can go up and down with subscriptions and redemptions, and an umbrella VCC can hold segregated sub-funds. Overkill for one closed deal, and the right answer for a fund. See <a href="/learn/singapore-fund-structures/vcc">what a VCC is</a>.</li>
+        <li><strong>Limited partnership or LLP.</strong> Sometimes used where the economics need a general partner and limited partners. Less common for a simple syndicate than a private company. Take advice before you rely on it.</li>
+      </ul>
+
+      <h3>The formation sequence</h3>
+
+      <ol>
+        <li><strong>Check the name with ACRA.</strong> The name application is a small fee and is separate from registration.</li>
+        <li><strong>Appoint at least one director ordinarily resident in Singapore.</strong> A citizen, permanent resident or eligible pass holder. Many foreign sponsors use a nominee director. That is a real annual cost, not a formality.</li>
+        <li><strong>File the incorporation.</strong> As listed on our cost tools (checked October 2026), registration is S$300 after a S$15 name application, S$315 in all. ACRA’s schedule changes, so confirm the current fee before you file.</li>
+        <li><strong>Set the constitution and the shareholder terms.</strong> This is where the economics live: share classes, contributions, carry, expenses and how proceeds are shared. Most of the legal cost sits here, not in the ACRA fee.</li>
+        <li><strong>Appoint a company secretary.</strong> A private company must appoint one within six months of incorporation, and the secretary must be ordinarily resident in Singapore. You also need a registered office address in Singapore.</li>
+        <li><strong>Onboard investors.</strong> Subscription documents, eligibility checks, KYC/AML and the share allotment, before money moves.</li>
+        <li><strong>Open the bank account.</strong> Often the real bottleneck, even when incorporation itself takes a day or two. The <a href="/tools/spv-formation-checklist">SPV Formation Checklist</a> shows a realistic critical path.</li>
+      </ol>
+
+      <p>Indicative setup and first-year ranges are in the <a href="/tools/spv-cost-estimator">SPV Formation Cost Estimator</a>. Government fees are passed through at cost and are not inside the aama.io SPV price.</p>
+
+      <h3>The securities side: do not skip it</h3>
+
+      <p>Offering shares in an SPV can be an offer of securities under the Securities and Futures Act. Exemptions exist, including for accredited investors and certain small offers, but which one applies depends on who you approach and how. That is a question for Singapore counsel, not for the administrator. The administrator still has to keep an investor register that matches the exemption you relied on.</p>
+
+      <p>Whether the <em>sponsor</em> needs an MAS licence is a separate question. Holding one asset inside a company is not the same as managing third-party money as a fund manager. Read <a href="/blog/singapore-fund-administration-licence">the licensing guide</a> and confirm your own position. The SPV does not answer it for you.</p>
+
+      <h3>What running a Singapore SPV actually involves</h3>
+
+      <p>Once the money is in, administration is a company calendar, not a US partnership calendar:</p>
+
+      <ul>
+        <li><strong>Annual return to ACRA.</strong> The filing fee on our cost tools is S$60 (checked October 2026). The return keeps the company’s public particulars current. Missing it affects the company’s standing.</li>
+        <li><strong>Corporate income tax.</strong> The headline rate is 17%. A single-asset holding company often has little taxable profit, but it still has a filing obligation with IRAS. There is no pass-through and no K-1. Investors are shareholders, not partners.</li>
+        <li><strong>Registers.</strong> Members, directors and the register of registrable controllers. Keep them current when someone transfers or a new director is appointed.</li>
+        <li><strong>Resident director and secretary.</strong> Both have to stay in place. If the nominee director resigns, replace them before the company is in breach.</li>
+        <li><strong>Accounts.</strong> Financial statements each year. Whether an audit is legally required depends on the small-company test and on what the bank or the investors have asked for. Confirm the current test with your auditor rather than relying on an old threshold.</li>
+        <li><strong>FATCA and CRS.</strong> Investor-level reporting still applies. The workload grows with the number of investors, not with the size of the deal.</li>
+      </ul>
+
+      <h3>The investor-facing work behind the filings</h3>
+
+      <ul>
+        <li><strong>A capital account, or share account, per investor.</strong> Contributions, allotments, distributions and any fee or carry, reconciled to the bank. The financial statements have to agree with that register.</li>
+        <li><strong>Carry and waterfall calculations.</strong> Simple until a side letter, a fee break or a follow-on appears. See <a href="/blog/side-letters-fund-operations-pain-points">why side-letter terms break month-end</a>.</li>
+        <li><strong>Capital calls and distributions.</strong> Notices, who has funded, and how exit proceeds are paid. The <a href="/tools/capital-call-schedule">Capital Call Schedule</a> helps plan the calls.</li>
+        <li><strong>Investor reporting.</strong> Statements that match the ledger. If they do not, the annual accounts will not either.</li>
+      </ul>
+
+      <h3>Where Singapore SPVs go wrong</h3>
+
+      <ul>
+        <li><strong>Using a private company for a fund.</strong> Fixed capital and a company tax return are the wrong tools for an open-ended raise. That is a VCC conversation.</li>
+        <li><strong>Assuming it works like Delaware.</strong> No K-1, no June 1 franchise-style tax, and you cannot skip the resident director.</li>
+        <li><strong>Nominee director with no calendar.</strong> The annual return, the tax filing and the controller register still have to happen when the deal is quiet.</li>
+        <li><strong>Books in a spreadsheet.</strong> Fine for one SPV, not for ten. The <a href="/blog/spv-administration-problems">seven recurring SPV administration problems</a> mostly start here.</li>
+        <li><strong>No strike-off plan.</strong> After the final distribution the company still exists, and the director, secretary and annual return continue until you apply to strike it off or wind it up.</li>
+      </ul>
+
+      <h3>Winding down</h3>
+
+      <p>After the final distribution, prepare the final accounts and tax return, settle what ACRA and IRAS still require, and apply to strike the company off or wind it up with your corporate secretary. Keep records for the period your adviser sets. Closing the company stops the annual return, the nominee director and the secretary from running on a vehicle that no longer holds anything.</p>
+
+      <h3>What aama.io does</h3>
+
+      <p>On aama.io a Singapore SPV is a first-class vehicle: investor register and onboarding in the LP portal, capital calls, distributions and a per-investor record in the books, with side-letter terms carried into the economics. Your corporate secretary and tax agent still file with ACRA and IRAS. We do not incorporate companies or give legal or tax advice. See <a href="/solutions/spv-syndicates">SPVs &amp; Syndicates</a> and <a href="/learn/singapore-fund-structures/singapore-spv">What is a Singapore SPV?</a></p>
+
+      <p><em>General information about Singapore SPV practice, not legal, tax or investment advice. Fees, residency rules and filing dates change. Confirm each point with Singapore counsel, a corporate secretary and a tax adviser before acting. Government fee figures above match our cost tools as checked in October 2026.</em></p>
+
+      <p><strong>Running Singapore SPVs and still rebuilding the register in a spreadsheet? <a href="/contact">Talk to our team</a> about administering them on aama.io.</strong></p>
+    `,
+    faqs: [
+      {
+        q: 'What legal form is a Singapore SPV?',
+        a: 'Usually a private company limited by shares, incorporated with ACRA. A VCC is the alternative when the vehicle is a fund with variable capital, not a single closed deal.',
+      },
+      {
+        q: 'Does a Singapore SPV need a local director?',
+        a: 'Yes. At least one director must be ordinarily resident in Singapore. Foreign sponsors often appoint a nominee director, which is an annual cost.',
+      },
+      {
+        q: 'Is a Singapore SPV taxed like a Delaware LLC?',
+        a: 'No. A private company is taxed as a company at the headline corporate rate of 17%. It does not pass income through to investors on a K-1. A holding company may have little taxable profit, but it still has a filing obligation.',
+      },
+      {
+        q: 'What does a Singapore SPV file every year?',
+        a: 'An annual return with ACRA and a corporate income tax return with IRAS, plus whatever accounts and audit the company and its investors require. The annual return filing fee on our cost tools is S$60, last checked October 2026.',
+      },
+      {
+        q: 'When should I use a VCC instead?',
+        a: 'When you are launching a fund: variable capital, subscriptions and redemptions over time, or several sub-funds under one umbrella. A single-deal syndicate is usually a private company.',
+      },
+    ],
+    author: 'Luis Lim',
+    authorRole: 'Chief Operations Officer',
+    authorImage: '/team/luis.jpeg',
+    coverImage: '/images/capital-call.png',
+    publishedDate: '2026-11-23',
+    readTime: '9 min',
+    categories: ['SPVs', 'Fund Administration', 'Fund Setup', 'Operations'],
   },
 ];
 

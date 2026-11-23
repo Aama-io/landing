@@ -19,7 +19,9 @@ Status key: **V** = read on the vendor's own page on the date above. **S** = fro
 | AngelList | V | SPV administration (formation, filings, tax documents); Rolling Funds; fees stated on its page | angellist.com/funds/syndicates | AngelList does publish SPV fees, so we do **not** claim to be unique on published pricing |
 
 ## Aama.io claims (checked against this repo)
-Supported by existing site copy: NAV periods, European/American waterfalls, 12+ reports, IFRS 9 / SFRS(I) 9, KYC/AML and accreditation checks, white-label portal, audit trail, custodian reconciliation, VCC sub-fund segregation (documented under Private Credit), SPV prices, 60-day pay-when-you-collect backstop, "new fund operational within 2 weeks".
+Supported by existing site copy: NAV periods, European/American waterfalls, 12+ reports, IFRS 9 / SFRS(I) 9, KYC/AML and accreditation checks, white-label portal, audit trail, custodian reconciliation, VCC sub-fund segregation (documented under Private Credit), SPV prices, 60-day pay-when-you-collect backstop, "new fund operational within 2 weeks", three-product architecture (Fund Accounting lead · Fund Administration & LP Portal · SPV), `/security` due-diligence overview, Kumari Capital case study page with methodology caveats.
+
+Removed / softened (Nov 2026 trust pass): public "VAPT-certified", "99.9%/99.99% uptime SLA", "SOC 2 Type II certified", absolute "100% accuracy / regulatory compliance" marketing metrics. VAPT summary remains available under NDA via `/security`.
 
 Needs owner confirmation before launch:
 - That Aama.io itself forms SPVs (jurisdictions) rather than only through partners.

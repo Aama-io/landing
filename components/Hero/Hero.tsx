@@ -77,20 +77,19 @@ export function Hero() {
       <div className={classes.layout}>
         <div className={`${classes.content} heroEnter`}>
           <Title className={classes.title}>
-            Run every fund, SPV, and syndicate on{' '}
+            Fund administration software for funds, SPVs, and syndicates{' '}
             <span className={classes.highlight}>
               <span className={classes.highlightMark} aria-hidden="true" />
-              <span className={classes.highlightText}>one platform.</span>
+              <span className={classes.highlightText}>on one platform.</span>
             </span>
           </Title>
 
           <Text className={classes.subtitle}>
-            PE, VC, and SPV fund managers, syndicate leads, and the administrators who service them
-            still juggle spreadsheets, email, and disconnected tools. <span className={classes.highlight}>
+            Fund administrators, fund managers, and syndicate leads still split the work across
+            spreadsheets and separate tools. <span className={classes.highlight}>
               <span className={classes.highlightMark} aria-hidden="true" />
               <span className={classes.highlightText}>aama.io</span>
-            </span> unifies fund
-            administration and IFRS 9 / SFRS(I) 9 accounting in one integrated system.
+            </span> keeps NAV, capital calls, IFRS 9 accounting and the LP portal in one system.
             Singapore-first, built for APAC & beyond.
           </Text>
 

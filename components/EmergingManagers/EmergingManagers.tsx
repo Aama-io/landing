@@ -7,11 +7,12 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
+import { useAnalytics } from '@/components/Analytics/useAnalytics';
 import s from './EmergingManagers.module.css';
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
-const APPLY_HREF = '/contact';
+const APPLY_HREF = '/contact?inquiryType=launch_free';
 
 // The LP portal as described on the product pages: onboarding, positions, capital calls,
 // statements and a document vault. Fund accounting is deliberately not in this list.
@@ -143,7 +144,7 @@ export const EM_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Does Launch Free work for SPVs and syndicates?',
-    a: 'Yes. SPV founders, operators and syndicate leads use the pay-when-you-collect path: set up your SPV, invite your investors and call capital on the LP portal, and the SPV fee starts once your first LP payment is recorded. The free-through-first-close offer is for a first fund, so it does not apply to a single-deal SPV. Government fees and third-party formation costs are extra and charged at cost.',
+    a: 'Yes. SPV founders, operators and syndicate leads use the pay-when-you-collect path: set up your SPV, invite your investors and call capital on the LP portal, and the SPV fee starts once your first LP payment is recorded, or 60 days after your first investor accepts an invite if no payment has been recorded by then. The free-through-first-close offer is for a first fund, so it does not apply to a single-deal SPV. Government fees and third-party formation costs are extra and charged at cost.',
   },
   {
     q: 'Can I use Launch Free for debt funds or note programmes?',
@@ -156,6 +157,14 @@ export const EM_FAQS: { q: string; a: string }[] = [
 ];
 
 export function EmergingManagers() {
+  const { trackEvent } = useAnalytics();
+  const trackApply = (placement: string) =>
+    trackEvent({
+      action: 'launch_free_apply_click',
+      category: 'launch_free',
+      label: placement,
+    });
+
   return (
     <>
       <section className={s.hero}>
@@ -177,7 +186,7 @@ export function EmergingManagers() {
               raised, you run the whole fund on aama.io.
             </p>
             <div className={s.actions}>
-              <Button component={Link} href={APPLY_HREF} size="md" radius="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>
+              <Button component={Link} href={APPLY_HREF} size="md" radius="md" className={s.primary} rightSection={<IconArrowRight size={18} />} onClick={() => trackApply('hero')}>
                 Claim your founding spot
               </Button>
               <Button component="a" href="#how" size="md" radius="md" variant="default" className={s.secondary}>
@@ -328,7 +337,7 @@ export function EmergingManagers() {
                 lands. We are opening this to the first funds who build on aama.io, and we will close it without
                 notice.
               </p>
-              <Button component={Link} href={APPLY_HREF} size="md" radius="md" className={s.primary} rightSection={<IconArrowRight size={18} />}>
+              <Button component={Link} href={APPLY_HREF} size="md" radius="md" className={s.primary} rightSection={<IconArrowRight size={18} />} onClick={() => trackApply('why_section')}>
                 Claim your founding spot
               </Button>
             </div>
@@ -396,7 +405,7 @@ export function EmergingManagers() {
                 tell us about your fund while it is open.
               </p>
               <div className={s.ctaRow}>
-                <Button component={Link} href={APPLY_HREF} size="md" radius="md" className={s.primary} rightSection={<IconSend size={18} />}>
+                <Button component={Link} href={APPLY_HREF} size="md" radius="md" className={s.primary} rightSection={<IconSend size={18} />} onClick={() => trackApply('footer_cta')}>
                   Claim your founding spot
                 </Button>
                 <Button component={Link} href="/pricing" size="md" radius="md" variant="default" className={s.secondary}>

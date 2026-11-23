@@ -3,11 +3,11 @@ import classes from './PricingFAQ.module.css';
 export const faqData = [
   {
     question: "How much does aama.io cost?",
-    answer: "Pricing depends on how you operate. SPVs and syndicates are priced per deal — a single-asset SPV is a flat USD 3,900 to form, with annual administration scoped to your fund, and syndicate SPVs are 2% of the amount raised, capped between USD 3,500 and USD 10,000. Government and registry fees are extra and passed through at cost. Fund managers running a fund pay a monthly subscription by fund type and AUM, from USD 625/month up to USD 5,000/month. Fund administrators who need only the fund accounting engine start at USD 1,500/month for up to five client funds. Every plan also lists a one-time setup fee."
+    answer: "Pricing depends on how you operate. SPVs and syndicates are priced per deal — a single-asset SPV is a flat USD 3,900 to form, with annual administration scoped to your fund, and syndicate SPVs are 2% of the amount raised (minimum USD 3,500, maximum USD 10,000). Government and registry fees are extra and passed through at cost. Fund managers running a fund pay a monthly subscription by fund type and AUM, from USD 625/month up to USD 5,000/month. Fund administrators who need only the fund accounting engine start at USD 1,500/month for up to five client funds. Every plan also lists a one-time setup fee."
   },
   {
     question: "How much does an SPV cost?",
-    answer: "A single-asset SPV is a flat USD 3,900 to form, with annual administration scoped to your fund. If you are syndicating a deal to many investors, pricing is 2% of the amount raised, capped between USD 3,500 and USD 10,000. Government and registry fees are extra and passed through at cost. While the founding offer is open, the SPV fee starts once your first LP payment is recorded. High-volume syndicate leads get volume pricing."
+    answer: "A single-asset SPV is a flat USD 3,900 to form, with annual administration scoped to your fund. If you are syndicating a deal to many investors, pricing is 2% of the amount raised, with a minimum of USD 3,500 and a maximum of USD 10,000. Government and registry fees are extra and passed through at cost. While the founding offer is open, the SPV fee starts once your first LP payment is recorded, or 60 days after your first investor accepts an invite if no payment has been recorded by then. High-volume syndicate leads get volume pricing."
   },
   {
     question: "Do you offer accounting-only pricing for fund administrators?",
@@ -19,7 +19,7 @@ export const faqData = [
   },
   {
     question: "What are the payment terms?",
-    answer: "All plans are billed monthly with options for annual billing at a discount. We accept major credit cards, bank transfers, and electronic payment methods. Top-tier accounts can arrange custom billing cycles and payment terms."
+    answer: "Fund-manager and fund-administrator subscriptions are billed monthly, with annual billing available at a discount. SPV founding-offer fees are billed when the first LP payment is recorded (or after the 60-day invite backstop), not on a monthly subscription cycle. We accept major credit cards, bank transfers and electronic payment methods. Top-tier accounts can arrange custom billing cycles and payment terms."
   },
   {
     question: "Can I switch between plans?",

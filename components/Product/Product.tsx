@@ -26,25 +26,26 @@ import classes from './Product.module.css';
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const stats = [
-  { value: '40%', label: 'Lower operating cost' },
-  { value: '2 weeks', label: 'Typical launch time' },
-  { value: '99.9%', label: 'Platform uptime' },
+  { value: '3', label: 'Licensable products' },
+  { value: '2 weeks', label: 'Typical new-fund launch' },
+  { value: '15+', label: 'Funds on the accounting engine' },
 ];
 
+// Order matches PLATFORM_LINKS: Fund Accounting (lead), Fund Administration, SPV (secondary).
 const flagships = [
   {
-    eyebrow: 'Flagship · SPVs & syndicates',
-    title: 'SPV Fund Management',
-    href: '/products/spv-fund-management',
+    eyebrow: 'Lead product · Accounting',
+    title: 'Fund Accounting',
+    href: '/products/fund-accounting',
     description:
-      'End-to-end SPV and syndicate management in one box: formation, cap table, KYC/AML, capital calls, lead carry, distributions, the general ledger, NAV and member reporting.',
-    image: '/images/client-fund.png',
-    icon: IconUsersGroup,
+      'A fund-grade accounting engine — double-entry general ledger, automated NAV, waterfalls and 12+ audit-ready reports. Complete enough to run on its own.',
+    image: '/images/fund-detail.png',
+    icon: IconReportMoney,
     features: [
-      'Spin up a single- or multi-asset SPV in days',
-      'Member onboarding with KYC/AML and e-signatures',
-      'Lead carry, deal fees and deal-by-deal waterfalls',
-      'Double-entry ledger, NAV and IFRS-ready statements',
+      'Double-entry general ledger and chart of accounts',
+      'Automated NAV (daily to quarterly)',
+      'European & American waterfall distributions',
+      '12+ reports: trial balance, balance sheet, P&L, NAV',
     ],
   },
   {
@@ -63,18 +64,18 @@ const flagships = [
     ],
   },
   {
-    eyebrow: 'Accounting',
-    title: 'Fund Accounting',
-    href: '/products/fund-accounting',
+    eyebrow: 'SPVs & syndicates',
+    title: 'SPV Fund Management',
+    href: '/products/spv-fund-management',
     description:
-      'A fund-grade accounting engine — double-entry general ledger, automated NAV, waterfalls and 12+ audit-ready reports. Complete enough to run on its own.',
-    image: '/images/fund-detail.png',
-    icon: IconReportMoney,
+      'End-to-end SPV and syndicate management in one box: formation, cap table, KYC/AML, capital calls, lead carry, distributions, the general ledger, NAV and member reporting.',
+    image: '/images/client-fund.png',
+    icon: IconUsersGroup,
     features: [
-      'Double-entry general ledger and chart of accounts',
-      'Automated NAV (daily to quarterly)',
-      'European & American waterfall distributions',
-      '12+ reports: trial balance, balance sheet, P&L, NAV',
+      'Spin up a single- or multi-asset SPV in days',
+      'Member onboarding with KYC/AML and e-signatures',
+      'Lead carry, deal fees and deal-by-deal waterfalls',
+      'Double-entry ledger, NAV and IFRS-ready statements',
     ],
   },
 ];
@@ -189,6 +190,12 @@ const capabilities = [
 
 const targetIndustries = [
   {
+    icon: IconBuildingBank,
+    title: 'Fund Administrators & CSPs',
+    description: 'One white-label ledger for every client fund and VCC sub-fund you service.',
+    slug: 'fund-administrators',
+  },
+  {
     icon: IconChartBar,
     title: 'VC / PE Firms',
     description: 'Capital calls, distributions, carry and LP communications in one place.',
@@ -225,7 +232,7 @@ const faqItems = [
     value: 'compliance',
     title: 'How do you handle regulatory compliance?',
     content:
-      'Compliance monitoring and reporting are built into the core of the platform, with modules for MAS requirements and other frameworks. The system tracks regulatory obligations, generates reports, manages investor KYC/AML and keeps your operations audit-ready.',
+      'The platform includes KYC/AML workflows, audit trails and reporting templates designed around MAS and IFRS practice. You remain responsible for your own regulatory obligations; the software produces the records and reports your team and auditors need.',
   },
   {
     value: 'integration',
@@ -263,9 +270,9 @@ export function Product() {
               <span className={classes.accent}>modern fund managers.</span>
             </Title>
             <Text className={classes.heroDesc}>
-              Two modular products — <strong>Fund Administration</strong> with a white-labeled investor
-              portal, and a fund-grade <strong>Fund Accounting</strong> engine — covering your entire
-              fund lifecycle. Take one, or both.
+              <strong>Fund administration</strong> with a white-labeled investor portal, a fund-grade{' '}
+              <strong>Fund Accounting</strong> engine, and <strong>SPV management</strong> — covering
+              your entire fund lifecycle. License one, or all three.
             </Text>
             <Group gap="md" justify="center" mt="xl">
               <Button
@@ -322,9 +329,9 @@ export function Product() {
       <section className={`${classes.section} sectionMuted`}>
         <Container size="xl">
           <SectionHeading
-            eyebrow="Two products, one platform"
-            title="Modular by design — take one, or both"
-            description="License Fund Administration (with its white-labeled investor portal) and Fund Accounting together, or start with just the piece you need. A manager who self-administers can run on Fund Accounting alone."
+            eyebrow="Fund administration software"
+            title="Modular by design — take one, or all three"
+            description="Fund administration (with its white-labeled investor portal), Fund Accounting, and SPV management on one platform. A manager who self-administers can run on Fund Accounting alone."
           />
           <div className={classes.flagships}>
             {flagships.map((f, i) => (

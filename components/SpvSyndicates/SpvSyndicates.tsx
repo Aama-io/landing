@@ -46,11 +46,12 @@ const accountingTools = [
 const useCases = [
   { title: 'Angel & operator syndicates', desc: 'Pool angels into a single deal with a named roster, allocation targets, fast onboarding and automated carry for the lead.', metrics: [['Setup', 'Days'], ['Members / deal', '100+'], ['Carry', 'Automated']] },
   { title: 'Co-investment sidecars', desc: 'Run fee-light co-invest vehicles alongside the main fund, with separate accounting and reporting.', metrics: [['Reporting', '75% faster'], ['Fee models', 'Flexible']] },
-  { title: 'Single-deal SPVs', desc: 'Hold a single asset or company in a dedicated vehicle with full administration and investor servicing.', metrics: [['Time saved', '15 hrs/deal'], ['Accuracy', '99.9%']] },
+  { title: 'Single-deal SPVs', desc: 'Hold a single asset or company in a dedicated vehicle with full administration and investor servicing.', metrics: [['Time saved', 'Days not weeks'], ['Ledger', 'Double-entry']] },
   { title: 'Continuation vehicles', desc: 'Spin a linked CV from an existing SPV, collect roll/sell elections and onboard rollers on the same admin stack.', metrics: [['Elections', 'Roll / sell'], ['Onboarding', 'Same LP portal']] },
 ];
 
 const furtherReading = [
+  { href: '/blog/singapore-spv-formation-and-administration', icon: IconFileText, label: 'Singapore SPV Formation and Administration', desc: 'Pte Ltd vs VCC, resident director, ACRA annual return and company tax' },
   { href: '/blog/delaware-spv-formation-and-administration', icon: IconFileText, label: 'Delaware SPV Formation and Administration', desc: 'LLC vs LP, annual tax, K-1s and non-US investor withholding' },
   { href: '/blog/true-syndicates-vs-invite-links', icon: IconUsersGroup, label: 'True Syndicates vs Invite Links', desc: 'Roster, roles, allocations — not just catalog visibility' },
   { href: '/blog/continuation-vehicles-spv-admin', icon: IconArrowsExchange, label: 'Continuation Vehicles for Emerging Managers', desc: 'Linked CVs, roll/sell elections, same SPV admin stack' },
@@ -59,6 +60,8 @@ const furtherReading = [
 ];
 
 const definitions = [
+  { href: '/learn/singapore-fund-structures/singapore-spv', label: 'Singapore SPV', desc: 'A private company for one deal — not a VCC, and not a Delaware LLC' },
+  { href: '/learn/fund-operations/delaware-spv', label: 'Delaware SPV', desc: 'An LLC or LP, partnership tax, and a K-1 for every investor' },
   { href: '/learn/fund-operations/syndicate', label: 'Syndicate', desc: 'A lead, a roster and allocations — not an invite link' },
   { href: '/learn/fund-operations/capital-call', label: 'Capital call', desc: 'How drawdown notices and funding deadlines work' },
   { href: '/learn/fund-operations/continuation-vehicle', label: 'Continuation vehicle', desc: 'Roll vs sell elections on a new vehicle' },

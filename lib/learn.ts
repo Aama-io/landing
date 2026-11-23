@@ -1501,7 +1501,7 @@ export const LEARN_TERMS: LearnTerm[] = [
         a: 'The SPV does, through a US tax preparer, working from the capital accounts the administrator maintains. The manager signs and the preparer files.',
       },
     ],
-    relatedTerms: ['syndicate', 'capital-call', 'fund-administrator'],
+    relatedTerms: ['singapore-spv', 'syndicate', 'capital-call', 'fund-administrator'],
     relatedTools: ['/tools/delaware-spv-compliance-calendar', '/tools/spv-formation-checklist', '/tools/spv-cost-estimator'],
     relatedPosts: [
       {
@@ -1523,6 +1523,99 @@ export const LEARN_TERMS: LearnTerm[] = [
     publishedDate: '2026-10-19',
     lastReviewed: '2026-10-19',
   },
+  {
+    slug: 'singapore-spv',
+    topic: 'singapore-fund-structures',
+    term: 'Singapore SPV',
+    shortName: 'Singapore SPV',
+    title: 'What is a Singapore SPV? Pte Ltd vs VCC, Tax and Annual Filings',
+    description:
+      'A Singapore SPV is usually an ACRA private company for one deal. How it differs from a Delaware LLC and a VCC, plus the annual filings.',
+    directAnswer:
+      'A Singapore SPV is a private company incorporated with ACRA to hold one deal or one syndicate investment. Unlike a Delaware LLC it is taxed as a company, files an annual return and needs a director ordinarily resident in Singapore. A VCC is the better wrapper when the vehicle is a fund with variable capital rather than a single-asset company.',
+    keyFacts: [
+      { label: 'Usual form', value: 'Private company (Pte. Ltd.) incorporated with ACRA' },
+      { label: 'Not a pass-through', value: 'Taxed as a company; headline rate 17%; no Schedule K-1' },
+      { label: 'Resident director', value: 'At least one director ordinarily resident in Singapore' },
+      { label: 'Formation fee', value: 'S$315 (S$15 name application + S$300 registration), checked Oct 2026' },
+      { label: 'Annual return', value: 'Filed with ACRA; filing fee S$60 on our cost tools, checked Oct 2026' },
+      { label: 'Fund alternative', value: 'A VCC, when the vehicle needs variable capital or sub-funds' },
+    ],
+    howItWorks: [
+      {
+        heading: 'Incorporate the company',
+        body: 'Reserve the name, appoint a resident director and file with ACRA. The constitution and shareholder terms then set the economics: contributions, carry and how proceeds are shared.',
+      },
+      {
+        heading: 'Raise from investors',
+        body: 'Investors complete subscription documents and KYC/AML and are allotted shares. Whether the offer needs a Securities and Futures Act exemption is a question for Singapore counsel.',
+      },
+      {
+        heading: 'Hold, report and file',
+        body: 'The company holds the asset, keeps a register and accounts per investor, files the annual return and files a corporate tax return. A corporate secretary and a Singapore office address stay in place.',
+      },
+      {
+        heading: 'Distribute and close',
+        body: 'Exit proceeds are paid through the agreed waterfall. Final accounts and the tax return are filed, then the company is struck off or wound up so annual obligations stop.',
+      },
+    ],
+    workedExample: {
+      title: 'A S$2M syndicate into one Singapore company, 12 investors',
+      setup:
+        'A deal lead incorporates a private company to hold shares in one startup. Twelve investors subscribe. Two of the twelve are overseas. The company has no business of its own.',
+      rows: [
+        { label: 'Legal form', value: 'Pte. Ltd., not a VCC' },
+        { label: 'Directors', value: 'One ordinarily resident in Singapore' },
+        { label: 'Investor records', value: '12 shareholders on the register, with KYC for each' },
+        { label: 'Annual work', value: 'ACRA annual return, IRAS corporate tax return, accounts; audit only if required' },
+      ],
+      takeaway:
+        'The count that drives the workload is investors, not dollars: every extra shareholder adds KYC, a register entry and a line the accounts have to agree with.',
+    },
+    mistakes: [
+      'Treating the company like a Delaware LLC and expecting a K-1 instead of a corporate tax return.',
+      'Using a private company for an open-ended fund that should be a VCC.',
+      'Letting the nominee director lapse and missing the annual return while the deal is quiet.',
+      'Collecting KYC after subscription money has already been received.',
+    ],
+    singaporeNote:
+      'This is the onshore wrapper. Sponsors who need US investors and US-style partnership reporting often still use a Delaware SPV for the US deal, and keep the Singapore company for the Asian deal. MAS licensing of the sponsor is a separate question from which SPV they pick.',
+    faqs: [
+      {
+        q: 'Is a Singapore SPV the same as a private limited company?',
+        a: 'Usually, yes. The private company is the legal form. An SPV is the purpose: a company formed to hold one investment. Some deals use another form, but a Pte. Ltd. is the default.',
+      },
+      {
+        q: 'How is a Singapore SPV different from a VCC?',
+        a: 'A private company has fixed share capital and is aimed at a closed deal. A VCC is built for funds: variable capital, and the option of segregated sub-funds under one umbrella.',
+      },
+      {
+        q: 'Who files the annual return and the tax return?',
+        a: 'The company does, through its corporate secretary and tax agent, working from the register and accounts the administrator maintains. aama.io does not file with ACRA or IRAS.',
+      },
+    ],
+    relatedTerms: ['vcc', 'delaware-spv', 'syndicate', 'fund-administrator'],
+    relatedTools: ['/tools/spv-jurisdiction-comparator', '/tools/spv-cost-estimator', '/tools/spv-formation-checklist'],
+    relatedPosts: [
+      {
+        slug: 'singapore-spv-formation-and-administration',
+        title: 'Singapore SPV Formation and Administration: A Practical Guide for Deal Leads',
+      },
+      {
+        slug: 'how-to-set-up-a-vcc-singapore',
+        title: 'How to Set Up a VCC in Singapore',
+      },
+    ],
+    relatedSolution: 'spv-syndicates',
+    authorities: ['ACRA', 'IRAS', 'your Singapore counsel and corporate secretary'],
+    sources: [
+      { label: 'aama.io — government fees for a Singapore SPV (checked October 2026)', url: 'https://aama.io/tools/spv-cost-estimator' },
+      { label: 'aama.io — SPVs & Syndicates', url: 'https://aama.io/solutions/spv-syndicates' },
+    ],
+    author: AUTHOR,
+    publishedDate: '2026-11-23',
+    lastReviewed: '2026-11-23',
+  },
 ];
 
 // Extra words people search for that are not in the term name or answer.
@@ -1543,6 +1636,7 @@ const LEARN_ALIASES: Record<string, string[]> = {
   syndicate: ['spv', 'deal lead', 'soft circle', 'angel group'],
   'continuation-vehicle': ['cv', 'gp-led secondary', 'secondaries', 'roll or sell'],
   'delaware-spv': ['delaware llc', 'delaware lp', 'us spv', 'k-1'],
+  'singapore-spv': ['singapore pte ltd', 'acra spv', 'singapore special purpose vehicle', 'pte ltd spv'],
 };
 
 export const aliasesFor = (slug: string): string[] => LEARN_ALIASES[slug] ?? [];
@@ -1614,6 +1708,7 @@ export const BLOG_LEARN_TERMS: Record<string, string[]> = {
   'vcc-accounting-for-fund-administrators': ['vcc', 'nav', 'fund-administrator'],
   'dont-start-with-an-ai-agent-for-your-fund-administration-software': ['fund-administrator'],
   'delaware-spv-formation-and-administration': ['delaware-spv', 'syndicate', 'capital-call', 'fund-administrator'],
+  'singapore-spv-formation-and-administration': ['singapore-spv', 'vcc', 'syndicate', 'fund-administrator'],
   'free-low-cost-spv-administration': ['syndicate', 'fund-administrator', 'capital-call'],
 };
 

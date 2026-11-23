@@ -9,11 +9,11 @@ import {
 import classes from './TrustBar.module.css';
 
 const standards = [
-  { label: 'MAS-aligned', icon: IconScale },
+  { label: 'MAS-aligned design', icon: IconScale },
   { label: 'IFRS accounting', icon: IconFileCertificate },
-  { label: 'KYC / AML', icon: IconShieldCheck },
-  { label: 'VAPT-certified security', icon: IconLock },
-  { label: '99.9% uptime SLA', icon: IconRefresh },
+  { label: 'KYC / AML workflows', icon: IconShieldCheck },
+  { label: 'Encryption & RBAC', icon: IconLock },
+  { label: 'Full audit trails', icon: IconRefresh },
 ];
 
 export function TrustBar() {

@@ -18,14 +18,16 @@ export default function CompliancePage() {
         <div className={classes.wrapper}>
           <Container size="xl">
             <Title className={classes.title}>Regulatory Compliance</Title>
-            <Text className={classes.lastUpdated}>Last updated: April 2024</Text>
+            <Text className={classes.lastUpdated}>Last updated: November 2026</Text>
 
             <div className={classes.content}>
               <Text mb="xl">
-                AAMA.io is a software developed by Uxqode Pte Ltd, a registered software company with the Singapore authorities. 
-                We provide a technology software that enables compliant fund managers to easily launch funds to investors, process investments, 
-                and manage fund administration and accounting. Our software is designed to support fund managers in meeting 
-                their regulatory obligations while running their operations efficiently.
+                AAMA.io is software developed by Uxqode Pte Ltd, a Singapore-registered software company.
+                The platform comprises Fund Accounting, Fund Administration (with a white-labeled investor / LP portal)
+                and SPV Fund Management. It is designed to help licensed fund managers, fund administrators and SPV
+                leads meet their operational and reporting needs. Regulatory obligations remain with the licensed
+                manager or administrator; aama.io provides software controls, records and reports — it does not
+                guarantee regulatory compliance outcomes.
               </Text>
 
               <Title order={2}>1. Our Role as a Platform Provider</Title>

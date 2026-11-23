@@ -8,6 +8,14 @@ import classes from './Audiences.module.css';
 // Homepage-only detail layered onto the shared SOLUTIONS data (lib/solutions.ts) —
 // kept local so the Header's nav dropdown, which uses the same array, is untouched.
 const DETAIL: Record<string, { kicker: string; capabilities: string[] }> = {
+  'fund-administrators': {
+    kicker: 'Singapore · your biggest fit',
+    capabilities: [
+      'Segregated books per client fund',
+      'VCC umbrella and sub-fund view',
+      'White-label client reporting',
+    ],
+  },
   'vc-pe-firms': {
     kicker: 'Closed-end funds',
     capabilities: [
@@ -39,11 +47,11 @@ export function Audiences() {
             <div>
               <span className={classes.eyebrow}>Solutions</span>
               <Title order={2} className={classes.title}>
-                Built for how you deploy capital
+                Fund administrators first, then the managers you service
               </Title>
               <Text className={classes.lede}>
-                One fund-accounting engine, configured for how venture and private equity, private
-                credit, family offices and SPVs actually run.
+                Singapore fund administrators and CSPs are who we sell to. The same platform also
+                runs the VC, credit, family-office and SPV vehicles those firms administer.
               </Text>
             </div>
             <Link href="/solutions" className={classes.allLink}>
@@ -57,8 +65,12 @@ export function Audiences() {
           {SOLUTIONS.map((solution, i) => {
             const detail = DETAIL[solution.slug];
             return (
-              <Reveal key={solution.slug} delay={i * 0.06} className={classes.gridItem}>
-                <Link href={solution.href} className={classes.card}>
+              <Reveal
+                key={solution.slug}
+                delay={i * 0.06}
+                className={i === 0 ? `${classes.gridItem} ${classes.leadItem}` : classes.gridItem}
+              >
+                <Link href={solution.href} className={i === 0 ? `${classes.card} ${classes.leadCard}` : classes.card}>
                   <span className={classes.iconWrap}>
                     <solution.icon size={22} stroke={1.7} />
                   </span>

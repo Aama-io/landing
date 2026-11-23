@@ -79,7 +79,7 @@ export function Features() {
     {
       icon: IconReportAnalytics,
       title: "Smart Compliance & Reporting",
-      description: "AI-powered regulatory compliance monitoring with automatic MAS, SEC, and EU reporting. Real-time compliance dashboards, automated risk monitoring, and intelligent alert systems that prevent violations before they occur."
+      description: "Regulatory reporting workflows and audit trails designed around MAS practice, with dashboards and alerts that help your team stay on top of obligations. Regulatory outcomes remain your responsibility."
     }
   ];
 
@@ -116,9 +116,9 @@ export function Features() {
             <span className={classes.highlight}>Intelligent automation</span> that scales with your fund
           </Title>
           <Text className={classes.description}>
-            Transform your fund operations with enterprise-grade AI that automates complex workflows,
-            ensures regulatory compliance, and delivers exceptional investor experiences.
-            Trusted by fund managers managing $50M+ in assets.
+            Transform your fund operations with automation that reduces rekeying, supports
+            MAS-aligned reporting workflows, and improves the investor experience.
+            Built for mid-market fund managers and administrators across Singapore and APAC.
           </Text>
         </motion.div>
 

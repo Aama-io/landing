@@ -14,7 +14,8 @@ const groups = [
       { label: 'SPV Management & Administration Software', href: '/products/spv-fund-management' },
       { label: 'Solutions', href: '/solutions' },
       { label: 'Pricing', href: '/pricing' },
-      { label: 'Investor Portal', href: '/product' },
+      { label: 'Investor Portal', href: '/products/fund-administration' },
+      { label: 'Implementation', href: '/implementation' },
     ],
   },
   {
@@ -25,6 +26,7 @@ const groups = [
       { label: 'American vs European', href: '/tools/waterfall-comparator' },
       { label: 'IRR · TVPI · DPI', href: '/tools/irr-tvpi-dpi-calculator' },
       { label: 'VCC Comparator', href: '/tools/vcc-comparator' },
+      { label: 'Admin pricing calculator', href: '/tools/fund-admin-pricing-calculator' },
       { label: 'MAS Licensing Estimator', href: '/tools/mas-licensing-estimator' },
     ],
   },
@@ -34,6 +36,7 @@ const groups = [
       { label: 'About', href: '/about' },
       { label: 'Learn', href: '/learn' },
       { label: 'Blog', href: '/blog' },
+      { label: 'Case studies', href: '/case-studies/kumari-capital' },
       { label: 'Partners', href: '/partners' },
       { label: 'Launch Free', href: '/emerging-managers' },
       { label: 'Contact', href: '/contact' },
@@ -44,6 +47,7 @@ const groups = [
     title: 'Resources',
     links: [
       { label: 'FAQ', href: '/faq' },
+      { label: 'Security', href: '/security' },
       { label: 'Compliance', href: '/compliance' },
       { label: 'Privacy Policy', href: '/privacy' },
       { label: 'Terms of Use', href: '/terms' },

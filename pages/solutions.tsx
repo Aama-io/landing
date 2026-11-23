@@ -60,18 +60,33 @@ const DETAIL: Record<string, { kicker: string; body: string; points: string[]; f
       'Templated vehicle setup and member onboarding',
       'KYC/AML and e-signature subscriptions',
       'Lead carry and deal fees, calculated per deal',
-      'Free LP portal through your first close',
+      'Pay-when-you-collect founding offer (60-day invite backstop)',
     ],
     fit: [
       { label: 'SPV administration', href: '/products/spv-fund-management' },
       { label: 'Launch Free offer', href: '/emerging-managers' },
     ],
   },
+  'fund-administrators': {
+    kicker: 'Servicing other managers\' funds',
+    body: 'Run every client fund and VCC sub-fund on one fund-grade ledger, under your own brand. Take on the next client without adding another spreadsheet or another accountant.',
+    points: [
+      'Segregated books per client fund and VCC sub-fund',
+      'Consolidated umbrella view and MAS reporting output',
+      'Automated NAV, waterfalls and 12+ audit-ready reports',
+      'White-label client reporting, priced per client fund',
+    ],
+    fit: [
+      { label: 'Fund Accounting', href: '/products/fund-accounting' },
+      { label: 'Admin pricing calculator', href: '/tools/fund-admin-pricing-calculator' },
+      { label: 'Pricing for administrators', href: '/pricing' },
+    ],
+  },
 };
 
 const ONE_MODEL = [
-  { title: 'One ledger for every vehicle', body: 'SPV administration, fund accounting and LP reporting read from the same books, so a number means the same thing everywhere.' },
-  { title: 'Start small, grow without re-platforming', body: 'Begin with a single SPV or the LP portal. Add accounting and more vehicles later without moving your data.' },
+  { title: 'One ledger for every vehicle', body: 'Fund accounting, administration and LP reporting read from the same books, so a number means the same thing everywhere.' },
+  { title: 'Start with what you need', body: 'Begin with the accounting engine, the LP portal or an SPV. Add modules and more funds later without moving your data.' },
   { title: 'Investors see what you see', body: 'Statements and portal balances come from the ledger, not a separate report someone has to reconcile.' },
 ];
 
@@ -84,11 +99,12 @@ const STEPS = [
 ];
 
 const FAQS = [
-  { q: 'Which solution should I start with?', a: 'Pick the one that matches the vehicle you run today. A syndicate lead starts with SPVs & Syndicates, a first-time manager can start on the free LP portal, and an established VC, PE or credit fund usually starts with Fund Administration and Fund Accounting.' },
-  { q: 'Can I start with only the LP portal?', a: 'Yes. The LP portal is free through your first close for eligible emerging managers and SPV operators. You can add full accounting later when the vehicle needs it.' },
+  { q: 'Which solution should I start with?', a: 'Pick the one that matches how you work today. A fund administrator or corporate service provider starts with the Fund Accounting engine for its client funds. An established VC, PE or credit manager usually starts with Fund Accounting and Fund Administration together. A syndicate lead starts with SPVs & Syndicates.' },
+  { q: 'We administer funds for other managers. Is there a plan for us?', a: 'Yes. Fund administrators and CSPs license the accounting engine priced by the number of client funds they run, with white-label client reporting and an optional investor portal. Your firm stays the administrator of record.' },
+  { q: 'Can I start with only the LP portal?', a: 'Yes. The LP portal is free through your first close for eligible emerging managers. Single-deal SPVs use the pay-when-you-collect path instead. You can add full accounting later when the vehicle needs it.' },
   { q: 'How does the platform handle regulatory requirements?', a: 'Reporting and accounting follow IFRS 9 / SFRS(I) 9, with Singapore items such as 13O / 13U and VCC structures supported. Regulatory obligations stay with the manager; the software gives you the records and reports to meet them.' },
   { q: 'Can I connect my existing systems?', a: 'Yes. Data can be imported and exported in common formats, and integrations with banks and other tools can be scoped with the team.' },
-  { q: 'How is customer data protected?', a: 'Access is role-based and every change is recorded in an audit trail. Ask for the security overview during a demo if your investors or auditors need detail.' },
+  { q: 'How is customer data protected?', a: 'Access is role-based and every change is recorded in an audit trail. See the security page for the due-diligence overview, or ask for the full pack during a demo.' },
 ];
 
 const DEMO = 'https://cal.com/aamaio/30min';

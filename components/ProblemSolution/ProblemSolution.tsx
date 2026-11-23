@@ -60,7 +60,7 @@ export const WORKFLOW_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'What compliance evidence does aama.io produce for auditors and MAS?',
-    a: 'KYC/AML records and MAS-aligned evidence are generated continuously as work happens, so an auditor or regulator request draws on existing records instead of a manual compilation.',
+    a: 'KYC/AML records, time-stamped audit trails and reporting packs are produced as work happens, so an auditor or regulator request can draw on existing system records instead of a manual compilation. Regulatory obligations stay with the manager.',
   },
 ];
 

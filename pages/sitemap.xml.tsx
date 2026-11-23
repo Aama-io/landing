@@ -22,6 +22,9 @@ const STATIC: { loc: string; priority: string }[] = [
   { loc: '/learn', priority: '0.8' },
   { loc: '/faq', priority: '0.6' },
   { loc: '/compliance', priority: '0.5' },
+  { loc: '/security', priority: '0.7' },
+  { loc: '/implementation', priority: '0.7' },
+  { loc: '/case-studies/kumari-capital', priority: '0.7' },
   { loc: '/privacy', priority: '0.4' },
   { loc: '/terms', priority: '0.4' },
 ];
@@ -34,8 +37,11 @@ function tag(loc: string, priority: string, changefreq: string, lastmod?: string
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const urls = [
     ...STATIC.map((p) => tag(p.loc, p.priority, 'weekly')),
-    tag('/products/spv-fund-management', '0.95', 'weekly'),
-    ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly')),
+    // Fund Accounting is the lead product, so it carries the highest product priority.
+    ...PLATFORMS.map((p) =>
+      tag(`/products/${p.slug}`, p.slug === 'fund-accounting' ? '0.95' : '0.9', 'weekly')
+    ),
+    tag('/products/spv-fund-management', '0.8', 'weekly'),
     ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly')),
     tag('/alternatives', '0.8', 'monthly'),
     ...ALTERNATIVES.map((a) => tag(`/alternatives/${a.slug}`, '0.8', 'monthly')),

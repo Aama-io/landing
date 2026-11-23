@@ -7,7 +7,6 @@ import { ProblemSolution, WORKFLOW_FAQS } from '../components/ProblemSolution/Pr
 import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
 import { TrustBar } from '../components/TrustBar/TrustBar';
 import Head from 'next/head';
-import { LaunchFreeBanner } from '@/components/EmergingManagers/LaunchFreeBanner';
 import { HOME_FAQS, HomeFAQ } from '@/components/HomeFAQ/HomeFAQ';
 
 export default function HomePage() {
@@ -33,7 +32,6 @@ export default function HomePage() {
       </Head>
       <PageShell>
         <Hero />
-        <LaunchFreeBanner />
         <TrustBar />
         <ProblemSolution />
         <ProductShowcase />

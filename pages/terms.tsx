@@ -15,7 +15,7 @@ export default function TermsOfUse() {
         <div className={classes.wrapper}>
           <Container size="xl">
             <Title className={classes.title}>Terms of Use</Title>
-            <Text className={classes.lastUpdated}>Last updated: April 2024</Text>
+            <Text className={classes.lastUpdated}>Last updated: November 2026</Text>
 
             <div className={classes.content}>
               <Text mb="xl">
@@ -32,7 +32,14 @@ export default function TermsOfUse() {
 
               <Title order={2}>2. Platform Description and Role</Title>
               <Text mb="xl">
-                AAMA.io is a technology software developed by Uxqode Pte Ltd, a registered software company in Singapore. Our software enables compliant fund managers to launch funds to investors, process investments, and manage fund administration and accounting. We do not directly manage funds, provide financial advice, or make investment decisions. We provide software tools to licensed fund managers who maintain their own regulatory approvals and compliance obligations. All investment activities conducted through Our software are the responsibility of the respective fund managers and investors.
+                AAMA.io is software developed by Uxqode Pte Ltd, a Singapore-registered software company. The Services
+                comprise three licensable products on one data model: Fund Accounting, Fund Administration (including a
+                white-labeled investor / LP portal), and SPV Fund Management. The software helps licensed fund managers,
+                fund administrators and SPV or syndicate leads launch and operate vehicles, process investments, and manage
+                administration and accounting. We do not directly manage funds, provide financial advice, or make investment
+                decisions. Users remain responsible for their own regulatory approvals and compliance obligations. All
+                investment activities conducted through the Services are the responsibility of the respective managers,
+                administrators and investors.
               </Text>
 
               <Title order={2}>3. Singapore Law Compliance</Title>
@@ -49,8 +56,10 @@ export default function TermsOfUse() {
               <Text mb="md">Our software serves different types of users with specific responsibilities:</Text>
               <List mb="xl">
                 <List.Item><b>Fund Managers:</b> Licensed entities responsible for fund operations, investment decisions, and regulatory compliance. Fund managers must maintain all necessary licenses and approvals.</List.Item>
-                <List.Item><b>Investors:</b> Individuals or entities investing in funds through the software. Investors are responsible for their investment decisions and ensuring they meet applicable investor qualification requirements.</List.Item>
-                <List.Item><b>Administrators:</b> Users who perform administrative and operational functions related to fund administration.</List.Item>
+                <List.Item><b>Fund Administrators &amp; CSPs:</b> Firms that service other managers&apos; funds using the Fund Accounting engine and related modules. They remain the administrator of record for their clients.</List.Item>
+                <List.Item><b>SPV / Syndicate Leads:</b> Operators of single- or multi-asset vehicles who use SPV Fund Management for formation, onboarding, capital collection and reporting.</List.Item>
+                <List.Item><b>Investors:</b> Individuals or entities investing in funds or vehicles through the software. Investors are responsible for their investment decisions and ensuring they meet applicable investor qualification requirements.</List.Item>
+                <List.Item><b>Administrators (ops users):</b> Users who perform administrative and operational functions related to fund or vehicle administration within a customer organisation.</List.Item>
               </List>
 
               <Title order={2}>6. Accredited Investor Status</Title>

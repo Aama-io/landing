@@ -110,8 +110,9 @@ export const TOOL_CONTENT: Record<string, ToolContent> = {
     ],
     related: ['/tools/spv-cost-estimator', '/tools/spv-admin-cost-calculator', '/tools/vcc-comparator'],
     relatedReading: [
+      { href: '/blog/singapore-spv-formation-and-administration', label: 'Singapore SPV Formation and Administration' },
+      { href: '/learn/singapore-fund-structures/singapore-spv', label: 'What is a Singapore SPV?' },
       { href: '/solutions/spv-syndicates', label: 'SPV & Syndicate Administration on aama.io' },
-      { href: '/products/fund-administration', label: 'Fund Administration & Investor Portal' },
     ],
   },
 

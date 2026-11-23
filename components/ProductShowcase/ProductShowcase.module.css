@@ -2,39 +2,75 @@
   position: relative;
 }
 
-.layout {
-  margin-top: clamp(48px, 6vw, 72px);
+.switch {
+  margin-top: clamp(40px, 5vw, 56px);
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 40px;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 
-  @media (max-width: 62em) {
+  @media (max-width: 48em) {
     grid-template-columns: 1fr;
-    gap: 32px;
   }
 }
 
-/* Tabs — grouped into product lines so 6 choices read as two chunks of ≤4 */
+.switchBtn {
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.switchBtn:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.switchBtn:hover {
+  background: var(--surface);
+}
+
+.switchBtn[data-active] {
+  background: var(--surface);
+  border-color: var(--mantine-color-blue-2);
+  box-shadow: var(--mantine-shadow-sm);
+}
+
+.switchName {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-strong);
+}
+
+.switchHint {
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.layout {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 36px;
+  align-items: start;
+
+  @media (max-width: 62em) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
 .tabs {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.tabGroup {
-  display: flex;
-  flex-direction: column;
   gap: 8px;
-}
-
-.tabGroupLabel {
-  padding: 0 18px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-faint);
 }
 
 .tab {
@@ -108,16 +144,18 @@
 }
 
 .tab[data-active] .tabDesc {
-  max-height: 80px;
+  max-height: 4.6em;
   opacity: 1;
   margin-top: 2px;
 }
 
 .tabChips {
   display: none;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
+  flex-direction: column;
+  gap: 5px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 .tab[data-active] .tabChips {
@@ -125,12 +163,22 @@
 }
 
 .chip {
-  font-size: 11.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
   font-weight: 550;
-  padding: 3px 9px;
-  border-radius: 999px;
-  background: var(--brand-soft);
-  color: var(--mantine-color-blue-7);
+  line-height: 1.35;
+  color: var(--text-strong);
+}
+
+.chip::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--mantine-color-blue-6);
 }
 
 .tabArrow {
@@ -150,7 +198,13 @@
 
 /* Preview */
 .preview {
-  position: relative;
+  position: sticky;
+  top: 96px;
+
+  @media (max-width: 62em) {
+    position: relative;
+    top: auto;
+  }
 }
 
 .frame {

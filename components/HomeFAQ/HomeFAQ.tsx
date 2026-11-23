@@ -10,18 +10,18 @@ import classes from './HomeFAQ.module.css';
 // visitor's question, not a booking form first.
 const paths = [
   {
-    icon: IconChartLine,
-    label: 'Fund manager',
-    desc: 'Capital calls, waterfalls, carry and LP reporting for your fund type.',
-    cta: 'See the manager workflow',
-    href: '/solutions/vc-pe-firms',
-  },
-  {
     icon: IconReportAnalytics,
     label: 'Fund administrator',
-    desc: 'White-label the platform for every fund you service.',
-    cta: 'See white-label options',
-    href: '/products/fund-administration',
+    desc: 'White-label books and reporting for every Singapore client fund you service.',
+    cta: 'See the administrator page',
+    href: '/solutions/fund-administrators',
+  },
+  {
+    icon: IconChartLine,
+    label: 'Fund manager',
+    desc: 'Capital calls, waterfalls, carry and LP reporting when you run the fund yourself.',
+    cta: 'See the manager workflow',
+    href: '/solutions/vc-pe-firms',
   },
   {
     icon: IconUsersGroup,
@@ -40,7 +40,7 @@ const paths = [
 export const HOME_FAQS: { q: string; a: string }[] = [
   {
     q: 'What is aama.io?',
-    a: 'aama.io is an end-to-end fund operating system — fund administration, fund accounting and a white-labeled LP portal on one platform, built for mid-market PE, VC, private credit and family office managers, boutique fund administrators, and SPV or syndicate leads across Singapore and APAC.',
+    a: 'aama.io is fund administration software for Singapore fund administrators and corporate service providers: a white-label ledger, automated NAV and an LP portal for every client fund and VCC sub-fund. Managers and SPV leads use the same platform when they run a vehicle themselves.',
   },
   {
     q: 'Is aama.io only for Singapore funds and VCCs?',
@@ -56,7 +56,7 @@ export const HOME_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Who is aama.io built for?',
-    a: "Mid-market PE and VC fund managers, private credit managers, family offices, boutique fund administrators who service other managers' funds, and syndicate leads or founders running a single-deal SPV — anyone currently stitched together across spreadsheets, a separate LP portal and outside accounting help.",
+    a: "First, Singapore fund administrators and CSPs who service other managers' funds and have outgrown spreadsheets. Also the managers those firms work with: mid-market PE, VC and private credit, family offices, and syndicate leads running a single-deal SPV.",
   },
   {
     q: 'Does aama.io use AI?',
@@ -64,7 +64,7 @@ export const HOME_FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'How much does aama.io cost?',
-    a: 'Pricing scales with how you operate: fund-manager subscriptions run USD 625–5,000/month by fund type and AUM, accounting-only plans for fund administrators start at USD 1,500/month, and a single-asset SPV is a flat USD 3,900.',
+    a: 'Fund-administrator plans start at USD 1,500/month and scale with the number of client funds. Fund-manager subscriptions run USD 625–5,000/month by fund type and AUM, and a single-asset SPV is a flat USD 3,900.',
   },
 ];
 

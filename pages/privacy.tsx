@@ -15,13 +15,13 @@ export default function PrivacyPolicy() {
         <div className={classes.wrapper}>
           <Container size="xl">
             <Title className={classes.title}>Privacy Policy</Title>
-            <Text className={classes.lastUpdated}>Last updated: April 2024</Text>
+            <Text className={classes.lastUpdated}>Last updated: November 2026</Text>
 
             <div className={classes.content}>
               <Text mb="xl">
-                At AAMA.io, a software developed by Uxqode Pte Ltd, we are committed to protecting and respecting your privacy in accordance with Singapore's Personal Data Protection Act (PDPA). 
-                This Privacy Policy explains how we collect, use, disclose, and protect your personal data when you use Our software or services.
-                As a technology software that enables fund managers to launch and manage funds, we process data on behalf of these fund managers and their investors.
+                At AAMA.io, software developed by Uxqode Pte Ltd, we are committed to protecting and respecting your privacy in accordance with Singapore&apos;s Personal Data Protection Act (PDPA).
+                This Privacy Policy explains how we collect, use, disclose, and protect your personal data when you use our software or services.
+                As a technology provider for Fund Accounting, Fund Administration (including the investor / LP portal) and SPV Fund Management, we process data on behalf of fund managers, fund administrators, SPV leads and their investors.
               </Text>
 
               <Title order={2}>1. Introduction</Title>

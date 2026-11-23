@@ -1,4 +1,5 @@
 import {
+  IconArrowRight,
   IconArrowUpRight,
   IconChartLine,
   IconClock,
@@ -6,6 +7,7 @@ import {
   IconUsersGroup,
 } from '@tabler/icons-react';
 import { Container, Text } from '@mantine/core';
+import Link from 'next/link';
 import { ClientLogos } from '../ClientLogos/ClientLogos';
 import { Reveal } from '../ui/Reveal';
 import { SectionHeading } from '../ui/SectionHeading';
@@ -61,17 +63,16 @@ export function SocialProof() {
             <div className={classes.caseStudyHead}>
               <span className={classes.caseStudyBadge}>Case study</span>
               <Text className={classes.caseStudyTitle}>
-                Kumari Capital: 5× the transaction volume, on the same team
+                A fund manager: 5× the transaction volume, on the same team
               </Text>
               <Text className={classes.caseStudyBody}>
-                When Kumari Capital replaced its legacy mutual fund system, daily transactions and
-                clients grew roughly five-fold — handled by the same operations headcount, while the
-                engine calculates NAV every day across its open-end and closed-end funds. Automating
-                client actions that previously needed manual authorization freed up 1–2 hours a day
-                for the operations and call-centre teams, correct NAV and DP-fee computation removed
-                recurring reconciliation errors, and investor numbers grew 566% in the 12 months
-                after go-live.
+                A fund manager replaced a legacy mutual-fund system. Daily transactions and clients
+                grew roughly five-fold on the same operations team, while the engine calculates NAV
+                every day across its open-end and closed-end funds.
               </Text>
+              <Link href="/case-studies/kumari-capital" className={classes.caseStudyLink}>
+                Read the full case study <IconArrowRight size={15} />
+              </Link>
             </div>
 
             <div className={classes.statGrid}>

@@ -52,7 +52,7 @@ export const products: ProductData[] = [
     title: 'Mutual Fund Administration Software',
     shortTitle: 'Mutual Fund Managers',
     description: 'Complete fund administration and administration solution for Singapore-regulated mutual funds with MAS-compliant operations.',
-    heroDescription: 'Run your mutual fund operations on one comprehensive software platform. Built specifically for Singapore fund managers, our solution automates daily NAV calculations, ensures MAS compliance, and automates investor reporting - all from a single, integrated platform.',
+    heroDescription: 'Run your mutual fund operations on one comprehensive software platform. Built specifically for Singapore fund managers, our solution automates daily NAV calculations, supports MAS-aligned reporting workflows, and automates investor reporting — all from a single, integrated platform.',
     icon: 'IconBuildingBank',
     image: '/fund-types/mutual-fund.jpg',
     category: 'Fund Administration',
@@ -97,7 +97,7 @@ export const products: ProductData[] = [
     benefits: [
       {
         title: 'Reduce Operational Costs',
-        description: 'Save up to 40% on operational expenses through automation of manual processes and elimination of redundant systems.',
+        description: 'Reduce manual work through automation of repetitive processes and elimination of redundant systems — savings vary by fund size and starting process.',
         icon: 'IconCurrencyDollar'
       },
       {
@@ -130,8 +130,8 @@ export const products: ProductData[] = [
         title: 'Fixed Income Funds',
         description: 'Handle bond portfolios with accrued interest calculations, coupon payment tracking, and yield-to-maturity analytics.',
         metrics: [
-          { label: 'Calculation Accuracy', value: '100%' },
-          { label: 'Automation Rate', value: '90%' }
+          { label: 'Accruals', value: 'Automated' },
+          { label: 'Automation Rate', value: 'High' }
         ]
       },
       {
@@ -192,7 +192,7 @@ export const products: ProductData[] = [
       },
       {
         question: 'How secure is the platform?',
-        answer: 'Security is our top priority. We use bank-grade encryption, multi-factor authentication, role-based access controls, and maintain SOC 2 Type II compliance. All data is encrypted at rest and in transit, with regular security audits and penetration testing.'
+        answer: 'Security controls include encryption in transit and at rest, multi-factor authentication, role-based access controls and a full audit trail. Independent penetration testing is available under NDA for due diligence. See /security for the current overview.'
       }
     ],
     relatedProducts: ['vc-pe-firms', 'reits', 'financial-institutions']
@@ -281,8 +281,8 @@ export const products: ProductData[] = [
         title: 'Growth Equity Funds',
         description: 'Track growth-stage investments with detailed performance metrics, board administration, and exit planning.',
         metrics: [
-          { label: 'Reporting Time', value: '75% faster' },
-          { label: 'Data Accuracy', value: '99.9%' }
+          { label: 'Reporting Time', value: 'Faster cycle' },
+          { label: 'Board packs', value: 'From the books' }
         ]
       },
       {
@@ -514,12 +514,12 @@ export const products: ProductData[] = [
         title: 'Enterprise Security & Compliance',
         description: 'Bank-grade security and comprehensive compliance framework',
         items: [
-          'SOC 2 Type II certified infrastructure',
+          'Encryption at rest and in transit',
           'Multi-factor authentication and SSO integration',
           'Role-based access controls (RBAC)',
           'Complete audit trail and activity logging',
-          'Data encryption at rest and in transit',
-          'Regulatory compliance monitoring and reporting'
+          'Independent penetration testing (report under NDA)',
+          'Compliance monitoring and reporting workflows'
         ]
       },
       {
@@ -607,7 +607,7 @@ export const products: ProductData[] = [
       },
       {
         title: 'Disaster Recovery',
-        description: 'Enterprise-grade business continuity with multi-region redundancy, automated backups, and 99.99% uptime SLA.'
+        description: 'Business continuity with redundancy, automated backups and documented recovery objectives agreed in enterprise contracts.'
       },
       {
         title: 'Custom Workflows',
@@ -625,7 +625,7 @@ export const products: ProductData[] = [
     faq: [
       {
         question: 'How secure is your platform for institutional use?',
-        answer: 'Our platform is built to institutional security standards with SOC 2 Type II certification, bank-grade encryption, penetration testing, security audits, and compliance with global data protection regulations including GDPR and MAS requirements. We employ multi-layer security including network security, application security, and data security controls.'
+        answer: 'Controls include encryption in transit and at rest, MFA, RBAC, audit logging and independent penetration testing. Data handling follows Singapore PDPA practice. Enterprise buyers can request the security and due-diligence pack (architecture, subprocessors, VAPT summary under NDA) via /security or during a demo.'
       },
       {
         question: 'Can you support our existing IT infrastructure?',
@@ -637,7 +637,7 @@ export const products: ProductData[] = [
       },
       {
         question: 'What kind of SLA do you provide?',
-        answer: 'We offer enterprise-grade SLAs including 99.99% uptime guarantee, 24/7 technical support, dedicated account administration, priority incident response, and guaranteed response times. We also provide business continuity and disaster recovery plans with RTO and RPO commitments.'
+        answer: 'Enterprise contracts include a written availability SLA, support response times, dedicated account coverage and documented RTO/RPO targets. Exact commitments are agreed per contract rather than published as a blanket percentage on the marketing site.'
       },
       {
         question: 'How long does enterprise implementation take?',
@@ -727,7 +727,7 @@ export const products: ProductData[] = [
         metrics: [
           { label: 'Setup Time', value: 'Days, not weeks' },
           { label: 'Members / Deal', value: '100+' },
-          { label: 'Carry Automated', value: '100%' }
+          { label: 'Carry', value: 'Automated' }
         ]
       },
       {
@@ -742,8 +742,8 @@ export const products: ProductData[] = [
         title: 'Single-Deal SPVs',
         description: 'Hold a single asset or company in a dedicated vehicle with full administration and investor servicing.',
         metrics: [
-          { label: 'Time Saved', value: '15 hrs/deal' },
-          { label: 'Data Accuracy', value: '99.9%' }
+          { label: 'Time to stand up', value: 'Days' },
+          { label: 'Ledger', value: 'Double-entry' }
         ]
       },
       {
@@ -1137,7 +1137,143 @@ export const products: ProductData[] = [
       }
     ],
     relatedProducts: ['vc-pe-firms', 'family-offices', 'spv-syndicates']
-  }
+  },
+  {
+    id: '8',
+    slug: 'fund-administrators',
+    title: 'Fund Accounting Software for Fund Administrators & CSPs',
+    shortTitle: 'Fund Administrators & CSPs',
+    description: 'Fund accounting software for fund administrators and corporate service providers in Singapore & APAC. Run every client fund and VCC sub-fund on one white-label ledger.',
+    heroDescription: 'You service other managers\' funds, often on spreadsheets that do not scale past the next client. aama.io gives your team a fund-grade double-entry ledger for every client fund and VCC sub-fund: automated NAV, consolidated umbrella reporting, MAS reports and white-label client statements. Your firm stays the administrator; we provide the software.',
+    icon: 'IconBuildingBank',
+    image: '/images/fund-detail.png',
+    category: 'Fund Administrators',
+    features: [
+      {
+        title: 'One ledger per client fund',
+        description: 'Fund-grade accounting for every fund you service',
+        items: [
+          'Double-entry general ledger, chart of accounts and journal vouchers',
+          'Automated NAV: daily, weekly, monthly or quarterly',
+          'IFRS 9 / SFRS(I) 9 accounting',
+          'European and American waterfalls, fees and carried interest',
+          'Multi-currency books with FX revaluation',
+          '12+ audit-ready reports: trial balance, balance sheet, P&L, NAV summary, capital accounts',
+        ],
+      },
+      {
+        title: 'VCC umbrellas and sub-funds',
+        description: 'Built for how Singapore funds are actually structured',
+        items: [
+          'Each VCC sub-fund kept as its own segregated set of books',
+          'Consolidated view across an umbrella VCC and its sub-funds',
+          'MAS reporting output, including the basic QDC report',
+          'Multi-entity dashboard across every client you service',
+          'Role-based access per client and per team member',
+          'Complete audit trail on every entry and approval',
+        ],
+      },
+      {
+        title: 'Less re-keying at month-end',
+        description: 'AI reads the documents; your team approves the entries',
+        items: [
+          'AI extraction from supplier invoices, bank and custodian statements',
+          'Suggested ledger mapping that learns from earlier mappings',
+          'Nothing posts until a person accepts it',
+          'Bank, broker and custodian reconciliation',
+          'Bulk Excel import of holdings and history',
+          'Multi-stage approval workflows before posting',
+        ],
+      },
+    ],
+    benefits: [
+      {
+        title: 'Take on clients without adding headcount',
+        description: 'Automated NAV, reconciliation and reporting mean each new client fund adds configuration, not another spreadsheet and another accountant.',
+        icon: 'IconUsersGroup',
+      },
+      {
+        title: 'Your brand, not ours',
+        description: 'Client statements and reports go out under your firm\'s name. Add a white-label investor portal for clients who want one.',
+        icon: 'IconWorld',
+      },
+      {
+        title: 'Numbers your auditors can follow',
+        description: 'Every entry, approval and recalculation is logged, so audit evidence comes out of the system instead of being assembled by hand.',
+        icon: 'IconShield',
+      },
+      {
+        title: 'Priced per client fund',
+        description: 'Plans scale with the number of client funds you run, so the software cost grows with your revenue, not ahead of it.',
+        icon: 'IconCurrencyDollar',
+      },
+    ],
+    useCases: [
+      {
+        title: 'Boutique fund administrators',
+        description: 'A small team servicing several VC, PE or credit funds that has outgrown spreadsheets and cannot justify enterprise systems priced for billion-dollar administrators.',
+        metrics: [{ label: 'Plans from', value: 'USD 1,500/mo' }],
+      },
+      {
+        title: 'Corporate service providers running VCC umbrellas',
+        description: 'CSPs that form and service VCCs with many sub-funds, and need segregated books per sub-fund with a consolidated umbrella view and MAS reporting.',
+        metrics: [
+          { label: 'Sub-funds', value: 'Segregated books' },
+          { label: 'Umbrella', value: 'Consolidated view' },
+        ],
+      },
+      {
+        title: 'Administrators moving off legacy systems',
+        description: 'The same accounting engine runs daily NAV for 15+ regulated open-end and closed-end funds, and has handled 5× growth in transactions with the same operations headcount.',
+        metrics: [{ label: 'Data loss in migrations', value: 'Zero' }],
+      },
+    ],
+    keyFeatures: [
+      {
+        title: 'Multi-client workspace',
+        description: 'Every client and every fund in one place, with access scoped per client and per team member.',
+      },
+      {
+        title: 'VCC consolidation',
+        description: 'Segregated sub-fund ledgers that roll up into one consolidated umbrella view.',
+      },
+      {
+        title: 'Automated NAV',
+        description: 'Gross, net and per-unit NAV on your schedule, with holiday-aware period closes.',
+      },
+      {
+        title: 'AI document extraction',
+        description: 'Invoices and bank or custodian statements read into suggested entries for your team to check.',
+      },
+      {
+        title: 'White-label reporting',
+        description: 'Client packs under your brand; optional investor portal as an add-on on Studio and Practice.',
+      },
+      {
+        title: 'Administrator pricing',
+        description: 'Studio, Practice and Firm plans priced by client-fund count — see the admin pricing calculator.',
+      },
+    ],
+    faq: [
+      {
+        question: 'Do we stay the fund administrator?',
+        answer: 'Yes. Your firm remains the administrator of record. aama.io is the software your team operates for client funds.',
+      },
+      {
+        question: 'How is pricing structured?',
+        answer: 'Fund-administrator plans start at USD 1,500/month (Studio, up to 5 client funds), Practice at USD 3,500/month (up to 20), and Firm at USD 6,500/month (unlimited). The investor portal is an add-on on Studio and Practice and included on Firm.',
+      },
+      {
+        question: 'Can we white-label for our clients?',
+        answer: 'Yes. Client reporting is white-labeled on Practice and Firm. Firm includes the investor / LP portal; Studio and Practice can add it.',
+      },
+      {
+        question: 'Does it support VCC sub-funds?',
+        answer: 'Yes. Each sub-fund keeps segregated books with a consolidated umbrella view and MAS-oriented reporting output.',
+      },
+    ],
+    relatedProducts: ['vc-pe-firms', 'private-credit', 'family-offices'],
+  },
 ];
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {

@@ -241,7 +241,7 @@ export const COMPETITORS: Competitor[] = [
     sources: [{ label: 'Sydecar: syndicate leads', url: 'https://www.sydecar.io/founder-syndicates' }, { label: 'Altss: Sydecar profile', url: 'https://altss.com/profile/sydecar' }],
     faqs: [
       { q: 'How is Aama.io different from Sydecar?', a: 'Sydecar describes itself as offering end-to-end SPV formation and complete back-office administration. Aama.io covers SPVs too, and runs them on the same accounting data model as funds, VCCs and the LP portal, with Singapore and APAC practice as the default.' },
-      { q: 'Does Aama.io publish SPV pricing?', a: 'Yes. A single SPV is USD 3,900, and a syndicate SPV is 2% of the raise (min USD 3,500, cap USD 10,000). Government and registry fees are extra and passed through at cost, and the fee starts when the first LP payment is recorded.' },
+      { q: 'Does Aama.io publish SPV pricing?', a: 'Yes. A single SPV is USD 3,900, and a syndicate SPV is 2% of the raise (min USD 3,500, cap USD 10,000). Government and registry fees are extra and passed through at cost. Under the founding offer, the fee starts when the first LP payment is recorded, or 60 days after the first investor accepts an invite if no payment has been recorded by then.' },
       { q: 'Can I move existing SPVs over?', a: 'Yes, as a scoped project: investor register, capital contributions, bank balance and documents. See the migration steps above.' },
     ],
   },

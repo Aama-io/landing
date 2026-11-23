@@ -162,8 +162,9 @@ export const PLATFORMS: DetailData[] = [
 
 export const platformBySlug = (slug: string) => PLATFORMS.find((p) => p.slug === slug);
 
-// The flagship SPV product is a bespoke page (pages/products/spv-fund-management.tsx),
-// not a PLATFORMS entry, so it is listed here for nav, related strips and the sitemap.
+// The SPV product is a bespoke page (pages/products/spv-fund-management.tsx), not a
+// PLATFORMS entry, so it is listed here for nav, related strips and the sitemap.
+// Fund Accounting is the lead product; SPV is a secondary offering and is listed last.
 export const SPV_PRODUCT_LINK: RelatedLink = {
   href: '/products/spv-fund-management',
   label: 'SPV Fund Management',
@@ -172,12 +173,16 @@ export const SPV_PRODUCT_LINK: RelatedLink = {
 };
 
 // Compact list for nav menus and related-product strips.
+const LEAD_PLATFORM_ORDER = ['fund-administration', 'fund-accounting'];
+
 export const PLATFORM_LINKS: RelatedLink[] = [
+  ...[...PLATFORMS]
+    .sort((a, b) => LEAD_PLATFORM_ORDER.indexOf(a.slug) - LEAD_PLATFORM_ORDER.indexOf(b.slug))
+    .map((p) => ({
+      href: `/products/${p.slug}`,
+      label: p.shortName,
+      blurb: `${p.heroDescription.split('.')[0]  }.`,
+      icon: p.icon,
+    })),
   SPV_PRODUCT_LINK,
-  ...PLATFORMS.map((p) => ({
-    href: `/products/${p.slug}`,
-    label: p.shortName,
-    blurb: `${p.heroDescription.split('.')[0]  }.`,
-    icon: p.icon,
-  })),
 ];

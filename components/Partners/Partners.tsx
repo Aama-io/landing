@@ -77,7 +77,7 @@ const models = [
 ];
 
 const steps = [
-  { title: 'Tell us about your firm', body: 'Use the form below. Say who your clients are and where you see the gap.' },
+  { title: 'Tell us about your firm', body: 'Use the form below (or /contact?inquiryType=partner). Say who your clients are and where you see the gap. After qualification we send the partner onboarding kit.' },
   { title: 'A working conversation', body: 'A call with the team to check fit on both sides. No slides required.' },
   { title: 'Agree how we work', body: 'Referral terms, joint scope or an integration plan, written down before anything starts.' },
   { title: 'Start with one client', body: 'We begin with a real introduction or a pilot, then adjust before scaling.' },

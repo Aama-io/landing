@@ -31,7 +31,7 @@ const spvPlans: Plan[] = [
     setupFee: 'Scoped to your fund',
     setupLabel: 'Annual admin:',
     subtitle: '',
-    offer: { tag: 'Founding offer · first-time founders', text: 'Pay when you collect. The SPV fee starts once your first LP payment is recorded.' },
+    offer: { tag: 'Founding offer · first-time founders', text: 'Pay when you collect. The SPV fee starts once your first LP payment is recorded, or 60 days after your first investor accepts an invite if no payment has been recorded by then.' },
     description: 'A single-asset deal SPV — one lead, one round',
     perks: [
       { feature: 'SPV formation & ACRA registration', included: true },
@@ -57,7 +57,7 @@ const spvPlans: Plan[] = [
     setupFee: 'Min USD 3,500 · Max USD 10,000',
     setupLabel: 'Fee range:',
     subtitle: '',
-    offer: { tag: 'Founding offer · syndicate leads', text: 'Pay when you collect. The SPV fee starts once your first LP payment is recorded.' },
+    offer: { tag: 'Founding offer · syndicate leads', text: 'Pay when you collect. The SPV fee starts once your first LP payment is recorded, or 60 days after your first investor accepts an invite if no payment has been recorded by then.' },
     description: 'Raise from many investors, priced per deal',
     perks: [
       { feature: 'Everything in Single SPV', included: true },
@@ -436,7 +436,7 @@ const mutualFundPlans = [
 
 export function PricingTables() {
   const [billingPeriod, setBillingPeriod] = useState('monthly');
-  const [fundType, setFundType] = useState('spv');
+  const [fundType, setFundType] = useState('private');
 
   const getPlans = (): Plan[] => {
     switch (fundType) {
@@ -455,7 +455,7 @@ export function PricingTables() {
       case 'mutual':
         return mutualFundPlans;
       default:
-        return spvPlans;
+        return privateEquityPlans;
     }
   };
 
@@ -469,13 +469,13 @@ export function PricingTables() {
 
           <Tabs
             value={fundType}
-            onChange={(value) => setFundType(value || 'spv')}
+            onChange={(value) => setFundType(value || 'private')}
             radius="md"
             mt="md"
           >
             <Tabs.List className={classes.fundTypeTabsList}>
-              <Tabs.Tab value="spv" leftSection={<IconUsersGroup size={16} />}>
-                SPVs & Syndicates
+              <Tabs.Tab value="private" leftSection={<IconBuildingSkyscraper size={16} />}>
+                Private Equity / VC
               </Tabs.Tab>
               <Tabs.Tab value="admin" leftSection={<IconBuildingBank size={16} />}>
                 Fund Administrators
@@ -483,11 +483,11 @@ export function PricingTables() {
               <Tabs.Tab value="family" leftSection={<IconCoin size={16} />}>
                 Family Offices
               </Tabs.Tab>
-              <Tabs.Tab value="private" leftSection={<IconBuildingSkyscraper size={16} />}>
-                Private Equity / VC
-              </Tabs.Tab>
               <Tabs.Tab value="credit" leftSection={<IconReportMoney size={16} />}>
                 Private Credit
+              </Tabs.Tab>
+              <Tabs.Tab value="spv" leftSection={<IconUsersGroup size={16} />}>
+                SPVs & Syndicates
               </Tabs.Tab>
               <Tabs.Tab value="hedge" leftSection={<IconChartBar size={14} />} className={classes.secondaryTab}>
                 Hedge Funds

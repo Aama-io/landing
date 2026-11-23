@@ -1,0 +1,779 @@
+From d784e38f5bb3aa93357d29d2e1929e4cdad85672 Mon Sep 17 00:00:00 2001
+From: claude <noreply@anthropic.com>
+Date: Fri, 20 Nov 2026 02:47:53 +0000
+Subject: [PATCH 1/2] Make fund accounting the lead product
+
+---
+ components/Hero/Hero.tsx                   | 17 +++++++++--------
+ components/PricingTables/PricingTables.tsx | 16 ++++++++--------
+ lib/platforms.ts                           | 21 +++++++++++++--------
+ pages/index.tsx                            |  8 +++-----
+ pages/pricing.tsx                          |  2 --
+ pages/sitemap.xml.tsx                      |  7 +++++--
+ 6 files changed, 38 insertions(+), 33 deletions(-)
+
+diff --git a/components/Hero/Hero.tsx b/components/Hero/Hero.tsx
+index d4fa168..a90537f 100644
+--- a/components/Hero/Hero.tsx
++++ b/components/Hero/Hero.tsx
+@@ -14,8 +14,8 @@ import classes from './Hero.module.css';
+ const ease = [0.22, 1, 0.36, 1] as const;
+ 
+ const capabilities = [
+-  'Built for VCC sub-funds and standalone SPVs',
+-  'Automated capital calls, KYC and distributions',
++  'Automated NAV, waterfalls and 12+ audit-ready reports',
++  'IFRS 9 / SFRS(I) 9 native, built for VCC sub-funds',
+   'Go live in weeks, not quarters',
+ ];
+ 
+@@ -77,20 +77,21 @@ export function Hero() {
+       <div className={classes.layout}>
+         <div className={`${classes.content} heroEnter`}>
+           <Title className={classes.title}>
+-            Run every fund, SPV, and syndicate on{' '}
++            Fund accounting for PE, VC and private credit, on{' '}
+             <span className={classes.highlight}>
+               <span className={classes.highlightMark} aria-hidden="true" />
+-              <span className={classes.highlightText}>one platform.</span>
++              <span className={classes.highlightText}>one ledger.</span>
+             </span>
+           </Title>
+ 
+           <Text className={classes.subtitle}>
+-            PE, VC, and SPV fund managers, syndicate leads, and the administrators who service them
+-            still juggle spreadsheets, email, and disconnected tools. <span className={classes.highlight}>
++            Fund managers and the administrators who service them still run NAV, waterfalls and
++            capital accounts in spreadsheets. <span className={classes.highlight}>
+               <span className={classes.highlightMark} aria-hidden="true" />
+               <span className={classes.highlightText}>aama.io</span>
+-            </span> unifies fund
+-            administration and IFRS 9 / SFRS(I) 9 accounting in one integrated system.
++            </span> gives you a
++            fund-grade double-entry ledger with automated NAV and IFRS 9 / SFRS(I) 9 accounting, with
++            fund administration and the LP portal on the same data.
+             Singapore-first, built for APAC & beyond.
+           </Text>
+ 
+diff --git a/components/PricingTables/PricingTables.tsx b/components/PricingTables/PricingTables.tsx
+index 908736a..e696d55 100644
+--- a/components/PricingTables/PricingTables.tsx
++++ b/components/PricingTables/PricingTables.tsx
+@@ -436,7 +436,7 @@ const mutualFundPlans = [
+ 
+ export function PricingTables() {
+   const [billingPeriod, setBillingPeriod] = useState('monthly');
+-  const [fundType, setFundType] = useState('spv');
++  const [fundType, setFundType] = useState('private');
+ 
+   const getPlans = (): Plan[] => {
+     switch (fundType) {
+@@ -455,7 +455,7 @@ export function PricingTables() {
+       case 'mutual':
+         return mutualFundPlans;
+       default:
+-        return spvPlans;
++        return privateEquityPlans;
+     }
+   };
+ 
+@@ -469,13 +469,13 @@ export function PricingTables() {
+ 
+           <Tabs
+             value={fundType}
+-            onChange={(value) => setFundType(value || 'spv')}
++            onChange={(value) => setFundType(value || 'private')}
+             radius="md"
+             mt="md"
+           >
+             <Tabs.List className={classes.fundTypeTabsList}>
+-              <Tabs.Tab value="spv" leftSection={<IconUsersGroup size={16} />}>
+-                SPVs & Syndicates
++              <Tabs.Tab value="private" leftSection={<IconBuildingSkyscraper size={16} />}>
++                Private Equity / VC
+               </Tabs.Tab>
+               <Tabs.Tab value="admin" leftSection={<IconBuildingBank size={16} />}>
+                 Fund Administrators
+@@ -483,12 +483,12 @@ export function PricingTables() {
+               <Tabs.Tab value="family" leftSection={<IconCoin size={16} />}>
+                 Family Offices
+               </Tabs.Tab>
+-              <Tabs.Tab value="private" leftSection={<IconBuildingSkyscraper size={16} />}>
+-                Private Equity / VC
+-              </Tabs.Tab>
+               <Tabs.Tab value="credit" leftSection={<IconReportMoney size={16} />}>
+                 Private Credit
+               </Tabs.Tab>
++              <Tabs.Tab value="spv" leftSection={<IconUsersGroup size={16} />}>
++                SPVs & Syndicates
++              </Tabs.Tab>
+               <Tabs.Tab value="hedge" leftSection={<IconChartBar size={14} />} className={classes.secondaryTab}>
+                 Hedge Funds
+               </Tabs.Tab>
+diff --git a/lib/platforms.ts b/lib/platforms.ts
+index 647ba84..99d17e2 100644
+--- a/lib/platforms.ts
++++ b/lib/platforms.ts
+@@ -162,8 +162,9 @@ export const PLATFORMS: DetailData[] = [
+ 
+ export const platformBySlug = (slug: string) => PLATFORMS.find((p) => p.slug === slug);
+ 
+-// The flagship SPV product is a bespoke page (pages/products/spv-fund-management.tsx),
+-// not a PLATFORMS entry, so it is listed here for nav, related strips and the sitemap.
++// The SPV product is a bespoke page (pages/products/spv-fund-management.tsx), not a
++// PLATFORMS entry, so it is listed here for nav, related strips and the sitemap.
++// Fund Accounting is the lead product; SPV is a secondary offering and is listed last.
+ export const SPV_PRODUCT_LINK: RelatedLink = {
+   href: '/products/spv-fund-management',
+   label: 'SPV Fund Management',
+@@ -172,12 +173,16 @@ export const SPV_PRODUCT_LINK: RelatedLink = {
+ };
+ 
+ // Compact list for nav menus and related-product strips.
++const LEAD_PLATFORM_ORDER = ['fund-accounting', 'fund-administration'];
++
+ export const PLATFORM_LINKS: RelatedLink[] = [
++  ...[...PLATFORMS]
++    .sort((a, b) => LEAD_PLATFORM_ORDER.indexOf(a.slug) - LEAD_PLATFORM_ORDER.indexOf(b.slug))
++    .map((p) => ({
++      href: `/products/${p.slug}`,
++      label: p.shortName,
++      blurb: `${p.heroDescription.split('.')[0]  }.`,
++      icon: p.icon,
++    })),
+   SPV_PRODUCT_LINK,
+-  ...PLATFORMS.map((p) => ({
+-    href: `/products/${p.slug}`,
+-    label: p.shortName,
+-    blurb: `${p.heroDescription.split('.')[0]  }.`,
+-    icon: p.icon,
+-  })),
+ ];
+diff --git a/pages/index.tsx b/pages/index.tsx
+index 90a209a..d024874 100644
+--- a/pages/index.tsx
++++ b/pages/index.tsx
+@@ -7,7 +7,6 @@ import { ProblemSolution, WORKFLOW_FAQS } from '../components/ProblemSolution/Pr
+ import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
+ import { TrustBar } from '../components/TrustBar/TrustBar';
+ import Head from 'next/head';
+-import { LaunchFreeBanner } from '@/components/EmergingManagers/LaunchFreeBanner';
+ import { HOME_FAQS, HomeFAQ } from '@/components/HomeFAQ/HomeFAQ';
+ 
+ export default function HomePage() {
+@@ -24,16 +23,15 @@ export default function HomePage() {
+   return (
+     <>
+       <SEO
+-        title="Fund Administration Software in Singapore & APAC"
+-        description="Fund administration software for mid-market PE, VC and private credit funds in Singapore & APAC. Automated capital calls, NAV, IFRS 9, LP portal."
+-        keywords="fund administration software Singapore, private equity fund administration software, venture capital fund administration software, private credit fund administration software, fund accounting software, fund accounting software IFRS 9 Singapore, LP portal for fund managers, software for fund administrators, in-house fund administration software, fund administration for emerging managers, capital call software, distribution waterfall software, NAV calculation software, SPV administration software Singapore, VCC fund administration, VCC sub-fund accounting, boutique fund admin software Singapore"
++        title="Fund Accounting & Administration Software in Singapore & APAC"
++        description="Fund accounting and administration software for mid-market PE, VC and private credit funds in Singapore & APAC. Automated NAV, IFRS 9, capital calls, LP portal."
++        keywords="fund accounting software, fund accounting software Singapore, fund administration software Singapore, private equity fund administration software, venture capital fund administration software, private credit fund administration software, fund accounting software, fund accounting software IFRS 9 Singapore, LP portal for fund managers, software for fund administrators, in-house fund administration software, fund administration for emerging managers, capital call software, distribution waterfall software, NAV calculation software, SPV administration software Singapore, VCC fund administration, VCC sub-fund accounting, boutique fund admin software Singapore"
+       />
+       <Head>
+         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+       </Head>
+       <PageShell>
+         <Hero />
+-        <LaunchFreeBanner />
+         <TrustBar />
+         <ProblemSolution />
+         <ProductShowcase />
+diff --git a/pages/pricing.tsx b/pages/pricing.tsx
+index b79ebe0..c364842 100644
+--- a/pages/pricing.tsx
++++ b/pages/pricing.tsx
+@@ -4,7 +4,6 @@ import { PricingHero } from '../components/PricingHero/PricingHero';
+ import { PricingTables } from '../components/PricingTables/PricingTables';
+ import { PricingFAQ, faqData } from '../components/PricingFAQ/PricingFAQ';
+ import { PricingSection } from '../components/PricingSection/PricingSection';
+-import { LaunchFreeBanner } from '@/components/EmergingManagers/LaunchFreeBanner';
+ import { SEO } from '@/components/SEO/SEO';
+ import { CompareNote } from '@/components/Compare/CompareNote';
+ 
+@@ -76,7 +75,6 @@ export default function PricingPage() {
+       </Head>
+       <PageShell>
+         <PricingHero />
+-        <LaunchFreeBanner />
+         <PricingTables />
+         <PricingSection />
+         <PricingFAQ />
+diff --git a/pages/sitemap.xml.tsx b/pages/sitemap.xml.tsx
+index a787722..e346806 100644
+--- a/pages/sitemap.xml.tsx
++++ b/pages/sitemap.xml.tsx
+@@ -34,8 +34,11 @@ function tag(loc: string, priority: string, changefreq: string, lastmod?: string
+ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
+   const urls = [
+     ...STATIC.map((p) => tag(p.loc, p.priority, 'weekly')),
+-    tag('/products/spv-fund-management', '0.95', 'weekly'),
+-    ...PLATFORMS.map((p) => tag(`/products/${p.slug}`, '0.85', 'weekly')),
++    // Fund Accounting is the lead product, so it carries the highest product priority.
++    ...PLATFORMS.map((p) =>
++      tag(`/products/${p.slug}`, p.slug === 'fund-accounting' ? '0.95' : '0.9', 'weekly')
++    ),
++    tag('/products/spv-fund-management', '0.8', 'weekly'),
+     ...SOLUTIONS.map((sol) => tag(sol.href, '0.8', 'weekly')),
+     tag('/alternatives', '0.8', 'monthly'),
+     ...ALTERNATIVES.map((a) => tag(`/alternatives/${a.slug}`, '0.8', 'monthly')),
+-- 
+2.43.0
+
+
+From 601b7fbdedcc3cf82134f44be15f73f50b890bf9 Mon Sep 17 00:00:00 2001
+From: claude <noreply@anthropic.com>
+Date: Fri, 20 Nov 2026 02:53:57 +0000
+Subject: [PATCH 2/2] Add fund administrators & CSPs solution and lead the site
+ with it
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_015TDNMqSDuMoWCD6ZGQ1bZd
+---
+ components/AdminBanner/AdminBanner.tsx        |  18 +++
+ components/ContactForm/ContactForm.tsx        |   2 +-
+ components/HomeFAQ/HomeFAQ.tsx                |  12 +-
+ components/PricingHero/PricingHero.tsx        |   4 +-
+ components/PricingTables/PricingTables.tsx    |  24 ++-
+ .../ProductShowcase/ProductShowcase.tsx       |   2 +-
+ lib/solutions.ts                              |   6 +-
+ pages/api/products/index.ts                   | 152 ++++++++++++++++++
+ pages/index.tsx                               |   2 +
+ pages/pricing.tsx                             |   6 +-
+ pages/solutions.tsx                           |  42 +++--
+ public/llms.txt                               |   7 +-
+ 12 files changed, 238 insertions(+), 39 deletions(-)
+ create mode 100644 components/AdminBanner/AdminBanner.tsx
+
+diff --git a/components/AdminBanner/AdminBanner.tsx b/components/AdminBanner/AdminBanner.tsx
+new file mode 100644
+index 0000000..b9f5f21
+--- /dev/null
++++ b/components/AdminBanner/AdminBanner.tsx
+@@ -0,0 +1,18 @@
++import { IconArrowRight } from '@tabler/icons-react';
++import Link from 'next/link';
++import s from '../EmergingManagers/EmergingManagers.module.css';
++
++/** Slim strip under the homepage hero that routes fund administrators and CSPs to their page. */
++export function AdminBanner() {
++  return (
++    <div className={s.banner}>
++      <span className={s.bannerText}>
++        <strong>Administer funds for other managers?</strong> Run every client fund and VCC sub-fund on one
++        white-label ledger, priced per client fund.
++      </span>
++      <Link href="/solutions/fund-administrators" className={s.bannerLink}>
++        See the plan for administrators <IconArrowRight size={15} />
++      </Link>
++    </div>
++  );
++}
+diff --git a/components/ContactForm/ContactForm.tsx b/components/ContactForm/ContactForm.tsx
+index e6a10de..a74286f 100644
+--- a/components/ContactForm/ContactForm.tsx
++++ b/components/ContactForm/ContactForm.tsx
+@@ -25,11 +25,11 @@ import Cal, { getCalApi } from "@calcom/embed-react";
+ // (lib/solutions.ts) plus "Fund Administrator", a service-provider persona
+ // distinct from fund type. Replaces a generic list that didn't name any of them.
+ const INQUIRY_TYPES = [
++  'Fund Administrator / CSP',
+   'VC / PE Fund Manager',
+   'Private Credit Fund Manager',
+   'Family Office',
+   'SPV / Syndicate Lead',
+-  'Fund Administrator',
+   'Other',
+ ];
+ 
+diff --git a/components/HomeFAQ/HomeFAQ.tsx b/components/HomeFAQ/HomeFAQ.tsx
+index 4ea115e..49cecf7 100644
+--- a/components/HomeFAQ/HomeFAQ.tsx
++++ b/components/HomeFAQ/HomeFAQ.tsx
+@@ -40,15 +40,15 @@ const paths = [
+ export const HOME_FAQS: { q: string; a: string }[] = [
+   {
+     q: 'What is aama.io?',
+-    a: 'aama.io is an end-to-end fund operating system — fund administration, fund accounting and a white-labeled LP portal on one platform, built for mid-market PE, VC, private credit and family office managers, boutique fund administrators, and SPV or syndicate leads across Singapore and APAC.',
++    a: 'aama.io is fund accounting software with fund administration and a white-labeled LP portal on the same ledger. It is built for fund administrators and corporate service providers who service other managers\' funds, and for mid-market PE, VC, private credit and family office managers across Singapore and APAC.',
+   },
+   {
+     q: 'Is aama.io only for Singapore funds and VCCs?',
+-    a: "No — aama.io is Singapore-first, with native MAS alignment and VCC sub-fund support, but it isn't Singapore-only. The same platform runs funds and single-deal SPVs structured in Cayman, BVI or Delaware, with IFRS 9 / SFRS(I) 9 accounting throughout.",
++    a: "No. aama.io is Singapore-first, with MAS reporting and VCC umbrella and sub-fund support, and the same platform serves fund administrators and managers in Hong Kong, Australia and across APAC, with IFRS 9 / SFRS(I) 9 accounting throughout.",
+   },
+   {
+-    q: 'Can I use aama.io for a single SPV or syndicate, not a full fund?',
+-    a: 'Yes. A single-deal or multi-asset SPV can be set up and administered on its own — cap table, KYC/AML, lead carry and IFRS-ready accounting — without standing up a full fund first.',
++    q: 'Can fund administrators use aama.io for their clients\' funds?',
++    a: 'Yes. Administrators and CSPs run every client fund and VCC sub-fund on one platform, each with its own segregated books, a consolidated umbrella view and white-label client reporting. Plans are priced by the number of client funds, and your firm stays the administrator of record.',
+   },
+   {
+     q: 'How is this different from running a fund on spreadsheets or generic accounting software?',
+@@ -56,7 +56,7 @@ export const HOME_FAQS: { q: string; a: string }[] = [
+   },
+   {
+     q: 'Who is aama.io built for?',
+-    a: "Mid-market PE and VC fund managers, private credit managers, family offices, boutique fund administrators who service other managers' funds, and syndicate leads or founders running a single-deal SPV — anyone currently stitched together across spreadsheets, a separate LP portal and outside accounting help.",
++    a: "Fund administrators and corporate service providers who service other managers' funds, and mid-market PE, VC and private credit managers and family offices who keep their own books. It also supports single-deal SPVs and syndicates. In short, anyone running fund accounting on spreadsheets or generic bookkeeping software.",
+   },
+   {
+     q: 'Does aama.io use AI?',
+@@ -64,7 +64,7 @@ export const HOME_FAQS: { q: string; a: string }[] = [
+   },
+   {
+     q: 'How much does aama.io cost?',
+-    a: 'Pricing scales with how you operate: fund-manager subscriptions run USD 625–5,000/month by fund type and AUM, accounting-only plans for fund administrators start at USD 1,500/month, and a single-asset SPV is a flat USD 3,900.',
++    a: 'Pricing scales with how you operate: plans for fund administrators start at USD 1,500/month and are priced by the number of client funds, fund-manager subscriptions run USD 625–5,000/month by fund type and AUM, and a single-asset SPV is a flat USD 3,900.',
+   },
+ ];
+ 
+diff --git a/components/PricingHero/PricingHero.tsx b/components/PricingHero/PricingHero.tsx
+index 67d60be..5c58c83 100644
+--- a/components/PricingHero/PricingHero.tsx
++++ b/components/PricingHero/PricingHero.tsx
+@@ -18,8 +18,8 @@ export function PricingHero() {
+             Institutional-grade at <span className={s.accent}>startup-friendly pricing</span>
+           </Title>
+           <Text className={s.heroDesc}>
+-            Institutional-grade fund administration software at startup-friendly pricing — designed to help Singaporean fund
+-            managers scale, stay compliant and delight investors.
++            Fund accounting and administration software for fund administrators, CSPs and fund managers in
++            Singapore and APAC. Administrators pay per client fund; managers pay by fund type and size.
+           </Text>
+           <Group justify="center" gap={28} mt={28}>
+             <span style={item}><IconCircleCheck size={18} style={{ color: 'var(--mantine-color-blue-6)' }} /><span><strong style={{ color: 'var(--text-strong)' }}>SaaS subscription</strong> — monthly or yearly</span></span>
+diff --git a/components/PricingTables/PricingTables.tsx b/components/PricingTables/PricingTables.tsx
+index e696d55..3ac0adb 100644
+--- a/components/PricingTables/PricingTables.tsx
++++ b/components/PricingTables/PricingTables.tsx
+@@ -1,6 +1,7 @@
+ import { Container, Card, Text, Group, Button, List, ThemeIcon, SegmentedControl, Stack, Tooltip, Box, Tabs } from '@mantine/core';
+ import { IconGift, IconCheck, IconInfoCircle, IconX, IconArrowRight, IconHeadset, IconBuildingSkyscraper, IconCoin, IconChartBar, IconChartPie, IconReportMoney, IconUsersGroup, IconBuildingBank } from '@tabler/icons-react';
+-import { useState } from 'react';
++import { useEffect, useState } from 'react';
++import { useRouter } from 'next/router';
+ import Link from 'next/link';
+ import { GovFeesTable } from '@/components/GovFeesTable/GovFeesTable';
+ import classes from './PricingTables.module.css';
+@@ -436,7 +437,16 @@ const mutualFundPlans = [
+ 
+ export function PricingTables() {
+   const [billingPeriod, setBillingPeriod] = useState('monthly');
+-  const [fundType, setFundType] = useState('private');
++  // Fund administrators are the lead buyer, so their plans open by default.
++  // A ?type= query (e.g. /pricing?type=private) deep-links to another tab.
++  const [fundType, setFundType] = useState('admin');
++  const router = useRouter();
++  useEffect(() => {
++    const t = router.query.type;
++    if (typeof t === 'string' && ['admin', 'private', 'credit', 'family', 'spv', 'hedge', 'mutual'].includes(t)) {
++      setFundType(t);
++    }
++  }, [router.query.type]);
+ 
+   const getPlans = (): Plan[] => {
+     switch (fundType) {
+@@ -455,7 +465,7 @@ export function PricingTables() {
+       case 'mutual':
+         return mutualFundPlans;
+       default:
+-        return privateEquityPlans;
++        return fundAdminPlans;
+     }
+   };
+ 
+@@ -469,17 +479,17 @@ export function PricingTables() {
+ 
+           <Tabs
+             value={fundType}
+-            onChange={(value) => setFundType(value || 'private')}
++            onChange={(value) => setFundType(value || 'admin')}
+             radius="md"
+             mt="md"
+           >
+             <Tabs.List className={classes.fundTypeTabsList}>
+-              <Tabs.Tab value="private" leftSection={<IconBuildingSkyscraper size={16} />}>
+-                Private Equity / VC
+-              </Tabs.Tab>
+               <Tabs.Tab value="admin" leftSection={<IconBuildingBank size={16} />}>
+                 Fund Administrators
+               </Tabs.Tab>
++              <Tabs.Tab value="private" leftSection={<IconBuildingSkyscraper size={16} />}>
++                Private Equity / VC
++              </Tabs.Tab>
+               <Tabs.Tab value="family" leftSection={<IconCoin size={16} />}>
+                 Family Offices
+               </Tabs.Tab>
+diff --git a/components/ProductShowcase/ProductShowcase.tsx b/components/ProductShowcase/ProductShowcase.tsx
+index 21b5f6b..4d8f668 100644
+--- a/components/ProductShowcase/ProductShowcase.tsx
++++ b/components/ProductShowcase/ProductShowcase.tsx
+@@ -92,7 +92,7 @@ export function ProductShowcase() {
+         <SectionHeading
+           eyebrow="Product tour"
+           title="Two products, one platform"
+-          description="Fund Administration with a white-labeled investor portal, and a fund-grade Fund Accounting engine — covering PE, VC, private credit, family offices and SPVs. License them together, or start with just the piece you need."
++          description="A fund-grade Fund Accounting engine, and Fund Administration with a white-labeled investor portal, for fund administrators, PE, VC, private credit and family offices. License them together, or start with just the accounting engine."
+         />
+ 
+         <div className={classes.layout}>
+diff --git a/lib/solutions.ts b/lib/solutions.ts
+index 3eb5e42..6ee6748 100644
+--- a/lib/solutions.ts
++++ b/lib/solutions.ts
+@@ -1,15 +1,17 @@
+ import {
+-  IconChartBar, IconBriefcase, IconUsersGroup, IconReportMoney,
++  IconChartBar, IconBriefcase, IconUsersGroup, IconReportMoney, IconBuildingBank,
+ } from '@tabler/icons-react';
+ import type { RelatedLink } from '@/components/ProductDetail/ProductDetail';
+ 
+ // Solutions are framed by WHO you are (the audience / fund type), as opposed to
+ // Products, which are the platforms you license. Each solution shows the mix of
+ // products that fits. Slugs match the /api/products dataset (except spv, which
+-// has a bespoke page). Focused on PE/VC, family offices and SPVs for now.
++// has a bespoke page). Fund administrators and CSPs come first: they are the lead buyer
++// of the Fund Accounting engine. SPVs are a secondary offering and are listed last.
+ export type SolutionNav = RelatedLink & { slug: string; bespoke?: boolean };
+ 
+ export const SOLUTIONS: SolutionNav[] = [
++  { slug: 'fund-administrators', href: '/solutions/fund-administrators', label: 'Fund Administrators & CSPs', blurb: 'One white-label ledger for every client fund and VCC sub-fund you service.', icon: IconBuildingBank },
+   { slug: 'vc-pe-firms', href: '/solutions/vc-pe-firms', label: 'VC / PE Firms', blurb: 'Capital calls, distributions, carry and LP communications in one place.', icon: IconChartBar },
+   { slug: 'private-credit', href: '/solutions/private-credit', label: 'Private Credit', blurb: 'Direct-lending and credit funds — amortised-cost accounting, interest accruals and ECL, done right.', icon: IconReportMoney },
+   { slug: 'family-offices', href: '/solutions/family-offices', label: 'Family Offices', blurb: 'Consolidated multi-entity, multi-asset administration and reporting.', icon: IconBriefcase },
+diff --git a/pages/api/products/index.ts b/pages/api/products/index.ts
+index ec77ac4..bf41ec9 100644
+--- a/pages/api/products/index.ts
++++ b/pages/api/products/index.ts
+@@ -46,6 +46,158 @@ export interface ProductData {
+ }
+ 
+ export const products: ProductData[] = [
++  {
++    id: '8',
++    slug: 'fund-administrators',
++    title: 'Fund Accounting Software for Fund Administrators & CSPs',
++    shortTitle: 'Fund Administrators & CSPs',
++    description: 'Fund accounting software for fund administrators and corporate service providers in Singapore & APAC. Run every client fund and VCC sub-fund on one white-label ledger.',
++    heroDescription: 'You service other managers\' funds, often on spreadsheets that do not scale past the next client. aama.io gives your team a fund-grade double-entry ledger for every client fund and VCC sub-fund: automated NAV, consolidated umbrella reporting, MAS reports and white-label client statements. Your firm stays the administrator; we provide the software.',
++    icon: 'IconBuildingBank',
++    image: '/images/fund-detail.png',
++    category: 'Fund Administrators',
++    features: [
++      {
++        title: 'One ledger per client fund',
++        description: 'Fund-grade accounting for every fund you service',
++        items: [
++          'Double-entry general ledger, chart of accounts and journal vouchers',
++          'Automated NAV: daily, weekly, monthly or quarterly',
++          'IFRS 9 / SFRS(I) 9 accounting',
++          'European and American waterfalls, fees and carried interest',
++          'Multi-currency books with FX revaluation',
++          '12+ audit-ready reports: trial balance, balance sheet, P&L, NAV summary, capital accounts'
++        ]
++      },
++      {
++        title: 'VCC umbrellas and sub-funds',
++        description: 'Built for how Singapore funds are actually structured',
++        items: [
++          'Each VCC sub-fund kept as its own segregated set of books',
++          'Consolidated view across an umbrella VCC and its sub-funds',
++          'MAS reporting output, including the basic QDC report',
++          'Multi-entity dashboard across every client you service',
++          'Role-based access per client and per team member',
++          'Complete audit trail on every entry and approval'
++        ]
++      },
++      {
++        title: 'Less re-keying at month-end',
++        description: 'AI reads the documents; your team approves the entries',
++        items: [
++          'AI extraction from supplier invoices, bank and custodian statements',
++          'Suggested ledger mapping that learns from earlier mappings',
++          'Nothing posts until a person accepts it',
++          'Bank, broker and custodian reconciliation',
++          'Bulk Excel import of holdings and history',
++          'Multi-stage approval workflows before posting'
++        ]
++      }
++    ],
++    benefits: [
++      {
++        title: 'Take on clients without adding headcount',
++        description: 'Automated NAV, reconciliation and reporting mean each new client fund adds configuration, not another spreadsheet and another accountant.',
++        icon: 'IconUsersGroup'
++      },
++      {
++        title: 'Your brand, not ours',
++        description: 'Client statements and reports go out under your firm\'s name. Add a white-label investor portal for clients who want one.',
++        icon: 'IconWorld'
++      },
++      {
++        title: 'Numbers your auditors can follow',
++        description: 'Every entry, approval and recalculation is logged, so audit evidence comes out of the system instead of being assembled by hand.',
++        icon: 'IconShield'
++      },
++      {
++        title: 'Priced per client fund',
++        description: 'Plans scale with the number of client funds you run, so the software cost grows with your revenue, not ahead of it.',
++        icon: 'IconCurrencyDollar'
++      }
++    ],
++    useCases: [
++      {
++        title: 'Boutique fund administrators',
++        description: 'A small team servicing several VC, PE or credit funds that has outgrown spreadsheets and cannot justify enterprise systems priced for billion-dollar administrators.',
++        metrics: [
++          { label: 'Plans from', value: 'USD 1,500/mo' }
++        ]
++      },
++      {
++        title: 'Corporate service providers running VCC umbrellas',
++        description: 'CSPs that form and service VCCs with many sub-funds, and need segregated books per sub-fund with a consolidated umbrella view and MAS reporting.',
++        metrics: [
++          { label: 'Sub-funds', value: 'Segregated books' },
++          { label: 'Umbrella', value: 'Consolidated view' }
++        ]
++      },
++      {
++        title: 'Administrators moving off legacy systems',
++        description: 'The same accounting engine runs daily NAV for 15+ regulated open-end and closed-end funds, and has handled 5x growth in transactions with the same operations headcount.',
++        metrics: [
++          { label: 'Data loss in migrations', value: 'Zero' }
++        ]
++      }
++    ],
++    keyFeatures: [
++      {
++        title: 'Multi-client workspace',
++        description: 'Every client and every fund in one place, with access scoped per client and per team member.'
++      },
++      {
++        title: 'VCC consolidation',
++        description: 'Segregated sub-fund ledgers that roll up into one consolidated umbrella view.'
++      },
++      {
++        title: 'Automated NAV',
++        description: 'Gross, net and per-unit NAV on your schedule, with holiday-aware period closes.'
++      },
++      {
++        title: 'AI document extraction',
++        description: 'Invoices and bank or custodian statements read into suggested entries for your team to check.'
++      },
++      {
++        title: 'White-label reporting',
++        description: 'Statements and reports under your firm\'s brand, with an optional investor portal.'
++      },
++      {
++        title: 'API access',
++        description: 'REST APIs to connect your own systems, banks and client workflows.'
++      }
++    ],
++    faq: [
++      {
++        question: 'Do we stay the fund administrator?',
++        answer: 'Yes. aama.io is software. Your firm remains the administrator of record and keeps the client relationship; we do not hold client money or perform the regulated service. Your team operates the platform once we have configured it.'
++      },
++      {
++        question: 'How is pricing structured for administrators?',
++        answer: 'Plans are priced by the number of client funds you run: Studio (up to 5 client funds) from USD 1,500 a month, Practice (up to 20) from USD 3,500 a month, and Firm (unlimited) from USD 6,500 a month, plus a one-off setup fee. See the Fund Administrators tab on the pricing page.'
++      },
++      {
++        question: 'Can we run VCC umbrellas with many sub-funds?',
++        answer: 'Yes. Each sub-fund is kept as its own segregated set of books, and the platform produces a consolidated view across the umbrella. MAS reporting output, including the basic QDC report, comes from the same ledger.'
++      },
++      {
++        question: 'Do our clients need an investor portal?',
++        answer: 'No. The accounting engine works on its own. A white-label investor portal is available as an add-on, and is included in the Firm plan, for clients who want online onboarding, statements and capital calls.'
++      },
++      {
++        question: 'How do we move existing client funds across?',
++        answer: 'We configure your first client funds during setup and import balances and holdings from Excel. Most administrators run one client fund in parallel with their current books first, check that the numbers match, and then move the rest.'
++      },
++      {
++        question: 'Which accounting standards do you support?',
++        answer: 'IFRS 9 and its Singapore equivalent SFRS(I) 9, with multi-currency books, FX revaluation, and fees, carry and waterfalls calculated from the ledger.'
++      },
++      {
++        question: 'Do you work with administrators outside Singapore?',
++        answer: 'Yes. Singapore is our home market, and the same platform serves administrators in Hong Kong, Australia and across APAC.'
++      }
++    ],
++    relatedProducts: ['vc-pe-firms', 'private-credit', 'family-offices']
++  },
+   {
+     id: '1',
+     slug: 'mutual-fund-managers',
+diff --git a/pages/index.tsx b/pages/index.tsx
+index d024874..5d01d05 100644
+--- a/pages/index.tsx
++++ b/pages/index.tsx
+@@ -7,6 +7,7 @@ import { ProblemSolution, WORKFLOW_FAQS } from '../components/ProblemSolution/Pr
+ import { ProductShowcase } from '../components/ProductShowcase/ProductShowcase';
+ import { TrustBar } from '../components/TrustBar/TrustBar';
+ import Head from 'next/head';
++import { AdminBanner } from '@/components/AdminBanner/AdminBanner';
+ import { HOME_FAQS, HomeFAQ } from '@/components/HomeFAQ/HomeFAQ';
+ 
+ export default function HomePage() {
+@@ -32,6 +33,7 @@ export default function HomePage() {
+       </Head>
+       <PageShell>
+         <Hero />
++        <AdminBanner />
+         <TrustBar />
+         <ProblemSolution />
+         <ProductShowcase />
+diff --git a/pages/pricing.tsx b/pages/pricing.tsx
+index c364842..7198503 100644
+--- a/pages/pricing.tsx
++++ b/pages/pricing.tsx
+@@ -55,9 +55,9 @@ export default function PricingPage() {
+   return (
+     <>
+       <SEO
+-        title="Pricing — SPV, Fund Administration & Accounting Software | aama.io"
+-        description="Transparent pricing: SPVs from $3,900/deal, fund-admin plans from $1,500/mo, fund-manager subscriptions from $625/mo. Singapore & APAC, no hidden fees."
+-        keywords="SPV pricing Singapore, fund administration software pricing, fund accounting software pricing, SPV cost, syndicate SPV fees, fund admin software cost, private credit fund administration pricing, transparent fund software pricing"
++        title="Pricing — Fund Accounting & Administration Software | aama.io"
++        description="Transparent pricing: fund accounting for administrators from USD 1,500/mo, fund-manager subscriptions from USD 625/mo, SPVs from USD 3,900. Singapore & APAC."
++        keywords="fund accounting software pricing, fund administrator software pricing, fund administration software pricing, SPV pricing Singapore, SPV cost, syndicate SPV fees, fund admin software cost, private credit fund administration pricing, transparent fund software pricing"
+       />
+       <Head>
+         <script
+diff --git a/pages/solutions.tsx b/pages/solutions.tsx
+index 319a54a..3e9a83b 100644
+--- a/pages/solutions.tsx
++++ b/pages/solutions.tsx
+@@ -11,6 +11,20 @@ import s from '../styles/Solutions.module.css';
+ 
+ // Per-audience detail layered onto the shared SOLUTIONS list (lib/solutions.ts).
+ const DETAIL: Record<string, { kicker: string; body: string; points: string[]; fit: { label: string; href: string }[] }> = {
++  'fund-administrators': {
++    kicker: 'Servicing other managers\' funds',
++    body: 'Run every client fund and VCC sub-fund on one fund-grade ledger, under your own brand. Take on the next client without adding another spreadsheet or another accountant.',
++    points: [
++      'Segregated books per client fund and VCC sub-fund',
++      'Consolidated umbrella view and MAS reporting output',
++      'Automated NAV, waterfalls and 12+ audit-ready reports',
++      'White-label client reporting, priced per client fund',
++    ],
++    fit: [
++      { label: 'Fund Accounting', href: '/products/fund-accounting' },
++      { label: 'Pricing for administrators', href: '/pricing' },
++    ],
++  },
+   'vc-pe-firms': {
+     kicker: 'Closed-end funds',
+     body: 'Raise, call and distribute capital without rebuilding the same spreadsheet each quarter. The waterfall, the notices and the LP statements all come from one set of books.',
+@@ -70,8 +84,8 @@ const DETAIL: Record<string, { kicker: string; body: string; points: string[]; f
+ };
+ 
+ const ONE_MODEL = [
+-  { title: 'One ledger for every vehicle', body: 'SPV administration, fund accounting and LP reporting read from the same books, so a number means the same thing everywhere.' },
+-  { title: 'Start small, grow without re-platforming', body: 'Begin with a single SPV or the LP portal. Add accounting and more vehicles later without moving your data.' },
++  { title: 'One ledger for every vehicle', body: 'Fund accounting, administration and LP reporting read from the same books, so a number means the same thing everywhere.' },
++  { title: 'Start with what you need', body: 'Begin with the accounting engine or the LP portal. Add modules and more funds later without moving your data.' },
+   { title: 'Investors see what you see', body: 'Statements and portal balances come from the ledger, not a separate report someone has to reconcile.' },
+ ];
+ 
+@@ -84,8 +98,8 @@ const STEPS = [
+ ];
+ 
+ const FAQS = [
+-  { q: 'Which solution should I start with?', a: 'Pick the one that matches the vehicle you run today. A syndicate lead starts with SPVs & Syndicates, a first-time manager can start on the free LP portal, and an established VC, PE or credit fund usually starts with Fund Administration and Fund Accounting.' },
+-  { q: 'Can I start with only the LP portal?', a: 'Yes. The LP portal is free through your first close for eligible emerging managers and SPV operators. You can add full accounting later when the vehicle needs it.' },
++  { q: 'Which solution should I start with?', a: 'Pick the one that matches how you work today. A fund administrator or corporate service provider starts with the Fund Accounting engine for its client funds. An established VC, PE or credit manager usually starts with Fund Accounting and Fund Administration together. A syndicate lead starts with SPVs & Syndicates.' },
++  { q: 'We administer funds for other managers. Is there a plan for us?', a: 'Yes. Fund administrators and CSPs license the accounting engine priced by the number of client funds they run, with white-label client reporting and an optional investor portal. Your firm stays the administrator of record.' },
+   { q: 'How does the platform handle regulatory requirements?', a: 'Reporting and accounting follow IFRS 9 / SFRS(I) 9, with Singapore items such as 13O / 13U and VCC structures supported. Regulatory obligations stay with the manager; the software gives you the records and reports to meet them.' },
+   { q: 'Can I connect my existing systems?', a: 'Yes. Data can be imported and exported in common formats, and integrations with banks and other tools can be scoped with the team.' },
+   { q: 'How is customer data protected?', a: 'Access is role-based and every change is recorded in an audit trail. Ask for the security overview during a demo if your investors or auditors need detail.' },
+@@ -97,14 +111,14 @@ export default function SolutionsPage() {
+   return (
+     <>
+       <SEO
+-        title="Fund Administration & Accounting Software | Solutions"
+-        description="Fund administration & accounting for VC/PE, private credit, family offices and SPVs — onboarding to NAV, reporting and compliance, Singapore & APAC."
++        title="Fund Accounting & Administration Software | Solutions"
++        description="Fund accounting and administration for fund administrators, CSPs, VC/PE, private credit and family offices in Singapore & APAC. NAV, reporting and compliance."
+         keywords="fund administration software, fund accounting software, LP portal for fund managers, investor onboarding, fund reporting, Singapore fund administration, APAC fund accounting"
+       />
+       <PageSchema
+         type="CollectionPage"
+         name="Fund administration and accounting solutions"
+-        description="Fund administration and accounting for VC/PE, private credit, family offices and SPVs."
++        description="Fund accounting and administration for fund administrators, CSPs, VC/PE, private credit and family offices."
+         path="/solutions"
+         faqs={FAQS.map((f) => ({ q: f.q, a: f.a }))}
+       />
+@@ -115,10 +129,10 @@ export default function SolutionsPage() {
+           <Container size="xl" className={s.heroInner}>
+             <div>
+               <span className={s.badge}>Solutions</span>
+-              <h1 className={s.title}>Fund administration, set up for the way you raise capital</h1>
++              <h1 className={s.title}>Fund accounting, set up for the way you work</h1>
+               <p className={s.heroDesc}>
+-                A syndicate lead, a first-time manager and a multi-fund PE firm need different things on day one.
+-                Choose your path, and run it on the same books, from first investor to final report.
++                An administrator servicing thirty sub-funds and a PE firm running its own books need different things
++                on day one. Choose your path, and run it on the same fund-grade ledger, from first investor to final report.
+               </p>
+               <div className={s.ctaRow}>
+                 <Button component="a" href={DEMO} target="_blank" rel="noopener noreferrer" size="md" className={s.primary} leftSection={<IconCalendarEvent size={18} />}>
+@@ -151,7 +165,7 @@ export default function SolutionsPage() {
+           <Container size="xl">
+             <div className={s.head}>
+               <span className={s.eyebrow}>By audience</span>
+-              <h2 className={s.h2}>Four ways teams run funds on aama.io</h2>
++              <h2 className={s.h2}>How teams run funds on aama.io</h2>
+             </div>
+             {SOLUTIONS.map((sol, i) => {
+               const d = DETAIL[sol.slug];
+@@ -259,13 +273,13 @@ export default function SolutionsPage() {
+             <div className={s.ctaCard}>
+               <div>
+                 <h2 className={s.ctaTitle}>See it set up for your vehicle</h2>
+-                <p className={s.ctaDesc}>Book a 30-minute walkthrough and we will show your fund type on the platform, or start free with the LP portal.</p>
++                <p className={s.ctaDesc}>Book a 30-minute walkthrough and we will show your fund structure, or your clients' funds, running on the platform.</p>
+                 <div className={s.ctaRow}>
+                   <Button component="a" href={DEMO} target="_blank" rel="noopener noreferrer" size="md" className={s.primary} leftSection={<IconCalendarEvent size={18} />}>
+                     Book a demo
+                   </Button>
+-                  <Button component={Link} href="/emerging-managers" size="md" variant="default" className={s.secondary}>
+-                    Start free
++                  <Button component={Link} href="/pricing" size="md" variant="default" className={s.secondary}>
++                    See pricing
+                   </Button>
+                 </div>
+               </div>
+diff --git a/public/llms.txt b/public/llms.txt
+index 5196c03..52c587c 100644
+--- a/public/llms.txt
++++ b/public/llms.txt
+@@ -1,16 +1,17 @@
+ # Aama.io
+ 
+-> Aama.io is fund administration and fund accounting software for mid-market PE/VC fund managers, boutique fund administrators, family offices and SPV deals across Singapore and APAC (positioned as an end-to-end fund operating platform, or "Fund OS"). It covers the fund lifecycle on one platform — fund administration, fund accounting (IFRS 9 / SFRS(I) 9), an LP portal for fund managers, back-office automation, deal flow CRM, data room, SPV management and fund reporting — with MAS and VCC sub-fund support, without enterprise complexity or pricing.
++> Aama.io is fund accounting and fund administration software for fund administrators and corporate service providers (CSPs), mid-market PE/VC and private credit fund managers, and family offices across Singapore and APAC; it also supports SPV deals (positioned as an end-to-end fund operating platform, or "Fund OS"). It covers the fund lifecycle on one platform — fund administration, fund accounting (IFRS 9 / SFRS(I) 9), an LP portal for fund managers, back-office automation, deal flow CRM, data room, SPV management and fund reporting — with MAS and VCC sub-fund support, without enterprise complexity or pricing.
+ 
+ ## Platforms (products)
+ 
+-- [SPV Fund Management](https://aama.io/products/spv-fund-management): Flagship end-to-end SPV and syndicate platform — vehicle formation, cap table, KYC/AML onboarding, capital calls, lead carry, distributions, general ledger, NAV and member reporting in one system.
+-- [Fund Administration](https://aama.io/products/fund-administration): Capital calls, drawdowns, investor onboarding (KYC/AML), allocation tracking, LP communications and a branded investor (LP) portal with real-time NAV, statements and documents.
+ - [Fund Accounting](https://aama.io/products/fund-accounting): IFRS-based fund accounting, NAV calculation, reconciliation, corporate actions and audit-ready financials. AI reads supplier invoices, bank statements and custodian statements, returns structured fields for a person to check, suggests ledger mapping and learns from earlier mappings; nothing is posted until someone accepts it, and a person posts the journal voucher.
++- [Fund Administration](https://aama.io/products/fund-administration): Capital calls, drawdowns, investor onboarding (KYC/AML), allocation tracking, LP communications and a branded investor (LP) portal with real-time NAV, statements and documents.
++- [SPV Fund Management](https://aama.io/products/spv-fund-management): End-to-end SPV and syndicate platform — vehicle formation, cap table, KYC/AML onboarding, capital calls, lead carry, distributions, general ledger, NAV and member reporting in one system.
+ 
+ ## Solutions (by audience)
+ 
+ - [Solutions overview](https://aama.io/solutions): How Aama.io maps to each type of fund and team.
++- [Fund Administrators & CSPs](https://aama.io/solutions/fund-administrators): Fund accounting for administrators and corporate service providers — segregated books per client fund and VCC sub-fund, consolidated umbrella view, MAS reporting, white-label client reporting, priced per client fund.
+ - [VC / PE Firms](https://aama.io/solutions/vc-pe-firms): Multi-fund administration, waterfalls, carry and LP reporting.
+ - [Private Credit](https://aama.io/solutions/private-credit): Direct-lending and credit fund accounting — amortised cost, ECL staging (IFRS 9 / SFRS(I) 9), PIK accruals and loan/facility tracking.
+ - [SPV Syndicates](https://aama.io/solutions/spv-syndicates): Single- and multi-asset vehicle administration and syndicate reporting.
+-- 
+2.43.0
+
